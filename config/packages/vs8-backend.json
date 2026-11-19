@@ -1,0 +1,409 @@
+{
+ "schemaVersion": 1,
+ "package": "vs8-backend",
+ "measured": "2026-11-20",
+ "scenarios": [
+  {
+   "name": "back-end-lifecycle",
+   "verify": "build\\host-tests.exe <package root> <new directory>  (VS2005 checks; the MSE check needs mse-window)"
+  },
+  {
+   "name": "dte-document-and-build",
+   "verify": "python scripts\\package.py scenario-vs8-build <package root> <new directory>"
+  }
+ ],
+ "runtimeFiles": [
+  {
+   "path": "runtime/coloader80.dll",
+   "size": 127560,
+   "sha256": "1F3EF22DE64B84C61CB53914778AC8F2358CCF49BD19451824E8591E4787B9CE"
+  },
+  {
+   "path": "runtime/Common7/IDE/2052/msenvmui.dll",
+   "size": 50688,
+   "sha256": "D2E5FB8D2B704F673DC76E42DAE74269F015E7C17403C9514C381C9DF57A1075"
+  },
+  {
+   "path": "runtime/Common7/IDE/2052/msenvui.dll",
+   "size": 1152512,
+   "sha256": "6DB3DF1ED5B7644A67BDA9AAA91BC88ADC05B468986418FE378C8FEF10B50A74"
+  },
+  {
+   "path": "runtime/Common7/IDE/2052/vslogui.dll",
+   "size": 36352,
+   "sha256": "74F6DF56120967470DA19113468440DEE644A90EE925CAD4C84205898B2AEF9F"
+  },
+  {
+   "path": "runtime/Common7/IDE/2052/vsmacrosui.dll",
+   "size": 78336,
+   "sha256": "2029016F0789D13C32BB568180903E8C9D99855FFDED8752E3054F53DE3B4FD4"
+  },
+  {
+   "path": "runtime/Common7/IDE/2052/vsmsoui.dll",
+   "size": 1405952,
+   "sha256": "1A2F43E680AB7B06BAE4A372569A799F2C794E86A6819E3665DC87D2F23923C1"
+  },
+  {
+   "path": "runtime/Common7/IDE/custsat.dll",
+   "size": 33792,
+   "sha256": "E0088B6361C7EA8E611BA32542BEFF7AC12955991C82A5FE9EF5D9A97D6CA14F"
+  },
+  {
+   "path": "runtime/Common7/IDE/devenv.exe",
+   "size": 466776,
+   "sha256": "A2252485B2538DB718DD444FAD9B8A75E94BA357C5427A09B6A85B5B23AED6B2"
+  },
+  {
+   "path": "runtime/Common7/IDE/devenv.exe.config",
+   "size": 1062,
+   "sha256": "C427C7B65EBD67DC55C5162DAE9902AD56FDE8A2E17E455D8AC7717F7574634A"
+  },
+  {
+   "path": "runtime/Common7/IDE/devenv.exe.manifest",
+   "size": 1025,
+   "sha256": "374C4BC0B4743621FDDB79A9C56B8B01C097119F1488148D6BEA946F6E1E3344"
+  },
+  {
+   "path": "runtime/Common7/IDE/Microsoft.VisualStudio.HostingProcess.Utilities.dll",
+   "size": 49152,
+   "sha256": "922B40BCC6185C09D1DB9824D3986086147BE87DB204A9678CFEB18419CE3C61"
+  },
+  {
+   "path": "runtime/Common7/IDE/Microsoft.WizardFramework.dll",
+   "size": 126976,
+   "sha256": "50E9CC03D8E430D5520A8C914D6996DE2922D379BA946E6A2807951105ECFBA6"
+  },
+  {
+   "path": "runtime/Common7/IDE/Microsoft.WizardFrameworkVS.dll",
+   "size": 40960,
+   "sha256": "B4FCEFAA113F1DBE7B6B914BDEECA8EEA51D63786184424826CC926B9BF7A296"
+  },
+  {
+   "path": "runtime/Common7/IDE/msenv.dll",
+   "size": 9128960,
+   "sha256": "259F4003AE78693DE76EE0190F8B8848CD48267BBEA8B033FB2AE912DAF92AA0"
+  },
+  {
+   "path": "runtime/Common7/IDE/msenvmnu.dll",
+   "size": 29696,
+   "sha256": "AEFF9673B5B765CC12D6C1DD90FD4809E508B4F9EBE6B09B33D2499F1594BD85"
+  },
+  {
+   "path": "runtime/Common7/IDE/Visualui.TTF",
+   "size": 14204,
+   "sha256": "14A555F64403A849328D171FB0DC3312CA987251955A39C992A51420BC80FD43"
+  },
+  {
+   "path": "runtime/Common7/IDE/VS SCC/2052/VssProviderui.dll",
+   "size": 278528,
+   "sha256": "4064E826E52DB6B1CE001B551EDA889B1BE205260CEBCAE1435E3F4391D5F64C"
+  },
+  {
+   "path": "runtime/Common7/IDE/vshost.exe",
+   "size": 5632,
+   "sha256": "07470371B6C705A49965AE5D98E26450B9FEF50E4BA4851DE91E29E9721AB197"
+  },
+  {
+   "path": "runtime/Common7/IDE/vslog.dll",
+   "size": 108544,
+   "sha256": "AADEF43D9E8824404A8E6C93BCFB3242482D3D0C6118900D56BA5ADF9BD7662B"
+  },
+  {
+   "path": "runtime/Common7/IDE/vsmacros.dll",
+   "size": 399872,
+   "sha256": "A327D322EFBE09B4562F7A0331A8C9D5236CF9813896329C37DC999EBFD15689"
+  },
+  {
+   "path": "runtime/Common7/Packages/2052/compsvcspkgui.dll",
+   "size": 24064,
+   "sha256": "C53EA63B032CD4DEA5C723AD89F0115396BE6F1B393000910A3E12A851E4E775"
+  },
+  {
+   "path": "runtime/Common7/Packages/2052/dirprjui.dll",
+   "size": 126464,
+   "sha256": "4F7DE868128A473185771E74C46B1631EA9573FC845782F20F6B107617DA771D"
+  },
+  {
+   "path": "runtime/Common7/Packages/2052/mswebprjui.dll",
+   "size": 192512,
+   "sha256": "D877D75EC62B98006F72467B20B6E36F9FD6E11DD3860A896C81F4EE277BACD2"
+  },
+  {
+   "path": "runtime/Common7/Packages/Compsvcspkg.dll",
+   "size": 180224,
+   "sha256": "54127F573B9A8D13C76DBCDFA8E2F07FABA255423D2E7AF197BF424B182267DF"
+  },
+  {
+   "path": "runtime/Common7/Packages/Debugger/2052/msdbgui.dll",
+   "size": 217088,
+   "sha256": "4F20C67D5331F30E1EE4AD53CDCEAA0F1418B866BD8E4DFB39311C2A72A7D1BC"
+  },
+  {
+   "path": "runtime/Common7/Packages/Debugger/2052/vsdebugui.dll",
+   "size": 334848,
+   "sha256": "4C75271756936ABFEF9982D1471944FCD644D20073D6DF13B590E6A37CDB0F39"
+  },
+  {
+   "path": "runtime/Common7/Packages/Debugger/ecbuild.dll",
+   "size": 62976,
+   "sha256": "216F250F60357C633014A80715DFD5FA0EF688CCC030F6F710D8A7228A12D7DD"
+  },
+  {
+   "path": "runtime/Common7/Packages/Debugger/encmgr.dll",
+   "size": 61440,
+   "sha256": "C2E9AC89246AE4E29F913E73058B807BC1E92ED6D0F7F3877D499D93F0661DCC"
+  },
+  {
+   "path": "runtime/Common7/Packages/Debugger/vsdebug.dll",
+   "size": 1317376,
+   "sha256": "01B25B777C79C46C10B09282941FAB215B95257A5A32BE005F0759929BB898C5"
+  },
+  {
+   "path": "runtime/Common7/Packages/dirprj.dll",
+   "size": 116224,
+   "sha256": "C08445DDF26D41B7AFAC79BE4D58448DAED923219F3A8BEED98C5080F1C2D3E1"
+  },
+  {
+   "path": "runtime/Common7/Tools/Deployment/Vspkgs/2052/dpprjui.dll",
+   "size": 204800,
+   "sha256": "5EEB6D72EB91BB3E7A29910A91904B429F0F4683A718BDD610C2B6BCE004C7BC"
+  },
+  {
+   "path": "runtime/Common7/Tools/VDT/2052/vdt80pui.dll",
+   "size": 166400,
+   "sha256": "04D971C28E684F1765FC7DB6F5221BB862319A8BD806B7592655580FA97C1BB8"
+  },
+  {
+   "path": "runtime/EnterpriseFrameworks/2052/etpprojui.dll",
+   "size": 9728,
+   "sha256": "63A8CA4CA991B0FB871F6B798EB4CE6DFE8A7FACE75BCA68FD6721B832D98238"
+  },
+  {
+   "path": "runtime/msdbg2.dll",
+   "size": 582064,
+   "sha256": "8F366FD4A1D3E8B917BC1B95306957C1B3987CE473D61DD7D8ADE3C36D8267E9"
+  },
+  {
+   "path": "runtime/SmartDevices/Debugger/bin/2052/eDbgUI.dll",
+   "size": 12288,
+   "sha256": "7C0A2CC801A74EA8E2B3D720662B8832A28067DF8D5519AF55B5CFF7A9FF8BB4"
+  },
+  {
+   "path": "runtime/SmartDevices/Projects/2052/cedpprjui.dll",
+   "size": 126976,
+   "sha256": "DDFDB3AB320E50822F092A7EC648B7F10EF4CAE1671F484E04BCAFCEF49881C0"
+  },
+  {
+   "path": "runtime/SmartDevices/Projects/2052/SmartDeviceProjectUI.dll",
+   "size": 176128,
+   "sha256": "593224A51750EBF053C07E2918C9EDFB6B56231EB5C1B8B61DEA6CC067BF343E"
+  },
+  {
+   "path": "runtime/VB/Bin/2052/msvbprjUI.dll",
+   "size": 159744,
+   "sha256": "F42B4765E5C9DCD76DCA5DA96FBE4DFB580C55B8B72B194F98007A6080C65F97"
+  },
+  {
+   "path": "runtime/VC#/VCSPackages/2052/cslangsvcui.dll",
+   "size": 209920,
+   "sha256": "E87C26847202F7281EE9E072893E4FC3B5EF2776F1E44022939CD0AA65E976ED"
+  },
+  {
+   "path": "runtime/VC#/VCSPackages/2052/csprojui.dll",
+   "size": 209920,
+   "sha256": "C00498999177554F934D61BFCE40F4945FCD126249322DCD3E7BD9E5DFDCDB9D"
+  },
+  {
+   "path": "runtime/VC#/VCSPackages/cslangsvc.dll",
+   "size": 3671040,
+   "sha256": "0BBE3C4136C99E475FFD0DEA26DF538D29FEA313BCDE9336875FFC827FDE3562"
+  },
+  {
+   "path": "runtime/VC#/VCSPackages/csproj.dll",
+   "size": 1926144,
+   "sha256": "69AEFBB3A9769B8E9CE6390369022B27364CBEF56328CD01BF1D4F35343954FE"
+  },
+  {
+   "path": "runtime/VC/vcpackages/2052/vcpkgui.dll",
+   "size": 230912,
+   "sha256": "1BFA65FFCA8235B3F207854FDC4F0F066DCA301F6866A4A177D47506A4D47DAF"
+  },
+  {
+   "path": "runtime/VC/vcpackages/2052/VCProjectUI.dll",
+   "size": 270848,
+   "sha256": "25EE2B68BBA2A3F82C9A40610CE4509DF26309C209C897B862E50015D6D6632C"
+  },
+  {
+   "path": "runtime/VISUALUI.TTF",
+   "size": 5828,
+   "sha256": "29514D07DB64EA82913AEB95E84277A1FD6152959C87450F7979B3FB4199E571"
+  },
+  {
+   "path": "runtime/VJ#/bin/2052/vjsprojui.dll",
+   "size": 212480,
+   "sha256": "A2B445469DD94F34D937C64521ED10842A9850D7F61D2A901E852B49F3A2049E"
+  }
+ ],
+ "runtimeDirectories": [
+  "runtime",
+  "runtime/Common7/IDE",
+  "runtime/VB/Snippets/2052",
+  "runtime/VB/Snippets/2052/application",
+  "runtime/VB/Snippets/2052/collections and arrays",
+  "runtime/VB/Snippets/2052/common code patterns",
+  "runtime/VB/Snippets/2052/common code patterns/conditionals and loops",
+  "runtime/VB/Snippets/2052/common code patterns/exception handling",
+  "runtime/VB/Snippets/2052/common code patterns/properties and procedures",
+  "runtime/VB/Snippets/2052/common code patterns/types",
+  "runtime/VB/Snippets/2052/connectivity",
+  "runtime/VB/Snippets/2052/Crystal Reports",
+  "runtime/VB/Snippets/2052/database",
+  "runtime/VB/Snippets/2052/datatypes",
+  "runtime/VB/Snippets/2052/filesystem",
+  "runtime/VB/Snippets/2052/Math",
+  "runtime/VB/Snippets/2052/os",
+  "runtime/VB/Snippets/2052/os/EventLog",
+  "runtime/VB/Snippets/2052/os/Messaging",
+  "runtime/VB/Snippets/2052/os/Process",
+  "runtime/VB/Snippets/2052/os/Registry",
+  "runtime/VB/Snippets/2052/os/Services",
+  "runtime/VB/Snippets/2052/os/SystemInfo",
+  "runtime/VB/Snippets/2052/Security",
+  "runtime/VB/Snippets/2052/SmartDevices",
+  "runtime/VB/Snippets/2052/SmartDevices/application",
+  "runtime/VB/Snippets/2052/SmartDevices/connectivity",
+  "runtime/VB/Snippets/2052/SmartDevices/database",
+  "runtime/VB/Snippets/2052/SmartDevices/pinvoke",
+  "runtime/VB/Snippets/2052/SmartDevices/windowsforms",
+  "runtime/VB/Snippets/2052/SmartDevices/windowsforms/controls",
+  "runtime/VB/Snippets/2052/SmartDevices/windowsforms/drawing",
+  "runtime/VB/Snippets/2052/SmartDevices/windowsforms/forms",
+  "runtime/VB/Snippets/2052/windowsforms",
+  "runtime/VB/Snippets/2052/windowsforms/Clipboard",
+  "runtime/VB/Snippets/2052/windowsforms/Controls",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/Button",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/Calendar",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/ComboBox",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/datagridview",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/ListBox",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/ListView",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/Menu",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/ProgressBar",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/radiobutton",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/RichTextBox",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/textbox",
+  "runtime/VB/Snippets/2052/windowsforms/Controls/TreeView",
+  "runtime/VB/Snippets/2052/windowsforms/Drawing",
+  "runtime/VB/Snippets/2052/windowsforms/Fonts",
+  "runtime/VB/Snippets/2052/windowsforms/Forms",
+  "runtime/VB/Snippets/2052/windowsforms/Sound",
+  "runtime/VB/Snippets/2052/xml",
+  "runtime/VC#/Snippets/2052",
+  "runtime/VC#/Snippets/2052/Refactoring",
+  "runtime/VC#/Snippets/2052/Visual C#",
+  "runtime/VJ#/Snippets/2052",
+  "runtime/VJ#/Snippets/2052/Application",
+  "runtime/VJ#/Snippets/2052/Application/Console",
+  "runtime/VJ#/Snippets/2052/Collections",
+  "runtime/VJ#/Snippets/2052/Collections/ArrayList",
+  "runtime/VJ#/Snippets/2052/Collections/HashMap",
+  "runtime/VJ#/Snippets/2052/DataTypes",
+  "runtime/VJ#/Snippets/2052/DataTypes/String",
+  "runtime/VJ#/Snippets/2052/FileSystem",
+  "runtime/VJ#/Snippets/2052/FileSystem/Files",
+  "runtime/VJ#/Snippets/2052/FileSystem/IO",
+  "runtime/VJ#/Snippets/2052/Math",
+  "runtime/VJ#/Snippets/2052/Math/Financial",
+  "runtime/VJ#/Snippets/2052/Math/Random",
+  "runtime/VJ#/Snippets/2052/Math/Statistical",
+  "runtime/VJ#/Snippets/2052/Visual J# Language",
+  "runtime/VJ#/Snippets/2052/Visual J# Language/Arrays",
+  "runtime/VJ#/Snippets/2052/Visual J# Language/Reflection",
+  "runtime/Xml/2052",
+  "runtime/Xml/2052/Snippets",
+  "runtime/Xml/2052/Snippets/xsd",
+  "runtime/Xml/2052/Snippets/xsd/Attributes",
+  "runtime/Xml/2052/Snippets/xsd/ComplexTypes",
+  "runtime/Xml/2052/Snippets/xsd/Elements",
+  "runtime/Xml/2052/Snippets/xsd/Extensions",
+  "runtime/Xml/2052/Snippets/xsd/Misc",
+  "runtime/Xml/2052/Snippets/xsd/SimpleTypes",
+  "runtime/Xml/2052/Snippets/xslt",
+  "runtime/Xml/2052/Snippets/xslt/html",
+  "runtime/Xml/2052/Snippets/xslt/xslTags"
+ ],
+ "externalDependencies": {
+  "originalInstall": [
+   "C:\\Program Files (x86)\\Microsoft Visual Studio 8\\Common7\\IDE\\dteproperties.tlb",
+   "C:\\Program Files (x86)\\Microsoft Visual Studio 8\\Common7\\IDE\\msenv.dll"
+  ],
+  "gac": [
+   "C:\\Windows\\assembly\\GAC\\Microsoft.VisualStudio.Shell.Interop\\7.1.40304.0__b03f5f7f11d50a3a\\Microsoft.VisualStudio.Shell.Interop.dll",
+   "C:\\Windows\\assembly\\GAC_32\\CustomMarshalers\\2.0.0.0__b03f5f7f11d50a3a\\CustomMarshalers.dll",
+   "C:\\Windows\\assembly\\GAC_32\\mscorlib\\2.0.0.0__b77a5c561934e089\\prcp.nlp",
+   "C:\\Windows\\assembly\\GAC_32\\mscorlib\\2.0.0.0__b77a5c561934e089\\sortkey.nlp",
+   "C:\\Windows\\assembly\\GAC_32\\mscorlib\\2.0.0.0__b77a5c561934e089\\sorttbls.nlp",
+   "C:\\Windows\\assembly\\GAC_MSIL\\Microsoft.Build.Engine.resources\\2.0.0.0_zh-CHS_b03f5f7f11d50a3a\\Microsoft.Build.Engine.resources.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\Microsoft.Build.Engine\\2.0.0.0__b03f5f7f11d50a3a\\Microsoft.Build.Engine.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\Microsoft.Build.Framework\\2.0.0.0__b03f5f7f11d50a3a\\Microsoft.Build.Framework.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\Microsoft.Build.Tasks.resources\\2.0.0.0_zh-CHS_b03f5f7f11d50a3a\\Microsoft.Build.Tasks.resources.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\Microsoft.Build.Tasks\\2.0.0.0__b03f5f7f11d50a3a\\Microsoft.Build.Tasks.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\Microsoft.Build.Utilities.resources\\2.0.0.0_zh-CHS_b03f5f7f11d50a3a\\Microsoft.Build.Utilities.resources.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\Microsoft.Build.Utilities\\2.0.0.0__b03f5f7f11d50a3a\\Microsoft.Build.Utilities.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\Microsoft.VisualStudio.resources\\2.0.0.0_zh-CHS_b03f5f7f11d50a3a\\Microsoft.VisualStudio.resources.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\System.Design\\2.0.0.0__b03f5f7f11d50a3a\\System.Design.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\System.Drawing.Design\\2.0.0.0__b03f5f7f11d50a3a\\System.Drawing.Design.dll",
+   "C:\\Windows\\assembly\\GAC_MSIL\\System.Windows.Forms.resources\\2.0.0.0_zh-CHS_b77a5c561934e089\\System.Windows.Forms.resources.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\CustomMarshalers\\95bc9dd6a30130d0a5e1f237a7a6523d\\CustomMarshalers.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\EnvDTE\\795cad7c14b76640d03160455c21e5b9\\EnvDTE.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\index2b7.dat",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\Microsoft.VisualStu#\\268b553d1c231d8363dbc29e1ad96317\\Microsoft.VisualStudio.Designer.Interfaces.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\Microsoft.VisualStu#\\2959f4e1f70e83ea2a7811b4238185a4\\Microsoft.VisualStudio.Design.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\Microsoft.VisualStu#\\35066b868e2b2b8ab5150833ebf9729f\\Microsoft.VisualStudio.OLE.Interop.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\Microsoft.VisualStu#\\747c7eb362596db77ec6f2a788e79103\\Microsoft.VisualStudio.Shell.Interop.8.0.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\Microsoft.VisualStu#\\7dee3dde92d409402a9fb81fcdb259ba\\Microsoft.VisualStudio.Shell.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\Microsoft.VisualStu#\\c03a44bf026bf295e9dfc32439dee4dc\\Microsoft.VisualStudio.Shell.Design.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\Microsoft.VisualStu#\\dd378a9079100f0a00e001faf0528b83\\Microsoft.VisualStudio.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\Microsoft.VisualStu#\\fb30056967e8e82db7a300178abb5a0b\\Microsoft.VisualStudio.CommonIDE.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\mscorlib\\30b327e2fa8a0e29427f4ac4eaf49ea2\\mscorlib.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\System.Drawing\\56882fe468fd33a97e70384bc6b91550\\System.Drawing.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\System.Windows.Forms\\e054beb76819104a73d104358ad352a0\\System.Windows.Forms.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\System.Xml\\672da0806920ec31199ae9659e2cac4d\\System.Xml.ni.dll",
+   "C:\\Windows\\assembly\\NativeImages_v2.0.50727_32\\System\\e16ad80ec4c22fe9252415131cd98f72\\System.ni.dll",
+   "C:\\Windows\\assembly\\pubpol196.dat"
+  ],
+  "framework": [
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\alink.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\config\\machine.config",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\culture.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\diasymreader.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\fusion.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.Common.targets",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.Common.Tasks",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.CompactFramework.CSharp.targets",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.CompactFramework.CSharp.v1.targets",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.CompactFramework.VisualBasic.targets",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.CompactFramework.VisualBasic.v1.targets",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.CSharp.targets",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.VisualBasic.targets",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.VisualJSharp.targets",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\mscorjit.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\mscorlib.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\mscorpe.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\mscorwks.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\RedistList\\CrystalReportsList.xml",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\RedistList\\FrameworkList.xml",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\RedistList\\JSharpList.xml",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\RedistList\\VSList.xml",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\SqlServer.targets",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\System.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\zh-CHS\\mscorrc.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\clr.dll",
+   "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\mscoreei.dll"
+  ]
+ },
+ "totals": {
+  "files": 46,
+  "bytes": 24345015
+ }
+}

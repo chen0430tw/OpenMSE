@@ -20,3 +20,4 @@ __pycache__/
 /runtime/Microsoft Visual Studio 2005 Professional Edition - CHS/Logs/
 /runtime/**/*.log
 /runtime/Settings/CurrentSettings.vssettings
+/dist/

@@ -1,6 +1,22 @@
+# 桥接协议
+
+当前 `HostBridge.exe` 实现协议 v2，由内核 HostManager 使用（见 [core.md](core.md) 的“旧宿主”）。v1 的消息格式保持兼容，下文 v1 部分仍然有效。
+
+## v2 相对 v1 的变化
+
+- `ready` 增加 `protocolVersion: 2`、`minProtocolVersion: 1`、`createdFileTime`、`bridgePid`、`maxRequestBytes`。内核要求版本至少为 2，且 PID 和创建时间与自己启动的实例一致。
+- 请求可带 `deadlineUnixMs`。桥接用后台线程读取 stdin，在 STA 线程上按顺序执行；轮到执行时若已过截止时间，则返回 `deadline_exceeded`，并且 `executed: false`，保证没有执行。
+- 每个应答带 `executed`（是否进入了执行）和递增的 `seq`。
+- 新方法：
+  - `host.ping`。
+  - `documents.sync`：参数 `path`、`text`，可选 `baseText`。打开文档；缓冲区已等于目标文本时返回 `already: true`；缓冲区等于 `baseText`（未提供时要求缓冲区未修改）时写入；否则返回 `conflict`。
+  - 两个仅供测试的方法，都要求自有实例：`host.sleep`（最多 10 秒）和 `host.exit_bridge`（不回应答，直接退出，用于模拟断开）。
+- `host.shutdown` 对没有文件名的隐式解决方案不再报路径错误。
+- COM 调用本身仍无法取消。超时由内核判定为“结果未知”，不会重放。
+
 # 实验桥协议 v1
 
-此协议只描述当前 `HostBridge.exe`，不等于未来 `IHostTransport` 的完整实现。
+此协议描述 `HostBridge.exe` 的基础消息，不等于未来 `IHostTransport` 的完整实现。
 
 ## 编译与运行
 

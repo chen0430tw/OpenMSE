@@ -17,7 +17,7 @@ namespace OpenMSE.Shell
             new Template { Name="VBScript 文件", Description="创建 VBScript 源文件。", Extension=".vbs", Content="Option Explicit\r\n' OpenMSE\r\n" },
             new Template { Name="C# 控制台项目", Description="创建可供 Visual Studio 2005 构建的 .NET 2.0 C# 项目。", Extension=".cs", Project=true, Content="using System;\r\n\r\ninternal static class Program\r\n{\r\n    private static void Main()\r\n    {\r\n        Console.WriteLine(\"Hello, OpenMSE\");\r\n    }\r\n}\r\n" },
             new Template { Name="Visual Basic 控制台项目", Description="创建可供 Visual Studio 2005 构建的 .NET 2.0 Visual Basic 项目。", Extension=".vb", Project=true, Content="Imports System\r\n\r\nModule Program\r\n    Sub Main()\r\n        Console.WriteLine(\"Hello, OpenMSE\")\r\n    End Sub\r\nEnd Module\r\n" }
-            ,new Template { Name="Windows 窗体布局", Description="可视化设计 Windows 窗体，导出 C# 或 Visual Basic 源码。", Extension=".omform", Content=new FormLayout().Serialize() }
+            ,new Template { Name="Windows 窗体布局", Description="可视化设计 Windows 窗体，导出 C# 或 Visual Basic 源码。", Extension=".omform", Content="{\"FormatVersion\":1,\"Title\":\"Form1\",\"Width\":720,\"Height\":480,\"Controls\":[]}" }
         };
 
         internal string CreateProject(string parent, string name)
@@ -40,53 +40,6 @@ namespace OpenMSE.Shell
             string path = Path.Combine(folder, name + ".sln");
             File.WriteAllText(path, solution, new UTF8Encoding(true));
             return path;
-        }
-    }
-
-    internal sealed class EditorDocument
-    {
-        internal string PathName;
-        internal Encoding Encoding = new UTF8Encoding(true);
-        internal string Original = "";
-        internal string DiskText;
-        internal string Newline = "\r\n";
-        internal static string Normalize(string text) { return text.Replace("\r\n", "\n").Replace("\r", "\n"); }
-        internal string Read(string path)
-        {
-            byte[] data = File.ReadAllBytes(path);
-            if (Array.IndexOf(data, (byte)0) >= 0 && !(data.Length >= 2 && ((data[0] == 255 && data[1] == 254) || (data[0] == 254 && data[1] == 255))))
-                throw new IOException("该文件似乎是二进制文件，请使用原版兼容工具打开。");
-            Encoding fallback;
-            try { new UTF8Encoding(false, true).GetString(data); fallback = new UTF8Encoding(false); }
-            catch (DecoderFallbackException) { fallback = System.Text.Encoding.Default; }
-            using (var reader = new StreamReader(new MemoryStream(data), fallback, true)) {
-                DiskText = reader.ReadToEnd(); Encoding = reader.CurrentEncoding;
-            }
-            if (data.Length >= 3 && data[0] == 239 && data[1] == 187 && data[2] == 191) Encoding = new UTF8Encoding(true);
-            PathName = System.IO.Path.GetFullPath(path);
-            Newline = DiskText.Contains("\r\n") ? "\r\n" : "\n";
-            Original = Normalize(DiskText);
-            return Original;
-        }
-        internal void Save(string path, string text)
-        {
-            path = System.IO.Path.GetFullPath(path);
-            if (String.Equals(path, PathName, StringComparison.OrdinalIgnoreCase) && DiskText != null) {
-                using (var reader = new StreamReader(path, Encoding, true))
-                    if (reader.ReadToEnd() != DiskText) throw new IOException("文件已被其他程序修改，请先重新打开或另存为，避免覆盖。");
-            }
-            string value = Normalize(text).Replace("\n", Newline);
-            // Fail rather than silently replacing characters in legacy code-page files.
-            Encoding strict = (Encoding)Encoding.Clone(); strict.EncoderFallback = EncoderFallback.ExceptionFallback;
-            byte[] body = strict.GetBytes(value), preamble = strict.GetPreamble();
-            byte[] bytes = new byte[preamble.Length + body.Length];
-            Buffer.BlockCopy(preamble, 0, bytes, 0, preamble.Length); Buffer.BlockCopy(body, 0, bytes, preamble.Length, body.Length);
-            string temp = path + ".openmse-" + Guid.NewGuid().ToString("N") + ".tmp";
-            try {
-                File.WriteAllBytes(temp, bytes);
-                if (File.Exists(path)) File.Replace(temp, path, null); else File.Move(temp, path);
-            } finally { if (File.Exists(temp)) File.Delete(temp); }
-            PathName = path; DiskText = value; Original = Normalize(text);
         }
     }
 }

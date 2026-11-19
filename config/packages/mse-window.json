@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "package": "mse-window",
+ "measured": "2026-11-20",
+ "scenarios": [
+  {
+   "name": "html-editor-window",
+   "verify": "python scripts\\package.py scenario-mse-window <package root>"
+  }
+ ],
+ "runtimeFiles": [
+  {
+   "path": "runtime/2052/MODHLPUI.DLL",
+   "size": 12080,
+   "sha256": "AD752D714D6D61BD69AAE010B83B445A87794FCBD09E9369225E1836212446BC"
+  },
+  {
+   "path": "runtime/2052/MSEINTL.DLL",
+   "size": 64272,
+   "sha256": "C0310F61DB2D725212EF0BA6CADCD156D03F9AEE692934D8675A06875295E08E"
+  },
+  {
+   "path": "runtime/2052/MSOINTL.DLL",
+   "size": 10364776,
+   "sha256": "AF5518519A29D104E970D061D2790FE6C7306CF787AA7EEA1DC3A04938645D89"
+  },
+  {
+   "path": "runtime/MODHELP.DLL",
+   "size": 459664,
+   "sha256": "89F84BECEED88D40990FE63FA82C51D2A8A19F12A6076942F3C65BFDAC8A0582"
+  },
+  {
+   "path": "runtime/msdbg2.dll",
+   "size": 582064,
+   "sha256": "8F366FD4A1D3E8B917BC1B95306957C1B3987CE473D61DD7D8ADE3C36D8267E9"
+  },
+  {
+   "path": "runtime/MSE7.EXE",
+   "size": 47472,
+   "sha256": "28B638B1C0A3176CD549FD5A85A3CFF4FA7A5CEFD31A3DEB46FEC697EF068A3B"
+  },
+  {
+   "path": "runtime/MSO.DLL",
+   "size": 17324928,
+   "sha256": "2FD2FA23BB984264A590688E71F2236A5C58682297DB0A8C9DA329C28D094418"
+  },
+  {
+   "path": "runtime/MSOMSE.DLL",
+   "size": 65408,
+   "sha256": "0A12D10200F65085EBF117583718AE051D1C0FE1DDF9145B14F9DAE5307EA614"
+  },
+  {
+   "path": "runtime/MSORES.DLL",
+   "size": 6637952,
+   "sha256": "21CD0292F70E8A512CF74F04E93477C39231D37D6FAB4C362D07AFDBB4B39981"
+  },
+  {
+   "path": "runtime/MSPTLS.DLL",
+   "size": 756376,
+   "sha256": "1C1D8F64F9D2560A27B3D7F00C834D772AD968E400DFEB51905A19CAE59ADFF9"
+  },
+  {
+   "path": "runtime/OGL.DLL",
+   "size": 1616240,
+   "sha256": "206AB2BF64C38FE09FF4F1E51E2C867A455D9E12AE9695C1C8F9938C13ACB9E3"
+  },
+  {
+   "path": "runtime/RICHED20.DLL",
+   "size": 1073360,
+   "sha256": "DADDD18D809335A48212CCC8AF45D64C4DC1B9E124551EE7EAB6F71E81AD700B"
+  },
+  {
+   "path": "runtime/VS Runtime/2052/HTMEDUI.DLL",
+   "size": 143360,
+   "sha256": "74D53A482044694585D74136D6E13240D6F59C05999BC7C10AB775CE50DB6273"
+  },
+  {
+   "path": "runtime/VS Runtime/2052/MSENVUI.DLL",
+   "size": 204800,
+   "sha256": "EDF155406CECCC30CADAFBFDDBC6B6B181D812617660C1C6F05E2D0F54EB9289"
+  },
+  {
+   "path": "runtime/VS Runtime/2052/VisualStudioTeamCoreUI.dll",
+   "size": 12800,
+   "sha256": "5341606BAB6DC9E45D913474DD7060189FFF5DB53885A94317D0B60F8E941591"
+  },
+  {
+   "path": "runtime/VS Runtime/2052/vsdebugui.dll",
+   "size": 110592,
+   "sha256": "320331C6F8134FD9A8E382BF3D4ED4541B14BC4D7AC237DEC49989359FD30D32"
+  },
+  {
+   "path": "runtime/VS Runtime/ATL70.DLL",
+   "size": 64512,
+   "sha256": "DACCA613D5CA110D10366A9CA787C8136257CFA800BF4ADBA90A62ECEBFC4EBE"
+  },
+  {
+   "path": "runtime/VS Runtime/HTMED.DLL",
+   "size": 909312,
+   "sha256": "19BFC847A5206D80566786203F5282592359AD5EA2F2E449C88192B367535A89"
+  },
+  {
+   "path": "runtime/VS Runtime/MSENV.DLL",
+   "size": 3035136,
+   "sha256": "C9EA77695135B1864D4C6EE1AAE8FA5594E2A4ECDCC5B11E941114B43E0918AB"
+  },
+  {
+   "path": "runtime/VS Runtime/MSVCP70.DLL",
+   "size": 487424,
+   "sha256": "9255C60B194CF849F3DB54587627E1B8FCE10C88875748642B58EE8E27E22536"
+  },
+  {
+   "path": "runtime/VS Runtime/MSVCR70.DLL",
+   "size": 344064,
+   "sha256": "F68E4CDBC879423EA47D763A6768567F5F8063924F13A74239750C13FA8D168A"
+  },
+  {
+   "path": "runtime/VS Runtime/MSVCR71.DLL",
+   "size": 348160,
+   "sha256": "8094AF5EE310714CAEBCCAEEE7769FFB08048503BA478B879EDFEF5F1A24FEFE"
+  },
+  {
+   "path": "runtime/VS Runtime/SCHEMAS/HTML/HTML32.XSD",
+   "size": 79259,
+   "sha256": "1BB5E9E9DC92614329100620A881E672154AF6DBC173F7B4A787CF721A2663F5"
+  },
+  {
+   "path": "runtime/VS Runtime/SCHEMAS/HTML/HTML40.XSD",
+   "size": 177943,
+   "sha256": "62E4A7675A826510F6092B682A8B6B420AB770966769AD2B825E1ECC3790580A"
+  },
+  {
+   "path": "runtime/VS Runtime/SCHEMAS/HTML/NSCP40.XSD",
+   "size": 108380,
+   "sha256": "C62D5ACAC4C5F728E46D41D060710E85341ECECCCC4B6C4D6E3D38E971343954"
+  },
+  {
+   "path": "runtime/VS Runtime/SCHEMAS/XML/adrotator.xsd",
+   "size": 1465,
+   "sha256": "171F90D46578B560A064DFF6CF550E5D0895B2C7820A399151E80FBEF3A1B69A"
+  },
+  {
+   "path": "runtime/VS Runtime/SCHEMAS/XML/ASP.XSD",
+   "size": 70215,
+   "sha256": "449E6E9AF51453B652424EDFC48A5D43EA9468908D8F4A66E24C8C44B485E8DF"
+  },
+  {
+   "path": "runtime/VS Runtime/SCHEMAS/XML/WSHMETA.XSD",
+   "size": 2481,
+   "sha256": "C478E9368952E4B6B3168E85C4959417AC3046292513D462406666772D548350"
+  },
+  {
+   "path": "runtime/VS Runtime/SCHEMAS/XML/xsdschema.xsd",
+   "size": 15876,
+   "sha256": "B2F4F03CF074FF56763D65706A340784645E9416BFD2E144DE07E4022B668741"
+  },
+  {
+   "path": "runtime/VS Runtime/TRIDSN.DLL",
+   "size": 311296,
+   "sha256": "3B5E5321054E1176013B5228B2812D3FE50D1C0573F060212FE5046DEA4196DE"
+  },
+  {
+   "path": "runtime/VS Runtime/VisualStudioTeamCore.dll",
+   "size": 356352,
+   "sha256": "DF51A19D97FA57F8B9F2691EFA9FC5042F232B329B7736A4B4A1A98B170E0CE1"
+  },
+  {
+   "path": "runtime/VS Runtime/vsdebug.dll",
+   "size": 692224,
+   "sha256": "EDEBF399F6759DD37130C380775E16C95EE3667C3390A8EBFF1F43210A205AFB"
+  }
+ ],
+ "runtimeDirectories": [
+  "runtime/VS Runtime/SCHEMAS/HTML",
+  "runtime/VS Runtime/SCHEMAS/XML"
+ ],
+ "externalDependencies": {
+  "originalInstall": [
+   "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\Cultures\\OFFICE.ODF"
+  ],
+  "gac": [],
+  "framework": []
+ },
+ "totals": {
+  "files": 32,
+  "bytes": 46480243
+ }
+}

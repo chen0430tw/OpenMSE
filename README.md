@@ -46,7 +46,12 @@ VS8 核验：`powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/ve
 | 路径 | 用途 |
 |---|---|
 | `OpenMSE.exe` | x86 启动器 |
-| `src/` | 启动器和重定向 DLL 源码 |
+| `src/` | 启动器和重定向 DLL 源码；`src/core/` 为 x64 文档内核，`src/shell/` 为统一界面 |
+| `build-core.cmd` | 构建 `bin/OpenMSE.Core.dll` 与内核/宿主测试 |
+| `build-debughost.cmd` | 构建 `bin/OpenMSE.DebugHost.x86.exe` / `.x64.exe` |
+| `config/hosts.json` | 旧宿主清单（入口、版本、SHA-256、启动器、桥接） |
+| `config/packages.json`、`config/packages/` | 包定义与实测依赖闭包 |
+| `scripts/package.py`、`scripts/check-install.ps1` | 测量、组装、场景验证；安装检查 |
 | `runtime/` | 统一的 MSE、VS2005、共享调试组件、SDK 和语言资源 |
 | `config/registry-template.json` | 从本机 MSE 配置导出的模板 |
 | `config/files.json` | 复制文件来源、大小和 SHA-256 |
@@ -97,13 +102,23 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File D:\OpenMSE\scripts\verif
 - 桥接源码：`src/bridge/HostBridge.cs`；构建：`scripts/build-bridge.ps1`
 - 实测入口：`scripts/audit-kernel.py`；机器可读结论：`config/kernel-capabilities.json`
 
+整合计划阶段 1–5 已接通，统一界面的功能都经过 x64 `OpenMSE.Core.dll`：
+- 文档的编辑、撤销和保存；工具箱与设计事务。
+- `.sln` 项目图，异步生成、运行与取消，错误列表。
+- 托管调试：F5/F9/F10/F11、调用堆栈、局部变量，由 `OpenMSE.DebugHost` 提供。
+- VS2005 后端宿主管理，使用桥协议 v2。
+
+VS2005 自身的调试和 MSE 自动化经实测仍为阻塞。
+
+阶段 6 已完成打包：核心包约 1 MiB，不含任何旧运行组件；VS2005 后端和 MSE 窗口各有实测闭包的可选包，另有完整兼容包。安装检查用 `scripts/check-install.ps1`，详见[打包与安装检查](docs/packaging.md)。参见[文档内核](docs/kernel/core.md)和[整合计划](docs/kernel/integration-plan.md)。
+
 VS2005 的中文文档读写、项目打开与构建通过。MSE 自动化接入尚未成功；VS2005 调试启动返回 `0x80004005`，断点命中、单步和变量读取尚未验证。这些限制需要在后续实现前解决。
 
 ## 从源码仓库构建
 
 仓库包含源码、示例、配置模板、文件来源清单，以及 统一 `runtime` 目录 中的微软运行组件；不包含本机安装日志、个人配置、编译结果或测试工作区。旧引擎兼容模式需要本机已有的对应安装与运行依赖，详见上述说明。
 
-只编译统一 GUI：运行 `scripts/build-shell.ps1`。编译启动器和兼容层前，需准备 MSVC x86 工具链、Windows SDK 和固定版本的 Detours：
+只编译统一 GUI：运行 `scripts/build-shell.ps1`。它会先构建 x64 内核（`build-core.cmd`）和 x86/x64 调试适配器（`build-debughost.cmd`，使用 `runtime/SDK/v2.0` 中的 .NET 2.0 SDK 头文件），因此需要 MSVC x86/x64 工具链。VS2005 后端还需要 `scripts/build-bridge.ps1`。编译启动器和兼容层前，需准备 MSVC x86 工具链、Windows SDK 和固定版本的 Detours：
 
 ```powershell
 git clone --branch v4.0.1 https://github.com/microsoft/Detours.git vendor/Detours

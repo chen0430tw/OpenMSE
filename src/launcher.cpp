@@ -40,6 +40,8 @@ static int runOpenMSE(int argc, wchar_t** argv) {
         if (wcscmp(argv[i], L"--wait") == 0) wait = true;
         if (wcscmp(argv[i], L"--loads-only") == 0) loadsOnly = true;
     }
+    // A freshly unpacked package has no logs directory; the PID file and logs must still be writable.
+    CreateDirectoryW((root + L"\\logs").c_str(), nullptr);
     SetEnvironmentVariableW(L"OPENMSE_ENGINE", vs8 ? L"vs8" : L"mse");
     SetEnvironmentVariableW(L"OPENMSE_LOADS_ONLY", loadsOnly ? L"1" : nullptr);
     wchar_t system[32768]; GetSystemDirectoryW(system, 32768);

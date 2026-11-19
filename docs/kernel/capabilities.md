@@ -23,3 +23,19 @@
 可复现入口：`scripts/build-bridge.ps1`、`scripts/audit-kernel.py`、`scripts/probe-nativeom.ps1`。测试会创建自己的隐藏 IDE 实例，在 `workspace/kernel-audit` 写入样例，绝不接管任意用户会话。失败的 MSE 连接不会自动关闭 IDE；如仍存活，须按 session marker 校验后关闭本次实例。
 
 原始结果在 `logs/kernel-audit/results.json`；逐条请求和结果在 `*-transcript.json`，VS8 命令清单在 `vs8-commands.json`，MSE NativeOM 探测在 `mse-nativeom.txt`。日志目录不加入 Git，仓库内此矩阵用于保存第一阶段结论。`config/kernel-capabilities.json` 保存精简机器可读结果。
+
+## 阶段 3–5 更新（2026-11-20）
+
+| 能力 | 提供者 | 证据 |
+|---|---|---|
+| 项目图（.sln/.csproj/.vbproj） | 内核 WorkspaceService | 已验证：VB 库与 C# 程序双项目、Debug/Release、ProjectReference |
+| 异步构建、失败定位、取消 | 内核 TaskManager + MSBuild 2.0 | 已验证：CS1525 定位到第 6 行第 17 列；取消后整棵进程树结束 |
+| 运行启动项目 | 内核 TaskManager | 已验证：捕获中文输出和真实退出码 |
+| VS2005 宿主生命周期 | 内核 HostManager + 桥协议 v2 | 已验证：自有实例绑定、超时后核对、写锁、迟到应答、队列过期不执行、断开重连、重启、优雅关闭 |
+| VS2005 文档同步 | `documents.sync` | 已验证：按内容幂等，重连或重启后不会重复写入 |
+| VS2005 调试 | EnvDTE | 仍阻塞：`Debugger.Go` 在隐藏和可见实例中都返回 0x80004005，期间无对话框 |
+| 托管调试（CLR 2.0） | OpenMSE.DebugHost x86/x64 | 已验证：断点命中、逐过程、逐语句（跨入 VB 库）、跳出、调用堆栈与源码位置、局部变量、字段求值、暂停、终止、退出码 |
+| MSE 自动化 | HostManager 独立验收 | 仍阻塞：自有隐藏实例在 30 秒内始终报告 `automation_not_registered` |
+| 语言诊断 | 构建诊断 | 已验证（来自编译器输出）；补全和跳转未实现 |
+
+阶段 3–5 的证据来自 `build/core-tests.exe`（125 项）、`build/host-tests.exe`（30 项）和 GUI 冒烟测试，它们都在独立测试目录中运行。另有一个发现：VS2005 SP1 每次启动都会弹出“建议使用管理员权限”的模态框，它会让隐藏实例无法注册 DTE。现在已在项目私有配置中关闭该提示，内核也会在绑定超时时报告宿主显示的对话框文本。
