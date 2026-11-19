@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>使用 ClickOnce 检查当前版本</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>使用 ClickOnce 检查当前版本。</Description>
+      <Shortcut>appCOVersion</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Deployment.dll</Assembly>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.Deployment</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Object>
+          <ID>currentVersion</ID>
+          <Type>Version</Type>
+          <ToolTip>存储应用程序的当前运行版本的 Version 对象。</ToolTip>
+          <Default>currentAppVersion</Default>
+        </Object>
+        <Object>
+          <ID>lastUpdate</ID>
+          <Type>Date</Type>
+          <ToolTip>存储上次更新日期的 Date 对象。</ToolTip>
+          <Default>lastUpdateDate</Default>
+        </Object>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[	If My.Application.IsNetworkDeployed Then
+
+		$currentVersion$ = My.Application.Deployment.CurrentVersion
+		$lastUpdate$ = My.Application.Deployment.TimeOfLastUpdateCheck
+
+	End If]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by [!output PROJECT_NAME]sp.RC
+//
+[!if APP_TYPE_DLG]
+#define IDR_MAINFRAME			128
+#define IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_DIALOG			102
+[!endif] 
+#define IDS_OK				3
+[!if SOCKETS]
+#define IDP_SOCKETS_INIT_FAILED		103
+[!endif]
+
+// 新しいオブジェクトの次の既定値
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+
+#define _APS_NEXT_RESOURCE_VALUE	129
+#define _APS_NEXT_CONTROL_VALUE		1000
+#define _APS_NEXT_SYMED_VALUE		101
+#define _APS_NEXT_COMMAND_VALUE		32771
+#endif
+#endif

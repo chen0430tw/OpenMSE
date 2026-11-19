@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+	<view titleBar="Pocket PC Phone Edition 2003 SE - VGA" displayPosX="110" displayPosY="151" displayWidth="480" displayHeight="640" displayDepth="16" mappingImage="PocketPC_PE_2003_VGA_Mask.png" normalImage="PocketPC_PE_2003_VGA_Up.png" downImage="PocketPC_PE_2003_VGA_Down.png">
+
+		<button toolTip="开/关" onPressAndHold="0x75" mappingColor="0xED145B"/>
+		<button toolTip="录音" onPressAndHold="0x44" mappingColor="0xF5989D"/>
+		<button toolTip="向上导航" onPressAndHold="0x48" mappingColor="0x0072BC" KeyEvent="Up"/>	
+		<button toolTip="向下导航" onPressAndHold="0x50" mappingColor="0x605CA8" KeyEvent="Down"/>
+		<button toolTip="功能键 1" onClick="DOWN:0x5b 0x70 UP:0x5b" mappingColor="0xF26C4F"/>	
+		<button toolTip="功能键 2" onClick="DOWN:0x5b 0x71 UP:0x5b" mappingColor="0xF68E56"/>
+		<button toolTip="功能键 3" onClick="DOWN:0x5b 0x72 UP:0x5b" mappingColor="0xFBAF5D"/>	
+		<button toolTip="功能键 4" onClick="DOWN:0x5b 0x73 UP:0x5b" mappingColor="0xF7941D"/>
+		<button toolTip="向上键" onPressAndHold="0x48" mappingColor="0x39B54A" KeyEvent="Up"/>
+		<button toolTip="向下键" onPressAndHold="0x50" mappingColor="0x009900" KeyEvent="Down"/>
+		<button toolTip="向左键" onPressAndHold="0x4B" mappingColor="0x66CC66" KeyEvent="Left"/>
+		<button toolTip="向右键" onPressAndHold="0x4D" mappingColor="0x00CC00" KeyEvent="Right"/>
+		<button toolTip="Enter" onClick="0x1C" mappingColor="0x006600" KeyEvent="Return"/>
+		<button toolTip="通话" onPressAndHold="0x3D" mappingColor="0x9E0B0E"/>
+		<button toolTip="结束" onPressAndHold="0x3E" mappingColor="0x754C24"/>
+		
+	</view>
+</skin>

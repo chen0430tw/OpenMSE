@@ -1,0 +1,203 @@
+//Microsoft Visual C++ 生成的资源脚本。
+//
+#include "resourceayg.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// 从 TEXTINCLUDE 2 资源生成。
+//
+[!if WIN_APP]
+#include "windows.h"
+#include "resdefce.h"
+[!else]
+#include "afxres.h"
+[!endif]
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+
+[!if WIN_APP]
+/////////////////////////////////////////////////////////////////////////////
+//
+// 图标
+//
+
+// ID 值最低的图标放在最前面，以确保应用程序图标
+// 在所有系统中保持一致。
+
+IDI_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]       ICON         "[!output PROJECT_NAME].ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 菜单
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    MENUITEM "确定",			IDM_OK
+
+    POPUP "帮助"
+    BEGIN
+        MENUITEM "关于",		IDM_HELP_ABOUT
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 快捷键
+//
+
+IDC_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME] ACCELERATORS
+BEGIN
+    "A",            IDM_HELP_ABOUT,         VIRTKEY, CONTROL, NOINVERT
+    "Q",            IDM_OK,          VIRTKEY, CONTROL, NOINVERT
+END
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 对话框
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 125, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CAPTIONOKBTN
+CAPTION "关于 [!output PROJECT_NAME]"
+FONT [!output ABOUTBOX_FONT_SIZE], "MS Shell Dlg"
+BEGIN
+    ICON         IDI_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME],IDC_STATIC,11,17,20,20
+    LTEXT        "[!output PROJECT_NAME] 1.0 版",IDC_STATIC,38,10,70,8,SS_NOPREFIX
+    LTEXT        "版权所有 (C) [!output YEAR]",IDC_STATIC,38,25,70,8
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 118
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 对话框
+//
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+1 TEXTINCLUDE  
+BEGIN
+    "resourceayg.h\0"
+END
+
+2 TEXTINCLUDE  
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#include ""resdefce.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE  
+BEGIN
+    "\r\n"
+    "#include ""[!output RC2_FILE_NAME]ayg.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 字符串表
+//
+
+STRINGTABLE  
+BEGIN
+   IDC_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]   "[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]"
+   IDS_APP_TITLE    "[!output PROJECT_NAME]"
+   IDS_OK	"确定"
+   IDS_HELP	"帮助"
+END
+
+[!else]
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE  
+BEGIN
+    "resourceayg.h\0"
+END
+
+2 TEXTINCLUDE  
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE  
+BEGIN
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])\r\n"
+    "LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]\r\n"
+    "#pragma code_page([!output SYSTEM_CODE_PAGE])\r\n"
+    "#include ""[!output RC2_FILE_NAME]ayg.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 字符串表
+//
+
+STRINGTABLE  
+BEGIN
+   IDS_APP_TITLE       "[!output PROJECT_NAME]"
+END
+[!endif]
+#endif
+/////////////////////////////////////////////////////////////////////////////
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// 从 TEXTINCLUDE 3 资源生成。
+//
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+#include "[!output RC2_FILE_NAME]ayg.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // 不是 APSTUDIO_INVOKED

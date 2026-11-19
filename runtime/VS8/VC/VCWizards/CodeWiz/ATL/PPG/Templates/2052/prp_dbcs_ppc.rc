@@ -1,0 +1,7 @@
+DIALOG 0, 0, 156, 129
+STYLE WS_CHILD
+FONT 9, "宋体, MS Sans Serif"
+BEGIN
+    LTEXT           "在此处插入控件。",IDC_STATIC,57,
+                    43,178,9
+END

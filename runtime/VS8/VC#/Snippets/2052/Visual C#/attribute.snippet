@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>attribute</Title>
+			<Shortcut>attribute</Shortcut>
+			<Description>使用建议模式的属性的代码段</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>属性的名称</ToolTip>
+					<Default>My</Default>
+				</Literal>
+				<Literal>
+					<ID>target</ID>
+					<Default>All</Default>
+				</Literal>
+				<Literal>
+					<ID>inherited</ID>
+					<Default>false</Default>
+				</Literal>
+				<Literal>
+					<ID>allowmultiple</ID>
+					<Default>true</Default>
+				</Literal>
+				<Literal Editable="false">
+					<ID>SystemAttribute</ID>
+					<Function>SimpleTypeName(global::System.Attribute)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>SystemAttributeUsage</ID>
+					<Function>SimpleTypeName(global::System.AttributeUsage)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>SystemAttributeTargets</ID>
+					<Function>SimpleTypeName(global::System.AttributeTargets)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>Exception</ID>
+					<Function>SimpleTypeName(global::System.Exception)</Function>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[ [$SystemAttributeUsage$($SystemAttributeTargets$.$target$, Inherited = $inherited$, AllowMultiple = $allowmultiple$)]
+sealed class $name$Attribute : $SystemAttribute$
+{
+    // See the attribute guidelines at 
+    //  http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpgenref/html/cpconusingattributeclasses.asp
+    readonly string _positionalString;
+    int _namedInt;
+    
+   // This is a positional argument.
+   public $name$Attribute (string positionalString) 
+   { 
+        this._positionalString = positionalString;
+        
+       // TODO: Implement code here.
+       $end$throw new $Exception$("The method or operation is not implemented.");       
+   }
+   public string PositionalString 
+   { 
+      get 
+      {
+         return this._positionalString; 
+      }
+   }
+   // This is a named argument.
+   public int NamedInt
+   { 
+      get 
+      {
+         return this._namedInt;
+      }
+      set 
+      {
+         this._namedInt = value;
+      }
+   } 
+}
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

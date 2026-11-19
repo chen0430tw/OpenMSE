@@ -1,0 +1,31 @@
+//
+// [!output RC2_FILE_NAME]SP.RC2 - ressources que Microsoft Visual C++ ne modifie pas directement
+//
+
+#ifdef APSTUDIO_INVOKED
+#error ce fichier n'est pas modifiable par Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Ajouter ici les ressources modifiées manuellement...
+
+/////////////////////////////////////////////////////////////////////////////
+HI_RES_AWARE CEUX {1}	// désactiver la couche émulation
+			// Supprimer cette ressource pour activer le doublement de pixel
+			// sur les plates-formes qui le prennent en charge
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Données
+//
+
+IDR_MAINFRAME SHMENUBAR DISCARDABLE
+BEGIN
+	IDR_MAINFRAME, 
+	1,
+	
+	I_IMAGENONE, IDOK, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,
+	IDS_OK, 0, NOMENU,
+END

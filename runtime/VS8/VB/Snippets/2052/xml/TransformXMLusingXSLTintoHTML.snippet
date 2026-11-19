@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>使用 XSLT 将 XML 转换成 HTML</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>使用 XSLT 将 XML 转换成 HTML。</Description>
+      <Shortcut>xmlXslt</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Xml.dll</Assembly>
+          <Url/>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.Xml.Xsl</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>xslt</ID>
+          <Type/>
+          <ToolTip>替换为 XSLT 文件的路径。</ToolTip>
+          <Default>"theXsltFile.xslt"</Default>
+          <Function/>
+        </Literal>
+        <Literal>
+          <ID>xml</ID>
+          <Type/>
+          <ToolTip>替换为 XML 文件的路径。</ToolTip>
+          <Default>"theXmlFile.xml"</Default>
+          <Function/>
+        </Literal>
+        <Literal>
+          <ID>output</ID>
+          <Type/>
+          <ToolTip>替换为输出文件名。</ToolTip>
+          <Default>"theOutputFile.html"</Default>
+          <Function/>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Dim xslt As New XslCompiledTransform
+
+        xslt.Load($xslt$)
+        xslt.Transform($xml$, $output$)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

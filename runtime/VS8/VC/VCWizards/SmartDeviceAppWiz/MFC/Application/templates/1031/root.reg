@@ -1,0 +1,20 @@
+REGEDIT
+; Diese .REG-Datei kann von Ihrem SETUP-Programm verwendet werden.
+;   Falls kein SETUP-Programm verfügbar ist, werden die unten stehenden Einträge
+;   automatisch in InitInstance registriert, mit einem Aufruf an
+;   CWinApp::RegisterShellFileTypes und COleObjectFactory::UpdateRegistryAll.
+
+[!if HAS_SUFFIX]
+HKEY_CLASSES_ROOT\.[!output FILE_EXTENSION] = [!output FILE_TYPE_ID]
+HKEY_CLASSES_ROOT\[!output FILE_TYPE_ID]\shell\open\command = [!output PROJECT_NAME].EXE %1
+HKEY_CLASSES_ROOT\[!output FILE_TYPE_ID]\shell\open\ddeexec = [open("%1")]
+HKEY_CLASSES_ROOT\[!output FILE_TYPE_ID]\shell\open\ddeexec\application = [!output PROJECT_NAME]
+    ; Hinweis: Die Anwendung ist optional
+    ;  (als Standardwert wird der Name der Anwendung in "command" verwendet)
+[!endif]
+
+[!if APP_TYPE_DLG]
+HKEY_CLASSES_ROOT\[!output SAFE_PROJECT_IDENTIFIER_NAME].Application = [!output SAFE_PROJECT_IDENTIFIER_NAME] Application
+[!else]
+HKEY_CLASSES_ROOT\[!output FILE_TYPE_ID] = [!output FILE_NEW_NAME_LONG]
+[!endif]

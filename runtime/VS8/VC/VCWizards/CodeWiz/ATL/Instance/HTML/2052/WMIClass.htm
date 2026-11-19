@@ -1,0 +1,1235 @@
+<HTML DIR="ltr">
+  <HEAD>
+
+    <TITLE>WMI 实例提供程序向导</TITLE>
+    <META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+    <META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+    <LINK ID="LINKURL" REL="stylesheet" HREF="../../../../../2052/NewStyles.css">
+  </HEAD>
+  
+  <BODY BGCOLOR="BUTTONFACE" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYPRESS="OnPress();">
+  
+    <!--This TABLE is the entire page//-->
+    <TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0"> <!-- MAIN TABLE -->
+    <COL WIDTH="100%">
+      <TR VALIGN="TOP">
+        <TD> 
+        
+          <!--This TABLE is the Icon & border on the top of the page -->
+          <TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0"> <!-- Icon & TOP Border TABLE -->
+          <COL WIDTH="20%"><COL><COL WIDTH="80%">
+            <TR>
+              <TD CLASS="IMAGE" VALIGN="bottom"> 
+                <DIV CLASS="SMALLA" ID="Layer0">
+                  <IMG CLASS="SMALLEST" SRC="../../Images/Instance_1.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0"></IMG>
+                </DIV>
+              </TD>
+              
+              <TD VALIGN="TOP">
+                &nbsp;
+              </TD>
+          
+              <TD VALIGN="TOP" >
+                <H4 CLASS="HEAD" ID="HEAD">选择您希望为其提供实例信息的 WMI 类</H4>
+                <P CLASS="SUBHEAD" ID="SUBHEAD">指定您希望支持您的对象的 Windows Management Instrumentation (WMI)类。</P>
+              </TD>
+            </TR>
+          </TABLE> <!-- End of TABLE containing Icon & border on the top of page -->
+          
+        </TD>
+      </TR> <!--Close out the row that contains the table for the title bar on the page-->
+      
+      <!--Back to rows in the main table -->
+      <!--Now we start the rows containing tables that are the bottom grey half of the page -->
+      <!--This contains 2 columns the left is the links to other pages and the right is the data -->
+      <TR VALIGN="TOP">
+        <TD HEIGHT="100%">
+      
+          <!-- first column is the links list, second column is the data -->
+          <TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0"> <!-- Link & Data/Button table-->
+          
+            <TR VALIGN="TOP">
+              <TD CLASS="THREE" VALIGN="TOP" HEIGHT="100%" WIDTH="30%">
+                <TABLE CLASS="fixedSize" HEIGHT="100%" WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+                  <TR VALIGN="TOP">
+                    <TD CLASS="threeCustom" VALIGN="TOP" STYLE="BACKGROUND-IMAGE:url(../../Images/Instance_background.gif)">
+                      
+                      <TABLE CLASS="THREE" BORDER="0" CELLPADDING="0" CELLSPACING="0"> <!--OPEN OF NAVIGATION TABLE//-->
+                      <COL WIDTH="4%"><COL WIDTH="92%"><COL WIDTH="4%">
+                        <TR> <!-- this row drops the link selections down a bit -->
+                          <TD VALIGN="TOP" COLSPAN="3" HEIGHT="5%">
+                            &nbsp;
+                          </TD>
+                        </TR>
+                        <TR>
+                          <TD VALIGN="TOP" HEIGHT="100%" WIDTH="5%">
+                            &nbsp;
+                          </TD>
+                          <TD VALIGN="TOP" HEIGHT="100%" WIDTH="100%"> <!--OPEN OF NAVIGATIONAL LINKS//-->
+                            <!--This TD is the column that runs down the left hand side of the page-->
+                            
+                            <DIV CLASS="LINK">
+                              <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+                                <TR VALIGN="center">
+                                  <TD WIDTH="100%">
+                                    <SPAN class=ACTIVELINK id=Default title="指定类名和文件名。" onclick="Next(document, 'Default.htm');" tabIndex=1><id id=idLocDefault>名称</id></SPAN>
+                                  </TD>
+                                </TR>
+                              </TABLE>
+                            </DIV>
+                            
+                            <DIV CLASS="LINKSELECTED">
+                              <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXTSELECTED">
+                                <TR VALIGN="MIDDLE">
+                                  <TD WIDTH="100%">
+                                    <SPAN id=WMIClass title="指定您希望支持您的对象的 Windows Management Instrumentation (WMI)类。"><id id=idLocWmiClass>WMI 类</id></SPAN>
+                                  </TD>
+                                </TR>
+                              </TABLE>
+                            </DIV>
+                            
+                            <DIV CLASS="LINK">
+                              <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+                                <TR VALIGN="center">
+                                  <TD WIDTH="100%">
+                                    <SPAN class=ACTIVELINK id=Attributes title="指定对象的实例功能、方法支持和线程模型。" onclick="Next(document, 'Attributes.htm');" tabIndex=1><id id=idLocAttributes>属性</id></SPAN>
+                                  </TD>
+                                </TR>
+                              </TABLE>
+                            </DIV>
+                            
+                          </TD> <!--CLOSE OF NAVIGATIONAL LINKS//-->
+                          
+                        </TR>
+                      </TABLE><!--CLOSE OF NAVIGATION TABLE//-->
+                      
+                    </TD> 
+                  </TR>
+                  
+              </TABLE>
+            </TD>
+            
+            <!-- second column in the first row of the Link & Data/button table -->
+            <TD VALIGN="TOP" HEIGHT="100%">
+            <!--OPEN OF CONTENT AND BUTTON TABLE//-->
+            
+              <TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+              <COL WIDTH="100%">
+              <TR VALIGN="TOP">
+                <TD HEIGHT="100%">
+                
+                  <!--OPEN OF CONTENT//-->  
+                  <TABLE class=CONTENT cellSpacing=0 cellPadding=0 border=0> <!-- content table -->
+                  <COL width="5%"> <COL width="90%"> <COL width="5%">
+                    <!--TBODY-->
+                    <TR>
+                      <TD vAlign=top colSpan=5 height="5%" >
+                        &nbsp;
+                      </TD>
+                    </TR>
+                    
+                    <TR>
+                      <TD vAlign=top width="5%" >
+                        &nbsp;
+                      </TD>
+                      
+                      <TD style="WIDTH: 100%" vAlign=top>
+                        <TABLE class="fixedSize" cellSpacing=0 cellPadding=0 border=0> <!-- inner content table -->
+                          <TR>
+                            <TD style="WIDTH:100%;" vAlign=top>
+                            
+                              <!-- invisible controls to store ns, classname and methods-->
+                              <input class=itemText id=NAMESPACE style="DISPLAY: none" name=NAMESPACE>
+                              </input>
+                              
+                              <input class=itemText id=WMICLASSNAME style="DISPLAY: none" name=WMICLASSNAME>
+                              </input>
+                              
+                              <input id=HAS_IMPL_METHODS style="DISPLAY: none" type=radio CHECKED name=HAS_IMPL_METHODS>
+                              </input>
+                              <!-- END invisible controls to store ns, classname and methods-->
+                              
+                              <P class=ElementSpacer>&nbsp;</P>
+
+                              <!-- the next 2 spans are 95% in width to get them the same size and the down arrow button on the first one -->
+                              
+                              <SPAN ID="SELECT_NAMESPACE" TITLE="选择该类所在的 WMI 命名空间。" class=itemTextTop>
+                                <id id=idLocSelectNS>选择命名空间(<u>N</u>):</id>
+                                <P class=Spacer>&nbsp;</P>
+                                <select class=itemText id=NSPICKER style="WIDTH:95%;" accessKey=N onchange=OnChangeNS() align=left size=1 name=NSPICKER TYPE="SELECT-ONE">
+                                  <option value=1 selected >root</option>
+                                </select>
+                                <br>
+                              </SPAN>
+                              
+                              <P CLASS="ElementSpacer15">&nbsp;</P>
+                              
+                              <SPAN ID="SELECT_CLASS" class=itemText TITLE="选择您的对象将为其提供实例和/或方法的类。">
+                                <id id=idLocSelectClass>选择类(<u>L</u>):</id> 
+                                <P class=Spacer>&nbsp;</P>
+                                <input class=itemTextTwoColumnLong oncut=OnInputKeyPress() onpaste=OnInputKeyPress() id=CLASSINPUT style="WIDTH:95%" align=left size=1 name=CLASSINPUT onkeypress="OnInputKeyPress()"> 
+                              </SPAN>
+                            </TD>
+                          </TR>
+                            
+                          <TR>
+                            <TD>  
+                              
+                              <!-- table to hold the box of items to select and the 2 buttons to the side -->
+                              <TABLE class="fixedSize" cellSpacing=0 cellPadding=0 border=0>
+                              <!-- class picker box is too small without the column widths -->
+                              <COL WIDTH="78%"> <COL WIDTH="2%"> <COL WIDTH="20%">
+                                <TR>
+                                  <TD>                                
+                                    <SPAN class=itemText>
+                                      <SELECT class=sideBtn3 id=CLASSPICKER ondblclick=OnClassDblClick(); style="WIDTH: 100%" accessKey=L onchange=OnChangeSelection(); size=4 name=CLASSPICKER TYPE="SELECT-ONE">
+                                      </SELECT>
+                                    </SPAN>
+                                  </TD>
+                                  
+                                  <TD> 
+                                    <P class=Spacer>&nbsp;</P>
+                                  </TD>
+                                  
+                                  <TD>
+                                    <TABLE class="fixedSize" cellSpacing=0 cellPadding=0 border=0> <!-- 2 button table -->
+                                      <TR>
+                                        <button class=buttons id=Select accessKey=S TITLE="接受“选择类”列表中的选项，并使其成为当前选择。" 
+                                          onclick=OnClassDblClick() type=button style="position:relative;  ">
+                                          选择(<u>S</u>)
+                                        </button>
+                                      </TR>
+                                      <TR>
+                                        <button class=buttons id=Clear accessKey=C TITLE="清除当前选定内容。"
+                                          onclick=onClearClick(); type="button" style="position:relative; ">
+                                          清除(<u>C</u>)
+                                        </button>
+                                      </TR> 
+                                    </TABLE> <!-- end of table holding the 2 buttons -->
+                                  </TD>
+                                  
+                                </TR>
+                              </TABLE> <!-- end of table holding box & 2 buttons to the side -->
+                              
+                              <P CLASS="ElementSpacer2">&nbsp;</P>
+                              
+                              <SPAN id="CURRENT_SELECTION" TITLE="提供程序对象将提供此类的实例和/或方法。" class=itemText>
+                                <id id=idLocCurrentSelection>当前选择: </id>
+                                <P class=Spacer>&nbsp;</P>
+                                <textarea class=itemText id=CURRENTSELECTION style="OVERFLOW: visible; WIDTH: 400px; BACKGROUND-COLOR: inactiveborder" readOnly></textarea> 
+                              </SPAN>
+                              
+                            </TD>
+                          </TR>
+                        </TABLE> <!-- end of inner content table -->
+                      </TD>            
+                    </TR> <!-- end of second row of content table -->
+                    
+                    <TR VALIGN="TOP"> <!-- neccessary spacing -->
+                      <TD VALIGN="TOP" WIDTH="12" HEIGHT="100%">
+                        &nbsp; 
+                      </TD>
+                    </TR>
+                    
+                  </TABLE> <!--CLOSE OF CONTENT TABLE -->
+                </TD>
+              </TR>
+              
+              <!-- Row of buttons on the bottom -->
+              <!-- buttons are very strange, Help is invisible (from style sheet) and 2 others appear -->
+              <!--   from the style sheet that are not listed below.  Without the spacing it doesn't work -->
+              <TR VALIGN="bottom">
+                <TD>
+                
+                <!--OPEN OF BUTTON HTML//-->
+                <TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0"> <!-- BUTTON TABLE -->
+                <COL WIDTH="12"><COL><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="12">
+                  <TR>
+                    <TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+                      <TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+                        <TR VALIGN="TOP">
+                          
+                        </TR>
+                      </TABLE>
+                    </TD>
+                  </TR>
+                  
+                  <TR>
+                    <TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+                      &nbsp;
+                    </TD>
+                  </TR>
+                  
+                  <TR>
+                    <TD VALIGN="center" HEIGHT="23" WIDTH="12">
+                      &nbsp;
+                    </TD>
+                    
+                    <TD VALIGN="TOP" HEIGHT="23">
+                      &nbsp;
+                    </TD>
+                    
+                    <TD VALIGN="center" HEIGHT="23" WIDTH="75">
+                      <BUTTON CLASS="BUTTONS" ID="FinishBtn" TITLE="验证条目并创建类。" onClick="OnFinish(document);" TYPE="BUTTON">完成</BUTTON>
+                    </TD>
+                    
+                    <TD VALIGN="center" HEIGHT="23" WIDTH="4">
+                      &nbsp;
+                    </TD>
+                    
+                    <TD VALIGN="center" HEIGHT="23" WIDTH="75">
+                      <BUTTON CLASS="BUTTONS" ID="CancelBtn" TITLE="关闭向导而不创建类。" onClick="window.external.Finish(document, 'cancel');" TYPE="BUTTON">
+                        取消
+                      </BUTTON>
+                    </TD>
+                    
+                    <TD VALIGN="center" HEIGHT="23" WIDTH="4">
+                      &nbsp;
+                    </TD>
+                    
+                    <TD VALIGN="center" HEIGHT="23" WIDTH="75">
+                      <BUTTON CLASS="BUTTONS" ID="HelpBtn" TITLE="显示此向导的帮助。" onClick="window.external.OnHelp('vc.codewiz.wmi.atl.instance.wmiclass');" TYPE="BUTTON">
+                        帮助
+                      </BUTTON>
+                    </TD>
+                    
+                    <TD VALIGN="center" HEIGHT="23" WIDTH="12">
+                      &nbsp;
+                    </TD>
+                  </TR>
+                  
+                  <TR>
+                    <TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+                      &nbsp;
+                    </TD>
+                  </TR>
+                </TABLE> <!-- END BUTTON TABLE -->
+                
+              <!--CLOSE OF BUTTON HTML//-->
+              </TD>
+            </TR>
+          </TABLE> <!-- END Link & Data/Button table-->
+      
+          <!--CLOSE OF CONTENT AND BUTTON TABLE//-->
+          </TD>
+        </TR>
+        </TABLE>
+      
+      <!--CLOSE OF ALL ENCOMPASSING TABLE ROW TWO//-->
+      </TD>
+      </TR>
+    </TABLE>
+    
+  </BODY>
+</HTML>
+<SCRIPT LANGUAGE="JSCRIPT">
+
+var tab_array = new Array();
+tab_array[0] = Default;
+tab_array[1] = WMIClass;
+tab_array[2] = Attributes;
+//tab_array[3] = Properties;
+
+var L_arCodeComments_Text = new Array();
+L_arCodeComments_Text[0] = "//TODO: 在此处输入适当的值和类型";
+L_arCodeComments_Text[1] = "//检查路径中的类名是否正确";
+L_arCodeComments_Text[2] = "//创建路径分析器对象";
+L_arCodeComments_Text[3] = "";
+L_arCodeComments_Text[4] = "//分析路径，查找方法执行实例";
+L_arCodeComments_Text[5] = "//获取关键属性的值:";
+L_arCodeComments_Text[6] = "//TODO: 保存 vValue 供以后使用";
+L_arCodeComments_Text[7] = "//TODO: 遍历数据源，查找匹配的对象";
+L_arCodeComments_Text[8] = "//获取输入参数:";
+L_arCodeComments_Text[9] = "//TODO: 保存输入参数值";
+L_arCodeComments_Text[10] = "//此方法没有输入参数";
+L_arCodeComments_Text[11] = "//TODO: 在此处添加代码以便执行方法";
+L_arCodeComments_Text[12] = "//获取输出参数类";
+L_arCodeComments_Text[13] = "//填充输出参数";
+L_arCodeComments_Text[14] = "//TODO: 使用适当的值和类型填充变量";
+L_arCodeComments_Text[15] = "// 通过接收器将输出对象发回客户端";
+L_arCodeComments_Text[16] = "//此方法没有输出参数";
+L_arCodeComments_Text[17] = "//输入参数对象的属性:";
+L_arCodeComments_Text[18] = "//输出参数对象的属性:";
+L_arCodeComments_Text[19] = "//根据值的设置情况，可能需要在此处对其进行清理";
+
+var locator;
+var services;
+var classSink = InternalGetObject("WbemScripting.SWbemSink");
+var arClassNames; 
+var dictLookup;  
+var bRestoreClassSelection;
+var bFirstLoad;
+var strCurNamespace;
+var arNamespaces;
+
+var dictCIM2VT = new ActiveXObject("Scripting.Dictionary");
+dictCIM2VT.Add("2", "VT_I2"); 	//wbemCimtypeSint16
+dictCIM2VT.Add("3", "VT_I4"); 	//wbemCimtypeSint32
+dictCIM2VT.Add("4", "VT_R4"); 	//wbemCimtypeReal32
+dictCIM2VT.Add("5", "VT_R8"); 	//wbemCimtypeReal64
+dictCIM2VT.Add("8", "VT_BSTR"); 	//wbemCimtypeString
+dictCIM2VT.Add("11", "VT_BOOL"); 	//wbemCimtypeBoolean
+dictCIM2VT.Add("13", "VT_UNKNOWN"); //wbemCimtypeObject
+dictCIM2VT.Add("16", "VT_I2"); 	//wbemCimtypeSint8	
+dictCIM2VT.Add("17", "VT_UI1"); //wbemCimtypeUint8
+dictCIM2VT.Add("18", "VT_I4"); 	//wbemCimtypeUint16 
+dictCIM2VT.Add("19", "VT_I4"); 	//wbemCimtypeUint32 
+dictCIM2VT.Add("20", "VT_BSTR"); 	//wbemCimtypeSint64 
+dictCIM2VT.Add("21", "VT_BSTR"); 	//wbemCimtypeUint64 
+dictCIM2VT.Add("101", "VT_BSTR"); //wbemCimtypeDatetime	
+dictCIM2VT.Add("102", "VT_BSTR"); //wbemCimtypeReference 
+dictCIM2VT.Add("103", "VT_I2"); //wbemCimtypeChar16 
+
+var propPrefix = 	"s_pProp";
+var methPrefix = 	"s_pMeth";
+var inparmPrefix = 	"s_pIn";
+var outparmPrefix = "s_pOut";
+
+function InitDocument(document)
+{
+	bFirstLoad = window.external.FindSymbol("DOCUMENT_FIRST_LOAD");
+	if (bFirstLoad)
+	{
+		window.external.SetDefaults(document);		
+	}
+	window.external.Load(document);
+	
+	locator = InternalGetObject("WbemScripting.SWbemLocator"); 
+			
+	EnumNamespaces("root", 1);
+	
+	CURRENTSELECTION.value = "";
+	
+	bRestoreClassSelection = true;
+					
+	//force selection of the last selected namespace and class
+	//or the first elements in both listboxes
+	RestoreNSSelection();
+			
+	OnChangeNS();	
+}
+
+function EnumNamespaces(name, num)
+{
+	dictLookup = new ActiveXObject("Scripting.Dictionary");
+	arNamespaces = new Array();			
+
+	FillNameSpaceToArray("root", 1);
+	arNamespaces.sort();
+	for (i = 0; i < arNamespaces.length; i++)		
+	{			
+		var oOption = document.createElement("OPTION");		
+		NSPICKER.options.add(oOption);	
+								
+		oOption.innerText = dictLookup.Item(arNamespaces[i]);			
+		oOption.Value = i + 1;					
+	}
+	
+	arNamespaces = null;
+	dictLookup = null;
+}
+
+function FillNameSpaceToArray(name, num)
+//recursively adds namespaces to the drop-down box
+{
+	
+	try
+	{
+		services = locator.ConnectServer("", name);	
+	}
+	catch (e)
+	{
+		return;
+	}
+	
+
+	var instances = new Enumerator(services.InstancesOf("__NAMESPACE"));
+
+	for (; !instances.atEnd(); instances.moveNext() )
+	{
+		num++;
+	
+
+		var NameOut;
+		if (name != "")
+		{
+			NameOut = name + "\\" + instances.item().Name;
+		}
+		else
+		{
+			NameOut = instances.item().Name;
+		} 
+
+	
+		arNamespaces[arNamespaces.length]= NameOut.toUpperCase();
+		dictLookup.Add (NameOut.toUpperCase(), NameOut);
+		FillNameSpaceToArray(NameOut, num);							
+	}
+}
+
+function OnChangeNS()
+//clear array and dictionary, then call asynchronous class enumeration
+{
+	//clear CLASSPICKER and CLASSINPUT first
+	while (CLASSPICKER.options.length > 0)
+	{
+		CLASSPICKER.options.remove(0);
+	}				
+	CLASSINPUT.value = "";		
+	
+	//clear class names array and dictionary
+	arClassNames = ""; 
+	arClassNames = new Array();
+	dictLookup = "";
+	dictLookup = new ActiveXObject("Scripting.Dictionary");
+	
+	//Display "Loading classes..." in the class list box
+	var L_LoadingClsMsg_Text = "正在加载类...";
+	var oOption = document.createElement("OPTION");		
+	CLASSPICKER.options.add(oOption);							
+	oOption.innerText = L_LoadingClsMsg_Text;			
+	oOption.Value = 1;
+	
+	var strNS = NSPICKER[NSPICKER.selectedIndex].innerText;
+	try
+	{
+		services = locator.ConnectServer("", strNS);
+	}
+	catch (e)
+	{
+		while (CLASSPICKER.options.length > 0)
+		{
+			CLASSPICKER.options.remove(0);
+		}				
+		return;
+	}
+					
+	document.body.style.cursor = 'wait';
+	//services.SubclassesOfAsync(classSink); 
+	
+	var enumClasses = new Enumerator(services.SubclassesOf("",
+									0, //wbemFlagReturnWhenComplete+wbemFlagQueryDeep,
+									null)); 
+
+	for (; !enumClasses.atEnd(); enumClasses.moveNext() )
+	{		
+	
+		//Put each qualifying object's class name into an array (in the uppercase) 
+		//and a dictionary, mapping uppercase and case-preservant names
+
+		//Filter out abstract, system  and event classes.
+		//Luckily, all event classes are abstract :)
+		if (CheckBoolQualifier(enumClasses.item(), "abstract") || IsSystem(enumClasses.item()))
+		{
+			continue;
+		}
+				
+		var NameOut = enumClasses.item().Path_.RelPath;
+		// Don't show "win32_ProviderEx" in the combo box.This is a base class
+		// for provider instances and does not need a provider
+		if(NameOut.toUpperCase() == "WIN32_PROVIDEREX")
+		{
+			continue;
+		}
+		arClassNames[arClassNames.length] = NameOut.toUpperCase();
+		dictLookup.Add (NameOut.toUpperCase(), NameOut);
+	}	
+	
+	//sort the uppercase array; pull case-preservant names from the dictionary 
+	//and display them
+
+	//clear "Loading..." text from CLASSPICKER		
+	while (CLASSPICKER.options.length > 0)
+	{
+		CLASSPICKER.options.remove(0);
+	}
+
+	arClassNames.sort();
+	
+	for (i = 0; i < arClassNames.length; i++)		
+	{			
+		var oOption = document.createElement("OPTION");		
+		CLASSPICKER.options.add(oOption);	
+								
+		oOption.innerText = dictLookup.Item(arClassNames[i]);			
+		oOption.Value = i + 1;					
+	}
+
+	if (bRestoreClassSelection)		//first enumeration after InitDocument()
+	{
+		RestoreClassSelection();
+		bRestoreClassSelection = false;
+	}
+	else
+	{
+		//force selection of the first class in the list
+		CLASSPICKER.selectedIndex = 0;			
+		OnChangeSelection();	
+	}	
+	
+	document.body.style.cursor = 'default';
+								
+}
+
+function OnInputKeyPress()
+//selects best-matching class in the listbox
+{    
+	//update text immediately
+	//CLASSINPUT.value += String.fromCharCode(event.keyCode);
+		
+	var strInput = CLASSINPUT.value.toUpperCase(); // + String.fromCharCode(event.keyCode).toUpperCase();
+	
+	//alert (strInput);
+			
+	var bLoopThrough = true;
+		
+	for (i = 0; i < CLASSPICKER.options.length; i++)
+	{	
+		var strListed = CLASSPICKER.options[i].innerText.toUpperCase();
+		//alert (strListed);
+				
+		if (strListed >= strInput)
+		{
+			CLASSPICKER.selectedIndex = i;						
+			bLoopThrough = false;
+			break;
+		}
+	}		
+	if (bLoopThrough)
+	{
+		//select the last line
+		CLASSPICKER.selectedIndex = CLASSPICKER.options.length - 1;
+	}
+	
+	//we already updated text, so no need to add the character again:		
+	//event.returnValue=false;
+}
+
+function OnChangeSelection()
+//display selected value in CLASSINPUT box
+{
+	if (CLASSPICKER.selectedIndex == -1)
+	{
+		return;
+	}		
+	
+	var selectionValue = CLASSPICKER[CLASSPICKER.selectedIndex].innerText;
+	
+	//check to see if the selected string is a class name (i.e., appears in the map)
+	if (!dictLookup.Exists(selectionValue.toUpperCase())) 
+	{
+		return;
+	}
+	
+	CLASSINPUT.value = selectionValue;		
+}
+
+function OnClassDblClick()
+{
+	if (NSPICKER.options.length == 0 || CLASSPICKER.options.length ==0)
+	{
+		return;
+	}
+
+	var selNamespace = NSPICKER[NSPICKER.selectedIndex].innerText;
+	var selClassName = CLASSPICKER[CLASSPICKER.selectedIndex].innerText;
+	
+	//see if the class already has a "provider" qualifier and warn
+	var classObj = services.Get(selClassName);	
+	var strCurrentProv = GetCurrentProviderName(classObj);
+	if (strCurrentProv != "")
+	{
+		var L_provWarMsg_Text = "警告: 此类已有一个提供程序: ";
+		var L_provWarMsg2_Text = "。替换现有提供程序可能会使您的系统不稳定。确实要这样做吗?";
+		
+		var bReplaceProv = confirm (L_provWarMsg_Text + strCurrentProv + L_provWarMsg2_Text);
+		if (!bReplaceProv)
+		{
+			return;
+		}
+	}
+	
+	var selectionValue = selNamespace + " : " +	selClassName;								
+	
+	//check to see if the selected string is a class name (i.e., appears in the map)
+	if (!dictLookup.Exists(selClassName.toUpperCase())) 
+		return;
+		
+	CURRENTSELECTION.value = selectionValue;
+	CURRENTSELECTION.test = "";
+	NAMESPACE.value = selNamespace;
+	WMICLASSNAME.value = selClassName;
+
+	strCurNamespace = selNamespace;
+			
+}
+
+function Next(document, linkto)
+{
+	GetWMIClassInfo();
+	bGetClassInfo = true;
+	window.external.Next(document, linkto);
+}
+
+
+function OnFinish(document)
+{
+	GetWMIClassInfo();
+	bGetClassInfo = true;
+
+	if (window.external.FindSymbol("SHORT_NAME").length == 0)
+	{
+		var L_ErrMsg1_Text = "需要指定一个简称。";
+		window.external.ReportError(L_ErrMsg1_Text);
+		Next(document, "default.htm");
+		return;
+	}
+
+	if (window.external.FindSymbol("ATTRIBUTED") == true)
+		if (!ConvertProjectToAttributed())
+			return;
+
+	OnWizFinish(document);
+}
+
+function InternalGetObject(progID)
+{
+	var broker = new ActiveXObject("WMIScriptUtils.WMIObjectBroker2");
+	broker.SetDevEnvironment(window.external.dte);
+	if (broker.CanCreateObject(progID))
+	{
+		return broker.CreateObject(progID);
+	}
+	else
+	{
+		try
+		{
+			var registrar = new ActiveXObject("WMIScriptUtils.WMIObjectBrokerRegistration2");
+			if(registrar == null)
+			{
+				return;
+			}
+			registrar.SetDevEnvironment(window.external.dte);
+  			registrar.Register(progID);
+  			return broker.CreateObject(progID);
+		}
+		catch(e)
+		{
+			return;
+		}
+	}
+}
+
+function RestoreNSSelection()
+{
+	strCurNamespace = NAMESPACE.value;
+	//select saved namespace in NSPICKER
+	for (i = 0; i < NSPICKER.options.length; i++)
+	{	
+		var strCurrent = NSPICKER.options[i].innerText;
+		if (strCurrent == NAMESPACE.value) 
+		{
+			NSPICKER.selectedIndex = i;	
+			
+			// Set NameSpace only if there is a classname
+			if(WMICLASSNAME.value != "")
+			{
+				//fill CURRENTSELECTION box:
+				CURRENTSELECTION.value = NAMESPACE.value + " : ";				
+			}
+			return;
+		}
+	}	
+	//or, just select the first index
+	NSPICKER.selectedIndex = 0;
+								
+}
+
+function RestoreClassSelection()
+{
+	var bRestored = false;
+	
+	//select saved class in CLASSPICKER
+	for (i = 0; i < CLASSPICKER.options.length; i++)
+	{	
+		var strCurrent = CLASSPICKER.options[i].innerText;
+		if (strCurrent == WMICLASSNAME.value) 
+		{
+			CLASSPICKER.selectedIndex = i;
+			
+			//fill CURRENTSELECTION box:
+			CURRENTSELECTION.value += WMICLASSNAME.value;	
+			
+			bRestored = true;				
+			break;
+		}
+	}
+	
+	//or, just select the first index
+	if (!bRestored)
+	{
+		CLASSPICKER.selectedIndex = 0;
+	}
+										
+	//update CLASSINPUT
+	OnChangeSelection();
+}
+
+
+function IsSystem(objObject)
+{
+	try 
+	{
+		var NameOut = objObject.Path_.RelPath;
+				
+		return (NameOut.slice(0, 2).toString() == "__");				
+	}
+	catch(e)
+	{
+		return false;
+	}				
+}
+
+function CheckBoolQualifier (obj, qualName)
+{
+try 
+	{
+		var qual = obj.Qualifiers_(qualName);	
+			
+		return (qual.Value);
+	}
+	catch(e)
+	{
+		//NOTE that if the qualifier is not present, "Not found" will be returned
+		//Return false in this case
+		return false;
+	}				
+}
+
+function GetCurrentProviderName (obj)
+{
+//checks if the class already has a "provider" qualifier value and returns it.
+//if the class doesn't have a "provider" qualifier or its value is empty, an empty string is 
+//returned.
+try 
+	{
+		var qual = obj.Qualifiers_("provider");	
+					
+		return (qual.Value.toString());
+	}
+	catch(e)
+	{
+		//NOTE that if the qualifier is not present, "Not found" will be returned
+		//Return empty string in this case
+		return "";
+	}				
+}
+
+function GetWMIClassInfo()
+{
+	if (WMICLASSNAME.value == "")
+		return;		
+
+	if(strCurNamespace == "" || strCurNamespace == null)
+	{
+		return;
+	}
+
+	// Get the services for the selected class
+	// Namespace in the list box might be changed and this would have changed 
+	// the services pointer
+	try
+	{
+		services = locator.ConnectServer("", strCurNamespace);
+	}
+	catch(e)
+	{
+		return;
+	}
+	
+	var strStaticDecls = "";
+	var strStaticDefs = "";
+	var strInstancePopulation = "";
+	var strInstancePopulation1 = "";        // This is for GetInstanceByPath
+	
+	var classObj = services.Get(WMICLASSNAME.value);
+			
+	var props = new Enumerator (classObj.Properties_);
+	var nKeys = 0;
+	var nAddTab = false;
+	var bFirst  = true;
+	
+	for (; !props.atEnd(); props.moveNext() )
+	{
+		if (CheckBoolQualifier(props.item(), "key"))
+			nKeys++;
+		
+		strStaticDecls += "extern const WCHAR * " + propPrefix + props.item().Name + ";\n";
+		strStaticDefs += "const static WCHAR * " + propPrefix + props.item().Name +
+									" = L\"" + props.item().Name + "\";\n";
+									
+		var vt = dictCIM2VT.Item(props.item().CIMType.toString());
+		if (props.item().IsArray) {
+			vt += " | VT_ARRAY";
+		}
+		
+		if(nAddTab)
+		{
+			strInstancePopulation  += "\t";	
+			strInstancePopulation1  += "";	
+		}
+		if(bFirst == true)
+		{
+			strInstancePopulation  += "\t	var.vt = " + vt + ";\n";
+			strInstancePopulation1  += "	var.vt = " + vt + ";\n";
+			bFirst = false;
+		}
+		else
+		{
+			strInstancePopulation  += "\t	var.vt = " + vt + ";\n";
+			strInstancePopulation1  += "	var.vt = " + vt + ";\n";
+		}
+		strInstancePopulation  += "\t	//var.<type> = <value>; " + L_arCodeComments_Text[0] + "\n";
+
+
+		strInstancePopulation  += "\t	BSTR bstrProperty"+ props.item().Name +"=SysAllocString("+ propPrefix + props.item().Name +");\n"
+		strInstancePopulation  += "\t	if (NULL == bstrProperty"+ props.item().Name +")\n"
+		strInstancePopulation  += "\t	{\n"
+		strInstancePopulation  += "\t	    " + L_arCodeComments_Text[19] + "\n";
+		strInstancePopulation  += "\t	    hr = WBEM_E_OUT_OF_MEMORY;\n"
+		strInstancePopulation  += "\t	    return hr;\n"
+		strInstancePopulation  += "\t	}\n"
+
+		strInstancePopulation  += "\t	hr = pNewInst->Put(bstrProperty"+ props.item().Name +", 0, &var, 0);\n";
+
+		strInstancePopulation  += "\t	SysFreeString(bstrProperty"+ props.item().Name +");\n"
+		strInstancePopulation  += "\t	bstrProperty"+ props.item().Name +" = NULL;\n"
+
+		strInstancePopulation  += "\t	" + L_arCodeComments_Text[19] + "\n";
+		strInstancePopulation  += "\t	if(FAILED(hr))\n";
+		strInstancePopulation  += "\t	{\n";
+		strInstancePopulation  += "\t		return hr;\n";
+		strInstancePopulation  += "\t	}\n\n";
+
+		strInstancePopulation1  += "	//var.<type> = <value>; " + L_arCodeComments_Text[0] + "\n";
+
+		strInstancePopulation1  += "	BSTR bstrProperty2"+ props.item().Name +"=SysAllocString("+ propPrefix + props.item().Name +");\n"
+		strInstancePopulation1  += "	if (NULL == bstrProperty2"+ props.item().Name +")\n"
+		strInstancePopulation1  += "	{\n"
+		strInstancePopulation1  += "	    " + L_arCodeComments_Text[19] + "\n";
+		strInstancePopulation1  += "	    hr = WBEM_E_OUT_OF_MEMORY;\n"
+		strInstancePopulation1  += "	    return hr;\n"
+		strInstancePopulation1  += "	}\n"
+
+		strInstancePopulation1  += "	hr = pNewInst->Put(bstrProperty2"+ props.item().Name +", 0, &var, 0);\n";
+
+		strInstancePopulation1  += "	SysFreeString(bstrProperty2"+ props.item().Name +");\n"
+		strInstancePopulation1  += "	bstrProperty2"+ props.item().Name +" = NULL;\n"
+
+		strInstancePopulation1  += "	" + L_arCodeComments_Text[19] + "\n";
+		strInstancePopulation1  += "	if(FAILED(hr))\n";
+		strInstancePopulation1  += "	{\n";
+		strInstancePopulation1  += "		return hr;\n";
+		strInstancePopulation1  += "	}\n\n";
+		//nAddTab = true;								
+	}	
+				
+	window.external.AddSymbol("PROPERTY_DEFINITIONS", strStaticDefs);
+	window.external.AddSymbol("PROPERTY_DECLARATIONS", strStaticDecls);
+	window.external.AddSymbol("POPULATE_INSTANCE", strInstancePopulation);
+	window.external.AddSymbol("GET_INSTANCEBYPATH", strInstancePopulation1);
+	window.external.AddSymbol("IS_COMPOUND_KEY", (nKeys > 1).toString());
+	
+	//find if the object is a singleton
+	var bSingleton = CheckBoolQualifier(classObj, "Singleton");
+	window.external.AddSymbol("IS_SINGLETON", bSingleton);
+	
+	GetMethodInfo(classObj);
+}
+
+
+function GetMethodInfo(classObj)
+{
+	if (WMICLASSNAME.value == "")
+		return;		
+	
+	var strMethDeclarations = "";
+	var strMethDefinitions = "";
+	var strExecMethodBody = "";
+	//find if the object has any methods
+	var eMeths = new Enumerator (classObj.Methods_);		
+	var bStatic, bImplemented, bSingleton;
+	
+//	strExecMethodBody += "	" + L_arCodeComments_Text[2] + "\n";
+	
+	strExecMethodBody += "	hr = S_OK;\n";
+//	strExecMethodBody += "	CComPtr<IWbemPath>pPath;\n";
+//	strExecMethodBody += "	hr = m_pPathFactory->CreateInstance(NULL,\n" +
+//							"					IID_IWbemPath,\n" +
+//							"					(void **) &pPath);\n";
+//	strExecMethodBody += "	if (FAILED(hr))\n	{\n		return hr;\n	}\n" 
+					
+//    	strExecMethodBody += "	hr = pPath->SetText(WBEMPATH_CREATE_ACCEPT_ALL, strObjectPath);\n";
+//	strExecMethodBody += "	if (FAILED(hr))\n";
+//	strExecMethodBody += "	{\n";
+//	strExecMethodBody += "		return hr;\n";
+//	strExecMethodBody += "	}\n";
+//  	strExecMethodBody += "	long nPathLen = SysStringLen(strObjPath);\n";
+//    	strExecMethodBody += "	ULONG ulBufLen = nPathLen;\n";	
+//	strExecMethodBody += "	WCHAR * wClass = new WCHAR[nPathLen];\n";
+//	strExecMethodBody += "	if (NULL == wClass)\n	{\n		return WBEM_E_OUT_OF_MEMORY;\n	}\n";
+//	strExecMethodBody += "	hr = pPath->GetClassName(&ulBufLen, wClass);\n";
+//	strExecMethodBody += "	if (FAILED(hr))\n";
+//	strExecMethodBody += "	{\n";
+//	strExecMethodBody += "		return WBEM_E_INVALID_PARAMETER;\n";
+//	strExecMethodBody += "	}\n";
+//      strExecMethodBody += "  DWORD lcid = MAKELCID(MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_US), SORT_DEFAULT);\n";
+//	strExecMethodBody += "	if (CSTR_EQUAL == CompareStringW(lcid, NORM_IGNORECASE, s_pMyClassName, -1, wClass, -1))\n	{\n";
+//	strExecMethodBody += "		delete[] wClass;\n";
+//	strExecMethodBody += "		return WBEM_E_INVALID_PARAMETER;\n\	}\n";	
+//	strExecMethodBody += "	delete[] wClass;\n";		
+	strExecMethodBody += "	CComPtr<IWbemClassObject> pInstance;\n\n"
+				
+	var bFirstNonStatic = true;
+	var bFirstStatic    = true;
+	var strExecTempStatic = "";
+	strExecMethodBody += "    DWORD lcid = MAKELCID(MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_US), SORT_DEFAULT);\n";
+	for (var nMeths = 0, nImplMeths = 0; !eMeths.atEnd(); eMeths.moveNext(), nMeths++ )
+	{
+	
+		strMethDeclarations += "\n//" + eMeths.item().Name + "\n";
+		strMethDefinitions +=  "\n//" + eMeths.item().Name + "\n";
+		
+		strMethDeclarations += "extern const WCHAR * " + methPrefix + eMeths.item().Name + ";\n";
+		strMethDefinitions +=  "const static WCHAR * " + methPrefix + eMeths.item().Name +
+									" = L\"" + eMeths.item().Name + "\";\n";
+		bImplemented = CheckBoolQualifier(eMeths.item(), "implemented");
+			
+		bStatic = CheckBoolQualifier(eMeths.item(), "static");
+		bSingleton = CheckBoolQualifier(classObj, "singleton");	
+		if (!bStatic && !bSingleton) 
+		{
+			if(bFirstNonStatic)
+			{
+				strExecMethodBody += "	if (CSTR_EQUAL == CompareStringW(lcid, NORM_IGNORECASE, strMethodName, -1, " + methPrefix + 
+								eMeths.item().Name + ", -1)";
+				bFirstNonStatic = false;
+			}
+			else
+			{
+				strExecMethodBody += " || \n";
+				strExecMethodBody += "		CSTR_EQUAL == CompareStringW(lcid, NORM_IGNORECASE, strMethodName, -1, " + methPrefix + 
+									eMeths.item().Name + ", -1) ";
+			}
+		}
+		else
+		{
+			if(bFirstStatic)
+			{
+				strExecTempStatic += "	if (CSTR_EQUAL == CompareStringW(lcid, NORM_IGNORECASE, strMethodName, -1, " + methPrefix + 
+								eMeths.item().Name + ", -1)";
+				bFirstStatic  = false;
+			}
+			else
+			{
+				strExecTempStatic += " || \n";
+				strExecTempStatic += "		CSTR_EQUAL == CompareStringW(lcid, NORM_IGNORECASE, strMethodName, -1, " + methPrefix + 
+									eMeths.item().Name + ", -1) ";
+			}
+		}
+
+	}
+	
+	// Generate Code for non-static methods
+	if(!bFirstNonStatic)
+	{
+		strExecMethodBody += ")\n";
+		strExecMethodBody += "	{\n";
+		strExecMethodBody += "		ULONG ulPathTest = WBEMPATH_INFO_IS_INST_REF;\n";
+		strExecMethodBody += "		" + L_arCodeComments_Text[1] + "\n";
+		strExecMethodBody += "		if (FAILED(m_pHelper->CheckInstancePath(m_pPathFactory,strObjectPath,\n";
+		strExecMethodBody += "							(BSTR)s_pMyClassName,ulPathTest)))\n";
+		strExecMethodBody += "		{\n";
+		strExecMethodBody += "			return WBEM_E_INVALID_PARAMETER;\n"
+		strExecMethodBody += "		}\n\n";
+		strExecMethodBody += "		" + L_arCodeComments_Text[4] + "\n";
+		strExecMethodBody += "		hr = GetInstanceByPath(strObjectPath,&pInstance);\n"
+		strExecMethodBody += "		if(!SUCCEEDED(hr))\n"
+		strExecMethodBody += "		{\n";
+		strExecMethodBody += "			return hr;\n"
+		strExecMethodBody += "		}\n";
+		strExecMethodBody += "	}\n\n";
+	}
+	
+		// Generate Code for static methods
+	if(!bFirstStatic)
+	{
+		strExecMethodBody += strExecTempStatic;
+		strExecMethodBody += ")\n";
+		strExecMethodBody += "	{\n";
+		strExecMethodBody += "		ULONG ulPathTest = WBEMPATH_INFO_IS_CLASS_REF;\n";
+		strExecMethodBody += "		" + L_arCodeComments_Text[1] + "\n";
+		strExecMethodBody += "		if (FAILED(m_pHelper->CheckInstancePath(m_pPathFactory,strObjectPath,\n";
+		strExecMethodBody += "							(BSTR)s_pMyClassName,ulPathTest)))\n";
+		strExecMethodBody += "		{\n";
+		strExecMethodBody += "			return WBEM_E_INVALID_PARAMETER;\n"
+		strExecMethodBody += "		}\n";
+		strExecMethodBody += "	}\n\n";
+	}
+
+
+	eMeths = new Enumerator (classObj.Methods_);		
+	for (var nMeths = 0, nImplMeths = 0; !eMeths.atEnd(); eMeths.moveNext(), nMeths++ )
+	{
+        	    
+		if (bImplemented) 	
+			nImplMeths++;
+		else
+			continue;
+
+		//enumerate properties of the input parameters object
+		strExecMethodBody += "	if (CSTR_EQUAL == CompareStringW(lcid, NORM_IGNORECASE, strMethodName, -1, " + methPrefix + 
+								eMeths.item().Name + ", -1))\n";
+		strExecMethodBody += "	{\n";
+	        strExecMethodBody += "		VARIANT var;\n";
+	        strExecMethodBody += "		VariantInit(&var);\n";	
+							
+		var oInParams = eMeths.item().InParameters;
+		if (oInParams) 
+		{																		
+			strExecMethodBody += "		" + L_arCodeComments_Text[8] + "\n";					
+							
+			var inParms = new Enumerator (oInParams.Properties_);
+			for (; !inParms.atEnd(); inParms.moveNext() )
+			{		
+				strMethDeclarations += "extern const WCHAR * " + inparmPrefix + eMeths.item().Name + 
+									inParms.item().Name  + ";\n";
+									
+				strMethDefinitions +=  "const static WCHAR * " + inparmPrefix + eMeths.item().Name +
+									inParms.item().Name + " = L\"" + inParms.item().Name + "\";\n";
+												
+				strExecMethodBody  += "		hr = pInParams->Get(" + inparmPrefix + 
+									eMeths.item().Name + inParms.item().Name +
+									", 0, &var, NULL, NULL);\n";																				
+				strExecMethodBody += "		if (FAILED(hr))\n";
+				strExecMethodBody += "		{\n";
+				strExecMethodBody += "			return hr;\n";
+				strExecMethodBody += "		}\n\n";
+				strExecMethodBody += "		" + L_arCodeComments_Text[9] + "\n";
+				strExecMethodBody += "		VariantClear(&var);\n";		
+			}
+		}			
+		else 
+		{
+			strExecMethodBody  += "		" + L_arCodeComments_Text[10] + "\n";
+		}
+				
+		strExecMethodBody += "		" + L_arCodeComments_Text[11] + "\n\n";
+								
+		//deal with the output parameters object	
+		strMethDeclarations += L_arCodeComments_Text[18] + "\n";
+		strMethDefinitions +=  L_arCodeComments_Text[18] + "\n";
+					
+		var oOutParams = eMeths.item().OutParameters;
+		if (oOutParams) 
+		{
+									
+			strExecMethodBody += "		" + L_arCodeComments_Text[12] + "\n";
+			strExecMethodBody += "		CComPtr<IWbemClassObject> pOutClass;\n";
+			strExecMethodBody += "		hr = m_pClass->GetMethod(" + methPrefix +
+										eMeths.item().Name + 
+										", 0, NULL, &pOutClass);\n";
+
+			strExecMethodBody += "		if(FAILED(hr) && pOutClass == NULL)\n";
+			strExecMethodBody += "		{\n";
+			strExecMethodBody += "			return hr;\n";
+			strExecMethodBody += "		}\n";
+			strExecMethodBody += "		CComPtr<IWbemClassObject> pOutParams;\n";
+			strExecMethodBody += "		pOutClass->SpawnInstance(0, &pOutParams);\n\n";
+							
+			strExecMethodBody += "		" + L_arCodeComments_Text[13] + "\n";						
+							
+			var outParms = new Enumerator (oOutParams.Properties_);	
+			for (; !outParms.atEnd(); outParms.moveNext() )
+			{		
+				strMethDeclarations += "extern const WCHAR * " + outparmPrefix + eMeths.item().Name + 
+									outParms.item().Name  + ";\n";
+									
+				strMethDefinitions +=  "const static WCHAR * " + outparmPrefix + eMeths.item().Name +
+									outParms.item().Name + " = L\"" + outParms.item().Name + "\";\n";
+						
+				var vt = dictCIM2VT.Item(outParms.item().CIMType.toString());
+				if (outParms.item().IsArray) {
+					vt += " | VT_ARRAY";
+				}					
+										
+				strExecMethodBody  += "		var.vt = " + vt + ";\n";
+				strExecMethodBody  += "		" + L_arCodeComments_Text[14] + "\n";
+
+				strExecMethodBody  += "		BSTR bstrOutParam" + outParms.item().Name + " = SysAllocString( " + outparmPrefix + eMeths.item().Name + outParms.item().Name + ");\n"; 
+
+				strExecMethodBody  += "		if (NULL ==  bstrOutParam" + outParms.item().Name + ")\n"
+				strExecMethodBody  += "		{\n";
+				strExecMethodBody  += "		    return WBEM_E_OUT_OF_MEMORY;\n";
+				strExecMethodBody  += "		}\n";
+				strExecMethodBody  += "		hr = pOutParams->Put(bstrOutParam" + outParms.item().Name + ", 0, &var, 0);\n";
+
+				strExecMethodBody  += "		SysFreeString(bstrOutParam" + outParms.item().Name + ");\n";
+				strExecMethodBody  += "		bstrOutParam" + outParms.item().Name + " = NULL;\n";
+
+				strExecMethodBody  += "		" + L_arCodeComments_Text[19] + "\n\n";	
+				strExecMethodBody  += "		if(FAILED(hr))\n";
+				strExecMethodBody  += "		{\n";
+				strExecMethodBody  += "			return hr;\n";
+				strExecMethodBody  += "		}\n";
+			}								
+			strExecMethodBody  += "		" + L_arCodeComments_Text[15] + "\n"; 
+			strExecMethodBody  += "		hr = pResponseHandler->Indicate(1, &(pOutParams.p));\n\n";								
+		}
+		else
+		{
+			strExecMethodBody  += "		" + L_arCodeComments_Text[16] + "\n\n";
+		}
+		strExecMethodBody += "		hr = pResponseHandler->SetStatus(0, hr, NULL, NULL);\n";
+		strExecMethodBody += "		return hr;\n";			
+		strExecMethodBody += "	}\n\n";										
+	}
+	
+	strExecMethodBody += "	return WBEM_E_NOT_SUPPORTED;\n";
+	
+	
+	window.external.AddSymbol("HAS_METHODS", (nMeths > 0).toString());
+	
+	HAS_IMPL_METHODS.checked = (nImplMeths > 0);
+	
+	window.external.AddSymbol("PROVIDE_METHODS", HAS_IMPL_METHODS.checked);		
+					
+	window.external.AddSymbol("EXEC_METHOD_BODY", strExecMethodBody);	
+	
+	window.external.AddSymbol("METHOD_DEFINITIONS", strMethDefinitions);
+	window.external.AddSymbol("METHOD_DECLARATIONS", strMethDeclarations);
+}
+
+function onClearClick()
+{
+	CURRENTSELECTION.value = "";
+	CURRENTSELECTION.test = "";
+	WMICLASSNAME.value = "";
+	strCurNamespace = "";
+
+}
+
+</SCRIPT>
+<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT">
+</SCRIPT>
+<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT">
+</SCRIPT>
+<SCRIPT>
+	var strPath = "../../../../../";
+	strPath += window.external.GetHostLocale();
+	var strScriptPath = strPath + "/Script.js";
+	var strCommonPath = strPath + "/Common.js";
+	document.scripts("INCLUDE_SCRIPT").src = strScriptPath;
+	document.scripts("INCLUDE_COMMON").src = strCommonPath;
+</SCRIPT>

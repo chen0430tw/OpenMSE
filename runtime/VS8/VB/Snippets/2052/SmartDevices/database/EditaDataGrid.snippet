@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>编辑 DataGrid</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>允许您编辑 DataGrid 中的单元格。</Description>
+      <Shortcut>sddgedit</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Data.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Windows.Forms.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Windows.Forms.DataGrid.dll</Assembly>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>Microsoft.VisualBasic</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Windows.Forms</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Data</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Object>
+          <ID>datagrid</ID>
+          <Type>DataGrid</Type>
+          <ToolTip>替换为窗体上的 DataGrid 控件。</ToolTip>
+          <Default>DataGrid</Default>
+        </Object>
+        <Object>
+          <ID>button</ID>
+          <Type>Button</Type>
+          <ToolTip>替换为窗体上的 Button 控件。</ToolTip>
+          <Default>buttonSetCurrentCell</Default>
+        </Object>
+        <Literal>
+          <ID>currentCellData</ID>
+          <Type>String</Type>
+          <ToolTip>替换为要在 DataGrid 单元格中设置的文本的字符串值。</ToolTip>
+          <Default>New value</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method decl"><![CDATA[Private Sub dataGrid_CurrentCellChanged(ByVal sender As Object, ByVal e As EventArgs) _
+    Handles $datagrid$.CurrentCellChanged
+
+    Dim currentCell As DataGridCell
+    Dim currentCellData As String
+
+    ' Get the current cell.
+    currentCell = $datagrid$.CurrentCell
+
+    ' Get the current cell's data.
+    currentCellData = CStr($datagrid$(currentCell.RowNumber, currentCell.ColumnNumber))
+
+    ' interact with currentCellData
+
+End Sub
+
+Private Sub buttonSetCurrentCell_Click(ByVal o As Object, ByVal e As EventArgs) _
+    Handles $button$.Click
+
+    Dim currentCell As DataGridCell
+    Dim currentCellData As String
+
+    ' Get the text to put into the current cell.
+    currentCellData = "$currentCellData$"
+
+    ' Get the current cell.
+    currentCell = $datagrid$.CurrentCell
+
+    ' Set the current cell's data.
+    $datagrid$(currentCell.RowNumber, currentCell.ColumnNumber) = currentCellData
+End Sub]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

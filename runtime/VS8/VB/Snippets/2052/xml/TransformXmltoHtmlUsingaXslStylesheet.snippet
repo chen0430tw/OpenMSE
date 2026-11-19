@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>使用 XSL 样式表将 XML 转换成 HTML</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>使用 XSL 样式表将 XML 转换成 HTML。</Description>
+      <Shortcut>xmlXsl</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Xml.dll</Assembly>
+          <Url/>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.IO</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Xml.Xsl</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>OutputFile</ID>
+          <Type>String</Type>
+          <ToolTip>将此项替换为输出文件的名称。</ToolTip>
+          <Default>"output.html"</Default>
+        </Literal>
+        <Literal>
+          <ID>xslFile</ID>
+          <Type>String</Type>
+          <ToolTip>将此项替换为 xsl 样式表文件名。</ToolTip>
+          <Default>"stylesheet.xsl"</Default>
+        </Literal>
+        <Literal>
+          <ID>xmlFile</ID>
+          <Type>String</Type>
+          <ToolTip>将此项替换为 XML 数据文件的名称。</ToolTip>
+          <Default>"data.xml"</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Using stream As FileStream = File.Open($outputFile$, FileMode.Create)
+            ' Create XsltCommand and compile stylesheet.
+            Dim processor As New XslCompiledTransform()
+            processor.Load($xslFile$)
+            ' Transform the file.
+            processor.Transform($xmlFile$, Nothing, stream)
+        End Using]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

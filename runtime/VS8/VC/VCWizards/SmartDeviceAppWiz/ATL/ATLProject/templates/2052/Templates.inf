@@ -1,0 +1,46 @@
+stdafx.cpp
+stdafx.h
+root.cpp
+[!if STANDARDSHELL_UI_MODEL]
+resource.h
+root.rc
+[!endif]
+[!if AYGSHELL_UI_MODEL]
+resourceayg.h
+rootayg.rc
+[!endif]
+[!if POCKETPC2003_UI_MODEL]
+resourceppc.h
+rootppc.rc
+root.rc2
+[!endif]
+[!if SMARTPHONE2003_UI_MODEL]
+resourcesp.h
+rootsp.rc
+root.rc2
+[!endif]
+readme.txt
+[!if SUPPORT_NON_DCOM]
+root.rgs
+[!endif]
+[!if SUPPORT_DCOM]
+rootdcom.rgs
+[!endif]
+
+[!if SUPPORT_COMPONENT_REGISTRAR]
+compreg.cpp
+compreg.h
+[!endif]
+
+[!if !ATTRIBUTED]
+root.idl
+[!if DLL_APP]
+root.def
+[!endif]
+[!endif]
+
+[!if MERGE_PROXY_STUB]
+dlldatax.c
+dlldatax.h
+[!endif]
+

@@ -1,0 +1,423 @@
+//In Microsoft Visual C++ generiertes Ressourcenskript.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Aus der Ressource TEXTINCLUDE 2 generiert.
+//
+
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE  
+BEGIN
+	"resource.h\0"
+END
+
+2 TEXTINCLUDE  
+BEGIN
+	"#include ""afxres.h""\r\n"
+	"\0"
+END
+
+3 TEXTINCLUDE  
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])\r\n"
+    "LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]\r\n"
+    "#pragma code_page([!output SYSTEM_CODE_PAGE])\r\n"
+    "#include ""[!output RES_PATH]\\[!output RC2_FILE_NAME].rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""afxres.rc""  	// Standardkomponenten\r\n"
+[!if PRINTING]
+    "#include ""afxprint.rc""	// printing/print preview resources\r\n"
+[!endif]
+    "#endif\r\n"
+	"\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Symbol
+//
+
+// Symbol mit dem niedrigsten ID-Wert an erster Stelle platziert, um es als Anwendungssymbol zu verwenden
+// ist auf allen Systemen einheitlich.
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+IDR_MAINFRAME		ICON	DISCARDABLE	"[!output RES_PATH]\\[!output PROJECT_NAME].ico"
+[!if DOCVIEW && !APP_TYPE_DLG]
+IDR_[!output SAFE_DOC_TYPE_NAME]TYPE		ICON	DISCARDABLE	"[!output RES_PATH]\\[!output PROJECT_NAME]Doc.ico"
+[!endif]
+#endif
+
+[!if CMD_BAR_MENUNBUTTON]
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME		BITMAP	DISCARDABLE	"res\\Cmdbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Symbolleiste
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE 16, 16
+BEGIN
+[!if DOCVIEW]
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+	SEPARATOR
+[!endif]
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+	SEPARATOR
+[!if DOCVIEW]
+[!if PRINTING]
+    BUTTON      ID_FILE_PRINT
+[!endif]
+[!endif]
+[!if LIST_VIEW]
+	SEPARATOR
+    BUTTON      ID_VIEW_LARGEICON
+    BUTTON      ID_VIEW_SMALLICON
+    BUTTON      ID_VIEW_LIST
+    BUTTON      ID_VIEW_DETAILS
+[!endif]
+[!if !APP_TYPE_SDI_DOCLIST]
+    BUTTON      ID_APP_ABOUT
+[!endif]
+[!if HELPSTYLE_WINHELP]
+    BUTTON      ID_CONTEXT_HELP
+[!endif]
+END
+[!endif]
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menü
+//
+
+IDR_MAINFRAME MENU  PRELOAD DISCARDABLE 
+BEGIN
+	POPUP "&Datei"
+	BEGIN
+[!if DOCVIEW]
+		MENUITEM "&Neu\tStrg+N",                ID_FILE_NEW
+		MENUITEM "Ö&ffnen...\tStrg+O",            ID_FILE_OPEN
+		MENUITEM "&Speichern\tStrg+S",               ID_FILE_SAVE
+		MENUITEM "Speichern &unter...",                 ID_FILE_SAVE_AS
+[!if PRINTING]
+		MENUITEM SEPARATOR
+		MENUITEM "&Drucken...\tStrg+P",           ID_FILE_PRINT
+		MENUITEM "&Seitenansicht",              ID_FILE_PRINT_PREVIEW
+		MENUITEM "Dru&ckeinrichtung...",             ID_FILE_PRINT_SETUP
+[!endif]
+		MENUITEM SEPARATOR
+[!endif]
+		MENUITEM "&Beenden",                       ID_APP_EXIT
+	END
+	POPUP "&Bearbeiten"
+	BEGIN
+		MENUITEM "&Rückgängig\tStrg+Z",               ID_EDIT_UNDO
+		MENUITEM SEPARATOR
+		MENUITEM "&Ausschneiden\tStrg+X",                ID_EDIT_CUT
+		MENUITEM "&Kopieren\tStrg+C",               ID_EDIT_COPY
+		MENUITEM "&Einfügen\tStrg+V",              ID_EDIT_PASTE
+	END
+[!if STATUS_BAR]
+	POPUP "&Ansicht"
+	BEGIN
+		MENUITEM "Status&leiste",                 ID_VIEW_STATUS_BAR
+[!if LIST_VIEW]
+        	MENUITEM SEPARATOR
+        	MENUITEM "&Große Symbole",                ID_VIEW_LARGEICON
+        	MENUITEM "K&leine Symbole",                ID_VIEW_SMALLICON
+        	MENUITEM "&Liste",                       ID_VIEW_LIST
+        	MENUITEM "&Details",                    ID_VIEW_DETAILS
+        	MENUITEM SEPARATOR
+        	POPUP "S&ymbole anordnen"
+        	BEGIN
+            		MENUITEM "Nach &Namen",                    ID_VIEW_BYNAME
+            		MENUITEM SEPARATOR
+            	MENUITEM "&Automatisch anordnen",               ID_VIEW_AUTOARRANGE
+        	END
+        MENUITEM "Symbol&e ausrichten",              ID_VIEW_LINEUP
+[!endif]
+	END
+[!endif]
+	POPUP "&Hilfe"
+	BEGIN
+[!if HELPSTYLE_WINHELP]
+		MENUITEM "Hilfe&themen",                ID_HELP_FINDER
+		MENUITEM SEPARATOR
+[!endif]
+		MENUITEM "&Info über [!output PROJECT_NAME]...",          ID_APP_ABOUT
+	END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Zugriffstaste
+//
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	"N",            ID_FILE_NEW,            VIRTKEY,CONTROL
+	"O",            ID_FILE_OPEN,           VIRTKEY,CONTROL
+	"S",            ID_FILE_SAVE,           VIRTKEY,CONTROL
+[!if PRINTING]
+	"P",            ID_FILE_PRINT,          VIRTKEY,CONTROL
+[!endif]
+	"Z",            ID_EDIT_UNDO,           VIRTKEY,CONTROL
+	"X",            ID_EDIT_CUT,            VIRTKEY,CONTROL
+	"C",            ID_EDIT_COPY,           VIRTKEY,CONTROL
+	"V",            ID_EDIT_PASTE,          VIRTKEY,CONTROL
+	VK_BACK,        ID_EDIT_UNDO,           VIRTKEY,ALT
+	VK_DELETE,      ID_EDIT_CUT,            VIRTKEY,SHIFT
+	VK_INSERT,      ID_EDIT_COPY,           VIRTKEY,CONTROL
+	VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY,SHIFT
+	VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+	VK_F6,          ID_PREV_PANE,           VIRTKEY,SHIFT
+[!if HELPSTYLE_WINHELP]
+	VK_F1,          ID_CONTEXT_HELP,        VIRTKEY,SHIFT
+	VK_F1,          ID_HELP,                VIRTKEY
+[!endif]
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialogfeld
+//
+IDD_ABOUTBOX DIALOG DISCARDABLE   0, 0, 125, 55
+CAPTION "Info über [!output PROJECT_NAME]"
+EXSTYLE WS_EX_CAPTIONOKBTN
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT [!output ABOUTBOX_FONT_SIZE], "MS Shell Dlg"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "[!output PROJECT_NAME] Version 1.0",IDC_STATIC,40,10,65,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) [!output YEAR]",IDC_STATIC,40,25,65,8
+END
+
+[!if FORM_VIEW]
+IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_FORM DIALOG DISCARDABLE  0, 0, 185, 93
+STYLE WS_CHILD
+FONT [!output ABOUTBOX_FONT_SIZE], "MS Shell Dlg"
+BEGIN
+	LTEXT	"TODO: Formular-Steuerelemente in diesem Dialogfeld positionieren.",IDC_STATIC,24,42,136,8
+END
+[!endif]
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       1,0,0,1
+  PRODUCTVERSION    1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+        BLOCK "[!output HEX_LCID][!output HEX_CODE_PAGE]"
+		BEGIN 
+            VALUE "CompanyName", "TODO: <Firmenname>"
+            VALUE "FileDescription", "TODO: <Dateibeschreibung>"
+			VALUE "FileVersion",     "1.0.0.1"
+			VALUE "InternalName",    "[!output PROJECT_NAME].exe"
+            VALUE "LegalCopyright", "TODO: (c) <Firmenname>. Alle Rechte vorbehalten."
+			VALUE "OriginalFilename","[!output PROJECT_NAME].exe"
+            VALUE "ProductName", "TODO: <Produktname>"
+			VALUE "ProductVersion",  "1.0.0.1"
+		END
+	END
+	BLOCK "VarFileInfo" 
+	BEGIN 
+		VALUE "Translation", 0x[!output HEX_LCID], [!output CODE_PAGE]
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 133
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+[!if FORM_VIEW]
+    IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+[!endif]
+END
+#endif  // APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Zeichenfolgentabelle
+//
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+// Nicht-Mac-Anwendungen entfernen die zwei zusätzlichen untergeordneten Zeichenfolgen
+[!if !DOCVIEW]
+	IDR_MAINFRAME           "[!output MAIN_FRAME_CAPTION]"
+[!else]
+[!if HAS_SUFFIX]  // hat ein Dateisuffix
+	IDR_MAINFRAME           "[!output MAIN_FRAME_CAPTION]\n\n[!output FILE_NEW_NAME_SHORT]\n[!output FILTER_NAME]\n.[!output FILE_EXTENSION]\n[!output FILE_TYPE_ID]\n[!output FILE_NEW_NAME_LONG]"
+[!else]
+	IDR_MAINFRAME           "[!output MAIN_FRAME_CAPTION]\n\n[!output FILE_NEW_NAME_SHORT]\n\n\n[!output FILE_TYPE_ID]\n[!output FILE_NEW_NAME_LONG]"
+[!endif]
+[!endif]
+END
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+	AFX_IDS_APP_TITLE       "[!output PROJECT_NAME]"
+[!if HELPSTYLE_WINHELP]
+	AFX_IDS_IDLEMESSAGE     "Bereit"
+	AFX_IDS_HELPMODEMESSAGE "Wählen Sie das Objekt aus, für das die Hilfe angezeigt werden soll."
+[!else]
+	AFX_IDS_IDLEMESSAGE     "Bereit"
+[!endif]
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_FILE_NEW             "Erstellt ein neues Dokument.\nNeu"
+	ID_FILE_OPEN            "Öffnet ein vorhandenes Dokument.\nÖffnen"
+	ID_FILE_CLOSE           "Schließt das aktive Dokument.\nSchließen"
+	ID_FILE_SAVE            "Speichert das aktive Dokument.\nSpeichern"
+	ID_FILE_SAVE_AS         "Speichert das aktive Dokument unter einem neuem Namen.\nSpeichern unter"
+[!if PRINTING]
+	ID_FILE_PRINT           "Druckt das aktive Dokument.\nDrucken"
+[!endif]
+	ID_APP_ABOUT            "Zeigt Programm-, Versions- und Copyrightinformationen an.\nInfo"
+	ID_APP_EXIT             "Beendet die Anwendung und fordert zum Speichern der Dokumente auf.\nBeenden"
+[!if HELPSTYLE_WINHELP]
+	ID_HELP                 "Zeigt Hilfe zum aktuellen Vorgang oder Befehl an.\nHilfe"
+[!endif]
+	ID_NEXT_PANE            "Wechselt zum nächsten Fensterbereich.\nNächster Bereich"
+	ID_PREV_PANE            "Wechselt zum vorherigen Fensterbereich.\nVorheriger Bereich"
+	ID_WINDOW_SPLIT         "Teilt das aktive Fenster in Bereiche.\nTeilen"
+	ID_EDIT_CLEAR           "Löscht die Auswahl.\nLöschen"
+	ID_EDIT_CLEAR_ALL       "Löscht alles.\nAlles löschen"
+	ID_EDIT_COPY            "Kopiert die Auswahl in die Zwischenablage.\nKopieren"
+	ID_EDIT_CUT             "Überträgt die Auswahl in die Zwischenablage.\nAusschneiden"
+	ID_EDIT_FIND            "Sucht den angegebenen Text.\nSuchen"
+	ID_EDIT_PASTE           "Fügt den Inhalt der Zwischenablage ein.\nEinfügen"
+	ID_EDIT_REPEAT          "Wiederholt den letzten Vorgang.\nWiederholen"
+	ID_EDIT_REPLACE         "Ersetzt den angegebenen Text.\nErsetzen"
+	ID_EDIT_SELECT_ALL      "Markiert das gesamte Dokument.\nAlles auswählen"
+	ID_EDIT_UNDO            "Macht den letzten Vorgang rückgängig.\nRückgängig"
+	ID_EDIT_REDO            "Wiederholt den zuletzt rückgängig gemachten Vorgang.\nWiederherstellen"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	AFX_IDS_SCCLOSE         "Schließt das aktive Fenster und fordert zum Speichern des Dokuments auf."
+	AFX_IDS_SCTASKLIST      "Aktiviert die Taskliste."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_INDICATOR_EXT        "EXT"
+	ID_INDICATOR_CAPS       "CAP"
+	ID_INDICATOR_NUM        "NUM"
+	ID_INDICATOR_SCRL       "SCRL"
+	ID_INDICATOR_OVR        "OVR"
+	ID_INDICATOR_REC        "REC"
+END
+
+[!if SOCKETS]
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDP_SOCKETS_INIT_FAILED "Fehler bei Initialisierung des Windows-Sockets"
+END
+[!endif]
+
+[!if LIST_VIEW]
+
+STRINGTABLE  
+BEGIN
+    ID_VIEW_SMALLICON       "Zeigt Elemente mit kleinen Symbolen an.\nKleine Symbole"
+    ID_VIEW_LARGEICON       "Zeigt Elemente mit großen Symbolen an.\nGroße Symbole"
+    ID_VIEW_LIST            "Zeigt Elemente als Liste an.\nListe"
+    ID_VIEW_DETAILS         "Zeigt Informationen über jedes Element im Fenster an.\nDetails"
+    ID_VIEW_LINEUP          "Richtet die Symbole am Raster aus."
+    ID_VIEW_BYNAME          "Sortiert die Symbole alphabetisch."
+END
+
+STRINGTABLE  
+BEGIN
+    ID_VIEW_AUTOARRANGE         "Symbole am Raster ausrichten."
+END
+[!endif]
+
+#endif
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Aus der Ressource TEXTINCLUDE 3 generiert.
+//
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+#include "[!output RES_PATH]\\[!output RC2_FILE_NAME].rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "afxres.rc"  	// Standardkomponenten
+[!if PRINTING]
+#include "afxprint.rc"  // Ressourcen für Drucken/Seitenansicht
+[!endif]
+#endif
+#endif    // nicht APSTUDIO_INVOKED

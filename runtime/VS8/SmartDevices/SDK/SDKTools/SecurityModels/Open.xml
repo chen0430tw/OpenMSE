@@ -1,0 +1,10 @@
+ <wap-provisioningdoc> 
+<characteristic type="SecurityPolicy"> 
+<!-- Allow unsigned apps -->
+<parm name="4102" value="1"/> 
+<!-- No prompt -->
+<parm name="4122" value="1"/> 
+<!-- 1-tier mode -->
+<parm name="4123" value="1"/> 
+</characteristic> 
+</wap-provisioningdoc> 

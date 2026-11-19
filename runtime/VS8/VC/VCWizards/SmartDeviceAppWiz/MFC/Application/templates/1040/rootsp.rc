@@ -1,0 +1,209 @@
+//script di risorsa generato con Microsoft Visual C++.
+//
+#include "resourcesp.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generato dalla risorsa TEXTINCLUDE 2.
+//
+
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE  
+BEGIN
+	"resourcesp.h\0"
+END
+
+2 TEXTINCLUDE  
+BEGIN
+	"#include ""afxres.h""\r\n"
+	"\0"
+END
+
+3 TEXTINCLUDE  
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])\r\n"
+    "LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]\r\n"
+    "#pragma code_page([!output SYSTEM_CODE_PAGE])\r\n"
+    "#include ""[!output RES_PATH]\\[!output RC2_FILE_NAME]sp.rc2""  // risorse non Microsoft Visual C++ modificate\r\n"
+    "#include ""afxres.rc""  	// Componenti standard\r\n"
+[!if PRINTING]
+    "#include ""afxprint.rc""	// printing/print preview resources\r\n"
+[!endif]
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icona
+//
+
+// Icona con il valore ID minimo posto per primo in modo da garantire che l'icona dell'applicazione
+// rimanga la stessa in tutti i sistemi.
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+IDR_MAINFRAME		ICON	DISCARDABLE	"[!output RES_PATH]\\[!output PROJECT_NAME].ico"
+[!if DOCVIEW && !APP_TYPE_DLG]
+IDR_[!output SAFE_DOC_TYPE_NAME]TYPE		ICON	DISCARDABLE	"[!output RES_PATH]\\[!output PROJECT_NAME]Doc.ico"
+[!endif]
+#endif
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    MENUITEM "OK",                       IDOK
+END
+
+[!if FORM_VIEW]
+/////////////////////////////////////////////////////////////////////////////
+//
+// Finestra di dialogo
+//
+
+IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_FORM DIALOG DISCARDABLE 0, 0, 113, 116
+STYLE WS_CHILD
+FONT [!output ABOUTBOX_FONT_SIZE], "MS Shell Dlg"
+BEGIN
+	LTEXT	"TODO: inserire i controlli del form in questa finestra di dialogo.",IDC_STATIC,12,42,90,18
+END
+[!endif]
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Versione
+//
+
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       1,0,0,1
+  PRODUCTVERSION    1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+        BLOCK "[!output HEX_LCID][!output HEX_CODE_PAGE]"
+		BEGIN 
+            VALUE "CompanyName", "TODO: <Nome società>"
+            VALUE "FileDescription", "TODO: <Descrizione file>"
+			VALUE "FileVersion",     "1.0.0.1"
+			VALUE "InternalName",    "[!output PROJECT_NAME].exe"
+            VALUE "LegalCopyright", "TODO: (c) <Nome società>. Tutti i diritti riservati."
+			VALUE "OriginalFilename","[!output PROJECT_NAME].exe"
+            VALUE "ProductName", "TODO: <Nome prodotto>"
+			VALUE "ProductVersion",  "1.0.0.1"
+		END
+	END
+	BLOCK "VarFileInfo" 
+	BEGIN 
+		VALUE "Translation", 0x[!output HEX_LCID], [!output CODE_PAGE]
+    END
+END
+
+[!if FORM_VIEW]
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 106
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif  // APSTUDIO_INVOKED
+[!endif]
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Tabella delle stringhe
+//
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDR_MAINFRAME	"[!output MAIN_FRAME_CAPTION]"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_OK		"OK"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_INDICATOR_EXT        "EXT"
+	ID_INDICATOR_CAPS       "CAP"
+	ID_INDICATOR_NUM        "NUM"
+	ID_INDICATOR_SCRL       "SCRL"
+	ID_INDICATOR_OVR        "OVR"
+	ID_INDICATOR_REC        "REC"
+END
+
+[!if SOCKETS]
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDP_SOCKETS_INIT_FAILED "Inizializzazione dei socket di Windows non riuscita"
+END
+[!endif]
+
+#endif
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generato dalla risorsa TEXTINCLUDE 3.
+//
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+#include "[!output RES_PATH]\\[!output RC2_FILE_NAME]sp.rc2"  // risorse non Microsoft Visual C++ modificate
+#include "afxres.rc"  	// Componenti standard
+[!if PRINTING]
+#include "afxprint.rc"  // stampa/risorse anteprima di stampa
+[!endif]
+#endif
+#endif    // non APSTUDIO_INVOKED

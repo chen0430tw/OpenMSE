@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>对 DataGrid 排序</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>对绑定到 BindingSource 的控件排序</Description>
+      <Shortcut>sddatasort</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Windows.Forms</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Windows.Forms.DataGrid.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Data</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Xml</Assembly>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Microsoft.VisualBasic</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Windows.Forms</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Data</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Object>
+          <ID>BindingSource1</ID>
+          <Type>BindingSource</Type>
+          <ToolTip>替换为窗体上的控件所使用的 BindingSource 对象的名称。</ToolTip>
+          <Default>BindingSource1</Default>
+        </Object>
+        <Literal>
+          <ID>sortingExpression</ID>
+          <Type>String</Type>
+          <ToolTip>替换为 BindingSource 要使用的排序表达式字符串，例如，排序所基于的列的名称。</ToolTip>
+          <Default>columnName</Default>
+        </Literal>
+        <Literal>
+          <ID>sortOrder</ID>
+          <Type>String</Type>
+          <ToolTip>使用的排序顺序，例如，表示降序的“DESC”或表示升序的“ASC”。</ToolTip>
+          <Default> DESC</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[        $BindingSource1$.Sort = "$sortingExpression$" & " $sortOrder$"]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

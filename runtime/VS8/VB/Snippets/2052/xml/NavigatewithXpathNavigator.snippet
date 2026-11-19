@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>使用 XPathNavigator 导航</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>使用 XPathNavigator 循环访问 XML 文档的节点。</Description>
+      <Shortcut>xmlNavDoc</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.XML.dll</Assembly>
+          <Url/>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.Xml</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Xml.XPath</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Object>
+          <ID>xmlDoc</ID>
+          <Type>XmlDocument</Type>
+          <ToolTip>替换为 XMLDocument 实例。</ToolTip>
+          <Default>xmlDoc</Default>
+        </Object>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[' Create an XpathNavigator on XmlDocument.
+        Dim nav As XPathNavigator = $xmlDoc$.CreateNavigator()
+
+        ' Move to the first non-comment element.
+        nav.MoveToChild(XPathNodeType.Element)
+
+        Dim nodeIterator As XPathNodeIterator = nav.SelectChildren(XPathNodeType.Element)
+        While nodeIterator.MoveNext
+
+        End While]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

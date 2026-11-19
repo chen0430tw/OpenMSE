@@ -1,0 +1,35 @@
+readme.txt
+stdafx.cpp
+stdafx.h
+root.cpp
+root.h
+root.def
+[!if STANDARDSHELL_UI_MODEL]
+resource.h
+root.rc
+[!endif]
+[!if AYGSHELL_UI_MODEL]
+resourceayg.h
+rootayg.rc
+[!endif]
+[!if POCKETPC2003_UI_MODEL]
+resourceppc.h
+rootppc.rc
+[!endif]
+[!if SMARTPHONE2003_UI_MODEL]
+resourcesp.h
+rootsp.rc
+[!endif]
+root.rc2
+root.idl
+[!if ABOUT_BOX]
+CopyOnly | root.ico
+[!endif]
+ctl.h
+ctl.cpp
+ppg.h
+ppg.cpp
+CopyOnly | ctl.bmp
+[!if RUNTIME_LICENSE]
+root.lic
+[!endif]

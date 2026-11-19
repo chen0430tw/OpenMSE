@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>将图像保存到文件</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>将 PictureBox 的图像保存到文件。</Description>
+      <HelpUrl/>
+      <Keywords/>
+      <Shortcut>sdsaveimg</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Drawing.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Windows.Forms.dll</Assembly>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>Microsoft.VisualBasic</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Drawing</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Drawing.Imaging</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Windows.Forms</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>FileToSave</ID>
+          <Type>String</Type>
+          <ToolTip>将其替换为要保存的文件的路径和文件名。</ToolTip>
+          <Default>".\My Documents\savedbmp.bmp"</Default>
+        </Literal>
+        <Object>
+          <ID>PictureBox</ID>
+          <Type>PictureBox</Type>
+          <ToolTip>替换为窗体上的 PictureBox 控件。</ToolTip>
+          <Default>PictureBox1</Default>
+        </Object>
+      </Declarations>
+      <Code Language="VB" Kind="method decl"><![CDATA[Private Sub saveBitmap()
+    'Save image to a file.
+    $PictureBox$.Image.Save($FileToSave$, ImageFormat.Bmp)
+End Sub]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>使用 XPathNavigator 选择节点</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>创建用于循环访问选定节点的迭代器。</Description>
+      <Shortcut>xmlNavNodes</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.XML.dll</Assembly>
+          <Url/>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.Xml.XPath</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>FileName</ID>
+          <Type>String</Type>
+          <ToolTip>将此项替换为字符串。</ToolTip>
+          <Default>"data.xml"</Default>
+        </Literal>
+        <Literal>
+          <ID>NodePath</ID>
+          <Type>String</Type>
+          <ToolTip>将此项替换为字符串。</ToolTip>
+          <Default>"parent/child"</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Dim pathExpr As XPathExpression
+Dim document As New XPathDocument($FileName$)
+
+' Create an XPathNavigator.
+Dim pathNavigator As XPathNavigator = document.CreateNavigator()
+
+' Get the Book elements.
+Dim selectExpr As String = $NodePath$
+
+' Ensure we are at the root node.
+pathNavigator.MoveToRoot()
+
+pathExpr = pathNavigator.Compile(selectExpr)
+
+' Create an XPathNodeIterator to walk over the selected nodes.
+Dim nodeIterator As XPathNodeIterator = pathNavigator.Select(pathExpr)
+While nodeIterator.MoveNext
+
+End While]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

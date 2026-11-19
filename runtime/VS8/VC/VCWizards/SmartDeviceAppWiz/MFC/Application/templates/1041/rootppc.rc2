@@ -1,0 +1,49 @@
+//
+// [!output RC2_FILE_NAME]PPC.RC2 - Microsoft Visual C++ で直接編集しないリソース
+//
+
+#ifdef APSTUDIO_INVOKED
+#error このファイルは、Microsoft Visual C++ で編集できません
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 手動で編集されたりソースをここに追加します...
+
+/////////////////////////////////////////////////////////////////////////////
+HI_RES_AWARE CEUX {1}    // エミュレーション層をオフにします
+            // pixel-doubling をサポートするプラットフォームで
+            // 有効にするために、このリソースを削除します
+/////////////////////////////////////////////////////////////////////////////
+
+[!if !APP_TYPE_DLG]
+/////////////////////////////////////////////////////////////////////////////
+//
+// SHMENUBAR
+//
+
+IDR_MAINFRAME SHMENUBAR DISCARDABLE
+BEGIN
+    IDR_MAINFRAME, 
+    2,
+    
+    I_IMAGENONE, ID_FILE_NEW, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,
+    IDS_NEW, 0, NOMENU,
+
+    I_IMAGENONE, IDM_MENU, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,
+    IDS_MENU, 0, 0,
+END
+[!if APP_TYPE_SDI_DOCLIST]
+IDR_DOCLIST SHMENUBAR
+BEGIN
+    IDR_DOCLIST, 
+    2,
+    
+    I_IMAGENONE, ID_FILE_NEW, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,
+    IDS_NEW, 0, NOMENU,
+
+    I_IMAGENONE, IDM_MENU, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,
+    IDS_MENU, 0, 0,
+END
+[!endif]
+[!endif]

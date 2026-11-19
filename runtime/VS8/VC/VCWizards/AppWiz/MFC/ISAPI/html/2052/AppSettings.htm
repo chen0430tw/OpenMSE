@@ -1,0 +1,562 @@
+<!- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<HTML DIR="LTR">
+
+<HEAD>
+	<TITLE>ISAPI 扩展向导</TITLE>
+	<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+	<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+	<LINK ID="LINKURL" REL="stylesheet" HREF="../../../../../2052/NewStyles.css">
+</HEAD>
+
+<BODY BGCOLOR="BUTTONFACE" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="if (!bValidating) OnKey();" ONKEYPRESS="if (!bValidating) OnPress();">
+
+<TABLE CLASS="ONE" HEIGHT="100%" WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+<COL CLASS="LinkPane"><COL>
+
+  <!--OPEN OF INTRODUCTORY INFORMATION TABLE//-->
+  <TR VALIGN="TOP">
+	<TD HEIGHT="79" WIDTH="100%" COLSPAN="2">
+	 <TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	 <COL WIDTH="12"><COL><COL WIDTH="12">
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="12">
+	  	&nbsp;
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+
+	   <TD CLASS="IMAGE" VALIGN="BOTTOM" WIDTH="110" ROWSPAN="2">
+		<DIV CLASS="SMALLA" ID="Layer0">
+		 <IMG CLASS="SMALLEST" SRC="../../Images/ISAPI_1.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+		</DIV>
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="65">
+		<H4 CLASS="HEAD" ID="HEAD">对象设置</H4>
+		<P CLASS="SUBHEAD" ID="SUBHEAD">指定项目中要包含的对象类型和相关联的类信息。</P>
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+
+	  <TR>
+	   <TD VALIGN="TOP" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+		<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+	  	 <TR VALIGN="TOP">
+	  	  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+	  	  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+	  	 </TR>
+		</TABLE>
+	   </TD>
+	  </TR>
+	 </TABLE>
+	</TD>
+  </TR>
+  <!--CLOSE OF INTRODUCTORY INFORMATION TABLE//-->
+
+  <!--OPEN OF NAVIGATION, CONTENT, AND BUTTON TABLES//-->
+  <TR VALIGN="TOP">
+	<TD CLASS="Three" VALIGN="TOP" HEIGHT="100%" WIDTH="100%">
+	 <TABLE CLASS="fixedSize" HEIGHT="100%" WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+  	  <TR VALIGN="TOP">
+	   <TD CLASS="threeCustom" VALIGN="TOP">
+	   <!--OPEN OF NAVIGATION TABLE//-->
+
+	    <TABLE CLASS="THREE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<COL WIDTH="12"><COL><COL WIDTH="1">
+		 <TR>
+	   	  <TD VALIGN="TOP" COLSPAN="3" HEIGHT="12">
+	  		&nbsp;
+		  </TD>
+		 </TR>
+		 <TR>
+	   	  <TD VALIGN="TOP" HEIGHT="100%">
+	  		&nbsp;
+		  </TD>
+	   	  <TD VALIGN="TOP" HEIGHT="100%">
+	   	  <!--OPEN OF NAVIGATIONAL LINKS//-->
+
+			<DIV CLASS="LINK">
+			 <TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+			  <TR VALIGN="MIDDLE">
+	  		   <TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="Default" TITLE="查看所选内容的概述。" onClick="bValidating = true; if (!ValidateInput()) { bVaidating = false; return; }  Next(document, 'default.htm');" TABINDEX="1">概述</SPAN>
+			   </TD>
+	  		   <TD WIDTH="4">
+			  	<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+			   </TD>
+			  </TR>
+			 </TABLE>
+			</DIV>
+
+		  	<DIV CLASS="LINKSELECTED">
+	 	   	 <SPAN CLASS="VERTLINE1">
+			  <IMG SRC="../../Images/spacer.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0">
+			 </SPAN>
+			 <SPAN CLASS="HORILINE1">
+			  <TABLE WIDTH="167" HEIGHT="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			   <TR VALIGN="TOP">
+			    <TD CLASS="DOTTEDLINE" HEIGHT="1">
+				</TD>
+			   </TR>
+			   <TR VALIGN="TOP">
+			    <TD HEIGHT="100%">
+				 <IMG SRC="../../Images/spacer.gif" WIDTH="1" HEIGHT="28" ALT="" BORDER="0">
+			    </TD>
+			   </TR>
+			   <TR VALIGN="TOP">
+			    <TD CLASS="DOTTEDLINE" HEIGHT="1">
+			    </TD>
+			   </TR>
+			  </TABLE>
+			 </SPAN>
+			 <TABLE WIDTH="160" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXTSELECTED">
+			  <TR VALIGN="MIDDLE">
+			   <TD WIDTH="100%">
+				<SPAN ID="AppSettings" TITLE="指定项目中要包含的对象类型和相关联的类信息。">对象设置</SPAN>
+			   </TD>
+			   <TD WIDTH="4">
+				<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+			   </TD>
+			  </TR>
+			 </TABLE>
+			</DIV>
+
+			<DIV CLASS="LINK">
+			 <TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXTINDENT">
+			  <TR VALIGN="MIDDLE">
+	  		   <TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="Notifications" TITLE="指定筛选器通知的优先级、连接和事件。" onClick="onClick(this);" TABINDEX="2">通知</SPAN>
+			   </TD>
+	  		   <TD WIDTH="4">
+			  	<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+			   </TD>
+			  </TR>
+			 </TABLE>
+			</DIV>
+
+	   	  <!--CLOSE OF NAVIGATIONAL LINKS//-->
+		  </TD>
+		  <TD WIDTH="1">
+		   <DIV CLASS="VERTLINE">
+			 <IMG SRC="../../Images/spacer.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0">
+		   </DIV>
+		  </TD>
+		 </TR>
+		 </TABLE>
+		</TD>
+	   </TR>
+	   </TABLE>
+
+	   <!--CLOSE OF NAVIGATION TABLE//-->
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="100%">
+	   <!--OPEN OF CONTENT AND BUTTON TABLE//-->
+
+	   	<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<COL WIDTH="100%">
+		 <TR VALIGN="TOP">
+		  <TD HEIGHT="100%">
+	   	  <!--OPEN OF CONTENT//-->
+
+		  	<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL><COL WIDTH="12"><COL><COL WIDTH="12">
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+
+ 			 <TR>
+ 			 <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP">
+ 				<SPAN CLASS="itemTextTop" TITLE="">
+	  				 <INPUT CLASS="CheckBox" ID="GENERATE_FILTER" ACCESSKEY="T" TYPE="checkbox" TITLE="选中以生成 CHttpFilter 对象。" onPropertychange="OnGenerateFilter();">
+	  	 			 <DIV CLASS="itemTextCheckboxA" ID="GENERATE_FILTER_DIV" TITLE="选中以生成 CHttpFilter 对象。">
+		  			  <LABEL FOR="GENERATE_FILTER" ID="GENERATE_FILTER_LABEL">生成筛选对象(<U>T</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+
+				<P CLASS="ElementSpacer">&nbsp;</P>
+
+				<SPAN CLASS="itemText" ID="FILTER_CLASS_SPAN" TITLE="提供筛选对象类的名称。">
+	  		 		 <LABEL FOR="FILTER_CLASS" CLASS="INDENT" ID="FILTER_CLASS_LABEL">筛选器类名(<U>I</U>):</LABEL>
+	  	 			 <BR>
+					 <INPUT CLASS="sideBtnIndent" ID="FILTER_CLASS" ACCESSKEY="I" TITLE="提供筛选对象类的名称。" VALUE="" NAME="FilterClassName" TYPE="TEXT">
+					 </INPUT>
+				</SPAN>
+
+				<P CLASS="ElementSpacer2">&nbsp;</P>
+
+				<SPAN CLASS="itemText" ID="FILTER_DESC_SPAN" TITLE="提供筛选对象类的说明。">
+	  		 		 <LABEL FOR="FILTER_DESC" CLASS="INDENT" ID="FILTER_DESC_LABEL">筛选器说明(<U>R</U>):</LABEL>
+	  	 			 <BR>
+					 <INPUT CLASS="sideBtnIndent" ID="FILTER_DESC" ACCESSKEY="R" TITLE="提供筛选对象类的说明。" VALUE="" NAME="FilterDesc" TYPE="TEXT">
+					 </INPUT>
+				</SPAN>
+
+				<P CLASS="ElementSpacer8">&nbsp;</P>
+  		  	  </TD>
+ 			 <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP">
+ 				<SPAN CLASS="itemTextTop" TITLE="">
+	  				 <INPUT CLASS="CheckBox" TYPE="checkbox" ID="GENERATE_EXTENSION" ACCESSKEY="E" TITLE="选中以生成 CHttpServer 对象。" onPropertychange="OnGenerateExtension();">
+	  	 			 <DIV CLASS="itemTextCheckboxA" ID="GENERATE_EXTENSION_LABEL" TITLE="选中以生成 CHttpServer 对象。">
+		  			  <LABEL FOR="GENERATE_EXTENSION" ID="GENERATE_EXTENSION_LABEL">生成服务器扩展对象(<U>E</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+
+				<P CLASS="ElementSpacer">&nbsp;</P>
+
+				<SPAN CLASS="itemText" ID="EXTENSION_CLASS_SPAN" TITLE="提供服务器扩展对象类的名称。">
+	  		 		 <LABEL FOR="EXTENSION_CLASS" CLASS="INDENT" ID="EXTENSION_CLASS_LABEL">扩展类名(<U>L</U>):</LABEL>
+	  	 			 <BR>
+					 <INPUT CLASS="sideBtnIndent" ID="EXTENSION_CLASS" ACCESSKEY="L" TITLE="提供服务器扩展对象类的名称。" VALUE="" NAME="ExtensionClassName" TYPE="TEXT">
+					 </INPUT>
+				</SPAN>
+
+				<P CLASS="ElementSpacer2">&nbsp;</P>
+
+				<SPAN CLASS="itemText" ID="EXTENSION_DESC_SPAN" TITLE="提供服务器扩展对象类的说明。">
+	  		 		 <LABEL FOR="EXTENSION_DESC" CLASS="INDENT" ID="EXTENSION_DESC_LABEL">扩展说明(<U>P</U>):</LABEL>
+	  	 			 <BR>
+					 <INPUT CLASS="sideBtnIndent" ID="EXTENSION_DESC" ACCESSKEY="P" TITLE="提供服务器扩展对象类的说明。" VALUE="" NAME="ExtensionDesc" TYPE="TEXT">
+					 </INPUT>
+				</SPAN>
+  		  	  </TD>
+  		  	  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  		  	  </TD>
+ 		  	 </TR>
+
+ 			 <TR STYLE="POSITION:RELATIVE; TOP:-5PX;">
+  		  	  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  		  	  </TD>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="3">
+				<SPAN CLASS="itemText" ID="MFC_SPAN">MFC 的使用:
+					 <P CLASS="Spacer">&nbsp;</P>
+
+	  				 <INPUT TYPE="radio" CLASS="Radio" NAME="useofmfc" ID="DYNAMIC_MFC" ACCESSKEY="U" TITLE="与 MFC DLL 链接。">
+	  	 			 <DIV CLASS="itemTextRadioB" ID="DYNAMIC_MFC_DIV" TITLE="与 MFC DLL 链接。">
+		  			  <LABEL FOR="DYNAMIC_MFC" ID="DYNAMIC_MFC_LABEL">在共享 DLL 中使用 MFC(<U>U</U>)</LABEL>
+	  	 			 </DIV>
+
+	  				 <BR>
+
+	  			 	 <INPUT TYPE="radio" CLASS="Radio" NAME="useofmfc" ID="STATIC_MFC" ACCESSKEY="M" TITLE="与 MFC 静态库链接。">
+	  	 			 <DIV CLASS="itemTextRadioB"  ID="STATIC_MFC_DIV" TITLE="与 MFC 静态库链接。">
+		  			  <LABEL FOR="STATIC_MFC" ID="STATIC_MFC_LABEL">在静态库中使用 MFC(<U>M</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+  			  </TD>
+  		  	  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  		  	  </TD>
+ 			 </TR>
+
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="100%" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+		 	</TABLE>
+
+	   	  <!--CLOSE OF CONTENT//-->
+		  </TD>
+		 </TR>
+		 <TR VALIGN="BOTTOM">
+		  <TD HEIGHT="48">
+	   	  <!--OPEN OF BUTTON HTML//-->
+
+		  	<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="12">
+			 <TR>
+  			  <TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+				<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+  	 			 <TR VALIGN="TOP">
+  	  			  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+  	  			  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+  	 			 </TR>
+				</TABLE>
+  			  </TD>
+ 			  </TR>
+
+ 			  <TR>
+  			  <TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+
+ 			<TR>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" HEIGHT="23">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);">完成</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');">取消</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.appwiz.isapi.ext.objects');">帮助</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+			</TABLE>
+
+	   	  <!--CLOSE OF BUTTON HTML//-->
+		  </TD>
+		 </TR>
+		</TABLE>
+
+  	<!--CLOSE OF NAVIGATION, CONTENT, AND BUTTON TABLES//-->
+ 	</TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JSCRIPT">
+
+var tab_array = new Array();
+tab_array[0] = Default;
+tab_array[1] = AppSettings;
+tab_array[2] = Notifications;
+
+function InitDocument(document)
+{
+	setDirection();
+	InitTabs();
+	window.external.Load(document);
+	InitControls();
+	GENERATE_FILTER.focus();
+}
+
+function InitTabs()
+{
+	MouseOut(Notifications);
+}
+
+function InitControls()
+{
+	FILTER_CLASS.disabled = false;
+	FILTER_CLASS_SPAN.disabled = false;
+	FILTER_DESC.disabled = false;
+	FILTER_DESC_SPAN.disabled = false;
+	EXTENSION_CLASS.disabled = false;
+	EXTENSION_CLASS_SPAN.disabled = false;
+	EXTENSION_DESC.disabled = false;
+	EXTENSION_DESC_SPAN.disabled = false;
+
+	if (!GENERATE_FILTER.checked)
+	{
+		FILTER_CLASS.disabled = true;
+		FILTER_CLASS_SPAN.disabled = true;
+		FILTER_DESC.disabled = true;
+		FILTER_DESC_SPAN.disabled = true;
+		NextBtn.disabled = true;
+	}
+	if (!GENERATE_EXTENSION.checked)
+	{
+		EXTENSION_CLASS.disabled = true;
+		EXTENSION_CLASS_SPAN.disabled = true;
+		EXTENSION_DESC.disabled = true;
+		EXTENSION_DESC_SPAN.disabled = true;
+	}
+}
+
+function Next(document, linkto)
+{
+	bValidating = true;
+	if (!ValidateInput())
+	{
+		bValidating = false;
+		return;
+	}
+	bValidating = false;
+	window.external.Next(document, linkto);
+}
+
+function OnFinish(document)
+{
+	bValidating = true;
+	if (!ValidateInput())
+	{
+		bValidating = false;
+		return;
+	}
+
+	OnWizFinish(document);
+}
+
+function OnGenerateFilter()
+{
+	if (!GENERATE_FILTER.checked)
+	{
+		FILTER_CLASS.disabled = true;
+		FILTER_CLASS_SPAN.disabled = true;
+		FILTER_DESC.disabled = true;
+		FILTER_DESC_SPAN.disabled = true;
+
+		if (!GENERATE_EXTENSION.checked)
+		{
+			GENERATE_EXTENSION.checked = true;
+			EXTENSION_CLASS.disabled = false;
+			EXTENSION_CLASS_SPAN.disabled = false;
+			EXTENSION_DESC.disabled = false;
+			EXTENSION_DESC_SPAN.disabled = false;
+		}
+		Notifications.className = "inactivelink";
+		NextBtn.disabled = true;
+	}
+	else
+	{
+		FILTER_CLASS.disabled = false;
+		FILTER_CLASS_SPAN.disabled = false;
+		FILTER_DESC.disabled = false;
+		FILTER_DESC_SPAN.disabled = false;
+		Notifications.className = "activelink";
+		NextBtn.disabled = false;
+	}
+}
+
+function OnGenerateExtension()
+{
+
+	if (!GENERATE_EXTENSION.checked)
+	{
+		EXTENSION_CLASS.disabled = true;
+		EXTENSION_CLASS_SPAN.disabled = true;
+		EXTENSION_DESC.disabled = true;
+		EXTENSION_DESC_SPAN.disabled = true;
+
+		if (!GENERATE_FILTER.checked)
+		{
+			GENERATE_FILTER.checked = true;
+			FILTER_CLASS.disabled = false;
+			FILTER_CLASS_SPAN.disabled = false;
+			FILTER_DESC.disabled = false;
+			FILTER_DESC_SPAN.disabled = false;
+		}
+	}
+	else
+	{
+		EXTENSION_CLASS.disabled = false;
+		EXTENSION_CLASS_SPAN.disabled = false;
+		EXTENSION_DESC.disabled = false;
+		EXTENSION_DESC_SPAN.disabled = false;
+	}
+}
+
+function ValidateInput()
+{
+	var oInvalid = null;
+
+	if (!Validate(FILTER_CLASS))
+		oInvalid = FILTER_CLASS;
+
+	if (oInvalid == null)
+		if (!Validate(EXTENSION_CLASS))
+			oInvalid = EXTENSION_CLASS;
+
+	if (oInvalid != null)
+	{
+		window.external.ReportError();
+		oInvalid.focus();
+		return false;
+	}
+	return true;
+}
+
+function Validate(obj)
+{
+	var bValid = true;
+
+	switch(obj.id)
+	{
+		case "FILTER_CLASS":
+			if (GENERATE_FILTER.checked)
+			{
+				bValid = window.external.dte.VCLanguageManager.ValidateIdentifier(obj.value) &&
+					!window.external.dte.VCLanguageManager.IsReservedName(obj.value);
+			}
+			break;
+
+		case "EXTENSION_CLASS":
+			if (GENERATE_EXTENSION.checked)
+			{
+				bValid = window.external.dte.VCLanguageManager.ValidateIdentifier(obj.value) &&
+					!window.external.dte.VCLanguageManager.IsReservedName(obj.value);
+			}
+			break;
+		default:
+			break;
+	}
+
+	if (typeof(bValid) == "undefined")
+		bValid = false;
+
+	return bValid;
+}
+
+function onClick(obj)
+{
+	if (obj.id == "Notifications")
+	{
+		if (GENERATE_FILTER.checked)
+		{
+			Next(document, "Notifications.htm");
+		}
+	}
+}
+
+</SCRIPT>
+<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT>
+	document.scripts("INCLUDE_SCRIPT").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Script.js";
+	document.scripts("INCLUDE_COMMON").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Common.js";
+</SCRIPT>

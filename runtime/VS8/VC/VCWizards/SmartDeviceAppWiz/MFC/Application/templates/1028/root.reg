@@ -1,0 +1,20 @@
+REGEDIT
+; 您的安裝程式會使用此 .REG 檔。
+; 如果無法使用安裝程式，會使用對 CWinApp::RegisterShellFileTypes 
+; 與 COleObjectFactory::UpdateRegistryAll 的呼叫，
+; 自動在您的 InitInstance 中登錄下列項目。
+
+[!if HAS_SUFFIX]
+HKEY_CLASSES_ROOT\.[!output FILE_EXTENSION] = [!output FILE_TYPE_ID]
+HKEY_CLASSES_ROOT\[!output FILE_TYPE_ID]\shell\open\command = [!output PROJECT_NAME].EXE %1
+HKEY_CLASSES_ROOT\[!output FILE_TYPE_ID]\shell\open\ddeexec = [open("%1")]
+HKEY_CLASSES_ROOT\[!output FILE_TYPE_ID]\shell\open\ddeexec\application = [!output PROJECT_NAME]
+    ; 注意: 應用程式是選擇項
+    ; (預設為 "command" 中的應用程式名稱)
+[!endif]
+
+[!if APP_TYPE_DLG]
+HKEY_CLASSES_ROOT\[!output SAFE_PROJECT_IDENTIFIER_NAME].Application = [!output SAFE_PROJECT_IDENTIFIER_NAME] Application
+[!else]
+HKEY_CLASSES_ROOT\[!output FILE_TYPE_ID] = [!output FILE_NEW_NAME_LONG]
+[!endif]

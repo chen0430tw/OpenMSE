@@ -1,0 +1,7 @@
+VSWIZARD 7.0
+Wizard=VsWizard.VsWizardEngine.8.0
+Param="WIZARD_NAME = WebService"
+Param="RELATIVE_PATH = VCWizards\CodeWiz\ATL"
+Param="WIZARD_UI = TRUE"
+Param="PREPROCESS_FUNCTION = CanAddWebSvc"
+Param="WIZARD_ID = 7"

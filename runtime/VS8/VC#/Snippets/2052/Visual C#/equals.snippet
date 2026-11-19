@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>equals</Title>
+			<Shortcut>equals</Shortcut>
+			<Description>根据准则实现 Equals() 的代码段</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>SystemDiagnosticsDebug</ID>
+					<Function>SimpleTypeName(global::System.Diagnostics.Debug)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>Exception</ID>
+					<Function>SimpleTypeName(global::System.Exception)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>ClassName</ID>
+					<Function>ClassName()</Function>
+					<Default>ClassName</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[
+    // override object.Equals
+    public override bool Equals (object obj)
+    {
+
+        //       
+        // See the full list of guidelines at
+        //   http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpgenref/html/cpconequals.asp    
+        // and also the guidance for operator== at
+        //   http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpgenref/html/cpconimplementingequalsoperator.asp
+        //
+
+        if (obj == null || GetType() != obj.GetType()) 
+        {
+            return false;
+        }
+        
+        // TODO: write your implementation of Equals() here.
+        throw new $Exception$("The method or operation is not implemented.");
+        return base.Equals (obj);
+	$end$ 
+    }
+    
+    // override object.GetHashCode
+    public override int GetHashCode()
+    {
+        // TODO: write your implementation of GetHashCode() here.
+        throw new $Exception$("The method or operation is not implemented.");
+        return base.GetHashCode();
+    }
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

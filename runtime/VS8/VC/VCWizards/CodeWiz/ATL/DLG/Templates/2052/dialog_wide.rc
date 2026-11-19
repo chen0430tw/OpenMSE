@@ -1,0 +1,6 @@
+DIALOG 0, 0, 210, 129
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "¶Ô»°¿ע"
+FONT 8, "ËÎÌו, MS Sans Serif"
+BEGIN
+END

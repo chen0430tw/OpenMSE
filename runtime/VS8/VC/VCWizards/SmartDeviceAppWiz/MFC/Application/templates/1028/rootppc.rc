@@ -1,0 +1,387 @@
+//Microsoft Visual C++ 產生的資源指令碼。
+//
+#include "resourceppc.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// 已從 TEXTINCLUDE 2 資源產生。
+//
+
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE  
+BEGIN
+	"resourceppc.h\0"
+END
+
+2 TEXTINCLUDE  
+BEGIN
+	"#include ""afxres.h""\r\n"
+	"\0"
+END
+
+3 TEXTINCLUDE  
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])\r\n"
+    "LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]\r\n"
+    "#pragma code_page([!output SYSTEM_CODE_PAGE])\r\n"
+    "#include ""[!output RES_PATH]\\[!output RC2_FILE_NAME]ppc.rc2""  // 非 Microsoft Visual C++ 編輯過的資源\r\n"
+    "#include ""afxres.rc""  	// 標準元件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 圖示
+//
+
+// 先放置有最低 ID 的圖示，
+// 確保應用程式圖示在所有系統上保持一致。
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+IDR_MAINFRAME		ICON	DISCARDABLE	"[!output RES_PATH]\\[!output PROJECT_NAME].ico"
+[!if DOCVIEW && !APP_TYPE_DLG]
+IDR_[!output SAFE_DOC_TYPE_NAME]TYPE		ICON	DISCARDABLE	"[!output RES_PATH]\\[!output PROJECT_NAME]Doc.ico"
+[!endif]
+#endif
+
+[!if CMD_BAR_MENUNBUTTON]
+/////////////////////////////////////////////////////////////////////////////
+//
+// 點陣圖
+//
+
+IDR_MAINFRAME		BITMAP	DISCARDABLE	"res\\Cmdbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 工具列
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE 16, 16
+BEGIN
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+[!if LIST_VIEW]
+	SEPARATOR
+    BUTTON      ID_VIEW_LARGEICON
+    BUTTON      ID_VIEW_SMALLICON
+    BUTTON      ID_VIEW_LIST
+    BUTTON      ID_VIEW_DETAILS
+[!endif]
+[!if !APP_TYPE_SDI_DOCLIST]
+    BUTTON      ID_APP_ABOUT
+[!endif]
+END
+[!endif]
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+/////////////////////////////////////////////////////////////////////////////
+//
+// 功能表
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+	POPUP "功能表"
+	BEGIN
+[!if DOCVIEW]
+		POPUP "檔案"
+		BEGIN
+			MENUITEM "儲存檔案",				ID_FILE_SAVE
+		END
+[!endif]
+		POPUP "編輯"
+		BEGIN
+			MENUITEM "復原",				ID_EDIT_UNDO
+			MENUITEM SEPARATOR
+			MENUITEM "剪下",					ID_EDIT_CUT
+			MENUITEM "複製",				ID_EDIT_COPY
+			MENUITEM "貼上",				ID_EDIT_PASTE
+		END
+		POPUP "工具"
+		BEGIN
+			MENUITEM "關於 [!output PROJECT_NAME]...",	ID_APP_ABOUT
+		END
+[!if LIST_VIEW]
+		POPUP "檢視"
+		BEGIN
+	        	MENUITEM SEPARATOR
+        		MENUITEM "大圖示",                ID_VIEW_LARGEICON
+	        	MENUITEM "小圖示",                ID_VIEW_SMALLICON
+        		MENUITEM "清單",                       ID_VIEW_LIST
+        		MENUITEM "詳細資料",                    ID_VIEW_DETAILS
+        		MENUITEM SEPARATOR
+        		POPUP "排列圖示"
+        		BEGIN
+            			MENUITEM "依名稱",                    ID_VIEW_BYNAME
+            			MENUITEM SEPARATOR
+            		MENUITEM "自動排列",               ID_VIEW_AUTOARRANGE
+        		END
+        		MENUITEM "對齊圖示",              ID_VIEW_LINEUP
+		END
+[!endif]
+
+	END
+END
+[!if APP_TYPE_SDI_DOCLIST]
+IDR_DOCLIST MENU PRELOAD DISCARDABLE 
+BEGIN
+	POPUP "功能表"			
+	BEGIN
+		MENUITEM "關於 [!output PROJECT_NAME]...",		ID_APP_ABOUT
+	END
+END
+[!endif]
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 快速鍵
+//
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	"N",            ID_FILE_NEW,            VIRTKEY,CONTROL
+	"Z",            ID_EDIT_UNDO,           VIRTKEY,CONTROL
+	"X",            ID_EDIT_CUT,            VIRTKEY,CONTROL
+	"C",            ID_EDIT_COPY,           VIRTKEY,CONTROL
+	"V",            ID_EDIT_PASTE,          VIRTKEY,CONTROL
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 對話方塊
+//
+IDD_ABOUTBOX DIALOG DISCARDABLE 0, 0, 156, 129
+CAPTION "關於 [!output PROJECT_NAME]"
+EXSTYLE WS_EX_CAPTIONOKBTN
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+FONT [!output ABOUTBOX_FONT_SIZE], "MS Shell Dlg"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC_1,12,12,21,20,SS_REALSIZEIMAGE
+    LTEXT           "[!output PROJECT_NAME] 1.0 版",IDC_STATIC_2,12,36,70,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) [!output YEAR]",IDC_STATIC_3,12,48,66,8
+END
+
+IDD_ABOUTBOX_WIDE DIALOG DISCARDABLE 0, 0, 210, 129
+CAPTION "關於 [!output PROJECT_NAME]"
+EXSTYLE WS_EX_CAPTIONOKBTN
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+FONT [!output ABOUTBOX_FONT_SIZE], "MS Shell Dlg"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC_1,12,12,21,20,SS_REALSIZEIMAGE
+    LTEXT           "[!output PROJECT_NAME] 1.0 版",IDC_STATIC_2,48,12,66,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) [!output YEAR]",IDC_STATIC_3,48,24,66,8
+END
+
+[!if FORM_VIEW]
+IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_FORM DIALOG DISCARDABLE 0, 0, 156, 129
+STYLE WS_CHILD
+FONT [!output ABOUTBOX_FONT_SIZE], "MS Shell Dlg"
+BEGIN
+	LTEXT	"TODO: 在此對話方塊上放置表單控制項。",IDC_STATIC,12,54,136,8
+END
+[!endif]
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 版本
+//
+
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       1,0,0,1
+  PRODUCTVERSION    1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+        BLOCK "[!output HEX_LCID][!output HEX_CODE_PAGE]"
+		BEGIN 
+            VALUE "CompanyName", "TODO: <公司名稱>"
+            VALUE "FileDescription", "TODO: <檔案說明>"
+			VALUE "FileVersion",     "1.0.0.1"
+			VALUE "InternalName",    "[!output PROJECT_NAME].exe"
+            VALUE "LegalCopyright", "TODO: (c) <公司名稱>.  All rights reserved."
+			VALUE "OriginalFilename","[!output PROJECT_NAME].exe"
+            VALUE "ProductName", "TODO: <產品名稱>"
+			VALUE "ProductVersion",  "1.0.0.1"
+		END
+	END
+	BLOCK "VarFileInfo" 
+	BEGIN 
+		VALUE "Translation", 0x[!output HEX_LCID], [!output CODE_PAGE]
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_ABOUTBOX_WIDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+[!if FORM_VIEW]
+    IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+[!endif]
+END
+#endif  // APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 字串資料表
+//
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+// 目標非麥金塔的應用程式移除兩個額外的子字串
+[!if !DOCVIEW]
+	IDR_MAINFRAME           "[!output MAIN_FRAME_CAPTION]"
+[!else]
+[!if HAS_SUFFIX]  // 有後置檔案
+	IDR_MAINFRAME           "[!output MAIN_FRAME_CAPTION]\n\n[!output FILE_NEW_NAME_SHORT]\n[!output FILTER_NAME]\n.[!output FILE_EXTENSION]\n[!output FILE_TYPE_ID]\n[!output FILE_NEW_NAME_LONG]"
+[!else]
+	IDR_MAINFRAME           "[!output MAIN_FRAME_CAPTION]\n\n[!output FILE_NEW_NAME_SHORT]\n\n\n[!output FILE_TYPE_ID]\n[!output FILE_NEW_NAME_LONG]"
+[!endif]
+[!endif]
+END
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+	AFX_IDS_APP_TITLE       "[!output PROJECT_NAME]"
+[!if HELPSTYLE_WINHELP]
+	AFX_IDS_IDLEMESSAGE     "就緒"
+	AFX_IDS_HELPMODEMESSAGE "選取要取得說明的物件"
+[!else]
+	AFX_IDS_IDLEMESSAGE     "就緒"
+[!endif]
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+[!if DOCVIEW]  
+	ID_FILE_SAVE            "儲存使用中文件\n儲存檔案"
+[!endif]
+	ID_EDIT_UNDO            "復原上次的動作\n復原"
+	ID_EDIT_CUT             "剪下選取項目並放到剪貼簿\n剪下"
+	ID_EDIT_COPY            "複製選取項目並放到剪貼簿\n複製"
+	ID_EDIT_PASTE           "插入剪貼簿的內容\n貼上"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	IDS_NEW                 "新增"
+	IDS_MENU                "功能表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	AFX_IDS_SCCLOSE         "關閉使用中視窗並提示使用者儲存文件"
+	AFX_IDS_SCTASKLIST      "啟動工作清單"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_INDICATOR_EXT        "EXT"
+	ID_INDICATOR_CAPS       "CAP"
+	ID_INDICATOR_NUM        "NUM"
+	ID_INDICATOR_SCRL       "SCRL"
+	ID_INDICATOR_OVR        "OVR"
+	ID_INDICATOR_REC        "REC"
+END
+
+[!if SOCKETS]
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDP_SOCKETS_INIT_FAILED "Windows 通訊端安裝失敗"
+END
+[!endif]
+
+[!if LIST_VIEW]
+
+STRINGTABLE  
+BEGIN
+    ID_VIEW_SMALLICON       "使用小圖示顯示項目。\n小圖示"
+    ID_VIEW_LARGEICON       "使用大圖示顯示項目。\n大圖示"
+    ID_VIEW_LIST            "顯示清單項目。\n清單"
+    ID_VIEW_DETAILS         "顯示視窗中每個項目的詳細資訊。\n詳細資料"
+    ID_VIEW_LINEUP          "在格線內排列圖示。"
+    ID_VIEW_BYNAME          "依據字母順序對圖示進行排序。"
+END
+
+STRINGTABLE  
+BEGIN
+    ID_VIEW_AUTOARRANGE         "在格線上排列圖示。"
+END
+[!endif]
+
+#endif
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// 已從 TEXTINCLUDE 3 資源產生。
+//
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+#include "[!output RES_PATH]\\[!output RC2_FILE_NAME]ppc.rc2"  // 非 Microsoft Visual C++ 編輯過的資源
+#include "afxres.rc"  	// 標準元件
+#endif
+#endif    // 非 APSTUDIO_INVOKED

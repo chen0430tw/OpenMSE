@@ -1,0 +1,554 @@
+<!- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<HTML DIR="LTR">
+
+<HEAD>
+	<TITLE>添加 PerfMon 计数器向导</TITLE>
+	<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+	<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+	<LINK ID="LINKURL" REL="stylesheet" HREF="../../../../../2052/NewStyles.css">
+
+	<SYMBOL NAME="VARIABLE_TYPE" TYPE=text VALUE="ULONG"></SYMBOL>
+	<SYMBOL NAME="VARIABLE_NAME" TYPE=text VALUE=""></SYMBOL>
+	<SYMBOL NAME="COUNTER_TYPE" TYPE=select-one VALUE="PERF_COUNTER_COUNTER"></SYMBOL>
+	<SYMBOL NAME="MAX_COUNTER_SIZE" TYPE=num VALUE=64></SYMBOL>
+	<SYMBOL NAME="NAME_STRING" TYPE=text VALUE=""></SYMBOL>
+	<SYMBOL NAME="HELP_STRING" TYPE=text VALUE=""></SYMBOL>
+	<SYMBOL NAME="DETAIL_LEVEL" TYPE=select-one VALUE="PERF_DETAIL_NOVICE"></SYMBOL>
+	<SYMBOL NAME="DEFAULT_SCALE" TYPE=num VALUE=0></SYMBOL>
+	<SYMBOL NAME="DEFAULT_COUNTER" TYPE=checkbox VALUE=false></SYMBOL>
+</HEAD>
+
+<BODY BGCOLOR="BUTTONFACE" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="if (!bValidating) OnKey();" ONKEYPRESS="if (!bValidating) OnPress();">
+
+<TABLE CLASS="ONE" HEIGHT="100%" WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+<COL WIDTH="100%">
+
+  <!--OPEN OF INTRODUCTORY INFORMATION TABLE//-->
+  <TR VALIGN="TOP">
+	<TD HEIGHT="79" WIDTH="100%" COLSPAN="2">
+	 <TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	 <COL WIDTH="12"><COL><COL WIDTH="12">
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+  
+	   <TD VALIGN="TOP" HEIGHT="12">
+	  	&nbsp;
+	   </TD>
+  
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+  
+	   <TD CLASS="IMAGE" VALIGN="BOTTOM" WIDTH="110" ROWSPAN="2">
+		<DIV CLASS="SMALLA" ID="Layer0">
+		 <IMG CLASS="SMALLEST" SRC="../../Images/PerfCounter.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+		</DIV>
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+	 
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+	  
+	   <TD VALIGN="TOP" HEIGHT="65">
+		<H4 CLASS="HEAD" ID="HEAD">欢迎使用添加 PerfMon 计数器向导</H4>
+		<P CLASS="SUBHEAD" ID="SUBHEAD">本向导生成一个要添加到 perfmon 类中的 perfmon 计数器。</P>
+	   </TD>
+	  
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+	 
+	  <TR>
+	   <TD VALIGN="TOP" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+		<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+	  	 <TR VALIGN="TOP">
+	  	  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+	  	  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+	  	 </TR>
+		</TABLE>
+	   </TD>
+	  </TR>
+	 </TABLE>
+	</TD>
+  </TR>
+  <!--CLOSE OF INTRODUCTORY INFORMATION TABLE//-->
+
+  <!--OPEN OF CONTENT AND BUTTON TABLES//-->
+  <TR VALIGN="TOP">
+	   <TD VALIGN="TOP" HEIGHT="100%">
+	   <!--OPEN OF CONTENT AND BUTTON TABLE//-->
+	   
+	   	<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<COL WIDTH="100%">
+		 <TR VALIGN="TOP">
+		  <TD HEIGHT="100%">
+	   	  <!--OPEN OF CONTENT//-->
+		  
+		  	<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL WIDTH="284"><COL WIDTH="12"><COL WIDTH="285"><COL WIDTH="12">
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+
+ 			 <TR VALIGN="TOP">
+ 				 <TD VALIGN="TOP" WIDTH="12">
+  					&nbsp;
+  				 </TD>
+				 <TD VALIGN="TOP" COLSPAN="3">
+				  <TABLE CLASS="FixedSize" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+				  <COL WIDTH="103"><COL WIDTH="12"><COL WIDTH="195"><COL WIDTH="12"><COL WIDTH="258">
+				   <TR VALIGN="TOP">
+				    <TD VALIGN="TOP">
+ 					 <SPAN CLASS="itemTextTop" TITLE="成员变量的类型。" ID="AUT_ID" >
+	  	 				 <LABEL FOR="VARIABLE_TYPE" ID="VARIABLE_TYPE_LABEL">变量类型(<U>T</U>):</LABEL>
+	  	 				 <BR>
+	  	 				 <SELECT CLASS="sideBtn" ID="VARIABLE_TYPE" SIZE="1" ACCESSKEY="T" TITLE="成员变量的类型。" VALUE="ULONG" onChange="OnTypeChange();" STYLE="WIDTH:102;">
+						  <OPTION VALUE="ULONG" ID="ULONG_OPTION" SELECTED>ULONG</OPTION>
+						  <OPTION VALUE="ULONGLONG" ID="ULONGLONG_OPTION">ULONGLONG</OPTION>
+						 </SELECT>
+					 </SPAN>
+				 	</TD>
+   		  		  	<TD VALIGN="TOP" WIDTH="12">
+  						&nbsp;
+  		  		  	</TD>
+				  	<TD VALIGN="TOP">
+ 					 <SPAN CLASS="itemTextTop" TITLE="成员变量的名称" ID="AUT_ID1" >
+	  	 				 <LABEL FOR="VARIABLE_NAME" ID="VARIABLE_NAME_LABEL">变量名(<U>N</U>):</LABEL>
+	  	 				 <BR>
+	  	 				 <INPUT CLASS="sideBtn" ID="VARIABLE_NAME" TYPE="TEXT" ACCESSKEY="N" TITLE="成员变量的名称">
+					 </SPAN>
+  		  		  	</TD>
+   		  		  	<TD VALIGN="TOP" WIDTH="12">
+  						&nbsp;
+  		  		  	</TD>
+  				  	<TD VALIGN="TOP">
+ 					 <SPAN CLASS="itemTextTop" TITLE="要添加的计数器类型。这确定计数器中的数据在显示给用户时如何由 perfmon 客户端解释。" ID="AUT_ID2" >
+	  	 				 <LABEL FOR="COUNTER_TYPE" ID="COUNTER_TYPE_LABEL">计数器类型(<U>O</U>):</LABEL>
+	  	 				 <BR>
+	  	 				 <SELECT CLASS="sideBtn" ID="COUNTER_TYPE" SIZE="1" ACCESSKEY="O" TITLE="要添加的计数器类型。这确定计数器中的数据在显示给用户时如何由 perfmon 客户端解释。" VALUE="PERF_COUNTER_COUNTER" STYLE="WIDTH:257;">
+						 </SELECT>
+						 <!-- COUNTER_TYPE_HIDDEN stores the options that will be copied to COUNTER_TYPE based on the current selection of VARIABLE_TYPE -->
+	  	 				 <SELECT CLASS="sideBtn" ID="COUNTER_TYPE_HIDDEN" SIZE="1" ACCESSKEY="O" TITLE="" VALUE="PERF_COUNTER_COUNTER" STYLE="WIDTH:0PX; HEIGHT:0PX; MARGIN-BOTTOM:-2PX;" DISABLED>
+						   	<-- ULONG 类型 -->
+							<OPTION VALUE="PERF_AVERAGE_BASE" ID="PERF_AVERAGE_BASE_OPTION" VARTYPE="ULONG" SELECTME="false">平均基</OPTION>
+							<OPTION VALUE="PERF_AVERAGE_TIMER" ID="PERF_AVERAGE_TIMER_OPTION" VARTYPE="ULONG" SELECTME="false">常规计时器</OPTION>
+							<OPTION VALUE="PERF_COUNTER_DELTA" ID="PERF_COUNTER_DELTA_OPTION" VARTYPE="ULONG" SELECTME="false">增量</OPTION>
+							<OPTION VALUE="PERF_COUNTER_QUEUELEN_TYPE" ID="PERF_COUNTER_QUEUELEN_TYPE_OPTION" VARTYPE="ULONG" SELECTME="false">队列长度</OPTION>
+						   	<OPTION VALUE="PERF_COUNTER_COUNTER" ID="PERF_COUNTER_COUNTER_OPTION" VARTYPE="ULONG" SELECTME="false">速率计数器</OPTION>
+							<OPTION VALUE="PERF_COUNTER_RAWCOUNT" ID="PERF_COUNTER_RAWCOUNT_OPTION" VARTYPE="ULONG" SELECTME="true">原始计数器</OPTION>
+							<OPTION VALUE="PERF_COUNTER_RAWCOUNT_HEX" ID="PERF_COUNTER_RAWCOUNT_HEX_OPTION" VARTYPE="ULONG" SELECTME="false">原始计数器(十六进制)</OPTION>
+							<OPTION VALUE="PERF_RAW_FRACTION" ID="PERF_RAW_FRACTION_OPTION" VARTYPE="ULONG" SELECTME="false">原始分数</OPTION>
+							<OPTION VALUE="PERF_RAW_BASE" ID="PERF_RAW_BASE_OPTION" VARTYPE="ULONG" SELECTME="false">原始分数基</OPTION>
+							<OPTION VALUE="PERF_SAMPLE_BASE" ID="PERF_SAMPLE_BASE_OPTION" VARTYPE="ULONG" SELECTME="false">实例基</OPTION>
+							<OPTION VALUE="PERF_SAMPLE_COUNTER" ID="PERF_SAMPLE_COUNTER_OPTION" VARTYPE="ULONG" SELECTME="false">示例计数器</OPTION>
+							<OPTION VALUE="PERF_SAMPLE_FRACTION" ID="PERF_SAMPLE_FRACTION_OPTION" VARTYPE="ULONG" SELECTME="false">示例百分比</OPTION>
+							<-- ULONGLONG types -->
+							<OPTION VALUE="PERF_ELAPSED_TIME" ID="PERF_ELAPSED_TIME_OPTION" VARTYPE="ULONGLONG" SELECTME="false">运行时间</OPTION>
+							<OPTION VALUE="PERF_AVERAGE_BULK" ID="PERF_AVERAGE_BULK_OPTION" VARTYPE="ULONGLONG" SELECTME="false">大平均值</OPTION>
+							<OPTION VALUE="PERF_COUNTER_LARGE_DELTA" ID="PERF_COUNTER_LARGE_DELTA_OPTION" VARTYPE="ULONGLONG" SELECTME="false">大增量</OPTION>
+							<OPTION VALUE="PERF_COUNTER_LARGE_QUEUELEN_TYPE" ID="PERF_COUNTER_LARGE_QUEUELEN_TYPE_OPTION" VARTYPE="ULONGLONG" SELECTME="false">大队列长度</OPTION>
+							<OPTION VALUE="PERF_COUNTER_100NS_QUEUELEN_TYPE" ID="PERF_COUNTER_100NS_QUEUELEN_TYPE_OPTION" VARTYPE="ULONGLONG" SELECTME="false">大队列长度(100 N)</OPTION>
+							<OPTION VALUE="PERF_COUNTER_OBJ_TIME_QUEUELEN_TYPE" ID="PERF_COUNTER_OBJ_TIME_QUEUELEN_TYPE_OPTION" VARTYPE="ULONGLONG" SELECTME="false">大队列长度(对象时间)</OPTION>
+							<OPTION VALUE="PERF_COUNTER_BULK_COUNT" ID="PERF_COUNTER_BULK_COUNT_OPTION" VARTYPE="ULONGLONG" SELECTME="false">大速率</OPTION>
+							<OPTION VALUE="PERF_COUNTER_LARGE_RAWCOUNT" ID="PERF_COUNTER_LARGE_RAWCOUNT_OPTION" VARTYPE="ULONGLONG" SELECTME="true">大型原始计数器</OPTION>
+							<OPTION VALUE="PERF_COUNTER_LARGE_RAWCOUNT_HEX" ID="PERF_COUNTER_LARGE_RAWCOUNT_HEX_OPTION" VARTYPE="ULONGLONG" SELECTME="false">大型原始计数器(十六进制)</OPTION>
+							<OPTION VALUE="PERF_LARGE_RAW_FRACTION" ID="PERF_LARGE_RAW_FRACTION_OPTION" VARTYPE="ULONGLONG" SELECTME="false">大原始分数</OPTION>
+							<OPTION VALUE="PERF_LARGE_RAW_BASE" ID="PERF_LARGE_RAW_BASE_OPTION" VARTYPE="ULONGLONG" SELECTME="false">大原始分数基</OPTION>
+							<OPTION VALUE="PERF_COUNTER_MULTI_TIMER" ID="PERF_COUNTER_MULTI_TIMER_OPTION" VARTYPE="ULONGLONG" SELECTME="false">多项计时器</OPTION>
+							<OPTION VALUE="PERF_COUNTER_MULTI_TIMER_INV" ID="PERF_COUNTER_MULTI_TIMER_INV_OPTION" VARTYPE="ULONGLONG" SELECTME="false">反向多项计时器</OPTION>
+							<OPTION VALUE="PERF_100NSEC_MULTI_TIMER" ID="PERF_100NSEC_MULTI_TIMER_OPTION" VARTYPE="ULONGLONG" SELECTME="false">多项计时器(100 纳秒)</OPTION>
+							<OPTION VALUE="PERF_100NSEC_MULTI_TIMER_INV" ID="PERF_100NSEC_MULTI_TIMER_INV_OPTION" VARTYPE="ULONGLONG" SELECTME="false">反向多项计时器(100 纳秒)</OPTION>
+							<OPTION VALUE="PERF_COUNTER_MULTI_BASE" ID="PERF_COUNTER_MULTI_BASE_OPTION" VARTYPE="ULONGLONG" SELECTME="false">多项计时器基</OPTION>
+							<OPTION VALUE="PERF_PRECISION_SYSTEM_TIMER" ID="PERF_PRECISION_SYSTEM_TIMER_OPTION" VARTYPE="ULONGLONG" SELECTME="false">精度计时器</OPTION>
+							<OPTION VALUE="PERF_PRECISION_100NS_TIMER" ID="PERF_PRECISION_100NS_TIMER_OPTION" VARTYPE="ULONGLONG" SELECTME="false">精度计时器(100 N)</OPTION>
+							<OPTION VALUE="PERF_PRECISION_OBJECT_TIMER" ID="PERF_PRECISION_OBJECT_TIMER_OPTION" VARTYPE="ULONGLONG" SELECTME="false">精度计时器(对象时间)</OPTION>
+							<OPTION VALUE="PERF_PRECISION_TIMESTAMP" ID="PERF_PRECISION_TIMESTAMP_OPTION" VARTYPE="ULONGLONG" SELECTME="false">精度计时器时间戳</OPTION>
+							<OPTION VALUE="PERF_COUNTER_TIMER" ID="PERF_COUNTER_TIMER_OPTION" VARTYPE="ULONGLONG" SELECTME="false">计时器</OPTION>
+							<OPTION VALUE="PERF_COUNTER_TIMER_INV" ID="PERF_COUNTER_TIMER_INV_OPTION" VARTYPE="ULONGLONG" SELECTME="false">反向计时器</OPTION>
+							<OPTION VALUE="PERF_100NSEC_TIMER" ID="PERF_100NSEC_TIMER_OPTION" VARTYPE="ULONGLONG" SELECTME="false">计时器(100 N)</OPTION>
+							<OPTION VALUE="PERF_100NSEC_TIMER_INV" ID="PERF_100NSEC_TIMER_INV_OPTION" VARTYPE="ULONGLONG" SELECTME="false">反向计时器(100 N)</OPTION>
+							<OPTION VALUE="PERF_OBJ_TIME_TIMER" ID="PERF_OBJ_TIME_TIMER_OPTION" VARTYPE="ULONGLONG" SELECTME="false">计时器(对象时间)</OPTION>
+							<-- TEXT types -->
+							<OPTION VALUE="PERF_COUNTER_TEXT" ID="PERF_COUNTER_TEXT_OPTION" VARTYPE="WCHAR" SELECTME="true">计数器文本</OPTION>
+						 </SELECT>
+					 </SPAN>
+					</TD>
+				   </TR>
+			  	  </TABLE>
+  		  		 </TD>
+  		  		 <TD VALIGN="TOP" WIDTH="12">
+  					&nbsp;
+  		  		 </TD>
+ 		  	 </TR>
+
+ 			 <TR VALIGN="TOP">
+ 				 <TD VALIGN="TOP" WIDTH="12">
+  					&nbsp;
+  				 </TD>
+				 <TD VALIGN="TOP" COLSPAN="3">
+				  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+				  <COL WIDTH="185"><COL WIDTH="12"><COL WIDTH="185"><COL WIDTH="12"><COL WIDTH="186">
+				   <TR VALIGN="TOP">
+				    <TD VALIGN="TOP">
+ 					 <SPAN CLASS="itemText" TITLE="perfmon 的“计数器列表”中显示给用户的计数器名称" ID="AUT_ID3" >
+	  	 				 <LABEL FOR="NAME_STRING" ID="NAME_STRING_LABEL">名称字符串(<U>A</U>):</LABEL>
+	  	 				 <BR>
+	  	 				 <INPUT CLASS="sideBtn" ID="NAME_STRING" TYPE="TEXT" ACCESSKEY="A" TITLE="perfmon 的“计数器列表”中显示给用户的计数器名称">
+					 </SPAN>
+				 	</TD>
+   		  		  	<TD VALIGN="TOP" WIDTH="12">
+  						&nbsp;
+  		  		  	</TD>
+				  	<TD VALIGN="TOP">
+  						&nbsp;
+  		  		  	</TD>
+   		  		  	<TD VALIGN="TOP" WIDTH="12">
+  						&nbsp;
+  		  		  	</TD>
+  				  	<TD VALIGN="TOP">
+  						&nbsp;
+					</TD>
+				   </TR>
+			  	  </TABLE>
+  		  		 </TD>
+  		  		 <TD VALIGN="TOP" WIDTH="12">
+  					&nbsp;
+  		  		 </TD>
+ 		  	 </TR>
+			 
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+
+ 			 <TR VALIGN="TOP">
+ 				 <TD VALIGN="TOP" WIDTH="12">
+  					&nbsp;
+  				 </TD>
+				 <TD VALIGN="TOP" COLSPAN="3">
+				  <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+				  <COL WIDTH="185"><COL WIDTH="12"><COL WIDTH="185"><COL WIDTH="12"><COL WIDTH="186">
+				   <TR VALIGN="TOP">
+				    <TD VALIGN="TOP">
+ 					 <SPAN CLASS="itemText" TITLE="当用户从 perfmon 请求计数器的解释时显示给用户的解释文本" ID="AUT_ID4" >
+	  	 				 <LABEL FOR="HELP_STRING" ID="HELP_STRING_LABEL">帮助字符串(<U>P</U>):</LABEL>
+	  	 				 <BR>
+	  	 				 <INPUT CLASS="sideBtn" ID="HELP_STRING" TYPE="TEXT" ACCESSKEY="P" TITLE="当用户从 perfmon 请求计数器的解释时显示给用户的解释文本">
+					 </SPAN>
+				 	</TD>
+   		  		  	<TD VALIGN="TOP" WIDTH="12">
+  						&nbsp;
+  		  		  	</TD>
+				  	<TD VALIGN="TOP">
+  						&nbsp;
+  		  		  	</TD>
+   		  		  	<TD VALIGN="TOP" WIDTH="12">
+  						&nbsp;
+  		  		  	</TD>
+  				  	<TD VALIGN="TOP">
+  						&nbsp;
+					</TD>
+				   </TR>
+			  	  </TABLE>
+  		  		 </TD>
+  		  		 <TD VALIGN="TOP" WIDTH="12">
+  					&nbsp;
+  		  		 </TD>
+ 		  	 </TR>
+			 
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+
+ 			 <TR VALIGN="TOP">
+ 				 <TD VALIGN="TOP" WIDTH="12">
+  					&nbsp;
+  				 </TD>
+				 <TD VALIGN="TOP" COLSPAN="3">
+				  <TABLE CLASS="FixedSize" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+				  <COL WIDTH="194"><COL WIDTH="12"><COL WIDTH="194"><COL WIDTH="12"><COL WIDTH="168">
+				   <TR VALIGN="TOP">
+				    <TD VALIGN="TOP">
+ 					 <SPAN CLASS="itemText" TITLE="关于 perfmon 客户端指示不同级别用户的计数器复杂性的提示" ID="AUT_ID5" >
+	  	 				 <LABEL FOR="DETAIL_LEVEL" ID="DETAIL_LEVEL_LABEL">详细信息级别(<U>D</U>):</LABEL>
+	  	 				 <BR>
+	  	 				 <SELECT CLASS="sideBtn" ID="DETAIL_LEVEL" SIZE="1" ACCESSKEY="D" TITLE="关于 perfmon 客户端指示不同级别用户的计数器复杂性的提示" VALUE="PERF_DETAIL_NOVICE">
+						 	<OPTION VALUE="PERF_DETAIL_NOVICE" ID="PERF_DETAIL_NOVICE_OPTION" SELECTED>初学者</OPTION>
+							<OPTION VALUE="PERF_DETAIL_ADVANCED" ID="PERF_DETAIL_ADVANCED_OPTION">高级</OPTION>
+							<OPTION VALUE="PERF_DETAIL_EXPERT" ID="PERF_DETAIL_EXPERT_OPTION">专家</OPTION>
+							<OPTION VALUE="PERF_DETAIL_WIZARD" ID="PERF_DETAIL_WIZARD_OPTION">専門家</OPTION>
+						 </SELECT>
+					 </SPAN>
+				 	</TD>
+   		  		  	<TD VALIGN="TOP" WIDTH="12">
+  						&nbsp;
+  		  		  	</TD>
+				  	<TD VALIGN="TOP">
+ 					 <SPAN CLASS="itemText" TITLE="这是在显示数据前与数据相乘的 10 的幂" ID="AUT_ID6" >
+	  	 				 <LABEL FOR="DEFAULT_SCALE" ID="DEFAULT_SCALE_LABEL">默认比例(<U>S</U>):</LABEL>
+	  	 				 <BR>
+	  	 				 <INPUT CLASS="sideBtn" ID="DEFAULT_SCALE" TYPE="TEXT" ACCESSKEY="S" TITLE="这是在显示数据前与数据相乘的 10 的幂">
+					 </SPAN>
+  		  		  	</TD>
+   		  		  	<TD VALIGN="TOP" WIDTH="12">
+  						&nbsp;
+  		  		  	</TD>
+  				  	<TD VALIGN="MIDDLE">
+  					 <SPAN CLASS="itemText" TITLE="如果选中，当用户在 perfmon 中选择对象时将默认选择该计数器" ID="AUT_ID7" >
+	  				  <INPUT TYPE="checkbox" CLASS="CheckBox" ID="DEFAULT_COUNTER" ACCESSKEY="E" TITLE="如果选中，当用户在 perfmon 中选择对象时将默认选择该计数器">
+	  	 			   <DIV CLASS="itemTextCheckboxA" STYLE="WIDTH:167PX;">
+		  			    <LABEL FOR="DEFAULT_COUNTER" ID="DEFAULT_COUNTER_LABEL">默认计数器(<U>E</U>)</LABEL>
+	  	 			   </DIV>
+					 </SPAN>
+					</TD>
+				   </TR>
+			  	  </TABLE>
+  		  		 </TD>
+  		  		 <TD VALIGN="TOP" WIDTH="12">
+  					&nbsp;
+  		  		 </TD>
+ 		  	 </TR>
+			 
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="100%" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+		 	</TABLE>
+			
+	   	  <!--CLOSE OF CONTENT//-->
+		  </TD>
+		 </TR>
+		 <TR VALIGN="BOTTOM">
+		  <TD HEIGHT="48">
+	   	  <!--OPEN OF BUTTON HTML//-->
+		  
+		  	<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="12">
+			 <TR>
+  			  <TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+				<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+  	 			 <TR VALIGN="TOP">
+  	  			  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+  	  			  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+  	 			 </TR>
+				</TABLE>
+  			  </TD>
+ 			  </TR>
+ 
+ 			  <TR>
+  			  <TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+ 
+ 			<TR>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" HEIGHT="23">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);">完成</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');">取消</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.codewiz.class.atl.perfcounter.overview');">帮助</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+ 
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+			</TABLE>
+			
+	   	  <!--CLOSE OF BUTTON HTML//-->
+		  </TD>
+		 </TR>
+		</TABLE>
+	
+  	<!--CLOSE OF NAVIGATION, CONTENT, AND BUTTON TABLES//-->
+ 	</TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JSCRIPT">
+
+var strParameters = "";
+
+function InitDocument(document)
+{
+	setDirection();
+	
+	if (window.external.FindSymbol("DOCUMENT_FIRST_LOAD"))
+	{
+		var L_WizardDialogTitle_Text = "添加 PerfMon 计数器向导";
+		window.external.AddSymbol("WIZARD_DIALOG_TITLE", L_WizardDialogTitle_Text);
+		window.external.SetDefaults(document);
+	}
+
+	window.external.Load(document);
+
+	OnTypeChange();
+}
+
+function Next(document, linkto)
+{
+	window.external.Next(document, linkto);
+}
+
+function OnFinish(document)
+{
+	bValidating = true;
+	if (!ValidateInput())
+	{
+		bValidating = false;
+		return;
+	}
+	bValidating = false;
+
+	OnWizFinish(document);
+}
+
+function ValidateInput()
+{
+	var oInvalid = null;
+
+	if (!Validate(VARIABLE_NAME))
+		oInvalid = VARIABLE_NAME;
+
+	if (!Validate(NAME_STRING))
+		oInvalid = NAME_STRING;
+
+	if (!Validate(HELP_STRING))
+		oInvalid = HELP_STRING;
+
+	if (!Validate(DEFAULT_SCALE))
+		oInvalid = DEFAULT_SCALE;
+
+	if (oInvalid != null)
+	{
+		window.external.ReportError();
+		oInvalid.focus();
+		return false;
+	}
+	return true;
+}
+
+function Validate(obj)
+{
+	var bValid = true;
+	switch(obj.id)
+	{
+		case "VARIABLE_NAME":
+		{
+			bValid = window.external.ParentObject.ValidateMember(VARIABLE_NAME.value, vsCMElementVariable);
+			break;
+		}
+		case "NAME_STRING":
+		case "HELP_STRING":
+			if (obj.value.length = 0)
+			{
+				var L_InvalidValue_Text = "无效值";
+				oErrObj = new Error(L_InvalidValue_Text);
+				SetErrorInfo(oErrObj);
+				bValid = false;
+			}
+			break;
+		case "DEFAULT_SCALE":
+		{
+			var re = /^[-+]?\d+$/g;
+			bValid = re.test(DEFAULT_SCALE.value);
+			if (!bValid)
+			{
+				var L_DefaultScaleValidation_Text = "请为“默认小数位数”输入一个整数";
+				oErrObj = new Error(L_DefaultScaleValidation_Text);
+				SetErrorInfo(oErrObj);
+			}
+			break;
+		}
+		default:
+			break;
+	}
+
+	if (typeof(bValid) == "undefined")
+		bValid = false;
+
+	return bValid;
+}
+
+function OnTypeChange()
+{
+	var oVarType = document.all.tags("SELECT").item("VARIABLE_TYPE");
+	var oCounterType = document.all.tags("SELECT").item("COUNTER_TYPE");
+	var oOptions = document.all.tags("SELECT").item("COUNTER_TYPE_HIDDEN");
+	
+	while (oCounterType.options.length > 0)
+	{
+		oCounterType.options.remove(0);
+	}
+
+	var nSelect = -1;
+
+	for (var i=0; i<oOptions.options.length; i++)
+	{
+		var bEnable = false;
+
+		if (oOptions.options[i].VARTYPE == oVarType.value)
+			bEnable = true;
+
+		if (bEnable)
+		{
+			if (oOptions.options[i].SELECTME == "true")
+				nSelect = oCounterType.options.length;
+
+			var oOption = document.createElement("OPTION");
+			oOption.value = oOptions.options[i].value;
+			oOption.text = oOptions.options[i].text;
+			oCounterType.options.add(oOption);
+		}
+	}
+	
+	if (nSelect != -1)
+		oCounterType.options[nSelect].selected = true;
+}
+
+</SCRIPT>
+<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT>
+	document.scripts("INCLUDE_SCRIPT").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Script.js";
+	document.scripts("INCLUDE_COMMON").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Common.js";
+</SCRIPT>

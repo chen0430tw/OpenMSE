@@ -1,0 +1,10 @@
+CopyOnly | debug.sql
+OpenFile | root.h
+root.cpp
+readme.txt
+AssemblyInfo.cpp
+stdafx.h
+stdafx.cpp
+app.rc
+resource.h
+CopyOnly | app.ico

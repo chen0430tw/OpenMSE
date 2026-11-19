@@ -1,0 +1,175 @@
+// Secuencia de comandos de recursos generada en Microsoft Visual C++.
+//
+#include "resourceayg.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generado a partir del recurso TEXTINCLUDE 2.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE  
+BEGIN
+    "resourceayg.h\0"
+END
+
+2 TEXTINCLUDE  
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE  
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])\r\n"
+    "LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]\r\n"
+    "#pragma code_page([!output SYSTEM_CODE_PAGE])\r\n"
+    "#include ""[!output RES_PATH]\\[!output RC2_FILE_NAME]ayg.rc2""  // Recursos editados que no son de Microsoft Visual C++\r\n"
+    "#include ""afxres.rc""  	// Componentes estándar\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+[!if APP_TYPE_DLG]
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icono
+//
+
+// Icono con el valor de id. menor colocado en primer lugar para garantizar que el icono de la aplicación
+// es el mismo en todos los sistemas.
+IDR_MAINFRAME		ICON	DISCARDABLE	"res\\[!output PROJECT_NAME].ico"
+[!endif]
+
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+[!if APP_TYPE_DLG]
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cuadro de diálogo
+//
+IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_DIALOG DIALOG DISCARDABLE  0, 0, 130, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+[!if HELPSTYLE_WINHELP]
+EXSTYLE WS_EX_APPWINDOW | WS_EX_CAPTIONOKBTN | WS_EX_CONTEXTHELP
+[!else]
+EXSTYLE WS_EX_APPWINDOW | WS_EX_CAPTIONOKBTN
+[!endif]
+CAPTION "[!output DIALOG_TITLE]"
+FONT [!output ABOUTBOX_FONT_SIZE], "MS Shell Dlg"
+BEGIN
+	LTEXT	"TODO: colocar aquí los controles de cuadro de diálogo.",IDC_STATIC,13,33,112,17
+END
+[!endif]
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Versión
+//
+
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       1,0,0,1
+  PRODUCTVERSION    1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+        BLOCK "[!output HEX_LCID][!output HEX_CODE_PAGE]"
+		BEGIN 
+            VALUE "CompanyName", "TODO: <Nombre de la compañía>"
+            VALUE "FileDescription", "TODO: <Descripción del archivo>"
+			VALUE "FileVersion",     "1.0.0.1"
+			VALUE "InternalName",    "[!output PROJECT_NAME].exe"
+            VALUE "LegalCopyright", "TODO: (c) <Nombre de la compañía>. Reservados todos los derechos."
+			VALUE "OriginalFilename","[!output PROJECT_NAME].exe"
+            VALUE "ProductName", "TODO: <Nombre del producto>"
+			VALUE "ProductVersion",  "1.0.0.1"
+		END
+	END
+	BLOCK "VarFileInfo" 
+	BEGIN 
+		VALUE "Translation", 0x[!output HEX_LCID], [!output CODE_PAGE]
+    END
+END
+
+[!if APP_TYPE_DLG]
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE
+BEGIN
+    IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 132
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96 
+    END
+END
+#endif    // APSTUDIO_INVOKED
+[!endif]
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Tabla de cadenas
+//
+[!if SOCKETS]
+STRINGTABLE  
+BEGIN
+	IDP_SOCKETS_INIT_FAILED	"Error de inicialización de Windows Sockets."
+END
+[!endif]
+
+#endif
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generado a partir del recurso TEXTINCLUDE 3.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+#include "[!output RES_PATH]\\[!output RC2_FILE_NAME]ayg.rc2"  // Recursos editados que no son de Microsoft Visual C++
+#include "afxres.rc"  	// Componentes estándar
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // no APSTUDIO_INVOKED
+

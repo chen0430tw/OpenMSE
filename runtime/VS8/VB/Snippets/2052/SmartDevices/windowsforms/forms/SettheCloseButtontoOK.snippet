@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>将“关闭”按钮设置为“确定”</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>设置“关闭”按钮(确定)以关闭窗体。</Description>
+      <HelpUrl/>
+      <Keywords/>
+      <Shortcut>sdokclose</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Drawing.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Windows.Forms.dll</Assembly>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.Windows.Forms</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Drawing</Namespace>
+        </Import>
+      </Imports>
+      <Declarations/>
+      <Code Language="VB" Kind="method body"><![CDATA[' Display the OK button to close the application.
+Me.ControlBox = True
+Me.MinimizeBox = False]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

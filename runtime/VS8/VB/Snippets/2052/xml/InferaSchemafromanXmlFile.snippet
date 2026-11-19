@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>从 XML 文件推断并创建方案。</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>从现有的 XML 文件推断方案，并将其另存为单独的方案文件。</Description>
+      <Shortcut>xmlInfer</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Xml.dll</Assembly>
+          <Url/>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.IO</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Xml</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Xml.Schema</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+	<Literal>
+	  <ID>XmlFile</ID>
+	  <Type>String</Type>
+	  <ToolTip>替换为要从中推断方案的 xml 文件。</ToolTip>
+	  <Default>"sample.xml"</Default>
+	</Literal>
+	<Literal>
+	  <ID>XsdFile</ID>
+	  <Type>String</Type>
+	  <ToolTip>替换为要在其中保存方案的 xsd 文件的名称。</ToolTip>
+	  <Default>"sampleSchema.xsd"</Default>
+	</Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[' Gets the schema.
+Dim infer As New XmlSchemaInference()
+Dim sc As New XmlSchemaSet()
+sc = infer.InferSchema(New XmlTextReader($xmlFile$))
+
+' Writes the schema.
+Dim w As XmlWriter = XmlWriter.Create(New StreamWriter($XsdFile$))
+Dim schema As XmlSchema
+For Each schema In sc.Schemas()
+    schema.Write(w)
+Next schema]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

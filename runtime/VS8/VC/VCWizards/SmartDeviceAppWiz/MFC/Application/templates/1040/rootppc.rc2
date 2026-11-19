@@ -1,0 +1,49 @@
+//
+// [!output RC2_FILE_NAME]PPC.RC2 - risorse non modificate direttamente da Microsoft Visual C++
+//
+
+#ifdef APSTUDIO_INVOKED
+#error file non modificabile mediante Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Aggiungere manualmente le risorse modificate...
+
+/////////////////////////////////////////////////////////////////////////////
+HI_RES_AWARE CEUX {1}    // disattiva il livello di emulazione
+            // Rimuovi questa risorsa per attivare la duplicazione dei pixel
+            // su piattaforme che la supportano
+/////////////////////////////////////////////////////////////////////////////
+
+[!if !APP_TYPE_DLG]
+/////////////////////////////////////////////////////////////////////////////
+//
+// SHMENUBAR
+//
+
+IDR_MAINFRAME SHMENUBAR DISCARDABLE
+BEGIN
+    IDR_MAINFRAME, 
+    2,
+    
+    I_IMAGENONE, ID_FILE_NEW, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,
+    IDS_NEW, 0, NOMENU,
+
+    I_IMAGENONE, IDM_MENU, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,
+    IDS_MENU, 0, 0,
+END
+[!if APP_TYPE_SDI_DOCLIST]
+IDR_DOCLIST SHMENUBAR
+BEGIN
+    IDR_DOCLIST, 
+    2,
+    
+    I_IMAGENONE, ID_FILE_NEW, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,
+    IDS_NEW, 0, NOMENU,
+
+    I_IMAGENONE, IDM_MENU, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,
+    IDS_MENU, 0, 0,
+END
+[!endif]
+[!endif]

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=GB2312">
+<TITLE>Microsoft SQL Server 2005 Mobile Edition 自述文件</TITLE>
+
+<!-- Document last modified on  Monday, August 01, 2005 - 1:06 PM -->
+
+<Style TYPE="text/css"><!--/* Style sheet optimized for IE4x - Last updated 2/9/99 *//* changed h1-h4 font sizes */body    		{ color: #000000;		background: #FFFFFF;  			font-size: 70%;    				font-family: Verdana, Arial, Helvetica, Sans Serif }a:link	 	{ color: "#0000FF"; text-decoration:"underline";}a:visited 	{ color: "#660000"; text-decoration:"underline";}a:active, a:hover 	{ color: "#FF0000";  cursor:hand; text-decoration:"underline";}h1		{ font-size: 190%; 		margin-bottom:" .5em"; clear:both; }h2		{ font-size: 175%;  		margin-top: 1.5em;		margin-bottom:" .5em"; clear:both; }h3		{ font-size: 160%; 		margin-top: 1.2em;  		margin-bottom: ".5em"; clear:both; }h4		{ font-size: 145%; 		margin-bottom:" .5em"; clear:both; }h5		{ font-size: 115%;  		margin-top: 1.5em;		margin-bottom:" .5em"; clear:both; }h6		{ font-size: 110%; 		margin-top: 1.2em;  		margin-bottom: ".5em"; clear:both; }p		{ margin-top:" .6em"; 		margin-bottom: ".6em"; }			ol		{ margin-top: ".5em"; 		margin-bottom: 0; 		margin-left: "2.1em"; 		padding-left: "0em"; }	ul		{ margin-top: ".6em"; 			margin-bottom: 0;		list-style-type: disc;		margin-left: "1.5em";		padding-left: "0em"; }		li		{ margin-bottom: ".7em"; clear:both; }dd		{ margin-bottom: 0; 		margin-left: "1.5em"; }em		{ color: "#FF0000"; } /* for defined terms, follow the "Document Conventions" listing in the Microsoft Manual of Style: *//* Keywords, functions, and anything else the user must enter exactly as shown are bold--add "font-weight: bold;" to the dt tag *//* Variables, book titles, and placeholders the user must provide are italic--add "font-style: italic;" to the dt tag *//* pre-defined arguments are bold and italic--add "font-weight: bold;" and "font-style: italic;" to the dt tag */dt		{ margin-top: "2em"; 		 font-decoration: underline;}/* removed because of PSS printing issues/*pre { margin-top: "1.2em"; margin-bottom: "1.5em"; } */code		{ font-family: Courier New; 		font-size: 115% }table		{ font-size: 100%;		margin-top: "1em"; 		margin-bottom: "1em"; 		cellpadding: "0.5em"; }		th		{ text-align: left;		background: #DDDDDD;		vertical-align: bottom;}		tr		{ vertical-align: top; }td		{ background: #EEEEEE;		vertical-align: top; }indent		{ margin-left: "1.5em";}/* Alert text ID formats */#Alert_Note        { color: "#000000"; margin-left:" 1.5em"; margin-top:" 1em"; margin-bottom:"1em" }#Alert_Important { color: "#8B0000"; margin-left:" 1.5em"; margin-top:" 1em"; margin-bottom:"1em"  }#Alert_SecurityNote { color: "#8B0000"; margin-left:" 1.5em"; margin-top:" 1em"; margin-bottom:"1em"  }#Alert_Caution { color: "#8B0000"; margin-left:" 1.5em"; margin-top:" 1em"; margin-bottom:"1em"  }#Alert_Warning  { color: "B22222"; margin-left:" 1.5em"; margin-top:" 1em"; margin-bottom:"1em"  }.copy { font-size: 88%; }.syntax	{	background: #EEEEEE;	font-family: Verdana, Arial, Helvetica, MS San Serif	font-size:70%	padding: 4px 8px;	cursor: text;	margin-top: 1em;	margin-bottom: 1em; 	}		  // --></style>
+</HEAD>
+<BODY>
+
+<H1>Microsoft SQL Server 2005 Mobile Edition</H1>
+
+<P><B>2005 年 8 月 1 日</B></P>
+
+<P>&copy; Microsoft Corporation，2005。保留所有权利。</P>
+
+<P><P style="background-color: #C0FFFF;width:650px;padding-left:15px;padding-right:15px;text-align:justify;"><BR>虽然 SQL&nbsp;Server 文档编写组不回答有关技术支持的问题，但是欢迎您对本自述文档提出建议和意见。您可以使用下面的链接直接通过电子邮件便捷地发送反馈信息。请使用英文发送您的反馈信息。<BR><BR>若要通过邮件提交有关本文档的反馈信息，请单击此处：<A HREF="mailto:sqldocfb@microsoft.com?subject=SQL Server 2005 Mobile Edition 自述文件&body=---请在此处键入注释，并保留主题行。---">提交反馈</A>。<BR>&nbsp;</P>
+<B><A NAME="_contents_ar5q"></A>目录</B></P>
+
+<P><A HREF="#_1460_introduction_d3jb">1.0 简介</A></P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_1461_obtaining_sql_mobile_beta_1_238p">1.1 获取 SQL Server Mobile</A></P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_1462_additional_information_about_sql_mo_ar5q">1.2 有关 SQL Server Mobile 的其他信息</A></P>
+
+<P><A HREF="#_2460_installing_sql_mobile_beta_1_fzpy">2.0 安装 SQL Server Mobile</A></P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_2461_installing_sql_mobile_server_tools_d3jb">2.1 安装 SQL Server Mobile 服务器工具</A></P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_2461_uninstalling_sql_mobile_server_tool_d3jb">2.2 卸载 SQL Server Mobile 服务器工具</A></P>
+
+<P><A HREF="#_supported_platforms_2y0t">3.0 支持的平台</A></P>
+
+<P><A HREF="#_sql_mobile_desktop_development_support_i_0a8g">4.0 Visual Studio 2005 中的 SQL Server Mobile 桌面开发支持</A></P>
+
+<P><A HREF="#_ibuyspy_delivery_sample_application_9s7l">5.0 IBuySpy Delivery 示例应用程序</A></P>
+
+<P><A HREF="#_available_newsgroups_and_support_aks2">6.0 可用的新闻组和支持</A></P>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H1><A NAME="_1460_introduction_d3jb"></A>1.0 简介</H1>
+
+<P>本文件包含有关 Microsoft(R) SQL&nbsp;Server(TM)&nbsp;2005 Mobile Edition (SQL&nbsp;Server Mobile) 的最新进展、安装说明和其他重要信息。它为 SQL&nbsp;Server Mobile 文档提供了补充。在安装此版本的 SQL&nbsp;Server Mobile 之前，请通读本文件。</P>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H3><A NAME="_1461_obtaining_sql_mobile_beta_1_238p"></A>1.1 获取 SQL Server Mobile</H3>
+
+<P>Microsoft SQL&nbsp;Server&nbsp;2005 和 Microsoft Visual Studio(R)&nbsp;2005 均附带有 SQL&nbsp;Server Mobile。</P>
+
+<P>您可以在 SQL&nbsp;Server&nbsp;2005 和 Visual Studio&nbsp;2005 中找到 SQL&nbsp;Server Mobile 服务器工具文件 (sqlce30setupen.msi)，也可以从此 <A HREF="http://go.microsoft.com/fwlink/?LinkId=49997" target=_blank>Microsoft 网站</A>下载 SQL&nbsp;Server Mobile 服务器工具。</P>
+
+<P class=indent><NOTE>SQL&nbsp;Server Mobile 不支持使用 Microsoft eMeddebed Visual Basic 进行开发。</NOTE></P>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H3><A NAME="_1462_additional_information_about_sql_mo_ar5q"></A>1.2 有关 SQL Server Mobile 的其他信息</H3>
+
+<P>您可以通过 SQL&nbsp;Server&nbsp;2005 联机丛书和 Visual Studio&nbsp;2005 联机丛书访问 SQL&nbsp;Server Mobile 联机丛书文档。在这两种情况下，安装程序均将该文档安装到本地硬盘上。 </P>
+
+<P class=proclabel><B>查看该文档</B>
+
+<UL type=disc>
+	<LI>从 SQL&nbsp;Server&nbsp;2005 中打开帮助目录，即可查看完整的 SQL&nbsp;Server Mobile 联机丛书。 <BR><BR></LI>
+
+	<LI>从 Visual Studio&nbsp;2005 中打开帮助目录，依次导航到“企业版开发”、“SQL&nbsp;Server”、“SQL&nbsp;Server&nbsp;2005”，即可查看完整的 SQL&nbsp;Server Mobile 联机丛书。</LI>
+</UL>
+
+<P>未及时包括在本自述文件中的任何 SQL Server Mobile 相关信息都将发布到 Microsoft 知识库文章 <A HREF="http://support.microsoft.com?kbid=905395" target=_blank>905395</A> 中。<B></B></P>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H1><A NAME="_2460_installing_sql_mobile_beta_1_fzpy"></A>2.0 安装 SQL Server Mobile</H1>
+
+<P>本节包含有关安装的信息。有关安装和配置用于远程数据访问或合并复制的服务器环境的完整信息，请参阅 SQL&nbsp;Server Mobile 联机丛书中的“安装服务器环境”和“配置和保护服务器环境的安全性”。 </P>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H3><A NAME="_2461_installing_sql_mobile_server_tools_d3jb"></A>2.1 安装 SQL&nbsp;Server Mobile 服务器工具</H3>
+
+<P>如果在使用 Windows 防火墙的运行 Windows&nbsp;XP SP2 的计算机上安装 SQL&nbsp;Server Mobile Edition 服务器工具，则必须专门启用 HTTP 和/或 HTTPS 服务。 </P>
+
+<P><B>启用 HTTP 或 HTTPS 服务</B>
+
+<OL>
+	<LI>在控制面板中双击<B>“Windows 防火墙”</B>。 <BR><BR></LI>
+
+	<LI>单击<B>“高级”</B>选项卡。<BR><BR></LI>
+
+	<LI>在<B>“网络连接设置”</B>中选择连接，然后单击<B>“设置”</B>。<BR><BR></LI>
+
+	<LI>选择<B>“Web 服务器(HTTP)”</B>或<B>“安全 Web 服务器(HTTPS)”</B>，确保服务器名称或 IP 地址正确，然后单击<B>“确定”</B>。</LI>
+</OL>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H3><A NAME="_2461_uninstalling_sql_mobile_server_tool_d3jb"></A>2.2 卸载 SQL Server Mobile 服务器工具</H3>
+
+<P class=proclabel><B>卸载 SQL</B>&nbsp;<B>Server Mobile 服务器工具</B>
+
+<OL>
+	<LI>在控制面板中双击<B>“添加/删除程序”</B>。 <BR><BR></LI>
+
+	<LI>从已安装程序的列表中选择<B>“Microsoft SQL</B>&nbsp;<B>Server</B>&nbsp;<B>2005 Mobile Edition”</B>。<BR><BR></LI>
+
+	<LI>单击<B>“删除”</B>。<BR><BR></LI>
+
+	<LI>在卸载后，您应重新启动 IIS 或重新启动运行 IIS 的计算机。</LI>
+</OL>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H1><A NAME="_supported_platforms_2y0t"></A>3.0 支持的平台</H1>
+
+<P>本版本的 SQL&nbsp;Server Mobile 支持：
+
+<UL type=disc>
+	<LI>Pocket PC&nbsp;2003 平台<BR><BR></LI>
+
+	<LI>Windows CE&nbsp;5.0<BR><BR></LI>
+
+	<LI>Windows Mobile Version&nbsp;5.0 Pocket PC<BR><BR></LI>
+
+	<LI>Windows Mobile Version&nbsp;5.0 Smartphone</LI>
+</UL>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H1><A NAME="_sql_mobile_desktop_development_support_i_0a8g"></A>4.0 Visual Studio 2005 中的 SQL Server Mobile 桌面开发支持</H1>
+
+<P>在 Visual Studio&nbsp;2005 中部署 SQL&nbsp;Server Mobile 应用程序时，您可以将该应用程序部署于：
+
+<UL type=disc>
+	<LI>模拟器。<BR><BR></LI>
+
+	<LI>设备。</LI>
+</UL>
+
+<P>此外，还可按以下方式部署应用程序：
+
+<UL type=disc>
+	<LI>Pocket PC&nbsp;2003 应用程序可以部署于：
+<UL type=disc>
+	<LI class=indent>Pocket PC&nbsp;2003 设备<BR><BR></LI>
+
+	<LI class=indent>Pocket PC&nbsp;2003 模拟器<BR><BR></LI>
+
+	<LI class=indent>Pocket PC&nbsp;2003 SE VGA 模拟器</LI>
+</UL>
+</LI>
+
+	<LI>Windows CE&nbsp;5.0 应用程序可以部署于：
+<UL type=disc>
+	<LI class=indent>Pocket PC&nbsp;2003 设备<BR><BR></LI>
+
+	<LI class=indent>Pocket PC&nbsp;2003 SE 模拟器<BR><BR></LI>
+
+	<LI class=indent>Pocket PC&nbsp;2003 SE VGA 模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC 设备<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC 模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC Phone Edition GSM（虚拟无线电）模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC Phone Edition GSM VGA（虚拟无线电）模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC VGA 模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Smartphone 设备<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Smartphone GSM（虚拟无线电）模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Smartphone GSM QVGA（虚拟无线电）模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows CE 5.0 设备</LI>
+</UL>
+</LI>
+
+	<LI>Windows Mobile Version&nbsp;5.0 Pocket PC 应用程序可以部署于：
+<UL type=disc>
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC 设备<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC 模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC Phone Edition GSM（虚拟无线电）模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC Phone Edition GSM VGA（虚拟无线电）模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Pocket PC VGA 模拟器</LI>
+</UL>
+</LI>
+
+	<LI>Windows Mobile Version&nbsp;5.0 Smartphone 应用程序可以部署于：
+<UL type=disc>
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Smartphone 设备<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Smartphone GSM（虚拟无线电）模拟器<BR><BR></LI>
+
+	<LI class=indent>Windows Mobile Version&nbsp;5.0 Smartphone GSM QVGA（虚拟无线电）模拟器</LI>
+</UL>
+</LI>
+</UL>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H1><A NAME="_ibuyspy_delivery_sample_application_9s7l"></A>5.0 IBuySpy Delivery 示例应用程序</H1>
+
+<P>IBuySpy Delivery 示例应用程序是一个使用 SQL&nbsp;Server Mobile 的全面的移动设备应用程序。您可以从此 <A HREF="http://go.microsoft.com/fwlink/?LinkId=34575" target=_blank>Microsoft 网站</A>下载并安装该应用程序。</P>
+
+<P>有关该示例应用程序的详细信息，请参阅 SQL&nbsp;Server Mobile 联机丛书中的“示例应用程序 (SQL Server Mobile)”。</P>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+<H1><A NAME="_available_newsgroups_and_support_aks2"></A>6.0 可用的新闻组和支持</H1>
+
+<P>有关使用 SQL&nbsp;Server Mobile 的详细信息，请参阅 SQL&nbsp;Server Mobile 联机丛书。您可以在使用联机丛书时直接向 Microsoft 的文档编写组发送对文档的反馈信息。</P>
+
+<P>您还可在以下新闻组中发布问题并查找问题的解决方案：
+
+<UL type=disc>
+	<LI><B>microsoft.public.sqlserver.ce</B></LI>
+</UL>
+
+<P>有关如何使用新闻组的详细信息，请参阅 SQL&nbsp;&nbsp;Server 2005 或 Visual Studio&nbsp;2005 中附带的自述文件。</P>
+
+<P><A HREF="#_contents_ar5q">【页首】</A></P>
+
+</BODY>
+</HTML>

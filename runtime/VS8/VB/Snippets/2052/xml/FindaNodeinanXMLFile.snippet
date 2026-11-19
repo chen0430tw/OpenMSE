@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>使用元素名称在 XML 数据中查找节点</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>按元素名称在 XML 文件中查找元素。</Description>
+      <Shortcut>xmlFind</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.XML.dll</Assembly>
+          <Url/>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.Xml</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>TagName</ID>
+          <Type>String</Type>
+          <ToolTip>替换为元素名称(不是整个 XPath)。</ToolTip>
+          <Default>"ElementName"</Default>
+        </Literal>
+        <Object>
+          <ID>XmlVariable</ID>
+          <Type>XmlDocument</Type>
+          <ToolTip>替换为 XmlDocument 变量。</ToolTip>
+          <Default>xmlDoc</Default>
+        </Object>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Dim nodes As XmlNodeList
+nodes = $XmlVariable$.GetElementsByTagName($TagName$)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

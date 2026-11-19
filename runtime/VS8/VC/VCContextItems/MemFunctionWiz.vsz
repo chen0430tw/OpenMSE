@@ -1,0 +1,5 @@
+VSWIZARD 7.0
+Wizard=VsWizard.VsWizardEngine.8.0
+Param="WIZARD_NAME = Function"
+Param="RELATIVE_PATH = VCWizards\CodeWiz\MFC"
+Param="WIZARD_ID = 27"

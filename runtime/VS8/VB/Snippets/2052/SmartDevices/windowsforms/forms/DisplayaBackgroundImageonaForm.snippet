@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>在窗体上显示背景图像</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>显示来自嵌入资源的图像以占据窗体大小。</Description>
+      <Shortcut>sdbackimg</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Drawing.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Windows.Forms.dll</Assembly>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.Windows.Forms</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Drawing</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Reflection</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>image</ID>
+          <Type>System.String</Type>
+          <ToolTip>替换为嵌入资源的名称，格式为: 命名空间.文件名.扩展名</ToolTip>
+          <Default>PocketPCApplication1.mypicture.bmp</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="method decl"><![CDATA[Protected Overrides Sub OnPaint(e As PaintEventArgs)
+    'Get image compiled as an embedded resource.
+    Dim asm As System.Reflection.Assembly
+    asm = System.Reflection.Assembly.GetExecutingAssembly()
+    
+    ' Note that the name for the embedded resource
+    ' is case sensitive and must match the file name.
+    Dim backGroundImage As New Bitmap(asm.GetManifestResourceStream("$Image$"))
+    
+    e.Graphics.DrawImage(backgroundImage, Me.ClientRectangle, _
+        New Rectangle(0, 0, backgroundImage.Width, backgroundImage.Height), _
+        GraphicsUnit.Pixel)
+End Sub]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

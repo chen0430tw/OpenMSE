@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+	<view titleBar="Pocket PC 2003 Second Edition - Square Screen VGA" displayPosX="110" displayPosY="91" displayWidth="480" displayHeight="480" displayDepth="16" mappingImage="PocketPC_2003_VGA_Square_Mask.png" normalImage="PocketPC_2003_VGA_Square_Up.png" downImage="PocketPC_2003_VGA_Square_Down.png">
+
+		<button toolTip="开/关" onPressAndHold="0x75" mappingColor="0xED145B"/>
+		<button toolTip="录音" onPressAndHold="0x44" mappingColor="0xF5989D"/>
+		<button toolTip="向上导航" onPressAndHold="0x48" mappingColor="0x0072BC" KeyEvent="Up"/>	
+		<button toolTip="向下导航" onPressAndHold="0x50" mappingColor="0x605CA8" KeyEvent="Down"/>
+		<button toolTip="功能键 1" onClick="DOWN:0x5b 0x70 UP:0x5b" mappingColor="0xF26C4F"/>	
+		<button toolTip="功能键 2" onClick="DOWN:0x5b 0x71 UP:0x5b" mappingColor="0xF68E56"/>
+		<button toolTip="功能键 3" onClick="DOWN:0x5b 0x72 UP:0x5b" mappingColor="0xFBAF5D"/>	
+		<button toolTip="功能键 4" onClick="DOWN:0x5b 0x73 UP:0x5b" mappingColor="0xF7941D"/>
+		<button toolTip="向上键" onPressAndHold="0x48" mappingColor="0x39B54A" KeyEvent="Up"/>
+		<button toolTip="向下键" onPressAndHold="0x50" mappingColor="0x009900" KeyEvent="Down"/>
+		<button toolTip="向左键" onPressAndHold="0x4B" mappingColor="0x66CC66" KeyEvent="Left"/>
+		<button toolTip="向右键" onPressAndHold="0x4D" mappingColor="0x00CC00" KeyEvent="Right"/>
+		<button toolTip="Enter" onClick="0x1C" mappingColor="0x006600" KeyEvent="Return"/>			
+		<button toolTip="Q" onClick="0x10" mappingColor="0xF8D0F6"/>	
+		<button toolTip="W" onClick="0x11" mappingColor="0xF8BDF5"/>	
+		<button toolTip="E" onClick="0x12" mappingColor="0xF8ABF3"/>	
+		<button toolTip="R" onClick="0x13" mappingColor="0xF996F3"/>	
+		<button toolTip="T" onClick="0x14" mappingColor="0xF982F2"/>	
+		<button toolTip="Y" onClick="0x15" mappingColor="0xF870F0"/>			
+		<button toolTip="U" onClick="0x16" mappingColor="0xF85DEF"/>	
+		<button toolTip="I" onClick="0x17" mappingColor="0xF742EC"/>	
+		<button toolTip="O" onClick="0x18" mappingColor="0xF824EC"/>	
+		<button toolTip="P" onClick="0x19" mappingColor="0xF806EA"/>	
+		<button toolTip="A" onClick="0x1E" mappingColor="0xF1C2F9"/>	
+		<button toolTip="S" onClick="0x1F" mappingColor="0xEEB0F9"/>	
+		<button toolTip="D" onClick="0x20" mappingColor="0xEB9DF9"/>	
+		<button toolTip="F" onClick="0x21" mappingColor="0xE78AF8"/>	
+		<button toolTip="G" onClick="0x22" mappingColor="0xE477F8"/>	
+		<button toolTip="H" onClick="0x23" mappingColor="0xE264F9"/>	
+		<button toolTip="J" onClick="0x24" mappingColor="0xDF4FF9"/>	
+		<button toolTip="K" onClick="0x25" mappingColor="0xDC3CF9"/>	
+		<button toolTip="L" onClick="0x26" mappingColor="0xD823F9"/>	
+		<button toolTip="Backspace" onClick="0x2B" mappingColor="0xD306F8"/>	
+		<button toolTip="Tab" onClick="0x0F" mappingColor="0xC2EBF7"/>	
+		<button toolTip="Z" onClick="0x2C" mappingColor="0xB2E8F7"/>	
+		<button toolTip="X" onClick="0x2D" mappingColor="0xA0E4F7"/>	
+		<button toolTip="C" onClick="0x2E" mappingColor="0x8BDFF7"/>	
+		<button toolTip="V" onClick="0x2F" mappingColor="0x78DBF7"/>	
+		<button toolTip="B" onClick="0x30" mappingColor="0x66D7F7"/>	
+		<button toolTip="N" onClick="0x31" mappingColor="0x52D3F8"/>	
+		<button toolTip="M" onClick="0x32" mappingColor="0x3DCEF8"/>	
+		<button toolTip="Enter" onClick="0x1C" mappingColor="0x08C1F6"/>	
+		<button toolTip="向左键" onClick="0x4B" mappingColor="0x96F4D6"/>	
+		<button toolTip="向右键" onClick="0x4D" mappingColor="0x7DF4CE"/>	
+		<button toolTip="空格键" onClick="0x39" mappingColor="0xB7EE7C"/>	
+		<button toolTip="向下键" onClick="0x50" mappingColor="0x57F5C3"/>	
+		<button toolTip="向上键" onClick="0x48" mappingColor="0x2AF1B2"/>	
+	</view>
+</skin>

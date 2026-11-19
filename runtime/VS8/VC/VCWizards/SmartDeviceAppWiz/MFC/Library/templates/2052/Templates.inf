@@ -1,0 +1,28 @@
+readme.txt
+root.cpp
+[!if DLL_TYPE_REGULAR || DLL_TYPE_REGULAR_STATIC]
+root.h
+[!endif]
+root.def
+[!if AUTOMATION]
+root.idl
+[!endif]
+stdafx.h
+stdafx.cpp
+[!if STANDARDSHELL_UI_MODEL]
+resource.h
+root.rc
+[!endif]
+[!if AYGSHELL_UI_MODEL]
+resourceayg.h
+rootayg.rc
+[!endif]
+[!if POCKETPC2003_UI_MODEL]
+resourceppc.h
+rootppc.rc
+[!endif]
+[!if SMARTPHONE2003_UI_MODEL]
+resourcesp.h
+rootsp.rc
+[!endif]
+root.rc2

@@ -1,0 +1,6 @@
+DIALOG  0, 0, 320, 200
+STYLE WS_CHILD
+FONT 9, "宋体, MS Sans Serif"
+BEGIN
+	LTEXT	"TODO: 将窗体控件放置在此对话框上。",IDC_STATIC,24,42,280,8
+END

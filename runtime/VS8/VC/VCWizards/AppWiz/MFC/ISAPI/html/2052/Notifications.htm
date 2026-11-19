@@ -1,0 +1,651 @@
+<!- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<HTML DIR="LTR">
+
+<HEAD>
+	<TITLE>ISAPI 扩展向导</TITLE>
+	<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+	<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+	<LINK ID="LINKURL" REL="stylesheet" HREF="../../../../../2052/NewStyles.css">
+</HEAD>
+
+<BODY BGCOLOR="BUTTONFACE" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="if (!bValidating) OnKey();" ONKEYPRESS="if (!bValidating) OnPress()">
+
+<TABLE CLASS="ONE" HEIGHT="100%" WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+<COL CLASS="LinkPane"><COL>
+
+  <!--OPEN OF INTRODUCTORY INFORMATION TABLE//-->
+  <TR VALIGN="TOP">
+	<TD HEIGHT="79" WIDTH="100%" COLSPAN="2">
+	 <TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	 <COL WIDTH="12"><COL><COL WIDTH="12">
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+  
+	   <TD VALIGN="TOP" HEIGHT="12">
+	  	&nbsp;
+	   </TD>
+  
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+  
+	   <TD CLASS="IMAGE" VALIGN="BOTTOM" WIDTH="110" ROWSPAN="2">
+		<DIV CLASS="SMALLA" ID="Layer0">
+		 <IMG CLASS="SMALLEST" SRC="../../Images/ISAPI_1.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+		</DIV>
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+	 
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+	  
+	   <TD VALIGN="TOP" HEIGHT="65">
+		<H4 CLASS="HEAD" ID="HEAD">通知</H4>
+		<P CLASS="SUBHEAD" ID="SUBHEAD">指定筛选器通知的优先级、连接和事件。</P>
+	   </TD>
+	  
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+	 
+	  <TR>
+	   <TD VALIGN="TOP" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+		<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+	  	 <TR VALIGN="TOP">
+	  	  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+	  	  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+	  	 </TR>
+		</TABLE>
+	   </TD>
+	  </TR>
+	 </TABLE>
+	</TD>
+  </TR>
+  <!--CLOSE OF INTRODUCTORY INFORMATION TABLE//-->
+
+  <!--OPEN OF NAVIGATION, CONTENT, AND BUTTON TABLES//-->
+  <TR VALIGN="TOP">
+	<TD CLASS="Three" VALIGN="TOP" HEIGHT="100%" WIDTH="100%">
+	 <TABLE CLASS="fixedSize" HEIGHT="100%" WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+  	  <TR VALIGN="TOP">
+	   <TD CLASS="threeCustom" VALIGN="TOP">
+	   <!--OPEN OF NAVIGATION TABLE//-->
+
+	    <TABLE CLASS="THREE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<COL WIDTH="12"><COL><COL WIDTH="1">
+		 <TR>
+	   	  <TD VALIGN="TOP" COLSPAN="3" HEIGHT="12">
+	  		&nbsp;
+		  </TD>
+		 </TR>
+		 <TR>
+	   	  <TD VALIGN="TOP" HEIGHT="100%">
+	  		&nbsp;
+		  </TD>
+	   	  <TD VALIGN="TOP" HEIGHT="100%">
+	   	  <!--OPEN OF NAVIGATIONAL LINKS//-->
+	  		
+			<DIV CLASS="LINK">
+			 <TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+			  <TR VALIGN="MIDDLE">
+	  		   <TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="Default" TITLE="查看所选内容的概述。" onClick="Next(document, 'default.htm');" TABINDEX="1">概述</SPAN>
+			   </TD>
+	  		   <TD WIDTH="4">
+			  	<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+			   </TD>
+			  </TR>
+			 </TABLE>
+			</DIV>
+	  		
+			<DIV CLASS="LINK">
+			 <TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+			  <TR VALIGN="MIDDLE">
+	  		   <TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="AppSettings" TITLE="指定项目中要包含的对象类型和相关联的类信息。" onClick="Next(document, 'AppSettings.htm');" TABINDEX="2">对象设置</SPAN>
+			   </TD>
+	  		   <TD WIDTH="4">
+			  	<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+			   </TD>
+			  </TR>
+			 </TABLE>
+			</DIV>
+
+		  	<DIV CLASS="LINKSELECTED">
+	 	   	 <SPAN CLASS="VERTLINE1">
+			  <IMG SRC="../../Images/spacer.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0">
+			 </SPAN>
+			 <SPAN CLASS="HORILINE1">
+			  <TABLE WIDTH="167" HEIGHT="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			   <TR VALIGN="TOP">
+			    <TD CLASS="DOTTEDLINE" HEIGHT="1">
+				</TD>
+			   </TR>
+			   <TR VALIGN="TOP">
+			    <TD HEIGHT="100%">
+				 <IMG SRC="../../Images/spacer.gif" WIDTH="1" HEIGHT="28" ALT="" BORDER="0">
+			    </TD>
+			   </TR>
+			   <TR VALIGN="TOP">
+			    <TD CLASS="DOTTEDLINE" HEIGHT="1">
+			    </TD>
+			   </TR>
+			  </TABLE>
+			 </SPAN>
+			 <TABLE WIDTH="160" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXTSELECTEDINDENT">
+			  <TR VALIGN="MIDDLE">
+			   <TD WIDTH="100%">
+				<SPAN ID="Notifications" TITLE="指定筛选器通知的优先级、连接和事件。">通知</SPAN>
+			   </TD>
+			   <TD WIDTH="4">
+				<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+			   </TD>
+			  </TR>
+			 </TABLE>
+			</DIV>
+			
+	   	  <!--CLOSE OF NAVIGATIONAL LINKS//-->
+		  </TD>
+		  <TD WIDTH="1">
+		   <DIV CLASS="VERTLINE">
+			 <IMG SRC="../../Images/spacer.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0">
+		   </DIV>
+		  </TD>
+		 </TR>
+		 </TABLE>
+		</TD>
+	   </TR>
+	   </TABLE>
+			
+	   <!--CLOSE OF NAVIGATION TABLE//-->
+	   </TD>
+  
+	   <TD VALIGN="TOP" HEIGHT="100%">
+	   <!--OPEN OF CONTENT AND BUTTON TABLE//-->
+	   
+	   	<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<COL WIDTH="100%">
+		 <TR VALIGN="TOP">
+		  <TD HEIGHT="100%">
+	   	  <!--OPEN OF CONTENT//-->
+		  
+		  	<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL WIDTH="188"><COL WIDTH="12"><COL WIDTH="188"><COL WIDTH="22">
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+			 
+ 			 <TR>
+ 			  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" WIDTH="188">
+ 				<SPAN CLASS="itemTextTop" ID="SELECTOPTION_SPAN" TITLE="选择一个选项。默认为 LOW。">筛选器的通知优先级:
+					 <P CLASS="Spacer">&nbsp;</P>
+	
+	  				 <INPUT TYPE="radio" CLASS="Radio" NAME="priority" ID="PRIORITY_HIGH" ACCESSKEY="I" TITLE="选择高优先级将使您的筛选器被首先调用。这会严重影响服务器性能。" TABINDEX="3">
+	  	 			 <DIV CLASS="itemTextRadioB" ID="PRIORITY_HIGH_DIV" TITLE="选择高优先级将使您的筛选器被首先调用。这会严重影响服务器性能。">
+		  			  <LABEL FOR="PRIORITY_HIGH" ID="PRIORITY_HIGH_LABEL">高(<U>I</U>)</LABEL>
+	  	 			 </DIV>
+	  
+	  				 <BR>
+	  
+	  			 	 <INPUT TYPE="radio" CLASS="Radio" NAME="priority" ID="PRIORITY_MEDIUM" ACCESSKEY="M" TITLE="选择中优先级将使您的筛选器在所有高优先级筛选器之后和低优先级筛选器之前被调用。" TABINDEX="4">
+	  	 			 <DIV CLASS="itemTextRadioB" ID="PRIORITY_MEDIUM_DIV" TITLE="选择中优先级将使您的筛选器在所有高优先级筛选器之后和低优先级筛选器之前被调用。">
+		  			  <LABEL FOR="PRIORITY_MEDIUM" ID="PRIORITY_MEDIUM_LABEL">中(<U>M</U>)</LABEL>
+	  	 			 </DIV>
+	  
+	  				 <BR>
+	  
+	  			 	 <INPUT TYPE="radio" CLASS="Radio" NAME="priority" ID="PRIORITY_LOW" ACCESSKEY="L" TITLE="选择低优先级将使您的筛选器在所有高优先级和中优先级的筛选器之后被调用。建议使用低优先级，因为它对服务器性能的影响最小。" TABINDEX="5">
+	  	 			 <DIV CLASS="itemTextRadioB" ID="PRIORITY_LOW_DIV" TITLE="选择低优先级将使您的筛选器在所有高优先级和中优先级的筛选器之后被调用。建议使用低优先级，因为它对服务器性能的影响最小。">
+		  			  <LABEL FOR="PRIORITY_LOW" ID="PRIORITY_LOW_LABEL">低(<U>L</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+			  </TD>
+ 			  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" WIDTH="188">
+			  <SPAN CLASS="itemTextTop" ID="SELECT_MULTIPLE_SPAN" TITLE="选择多种通知类型。">要处理的筛选器通知:
+	  				 <P CLASS="Spacer">&nbsp;</P>
+	  
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_READ_RAW_DATA" ACCESSKEY="R" TITLE="在原始数据从客户端发送至服务器之后，但服务器尚未处理数据之前通知筛选器。" onClick="SetFilterFlags();" TABINDEX="6">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_READ_RAW_DATA_DIV" TITLE="在原始数据从客户端发送至服务器之后，但服务器尚未处理数据之前通知筛选器。">
+		  			  <LABEL FOR="NOTIFY_READ_RAW_DATA" ID="NOTIFY_READ_RAW_DATA_LABEL">传入的原始数据和标题(<U>R</U>)</LABEL>
+	  	 			 </DIV>
+	  
+	  				 <BR>
+	  
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_SEND_RAW_DATA" ACCESSKEY="O" onClick="SetFilterFlags();" TITLE="在将原始数据从服务器发送至客户端之前通知筛选器。" TABINDEX="7">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_SEND_RAW_DATA_DIV" TITLE="在将原始数据从服务器发送至客户端之前通知筛选器。">
+		  			  <LABEL FOR="NOTIFY_SEND_RAW_DATA" ID="NOTIFY_SEND_RAW_DATA_LABEL">传出的原始数据和标题(<U>O</U>)</LABEL>
+	  	 			 </DIV>
+	  
+	  				 <BR>
+	  
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_AUTHENTICATION" ACCESSKEY="N" onClick="SetFilterFlags();" TITLE="在服务器验证该客户端时通知筛选器。" TABINDEX="8">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_AUTHENTICATION_DIV" TITLE="在服务器验证该客户端时通知筛选器。">
+		  			  <LABEL FOR="NOTIFY_AUTHENTICATION" ID="NOTIFY_AUTHENTICATION_LABEL">客户身份验证请求(<U>N</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+			  </TD>
+			 </TR>
+			  
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="17" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+			  
+ 			 <TR>
+ 			  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" COLSPAN="3">
+  				<SPAN CLASS="itemText" ID="SELECT_OPTIONS_SPAN" TITLE="选择一个或两个选项。默认为选择两个。">筛选器连接类型:
+  			  </TD>
+ 			  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+			  
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="4" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+			 
+ 			 <TR>
+ 			  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" WIDTH="188">
+				<SPAN CLASS="itemText">
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="SECURED_PORT_SESSIONS" ACCESSKEY="S" onClick="OnSecuredPort();" TITLE="从安全的端口会话中接收通知。">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="SECURED_PORT_SESSIONS_DIV" TITLE="从安全的端口会话中接收通知。">
+		  			  <LABEL FOR="SECURED_PORT_SESSIONS" ID="SECURED_PORT_SESSIONS_LABEL">安全的端口会话(<U>S</U>)</LABEL>
+	  	 			 </DIV>
+					 
+	  				 <BR>
+	  
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NON_SECURED_PORT_SESSIONS" ACCESSKEY="T" onClick="OnNonSecuredPort();" TITLE="从不安全的端口会话中接收通知。">
+	  	 			 <DIV CLASS="itemTextCheckboxB"  ID="NON_SECURED_PORT_SESSIONS_DIV" TITLE="从不安全的端口会话中接收通知。">
+		  			  <LABEL FOR="NON_SECURED_PORT_SESSIONS" ID="NON_SECURED_PORT_SESSIONS_LABEL">不安全的端口会话(<U>T</U>)</LABEL>
+	  	 			 </DIV>
+					 
+					 <BR>
+					 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_AUTH_COMPLETE" ACCESSKEY="A" onClick="SetFilterFlags();" TITLE="服务器完成身份验证后通知筛选器。">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_AUTH_COMPLETE_DIV" TITLE="服务器完成身份验证后通知筛选器。">
+		  			  <LABEL FOR="NOTIFY_AUTH_COMPLETE" ID="NOTIFY_AUTH_COMPLETE_LABEL">完成身份验证(<U>A</U>)</LABEL>
+	  	 			 </DIV>
+					 
+	  				 <BR>
+					 
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_END_OF_REQUEST" ACCESSKEY="Q" onClick="SetFilterFlags();" TITLE="服务器完成对请求的处理后通知筛选器。">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_END_OF_REQUEST_DIV" TITLE="服务器完成对请求的处理后通知筛选器。">
+		  			  <LABEL FOR="NOTIFY_END_OF_REQUEST" ID="NOTIFY_END_OF_REQUEST_LABEL">已完成对请求的处理(<U>Q</U>)</LABEL>
+	  	 			 </DIV>
+	  
+	  				 <BR>
+	  
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_SEND_RESPONSE" ACCESSKEY="B" onClick="SetFilterFlags();" TITLE="当服务器准备将 HTTP 响应标题发送给客户端时通知筛选器。">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_SEND_RESPONSE_DIV" TITLE="当服务器准备将 HTTP 响应标题发送给客户端时通知筛选器。">
+		  			  <LABEL FOR="NOTIFY_SEND_RESPONSE" ID="NOTIFY_SEND_RESPONSE_LABEL">发送响应标题之前(<U>B</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+			  </TD>
+ 			  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" WIDTH="188">
+			  	<SPAN CLASS="itemText">
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_URL_MAP" ACCESSKEY="U" onClick="SetFilterFlags();" TITLE="在服务器将逻辑 URL 映射到物理路径时通知筛选器。">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_URL_MAP_DIV" TITLE="在服务器将逻辑 URL 映射到物理路径时通知筛选器。">
+		  			  <LABEL FOR="NOTIFY_URL_MAP" ID="NOTIFY_URL_MAP_LABEL">URL 映射请求(<U>U</U>)</LABEL>
+	  	 			 </DIV>
+	  
+	  				 <BR>
+	  
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_LOG" ACCESSKEY="V" onClick="SetFilterFlags();" TITLE="当信息被写入服务器日志文件时通知筛选器。">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_LOG_DIV" TITLE="当信息被写入服务器日志文件时通知筛选器。">
+		  			  <LABEL FOR="NOTIFY_LOG" ID="NOTIFY_LOG_LABEL">服务器日志写入(<U>V</U>)</LABEL>
+	  	 			 </DIV>
+					 
+					 <BR>
+					 
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_END_OF_NET_SESSION" ACCESSKEY="E" onClick="SetFilterFlags();" TITLE="通知筛选器该会话正在结束。">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_END_OF_NET_SESSION_DIV" TITLE="通知筛选器该会话正在结束。">
+		  			  <LABEL FOR="NOTIFY_END_OF_NET_SESSION" ID="NOTIFY_END_OF_NET_SESSION_LABEL">连接结束(<U>E</U>)</LABEL>
+	  	 			 </DIV>
+	  
+	  				 <BR>
+	  
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_ACCESS_DENIED" ACCESSKEY="D" onClick="SetFilterFlags();" TITLE="访问被拒绝时通知筛选器。">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_ACCESS_DENIED_DIV" TITLE="访问被拒绝时通知筛选器。">
+		  			  <LABEL FOR="NOTIFY_ACCESS_DENIED" ID="NOTIFY_ACCESS_DENIED_LABEL">访问被拒绝(<U>D</U>)</LABEL>
+					 </DIV>
+	  
+	  				 <BR>
+	  
+	  				 <INPUT TYPE="checkbox" CLASS="CheckBoxA" ID="NOTIFY_PREPROC_HEADERS" ACCESSKEY="P" onClick="SetFilterFlags();" TITLE="通知筛选器该服务器已预处理客户标题。">
+	  	 			 <DIV CLASS="itemTextCheckboxB" ID="NOTIFY_PREPROC_HEADERS_DIV" TITLE="通知筛选器该服务器已预处理客户标题。">
+		  			  <LABEL FOR="NOTIFY_PREPROC_HEADERS" ID="NOTIFY_PREPROC_HEADERS_LABEL">预处理请求标题后(<U>P</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+			  </TD>
+			 </TR>
+			  
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="100%" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+		 	</TABLE>
+			
+	   	  <!--CLOSE OF CONTENT//-->
+		  </TD>
+		 </TR>
+		 <TR VALIGN="BOTTOM">
+		  <TD HEIGHT="48">
+	   	  <!--OPEN OF BUTTON HTML//-->
+		  
+		  	<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="12">
+			 <TR>
+  			  <TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+				<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+  	 			 <TR VALIGN="TOP">
+  	  			  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+  	  			  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+  	 			 </TR>
+				</TABLE>
+  			  </TD>
+ 			  </TR>
+ 
+ 			  <TR>
+  			  <TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+ 
+ 			<TR>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" HEIGHT="23">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);">完成</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');">取消</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.appwiz.isapi.ext.notifications');">帮助</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+ 
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+			</TABLE>
+			
+	   	  <!--CLOSE OF BUTTON HTML//-->
+		  </TD>
+		 </TR>
+		</TABLE>
+	
+  	<!--CLOSE OF NAVIGATION, CONTENT, AND BUTTON TABLES//-->
+ 	</TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JSCRIPT">
+
+var tab_array = new Array();
+tab_array[0] = Default;
+tab_array[1] = AppSettings;
+tab_array[2] = Notifications;
+
+function InitDocument(document)
+{
+	setDirection();
+	InitTabs();
+	window.external.Load(document);
+	PRIORITY_HIGH.focus();
+}
+
+function InitTabs()
+{
+	MouseOut(Notifications);
+}
+
+function OnSecuredPort()
+{
+	if (NON_SECURED_PORT_SESSIONS.checked == false &&
+		SECURED_PORT_SESSIONS.checked == false)
+		NON_SECURED_PORT_SESSIONS.checked = true;
+	SetFilterFlags();
+}
+
+function OnNonSecuredPort()
+{
+	if (NON_SECURED_PORT_SESSIONS.checked == false &&
+		SECURED_PORT_SESSIONS.checked == false)
+		SECURED_PORT_SESSIONS.checked = true;
+	SetFilterFlags();
+}
+
+function SetFilterFlags()
+{
+	var bFirstFlag = true;
+	var strFlags = "";
+	if (SECURED_PORT_SESSIONS.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_SECURE_PORT";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_SECURE_PORT";
+			bFirstFlag = false;
+		}
+	}
+	if (NON_SECURED_PORT_SESSIONS.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_NONSECURE_PORT";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_NONSECURE_PORT";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_PREPROC_HEADERS.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_PREPROC_HEADERS";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_PREPROC_HEADERS";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_AUTHENTICATION.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_AUTHENTICATION";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_AUTHENTICATION";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_AUTH_COMPLETE.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_AUTH_COMPLETE";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_AUTH_COMPLETE";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_URL_MAP.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_URL_MAP";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_URL_MAP";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_SEND_RAW_DATA.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_SEND_RAW_DATA";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_SEND_RAW_DATA";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_READ_RAW_DATA.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_READ_RAW_DATA";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_READ_RAW_DATA";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_LOG.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_LOG";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_LOG";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_END_OF_NET_SESSION.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_END_OF_NET_SESSION";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_END_OF_NET_SESSION";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_ACCESS_DENIED.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_ACCESS_DENIED";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_ACCESS_DENIED";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_END_OF_REQUEST.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_END_OF_REQUEST";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_END_OF_REQUEST";
+			bFirstFlag = false;
+		}
+	}
+	if (NOTIFY_SEND_RESPONSE.checked)
+	{
+		if (!bFirstFlag)
+			strFlags = strFlags + " | SF_NOTIFY_SEND_RESPONSE";
+		else
+		{
+			strFlags = strFlags + "SF_NOTIFY_SEND_RESPONSE";
+			bFirstFlag = false;
+		}
+	}
+	window.external.AddSymbol("FILTER_FLAGS", strFlags);
+}
+
+function Next(document, linkto)
+{
+	window.external.Next(document, linkto);
+}
+
+function OnFinish(document)
+{
+	bValidating = true;
+	if (!ValidateInput())
+	{
+		bValidating = false;
+		Next(document, 'AppSettings.htm');
+		return;
+	}
+
+	OnWizFinish(document);
+}
+
+function ValidateInput()
+{
+	var bValid = true;
+	var strClass = window.external.FindSymbol("EXTENSION_CLASS");
+
+	bValid = window.external.dte.VCLanguageManager.ValidateIdentifier(strClass) && 
+		!window.external.dte.VCLanguageManager.IsReservedName(strClass);
+
+	if (bValid)
+	{
+		strClass = window.external.FindSymbol("FILTER_CLASS");
+		bValid = window.external.dte.VCLanguageManager.ValidateIdentifier(strClass) && 
+			!window.external.dte.VCLanguageManager.IsReservedName(strClass);
+	}
+
+	if (!bValid)
+	{
+		window.external.ReportError();
+		return false;
+	}
+	return true;
+}
+
+</SCRIPT>
+<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT>
+	document.scripts("INCLUDE_SCRIPT").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Script.js";
+	document.scripts("INCLUDE_COMMON").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Common.js";
+</SCRIPT>

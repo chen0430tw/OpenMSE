@@ -1,0 +1,24 @@
+<html>
+{{// 使用 MSDN 的“ATL Server 响应文件参考”来了解 SRF 文件。}}
+{{handler [!output DLL_NAME].dll/Default}}
+<head>
+[!if USELOCALE]
+[!if TODO]
+{{// 指定用于处理该页的区域设置。}}
+[!endif]
+{{locale [!output LOCALE]}}
+[!endif]
+[!if USECODEPAGE]
+[!if TODO]
+{{// 指定用于处理该页的代码页。}}
+[!endif]
+{{codepage [!output CODEPAGE]}}
+<meta http-equiv="Content-Type" content="text/html; charset=[!output CODEPAGE]">
+[!endif]
+</head>
+<body>
+[!if STENCIL]
+This is a test: {{Hello}}<br>
+[!endif]
+</body>
+</html>

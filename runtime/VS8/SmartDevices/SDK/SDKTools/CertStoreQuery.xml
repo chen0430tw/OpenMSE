@@ -1,0 +1,7 @@
+<wap-provisioningdoc> 
+<characteristic type="CertificateStore"> 
+<characteristic-query type="Privileged Execution Trust Authorities"/> 
+<characteristic-query type="Unprivileged Execution Trust Authorities"/> 
+<characteristic-query type="SPC"/> 
+</characteristic> 
+</wap-provisioningdoc> 

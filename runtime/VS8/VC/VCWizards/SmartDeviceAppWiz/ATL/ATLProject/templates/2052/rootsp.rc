@@ -1,0 +1,150 @@
+//Microsoft Visual C++ 生成的资源脚本。
+//
+#include "resourcesp.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// 从 TEXTINCLUDE 2 资源生成。
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+[!if SUPPORT_MFC]
+#include "afxres.h"
+[!else]
+#include "winres.h"
+[!endif]
+#undef APSTUDIO_HIDDEN_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE  
+BEGIN
+    "resourcesp.h\0"
+END
+
+2 TEXTINCLUDE  
+BEGIN
+[!if SUPPORT_MFC]
+    "#include ""afxres.h""\r\n"
+[!else]
+    "#include ""winres.h""\r\n"
+[!endif]
+    "\0"
+END
+
+3 TEXTINCLUDE  
+BEGIN
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])\r\n"
+    "LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]\r\n"
+    "#pragma code_page([!output SYSTEM_CODE_PAGE])\r\n"
+    "#include ""[!output RC2_FILE_NAME].rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#endif\r\n"
+[!if !ATTRIBUTED]
+    "1 TYPELIB ""[!output SAFE_IDL_NAME].tlb""\r\n"
+[!endif]
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// 版本
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+[!if DLL_APP]
+ FILETYPE 0x2L
+[!else]
+ FILETYPE 0x1L
+[!endif]
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "[!output HEX_LCID][!output HEX_CODE_PAGE]"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+[!if DLL_APP]
+            VALUE "InternalName", "[!output PROJECT_NAME].dll"
+            VALUE "OriginalFilename", "[!output PROJECT_NAME].dll"
+[!else]
+            VALUE "InternalName", "[!output PROJECT_NAME].exe"
+            VALUE "OriginalFilename", "[!output PROJECT_NAME].exe"
+[!endif]
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+            VALUE "OLESelfRegister", ""
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+		VALUE "Translation", 0x[!output HEX_LCID], [!output CODE_PAGE]
+    END
+END
+
+#endif    // !_MAC
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 字符串表
+//
+
+STRINGTABLE  
+BEGIN
+[!if SERVICE_APP]
+	IDS_SERVICENAME					"[!output PROJECT_NAME]"
+[!else]
+	IDS_PROJNAME					"[!output PROJECT_NAME]"
+[!endif]
+END
+
+[!if SUPPORT_NON_DCOM]
+IDR_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME] REGISTRY "[!output PROJECT_NAME].rgs"
+[!endif]
+[!if SUPPORT_DCOM]
+IDR_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]DCOM REGISTRY "[!output PROJECT_NAME]DCOM.rgs"
+[!endif]
+////////////////////////////////////////////////////////////////////////////
+
+
+#endif
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// 从 TEXTINCLUDE 3 资源生成。
+//
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+#include "[!output RC2_FILE_NAME].rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#endif
+
+[!if !ATTRIBUTED]
+1 TYPELIB "[!output SAFE_IDL_NAME].tlb"
+[!endif]
+/////////////////////////////////////////////////////////////////////////////
+#endif    // 不是 APSTUDIO_INVOKED

@@ -1,0 +1,423 @@
+//Microsoft Visual C++ で生成されたリソース スクリプトです。
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE 2 リソースから生成されました。
+//
+
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE  
+BEGIN
+	"resource.h\0"
+END
+
+2 TEXTINCLUDE  
+BEGIN
+	"#include ""afxres.h""\r\n"
+	"\0"
+END
+
+3 TEXTINCLUDE  
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])\r\n"
+    "LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]\r\n"
+    "#pragma code_page([!output SYSTEM_CODE_PAGE])\r\n"
+    "#include ""[!output RES_PATH]\\[!output RC2_FILE_NAME].rc2""  // Microsoft Visual C++ 以外で編集されたリソース\r\n"
+    "#include ""afxres.rc""  	// 標準コンポーネント\r\n"
+[!if PRINTING]
+    "#include ""afxprint.rc""	// printing/print preview resources\r\n"
+[!endif]
+    "#endif\r\n"
+	"\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// アイコン
+//
+
+// アプリケーションのアイコンをすべてのシステム上で維持するために、最も小さい
+// ID 値のアイコンが最初に配置されます。
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+IDR_MAINFRAME		ICON	DISCARDABLE	"[!output RES_PATH]\\[!output PROJECT_NAME].ico"
+[!if DOCVIEW && !APP_TYPE_DLG]
+IDR_[!output SAFE_DOC_TYPE_NAME]TYPE		ICON	DISCARDABLE	"[!output RES_PATH]\\[!output PROJECT_NAME]Doc.ico"
+[!endif]
+#endif
+
+[!if CMD_BAR_MENUNBUTTON]
+/////////////////////////////////////////////////////////////////////////////
+//
+// ビットマップ
+//
+
+IDR_MAINFRAME		BITMAP	DISCARDABLE	"res\\Cmdbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// ツール バー
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE 16, 16
+BEGIN
+[!if DOCVIEW]
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+	SEPARATOR
+[!endif]
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+	SEPARATOR
+[!if DOCVIEW]
+[!if PRINTING]
+    BUTTON      ID_FILE_PRINT
+[!endif]
+[!endif]
+[!if LIST_VIEW]
+	SEPARATOR
+    BUTTON      ID_VIEW_LARGEICON
+    BUTTON      ID_VIEW_SMALLICON
+    BUTTON      ID_VIEW_LIST
+    BUTTON      ID_VIEW_DETAILS
+[!endif]
+[!if !APP_TYPE_SDI_DOCLIST]
+    BUTTON      ID_APP_ABOUT
+[!endif]
+[!if HELPSTYLE_WINHELP]
+    BUTTON      ID_CONTEXT_HELP
+[!endif]
+END
+[!endif]
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+/////////////////////////////////////////////////////////////////////////////
+//
+// メニュー
+//
+
+IDR_MAINFRAME MENU  PRELOAD DISCARDABLE 
+BEGIN
+	POPUP "ファイル(&F)"
+	BEGIN
+[!if DOCVIEW]
+		MENUITEM "新規作成\tCtrl+N(&N)",                ID_FILE_NEW
+		MENUITEM "開く...\tCtrl+O(&O)",            ID_FILE_OPEN
+		MENUITEM "上書き保存\tCtrl+S(&S)",               ID_FILE_SAVE
+		MENUITEM "名前を付けて保存(&A)...",                 ID_FILE_SAVE_AS
+[!if PRINTING]
+		MENUITEM SEPARATOR
+		MENUITEM "印刷...\tCtrl+P(&P)",           ID_FILE_PRINT
+		MENUITEM "印刷プレビュー(&V)",              ID_FILE_PRINT_PREVIEW
+		MENUITEM "プリンタの設定(&R)...",             ID_FILE_PRINT_SETUP
+[!endif]
+		MENUITEM SEPARATOR
+[!endif]
+		MENUITEM "アプリケーションの終了(&X)",                       ID_APP_EXIT
+	END
+	POPUP "編集(&E)"
+	BEGIN
+		MENUITEM "元に戻す\tCtrl+Z(&U)",               ID_EDIT_UNDO
+		MENUITEM SEPARATOR
+		MENUITEM "切り取り\tCtrl+X(&T)",                ID_EDIT_CUT
+		MENUITEM "コピー\tCtrl+C(&C)",               ID_EDIT_COPY
+		MENUITEM "貼り付け\tCtrl+V(&P)",              ID_EDIT_PASTE
+	END
+[!if STATUS_BAR]
+	POPUP "表示(&V)"
+	BEGIN
+		MENUITEM "ステータス バー(&S)",                 ID_VIEW_STATUS_BAR
+[!if LIST_VIEW]
+        	MENUITEM SEPARATOR
+        	MENUITEM "大きいアイコン(&G)",                ID_VIEW_LARGEICON
+        	MENUITEM "小さいアイコン(&M)",                ID_VIEW_SMALLICON
+        	MENUITEM "一覧(&L)",                       ID_VIEW_LIST
+        	MENUITEM "詳細(&D)",                    ID_VIEW_DETAILS
+        	MENUITEM SEPARATOR
+        	POPUP "アイコンの整列(&I)"
+        	BEGIN
+            		MENUITEM "名前順(&N)",                    ID_VIEW_BYNAME
+            		MENUITEM SEPARATOR
+            	MENUITEM "アイコンの自動整列(&A)",               ID_VIEW_AUTOARRANGE
+        	END
+        MENUITEM "等間隔に整列(&E)",              ID_VIEW_LINEUP
+[!endif]
+	END
+[!endif]
+	POPUP "ヘルプ(&H)"
+	BEGIN
+[!if HELPSTYLE_WINHELP]
+		MENUITEM "トピックの検索(&H)",                ID_HELP_FINDER
+		MENUITEM SEPARATOR
+[!endif]
+		MENUITEM "バージョン情報 [!output PROJECT_NAME](&A)...",          ID_APP_ABOUT
+	END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// アクセラレータ
+//
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE
+BEGIN
+	"N",            ID_FILE_NEW,            VIRTKEY,CONTROL
+	"O",            ID_FILE_OPEN,           VIRTKEY,CONTROL
+	"S",            ID_FILE_SAVE,           VIRTKEY,CONTROL
+[!if PRINTING]
+	"P",            ID_FILE_PRINT,          VIRTKEY,CONTROL
+[!endif]
+	"Z",            ID_EDIT_UNDO,           VIRTKEY,CONTROL
+	"X",            ID_EDIT_CUT,            VIRTKEY,CONTROL
+	"C",            ID_EDIT_COPY,           VIRTKEY,CONTROL
+	"V",            ID_EDIT_PASTE,          VIRTKEY,CONTROL
+	VK_BACK,        ID_EDIT_UNDO,           VIRTKEY,ALT
+	VK_DELETE,      ID_EDIT_CUT,            VIRTKEY,SHIFT
+	VK_INSERT,      ID_EDIT_COPY,           VIRTKEY,CONTROL
+	VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY,SHIFT
+	VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+	VK_F6,          ID_PREV_PANE,           VIRTKEY,SHIFT
+[!if HELPSTYLE_WINHELP]
+	VK_F1,          ID_CONTEXT_HELP,        VIRTKEY,SHIFT
+	VK_F1,          ID_HELP,                VIRTKEY
+[!endif]
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// ダイアログ
+//
+IDD_ABOUTBOX DIALOG DISCARDABLE   0, 0, 125, 55
+CAPTION "バージョン情報 [!output PROJECT_NAME]"
+EXSTYLE WS_EX_CAPTIONOKBTN
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT [!output ABOUTBOX_FONT_SIZE], "MS UI Gothic"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "[!output PROJECT_NAME] Version 1.0",IDC_STATIC,40,10,65,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) [!output YEAR]",IDC_STATIC,40,25,65,8
+END
+
+[!if FORM_VIEW]
+IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_FORM DIALOG DISCARDABLE  0, 0, 185, 93
+STYLE WS_CHILD
+FONT [!output ABOUTBOX_FONT_SIZE], "MS UI Gothic"
+BEGIN
+	LTEXT	"TODO: フォームのコントロールをここに配置してください。",IDC_STATIC,24,42,136,8
+END
+[!endif]
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// バージョン
+//
+
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       1,0,0,1
+  PRODUCTVERSION    1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+        BLOCK "[!output HEX_LCID][!output HEX_CODE_PAGE]"
+		BEGIN 
+            VALUE "CompanyName", "TODO: <会社名>"
+            VALUE "FileDescription", "TODO: <ファイルの説明>"
+			VALUE "FileVersion",     "1.0.0.1"
+			VALUE "InternalName",    "[!output PROJECT_NAME].exe"
+            VALUE "LegalCopyright", "TODO: (C) <会社名>.  All rights reserved."
+			VALUE "OriginalFilename","[!output PROJECT_NAME].exe"
+            VALUE "ProductName", "TODO: <製品名>"
+			VALUE "ProductVersion",  "1.0.0.1"
+		END
+	END
+	BLOCK "VarFileInfo" 
+	BEGIN 
+		VALUE "Translation", 0x[!output HEX_LCID], [!output CODE_PAGE]
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 133
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+[!if FORM_VIEW]
+    IDD_[!output UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME]_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+[!endif]
+END
+#endif  // APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// ストリング テーブル
+//
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+// MAC を対象としないアプリケーションから 2 つの余分な部分文字列を削除します。
+[!if !DOCVIEW]
+	IDR_MAINFRAME           "[!output MAIN_FRAME_CAPTION]"
+[!else]
+[!if HAS_SUFFIX]  // ファイル接尾辞
+	IDR_MAINFRAME           "[!output MAIN_FRAME_CAPTION]\n\n[!output FILE_NEW_NAME_SHORT]\n[!output FILTER_NAME]\n.[!output FILE_EXTENSION]\n[!output FILE_TYPE_ID]\n[!output FILE_NEW_NAME_LONG]"
+[!else]
+	IDR_MAINFRAME           "[!output MAIN_FRAME_CAPTION]\n\n[!output FILE_NEW_NAME_SHORT]\n\n\n[!output FILE_TYPE_ID]\n[!output FILE_NEW_NAME_LONG]"
+[!endif]
+[!endif]
+END
+STRINGTABLE PRELOAD DISCARDABLE
+BEGIN
+	AFX_IDS_APP_TITLE       "[!output PROJECT_NAME]"
+[!if HELPSTYLE_WINHELP]
+	AFX_IDS_IDLEMESSAGE     "レディ"
+	AFX_IDS_HELPMODEMESSAGE "ヘルプを使用するオブジェクトを選択"
+[!else]
+	AFX_IDS_IDLEMESSAGE     "レディ"
+[!endif]
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_FILE_NEW             "新規にファイルを作成\n新規ファイル"
+	ID_FILE_OPEN            "既存のファイルを開く\n開く"
+	ID_FILE_CLOSE           "作業中のファイルを閉じる\n閉じる"
+	ID_FILE_SAVE            "作業中のファイルを上書きして保存\n保存"
+	ID_FILE_SAVE_AS         "作業中のファイルを新しい名前で保存\n名前をつけて保存"
+[!if PRINTING]
+	ID_FILE_PRINT           "作業中のファイルを印刷\n印刷"
+[!endif]
+	ID_APP_ABOUT            "プログラム情報、バージョン、著作権を表示します。\nバージョン情報"
+	ID_APP_EXIT             "アプリケーションを終了し、ファイルの保存を指示\終了"
+[!if HELPSTYLE_WINHELP]
+	ID_HELP                 "現在のタスクまたはコマンドのヘルプを表示\nヘルプ"
+[!endif]
+	ID_NEXT_PANE            "次のウィンドウに切り替える\n次のペイン"
+	ID_PREV_PANE            "前のウィンドウに切り替える\n前のペイン"
+	ID_WINDOW_SPLIT         "作業中のウィンドウを分割\n分割"
+	ID_EDIT_CLEAR           "選択範囲を消去\n消去"
+	ID_EDIT_CLEAR_ALL       "すべて消去\nすべて消去"
+	ID_EDIT_COPY            "選択範囲をコピーしてクリップボードに保存\n保存"
+	ID_EDIT_CUT             "選択範囲を切り取ってクリップボードに保存\n切り取り"
+	ID_EDIT_FIND            "指定した文字列の検索\n検索"
+	ID_EDIT_PASTE           "クリップボードの内容を貼り付け\n貼り付け"
+	ID_EDIT_REPEAT          "直前に行った動作を繰り返す\n繰り返し"
+	ID_EDIT_REPLACE         "指定した文字列を他の文字列で置換\n置換"
+	ID_EDIT_SELECT_ALL      "ファイル内のすべてを選択\nすべて選択"
+	ID_EDIT_UNDO            "直前に行った動作を元に戻す\n元に戻す"
+	ID_EDIT_REDO            "取り消した操作をやり直す\nやり直す"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	AFX_IDS_SCCLOSE         "作業中のウィンドウを閉じ、変更したファイルの保存を指示"
+	AFX_IDS_SCTASKLIST      "タスク一覧をアクティブにする"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_INDICATOR_EXT        "EXT"
+	ID_INDICATOR_CAPS       "CAP"
+	ID_INDICATOR_NUM        "NUM"
+	ID_INDICATOR_SCRL       "SCRL"
+	ID_INDICATOR_OVR        "OVR"
+	ID_INDICATOR_REC        "REC"
+END
+
+[!if SOCKETS]
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDP_SOCKETS_INIT_FAILED "Windows ソケットの初期化に失敗しました。"
+END
+[!endif]
+
+[!if LIST_VIEW]
+
+STRINGTABLE  
+BEGIN
+    ID_VIEW_SMALLICON       "オブジェクトを小さいアイコンで表示します。\n小さいアイコン"
+    ID_VIEW_LARGEICON       "オブジェクトを大きいアイコンで表示します。\n大きいアイコン"
+    ID_VIEW_LIST            "オブジェクトを一覧表示します。\n一覧"
+    ID_VIEW_DETAILS         "ウィンドウ内の各オブジェクトの詳細情報を表示します。\n詳細"
+    ID_VIEW_LINEUP          "アイコンを整列します。"
+    ID_VIEW_BYNAME          "アイコンを名前順に並べ替えます。"
+END
+
+STRINGTABLE  
+BEGIN
+    ID_VIEW_AUTOARRANGE         "アイコンを自動的に整列します。"
+END
+[!endif]
+
+#endif
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE 3 リソースから生成されました。
+//
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_[!output LANG_SUFFIX])
+LANGUAGE [!output PRIMARY_LANG_ID], [!output SUB_LANG_ID]
+#pragma code_page([!output SYSTEM_CODE_PAGE])
+#include "[!output RES_PATH]\\[!output RC2_FILE_NAME].rc2"  // Microsoft Visual C++ 以外で編集されたリソース
+#include "afxres.rc"  	// 標準コンポーネント
+[!if PRINTING]
+#include "afxprint.rc"  // 印刷/印刷プレビュー リソース
+[!endif]
+#endif
+#endif    // APSTUDIO_INVOKED でない場合

@@ -1,0 +1,49 @@
+//
+// [!output RC2_FILE_NAME]PPC.RC2 - recursos que Microsoft Visual C++ no edita directamente
+//
+
+#ifdef APSTUDIO_INVOKED
+#error este archivo no es editable por Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Agregar aquí los recursos editados manualmente...
+
+/////////////////////////////////////////////////////////////////////////////
+HI_RES_AWARE CEUX {1}    // desactivar la capa de emulación
+            // Quitar este recurso para habilitar pixel-
+            // doble en plataformas que lo admitan
+/////////////////////////////////////////////////////////////////////////////
+
+[!if !APP_TYPE_DLG]
+/////////////////////////////////////////////////////////////////////////////
+//
+// SHMENUBAR
+//
+
+IDR_MAINFRAME SHMENUBAR DISCARDABLE
+BEGIN
+    IDR_MAINFRAME, 
+    2,
+    
+    I_IMAGENONE, ID_FILE_NEW, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,
+    IDS_NEW, 0, NOMENU,
+
+    I_IMAGENONE, IDM_MENU, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,
+    IDS_MENU, 0, 0,
+END
+[!if APP_TYPE_SDI_DOCLIST]
+IDR_DOCLIST SHMENUBAR
+BEGIN
+    IDR_DOCLIST, 
+    2,
+    
+    I_IMAGENONE, ID_FILE_NEW, TBSTATE_ENABLED, TBSTYLE_BUTTON | TBSTYLE_AUTOSIZE,
+    IDS_NEW, 0, NOMENU,
+
+    I_IMAGENONE, IDM_MENU, TBSTATE_ENABLED, TBSTYLE_DROPDOWN | TBSTYLE_AUTOSIZE,
+    IDS_MENU, 0, 0,
+END
+[!endif]
+[!endif]

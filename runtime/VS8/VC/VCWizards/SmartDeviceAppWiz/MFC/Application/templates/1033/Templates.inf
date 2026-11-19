@@ -1,0 +1,109 @@
+readme.txt
+[!if APP_TYPE_DLG]
+dlgroot.h
+dlgroot.cpp
+dialog.h
+dialog.cpp
+[!else]
+root.h
+root.cpp
+[!endif]
+
+stdafx.h
+stdafx.cpp
+
+[!if !APP_TYPE_DLG]
+frame.h
+frame.cpp
+[!if DOCVIEW]
+doc.h
+doc.cpp
+view.h
+view.cpp
+[!else]
+wndview.h
+wndview.cpp
+[!endif]
+[!endif]
+
+[!if HAS_SUFFIX]
+root.reg
+[!endif]
+
+[!if APP_TYPE_DLG]
+[!if STANDARDSHELL_UI_MODEL]
+dlgres.h
+dlgall.rc
+root.rc2
+[!endif]
+[!if AYGSHELL_UI_MODEL]
+dlgresayg.h
+dlgallayg.rc
+rootayg.rc2
+[!endif]
+[!if POCKETPC2003_UI_MODEL]
+dlgresppc.h
+dlgallppc.rc
+rootppc.rc2
+[!endif]
+[!if SMARTPHONE2003_UI_MODEL]
+dlgressp.h
+dlgallsp.rc
+rootsp.rc2
+[!endif]
+[!else]
+[!if STANDARDSHELL_UI_MODEL]
+resource.h
+root.rc
+root.rc2
+[!endif]
+[!if AYGSHELL_UI_MODEL]
+resourceayg.h
+rootayg.rc
+rootayg.rc2
+[!endif]
+[!if POCKETPC2003_UI_MODEL]
+resourceppc.h
+rootppc.rc
+rootppc.rc2
+[!endif]
+[!if SMARTPHONE2003_UI_MODEL]
+resourcesp.h
+rootsp.rc
+rootsp.rc2
+[!endif]
+[!endif]
+
+[!if APP_TYPE_SDI || APP_TYPE_SDI_DOCLIST]
+[!if DOCVIEW]
+CopyOnly | doc.ico
+[!endif]
+[!endif]
+
+CopyOnly | root.ico
+
+[!if !POCKETPC2003_UI_MODEL]
+[!if !APP_TYPE_DLG]
+[!if CMD_BAR_MENUNBUTTON]
+[!if DOCVIEW]
+[!if PRINTING]
+CopyOnly | tba__.bmp
+[!else]
+CopyOnly | tbah_.bmp
+[!endif]
+[!else]
+CopyOnly | tbnd_.bmp
+[!endif]
+[!endif]
+[!endif]
+[!else]
+[!if !APP_TYPE_DLG]
+[!if CMD_BAR_MENUNBUTTON]
+[!if APP_TYPE_SDI_DOCLIST]
+CopyOnly | tba_rap.bmp
+[!else]
+CopyOnly | tbnd_.bmp
+[!endif]
+[!endif]
+[!endif]
+[!endif]

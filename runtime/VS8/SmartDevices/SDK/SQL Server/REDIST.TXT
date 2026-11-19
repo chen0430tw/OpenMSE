@@ -1,0 +1,34 @@
+
+SQL Server 2000 for Windows CE Edition
+--------------------------------------
+ssce20.dll
+ssceca20.dll
+ssceerror20en.dll
+ssceerror20jp.dll
+msdaeren.dll
+msdaerjp.dll
+isqlw20.exe
+
+
+SQL Server 2005 Mobile Edition
+------------------------------
+sqlcese30.dll
+sqlceqp30.dll
+sqlceoledb30.dll
+sqlceca30.dll
+sqlceme30.dll
+sqlceer30en.dll, 
+sqlceer30cn.dll/sqlceer30zh-CHS.dll, 
+sqlceer30de.dll, 
+sqlceer30es.dll, 
+sqlceer30fr.dll, 
+sqlceer30it.dll, 
+sqlceer30ja.dll, 
+sqlceer30ko.dll, 
+sqlceer30tw.dll/sqlceer30zh-CHT.dll 
+System.Data.SqlServerCe.dll
+System.Data.SqlClient.dll
+isqlw30.exe
+dbnetlib.dll
+
+

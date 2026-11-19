@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+	<view titleBar="Smartphone 2003 SE - QVGA" displayPosX="61" displayPosY="144" displayWidth="240" displayHeight="320" displayDepth="16" mappingImage="Smartphone_2003_QVGA_Mask.png" normalImage="Smartphone_2003_QVGA_Up.png" downImage="Smartphone_2003_QVGA_Down.png">
+
+		<button toolTip="开/关" onPressAndHold="0x75" mappingColor="0xED145B"/>
+		<button toolTip="录音" onPressAndHold="0x44" mappingColor="0xF5989D"/>
+		<button toolTip="调高音量" onPressAndHold="0x40" mappingColor="0x0072BC"/>
+		<button toolTip="调低音量" onPressAndHold="0x41" mappingColor="0x605CA8"/>
+		<button toolTip="功能键 1" onPressAndHold="0x3B" mappingColor="0xF26C4F" KeyEvent="F1" Comment="显示菜单时不处理。"/>	
+		<button toolTip="功能键 2" onPressAndHold="0x3C" mappingColor="0xF68E56" KeyEvent="F2" Comment="显示菜单时不处理。"/>
+		<button toolTip="通话" onPressAndHold="0x3D" mappingColor="0x5674B9"/>
+		<button toolTip="结束" onPressAndHold="0x3E" mappingColor="0xA186BE"/>
+
+		<button toolTip="向上键" onPressAndHold="0x48" mappingColor="0x39B54A" KeyEvent="Up"/>
+		<button toolTip="向下键" onPressAndHold="0x50" mappingColor="0x009900" KeyEvent="Down"/>
+		<button toolTip="向左键" onPressAndHold="0x4B" mappingColor="0x66CC66" KeyEvent="Left"/>
+		<button toolTip="向右键" onPressAndHold="0x4D" mappingColor="0x00CC00" KeyEvent="Right"/>
+		<button toolTip="Enter" onPressAndHold="0x1C" mappingColor="0x006600" KeyEvent="Return"/>
+		<button toolTip="返回" onPressAndHold="0x01" mappingColor="0xF7941D"/>
+		<button toolTip="主屏" onPressAndHold="0x5B" mappingColor="0xFBAF5D"/>	
+		<button toolTip="1" onPressAndHold="0x02" mappingColor="0x9E0B0E" KeyEvent="D1"/>
+		<button toolTip="2" onPressAndHold="0x03" mappingColor="0x790000" KeyEvent="D2"/>
+		<button toolTip="3" onPressAndHold="0x04" mappingColor="0x754C24" KeyEvent="D3"/>	
+		<button toolTip="4" onPressAndHold="0x05" mappingColor="0xA0410D" KeyEvent="D4"/>
+		<button toolTip="5" onPressAndHold="0x06" mappingColor="0x7B2E00" KeyEvent="D5"/>
+		<button toolTip="6" onPressAndHold="0x07" mappingColor="0x8C6239" KeyEvent="D6"/>
+		<button toolTip="7" onPressAndHold="0x08" mappingColor="0xA36209" KeyEvent="D7"/>		
+		
+		<button toolTip="8" onPressAndHold="0x09" mappingColor="0x7D4900" KeyEvent="D8"/>
+		
+		<button toolTip="9" onPressAndHold="0x0A" mappingColor="0xA67C52" KeyEvent="D9"/>
+
+		<button toolTip="*" onPressAndHold="0x42" mappingColor="0xABA000" KeyEvent="F8"/>
+
+		<button toolTip="0" onPressAndHold="0x0B" mappingColor="0x827B00" KeyEvent="D0"/>
+
+		<button toolTip="#" onPressAndHold="0x43" mappingColor="0xC69C6D" KeyEvent="F9"/>
+
+	</view>
+</skin>

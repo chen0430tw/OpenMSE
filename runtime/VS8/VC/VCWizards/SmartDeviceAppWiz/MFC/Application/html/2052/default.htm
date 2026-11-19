@@ -1,0 +1,833 @@
+<!- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<HTML DIR="LTR">
+
+<HEAD>
+	<TITLE>MFC 智能设备应用程序向导</TITLE>
+	<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+	<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+	<LINK ID="LINKURL" REL="stylesheet" HREF="../../../../../2052/NewStyles.css">
+	<OBJECT id="ProjWiz" classid="CLSID:D245F352-3F45-4516-B1E6-04608DA126CC" VIEWASTEXT>
+	</OBJECT>
+	<SCRIPT>
+		// Load the New Project Wizard DLL
+		var ProjWiz;
+		try {
+			ProjWiz = document.all.tags("OBJECT").item("ProjWiz");
+			ProjWiz.Init(window.external);
+		}
+		catch(e) {
+			window.external.Finish(document, 'cancel');
+		}
+	</SCRIPT>
+		
+	<SYMBOL NAME="MAX_DOC_TYPE_NAME" TYPE="num" VALUE=15></SYMBOL>
+	<SYMBOL NAME="MAX_FILE_NEW_NAME_SHORT" TYPE="num" VALUE=15></SYMBOL>
+	<SYMBOL NAME="MAX_FILE_TYPE_ID" TYPE="num" VALUE=39></SYMBOL>
+	<SYMBOL NAME="MAX_FILE_NEW_NAME_LONG" TYPE="num" VALUE=40></SYMBOL>
+	<SYMBOL NAME="MAX_FILTER_NAME" TYPE="num" VALUE=100></SYMBOL>
+
+	<SYMBOL NAME="SAFE_PROJECT_IDENTIFIER_NAME" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="PROJECT_NAME_OEM" TYPE="text"></SYMBOL>
+
+	<!-- Overview -->
+	<SYMBOL NAME="APP_TYPE_SUMMARY" TYPE="text" VALUE=""></SYMBOL>
+	<SYMBOL NAME="TARGET_PLATFORM" TYPE=text VALUE=""></SYMBOL>
+
+	<!-- Platforms -->
+	<SYMBOL NAME="CHECKED_PLATFORMS" TYPE=text></SYMBOL>
+	<SYMBOL NAME="SELECTED_PLATFORM" TYPE=text></SYMBOL>
+	<SYMBOL NAME="NATIVE_PLATFORMS" TYPE=text></SYMBOL>
+	<SYMBOL NAME="POCKETPC2003_UI_MODEL" TYPE=bool VALUE=true></SYMBOL>
+	<SYMBOL NAME="SMARTPHONE2003_UI_MODEL" TYPE=bool VALUE=false></SYMBOL>
+
+	<!-- Application Type -->
+	<SYMBOL NAME="DYNAMIC_MFC" TYPE=radio VALUE=false></SYMBOL>
+	<SYMBOL NAME="STATIC_MFC" TYPE=radio VALUE=true></SYMBOL>
+
+	<SYMBOL NAME="APP_TYPE_SDI" TYPE=radio VALUE=true></SYMBOL>
+	<SYMBOL NAME="APP_TYPE_DLG" TYPE=radio VALUE=false></SYMBOL>
+	<SYMBOL NAME="APP_TYPE_SDI_DOCLIST" TYPE=radio VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="DOCVIEW" TYPE=checkbox VALUE=true></SYMBOL>
+
+	<!-- original toolbar related flags ... will be removed soon -->
+	<SYMBOL NAME="DOCKING_TOOLBAR" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="TOOLBAR_NONE" TYPE=bool VALUE=true></SYMBOL>
+	<SYMBOL NAME="TOOLBAR_STYLE_REBAR" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="STATUS_BAR" TYPE=checkbox VALUE=false></SYMBOL>
+	<SYMBOL NAME="PROJECT_STYLE_MFCSTD" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="PROJECT_STYLE_EXPLORER" TYPE=bool VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="LANGUAGE" TYPE=select-one VALUE=""></SYMBOL>
+	<SYMBOL NAME="LANGUAGE_NAME" TYPE=text></SYMBOL>
+
+	<!-- Document Template Strings -->
+	<SYMBOL NAME="DOCUMENT_TEMPLATE_STRINGS" TYPE=checkbox VALUE=true></SYMBOL>
+	<SYMBOL NAME="FILTER_NAME" TYPE="text" VALUE=""></SYMBOL>
+	<SYMBOL NAME="FILE_EXTENSION" TYPE="text" VALUE=""></SYMBOL>
+	<SYMBOL NAME="FILE_TYPE_ID" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_CAPTION" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="DOC_TYPE_NAME" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="FILE_NEW_NAME_SHORT" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="FILE_NEW_NAME_LONG" TYPE="text"></SYMBOL>
+
+	<!-- User Interface Features -->
+	<SYMBOL NAME="MAIN_FRAME_STYLE_FLAGS" TYPE="text" VALUE=""></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_DEFAULT_STYLES" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_THICK_FRAME" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_MINIMIZE_BOX" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_MAXIMIZE_BOX" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_SYSTEM_MENU" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_MINIMIZED" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_MAXIMIZED" TYPE=bool VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="CMD_BAR_NONE" type=radio VALUE=false></SYMBOL>
+	<SYMBOL NAME="CMD_BAR_MENUONLY" type=radio VALUE=true></SYMBOL>
+	<SYMBOL NAME="CMD_BAR_MENUNBUTTON" type=radio VALUE=false></SYMBOL>
+	<SYMBOL NAME="CMD_BAR_BROWSERSTYLE" type=radio VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="STATUS_BAR" type=checkbox VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="ABOUT_BOX" TYPE=bool VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="DIALOG_TITLE" TYPE="text"></SYMBOL>
+
+	<!-- Advanced Features -->
+	<SYMBOL NAME="ACTIVEX_CONTROLS" TYPE=checkbox VALUE=false></SYMBOL>
+	<SYMBOL NAME="SOCKETS" TYPE=checkbox VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="PRINTING" TYPE=checkbox VALUE=false></SYMBOL>
+	<SYMBOL NAME="HELPSTYLE_WINHELP" TYPE=checkbox VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="MANIFEST" TYPE=checkbox VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="MRU_SIZE" TYPE=select-one VALUE=4></SYMBOL>
+
+	<!-- Generated Classes -->
+	<SYMBOL NAME="APP_CLASS" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="APP_BASE_CLASS" TYPE="text" VALUE="CWinApp"></SYMBOL>
+	<SYMBOL NAME="APP_HEADER" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="APP_IMPL" TYPE="text"></SYMBOL>
+
+	<SYMBOL NAME="DOC_CLASS" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="DOC_BASE_CLASS" TYPE="text" VALUE="CDocument"></SYMBOL> 
+	<SYMBOL NAME="DOC_HEADER" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="DOC_IMPL" TYPE="text"></SYMBOL>
+
+	<SYMBOL NAME="VIEW_CLASS" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="VIEW_BASE_CLASS" TYPE="text" VALUE="CView"></SYMBOL> 
+	<SYMBOL NAME="VIEW_HEADER" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="VIEW_IMPL" TYPE="text"></SYMBOL>
+
+	<SYMBOL NAME="MAIN_FRAME_CLASS" TYPE="text" VALUE="CMainFrame"></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_HEADER" TYPE="text" VALUE="MainFrm.h"></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_IMPL" TYPE="text" VALUE="MainFrm.cpp"></SYMBOL>
+	<SYMBOL NAME="MAIN_FRAME_BASE_CLASS" TYPE="text" VALUE="CFrameWnd"></SYMBOL>
+
+	<SYMBOL NAME="CLASS_NAMES" TYPE="text" VALUE=""></SYMBOL>
+	<SYMBOL NAME="BASES" TYPE="text" VALUE=""></SYMBOL>
+
+	<SYMBOL NAME="DIALOG_CLASS" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="DIALOG_BASE_CLASS" TYPE="text" VALUE="CDialog"></SYMBOL>
+	<SYMBOL NAME="DIALOG_HEADER" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="DIALOG_IMPL" TYPE="text"></SYMBOL>
+
+	<SYMBOL NAME="WND_VIEW_CLASS" TYPE="text" VALUE="CChildView"></SYMBOL>
+	<SYMBOL NAME="WND_VIEW_BASE_CLASS" TYPE="text" VALUE="CWnd"></SYMBOL>
+	<SYMBOL NAME="WND_VIEW_HEADER" TYPE="text" VALUE="ChildView.h"></SYMBOL>
+	<SYMBOL NAME="WND_VIEW_IMPL" TYPE="text" VALUE="ChildView.cpp"></SYMBOL>
+
+	<!-- others -->
+	<SYMBOL NAME="TREE_VIEW_CLASS" TYPE="text" VALUE="CLeftView"></SYMBOL>
+	<SYMBOL NAME="TREE_VIEW_BASE_CLASS" TYPE="text" VALUE="CTreeView"></SYMBOL>
+	<SYMBOL NAME="TREE_VIEW_HEADER" TYPE="text" VALUE="LeftView.h"></SYMBOL>
+	<SYMBOL NAME="TREE_VIEW_IMPL" TYPE="text" VALUE="LeftView.cpp"></SYMBOL>
+
+	<SYMBOL NAME="TREE_VIEW" TYPE="checkbox" VALUE="false"></SYMBOL>
+	<SYMBOL NAME="LIST_VIEW" TYPE="checkbox" VALUE="false"></SYMBOL>
+	<SYMBOL NAME="FORM_VIEW" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="SCROLL_VIEW" TYPE=bool VALUE=false></SYMBOL>
+
+	<SYMBOL NAME="HAS_SUFFIX" TYPE=bool VALUE=false></SYMBOL>
+	<SYMBOL NAME="DO_KANA" TYPE=checkbox VALUE=false></SYMBOL>
+	<SYMBOL NAME="HELP_PATH" TYPE="text" VALUE="hlp"></SYMBOL>
+	<SYMBOL NAME="RES_PATH" TYPE="text" VALUE="res"></SYMBOL>
+	<SYMBOL NAME="MFC_INC_PATH" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="HM_NOTE" TYPE="text" VALUE=""></SYMBOL>
+	<SYMBOL NAME="HM_FILE" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="HM_FILE_OEM" TYPE="text"></SYMBOL>
+
+	<SYMBOL NAME="ATL_SUPPORT" TYPE=checkbox VALUE=false></SYMBOL>
+	<SYMBOL NAME="YEAR" TYPE="text"></SYMBOL>
+
+	<SYMBOL NAME="HELP_FILTER" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="HTMLHELP_FILTER" TYPE="text"></SYMBOL>
+	<SYMBOL NAME="HTMLHELP_TOPICSFILTER" TYPE="text"></SYMBOL>
+
+</HEAD>
+
+<BODY BGCOLOR="BUTTONFACE" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="if (!bValidating) OnKey();" ONKEYPRESS="if (!bValidating) OnPress();">
+
+	<TABLE CLASS="ONE" HEIGHT="100%" WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	<COL WIDTH="178"><COL>
+	
+		<!--OPEN OF INTRODUCTORY INFORMATION TABLE//-->
+		<TR VALIGN="TOP">
+			<TD HEIGHT="79" WIDTH="100%" COLSPAN="2">
+				<TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+				<COL WIDTH="12"><COL><COL WIDTH="12">
+					<TR>
+						<TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+							&nbsp;
+						</TD>
+ 
+						<TD VALIGN="TOP" HEIGHT="12">
+							&nbsp;
+						</TD>
+	
+						<TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+							&nbsp;
+						</TD>
+
+						<TD CLASS="IMAGE" VALIGN="BOTTOM" WIDTH="110" ROWSPAN="2">
+							<DIV CLASS="SMALLA" ID="Layer0">
+								<IMG CLASS="SMALLEST" SRC="..\..\Images\MFC_1.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+							</DIV>
+						</TD>
+	
+						<TD VALIGN="TOP" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+							&nbsp;
+						</TD>
+					</TR>
+
+					<TR>
+						<TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+							&nbsp;
+						</TD>
+	
+						<TD VALIGN="TOP" HEIGHT="65">
+							<H4 CLASS="HEAD" ID="HEAD">欢迎使用 MFC 智能设备应用程序向导</H4>
+							<P CLASS="SUBHEAD" ID="SUBHEAD">此向导将使用您指定的属性生成一个 MFC 应用程序项目。</P>
+						</TD>
+
+						<TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+							&nbsp;
+						</TD>
+					</TR>
+
+					<TR>
+						<TD VALIGN="TOP" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+							<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+								<TR VALIGN="TOP">
+									<TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+									<TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+			</TD>
+		</TR>
+		<!--CLOSE OF INTRODUCTORY INFORMATION TABLE//-->
+
+		<!--OPEN OF NAVIGATION, CONTENT, AND BUTTON TABLES//-->
+		<TR VALIGN="TOP">
+			<TD CLASS="Three" VALIGN="TOP" HEIGHT="100%" WIDTH="100%">
+				<TABLE CLASS="fixedSize" HEIGHT="100%" WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+					<TR VALIGN="TOP">
+						<TD CLASS="threeCustom" VALIGN="TOP">
+					
+							<!--OPEN OF NAVIGATION TABLE//-->
+							<TABLE CLASS="THREE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+							<COL WIDTH="12"><COL><COL WIDTH="1">
+								<TR>
+									<TD VALIGN="TOP" COLSPAN="3" HEIGHT="12">
+										&nbsp;
+									</TD>
+								</TR>
+								<TR>
+									<TD VALIGN="TOP" HEIGHT="100%">
+										&nbsp;
+									</TD>
+									<TD VALIGN="TOP" HEIGHT="100%">
+									
+										<!--OPEN OF NAVIGATIONAL LINKS//-->
+										<DIV CLASS="LINKSELECTED">
+											<SPAN CLASS="VERTLINE1">
+												<IMG SRC="../../Images/spacer.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0">
+											</SPAN>
+											<SPAN CLASS="HORILINE1">
+												<TABLE WIDTH="167" HEIGHT="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+													<TR VALIGN="TOP">
+														<TD CLASS="DOTTEDLINE" HEIGHT="1">
+														</TD>
+													</TR>
+													<TR VALIGN="TOP">
+														<TD HEIGHT="100%">
+															<IMG SRC="../../Images/spacer.gif" WIDTH="165" HEIGHT="28" ALT="" BORDER="0">
+														</TD>
+													</TR>
+													<TR VALIGN="TOP">
+														<TD CLASS="DOTTEDLINE" HEIGHT="1">
+														</TD>
+													</TR>
+												</TABLE>
+											</SPAN>
+											<TABLE WIDTH="160" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXTSELECTED">
+												<TR VALIGN="MIDDLE">
+													<TD WIDTH="100%">
+				<SPAN ID="Default" TITLE="查看所选内容的概述。">概述</SPAN>
+													</TD>
+													<TD WIDTH="4">
+														<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+													</TD>
+												</TR>
+											</TABLE>
+										</DIV>
+
+										<DIV CLASS="LINK">
+											<TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+												<TR VALIGN="MIDDLE">
+													<TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="Platforms" TITLE="指定您的 MFC 应用程序要支持的平台。" onClick="Next(document, 'Platforms.htm');" TABINDEX="1">平台</SPAN>
+													</TD>
+													<TD WIDTH="4">
+														<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+													</TD>
+												</TR>
+											</TABLE>
+										</DIV>
+
+										<DIV CLASS="LINK">
+											<TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+												<TR VALIGN="MIDDLE">
+													<TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="AppType" TITLE="为应用程序指定文档/视图结构支持、语言和界面样式选项。" onClick="Next(document, 'AppType.htm');" TABINDEX="1">应用程序类型</SPAN>
+													</TD>
+													<TD WIDTH="4">
+														<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+													</TD>
+												</TR>
+											</TABLE>
+										</DIV>
+
+										<DIV CLASS="LINK">
+											<TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXTINDENT">
+												<TR VALIGN="MIDDLE">
+													<TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="DocTemp" TITLE="指定在创建新文档时应用程序文档模板要使用的值。" onClick="onClick(this);" TABINDEX="3">文档模板字符串</SPAN>
+													</TD>
+													<TD WIDTH="4">
+														<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+													</TD>
+												</TR>
+											</TABLE>
+										</DIV>
+
+										<DIV CLASS="LINK">
+											<TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+												<TR VALIGN="MIDDLE">
+													<TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="UIFeatures" TITLE="指定控制应用程序外观的选项。" onClick="Next(document, 'UIFeatures.htm');" TABINDEX="5">用户界面功能</SPAN>
+													</TD>
+													<TD WIDTH="4">
+														<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+													</TD>
+												</TR>
+											</TABLE>
+										</DIV>
+
+										<DIV CLASS="LINK">
+											<TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+												<TR VALIGN="MIDDLE">
+													<TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="Advanced" TITLE="指定将置入应用程序中的附加支持。" onClick="Next(document, 'Advanced.htm');" TABINDEX="6">高级功能</SPAN>
+													</TD>
+													<TD WIDTH="4">
+														<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+													</TD>
+												</TR>
+											</TABLE>
+										</DIV>
+
+										<DIV CLASS="LINK">
+											<TABLE WIDTH="100%" HEIGHT="28" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="LINKTEXT">
+												<TR VALIGN="MIDDLE">
+													<TD WIDTH="100%">
+				<SPAN CLASS="ACTIVELINK" ID="GeneratedClasses" TITLE="查看已生成的类并为应用程序指定基类。" onClick="Next(document, 'GeneratedClasses.htm');" TABINDEX="7">生成的类</SPAN>
+													</TD>
+													<TD WIDTH="4">
+														<IMG SRC="../../Images/spacer.gif" HEIGHT="1" WIDTH="4">
+													</TD>
+												</TR>
+											</TABLE>
+										</DIV>
+										<!--CLOSE OF NAVIGATIONAL LINKS//-->
+
+									</TD>
+									<TD WIDTH="1">
+										<DIV CLASS="VERTLINE">
+											<IMG SRC="../../Images/spacer.gif" WIDTH="1" HEIGHT="1" ALT="" BORDER="0">
+										</DIV>
+									</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+				<!--CLOSE OF NAVIGATION TABLE//-->
+
+			</TD>
+		
+			<TD VALIGN="TOP" HEIGHT="100%">
+		
+				<!--OPEN OF CONTENT AND BUTTON TABLE//-->
+				<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+				<COL WIDTH="100%">
+					<TR VALIGN="TOP">
+						<TD HEIGHT="100%">
+	
+							<!--OPEN OF CONTENT//-->
+							<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+							<COL WIDTH="12"><COL WIDTH="398"><COL WIDTH="12">
+								<TR>
+									<TD VALIGN="TOP" HEIGHT="12" COLSPAN="3">
+										&nbsp;
+									</TD>
+								</TR>
+								<TR>
+									<TD VALIGN="TOP" WIDTH="12">
+										&nbsp;
+									</TD>
+									<TD VALIGN="TOP">
+										<SPAN CLASS="ItemTextTop" ID="PROJECT_SETTINGS">这些是当前项目设置:</SPAN>
+	
+										<UL>
+											<LI CLASS="LIST">
+												<SPAN CLASS="SideBtnHidden" ID="TARGET_PLATFORMS" TITLE="">
+													<LABEL FOR="TARGET_PLATFORMS"></LABEL>
+												</SPAN>
+											</LI>
+
+											<LI CLASS="LIST">
+												<SPAN CLASS="SideBtnHidden" ID="APP_TYPE_SUMMARY" TITLE="">	
+													<LABEL FOR="APP_TYPE_SUMMARY"></LABEL>
+												</SPAN>
+											</LI>
+										</UL>
+
+										<SPAN CLASS="ItemText" ID="FinishText">在任一窗口中单击“完成”以接受当前设置。</SPAN>
+
+										<P CLASS="ElementSpacer2">&nbsp;</P>
+
+										<SPAN CLASS="ItemText" ID="README_REMINDER" TITLE="">创建项目后，请参阅该项目的 readme.txt 文件，了解有关项目功能和所生成的文件的信息。</SPAN>
+									</TD>
+
+									<TD VALIGN="TOP" WIDTH="12">
+										&nbsp;
+									</TD>
+								</TR>
+							</TABLE>
+							<!--CLOSE OF CONTENT//-->
+						
+						</TD>
+					</TR>
+				
+					<TR VALIGN="BOTTOM">
+						<TD HEIGHT="48">
+					
+							<!--OPEN OF BUTTON HTML//-->
+							<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+							<COL WIDTH="12"><COL><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="12">
+								<TR>
+									<TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+										<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+											<TR VALIGN="TOP">
+												<TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+												<TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+											</TR>
+										</TABLE>
+									</TD>
+								</TR>
+	
+								<TR>
+									<TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+										&nbsp;
+									</TD>
+								</TR>
+
+								<TR>
+									<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+										&nbsp;
+									</TD>
+									<TD VALIGN="TOP" HEIGHT="23">
+										&nbsp;
+									</TD>
+									<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+										<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);">完成</BUTTON>
+									</TD>
+									<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+										&nbsp;
+									</TD>
+									<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+										<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');">取消</BUTTON>
+									</TD>
+									<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+										&nbsp;
+									</TD>
+									<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+										<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.vcd.appwiz.mfc.exe.overview');">帮助</BUTTON>
+									</TD>
+									<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+										&nbsp;
+									</TD>
+								</TR>
+
+								<TR>
+									<TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+										&nbsp;
+									</TD>
+								</TR>
+							</TABLE>
+							<!--CLOSE OF BUTTON HTML//-->
+
+						</TD>
+					</TR>
+				</TABLE>
+				<!--CLOSE OF NAVIGATION, CONTENT, AND BUTTON TABLES//-->
+			
+			</TD>
+		</TR>
+	</TABLE>
+
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JSCRIPT">
+
+var tab_array = new Array();
+tab_array[0] = Default;
+tab_array[1] = Platforms;
+tab_array[2] = AppType;
+tab_array[3] = DocTemp;
+tab_array[4] = UIFeatures;
+tab_array[5] = Advanced;
+tab_array[6] = GeneratedClasses;
+
+function InitDocument(document)
+{
+	setDirection();
+	
+	if (window.external.FindSymbol("DOCUMENT_FIRST_LOAD"))
+	{
+		var L_WizardDialogTitle_Text = "MFC 智能设备应用程序向导";
+		window.external.AddSymbol("WIZARD_DIALOG_TITLE", L_WizardDialogTitle_Text);
+		var strProjName = window.external.FindSymbol("PROJECT_NAME");
+		var coll = document.all.tags("SYMBOL");
+		var numSymbols = coll.length;
+		for (i = 0; i < numSymbols; i++)
+		{
+			var obj = coll(i);
+			if (typeof(obj.VALUE) == "undefined")
+			{
+				obj.VALUE = getval(obj, strProjName);
+			}
+		}
+		window.external.SetDefaults(document);
+
+		var strLCID = window.external.FindSymbol("LCID");
+
+		// fix up the templates path for the locale
+		var strCurrentTemplatesPath = window.external.FindSymbol("TEMPLATES_PATH");
+		var nIndex = strCurrentTemplatesPath.lastIndexOf("\\");
+		var strSubstr = strCurrentTemplatesPath.substr(0, nIndex);
+		var strNewTemplatesPath = strSubstr + "\\" + strLCID;
+		window.external.AddSymbol("TEMPLATES_PATH", strNewTemplatesPath);
+
+		SetLocaleForResources(window.external.GetHostLocale());
+	}
+	InitTabs();
+	window.external.Load(document);
+
+	InitControls();
+}
+
+function InitTabs()
+{
+	MouseOutEx(DocTemp);
+}
+
+function Next(document, linkto)
+{
+	window.external.Next(document, linkto);
+}
+
+function onClick(obj)
+{
+	if (obj == null || typeof(obj) == "undefined")
+		return;
+
+	if (obj.id == "DocTemp")
+	{
+		if (window.external.FindSymbol("DOCVIEW") && !window.external.IsSymbolDisabled("DOCVIEW"))
+		{ 
+			Next(document, "DocTemp.htm"); 
+		}
+	}
+}
+
+function InitControls()
+{
+	if (window.external.FindSymbol("APP_TYPE_SDI"))
+	{
+		L_SINGLEDOC_Text = "单文档界面";
+		APP_TYPE_SUMMARY.innerText = L_SINGLEDOC_Text;
+	}
+	else
+	{
+		if (window.external.FindSymbol("APP_TYPE_DLG"))
+		{
+			L_DIALOGBASED_Text = "基于对话框的";
+			APP_TYPE_SUMMARY.innerText = L_DIALOGBASED_Text;
+		}
+		else
+		{
+			L_SINGLEDOCWITHDOCLIST_Text = "带有文档列表的单文档";
+			APP_TYPE_SUMMARY.innerText = L_SINGLEDOCWITHDOCLIST_Text;
+		}
+	}
+	
+	try 
+	{
+		var L_PLATFORM_Text = "平台";
+		var L_TARGETPLATFORMS_Text = "";
+	
+		var checkedPlatforms = new Array(); 
+		checkedPlatforms = window.external.FindSymbol("CHECKED_PLATFORMS");
+
+		if (checkedPlatforms.length)
+		{		
+			for (i = 0 ; i < checkedPlatforms.length ; i++)
+			{
+				L_TARGETPLATFORMS_Text += checkedPlatforms[i];
+                                L_TARGETPLATFORMS_Text += " ";
+                                L_TARGETPLATFORMS_Text += L_PLATFORM_Text;
+				if (i < checkedPlatforms.length - 1)
+				{
+					L_TARGETPLATFORMS_Text += ", ";
+				}	
+			}
+		}
+		else
+		{
+			ProjWiz.GetBaseNativePlatforms();
+			L_TARGETPLATFORMS_Text += ProjWiz.GetBaseNativePlatform(0);
+			L_TARGETPLATFORMS_Text += " ";
+			L_TARGETPLATFORMS_Text += L_PLATFORM_Text;
+
+			checkedPlatforms = new Array();
+			checkedPlatforms[0] = ProjWiz.GetBaseNativePlatform(0);
+			
+			window.external.AddSymbol("CHECKED_PLATFORMS", checkedPlatforms);
+		}
+		TARGET_PLATFORMS.innerText = L_TARGETPLATFORMS_Text
+
+ 		var nativePlatforms = new Array();
+ 		nativePlatforms = window.external.FindSymbol("NATIVE_PLATFORMS");
+ 		if (nativePlatforms.length)
+ 		{
+ 			;	// do nothing, assume it's already got loaded...
+ 		}
+ 		else
+ 		{
+			nativePlatforms = new Array();
+			for (i = 0, nPlatform = 0 ; i < checkedPlatforms.length ; i++)
+			{
+				var nInstructionSets = ProjWiz.GetInstructionSetsForBaseNativePlatform(checkedPlatforms[i]);
+				for (j = 0 ; j < nInstructionSets ; j++)
+				{
+					nativePlatforms[nPlatform++] = ProjWiz.GetNativePlatformName(checkedPlatforms[i], ProjWiz.GetInstructionSetForBaseNativePlatform(checkedPlatforms[i], j));
+				}
+			}
+			window.external.AddSymbol("NATIVE_PLATFORMS", nativePlatforms);
+		}
+	}
+	catch (e)
+	{
+		window.external.Finish(document, 'cancel');
+	}
+}
+
+function OnFinish(document)
+{
+	OnWizFinish(document);
+}
+
+function GetValidFileTypeID(strProjName)
+{
+	var strFileTypeID = "";
+
+	var len = strProjName.length;
+	for (l = 0; l < len; l++)
+	{
+		if (strProjName.substring(l, l+1) != " " && strProjName.substring(l, l+1) != "_")
+		{
+			strFileTypeID += strProjName.substring(l, l+1);
+		}
+	}
+	return strFileTypeID;
+}
+
+function getval(obj, strProjName)
+{
+	var SymbolValue = "";
+	switch(obj.NAME)
+	{
+		case "MAIN_FRAME_CAPTION":
+		case "DIALOG_TITLE":
+			SymbolValue = strProjName; 
+			break;
+		case "SAFE_PROJECT_IDENTIFIER_NAME":
+			SymbolValue	= CreateIdentifierSafeName(strProjName);
+			break;
+		case "FILE_NEW_NAME_SHORT":
+			if (strProjName.length >= 15)
+				SymbolValue = strProjName.substr(0, 15);
+			else
+				SymbolValue = strProjName;
+			break;
+		case "PROJECT_NAME_OEM":
+			SymbolValue = window.external.ConvertAnsiToOEM(strProjName);
+			break;
+		case "APP_HEADER":
+			SymbolValue = strProjName + ".h"; 
+			break;
+		case "APP_IMPL":
+			SymbolValue = strProjName + ".cpp"; 
+			break;
+		case "DOC_TYPE_NAME":
+			{
+				SymbolValue = CreateSafeName(strProjName);
+				
+				// truncate to 15
+				if (SymbolValue.length > 15)
+					SymbolValue = SymbolValue.substr(0, 15);
+					
+				// if ProjectXXX, strip out numbers at the end
+				if (SymbolValue.substr(0, 7).toUpperCase() == "PROJECT")
+				{
+					// convert to numeric
+					var x = SymbolValue.substr(7) - 0;
+					
+					// if conversion worked
+					if (!isNaN(x))
+						SymbolValue = SymbolValue.substr(0, 7);
+				}
+			}
+			break;
+		case "UPPER_CASE_SAFE_PROJECT_IDENTIFIER_NAME":
+			{
+				SymbolValue = (CreateSafeName(strProjName)).toUpperCase();
+			}
+			break;
+		case  "APP_CLASS":
+			{
+				var strSafeProjName = CreateIdentifierSafeName(strProjName);
+				SymbolValue = ConstructClassName(strSafeProjName, "App");
+			}
+			break;
+		case "FILE_TYPE_ID":
+			{
+				var strFileTypeID = GetValidFileTypeID(CreateSafeName(strProjName));
+				if (strFileTypeID.length >= 39)
+					SymbolValue = strFileTypeID.substr(0, 39) + ".Document"; 
+				else
+					SymbolValue = strFileTypeID + ".Document"; 
+			}
+			break;
+		case "FILE_NEW_NAME_LONG":
+			{
+				if (strProjName.length >= 40)
+					SymbolValue = strProjName.substr(0, 40) + ".Document"; 
+				else
+					SymbolValue = strProjName + ".Document"; 
+			}
+			break;
+		case  "DOC_CLASS":
+			{
+				var strSafeProjName = CreateIdentifierSafeName(strProjName);
+				SymbolValue = ConstructClassName(strSafeProjName, "Doc");
+			}
+			break;
+		case  "DOC_HEADER":
+			SymbolValue = strProjName + "Doc.h"; 
+			break;
+		case  "DOC_IMPL":
+			SymbolValue = strProjName + "Doc.cpp"; 
+			break;
+		case  "VIEW_CLASS":
+			{
+				var strSafeProjName = CreateIdentifierSafeName(strProjName);
+				SymbolValue = ConstructClassName(strSafeProjName, "View");
+			}
+			break;
+		case  "VIEW_HEADER":
+			SymbolValue = strProjName + "View.h"; 
+			break;
+		case  "VIEW_IMPL":
+			SymbolValue = strProjName + "View.cpp"; 
+			break;
+		case  "DIALOG_CLASS":
+			{
+				var strSafeProjName = CreateIdentifierSafeName(strProjName);
+				SymbolValue = ConstructClassName(strSafeProjName, "Dlg");
+				window.external.AddSymbol("DIALOG_CLASS", SymbolValue);
+			}
+			break;
+		case  "DIALOG_HEADER":
+			SymbolValue = strProjName + "Dlg.h"; 
+			break;
+		case  "DIALOG_IMPL":
+			SymbolValue = strProjName + "Dlg.cpp"; 
+			break;
+		case  "HELP_FILTER":
+			SymbolValue = "rtf;cnt"; 
+			break;
+		case  "MFC_INC_PATH":
+			{
+				var strVCDir = window.external.FindSymbol("PRODUCT_INSTALLATION_DIR");
+				SymbolValue = strVCDir + "ATLMFC\\include";
+			}
+			break;
+		case  "HM_FILE":
+			SymbolValue = strProjName;
+			break;
+		case  "HM_FILE_OEM":
+			SymbolValue = window.external.ConvertAnsiToOEM(strProjName);
+			break;
+		case  "YEAR":
+			{
+				d = new Date();
+				SymbolValue = d.getFullYear().toString();
+			}
+			break;
+		case "LANGUAGE_NAME":
+			SymbolValue = window.external.FindSymbol("LANGUAGE");
+			break;
+		default:
+			SymbolValue = "";
+			break;
+	}
+	return (SymbolValue);
+}
+
+</SCRIPT>
+<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT>
+	document.scripts("INCLUDE_SCRIPT").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Script.js";
+	document.scripts("INCLUDE_COMMON").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Common.js";
+</SCRIPT>

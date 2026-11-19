@@ -1,0 +1,12 @@
+//
+// [!output RC2_FILE_NAME].RC2 - recursos que Microsoft Visual C++ no edita directamente
+//
+
+#ifdef APSTUDIO_INVOKED
+#error este archivo no es editable por Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Agregar aquí los recursos editados manualmente...
+

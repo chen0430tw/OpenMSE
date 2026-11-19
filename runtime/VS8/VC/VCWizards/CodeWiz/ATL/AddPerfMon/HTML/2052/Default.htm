@@ -1,0 +1,404 @@
+<!- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<HTML DIR="LTR">
+
+<HEAD>
+	<TITLE>ATL 性能监视器对象管理器向导</TITLE>
+	<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+	<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+	<LINK ID="LINKURL" REL="stylesheet" HREF="../../../../../2052/NewStyles.css">
+
+	<SYMBOL NAME="ATTRIBUTED" TYPE=checkbox VALUE=false></SYMBOL>
+	<SYMBOL NAME="CLASS_NAME" TYPE=text VALUE=""></SYMBOL>
+	<SYMBOL NAME="HEADER_FILE" TYPE=text VALUE=""></SYMBOL>
+	<SYMBOL NAME="TODO_COMMENTS" TYPE=checkbox VALUE=false></SYMBOL>
+	<SYMBOL NAME="SAMPLE_PERFMON_OBJECT" TYPE=checkbox VALUE=false></SYMBOL>
+</HEAD>
+
+<BODY BGCOLOR="BUTTONFACE" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="OnKey();" ONKEYPRESS="OnPress()">
+
+<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+<COL WIDTH="100%">
+  <TR VALIGN="TOP">
+	<TD HEIGHT="79">
+	<!--OPEN OF ALL ENCOMPASSING TABLE ROW ONE//-->
+	 <TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	 <COL WIDTH="12"><COL><COL WIDTH="12">
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="12">
+	  	&nbsp;
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+
+	   <TD CLASS="IMAGE" VALIGN="BOTTOM" WIDTH="110" ROWSPAN="2">
+		<DIV CLASS="SMALLA" ID="Layer0">
+		 <IMG CLASS="SMALLEST" SRC="..\..\Images\ATL_AddPerfMon.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+		</DIV>
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="65">
+		<H4 CLASS="HEAD" ID="HEAD">欢迎使用 ATL 性能监视器对象管理器向导</H4>
+		<P CLASS="SUBHEAD" ID="SUBHEAD">本向导向项目中添加一个管理性能监视器对象和计数器的类。使用类视图可以向生成的类中添加项。</P>
+	   </TD>
+
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+
+	  <TR>
+	   <TD VALIGN="TOP" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+		<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+	  	 <TR VALIGN="TOP">
+	  	  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+	  	  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+	  	 </TR>
+		</TABLE>
+	   </TD>
+	  </TR>
+	 </TABLE>
+
+	<!--CLOSE OF ALL ENCOMPASSING TABLE ROW ONE//-->
+	</TD>
+	</TR>
+	<TR VALIGN="TOP">
+	<TD HEIGHT="100%">
+	<!--OPEN OF ALL ENCOMPASSING TABLE ROW TWO//-->
+
+	 <TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	 <COL>
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="100%">
+	   <!--OPEN OF CONTENT AND BUTTON TABLE//-->
+
+	   	<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<COL WIDTH="100%">
+		 <TR VALIGN="TOP">
+		  <TD HEIGHT="100%">
+	   	  <!--OPEN OF CONTENT//-->
+
+		  	<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL WIDTH="284"><COL WIDTH="12"><COL WIDTH="285"><COL WIDTH="12">
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="5">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+
+ 			 <TR VALIGN="TOP">
+ 			 <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP">
+  				<SPAN CLASS="itemTextTop" TITLE="将创建的新类的名称。" ID="CLASS_NAME_TITLE">
+	  	 			 <LABEL FOR="CLASS_NAME" ID="CLASS_NAME_LABEL">类名(<U>L</U>):</LABEL>
+	  	 			 <BR>
+	  	 			 <INPUT CLASS="sideBtn" ID="CLASS_NAME" ACCESSKEY="L" TITLE="将创建的新类的名称。" TYPE="text" onPropertyChange="OnClassName();">
+				</SPAN>
+
+				<P CLASS="ElementSpacer2">&nbsp;</P>
+
+  				<NOBR>
+				 <SPAN CLASS="itemText" TITLE="将定义类的头文件的名称。" ID="HEADER_FILE_TITLE">
+	  	 			<LABEL FOR="HEADER_FILE" ID="HEADER_FILE_LABEL">.h 文件(<U>E</U>):</LABEL>
+	  	 			<BR>
+	  	 			<INPUT CLASS="sideBtn2" ID="HEADER_FILE" ACCESSKEY="E" TITLE="将定义类的头文件的名称。" TYPE="text">
+				 	<BUTTON CLASS="buttonClass3Custom" ID="BrowseBtn" TYPE="BUTTON" TITLE="浏览头文件。" onClick="OnBrowseHeaderFile();">...</BUTTON>
+				 </SPAN>
+				</NOBR>
+
+				<P CLASS="ElementSpacer2">&nbsp;</P>
+
+ 				<SPAN CLASS="itemText" ID="TODO_COMMENTS_TITLE" TITLE="生成注释。">
+	  				 <INPUT CLASS="CheckBox" TYPE="checkbox" ID="TODO_COMMENTS" ACCESSKEY="T" TITLE="生成注释。">
+	  	 			 <DIV CLASS="itemTextCheckboxA" ID="TODO_COMMENTS_DIV" TITLE="生成注释。">
+		  			  <LABEL FOR="TODO_COMMENTS" ID="TODO_COMMENTS_LABEL">生成 TODO 注释(<U>T</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+
+				<P CLASS="ElementSpacer">&nbsp;</P>
+
+				  <SPAN CLASS="itemText" ID="SAMPLE_PERFMON_OBJECT_TITLE" TITLE="生成示例 perfmon 计数器。">
+	  				 <INPUT CLASS="CheckBox" TYPE="checkbox" ID="SAMPLE_PERFMON_OBJECT" ACCESSKEY="S" TITLE="生成示例 perfmon 计数器。">
+	  	 			 <DIV CLASS="itemTextCheckboxA"  ID="SAMPLE_PERFMON_OBJECT_DIV" TITLE="生成示例 perfmon 计数器。">
+		  			  <LABEL FOR="SAMPLE_PERFMON_OBJECT" ID="SAMPLE_PERFMON_OBJECT_LABEL" >生成示例对象(<U>S</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+
+				<P CLASS="ElementSpacer">&nbsp;</P>
+
+				  <SPAN CLASS="itemText" ID="ATTRIBUTED_TITLE" TITLE="生成属性化代码。">
+	  				 <INPUT CLASS="CheckBox" TYPE="checkbox" ID="ATTRIBUTED" ACCESSKEY="A" TITLE="生成属性化代码。">
+	  	 			 <DIV CLASS="itemTextCheckboxA"  ID="ATTRIBUTED_DIV" TITLE="生成属性化代码。">
+		  			  <LABEL FOR="ATTRIBUTED" ID="ATTRIBUTED_LABEL" >属性化代码(<U>A</U>)</LABEL>
+	  	 			 </DIV>
+				</SPAN>
+  		  	  </TD>
+  		  	  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  		  	  </TD>
+  			  <TD VALIGN="TOP">&nbsp;
+			  </TD>
+  		  	  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  		  	  </TD>
+ 		  	 </TR>
+
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="100%" COLSPAN="7">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+		 	</TABLE>
+
+	   	  <!--CLOSE OF CONTENT//-->
+		  </TD>
+		 </TR>
+		 <TR VALIGN="BOTTOM">
+		  <TD HEIGHT="48">
+	   	  <!--OPEN OF BUTTON HTML//-->
+
+		  	<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="12">
+			 <TR>
+  			  <TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+				<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+  	 			 <TR VALIGN="TOP">
+  	  			  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+  	  			  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+  	 			 </TR>
+				</TABLE>
+  			  </TD>
+ 			  </TR>
+
+ 			  <TR>
+  			  <TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+
+ 			<TR>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" HEIGHT="23">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);">完成</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');">取消</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.codewiz.class.atl.perfmon.overview');">帮助</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+			</TABLE>
+
+	   	  <!--CLOSE OF BUTTON HTML//-->
+		  </TD>
+		 </TR>
+		</TABLE>
+
+	   <!--CLOSE OF CONTENT AND BUTTON TABLE//-->
+	   </TD>
+	  </TR>
+	 </TABLE>
+
+	<!--CLOSE OF ALL ENCOMPASSING TABLE ROW TWO//-->
+	</TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JSCRIPT">
+
+function InitDocument(document)
+{
+	setDirection();
+
+	try
+	{
+		if (window.external.FindSymbol("DOCUMENT_FIRST_LOAD"))
+		{
+			var L_WizardDialogTitle_Text = "ATL 性能监视器对象向导";
+			window.external.AddSymbol("WIZARD_DIALOG_TITLE", L_WizardDialogTitle_Text);
+			window.external.SetDefaults(document);
+		}
+		window.external.Load(document);
+		window.external.AddSymbol("SAFE_PROJECT_NAME", CreateSafeName(window.external.FindSymbol("PROJECT_NAME")));
+
+		ATTRIBUTED.checked = IsAttributedProject(window.external);
+		if (IsAttributedProject(window.external))
+		{
+			ATTRIBUTED.checked = true;
+			if (!CanAddNonAttributed(window.external))
+			{
+				ATTRIBUTED.disabled = true;
+			}
+			else
+			{
+				ATTRIBUTED.disabled = false;
+			}
+		}
+	}
+	catch(e)
+	{
+		var L_ErrMsg1_Text = "InitDocument() 中出现错误";
+		if (e.description.length != 0)
+		{
+			L_ErrMsg1_Text += ": ";
+			L_ErrMsg1_Text += e.description;
+		}
+		window.external.ReportError(L_ErrMsg1_Text);
+	}
+}
+
+function OnFinish(document)
+{
+	if (!ValidateInput())
+		return;
+
+	if (!ATTRIBUTED.disabled && ATTRIBUTED.checked)
+		if (!ConvertProjectToAttributed())
+			return;
+
+	OnWizFinish(document);
+}
+
+function OnBrowseHeaderFile()
+{
+	var strFile;
+	try
+	{
+		L_Title1_Text = "VS 向导选择文件";
+		L_Title2_Text = "Visual C++ 头文件(*.h)\0*.h\0\0";
+		strFile = window.external.GetOpenFileNameViaDlg(L_Title1_Text, window.external.FindSymbol("PROJECT_PATH"), L_Title2_Text, HEADER_FILE.value);
+	}
+	catch(e)
+	{
+		if (e.number != OLE_E_PROMPTSAVECANCELLED)
+		{
+			var L_ErrMsg2_Text = "OnBrowseHeaderFile() 中出现错误";
+			if (e.description.length != 0)
+			{
+				L_ErrMsg2_Text += ": ";
+				L_ErrMsg2_Text += e.description;
+			}
+			window.external.ReportError(L_ErrMsg2_Text);
+		}
+		return;
+	}
+	HEADER_FILE.value = strFile;
+}
+
+function OnClassName()
+{
+	var strClassName = CLASS_NAME.value;
+	var strLen = strClassName.length;
+	if (strLen)
+	{
+		if (strClassName.substr(0,1) == "C")
+		{
+			if (strLen == 1)
+				HEADER_FILE.value = "";
+			else
+				HEADER_FILE.value = strClassName.substr(1, strLen) + ".h";
+		}
+		else
+			HEADER_FILE.value = strClassName + ".h";
+	}
+	else
+		HEADER_FILE.value = "";
+}
+
+function ValidateInput()
+{
+	var oInvalid = null;
+
+	if (oInvalid == null)
+		if (!Validate(CLASS_NAME))
+			oInvalid = CLASS_NAME;
+
+	if (oInvalid == null)
+		if (!Validate(HEADER_FILE))
+			oInvalid = HEADER_FILE;
+
+	if (oInvalid != null)
+	{
+		window.external.ReportError();
+		oInvalid.focus();
+		return false;
+	}
+	return true;
+}
+
+function Validate(obj)
+{
+	var bValid = true;
+	switch(obj.id)
+	{
+		case "BASE_CLASS_NAME":
+			if(""!=BASE_CLASS_NAME.value)
+				bValid = window.external.dte.VCLanguageManager.ValidateQualifiedName(obj.value);
+			break;
+		case "CLASS_NAME":
+			bValid = window.external.ParentObject.ValidateMember(obj.value, vsCMElementClass);
+			break;
+		case "HEADER_FILE":
+			bValid = ValidateFileNameAndEnsureInProject(obj.value);
+			break;
+		case "IMPL_FILE":
+			bValid = ValidateFileNameAndEnsureInProject(obj.value, vsCMValidateFileExtCppSource);
+			break;
+		default:
+			break;
+	}
+
+	if (typeof(bValid) == "undefined")
+		bValid = false;
+
+	return bValid;
+}
+</SCRIPT>
+<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT>
+	document.scripts("INCLUDE_SCRIPT").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Script.js";
+	document.scripts("INCLUDE_COMMON").src = window.external.FindSymbol("SCRIPT_COMMON_PATH") + "/Common.js";
+</SCRIPT>

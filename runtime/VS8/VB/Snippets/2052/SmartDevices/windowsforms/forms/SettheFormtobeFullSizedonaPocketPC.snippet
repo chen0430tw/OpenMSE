@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>设置窗体以在 Pocket PC 上最大化显示</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>使窗体最大化显示且不带菜单或标题栏。</Description>
+      <HelpUrl/>
+      <Keywords/>
+      <Shortcut>sdfull</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Drawing.dll</Assembly>
+        </Reference>
+        <Reference>
+          <Assembly>System.Windows.Forms.dll</Assembly>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.Windows.Forms</Namespace>
+        </Import>
+      </Imports>
+      <Declarations/>
+      <Code Language="VB" Kind="method body">
+  <![CDATA[' Sets the form to be full sized,
+' with no menu or title bars.
+' Caution: Only way to close the application
+' is with the Running Programs memory options under Settings. 
+Me.WindowState = FormWindowState.Maximized 
+Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+Me.ControlBox = False
+Me.Menu = Nothing
+Me.ControlBox = False]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

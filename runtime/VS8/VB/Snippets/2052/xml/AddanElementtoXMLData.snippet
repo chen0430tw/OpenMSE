@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>向 XML 文档添加元素</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>向 XML 文档实例添加新元素。</Description>
+      <Shortcut>xmlAdd</Shortcut>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Xml.dll</Assembly>
+          <Url/>
+        </Reference>
+      </References>
+      <Imports>
+        <Import>
+          <Namespace>System.Xml</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>Element</ID>
+          <Type>String</Type>
+          <ToolTip>替换为新元素的名称。</ToolTip>
+          <Default>"Keyword"</Default>
+        </Literal>
+        <Literal>
+          <ID>Value</ID>
+          <Type>String</Type>
+          <ToolTip>替换为新元素的文本。</ToolTip>
+          <Default>"Value"</Default>
+        </Literal>
+        <Object>
+          <ID>XmlDoc</ID>
+          <Type>XmlDocument</Type>
+          <ToolTip>替换为 XmlDocument 实例。</ToolTip>
+          <Default>xmlDoc</Default>
+        </Object>
+      </Declarations>
+      <Code Language="VB" Kind="method body"><![CDATA[Dim newElement As XmlNode
+newElement = $XmlDoc$.CreateElement($Element$)
+newElement.InnerText = $Value$
+$XmlDoc$.AppendChild(newElement)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

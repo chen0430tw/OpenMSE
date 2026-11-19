@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>定义实现 IDisposable 的类</Title>
+      <Author>Microsoft Corporation</Author>
+      <Description>实现“释放完成”模式。</Description>
+      <Keywords>
+        <Keyword>IDisposable</Keyword>
+        <Keyword>完成</Keyword>
+        <Keyword>释放</Keyword>
+		  <Keyword>发布</Keyword>
+		  <Keyword>资源</Keyword>
+      </Keywords>
+      <Shortcut>IDispose</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.ComponentModel</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>ClassName</ID>
+          <Type/>
+          <ToolTip>替换为要实现的类的名称。</ToolTip>
+          <Default>ResourceClass</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="VB" Kind="type decl">
+		  <![CDATA[Class $ClassName$
+    Implements IDisposable
+
+    Private disposed As Boolean = False        ' To detect redundant calls
+
+    ' IDisposable
+    Protected Overridable Sub Dispose(ByVal disposing As Boolean)
+        If Not Me.disposed Then
+            If disposing Then
+                ' TODO: free unmanaged resources when explicitly called
+            End If
+
+            ' TODO: free shared unmanaged resources
+        End If
+        Me.disposed = True
+    End Sub
+
+#Region " IDisposable Support "
+    ' This code added by Visual Basic to correctly implement the disposable pattern.
+    Public Sub Dispose() Implements IDisposable.Dispose
+        ' Do not change this code.  Put cleanup code in Dispose(ByVal disposing As Boolean) above.
+        Dispose(True)
+        GC.SuppressFinalize(Me)
+    End Sub
+
+    Protected Overrides Sub Finalize()
+        ' Do not change this code.  Put cleanup code in Dispose(ByVal disposing As Boolean) above.
+        Dispose(False)
+        MyBase.Finalize()
+    End Sub
+#End Region
+
+End Class]]>
+	  </Code>
+  </Snippet>
+</CodeSnippet>
+</CodeSnippets>

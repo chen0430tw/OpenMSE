@@ -1,0 +1,5 @@
+MENU PRELOAD DISCARDABLE 
+BEGIN
+	// 注意: 在此处添加您自己的 Pocket PC 菜单资源，然后在
+	// rc2 文件中添加相应的 RCDATA 节。
+END
