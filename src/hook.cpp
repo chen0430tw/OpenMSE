@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 #include <cstring>
+#include <set>
+#include <algorithm>
 
 static std::wstring root, registryRoot;
 static bool vs8 = false;
@@ -108,6 +110,52 @@ static NTSTATUS NTAPI load(PWSTR search, PULONG flags, PUNICODE_STRING name, PHA
     return result;
 }
 static void WINAPI exitProcess(UINT code) { logPath(L"EXIT", L"ExitProcess", L"", (LONG)code); realExit(code); }
+
+// ---- Optional file-access trace (OPENMSE_TRACE_FILES=<file>) used to measure package dependency closures.
+// Every file or directory this process opens successfully is written once, as a DOS path. Opens relative to
+// another handle are not resolved. Tracing is off unless the variable is set; nothing is redirected by it.
+using NtCreate = NTSTATUS (NTAPI*)(PHANDLE, ACCESS_MASK, POBJECT_ATTRIBUTES, PIO_STATUS_BLOCK, PLARGE_INTEGER, ULONG, ULONG, ULONG, ULONG, PVOID, ULONG);
+using NtOpen = NTSTATUS (NTAPI*)(PHANDLE, ACCESS_MASK, POBJECT_ATTRIBUTES, PIO_STATUS_BLOCK, ULONG, ULONG);
+static NtCreate realNtCreate;
+static NtOpen realNtOpen;
+static std::wstring tracePath;
+static CRITICAL_SECTION traceLock;
+static std::set<std::wstring>* traced;
+static thread_local bool tracing = false;
+static void trace(POBJECT_ATTRIBUTES attributes, NTSTATUS status) {
+    if (status < 0 || tracing || !attributes || attributes->RootDirectory || !attributes->ObjectName || !attributes->ObjectName->Buffer) return;
+    std::wstring path(attributes->ObjectName->Buffer, attributes->ObjectName->Length / sizeof(wchar_t));
+    if (path.compare(0, 4, L"\\??\\") != 0) return;          // only DOS-device paths: drive letters and UNC
+    path.erase(0, 4);
+    if (path.compare(0, 4, L"UNC\\") == 0) path = L"\\" + path.substr(3);
+    if (path.size() < 3 || path[1] != L':') return;
+    std::wstring key = path;
+    std::transform(key.begin(), key.end(), key.begin(), ::towlower);
+    tracing = true;
+    DWORD saved = GetLastError();
+    EnterCriticalSection(&traceLock);
+    if (traced->insert(key).second) {
+        int n = WideCharToMultiByte(CP_UTF8, 0, path.data(), (int)path.size(), nullptr, 0, nullptr, nullptr);
+        std::string line(n, 0);
+        WideCharToMultiByte(CP_UTF8, 0, path.data(), (int)path.size(), line.data(), n, nullptr, nullptr);
+        line += "\n";
+        HANDLE h = realFileW(tracePath.c_str(), FILE_APPEND_DATA, FILE_SHARE_READ | FILE_SHARE_WRITE, nullptr, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
+        if (h != INVALID_HANDLE_VALUE) { DWORD written; WriteFile(h, line.data(), (DWORD)line.size(), &written, nullptr); CloseHandle(h); }
+    }
+    LeaveCriticalSection(&traceLock);
+    SetLastError(saved);
+    tracing = false;
+}
+static NTSTATUS NTAPI ntCreate(PHANDLE h, ACCESS_MASK a, POBJECT_ATTRIBUTES o, PIO_STATUS_BLOCK io, PLARGE_INTEGER size, ULONG attr, ULONG share, ULONG disposition, ULONG options, PVOID ea, ULONG eaLength) {
+    NTSTATUS status = realNtCreate(h, a, o, io, size, attr, share, disposition, options, ea, eaLength);
+    trace(o, status);
+    return status;
+}
+static NTSTATUS NTAPI ntOpen(PHANDLE h, ACCESS_MASK a, POBJECT_ATTRIBUTES o, PIO_STATUS_BLOCK io, ULONG share, ULONG options) {
+    NTSTATUS status = realNtOpen(h, a, o, io, share, options);
+    trace(o, status);
+    return status;
+}
 extern "C" void __cdecl OpenMSEHookEntry() {}
 BOOL WINAPI DllMain(HINSTANCE, DWORD reason, LPVOID) {
     if (DetourIsHelperProcess()) return TRUE;
@@ -124,6 +172,17 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD reason, LPVOID) {
 #define ATTACH(real, hook) DetourAttach(&(PVOID&)real, hook)
         ATTACH(realLdrLoad, load);
         ATTACH(realExit, exitProcess);
+        if (GetEnvironmentVariableW(L"OPENMSE_TRACE_FILES", text, 32768)) {
+            tracePath = text;
+            size_t token = tracePath.find(L"{engine}");
+            if (token != std::wstring::npos) tracePath.replace(token, 8, vs8 ? L"vs8" : L"mse");
+            InitializeCriticalSection(&traceLock);
+            traced = new std::set<std::wstring>();
+            HMODULE ntdll = GetModuleHandleW(L"ntdll.dll");
+            realNtCreate = (NtCreate)GetProcAddress(ntdll, "NtCreateFile");
+            realNtOpen = (NtOpen)GetProcAddress(ntdll, "NtOpenFile");
+            if (realNtCreate && realNtOpen) { ATTACH(realNtCreate, ntCreate); ATTACH(realNtOpen, ntOpen); }
+        }
         bool loadsOnly = GetEnvironmentVariableW(L"OPENMSE_LOADS_ONLY", text, 32768) != 0;
         if (!loadsOnly) {
         ATTACH(realOpenW, openW); ATTACH(realOpenA, openA);

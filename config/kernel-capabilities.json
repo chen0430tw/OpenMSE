@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "observedDate": "2026-11-19",
+  "observedDate": "2026-11-20",
   "scope": "This Windows installation and its current dependencies only",
   "evidenceRoot": "logs/kernel-audit",
   "mse": {
@@ -15,6 +15,12 @@
     "documentBuildDebugServices": {
       "level": "unknown",
       "reason": "No working automation attachment"
+    },
+    "ownedStart": {
+      "level": "blocked",
+      "code": "automation_not_registered",
+      "observed": "2026-11-20",
+      "evidence": "build/host-tests.exe"
     }
   },
   "vs8": {
@@ -58,7 +64,9 @@
     },
     "debugStart": {
       "level": "blocked",
-      "hresult": "0x80004005"
+      "hresult": "0x80004005",
+      "observed": "2026-11-20",
+      "note": "hidden and visible owned instances; build and breakpoint creation succeed; no dialog shown"
     },
     "stepEvaluateStack": {
       "level": "unknown",
@@ -67,13 +75,21 @@
     "shutdown": {
       "level": "behavior_verified",
       "shutdownRequested": true
+    },
+    "lifecycle": {
+      "level": "behavior_verified",
+      "evidence": "build/host-tests.exe",
+      "protocolVersion": 2
+    },
+    "documentSync": {
+      "level": "behavior_verified",
+      "idempotent": true
     }
   },
   "notImplemented": [
-    "new kernel services",
+    "language completion and definitions",
     "designer embedding",
-    "language services",
-    "transport cancellation and events"
+    "packaging (phase 6)"
   ],
   "gui": {
     "level": "behavior_verified",
@@ -88,11 +104,60 @@
       "Windows Forms toolbox (22 standard controls)",
       "static design surface and source views",
       "property inspector",
-      "C# and VB form source export"
+      "C# and VB form source export",
+      "kernel project graph tree",
+      "asynchronous build/run with cancel",
+      "error list with navigation",
+      "managed debugger UI (breakpoints, stepping, stack, locals)",
+      "VS2005 back-end host commands"
     ],
-    "connectedToCppKernel": false,
+    "connectedToCppKernel": true,
     "legacyWindowEmbedding": false,
     "evidence": "logs/gui-smoke-path.txt",
     "designerEvidence": "logs/designer-smoke-path.txt"
+  },
+  "kernel": {
+    "abiVersion": 5,
+    "level": "behavior_verified",
+    "evidence": "build/core-tests.exe",
+    "services": [
+      "documents",
+      "toolbox",
+      "design",
+      "workspace",
+      "build",
+      "run",
+      "hosts",
+      "debug.clr2",
+      "capabilities"
+    ],
+    "debugger": {
+      "provider": "OpenMSE.DebugHost",
+      "runtimes": [
+        "v2.0.50727"
+      ],
+      "bitness": [
+        "x86",
+        "x64"
+      ],
+      "verified": [
+        "breakpoints",
+        "step_over",
+        "step_into",
+        "step_out",
+        "stack",
+        "locals",
+        "field_evaluation",
+        "pause",
+        "terminate",
+        "exit_code"
+      ],
+      "notSupported": [
+        "function_evaluation",
+        "conditional_breakpoints",
+        "attach",
+        "native_code"
+      ]
+    }
   }
 }

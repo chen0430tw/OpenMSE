@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "description": "OpenMSE packages (integration plan phase 6). A package claims only the scenarios listed here; each scenario has a verification command that is run from an assembled package directory. Measured runtime closures are in config/packages/<name>.json (python scripts/package.py trace && python scripts/package.py manifest).",
+  "packages": {
+    "core": {
+      "description": "Unified GUI and kernel: documents, designers, project graph, MSBuild build/run, CLR 2.0 debugging. No legacy runtime.",
+      "requires": [],
+      "files": [
+        "OpenMSE.exe",
+        "bin/OpenMSE.Shell.exe",
+        "bin/OpenMSE.Core.dll",
+        "bin/OpenMSE.DebugHost.x86.exe",
+        "bin/OpenMSE.DebugHost.x64.exe",
+        "config/toolbox.json",
+        "assets/mse.ico",
+        "samples/*",
+        "samples/VS8Smoke/*",
+        "docs/*.md",
+        "docs/kernel/*.md",
+        "README.md",
+        "scripts/check-install.ps1",
+        "config/packages.json"
+      ],
+      "system": [".NET Framework 4.x (GUI)", ".NET Framework 2.0/3.5 with MSBuild 2.0 (build, run, CLR 2.0 debugging)", "Windows x64"],
+      "scenarios": [
+        { "name": "edit-design-build-run-debug", "verify": "bin\\OpenMSE.Shell.exe --smoke-test <new directory>" }
+      ]
+    },
+    "vs8-backend": {
+      "description": "VS2005 back-end host used by the kernel: owned hidden instance, document sync/edit/save, solution open and DTE build, lifecycle (timeout/verify, reconnect, restart, shutdown).",
+      "requires": ["core"],
+      "files": [
+        "OpenMSEHook.dll",
+        "build/HostBridge.exe",
+        "config/hosts.json",
+        "config/vs8-registry-template.json",
+        "config/packages/vs8-backend.json",
+        "scripts/setup.ps1"
+      ],
+      "traces": ["vs8-build-vs8.txt", "host-tests-vs8.txt"],
+      "entries": ["runtime/Common7/IDE/devenv.exe", "runtime/Common7/IDE/devenv.exe.manifest", "runtime/Common7/IDE/devenv.exe.config"],
+      "system": ["EnvDTE 8.0 primary interop assembly in the GAC (bridge)", "the GAC assemblies and original-install files listed in config/packages/vs8-backend.json"],
+      "scenarios": [
+        { "name": "back-end-lifecycle", "verify": "build\\host-tests.exe <package root> <new directory>  (VS2005 checks; the MSE check needs mse-window)" },
+        { "name": "dte-document-and-build", "verify": "python scripts\\package.py scenario-vs8-build <package root> <new directory>" }
+      ]
+    },
+    "mse-window": {
+      "description": "MSE compatibility window: start MSE7 with an HTML document; the HTML editor and designer load from the package with no error dialog.",
+      "requires": ["core"],
+      "files": [
+        "OpenMSEHook.dll",
+        "config/registry-template.json",
+        "scripts/setup.ps1",
+        "scripts/verify.ps1",
+        "config/hosts.json",
+        "config/packages/mse-window.json",
+        "build/HostBridge.exe"
+      ],
+      "traces": ["mse-window-mse.txt", "host-tests-mse.txt"],
+      "entries": ["runtime/MSE7.EXE"],
+      "system": ["the GAC assemblies and original-install files listed in config/packages/mse-window.json"],
+      "scenarios": [
+        { "name": "html-editor-window", "verify": "python scripts\\package.py scenario-mse-window <package root>" }
+      ]
+    },
+    "legacy-full": {
+      "description": "The complete legacy runtime (VS2005 and MSE, including Crystal Reports, ReportViewer, SmartDevices, SDKs and languages) for full IDE use in the compatibility windows. Unmeasured scenarios belong here.",
+      "requires": ["core"],
+      "runtime": "all",
+      "files": [
+        "OpenMSEHook.dll",
+        "build/HostBridge.exe",
+        "config/hosts.json",
+        "config/registry-template.json",
+        "config/vs8-registry-template.json",
+        "config/files.json",
+        "config/vs8-files.json",
+        "scripts/setup.ps1",
+        "scripts/verify.ps1",
+        "scripts/create-shortcuts.ps1"
+      ],
+      "scenarios": [
+        { "name": "full-legacy-ide", "verify": "scripts\\verify.ps1 -Engine vs8 / -Engine mse after starting OpenMSE.exe --vs8 / --mse" }
+      ]
+    }
+  }
+}

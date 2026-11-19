@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "description": "Legacy hosts the kernel may start. Paths are relative to the OpenMSE root. The kernel verifies version and SHA-256 of each executable before starting it, and only ever binds to instances it started itself.",
+  "hosts": [
+    {
+      "engine": "vs8",
+      "name": "Visual Studio 2005",
+      "bitness": 32,
+      "executable": "runtime/Common7/IDE/devenv.exe",
+      "fileVersion": "8.0.50727.867",
+      "sha256": "A2252485B2538DB718DD444FAD9B8A75E94BA357C5427A09B6A85B5B23AED6B2",
+      "launcher": "OpenMSE.exe",
+      "launcherArguments": ["--hidden", "--vs8"],
+      "processFile": "logs/last-process-vs8.txt",
+      "workingDirectory": ".",
+      "dependencyRoots": ["runtime"],
+      "configNamespace": "HKCU\\Software\\OpenMSE\\Instances\\<project hash>\\MachineVS8 + UserVS8",
+      "bridge": "build/HostBridge.exe",
+      "startTimeoutMs": 60000,
+      "capabilities": {
+        "documents": "behavior_verified",
+        "build": "behavior_verified",
+        "debug.start": "blocked"
+      }
+    },
+    {
+      "engine": "mse",
+      "name": "Microsoft Script Editor",
+      "bitness": 32,
+      "executable": "runtime/MSE7.EXE",
+      "fileVersion": "12.0.6606.1000",
+      "sha256": "28B638B1C0A3176CD549FD5A85A3CFF4FA7A5CEFD31A3DEB46FEC697EF068A3B",
+      "launcher": "OpenMSE.exe",
+      "launcherArguments": ["--hidden", "--mse"],
+      "processFile": "logs/last-process.txt",
+      "workingDirectory": ".",
+      "dependencyRoots": ["runtime"],
+      "configNamespace": "HKCU\\Software\\OpenMSE\\Instances\\<project hash>\\MachineMSE + UserMSE",
+      "bridge": "build/HostBridge.exe",
+      "startTimeoutMs": 30000,
+      "capabilities": {
+        "automation": "blocked"
+      }
+    }
+  ]
+}

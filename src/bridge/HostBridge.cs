@@ -52,6 +52,7 @@ namespace OpenMSE.Bridge
         internal readonly int Pid;
         internal readonly string Engine;
         internal readonly string Moniker;
+        internal string Identity { get { return identity; } }
 
         internal static List<Dictionary<string, object>> Enumerate()
         {
@@ -169,6 +170,29 @@ namespace OpenMSE.Bridge
             {
                 case "host.identity":
                     return new { pid = Pid, engine = Engine, createdFileTime = identity, moniker = Moniker, name = dte.Name, version = dte.Version, owned = owned };
+                case "host.ping":
+                    return new { pid = Pid, createdFileTime = identity, version = dte.Version, debugMode = dte.Debugger.CurrentMode.ToString() };
+                case "host.sleep":
+                    // Test hook for timeout handling: blocks the STA dispatcher like a slow COM call would.
+                    RequireOwned(); int ms = Convert.ToInt32(args.ContainsKey("ms") ? args["ms"] : 0);
+                    if (ms < 0 || ms > 10000) throw new BridgeFailure("invalid_arguments", "ms must be 0..10000.");
+                    System.Threading.Thread.Sleep(ms); return new { slept = ms };
+                case "host.exit_bridge":
+                    // Test hook for disconnect handling: the bridge ends without answering; the IDE keeps running.
+                    RequireOwned(); Console.Out.Flush(); Environment.Exit(3); return null;
+                case "documents.sync":
+                    // Idempotent by content: re-sending the same text after a timeout or reconnect never writes twice.
+                    RequireOwned();
+                    string syncPath = GuardPath(value("path")); Document target = null;
+                    foreach (Document doc in dte.Documents) if (String.Equals(doc.FullName, syncPath, StringComparison.OrdinalIgnoreCase)) target = doc;
+                    if (target == null) target = dte.ItemOperations.OpenFile(syncPath, Constants.vsViewKindTextView).Document;
+                    string current = ReadDocument(target).Replace("\r\n", "\n"), wanted = value("text").Replace("\r\n", "\n");
+                    if (current == wanted) return new { applied = false, already = true, saved = target.Saved };
+                    bool unmodified = args.ContainsKey("baseText") ? current == value("baseText").Replace("\r\n", "\n") : target.Saved;
+                    if (!unmodified) throw new BridgeFailure("conflict", "The host buffer was changed outside the kernel; sync refused.");
+                    var syncText = (TextDocument)target.Object("TextDocument"); var syncPoint = syncText.StartPoint.CreateEditPoint();
+                    syncPoint.Delete(syncText.EndPoint); syncPoint.Insert(wanted.Replace("\n", "\r\n"));
+                    return new { applied = true, already = false, saved = target.Saved };
                 case "host.inspect":
                     var commands = new List<string>(); foreach (Command command in dte.Commands) if (!String.IsNullOrEmpty(command.Name)) commands.Add(command.Name);
                     return new { documents = dte.Documents.Count, solutionOpen = dte.Solution.IsOpen, commandCount = commands.Count,
@@ -219,7 +243,8 @@ namespace OpenMSE.Bridge
                     foreach (Document doc in dte.Documents)
                         if (!doc.Saved) throw new BridgeFailure("unsaved_document", "Host contains unsaved documents.");
                     foreach (Breakpoint pointToDelete in createdBreakpoints) pointToDelete.Delete();
-                    if (dte.Solution.IsOpen) { GuardPath(dte.Solution.FullName); dte.Solution.Close(false); }
+                    // An implicit (unsaved, nameless) solution has an empty FullName; only real solution files are path-checked.
+                    if (dte.Solution.IsOpen) { if (!String.IsNullOrEmpty(dte.Solution.FullName)) GuardPath(dte.Solution.FullName); dte.Solution.Close(false); }
                     dte.Quit(); return new { shutdownRequested = true };
                 default: throw new BridgeFailure("method_not_supported", method);
             }
@@ -241,36 +266,45 @@ namespace OpenMSE.Bridge
                 if (args.Length != 6 || args[5] != "--stdio") throw new BridgeFailure("invalid_arguments", "Expected PID ENGINE PROJECT_ROOT WORKSPACE OWNED_MARKER_OR_DASH --stdio");
                 using (var session = new Session(Int32.Parse(args[0]), args[1], args[2], args[3], args[4] == "-" ? "" : args[4]))
                 {
-                    Console.WriteLine(Json.Serialize(new { type = "ready", protocolVersion = 1, pid = session.Pid, engine = session.Engine })); Console.Out.Flush();
-                    string line;
-                    while ((line = Console.ReadLine()) != null)
+                    // Protocol v2: requests are read on a background thread and executed in order on this STA thread.
+                    // A request whose deadline passed while it waited is answered with executed=false and never run.
+                    var queue = new System.Collections.Concurrent.BlockingCollection<string>();
+                    var reader = new System.Threading.Thread(delegate () { string input; while ((input = Console.ReadLine()) != null) queue.Add(input); queue.CompleteAdding(); }) { IsBackground = true };
+                    reader.Start();
+                    Console.WriteLine(Json.Serialize(new { type = "ready", protocolVersion = 2, minProtocolVersion = 1, pid = session.Pid, engine = session.Engine,
+                        createdFileTime = session.Identity, bridgePid = Process.GetCurrentProcess().Id, maxRequestBytes = 1024 * 1024 })); Console.Out.Flush();
+                    long sequence = 0;
+                    foreach (string line in queue.GetConsumingEnumerable())
                     {
-                        object id = null;
+                        object id = null; bool executed = false;
                         try
                         {
                             if (line.Length > 1024 * 1024) throw new BridgeFailure("request_too_large", "Maximum request size is 1 MiB.");
                             var request = Json.Deserialize<Dictionary<string, object>>(line);
                             if (request == null || !request.ContainsKey("id") || !request.ContainsKey("method")) throw new BridgeFailure("invalid_request", "Request requires id and method.");
                             id = request["id"];
+                            if (request.ContainsKey("deadlineUnixMs") && (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds > Convert.ToDouble(request["deadlineUnixMs"]))
+                                throw new BridgeFailure("deadline_exceeded", "The request expired while queued; it was not executed.");
                             var parameters = request.ContainsKey("params") ? request["params"] as Dictionary<string, object> : null;
+                            executed = true;
                             object result = session.Dispatch(Convert.ToString(request["method"]), parameters ?? new Dictionary<string, object>());
-                            Console.WriteLine(Json.Serialize(new { id = id, ok = true, result = result }));
+                            Console.WriteLine(Json.Serialize(new { id = id, ok = true, executed = true, seq = ++sequence, result = result }));
                         }
-                        catch (Exception error) { Console.WriteLine(Json.Serialize(Error(id, error))); }
+                        catch (Exception error) { var e = Error(id, error); e["executed"] = executed; e["seq"] = ++sequence; Console.WriteLine(Json.Serialize(e)); }
                         Console.Out.Flush();
                     }
                 }
                 return 0;
             }
-            catch (Exception error) { Console.WriteLine(Json.Serialize(Error(null, error))); return 1; }
+            catch (Exception error) { var e = Error(null, error); e["executed"] = false; Console.WriteLine(Json.Serialize(e)); return 1; }
             finally { MessageFilter.Revoke(); }
         }
-        private static object Error(object id, Exception error)
+        private static Dictionary<string, object> Error(object id, Exception error)
         {
             while (error is TargetInvocationException && error.InnerException != null) error = error.InnerException;
             var failure = error as BridgeFailure; var com = error as COMException;
             string code = failure != null ? failure.Code : (com != null && (uint)com.ErrorCode == 0x80010001 ? "host_busy" : "host_operation_failed");
-            return new { id = id, ok = false, error = new { code = code, message = error.Message, hresult = "0x" + error.HResult.ToString("X8") } };
+            return new Dictionary<string, object> { { "id", id }, { "ok", false }, { "error", new Dictionary<string, object> { { "code", code }, { "message", error.Message }, { "hresult", "0x" + error.HResult.ToString("X8") } } } };
         }
     }
 }

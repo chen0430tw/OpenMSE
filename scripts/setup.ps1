@@ -69,7 +69,11 @@ try {
     $privateRoot = $base.OpenSubKey($registryRoot,$true)
     if ($privateRoot) { try { MigratePrivateRuntimePaths $privateRoot } finally { $privateRoot.Dispose() } }
     $key = $base.CreateSubKey("$registryRoot\$userStore")
-    $key.SetValue('OpenMSEInitialized', 1, [Microsoft.Win32.RegistryValueKind]::DWord); $key.Dispose()
+    $key.SetValue('OpenMSEInitialized', 1, [Microsoft.Win32.RegistryValueKind]::DWord)
+    # VS2005 SP1 shows a modal "run as administrator" notice at every start until it is dismissed. A hidden
+    # back-end instance can never dismiss it, so it is turned off in this project's private VS8 settings only.
+    if ($Engine -eq 'vs8' -and $null -eq $key.GetValue('ShowWindowsAdminDlg')) { $key.SetValue('ShowWindowsAdminDlg', 0, [Microsoft.Win32.RegistryValueKind]::DWord) }
+    $key.Dispose()
 } finally { $base.Dispose() }
 $rootFile = "$root\config\registry-root.txt"
 if (-not (Test-Path -LiteralPath $rootFile) -or [IO.File]::ReadAllText($rootFile) -ne $registryRoot) {

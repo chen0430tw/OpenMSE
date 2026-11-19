@@ -2,22 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace OpenMSE.Shell
 {
+    // A toolbox entry as described by the kernel's ToolboxService. Icons and preview controls stay in the UI.
     public sealed class ToolboxEntry
     {
+        public string Id { get; set; }
         public string Name { get; set; }
-        public string Family { get; set; }
+        public string Family { get; set; }      // display label: "HTML" or "Windows Forms"
         public string Markup { get; set; }
         public string ControlType { get; set; }
+        public string Backend { get; set; }
         public override string ToString() { return Name; }
         internal Control CreateControl()
         {
@@ -26,6 +23,9 @@ namespace OpenMSE.Shell
         }
         internal static readonly HashSet<string> Allowed=new HashSet<string>(new[]{"Button","Label","TextBox","RichTextBox","CheckBox","RadioButton","ComboBox","ListBox","CheckedListBox","GroupBox","Panel","PictureBox","ProgressBar","TrackBar","NumericUpDown","DateTimePicker","MonthCalendar","TreeView","ListView","TabControl","LinkLabel","DataGridView"});
     }
+
+    // Property-grid view of one kernel design node. Edits are sent back as a "set" operation containing
+    // only the properties that differ from the snapshot the node was read from.
     public sealed class DesignItem
     {
         [Category("标识"), ReadOnly(true)] public string Kind { get; set; }
@@ -38,163 +38,83 @@ namespace OpenMSE.Shell
         [Category("外观")] public string BackColor { get; set; }
         [Category("外观")] public string ForeColor { get; set; }
         [Browsable(false)] public bool Enabled { get; set; }
-        [Browsable(false)] public string Family { get; set; }
-        internal HtmlToken Token;
-        internal string OriginalText;
-        public DesignItem() { Width=120; Height=30; Text=""; Name=""; Enabled=true; BackColor="#FFFFFF"; ForeColor="#202835"; }
-        internal void Validate()
+        internal string NodeId;
+        internal bool TextEditable, Password;
+        DesignItem original;
+
+        internal static DesignItem From(Dictionary<string,object> n)
         {
-            if(!Regex.IsMatch(Name ?? "",@"^[A-Za-z_][A-Za-z0-9_]*$")) throw new ArgumentException("Name 必须是由英文字母、数字或下划线组成的标识符。");
-            if(X<0 || Y<0 || X>10000 || Y>10000 || Width<12 || Height<12 || Width>4096 || Height>4096) throw new ArgumentException("位置范围为 0–10000，尺寸范围为 12–4096。");
-            ColorTranslator.FromHtml(BackColor); ColorTranslator.FromHtml(ForeColor);
+            var item=new DesignItem { NodeId=(string)n["id"], Kind=(string)n["kind"], Name=(string)n["name"], Text=(string)n["text"], X=Convert.ToInt32(n["x"]), Y=Convert.ToInt32(n["y"]), Width=Convert.ToInt32(n["width"]), Height=Convert.ToInt32(n["height"]), BackColor=(string)n["back_color"], ForeColor=(string)n["fore_color"], Enabled=(bool)n["enabled"], TextEditable=(bool)n["text_editable"], Password=(bool)n["password"] };
+            item.original=(DesignItem)item.MemberwiseClone();
+            return item;
         }
-    }
-    public sealed class FormLayout
-    {
-        [Browsable(false)] public int FormatVersion { get; set; }
-        [Category("外观")] public string Title { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        [Browsable(false)] public List<DesignItem> Controls { get; set; }
-        public FormLayout() { FormatVersion=1; Title="Form1"; Width=720; Height=480; Controls=new List<DesignItem>(); }
-        internal void Validate()
+        // Colour names are resolved by System.Drawing at preview and in exported code, so they are checked here.
+        internal static void CheckColor(string value,string property)
         {
-            if(FormatVersion!=1 || Width<120 || Height<100 || Width>4096 || Height>4096 || Controls==null || Controls.Count>200) throw new ArgumentException("无效的窗体布局或版本。");
-            var names=new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            foreach(var item in Controls) { item.Validate(); if(!ToolboxEntry.Allowed.Contains(item.Kind) || !names.Add(item.Name)) throw new ArgumentException("控件类型不受支持或 Name 重复。"); }
+            try { ColorTranslator.FromHtml(value ?? ""); }
+            catch(Exception) { throw new ArgumentException(property+" 不是有效的颜色。"); }
         }
-        internal string Serialize() { Validate(); return new JavaScriptSerializer().Serialize(this); }
-        internal static FormLayout Parse(string text) { var layout=new JavaScriptSerializer().Deserialize<FormLayout>(text); if(layout==null) throw new ArgumentException("布局不能为空。"); layout.Validate(); return layout; }
-        static string Cs(string value) { return "\""+(value ?? "").Replace("\\","\\\\").Replace("\"","\\\"").Replace("\r","\\r").Replace("\n","\\n").Replace("\t","\\t").Replace("\0","\\0")+"\""; }
-        static string Vb(string value) { return "\""+(value ?? "").Replace("\"","\"\"").Replace("\r","\" & ChrW(13) & \"").Replace("\n","\" & ChrW(10) & \"").Replace("\0","\" & ChrW(0) & \"")+"\""; }
-        internal string Generate(bool vb)
+        internal Dictionary<string,object> Changes()
         {
-            Validate(); var code=new StringBuilder();
-            if(vb) {
-                code.AppendLine("' Generated by OpenMSE\r\nImports System\r\nImports System.Drawing\r\nImports System.Windows.Forms\r\n\r\nPublic Class DesignedForm\r\n    Inherits Form\r\n    Public Sub New()");
-                code.AppendLine("        Me.Text = "+Vb(Title)); code.AppendLine("        Me.ClientSize = New Size("+Width+", "+Height+")");
-            } else {
-                code.AppendLine("// Generated by OpenMSE\r\nusing System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\n\r\npublic class DesignedForm : Form\r\n{\r\n    public DesignedForm()\r\n    {");
-                code.AppendLine("        this.Text = "+Cs(Title)+";"); code.AppendLine("        this.ClientSize = new Size("+Width+", "+Height+");");
-            }
-            foreach(var item in Controls) {
-                string n="control_"+item.Name;
-                if(vb) {
-                    code.AppendLine("        Dim "+n+" As New "+item.Kind+"()"); code.AppendLine("        "+n+".Name = "+Vb(item.Name)); code.AppendLine("        "+n+".Text = "+Vb(item.Text));
-                    code.AppendLine("        "+n+".SetBounds("+item.X+", "+item.Y+", "+item.Width+", "+item.Height+")");
-                    code.AppendLine("        "+n+".Enabled = "+(item.Enabled ? "True" : "False"));
-                    code.AppendLine("        "+n+".BackColor = ColorTranslator.FromHtml("+Vb(item.BackColor)+")"); code.AppendLine("        "+n+".ForeColor = ColorTranslator.FromHtml("+Vb(item.ForeColor)+")");
-                    code.AppendLine("        Me.Controls.Add("+n+")");
-                } else {
-                    code.AppendLine("        "+item.Kind+" "+n+" = new "+item.Kind+"();"); code.AppendLine("        "+n+".Name = "+Cs(item.Name)+";"); code.AppendLine("        "+n+".Text = "+Cs(item.Text)+";");
-                    code.AppendLine("        "+n+".SetBounds("+item.X+", "+item.Y+", "+item.Width+", "+item.Height+");"); code.AppendLine("        "+n+".Enabled = "+(item.Enabled ? "true" : "false")+";");
-                    code.AppendLine("        "+n+".BackColor = ColorTranslator.FromHtml("+Cs(item.BackColor)+");"); code.AppendLine("        "+n+".ForeColor = ColorTranslator.FromHtml("+Cs(item.ForeColor)+");"); code.AppendLine("        this.Controls.Add("+n+");");
-                }
-            }
-            if(vb) code.AppendLine("    End Sub\r\n    <STAThread()> Public Shared Sub Main()\r\n        Application.EnableVisualStyles()\r\n        Application.Run(New DesignedForm())\r\n    End Sub\r\nEnd Class");
-            else code.AppendLine("    }\r\n    [STAThread]\r\n    public static void Main() { Application.EnableVisualStyles(); Application.Run(new DesignedForm()); }\r\n}");
-            return code.ToString();
+            CheckColor(BackColor,"BackColor"); CheckColor(ForeColor,"ForeColor");
+            var p=new Dictionary<string,object>();
+            if(Name!=original.Name) p["name"]=Name;
+            if(Text!=original.Text) p["text"]=Text ?? "";
+            if(X!=original.X) p["x"]=X;
+            if(Y!=original.Y) p["y"]=Y;
+            if(Width!=original.Width) p["width"]=Width;
+            if(Height!=original.Height) p["height"]=Height;
+            if(BackColor!=original.BackColor) p["back_color"]=BackColor ?? "";
+            if(ForeColor!=original.ForeColor) p["fore_color"]=ForeColor ?? "";
+            return p;
         }
     }
 
-    internal sealed class HtmlToken
+    // Property-grid view of the .omform root.
+    public sealed class FormProperties
     {
-        internal int Start, OpenEnd, ContentEnd, End;
-        internal string Tag, Open, Id;
+        [Category("外观")] public string Title { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        string title; int width, height;
+        internal FormProperties(string t,int w,int h) { Title=title=t; Width=width=w; Height=height=h; }
+        internal Dictionary<string,object> Changes()
+        {
+            var p=new Dictionary<string,object>();
+            if(Title!=title) p["title"]=Title ?? "";
+            if(Width!=width) p["width"]=Width;
+            if(Height!=height) p["height"]=Height;
+            return p;
+        }
     }
-    // This scanner edits source spans; it never executes HTML and never serializes an entire DOM.
-    internal sealed class HtmlLayout
+
+    internal sealed class KernelDesign
     {
-        internal readonly string Source;
-        internal readonly List<DesignItem> Items=new List<DesignItem>();
-        readonly List<HtmlToken> tokens=new List<HtmlToken>();
-        internal int InsertAt;
-        static readonly HashSet<string> Void=new HashSet<string>(new[]{"input","img","hr","br","meta","link","area","base","embed","param","source","track","wbr"});
-        static readonly Regex Attributes=new Regex(@"(?<name>[\w:-]+)\s*=\s*(?:""(?<value>[^""]*)""|'(?<value>[^']*)'|(?<value>[^\s>]+))",RegexOptions.Compiled);
-        internal static string Attribute(string open,string name) { foreach(Match m in Attributes.Matches(open)) if(String.Equals(m.Groups["name"].Value,name,StringComparison.OrdinalIgnoreCase)) return HttpUtility.HtmlDecode(m.Groups["value"].Value); return ""; }
-        internal static string SetAttribute(string open,string name,string value)
+        internal ulong Document, Revision;
+        internal string Kind, Error, Title;
+        internal int Width, Height, CanvasWidth, CanvasHeight;
+        internal bool Truncated;
+        internal List<DesignItem> Nodes=new List<DesignItem>();
+        internal static KernelDesign From(Dictionary<string,object> r)
         {
-            foreach(Match m in Attributes.Matches(open)) if(String.Equals(m.Groups["name"].Value,name,StringComparison.OrdinalIgnoreCase)) return open.Remove(m.Index,m.Length).Insert(m.Index,name+"=\""+HttpUtility.HtmlAttributeEncode(value)+"\"");
-            int end=open.LastIndexOf('>'); if(end<0) throw new ArgumentException("标签不完整。"); if(end>0 && open[end-1]=='/') end--;
-            return open.Insert(end," "+name+"=\""+HttpUtility.HtmlAttributeEncode(value)+"\"");
+            var d=new KernelDesign { Document=KernelClient.U64(r["document"]), Revision=KernelClient.U64(r["revision"]), Kind=(string)r["kind"], Error=r["error"] as string, Title=(string)r["title"], Width=Convert.ToInt32(r["width"]), Height=Convert.ToInt32(r["height"]), CanvasWidth=Convert.ToInt32(r["canvas_width"]), CanvasHeight=Convert.ToInt32(r["canvas_height"]), Truncated=(bool)r["truncated"] };
+            foreach(object node in (System.Collections.IEnumerable)r["nodes"]) d.Nodes.Add(DesignItem.From((Dictionary<string,object>)node));
+            return d;
         }
-        internal HtmlLayout(string source)
-        {
-            Source=source; InsertAt=source.Length; var stack=new List<HtmlToken>();
-            for(int i=0;i<source.Length;) {
-                int start=source.IndexOf('<',i); if(start<0) break;
-                if(source.Substring(start).StartsWith("<!--",StringComparison.Ordinal)) { int endComment=source.IndexOf("-->",start+4,StringComparison.Ordinal); i=endComment<0 ? source.Length : endComment+3; continue; }
-                int end=start+1; char quote='\0';
-                for(;end<source.Length;end++) { char c=source[end]; if(quote!='\0') { if(c==quote) quote='\0'; } else if(c=='\'' || c=='"') quote=c; else if(c=='>') break; }
-                if(end==source.Length) break; string open=source.Substring(start,end-start+1); i=end+1;
-                var match=Regex.Match(open,@"^<\s*(/?)\s*([a-zA-Z][\w:-]*)"); if(!match.Success) continue;
-                string tag=match.Groups[2].Value.ToLowerInvariant();
-                if(match.Groups[1].Length>0) {
-                    if(tag=="body") InsertAt=start;
-                    int index=stack.FindLastIndex(t=>t.Tag==tag);
-                    if(index>=0) { HtmlToken t=stack[index]; t.ContentEnd=start; t.End=end+1; stack.RemoveRange(index,stack.Count-index); } continue;
-                }
-                if(tag=="script" || tag=="style") { var close=Regex.Match(source.Substring(i),@"</\s*"+tag+@"\s*>",RegexOptions.IgnoreCase); i=close.Success ? i+close.Index+close.Length : source.Length; continue; }
-                var token=new HtmlToken { Start=start,OpenEnd=end+1,ContentEnd=end+1,End=end+1,Tag=tag,Open=open,Id=Attribute(open,"id") }; tokens.Add(token);
-                if(!Void.Contains(tag) && !open.EndsWith("/>")) stack.Add(token);
-                if(tag=="textarea") { var close=Regex.Match(source.Substring(i),@"</\s*textarea\s*>",RegexOptions.IgnoreCase); if(close.Success) { token.ContentEnd=i+close.Index; token.End=token.ContentEnd+close.Length; stack.Remove(token); i=token.End; } }
-            }
-            int flow=24;
-            foreach(var token in tokens) {
-                string kind=Kind(token); if(kind==null) continue;
-                var item=new DesignItem { Kind=kind,Name=token.Id,Family="HTML",Token=token,X=24,Y=flow,Width=kind=="Panel" ? 300 : 140,Height=kind=="Panel" || kind=="DataGridView" ? 100 : 30 };
-                if(String.IsNullOrEmpty(item.Name)) item.Name="element"+(Items.Count+1);
-                string content=token.ContentEnd>token.OpenEnd ? source.Substring(token.OpenEnd,token.ContentEnd-token.OpenEnd) : "";
-                item.Text=HttpUtility.HtmlDecode(Regex.Replace(content,@"<[^>]*>",""));
-                if(token.Tag=="input") item.Text=Attribute(token.Open,"value");
-                if(String.IsNullOrWhiteSpace(item.Text)) item.Text=kind=="Panel" || kind=="TextBox" ? "" : kind;
-                item.OriginalText=item.Text;
-                foreach(string declaration in Attribute(token.Open,"style").Split(';')) {
-                    int colon=declaration.IndexOf(':'); if(colon<0) continue; string key=declaration.Substring(0,colon).Trim().ToLowerInvariant(), value=declaration.Substring(colon+1).Trim(); int number;
-                    if(Int32.TryParse(value.Replace("px",""),out number)) { if(key=="left") item.X=Math.Max(0,number); if(key=="top") item.Y=Math.Max(0,number); if(key=="width") item.Width=Math.Max(12,Math.Min(4096,number)); if(key=="height") item.Height=Math.Max(12,Math.Min(4096,number)); }
-                    if(key=="background-color") item.BackColor=value; if(key=="color") item.ForeColor=value;
-                }
-                Items.Add(item); flow=Math.Min(10000,item.Y+item.Height+14);
-            }
-        }
-        static string Kind(HtmlToken t)
-        {
-            switch(t.Tag) {
-                case "button": return "Button";
-                case "input": string type=Attribute(t.Open,"type").ToLowerInvariant(); if(type=="checkbox") return "CheckBox"; if(type=="radio") return "RadioButton"; if(type=="button" || type=="submit" || type=="reset") return "Button"; return "TextBox";
-                case "textarea": return "RichTextBox"; case "select": return Attribute(t.Open,"size")=="" ? "ComboBox" : "ListBox";
-                case "span": case "label": case "p": case "h1": case "h2": case "h3": case "a": return "Label";
-                case "div": case "hr": return "Panel"; case "img": return "PictureBox"; case "table": return "DataGridView";
-                default: return null;
-            }
-        }
-        internal string Insert(ToolboxEntry entry,Point point)
-        {
-            if(Items.Count>=200) throw new InvalidOperationException("当前设计器最多显示 200 个元素。");
-            string snippet=entry.Markup.Replace("\\n","\n"); var fragment=new HtmlLayout(snippet); if(fragment.tokens.Count==0) throw new ArgumentException("工具箱条目没有可插入的标签。");
-            HtmlToken first=fragment.tokens[0]; string id; int index=1; do { id="control"+index++; } while(tokens.Any(t=>t.Id==id));
-            string open=SetAttribute(first.Open,"id",id); open=Position(open,point.X,point.Y,140,entry.ControlType=="Panel" ? 100 : 30,"#FFFFFF","#202835");
-            snippet=snippet.Remove(first.Start,first.OpenEnd-first.Start).Insert(first.Start,open);
-            return Source.Insert(InsertAt,"\r\n"+snippet+"\r\n");
-        }
-        static string Position(string open,int x,int y,int width,int height,string back,string fore)
-        {
-            var values=Attribute(open,"style").Split(';').Where(s=>!Regex.IsMatch(s,@"^\s*(position|left|top|width|height|background-color|color)\s*:",RegexOptions.IgnoreCase)).Where(s=>!String.IsNullOrWhiteSpace(s));
-            string style=String.Join(";",values)+";position:absolute;left:"+x+"px;top:"+y+"px;width:"+width+"px;height:"+height+"px;background-color:"+back+";color:"+fore+";";
-            return SetAttribute(open,"style",style.TrimStart(';'));
-        }
-        internal string Update(DesignItem item)
-        {
-            item.Validate(); HtmlToken t=item.Token;
-            if(tokens.Any(other=>other!=t && other.Id==item.Name)) throw new ArgumentException("Name 已被其他元素使用。");
-            string open=Position(SetAttribute(t.Open,"id",item.Name),item.X,item.Y,item.Width,item.Height,item.BackColor,item.ForeColor);
-            string tail=Source.Substring(t.OpenEnd,t.End-t.OpenEnd);
-            if(item.Text!=item.OriginalText) {
-                if(t.Tag=="input") open=SetAttribute(open,"value",item.Text);
-                else { string inner=Source.Substring(t.OpenEnd,t.ContentEnd-t.OpenEnd); if(inner.Contains("<") || Void.Contains(t.Tag)) throw new ArgumentException("此元素包含嵌套内容或不支持文本，请在 HTML 视图修改。"); tail=HttpUtility.HtmlEncode(item.Text)+Source.Substring(t.ContentEnd,t.End-t.ContentEnd); }
-            }
-            return Source.Remove(t.Start,t.End-t.Start).Insert(t.Start,open+tail);
-        }
-        internal string Delete(DesignItem item) { return Source.Remove(item.Token.Start,item.Token.End-item.Token.Start); }
+    }
+
+    internal sealed class KernelDesignResult
+    {
+        internal KernelState State;
+        internal string Node;
+        internal KernelDesign Design;
+    }
+
+    // What a designer view needs from its document; implemented by EditorPage over the kernel.
+    internal interface IDesignSource
+    {
+        KernelDesign LoadDesign();
+        KernelDesignResult ApplyDesign(Dictionary<string,object> operation,ulong expectedRevision);
+        string ExportDesign(bool vb);
     }
 }

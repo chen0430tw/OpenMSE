@@ -14,16 +14,17 @@ namespace OpenMSE.Shell
         readonly TextBox search=new TextBox { Dock=DockStyle.Top };
         readonly ListBox list=new ListBox { Dock=DockStyle.Fill,BorderStyle=BorderStyle.None,IntegralHeight=false,DrawMode=DrawMode.OwnerDrawFixed,ItemHeight=27,BackColor=Color.FromArgb(247,249,252) };
         readonly Label hint=new Label { Dock=DockStyle.Bottom,Height=52,Padding=new Padding(8),ForeColor=Color.FromArgb(100,112,130) };
-        readonly List<ToolboxEntry> entries;
+        readonly IList<ToolboxEntry> entries;
         readonly ToolboxIcons icons=new ToolboxIcons();
         internal Func<DesignerView> CurrentDesigner;
         internal Action<string> Failure;
         internal Action NewHtml,NewForm;
         Point down;
-        internal ToolboxPanel(string root)
+        // Entries come from the kernel's ToolboxService; this panel only presents them.
+        internal ToolboxPanel(IList<ToolboxEntry> catalog)
         {
             Dock=DockStyle.Fill; BackColor=Color.FromArgb(247,249,252);
-            entries=new JavaScriptSerializer().Deserialize<List<ToolboxEntry>>(File.ReadAllText(Path.Combine(root,"config/toolbox.json")));
+            entries=catalog;
             category.Items.AddRange(new object[]{"HTML · MSE","Windows 窗体 · VS2005"});
             var shortcuts=new FlowLayoutPanel { Dock=DockStyle.Bottom,Height=42,Padding=new Padding(4),WrapContents=false };
             var html=new Button { Text="新建 HTML",Width=91,Height=29 }; var form=new Button { Text="新建窗体",Width=91,Height=29 };
