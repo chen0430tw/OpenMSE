@@ -1,0 +1,3 @@
+LIBRARY OpenMSEHook
+EXPORTS
+    OpenMSEHookEntry @1 NONAME

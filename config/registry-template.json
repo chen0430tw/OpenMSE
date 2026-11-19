@@ -1,0 +1,6321 @@
+{
+  "Mappings": [
+    {
+      "Source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12",
+      "Target": "runtime\\OFFICE12"
+    },
+    {
+      "Source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug",
+      "Target": "runtime\\VS7Debug"
+    }
+  ],
+  "Nodes": [
+    {
+      "Path": "",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "InstallDir",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        }
+      ]
+    },
+    {
+      "Path": "AD7Metrics",
+      "Values": []
+    },
+    {
+      "Path": "AD7Metrics\\Engine",
+      "Values": []
+    },
+    {
+      "Path": "AD7Metrics\\Engine\\{F200A7E7-DEA5-11D0-B854-00A0244A1DE2}",
+      "Values": [
+        {
+          "Name": "SuspendThread",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "SetNextStatement",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "PortSupplier",
+          "Type": 1,
+          "Data": "{708C1ECA-FF48-11D2-904F-00C04FA302A1}"
+        },
+        {
+          "Name": "JITDebug",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "HitCountBP",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "FunctionBP",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "ConditionalBP",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "Attach",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "AlwaysLoadLocal",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "CLSID",
+          "Type": 1,
+          "Data": "{56B4E602-21A1-11D2-8FD6-00C04FA30000}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Script"
+        }
+      ]
+    },
+    {
+      "Path": "AD7Metrics\\ExpressionEvaluator",
+      "Values": []
+    },
+    {
+      "Path": "AD7Metrics\\ExpressionEvaluator\\{F7FA31DA-C32A-11D0-B442-00A0244A1DD2}",
+      "Values": []
+    },
+    {
+      "Path": "AD7Metrics\\ExpressionEvaluator\\{F7FA31DA-C32A-11D0-B442-00A0244A1DD2}\\{994B45C4-E6E9-11D2-903F-00C04FA302A1}",
+      "Values": [
+        {
+          "Name": "Engine",
+          "Type": 1,
+          "Data": "{F200A7E7-DEA5-11D0-B854-00A0244A1DE2}"
+        },
+        {
+          "Name": "Language",
+          "Type": 1,
+          "Data": "Script"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Microsoft Script"
+        }
+      ]
+    },
+    {
+      "Path": "AppCommandLine",
+      "Values": [
+        {
+          "Name": "JitDebug",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "ExeName",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutoLoadPackages",
+      "Values": []
+    },
+    {
+      "Path": "AutoLoadPackages\\{ADFC4E64-0397-11D1-9F4E-00A0C911004F}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{53544C4D-B03D-4209-A7D0-D9DD13A4019B}",
+          "Type": 4,
+          "Data": 0
+        }
+      ]
+    },
+    {
+      "Path": "AutoLoadPackages\\{F1536EF8-92EC-443C-9ED7-FDADF150DA82}",
+      "Values": [
+        {
+          "Name": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties",
+      "Values": []
+    },
+    {
+      "Path": "AutomationProperties\\Debugger",
+      "Values": []
+    },
+    {
+      "Path": "AutomationProperties\\Debugger\\General",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Debugger.General"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\Environment",
+      "Values": []
+    },
+    {
+      "Path": "AutomationProperties\\Environment\\General",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Environment.General"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\Environment\\Help",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11d3-B86B-00C04F79F802}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "HelpToolsOptions"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\Environment\\Keyboard",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Environment.Keyboard"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\Environment\\TaskList",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{4A9B7E50-AA16-11d0-A8C5-00A0C921A4D2}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Environment.TaskList"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\Environment\\WebBrowser",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{e8b06f41-6d01-11d2-aa7d-00c04f990343}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Environment.WebBrowser"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\Environment\\Windows",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Environment.Windows"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\FontsAndColors",
+      "Values": []
+    },
+    {
+      "Path": "AutomationProperties\\FontsAndColors\\Dialogs and Tool Windows",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "FontsAndColors.Dialogs and Tool Windows"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\FontsAndColors\\Printer",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "FontsAndColors.Printer"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\FontsAndColors\\TextEditor",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "FontsAndColors.Text Editor"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor",
+      "Values": []
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor\\CSS",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E720-1401-11D1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "CSS"
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor\\Disassembly",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Disassembly"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor\\ENC",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "ENC"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor\\Fonts",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Fonts"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E720-1401-11d1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor\\General",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "General"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E720-1401-11d1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor\\HTML",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E720-1401-11D1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "HTML"
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor\\Memory",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Memory"
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor\\PlainText",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Plain Text"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E720-1401-11d1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "AutomationProperties\\TextEditor\\Register",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Register"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID",
+      "Values": []
+    },
+    {
+      "Path": "CLSID\\{006D4220-F8FE-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IWebDesignControlContext7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{01AA65C0-F910-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "LinkPPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{05DD7650-130A-11d3-AFCB-00105A9991EF}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsTextTipWindow class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{0A15E103-0771-11d3-9AA9-00C04F79EFC3}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMDLGS.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "CSSFilterBuilder Object"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{16EC7250-F8FD-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "DocPropGeneralPPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{174CFBDA-D046-11d2-AA20-00C04F8EF472}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\CSSPKG.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "StyleRuleBuilder Object"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{1B437D20-F8FE-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsHtmEditorPackage7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{261A5572-C649-11d0-A8DF-00A0C921A4D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsMethodTipWindow class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{2ED60CF0-F8FE-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "ImagePPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{31A81214-5A9F-4532-ACD0-3204A9AB5D08}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsTextSpanSet Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{3C108A5C-DE47-4fa3-BCF2-5094F16A945D}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "DocPropScriptGeneralPPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{3c1f59c6-69cf-11d2-aa7c-00c04f990343}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsUserContext Module"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{452807CC-9BFA-11d0-8C3F-00C04FC2AAE2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsDropdownBar Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{5130C7AB-85BB-11d3-B363-00C04F611E41}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsLocalUserData Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{56B4E602-21A1-11d2-8FD6-00C04FA30000}",
+      "Values": [
+        {
+          "Name": "ThreadingModel",
+          "Type": 1,
+          "Data": "Apartment"
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\scriptle2.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Script LE"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{58E975A0-F8FE-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "HtmLanguageService7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{5a670b56-80e3-4a1e-a5c5-5597a943ad5d}",
+      "Values": [
+        {
+          "Name": "ThreadingModel",
+          "Type": 1,
+          "Data": "Apartment"
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\scriptle2.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Tree node callback"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{5CEA4634-057B-4aee-B72D-EA78E186D3D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "XMLDocPropPPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{5CEB3CEF-F536-428B-A798-D1A31C67167C}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VSDebugFindSourcePage"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{5CEB3CEF-F536-428B-A798-D1A31C67167C}\\InprocServer32",
+      "Values": [
+        {
+          "Name": "ThreadingModel",
+          "Type": 1,
+          "Data": "Apartment"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\vsdebug.dll"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{5eb7d9f7-af21-400e-a2c4-7fd6396f8641}",
+      "Values": [
+        {
+          "Name": "ThreadingModel",
+          "Type": 1,
+          "Data": "Apartment"
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\sdm2.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Session Debug Manager"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{6114C8A2-0CE9-11d1-8BD9-00A0C90F26F7}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VS COM References Dialog"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{63954172-BC86-11d2-B2CF-00C04FB17608}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VisualStudio Solution Configurations Property Page"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{66B88230-2363-4992-B740-B0450A6F51CA}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsTextImage Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{6E158BB0-F8FE-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "PageColorPPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{7c1a4461-a4f6-490d-9762-e4c1b9cc3783}",
+      "Values": [
+        {
+          "Name": "ThreadingModel",
+          "Type": 1,
+          "Data": "Apartment"
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\sdm2.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "LE callback"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{8B217746-717D-11CE-AB5B-D41203C10000}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\VSTLBINF.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "CLSID_TypeLibInfo"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{8B217752-717D-11CE-AB5B-D41203C10000}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\VSTLBINF.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "CLSID_SearchHelper"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{8B21775E-717D-11CE-AB5B-D41203C10000}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\VSTLBINF.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "CLSID_TLIApplication"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{8E7B96A8-E33D-11d0-A6D5-00C04FB67F6A}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsTextBuffer Class"
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{91B133BB-27B1-445c-B945-304370560EC1}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "DocPropKeywordsPPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{99913F1F-1EE3-11D1-8A6E-00C04f682E21}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VisualStudio Solution VsCfgProviderEventsHelper"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{9B6AB22E-916A-11d2-8914-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsHiddenTextLayer Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{9F842E53-E27B-426f-AE69-8F075770C6F3}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsFinder Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{A49C22CE-454A-11d3-8A7D-00C04F682E21}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VisualStudio Startup Project Property Page"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{B2715971-D02C-11d2-AFB4-00105A9991EF}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsDefaultButtonBarImages Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{BC5955D5-AA0D-11d0-A8C5-00A0C921A4D2}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsTaskList Class"
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{C04A35F0-F8FE-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "SelectPPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{C73A0EA1-B01C-4F62-ABA6-F553BD6893FC}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VSDebugFindSymPage"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{C73A0EA1-B01C-4F62-ABA6-F553BD6893FC}\\InprocServer32",
+      "Values": [
+        {
+          "Name": "ThreadingModel",
+          "Type": 1,
+          "Data": "Apartment"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\vsdebug.dll"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{C964830F-91A0-11D0-B14C-0000F8041356}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "OleUndoManager Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{cab2b658-026a-11d3-8a62-00c04f682e21}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VisualStudio Signing Options Property Page"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{D20F4B20-F8FE-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "TablePPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{D48421F1-51B8-11d2-8E57-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\TRIDSN.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "TriDesignDocument Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{D6513A91-ACC8-11d2-8919-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VsTextLineStorage Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{D7794D00-F90A-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMDLGS.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Visual Studio 7 URL Picker"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{DC5237F0-FC48-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "ASPParser7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{E409DBE0-F8FE-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "TableCellPPG7 Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{EE9E0A9A-BAF8-11D2-B2CF-00C04FB17608}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VisualStudio Build Dependencies Property Page"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{F17CA660-FC24-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMDLGS.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "HTMLColorPicker Object"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{F5E7E718-1401-11d1-883B-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{F5E7E719-1401-11d1-883B-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "CodeWindow Class"
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{F5E7E71A-1401-11d1-883B-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{F5E7E71D-1401-11d1-883B-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{F5E7E71E-1401-11d1-883B-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{F5E7E71F-1401-11d1-883B-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "CLSID\\{fc45efea-77cd-4321-96ca-1712b02570e0}",
+      "Values": [
+        {
+          "Name": "ThreadingModel",
+          "Type": 1,
+          "Data": "Apartment"
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\sdm2.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Port callback"
+        }
+      ]
+    },
+    {
+      "Path": "Component Categories",
+      "Values": []
+    },
+    {
+      "Path": "Component Categories\\{B8E04060-F909-11D2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "URLPicker 7"
+        }
+      ]
+    },
+    {
+      "Path": "Component Categories\\{B8E04060-F909-11D2-A6AE-00104BCC7269}\\{D7794D00-F90A-11d2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Visual Studio 7 URL Picker"
+        }
+      ]
+    },
+    {
+      "Path": "ComponentPickerPages",
+      "Values": []
+    },
+    {
+      "Path": "ComponentPickerPages\\Classic COM",
+      "Values": [
+        {
+          "Name": "Sort",
+          "Type": 4,
+          "Data": 20
+        },
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{9A341D96-5A64-11d3-BFF9-00C04F990235}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13925"
+        }
+      ]
+    },
+    {
+      "Path": "Editors",
+      "Values": []
+    },
+    {
+      "Path": "Editors\\{57312C73-6202-49e9-B1E1-40EA1A6DC1F6}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "WebForm Editor"
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{57312C73-6202-49e9-B1E1-40EA1A6DC1F6}\\Extensions",
+      "Values": [
+        {
+          "Name": "aspx",
+          "Type": 4,
+          "Data": 40
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{57312C73-6202-49e9-B1E1-40EA1A6DC1F6}\\LogicalViews",
+      "Values": [
+        {
+          "Name": "{7651a703-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a702-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a701-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a700-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{8281C572-2171-45AA-A642-7D8BC1662F1C}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Html Editor with Codepage Support"
+        },
+        {
+          "Name": "LinkedEditorGuid",
+          "Type": 1,
+          "Data": "{C76D83F8-A489-11D0-8195-00A0C91BBEE3}"
+        },
+        {
+          "Name": "DefaultToolboxTab",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#20010"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{8281C572-2171-45AA-A642-7D8BC1662F1C}\\Extensions",
+      "Values": [
+        {
+          "Name": "alx",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "html",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "htm",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "stm",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "stml",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "ascx",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "aspx",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "wsf",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "asp",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "asa",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "*",
+          "Type": 4,
+          "Data": 24
+        },
+        {
+          "Name": "sct",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "js",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "srf",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "vbs",
+          "Type": 4,
+          "Data": 39
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{8281C572-2171-45AA-A642-7D8BC1662F1C}\\LogicalViews",
+      "Values": [
+        {
+          "Name": "{7651a703-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a702-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a701-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a700-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{8B382828-6202-11d1-8870-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E720-1401-11d1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#13792"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Source Code (Text) Editor"
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{8B382828-6202-11d1-8870-0000F87579D2}\\Extensions",
+      "Values": [
+        {
+          "Name": "rtf",
+          "Type": 4,
+          "Data": 23
+        },
+        {
+          "Name": "doc",
+          "Type": 4,
+          "Data": 23
+        },
+        {
+          "Name": "txt",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "*",
+          "Type": 4,
+          "Data": 30
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{8B382828-6202-11d1-8870-0000F87579D2}\\LogicalViews",
+      "Values": [
+        {
+          "Name": "{7651a703-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a701-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a700-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{C76D83F8-A489-11D0-8195-00A0C91BBEE3}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "DefaultToolboxTab",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#20000"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Html Editor"
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{C76D83F8-A489-11D0-8195-00A0C91BBEE3}\\Extensions",
+      "Values": [
+        {
+          "Name": "tdl",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "aspx",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "xsp",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "alx",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "wsf",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "stml",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "stm",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "sct",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "html",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "htm",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "asp",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "asa",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "*",
+          "Type": 4,
+          "Data": 25
+        },
+        {
+          "Name": "srf",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "js",
+          "Type": 4,
+          "Data": 40
+        },
+        {
+          "Name": "vbs",
+          "Type": 4,
+          "Data": 40
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{C76D83F8-A489-11D0-8195-00A0C91BBEE3}\\LogicalViews",
+      "Values": [
+        {
+          "Name": "{7651a703-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a702-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a701-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a700-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{CFF630F8-2DB3-44ba-9FC9-6489665DE5B8}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Object Browser"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#13103"
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{CFF630F8-2DB3-44ba-9FC9-6489665DE5B8}\\Extensions",
+      "Values": [
+        {
+          "Name": "ocx",
+          "Type": 4,
+          "Data": 5
+        },
+        {
+          "Name": "exe",
+          "Type": 4,
+          "Data": 5
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "*",
+          "Type": 4,
+          "Data": 5
+        },
+        {
+          "Name": "olb",
+          "Type": 4,
+          "Data": 23
+        },
+        {
+          "Name": "tlb",
+          "Type": 4,
+          "Data": 23
+        },
+        {
+          "Name": "dll",
+          "Type": 4,
+          "Data": 5
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{FB9167C9-D3B8-4eda-8083-9AF6B6F6DA62}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Web Service Editor"
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{FB9167C9-D3B8-4eda-8083-9AF6B6F6DA62}\\Extensions",
+      "Values": [
+        {
+          "Name": "asax",
+          "Type": 4,
+          "Data": 39
+        },
+        {
+          "Name": "asmx",
+          "Type": 4,
+          "Data": 39
+        }
+      ]
+    },
+    {
+      "Path": "Editors\\{FB9167C9-D3B8-4eda-8083-9AF6B6F6DA62}\\LogicalViews",
+      "Values": [
+        {
+          "Name": "{7651a703-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a702-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a701-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{7651a700-06e5-11d1-8ebd-00a0c90f26ea}",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "FontAndColors",
+      "Values": []
+    },
+    {
+      "Path": "FontAndColors\\Dialogs and Tool Windows",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{FD9DC8E3-2FFC-446D-8C50-99CA4A3D2D1C}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "Category",
+          "Type": 1,
+          "Data": "{1F987C00-E7C4-4869-8A17-23FD602268B0}"
+        }
+      ]
+    },
+    {
+      "Path": "FontAndColors\\Printer",
+      "Values": [
+        {
+          "Name": "Category",
+          "Type": 1,
+          "Data": "{47724E70-AF55-48fb-A928-BB161C1D0C05}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E71D-1401-11D1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "FontAndColors\\Text Editor",
+      "Values": [
+        {
+          "Name": "Category",
+          "Type": 1,
+          "Data": "{A27B4E24-A735-4d1d-B8E7-9716E1E3D8E0}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E71D-1401-11D1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall",
+      "Values": []
+    },
+    {
+      "Path": "HandleInComingCall\\{0000010E-0000-0000-C000-000000000046}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDataObject"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{00000135-0000-0000-C000-000000000046}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IInterfaceFromWindowProp"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{00020404-0000-0000-C000-000000000046}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IEnumVARIANT"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{01E85887-7088-11D3-9952-00C04F68FDAF}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugENCEvents"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{037EDD0F-8551-4F7F-8CA0-04D9E29F532D}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugDocumentPositionOffset2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{0974E3A0-DD7A-11D2-B408-00105A190680}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsdCollectionSubset"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{0D0761B5-A36D-41E0-98CF-BBB8E6253B21}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugRuntimeJITServerProvider2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{1EDE3B4B-35E7-4B97-8133-02845D600174}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugFunctionPosition2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{33EC72E3-002F-4966-B91C-5CE2F7BA5124}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugDocumentTextEvents2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{34A1B216-39DA-4ACD-A372-F768D5A2466C}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IPrivateSession"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{4CE8C2C0-FDBB-11D2-B144-00C04F72DC32}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IENCBuildSpawnerCallback"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{5456590F-DBFB-11D2-898D-0000F8064EBB}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsdDeployable"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{54565916-DBFB-11D2-898D-0000F8064EBB}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsdBuildManager"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{54565917-DBFB-11D2-898D-0000F8064EBB}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsdDeployableBuildFireEvent"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{5456591D-DBFB-11D2-898D-0000F8064EBB}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsdDeployableValidateFireEvent"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{5456594E-DBFB-11D2-898D-0000F8064EBB}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsdMsiValidationClient"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{564FA275-12E1-4B5F-8316-4D79BCEF7246}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugPortEvents2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{56B4E703-21A1-11D2-8FD6-00C04FA30000}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugJIT2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{6015FD18-8257-4DF3-AC42-F074DEDD4CBD}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugBreakpointRequest2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{618736E0-3C3D-11CF-810C-00AA00389B71}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IAccessible"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{6330EC5C-92BC-47A4-9AD2-05E69953709E}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsTextImageWrapperSite"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{6D5140C1-7436-11CE-8034-00AA006009FA}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IServiceProvider"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{7F7CD0DB-91EF-49DC-9FA9-02D128515DD4}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsSolution"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{8948300F-8BD5-4728-A1D8-83D172295A9D}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugSession2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{8D36BEB8-9BFE-47DD-A11B-7BA1DE18E449}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugPortRequest2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{9B878A55-296A-404D-80C4-1468BB7CDC43}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsOutputWindowPane"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{ADE2EEB9-FC85-4F5B-B5D9-D431B4AAC31A}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugEventCallback2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{B196B284-BAB4-101A-B69C-00AA00341D07}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IConnectionPointContainer"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{B196B286-BAB4-101A-B69C-00AA00341D07}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IConnectionPoint"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{B2F73449-98EA-4866-90A0-425837FC5E23}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugIDEJIT2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{BDDE0EEE-3B8D-4C82-B529-33F16B42832E}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugDocumentPosition2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{C43CC2F3-90AF-4E93-9112-DFB8B36749B5}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "INotifySink2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{D0DEE0D5-3789-4A7B-9323-BB03FFFE90F7}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IPrivatePort"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{E0C0FFEE-7FFF-E0E0-DDDD-9500390A6BFE}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVbaIDE"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{E0C0FFEE-7FFF-E0E0-EEEE-9500390A6BFC}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsTextImageWrapper"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{E0C0FFEE-7FFF-E0E0-EEEE-9500390A6BFD}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVsaItemService"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{E0C0FFEE-7FFF-E0E0-EEEE-9500390A6BFF}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IVbaIdeSite"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{F0343A25-062A-408a-8FE5-B374F52A2164}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "IDebugPrivateSession2"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{F239E580-DB73-11D0-938A-00A0C9034910}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "ISqlDebugEvent"
+        }
+      ]
+    },
+    {
+      "Path": "HandleInComingCall\\{F239E584-DB73-11D0-938A-00A0C9034910}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "ISqlDebugEvent2"
+        }
+      ]
+    },
+    {
+      "Path": "Help",
+      "Values": [
+        {
+          "Name": "ExternalCLSID",
+          "Type": 1,
+          "Data": "{4A79114D-19E4-11d3-B86B-00C04F79F802}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "InstalledProducts",
+      "Values": []
+    },
+    {
+      "Path": "InstalledProducts\\MSE",
+      "Values": [
+        {
+          "Name": "PID",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "ProductDetails",
+          "Type": 1,
+          "Data": "Microsoft Script Editor 10.0"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Microsoft Script Editor 10.0"
+        }
+      ]
+    },
+    {
+      "Path": "KeyBindingTables",
+      "Values": []
+    },
+    {
+      "Path": "KeyBindingTables\\{5efc7975-14bc-11cf-9b2b-00AA00573819}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "AllowNavKeyBinding",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13021"
+        }
+      ]
+    },
+    {
+      "Path": "KeyBindingTables\\{8B382828-6202-11d1-8870-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "AllowNavKeyBinding",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13022"
+        }
+      ]
+    },
+    {
+      "Path": "KeyBindingTables\\{A764E89A-518D-11d2-9A89-00C04F79EFC3}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{A764E895-518D-11d2-9A89-00C04F79EFC3}"
+        },
+        {
+          "Name": "AllowNavKeyBinding",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#102"
+        }
+      ]
+    },
+    {
+      "Path": "KeyBindingTables\\{cb3fcfea-03df-11d1-81d2-00a0c91bbee3}",
+      "Values": [
+        {
+          "Name": "AllowNavKeyBinding",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#20001"
+        }
+      ]
+    },
+    {
+      "Path": "KeyBindingTables\\{cb3fcfeb-03df-11d1-81d2-00a0c91bbee3}",
+      "Values": [
+        {
+          "Name": "AllowNavKeyBinding",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#20002"
+        }
+      ]
+    },
+    {
+      "Path": "KeyBindingTables\\{e8b06f41-6d01-11d2-aa7d-00c04f990343}",
+      "Values": [
+        {
+          "Name": "AllowNavKeyBinding",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#1001"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{e8b06f41-6d01-11d2-aa7d-00c04f990343}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages",
+      "Values": []
+    },
+    {
+      "Path": "Languages\\File Extensions",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.alx",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.asa",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.ascx",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.asp",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.aspx",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.htm",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.html",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.js",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.srf",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.stm",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.stml",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.vbs",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\File Extensions\\.wsf",
+      "Values": [
+        {
+          "Name": "unused",
+          "Type": 1,
+          "Data": "HTML"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\CSS",
+      "Values": [
+        {
+          "Name": "LangResID",
+          "Type": 4,
+          "Data": 101
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{A764E895-518D-11d2-9A89-00C04F79EFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{A764E898-518D-11d2-9A89-00C04F79EFC3}"
+        },
+        {
+          "Name": "ShowCompletion",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "DefaultToInsertSpaces",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "Default to Non Hot URLs",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "ShowSmartIndent",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "UseStockColors",
+          "Type": 4,
+          "Data": 0
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\CSS\\EditorToolsOptions",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{A764E895-518D-11d2-9A89-00C04F79EFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\CSS\\EditorToolsOptions\\CSS Specific",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{A764E895-518D-11d2-9A89-00C04F79EFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#2200"
+        },
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{258E9CAF-04E6-11d3-9AA9-00C04F79EFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\CSS\\EditorToolsOptions\\Format",
+      "Values": [
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{258E9CAE-04E6-11d3-9AA9-00C04F79EFC3}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{A764E895-518D-11d2-9A89-00C04F79EFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#2100"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\Disassembly",
+      "Values": [
+        {
+          "Name": "ShowCompletion",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "LangResID",
+          "Type": 4,
+          "Data": 4
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C16FB7C4-9F84-11D2-8405-00C04F9902C1}"
+        },
+        {
+          "Name": "ShowSmartIndent",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "NotALanguage",
+          "Type": 4,
+          "Data": 1
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\ENC",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{75058B12-F5A9-4B1C-9161-9B3754D7488F}"
+        },
+        {
+          "Name": "NotALanguage",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "ShowSmartIndent",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "ShowCompletion",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "LangResID",
+          "Type": 4,
+          "Data": 5005
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\HTML",
+      "Values": [
+        {
+          "Name": "Support CF_HTML",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "LangResID",
+          "Type": 4,
+          "Data": 1003
+        },
+        {
+          "Name": "Single Code Window Only",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "ShowDropdownBarOption",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "ShowSmartIndent",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "Default to Non Hot URLs",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "ShowCompletion",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{58E975A0-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\HTML\\Debugger Languages",
+      "Values": []
+    },
+    {
+      "Path": "Languages\\Language Services\\HTML\\Debugger Languages\\{F7FA31DA-C32A-11D0-B442-00A0244A1DD2}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Script"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\HTML\\EditorToolsOptions",
+      "Values": []
+    },
+    {
+      "Path": "Languages\\Language Services\\HTML\\EditorToolsOptions\\Format",
+      "Values": [
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{7583bb73-a453-40e8-8951-b6986ddb1d9b}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#20009"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\HTML\\EditorToolsOptions\\HTML Specific",
+      "Values": [
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{CD914678-D0EC-11d2-A87B-00C04F79EFB7}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#20005"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\Memory",
+      "Values": [
+        {
+          "Name": "NotALanguage",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "ShowSmartIndent",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "ShowCompletion",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "LangResID",
+          "Type": 4,
+          "Data": 153
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DF38847E-CC19-11D2-8ADA-00C04F79E479}"
+        }
+      ]
+    },
+    {
+      "Path": "Languages\\Language Services\\Register",
+      "Values": [
+        {
+          "Name": "ShowSmartIndent",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "NotALanguage",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{13F6A341-59C0-11D3-994C-00C04F68FDAF}"
+        },
+        {
+          "Name": "ShowCompletion",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "LangResID",
+          "Type": 4,
+          "Data": 4960
+        }
+      ]
+    },
+    {
+      "Path": "Menus",
+      "Values": [
+        {
+          "Name": "{854D7AC8-BC3D-11D0-B421-00A0C90F9DC4}",
+          "Type": 1,
+          "Data": ",16000,10"
+        },
+        {
+          "Name": "{000C1200-0000-0000-C000-000000000046}",
+          "Type": 1,
+          "Data": ", 1001, 1"
+        },
+        {
+          "Name": "{000C1237-0000-0000-C000-000000000046}",
+          "Type": 1,
+          "Data": ", 1002, 1"
+        },
+        {
+          "Name": "{44E07B02-29A5-11D3-B882-00C04F79F802}",
+          "Type": 1,
+          "Data": ",1000,1"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}",
+          "Type": 1,
+          "Data": ",99,1"
+        },
+        {
+          "Name": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}",
+          "Type": 1,
+          "Data": ", 1000, 1"
+        },
+        {
+          "Name": "{A764E895-518D-11d2-9A89-00C04F79EFC3}",
+          "Type": 1,
+          "Data": ", 1000, 1"
+        }
+      ]
+    },
+    {
+      "Path": "Object Libraries",
+      "Values": []
+    },
+    {
+      "Path": "Object Libraries\\{18E32C04-58BA-4a1e-80DE-1C291634166A}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{00000000-0000-0000-0000-000000000000}"
+        },
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "COM"
+        }
+      ]
+    },
+    {
+      "Path": "Object Libraries\\{18E32C04-58BA-4a1e-80DE-1C291634166A}\\Filters",
+      "Values": []
+    },
+    {
+      "Path": "Object Libraries\\{18E32C04-58BA-4a1e-80DE-1C291634166A}\\Filters\\1",
+      "Values": [
+        {
+          "Name": "Priority",
+          "Type": 4,
+          "Data": 200
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#14303"
+        },
+        {
+          "Name": "FileFilter",
+          "Type": 1,
+          "Data": "*.olb;*.tlb;*.dll"
+        }
+      ]
+    },
+    {
+      "Path": "Object Libraries\\{18E32C04-58BA-4a1e-80DE-1C291634166A}\\Filters\\2",
+      "Values": [
+        {
+          "Name": "Priority",
+          "Type": 4,
+          "Data": 200
+        },
+        {
+          "Name": "FileFilter",
+          "Type": 1,
+          "Data": "*.dll;*.exe"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#14304"
+        }
+      ]
+    },
+    {
+      "Path": "Object Libraries\\{18E32C04-58BA-4a1e-80DE-1C291634166A}\\Filters\\3",
+      "Values": [
+        {
+          "Name": "Priority",
+          "Type": 4,
+          "Data": 200
+        },
+        {
+          "Name": "FileFilter",
+          "Type": 1,
+          "Data": "*.ocx"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#14305"
+        }
+      ]
+    },
+    {
+      "Path": "OutputWindow",
+      "Values": []
+    },
+    {
+      "Path": "OutputWindow\\{FC076020-078A-11D1-A7DF-00A0C9110051}",
+      "Values": [
+        {
+          "Name": "InitiallyInvisible",
+          "Type": 4,
+          "Data": 1
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Debug"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#66"
+        }
+      ]
+    },
+    {
+      "Path": "Packages",
+      "Values": []
+    },
+    {
+      "Path": "Packages\\{000C1200-0000-0000-C000-000000000046}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSOMSE.DLL"
+        },
+        {
+          "Name": "Preload",
+          "Type": 1,
+          "Data": "1"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Microsoft Script Editor Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{000C1200-0000-0000-C000-000000000046}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "mseintl.dll"
+        },
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{000C1237-0000-0000-C000-000000000046}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSOMSE.DLL"
+        },
+        {
+          "Name": "Preload",
+          "Type": 1,
+          "Data": "0"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Microsoft Script Editor Menu Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{000C1237-0000-0000-C000-000000000046}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "mseintl.dll"
+        },
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "InProcServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "HtmEditorPackage"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox",
+      "Values": []
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "HTML"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element A",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 23
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 15
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<SPAN>Span</SPAN>"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Span"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element B",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 10
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<INPUT type=\"button\" value=\"Button\">"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Button"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element C",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 9
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<INPUT type=\"reset\" value=\"Reset\">"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Reset Button"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element D",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 9
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<INPUT type=\"submit\" value=\"Submit\">"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Submit Button"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element E",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 2
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<INPUT type=\"text\">"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Text Field"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element F",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 4
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<TEXTAREA rows=2 cols=20>\\n\\n</TEXTAREA>"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Text Area"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element G",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 2
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<INPUT type=\"file\">"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "File Field"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element H",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 3
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<INPUT type=\"password\">"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Password Field"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element I",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 5
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<INPUT type=\"checkbox\">"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Checkbox"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element J",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 6
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<INPUT type=\"radio\">"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Radio Button"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element K",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 16
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<TABLE width=\"75%\" border=1 cellSpacing=1>\\n\\n<TR>\\n\\n<TD>\\n\\n</TD></TR></TABLE>"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Table"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element L",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 17
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<DIV style=\"WIDTH:70px; HEIGHT:15px\" ms_positioning=\"LinearLayout\">Label</DIV>"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Linear Layout Panel"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element M",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 18
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<DIV style=\"WIDTH:100px; POSITION: relative; HEIGHT:100px\" ms_positioning=\"GridLayout\"></DIV>"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Grid Layout Panel"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element N",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 19
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<IMG alt=\"\" src=\"\">"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Image"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element O",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 8
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<SELECT size=2>\\n<OPTION></OPTION>\\n\\n</SELECT>"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Listbox"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element P",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 7
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<SELECT>\\n<OPTION></OPTION>\\n\\n</SELECT>"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Dropdown"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\DefaultToolbox\\Tab 0\\Element Q",
+      "Values": [
+        {
+          "Name": "Item Type",
+          "Type": 4,
+          "Data": 31
+        },
+        {
+          "Name": "Bitmap Index",
+          "Type": 4,
+          "Data": 11
+        },
+        {
+          "Name": "Data",
+          "Type": 1,
+          "Data": "<HR width=100% size=1>"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Horizontal Rule"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\HtmData",
+      "Values": [
+        {
+          "Name": "DefClientLanguage",
+          "Type": 1,
+          "Data": "VBScript"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "htmedui.dll"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}\\Toolbox",
+      "Values": [
+        {
+          "Name": "Formats",
+          "Type": 1,
+          "Data": "HTML Format"
+        },
+        {
+          "Name": "Default Items",
+          "Type": 4,
+          "Data": 1
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1D76B2E0-F11B-11d2-AFC3-00105A9991EF}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Undo Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{1D76B2E0-F11B-11d2-AFC3-00105A9991EF}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "msenvui.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{21af45b0-ffa5-11d0-b63f-00a0c922e851}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Class Outline Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{21af45b0-ffa5-11d0-b63f-00a0c922e851}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "msenvui.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{44E07B02-29A5-11D3-B882-00C04F79F802}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\CMDDEF.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Commands definition Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{44E07B02-29A5-11D3-B882-00C04F79F802}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "cmddefui.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{4A791146-19E4-11D3-B86B-00C04F79F802}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Help Package"
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\VSBROWSE.DLL"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{4A791146-19E4-11D3-B86B-00C04F79F802}\\Automation",
+      "Values": [
+        {
+          "Name": "Help",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{4A791146-19E4-11D3-B86B-00C04F79F802}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "vsbrowseui.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{4A9B7E50-AA16-11d0-A8C5-00A0C921A4D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Task List Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{4A9B7E50-AA16-11d0-A8C5-00A0C921A4D2}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "msenvui.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{53544C4D-B03D-4209-A7D0-D9DD13A4019B}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\VisualStudioTeamCore.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Visual Studio Team Core Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{53544C4D-B03D-4209-A7D0-D9DD13A4019B}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{540AC8D4-67FC-4198-AFC5-C1674F9C6A10}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "Preload",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Visual Basic Common Compatiblity Wrapper Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{540AC8D4-67FC-4198-AFC5-C1674F9C6A10}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "msenvui.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{588205e0-66e0-11d3-8600-00c04f6123b3}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\Compsvcspkg.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Component Enumerator Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{588205e0-66e0-11d3-8600-00c04f6123b3}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "compsvcspkgui.dll"
+        },
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{854D7AC8-BC3D-11D0-B421-00A0C90F9DC4}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#100002"
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MODHELP.DLL"
+        },
+        {
+          "Name": "Preload",
+          "Type": 1,
+          "Data": "1"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{854D7AC8-BC3D-11D0-B421-00A0C90F9DC4}\\ExData",
+      "Values": [
+        {
+          "Name": "{64AC2454-BD18-11D1-87B5-00A0C91E2A46}",
+          "Type": 1,
+          "Data": "{854D7ACD-BC3D-11D0-B421-00A0C90F9DC4}"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{854D7AC8-BC3D-11D0-B421-00A0C90F9DC4}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "modhlpui.dll"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{A764E895-518D-11d2-9A89-00C04F79EFC3}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\CSSPKG.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "VS7 CSS Editing Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{A764E895-518D-11d2-9A89-00C04F79EFC3}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "CSSPkgUI.dll"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}",
+      "Values": [
+        {
+          "Name": "Preload",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\vsdebug.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Visual Studio Debugger"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}\\Automation",
+      "Values": [
+        {
+          "Name": "Debugger",
+          "Type": 1,
+          "Data": "Visual Studio Debugger"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}\\AutomationEvents",
+      "Values": [
+        {
+          "Name": "DebuggerEvents",
+          "Type": 1,
+          "Data": "Visual Studio Debugger Events"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "VSDebugUI.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "MS Environment Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "msenvui.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{e8b06f41-6d01-11d2-aa7d-00c04f990343}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\VSBROWSE.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "WebBrowser Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{e8b06f41-6d01-11d2-aa7d-00c04f990343}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "vsbrowseui.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{F5E7E720-1401-11d1-883B-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "InprocServer32",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Text Management Package"
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{F5E7E720-1401-11d1-883B-0000F87579D2}\\Automation",
+      "Values": [
+        {
+          "Name": "TextEditor",
+          "Type": 1,
+          "Data": ""
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{F5E7E720-1401-11d1-883B-0000F87579D2}\\SatelliteDll",
+      "Values": [
+        {
+          "Name": "Path",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\"
+        },
+        {
+          "Name": "DllName",
+          "Type": 1,
+          "Data": "msenvui.dll"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Packages\\{F5E7E720-1401-11d1-883B-0000F87579D2}\\Toolbox",
+      "Values": [
+        {
+          "Name": "Formats",
+          "Type": 1,
+          "Data": "1,13,16,HTML Format,MSDEVColumnSelect,MSDEVLineSelect"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Projects",
+      "Values": []
+    },
+    {
+      "Path": "Projects\\{000C1201-0000-0000-C000-000000000046}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{MSE_PACKAGE_GUID}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Microsoft Script Editor Project"
+        }
+      ]
+    },
+    {
+      "Path": "Projects\\{059D6162-CD51-11d0-AE1F-00A0C90FFFC3}",
+      "Values": [
+        {
+          "Name": "PossibleProjectExtensions",
+          "Type": 1,
+          "Data": "dsp"
+        },
+        {
+          "Name": "DefaultProjectExtension",
+          "Type": 1,
+          "Data": "dsp"
+        },
+        {
+          "Name": "DisplayProjectFileExtensions",
+          "Type": 1,
+          "Data": "#13582"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Project Converter"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "Projects\\{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Miscellaneous Files Project"
+        }
+      ]
+    },
+    {
+      "Path": "Projects\\{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}\\AddItemTemplates",
+      "Values": []
+    },
+    {
+      "Path": "Projects\\{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}\\AddItemTemplates\\TemplateDirs",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Projects\\{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}\\AddItemTemplates\\TemplateDirs\\{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}",
+      "Values": []
+    },
+    {
+      "Path": "Projects\\{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}\\AddItemTemplates\\TemplateDirs\\{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}\\/1",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13565"
+        },
+        {
+          "Name": "TemplatesDir",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Microsoft Office\\Templates\\12\\MseNewFileItems\\"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "SortPriority",
+          "Type": 4,
+          "Data": 1
+        }
+      ]
+    },
+    {
+      "Path": "Projects\\{D1DCDB85-C5E8-11D2-BFCA-00C04F990235}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Solution Items Project"
+        }
+      ]
+    },
+    {
+      "Path": "Projects\\{D1DCDB85-C5E8-11D2-BFCA-00C04F990235}\\AddItemTemplates",
+      "Values": []
+    },
+    {
+      "Path": "Projects\\{D1DCDB85-C5E8-11D2-BFCA-00C04F990235}\\AddItemTemplates\\TemplateDirs",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Projects\\{D1DCDB85-C5E8-11D2-BFCA-00C04F990235}\\AddItemTemplates\\TemplateDirs\\{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}",
+      "Values": []
+    },
+    {
+      "Path": "Projects\\{D1DCDB85-C5E8-11D2-BFCA-00C04F990235}\\AddItemTemplates\\TemplateDirs\\{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}\\/1",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13565"
+        },
+        {
+          "Name": "TemplatesDir",
+          "Type": 1,
+          "Data": "C:\\Program Files (x86)\\Microsoft Office\\Templates\\12\\MseNewFileItems\\"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "SortPriority",
+          "Type": 4,
+          "Data": 1
+        }
+      ]
+    },
+    {
+      "Path": "Services",
+      "Values": []
+    },
+    {
+      "Path": "Services\\{13F6A341-59C0-11D3-994C-00C04F68FDAF}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Register Language Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{31411192-a502-11d2-bbca-00c04f8ec294}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SHxSession Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11d3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{33a24090-6565-11d3-85fc-00c04f6123b3}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SID_SCompEnumService"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{588205e0-66e0-11d3-8600-00c04f6123b3}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{44B05627-95C2-4CE8-BDCD-4AA722785093}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Debugger Marker Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{4A791148-19E4-11d3-B86B-00C04F79F802}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SVsHelp Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11d3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{53544C4D-0079-44FE-826C-1B04B9E1598D}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Dont Show Dialog Again Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{53544C4D-B03D-4209-A7D0-D9DD13A4019B}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{53544C4D-104B-4D82-AD93-074816C1A0E5}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SCC Tools Options Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{53544C4D-B03D-4209-A7D0-D9DD13A4019B}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{53544C4D-1639-11d3-a60d-005004775ab1}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "TrackProjectDocuments Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{53544C4D-B03D-4209-A7D0-D9DD13A4019B}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{53544C4D-1927-4320-B9DA-13D2CB3EA93B}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SVsSccManager Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{53544C4D-B03D-4209-A7D0-D9DD13A4019B}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{53544C4D-1984-11d3-a606-005004775ab1}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "QueryEditQuerySave Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{53544C4D-B03D-4209-A7D0-D9DD13A4019B}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{53544C4D-1B21-4A15-BD22-28A9B35DD89E}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "VsExternalCommandTarget"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{53544C4D-B03D-4209-A7D0-D9DD13A4019B}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{53544C4D-A32A-4EAf-A920-38799C8F27B8}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SourceControl Automation Object Factory"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{53544C4D-B03D-4209-A7D0-D9DD13A4019B}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{53544C4D-AAF8-11D0-8E5E-00A0C911005A}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "VsSccItemLocation Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{53544C4D-B03D-4209-A7D0-D9DD13A4019B}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{58E975A0-F8FE-11D2-A6AE-00104BCC7269}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "HTML Language Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{5e819c22-a727-11d2-aa82-00c04f990343}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SVsShellContext Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{e8b06f41-6d01-11d2-aa7d-00c04f990343}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{75058B12-F5A9-4B1C-9161-9B3754D7488F}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "ENCStale Language Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{7d960b16-7af8-11d0-8e5e-00a0c911005a}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "IVsDebugger"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{854d7ac0-bc3d-11d0-b421-00a0c90f9dc4}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SVsHelpService"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11D3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{925C40C7-A4F7-11d2-9A96-00C04F79EFC3}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "StyleBuilderFactory Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{A764E895-518D-11d2-9A89-00C04F79EFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{97128F7E-2F73-47b1-B244-82653ADD59B5}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SVsContextWindowHelpService"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11D3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{9D21BCC5-2C63-4A61-B055-2F3DF78EB30A}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A9B7E50-AA16-11d0-A8C5-00A0C921A4D2}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{A764E898-518D-11d2-9A89-00C04F79EFC3}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "CSS Language Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{A764E895-518D-11d2-9A89-00C04F79EFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{BD71396F-39C6-4e3f-BBA2-79CE33A8B302}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SID_SVsAddWebReferenceDlg"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{588205e0-66e0-11d3-8600-00c04f6123b3}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{C16FB7C4-9F84-11D2-8405-00C04F9902C1}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Disassembly Language Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{C76D83F2-A489-11D0-8195-00A0C91BBEE3}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Visual InterDev Htm Editor Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{CA8A686A-0882-4e79-BCA3-AF3F3AB3EB8A}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Integrated Help Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11d3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{DDEBABB1-E61F-11d2-AA2F-00C04F8EF472}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "StyleOrganizer Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{A764E895-518D-11d2-9A89-00C04F79EFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{DF38847E-CC19-11D2-8ADA-00C04F79E479}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Memory Language Service"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{F5E7E71D-1401-11d1-883B-0000F87579D2}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{F5E7E720-1401-11d1-883B-0000F87579D2}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{F65478CC-96F1-4BA9-9EF9-A575ACB96031}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{1D76B2E0-F11B-11d2-AFC3-00105A9991EF}"
+        }
+      ]
+    },
+    {
+      "Path": "Services\\{F9231E11-3562-4072-A28E-C9D1088C3596}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "SID_SVbCommonCompatibilityWrapper"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{540AC8D4-67FC-4198-AFC5-C1674F9C6A10}"
+        }
+      ]
+    },
+    {
+      "Path": "SolutionPersistence",
+      "Values": []
+    },
+    {
+      "Path": "SolutionPersistence\\DevStudioProjDeps",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "SolutionPersistence\\ExtensibilityAddIns",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "SolutionPersistence\\ExtensibilityGlobals",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "SolutionPersistence\\ProjectConfiguration",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "SolutionPersistence\\ProjectDependencies",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "SolutionPersistence\\SolutionConfiguration",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "SolutionPersistence\\SolutionItems",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "Text Editor",
+      "Values": []
+    },
+    {
+      "Path": "Text Editor\\External Markers",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "Text Editor\\External Markers\\{59E4355F-5663-45B8-B4F3-51ED22561DED}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#201"
+        },
+        {
+          "Name": "Service",
+          "Type": 1,
+          "Data": "{44B05627-95C2-4CE8-BDCD-4AA722785093}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Debugger Breakpoint Mapped Disabled Marker"
+        }
+      ]
+    },
+    {
+      "Path": "Text Editor\\External Markers\\{6D799B25-7F32-4173-A4EB-521827D4AE4F}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#199"
+        },
+        {
+          "Name": "Service",
+          "Type": 1,
+          "Data": "{44B05627-95C2-4CE8-BDCD-4AA722785093}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Debugger Current Statement Marker"
+        }
+      ]
+    },
+    {
+      "Path": "Text Editor\\External Markers\\{7E2ED083-0516-4366-A84E-3FECB4369799}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#195"
+        },
+        {
+          "Name": "Service",
+          "Type": 1,
+          "Data": "{44B05627-95C2-4CE8-BDCD-4AA722785093}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Debugger Breakpoint Disabled Marker"
+        }
+      ]
+    },
+    {
+      "Path": "Text Editor\\External Markers\\{9D00A12E-9336-4585-A4A6-27B87383312D}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#196"
+        },
+        {
+          "Name": "Service",
+          "Type": 1,
+          "Data": "{44B05627-95C2-4CE8-BDCD-4AA722785093}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Debugger Breakpoint Error Marker"
+        }
+      ]
+    },
+    {
+      "Path": "Text Editor\\External Markers\\{A5998F84-BB45-4885-B552-0A9A6D98BE26}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#197"
+        },
+        {
+          "Name": "Service",
+          "Type": 1,
+          "Data": "{44B05627-95C2-4CE8-BDCD-4AA722785093}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Debugger Breakpoint Warning Marker"
+        }
+      ]
+    },
+    {
+      "Path": "Text Editor\\External Markers\\{C362E2C6-C242-425D-95D4-9A52B27096A8}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#194"
+        },
+        {
+          "Name": "Service",
+          "Type": 1,
+          "Data": "{44B05627-95C2-4CE8-BDCD-4AA722785093}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Debugger Breakpoint Enabled Marker"
+        }
+      ]
+    },
+    {
+      "Path": "Text Editor\\External Markers\\{CCB8B9D5-1643-4B41-8395-53C5B5ED5284}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#198"
+        },
+        {
+          "Name": "Service",
+          "Type": 1,
+          "Data": "{44B05627-95C2-4CE8-BDCD-4AA722785093}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Debugger Call Return Marker"
+        }
+      ]
+    },
+    {
+      "Path": "Text Editor\\External Markers\\{E52A924F-0A81-4CE0-B5A2-C4BAE0BF29E3}",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "DisplayName",
+          "Type": 1,
+          "Data": "#200"
+        },
+        {
+          "Name": "Service",
+          "Type": 1,
+          "Data": "{44B05627-95C2-4CE8-BDCD-4AA722785093}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "Debugger Breakpoint Mapped Enabled Marker"
+        }
+      ]
+    },
+    {
+      "Path": "ToolboxPages",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13538"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolboxPages\\ActiveXControls",
+      "Values": [
+        {
+          "Name": "DefaultTbx",
+          "Type": 4,
+          "Data": 20
+        },
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{BBE42851-FEFC-11d0-8C80-00C04FC2AA89}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13544"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages",
+      "Values": []
+    },
+    {
+      "Path": "ToolsOptionsPages\\Debugger",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#5000"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Debugger\\ENC",
+      "Values": [
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{6C3ECAA6-3EFB-4B0D-9660-2A3BA5B8440E}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#5003"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Debugger\\General",
+      "Values": [
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{FA9EB535-C624-13D0-AE1F-00A0190FF4C3}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#5001"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Debugger\\JIT",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#5036"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{B9EFCAF2-9EAE-4022-9E39-FA947666ADD9}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Debugger\\Native",
+      "Values": [
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{3E08D829-6989-45C3-97DA-F8BF3C49AEAB}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#5004"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Debugger\\VisibilityCmdUIContexts",
+      "Values": [
+        {
+          "Name": "{7174C6A0-B93D-11D1-9FF4-00A0C911004F}",
+          "Type": 1,
+          "Data": "1"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Environment",
+      "Values": [
+        {
+          "Name": "Sort",
+          "Type": 4,
+          "Data": 0
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13569"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Environment\\Fonts And Colors",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{57F6B7D2-1436-11d1-883C-0000F87579D2}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#14104"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Environment\\General",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13565"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{946E8047-0CF2-11d1-8C8D-0000F87570EE}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Environment\\Keyboard",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13568"
+        },
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{BAFF6A1A-0CF2-11d1-8C8D-0000F87570EE}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\HTML/Forms",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#20003"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\HTML/Forms\\Display",
+      "Values": [
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{CD914679-D0EC-11d2-A87B-00C04F79EFB7}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#20006"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\HTML/Forms\\General",
+      "Values": [
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{C76D83FE-A489-11D0-8195-00A0C91BBEE3}"
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#20004"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\HTML/Forms\\VisibilityCmdUIContexts",
+      "Values": [
+        {
+          "Name": "{7174C6A0-B93D-11D1-9FF4-00A0C911004F}",
+          "Type": 1,
+          "Data": "This value is ignored"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Text Editor",
+      "Values": [
+        {
+          "Name": "Sort",
+          "Type": 4,
+          "Data": 2
+        },
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E720-1401-11d1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13022"
+        }
+      ]
+    },
+    {
+      "Path": "ToolsOptionsPages\\Text Editor\\General",
+      "Values": [
+        {
+          "Name": "Package",
+          "Type": 1,
+          "Data": "{F5E7E720-1401-11d1-883B-0000F87579D2}"
+        },
+        {
+          "Name": "Page",
+          "Type": 1,
+          "Data": "{734A5DE2-DEBA-11d0-A6D0-00C04FB67F6A}"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "#13784"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows",
+      "Values": []
+    },
+    {
+      "Path": "ToolWindows\\{0504FF91-9D61-11D0-A794-00A0C9110051}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Call Stack"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{0F887920-C2B6-11d2-9375-0080C747D9A0}",
+      "Values": [
+        {
+          "Name": "Window",
+          "Type": 1,
+          "Data": "{0F887920-C2B6-11d2-9375-0080C747D9A0}"
+        },
+        {
+          "Name": "Style",
+          "Type": 1,
+          "Data": "Float"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "FindResults1"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{0F887921-C2B6-11d2-9375-0080C747D9A0}",
+      "Values": [
+        {
+          "Name": "Window",
+          "Type": 1,
+          "Data": "{0F887920-C2B6-11d2-9375-0080C747D9A0}"
+        },
+        {
+          "Name": "Style",
+          "Type": 1,
+          "Data": "Float"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "FindResults2"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{25f7e850-ffa1-11d0-b63f-00a0c922e851}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{21af45b0-ffa5-11d0-b63f-00a0c922e851}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{269A02DC-6AF8-11D3-BDC4-00C04F688E50}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Object Browser"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{28836128-FC2C-11D2-A433-00C04F72D18A}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Command window"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{34E76E81-EE4A-11D0-AE2E-00A0C90FFFC3}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Output window"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{350F9856-A72B-11D2-8AD0-00C04F79E479}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Memory"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{37ABA9BE-445A-11D3-9949-00C04F68FD0A}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Modules"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{398D7620-6D5B-11D3-9952-00C04F68FDAF}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "This"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{3AE79031-E1BC-11D0-8F78-00A0C9110057}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Solution Explorer"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{4A18F9D0-B838-11D0-93EB-00A0C90F2734}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Locals"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{4A791147-19E4-11D3-B86B-00C04F79F802}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Table of contents"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11d3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{4A9B7E51-AA16-11D0-A8C5-00A0C921A4D2}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A9B7E50-AA16-11D0-A8C5-00A0C921A4D2}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{53024D34-0EF5-11d3-87E0-00C04F7971A5}",
+      "Values": [
+        {
+          "Name": "Window",
+          "Type": 1,
+          "Data": "{E830EC50-C2B5-11d2-9375-0080C747D9A0}"
+        },
+        {
+          "Name": "Style",
+          "Type": 1,
+          "Data": "Float"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Object search window"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{68487888-204A-11d3-87EB-00C04F7971A5}",
+      "Values": [
+        {
+          "Name": "Window",
+          "Type": 1,
+          "Data": "{0F887920-C2B6-11d2-9375-0080C747D9A0}"
+        },
+        {
+          "Name": "Style",
+          "Type": 1,
+          "Data": "Float"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Object search results window"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{73F6DD58-437E-11d3-B88E-00C04F79F802}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Help index"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11d3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{73F6DD59-437E-11d3-B88E-00C04F79F802}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Help Search"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11d3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{73F6DD5A-437E-11d3-B88E-00C04F79F802}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Help Search Results"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11d3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{73F6DD5B-437E-11d3-B88E-00C04F79F802}",
+      "Values": [
+        {
+          "Name": "Float",
+          "Type": 1,
+          "Data": "100, 100, 400, 400"
+        },
+        {
+          "Name": "Style",
+          "Type": 1,
+          "Data": "MDI"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Help Index Results"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{4A791146-19E4-11d3-B86B-00C04F79F802}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{90243340-BD7A-11D0-93EF-00A0C90F2734}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Watch"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{970D9861-EE83-11D0-A778-00A0C91110C3}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Object browser old"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{A764E899-518D-11d2-9A89-00C04F79EFC3}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Style Organizer Tool Window"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{A764E895-518D-11d2-9A89-00C04F79EFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{B1E99781-AB81-11D0-B683-00AA00A3EE26}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Toolbox"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{BE4D7042-BA3F-11D2-840E-00C04F9902C1}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Breakpoints"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{C9C0AE26-AA77-11d2-B3F0-0000F87570EE}",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Class view"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{CA4B8FF5-BFC7-11D2-9929-00C04F68FDAF}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Registers"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{CF2DDC32-8CAD-11d2-9302-005345000000}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "FindReplace"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{CF577B8C-4134-11D2-83E5-00C04F9902C1}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Disassembly"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{E62CE6A0-B439-11D0-A79D-00A0C9110051}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Threads"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{E830EC50-C2B5-11d2-9375-0080C747D9A0}",
+      "Values": [
+        {
+          "Name": "Window",
+          "Type": 1,
+          "Data": "{E830EC50-C2B5-11d2-9375-0080C747D9A0}"
+        },
+        {
+          "Name": "Style",
+          "Type": 1,
+          "Data": "Float"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        },
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "FindAdvanced"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{ECDD9EE0-AC6B-11D0-89F9-00A0C9110055}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Running Documents"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{EEFA5220-E298-11D0-8F78-00A0C9110057}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Property browser"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}"
+        }
+      ]
+    },
+    {
+      "Path": "ToolWindows\\{F2E84780-2AF1-11D1-A7FA-00A0C9110051}",
+      "Values": [
+        {
+          "Name": "Name",
+          "Type": 1,
+          "Data": "Autos"
+        },
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": "{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"
+        }
+      ]
+    },
+    {
+      "Path": "VSProtocol",
+      "Values": []
+    },
+    {
+      "Path": "VSProtocol\\SafeDomains",
+      "Values": []
+    },
+    {
+      "Path": "VSProtocol\\SafeDomains\\ms-help:",
+      "Values": [
+        {
+          "Name": "",
+          "Type": 1,
+          "Data": ""
+        }
+      ]
+    }
+  ]
+}

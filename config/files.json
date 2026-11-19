@@ -1,0 +1,554 @@
+[
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSE7.EXE",
+    "destination": "runtime\\OFFICE12\\MSE7.EXE",
+    "size": 47472,
+    "sha256": "28b638b1c0a3176cd549fd5a85a3cff4fa7a5cefd31a3deb46fec697ef068a3b"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSO.DLL",
+    "destination": "runtime\\OFFICE12\\MSO.DLL",
+    "size": 17324928,
+    "sha256": "2fd2fa23bb984264a590688e71f2236a5c58682297db0a8c9da329c28d094418"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSOMSE.DLL",
+    "destination": "runtime\\OFFICE12\\MSOMSE.DLL",
+    "size": 65408,
+    "sha256": "0a12d10200f65085ebf117583718ae051d1c0fe1ddf9145b14f9dae5307ea614"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSORES.DLL",
+    "destination": "runtime\\OFFICE12\\MSORES.DLL",
+    "size": 6637952,
+    "sha256": "21cd0292f70e8a512cf74f04e93477c39231d37d6fab4c362d07afdbb4b39981"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MODHELP.DLL",
+    "destination": "runtime\\OFFICE12\\MODHELP.DLL",
+    "size": 459664,
+    "sha256": "89f84beceed88d40990fe63fa82c51d2a8a19f12a6076942f3c65bfdac8a0582"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\OGL.DLL",
+    "destination": "runtime\\OFFICE12\\OGL.DLL",
+    "size": 1616240,
+    "sha256": "206ab2bf64c38fe09ff4f1e51e2c867a455d9e12ae9695c1c8f9938c13acb9e3"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\RICHED20.DLL",
+    "destination": "runtime\\OFFICE12\\RICHED20.DLL",
+    "size": 1073360,
+    "sha256": "daddd18d809335a48212ccc8af45d64c4dc1b9e124551ee7eab6f71e81ad700b"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSPTLS.DLL",
+    "destination": "runtime\\OFFICE12\\MSPTLS.DLL",
+    "size": 756376,
+    "sha256": "1c1d8f64f9d2560a27b3d7f00c834d772ad968e400dfeb51905a19cae59adff9"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSOXEV.DLL",
+    "destination": "runtime\\OFFICE12\\MSOXEV.DLL",
+    "size": 44304,
+    "sha256": "79b1e7feab0186c34898e9f7afbab2293aae510a0a1f3fbf15aa3b856c743bb2"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSOXMLMF.DLL",
+    "destination": "runtime\\OFFICE12\\MSOXMLMF.DLL",
+    "size": 43392,
+    "sha256": "b33022d9bee7b8b472a73c242578089d02cd683ebdd41cb519aedc6c18e5d485"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VIEWSSPT.XML",
+    "destination": "runtime\\OFFICE12\\VIEWSSPT.XML",
+    "size": 38375,
+    "sha256": "68389fb0ddc2dc06dfb7e3666c01aa8357a1f8fd4adc2a8e2b4b348782fa2e57"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VIEWSSRC.XML",
+    "destination": "runtime\\OFFICE12\\VIEWSSRC.XML",
+    "size": 39514,
+    "sha256": "93b8a5d163b08511f574d9fdd13280daa6c7f717d66949f0e454909fe8377c43"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VISUALUI.TTF",
+    "destination": "runtime\\OFFICE12\\VISUALUI.TTF",
+    "size": 5828,
+    "sha256": "29514d07db64ea82913aeb95e84277a1fd6152959c87450f7979b3fb4199e571"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\MSOICONS.EXE",
+    "destination": "runtime\\OFFICE12\\MSOICONS.EXE",
+    "size": 93968,
+    "sha256": "33870552c399350caa27ef708d0a883a366da5e08b7231301103427da5092b3a"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\ATL70.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\ATL70.DLL",
+    "size": 64512,
+    "sha256": "dacca613d5ca110d10366a9ca787c8136257cfa800bf4adba90a62ecebfc4ebe"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\CMDDEF.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\CMDDEF.DLL",
+    "size": 36864,
+    "sha256": "6f1e657e2aca04db0628965ad5cdacc8fbef5e241095a2471e2bdd0b8ae738dd"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\Compsvcspkg.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\Compsvcspkg.dll",
+    "size": 106496,
+    "sha256": "bc3a4f7f77d0e0bed440b86ee5e371f074fec1f52d16f1e961af18d66eab7174"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\CSSMetaDataSchema.xml",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\CSSMetaDataSchema.xml",
+    "size": 2181,
+    "sha256": "067e50c483a76f7c61ea13cc49fb90d73c7309d238a1676cc56a06423c4749d0"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\CSSPKG.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\CSSPKG.DLL",
+    "size": 200704,
+    "sha256": "5cd96bb6025f24fa66f080d2b9927be6cd41297a116a139c62a8ca67dd3ef31f"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\DISCO.GIF",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\DISCO.GIF",
+    "size": 234,
+    "sha256": "abb32d1e0dd92ef5e2d71c15af0c74092a33ee55d3b8b9a6ff015ad817ee62e2"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMDLGS.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\HTMDLGS.DLL",
+    "size": 126976,
+    "sha256": "bb9acd853260c35698036506ec1b34eb7fa7be479fc97dfdfefa57b1acf78e01"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\HTMED.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\HTMED.DLL",
+    "size": 909312,
+    "sha256": "19bfc847a5206d80566786203f5282592359ad5ea2f2e449c88192b367535a89"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSENV.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\MSENV.DLL",
+    "size": 3035136,
+    "sha256": "c9ea77695135b1864d4c6ee1aae8fa5594e2a4ecdcc5b11e941114b43e0918ab"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSVCP70.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\MSVCP70.DLL",
+    "size": 487424,
+    "sha256": "9255c60b194cf849f3db54587627e1b8fce10c88875748642b58ee8e27e22536"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSVCR70.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\MSVCR70.DLL",
+    "size": 344064,
+    "sha256": "f68e4cdbc879423ea47d763a6768567f5f8063924f13a74239750c13fa8d168a"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\MSVCR71.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\MSVCR71.DLL",
+    "size": 348160,
+    "sha256": "8094af5ee310714caebccaeee7769ffb08048503ba478b879edfef5f1a24fefe"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMA.GIF",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMA.GIF",
+    "size": 232,
+    "sha256": "3a1b15e7352061e6e853cc05944a2e258cf0126ca9133df5c7f65fae96c077f3"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\scriptle2.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\scriptle2.dll",
+    "size": 122880,
+    "sha256": "7fdd7535ca254c29fb353f20b400d0b8313d8ce557f799cdcce992926bab8192"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\sdm2.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\sdm2.dll",
+    "size": 167936,
+    "sha256": "d68a5f033ffa24f18447c390f936c6ed8afadb5866024e6c282bdd94f2ed23ab"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SERVICE.GIF",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SERVICE.GIF",
+    "size": 256,
+    "sha256": "aadfc3c1ff6c4eb4074bee18ce3aa00e3b8497c4b8217183ae239f4c90171ff0"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\TRIDSN.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\TRIDSN.DLL",
+    "size": 311296,
+    "sha256": "3b5e5321054e1176013b5228b2812d3fe50d1c0573f060212fe5046dea4196de"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\VisualStudioTeamCore.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\VisualStudioTeamCore.dll",
+    "size": 356352,
+    "sha256": "df51a19d97fa57f8b9f2691efa9fc5042f232b329b7736a4b4a1a98b170e0ce1"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\VSBROWSE.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\VSBROWSE.DLL",
+    "size": 212992,
+    "sha256": "3c12a7109fe1f07186ad8cc47b94a44a4a4d9632136ea4d9c3f89e250a4ceb0a"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\vsdebug.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\vsdebug.dll",
+    "size": 692224,
+    "sha256": "edebf399f6759dd37130c380775e16c95ee3667c3390a8ebff1f43210a205afb"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\VSTLBINF.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\VSTLBINF.DLL",
+    "size": 224256,
+    "sha256": "cc4556db565da60cf811b456ac9f1d6d5803089aee98a1f192f92935e6363540"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\CMDDEFUI.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\CMDDEFUI.DLL",
+    "size": 204800,
+    "sha256": "c4304a44ca3cbbc8f477e6454b15a05e7b5d6d3eb38155e5f1941d8537223160"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\compsvcspkgui.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\compsvcspkgui.dll",
+    "size": 8704,
+    "sha256": "227045f1d1a6aae62179a8e295b8e8c3216b7b7562958b08a890ead098944d32"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\CSSMetaData.xml",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\CSSMetaData.xml",
+    "size": 13159,
+    "sha256": "3f2af3f8bba6c309d1989c5ba51b254ccff6ff7afc56c8d4952d730aa4601dca"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\CSSPKGUI.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\CSSPKGUI.DLL",
+    "size": 40960,
+    "sha256": "b4cf2c273feb3f1e3bd7ad5c12dd4f0e2f3c28343b58d6c43103710c6e24bc52"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\DISCO.XSL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\DISCO.XSL",
+    "size": 4679,
+    "sha256": "e44e214d54ae3ae5c881821004c397100f7a4ba631597da6ffa8c9c0d7487f89"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\EMPTY.HTM",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\EMPTY.HTM",
+    "size": 500,
+    "sha256": "a261a9e1caee8eb307841024118b46eeb3a7867745f1a693f8d66f04d201b05b"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\HelpWatermark.htm",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\HelpWatermark.htm",
+    "size": 1643,
+    "sha256": "7bfe8dd32cfdd0352e4804457097b4b2092e3786e971bb79dcb3f7badf98ed8d"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\htmdlgsUI.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\htmdlgsUI.dll",
+    "size": 22528,
+    "sha256": "328be536e6033741a9080f0025648a1ec1e103dfbbc1576669dd8d08602b82bd"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\HTMEDUI.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\HTMEDUI.DLL",
+    "size": 143360,
+    "sha256": "74d53a482044694585d74136d6e13240d6f59c05999bc7c10ab775ce50db6273"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\msdbgui.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\msdbgui.dll",
+    "size": 28672,
+    "sha256": "0b5937f9f7a0b7325ec3287c6933eb45a8d739dc3c239437eddab11c45d00823"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\MSENVUI.DLL",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\MSENVUI.DLL",
+    "size": 204800,
+    "sha256": "edf155406ceccc30cadafbfddbc6b6b181d812617660c1c6f05e2d0f54eb9289"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\VisualStudioTeamCoreUI.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\VisualStudioTeamCoreUI.dll",
+    "size": 12800,
+    "sha256": "5341606bab6dc9e45d913474dd7060189fff5db53885a94317d0b60f8e941591"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\vsbrowseUI.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\vsbrowseUI.dll",
+    "size": 32768,
+    "sha256": "5503540ec03d8c9152cde13c200ac7eb3c40d7d6e0bbfb1480dc1dd152fb450f"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\2052\\vsdebugui.dll",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\2052\\vsdebugui.dll",
+    "size": 110592,
+    "sha256": "320331c6f8134fd9a8e382bf3d4ed4541b14bc4d7ac237dec49989359fd30d32"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\HTM32DOM.TLB",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\HTM32DOM.TLB",
+    "size": 17828,
+    "sha256": "bfeb250e8fee51716fa402ffd02baf278358a0a21a0c4537001f89c6c9168250"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\HTM40DOM.TLB",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\HTM40DOM.TLB",
+    "size": 731688,
+    "sha256": "dfd079f6838715379d6d0b29d5095ebdc889dc1834897860608520020131a0a2"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\HTML32.XSD",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\HTML32.XSD",
+    "size": 79259,
+    "sha256": "1bb5e9e9dc92614329100620a881e672154af6dbc173f7b4a787cf721a2663f5"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\HTML40.XSD",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\HTML40.XSD",
+    "size": 177943,
+    "sha256": "62e4a7675a826510f6092b682a8b6b420ab770966769ad2b825e1ecc3790580a"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\NSC40DOM.TLB",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\NSC40DOM.TLB",
+    "size": 23244,
+    "sha256": "e2791c88555c0b84b5c6e6f4b4a9279f32f599b8c7c9c6ad5795b27f2d215f1e"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\NSCP40.XSD",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\HTML\\NSCP40.XSD",
+    "size": 108380,
+    "sha256": "c62d5acac4c5f728e46d41d060710e85341ececccc4b6c4d6e3d38e971343954"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\XML\\adrotator.xsd",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\XML\\adrotator.xsd",
+    "size": 1465,
+    "sha256": "171f90d46578b560a064dff6cf550e5d0895b2c7820a399151e80fbef3a1b69a"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\XML\\ASP.XSD",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\XML\\ASP.XSD",
+    "size": 70215,
+    "sha256": "449e6e9af51453b652424edfc48a5d43ea9468908d8f4a66e24c8c44b485e8df"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\XML\\WSHMETA.XSD",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\XML\\WSHMETA.XSD",
+    "size": 2481,
+    "sha256": "c478e9368952e4b6b3168e85c4959417ac3046292513d462406666772d548350"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\VS Runtime\\SCHEMAS\\XML\\xsdschema.xsd",
+    "destination": "runtime\\OFFICE12\\VS Runtime\\SCHEMAS\\XML\\xsdschema.xsd",
+    "size": 15876,
+    "sha256": "b2f4f03cf074ff56763d65706a340784645e9416bfd2e144de07e4022b668741"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\2052\\MSEINTL.DLL",
+    "destination": "runtime\\OFFICE12\\2052\\MSEINTL.DLL",
+    "size": 64272,
+    "sha256": "c0310f61db2d725212ef0ba6cadcd156d03f9aee692934d8675a06875295e08e"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\2052\\MSOINTL.DLL",
+    "destination": "runtime\\OFFICE12\\2052\\MSOINTL.DLL",
+    "size": 10364776,
+    "sha256": "af5518519a29d104e970d061d2790fe6c7306cf787aa7eea1dc3a04938645d89"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\2052\\MODHLPUI.DLL",
+    "destination": "runtime\\OFFICE12\\2052\\MODHLPUI.DLL",
+    "size": 12080,
+    "sha256": "ad752d714d6d61bd69aae010b83b445a87794fcbd09e9369225e1836212446bc"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12\\2052\\ALRTINTL.DLL",
+    "destination": "runtime\\OFFICE12\\2052\\ALRTINTL.DLL",
+    "size": 150864,
+    "sha256": "d3fc2682fb6488abf059182a96a002388bd24c26117a29419b40c82bc9f1db00"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\coloader.dll",
+    "destination": "runtime\\VS7Debug\\coloader.dll",
+    "size": 57344,
+    "sha256": "a0674b61a06349fca4ffcf7ac730135448e6416eeb838d9f828735f864d57776"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\coloader.tlb",
+    "destination": "runtime\\VS7Debug\\coloader.tlb",
+    "size": 5120,
+    "sha256": "869d739eafc42fd693bd046eccb2c7366b6a0ec9c28462e609abecc068cdcc3b"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\coloader80.dll",
+    "destination": "runtime\\VS7Debug\\coloader80.dll",
+    "size": 127560,
+    "sha256": "1f3ef22de64b84c61cb53914778ac8f2358ccf49bd19451824e8591e4787b9ce"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\coloader80.tlb",
+    "destination": "runtime\\VS7Debug\\coloader80.tlb",
+    "size": 4608,
+    "sha256": "fd31db18cce7c64644d7e2780a7d46cdc6ff608e52aaa4639a6e06fb187b3719"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\csm.dll",
+    "destination": "runtime\\VS7Debug\\csm.dll",
+    "size": 123904,
+    "sha256": "ebe91db82df29193ca3f893621429ba873061d14fa59fe2ff5cd6c6d0706a8ae"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\dbgautoattach.dll",
+    "destination": "runtime\\VS7Debug\\dbgautoattach.dll",
+    "size": 87552,
+    "sha256": "8f1ba4a45f00925aebffddd904dffeda14916be4f0da930343653c4eccd152fb"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\mdm.exe",
+    "destination": "runtime\\VS7Debug\\mdm.exe",
+    "size": 335872,
+    "sha256": "0d70a7a594bcfbb26d7249c0f4b0af9ef874f2318b3fdce44648cc61279594ed"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\msdbg2.dll",
+    "destination": "runtime\\VS7Debug\\msdbg2.dll",
+    "size": 582064,
+    "sha256": "8f366fd4a1d3e8b917bc1b95306957c1b3987ce473d61dd7d8ade3c36d8267e9"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\pdm.dll",
+    "destination": "runtime\\VS7Debug\\pdm.dll",
+    "size": 464928,
+    "sha256": "0e9536303faf6c5bae196235315ca0a0da4b9f1bad65823dc1fb6b2f952f2447"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\pdmproxy100.dll",
+    "destination": "runtime\\VS7Debug\\pdmproxy100.dll",
+    "size": 104992,
+    "sha256": "b1555d404278c4cdefc49d1ff443049c7fc5ee0cde03411660a696ff56d98359"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\pdmproxy140.dll",
+    "destination": "runtime\\VS7Debug\\pdmproxy140.dll",
+    "size": 100784,
+    "sha256": "e6bb1df36e94ec47510b3149a328fa7868d32d7bf216a8befcb7fe2220a36f00"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\vs7jit.exe",
+    "destination": "runtime\\VS7Debug\\vs7jit.exe",
+    "size": 192512,
+    "sha256": "708a5a7bf3e958fc61ee6afea7e1d8e90169e2605050f84af5594bd7409d9aa6"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\VsImmersiveActivateHelper.exe",
+    "destination": "runtime\\VS7Debug\\VsImmersiveActivateHelper.exe",
+    "size": 105088,
+    "sha256": "c35499579a8a1adb151ee7b9f4014b7321b4f35ddbdaebdbbf09fd56cd4db2c5"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\vsjitdebuggerps.dll",
+    "destination": "runtime\\VS7Debug\\vsjitdebuggerps.dll",
+    "size": 104488,
+    "sha256": "be4198151f283a5bcc9e5a9e619572d0cb90031b4ea427a21d7f20d384d7efd4"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1028\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1028\\pdmui.dll",
+    "size": 93632,
+    "sha256": "03e42992c05976aa39f23ad34eb5e49010f05a390dfcf300e75ad28685828ae7"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1029\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1029\\pdmui.dll",
+    "size": 94128,
+    "sha256": "3e3c63c1177834dd8631f9286839e0d82fd72e1189b8bd14041b201350b9159d"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1031\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1031\\pdmui.dll",
+    "size": 94136,
+    "sha256": "1163a0d9198bb9ae4b7b8f0eb50576362166f2bcdc3a853bf9499c66b59aa1cb"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1033\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1033\\pdmui.dll",
+    "size": 94240,
+    "sha256": "29331d5a667adef187665de77cb1005386a802510699b0967723433388a59c77"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1036\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1036\\pdmui.dll",
+    "size": 94752,
+    "sha256": "ef4951d2b14daded6c5d8e2c7c03181177263a0c99c256f2ecb373f59403b994"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1040\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1040\\pdmui.dll",
+    "size": 94656,
+    "sha256": "b3d8e3a0336b14e716f1cb786ea5bf595a05d6dc3a9899502708ccfa74326512"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1041\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1041\\pdmui.dll",
+    "size": 94232,
+    "sha256": "293aefb118ab8f1993da6f1b81a19375cbcd4ff1a781686191e9497d6ba52b1d"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1042\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1042\\pdmui.dll",
+    "size": 94128,
+    "sha256": "8b4abe3c5e91d745f565fd519c208aa0c12f3b704c089b301447bbfa200278e9"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1045\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1045\\pdmui.dll",
+    "size": 94752,
+    "sha256": "d5e65d1e65cf703f38dde2cc10769a20ab7cac79f33b359b01b5d23967075041"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1046\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1046\\pdmui.dll",
+    "size": 94752,
+    "sha256": "7bd33fec740f4115670d15885ed78992d9cf46db48708bc8f915aa9737239db4"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1049\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1049\\pdmui.dll",
+    "size": 94752,
+    "sha256": "a1c19e295edd2fb424b640c17535a147d55457e416f25457fb27d9d216a0a565"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\1055\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\1055\\pdmui.dll",
+    "size": 94256,
+    "sha256": "8a80e79ccb7f482929752d2c39266e184a82f88851642e49f674b088565a1ac7"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\2052\\mdmui.dll",
+    "destination": "runtime\\VS7Debug\\2052\\mdmui.dll",
+    "size": 24576,
+    "sha256": "8033f785f1087704970305c5e307d4f563ff6c48c78436bd599c92da6292b56b"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\2052\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\2052\\pdmui.dll",
+    "size": 93728,
+    "sha256": "6f7a13e47fc843f1f648e8e6524d7b7fe5b7c2017c4fced372720bdd588a824c"
+  },
+  {
+    "source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug\\3082\\pdmui.dll",
+    "destination": "runtime\\VS7Debug\\3082\\pdmui.dll",
+    "size": 94752,
+    "sha256": "1a8440ce0c3ab8b683e86d1e9643cb5302d2a25317b439a7bcbfa61771690770"
+  }
+]

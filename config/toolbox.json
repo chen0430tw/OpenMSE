@@ -1,0 +1,236 @@
+[
+  {
+    "Name": "Span",
+    "Family": "HTML",
+    "Markup": "<SPAN>Span</SPAN>",
+    "ControlType": "Label"
+  },
+  {
+    "Name": "Button",
+    "Family": "HTML",
+    "Markup": "<INPUT type=\"button\" value=\"Button\">",
+    "ControlType": "Button"
+  },
+  {
+    "Name": "Reset Button",
+    "Family": "HTML",
+    "Markup": "<INPUT type=\"reset\" value=\"Reset\">",
+    "ControlType": "Button"
+  },
+  {
+    "Name": "Submit Button",
+    "Family": "HTML",
+    "Markup": "<INPUT type=\"submit\" value=\"Submit\">",
+    "ControlType": "Button"
+  },
+  {
+    "Name": "Text Field",
+    "Family": "HTML",
+    "Markup": "<INPUT type=\"text\">",
+    "ControlType": "TextBox"
+  },
+  {
+    "Name": "Text Area",
+    "Family": "HTML",
+    "Markup": "<TEXTAREA rows=2 cols=20>\\n\\n</TEXTAREA>",
+    "ControlType": "RichTextBox"
+  },
+  {
+    "Name": "File Field",
+    "Family": "HTML",
+    "Markup": "<INPUT type=\"file\">",
+    "ControlType": "TextBox"
+  },
+  {
+    "Name": "Password Field",
+    "Family": "HTML",
+    "Markup": "<INPUT type=\"password\">",
+    "ControlType": "TextBox"
+  },
+  {
+    "Name": "Checkbox",
+    "Family": "HTML",
+    "Markup": "<INPUT type=\"checkbox\">",
+    "ControlType": "CheckBox"
+  },
+  {
+    "Name": "Radio Button",
+    "Family": "HTML",
+    "Markup": "<INPUT type=\"radio\">",
+    "ControlType": "RadioButton"
+  },
+  {
+    "Name": "Table",
+    "Family": "HTML",
+    "Markup": "<TABLE width=\"75%\" border=1 cellSpacing=1>\\n\\n<TR>\\n\\n<TD>\\n\\n</TD></TR></TABLE>",
+    "ControlType": "DataGridView"
+  },
+  {
+    "Name": "Linear Layout Panel",
+    "Family": "HTML",
+    "Markup": "<DIV style=\"WIDTH:70px; HEIGHT:15px\" ms_positioning=\"LinearLayout\">Label</DIV>",
+    "ControlType": "Panel"
+  },
+  {
+    "Name": "Grid Layout Panel",
+    "Family": "HTML",
+    "Markup": "<DIV style=\"WIDTH:100px; POSITION: relative; HEIGHT:100px\" ms_positioning=\"GridLayout\"></DIV>",
+    "ControlType": "Panel"
+  },
+  {
+    "Name": "Image",
+    "Family": "HTML",
+    "Markup": "<IMG alt=\"\" src=\"\">",
+    "ControlType": "PictureBox"
+  },
+  {
+    "Name": "Listbox",
+    "Family": "HTML",
+    "Markup": "<SELECT size=2>\\n<OPTION></OPTION>\\n\\n</SELECT>",
+    "ControlType": "ListBox"
+  },
+  {
+    "Name": "Dropdown",
+    "Family": "HTML",
+    "Markup": "<SELECT>\\n<OPTION></OPTION>\\n\\n</SELECT>",
+    "ControlType": "ComboBox"
+  },
+  {
+    "Name": "Horizontal Rule",
+    "Family": "HTML",
+    "Markup": "<HR width=100% size=1>",
+    "ControlType": "Panel"
+  },
+  {
+    "Name": "Button",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "Button"
+  },
+  {
+    "Name": "Label",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "Label"
+  },
+  {
+    "Name": "TextBox",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "TextBox"
+  },
+  {
+    "Name": "RichTextBox",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "RichTextBox"
+  },
+  {
+    "Name": "CheckBox",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "CheckBox"
+  },
+  {
+    "Name": "RadioButton",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "RadioButton"
+  },
+  {
+    "Name": "ComboBox",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "ComboBox"
+  },
+  {
+    "Name": "ListBox",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "ListBox"
+  },
+  {
+    "Name": "CheckedListBox",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "CheckedListBox"
+  },
+  {
+    "Name": "GroupBox",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "GroupBox"
+  },
+  {
+    "Name": "Panel",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "Panel"
+  },
+  {
+    "Name": "PictureBox",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "PictureBox"
+  },
+  {
+    "Name": "ProgressBar",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "ProgressBar"
+  },
+  {
+    "Name": "TrackBar",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "TrackBar"
+  },
+  {
+    "Name": "NumericUpDown",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "NumericUpDown"
+  },
+  {
+    "Name": "DateTimePicker",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "DateTimePicker"
+  },
+  {
+    "Name": "MonthCalendar",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "MonthCalendar"
+  },
+  {
+    "Name": "TreeView",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "TreeView"
+  },
+  {
+    "Name": "ListView",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "ListView"
+  },
+  {
+    "Name": "TabControl",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "TabControl"
+  },
+  {
+    "Name": "LinkLabel",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "LinkLabel"
+  },
+  {
+    "Name": "DataGridView",
+    "Family": "Windows Forms",
+    "Markup": null,
+    "ControlType": "DataGridView"
+  }
+]

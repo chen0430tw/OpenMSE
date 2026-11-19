@@ -1,0 +1,73 @@
+{
+  "FormatVersion": 1,
+  "Title": "OpenMSE Form",
+  "Width": 720,
+  "Height": 480,
+  "Controls": [
+    {
+      "Kind": "Label",
+      "Name": "titleLabel",
+      "Text": "OpenMSE Windows Form",
+      "X": 30,
+      "Y": 25,
+      "Width": 320,
+      "Height": 35,
+      "BackColor": "#FFFFFF",
+      "ForeColor": "#202835",
+      "Enabled": true,
+      "Family": "Windows Forms"
+    },
+    {
+      "Kind": "Label",
+      "Name": "nameLabel",
+      "Text": "姓名",
+      "X": 30,
+      "Y": 90,
+      "Width": 100,
+      "Height": 30,
+      "BackColor": "#FFFFFF",
+      "ForeColor": "#202835",
+      "Enabled": true,
+      "Family": "Windows Forms"
+    },
+    {
+      "Kind": "TextBox",
+      "Name": "nameInput",
+      "Text": "",
+      "X": 140,
+      "Y": 90,
+      "Width": 240,
+      "Height": 30,
+      "BackColor": "#FFFFFF",
+      "ForeColor": "#202835",
+      "Enabled": true,
+      "Family": "Windows Forms"
+    },
+    {
+      "Kind": "CheckBox",
+      "Name": "subscribe",
+      "Text": "订阅更新",
+      "X": 140,
+      "Y": 140,
+      "Width": 200,
+      "Height": 30,
+      "BackColor": "#FFFFFF",
+      "ForeColor": "#202835",
+      "Enabled": true,
+      "Family": "Windows Forms"
+    },
+    {
+      "Kind": "Button",
+      "Name": "submitButton",
+      "Text": "提交",
+      "X": 140,
+      "Y": 200,
+      "Width": 110,
+      "Height": 35,
+      "BackColor": "#FFFFFF",
+      "ForeColor": "#202835",
+      "Enabled": true,
+      "Family": "Windows Forms"
+    }
+  ]
+}

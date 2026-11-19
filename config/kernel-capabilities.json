@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "observedDate": "2026-11-19",
+  "scope": "This Windows installation and its current dependencies only",
+  "evidenceRoot": "logs/kernel-audit",
+  "mse": {
+    "dteAttach": {
+      "level": "blocked",
+      "code": "automation_not_registered"
+    },
+    "nativeOmTopLevelWindows": {
+      "level": "blocked",
+      "hresult": "0x80004005"
+    },
+    "documentBuildDebugServices": {
+      "level": "unknown",
+      "reason": "No working automation attachment"
+    }
+  },
+  "vs8": {
+    "dteAttach": {
+      "level": "behavior_verified",
+      "version": "8.0"
+    },
+    "commandInventory": {
+      "level": "interface_observed",
+      "count": 2558
+    },
+    "documentRoundtrip": {
+      "level": "behavior_verified",
+      "passed": true,
+      "unicode": true,
+      "disk_write_verified": true
+    },
+    "guards": {
+      "level": "behavior_verified",
+      "passed": true,
+      "checks": [
+        "stale_buffer",
+        "unsaved_close",
+        "outside_workspace",
+        "unknown_method",
+        "invalid_debug_state"
+      ]
+    },
+    "projectOpen": {
+      "level": "behavior_verified",
+      "projectCount": 1
+    },
+    "build": {
+      "level": "behavior_verified",
+      "failedProjects": 0,
+      "state": "vsBuildStateDone"
+    },
+    "breakpointCreation": {
+      "level": "interface_observed",
+      "hitVerified": false
+    },
+    "debugStart": {
+      "level": "blocked",
+      "hresult": "0x80004005"
+    },
+    "stepEvaluateStack": {
+      "level": "unknown",
+      "reason": "Blocked by debug start failure"
+    },
+    "shutdown": {
+      "level": "behavior_verified",
+      "shutdownRequested": true
+    }
+  },
+  "notImplemented": [
+    "new kernel services",
+    "designer embedding",
+    "language services",
+    "transport cancellation and events"
+  ],
+  "gui": {
+    "level": "behavior_verified",
+    "implementation": "x64 WinForms prototype",
+    "features": [
+      "shared new-item dialog",
+      "tabbed text editor",
+      "project directory tree",
+      "build output",
+      "C# and VB .NET 2.0 templates",
+      "MSE HTML toolbox (17 entries)",
+      "Windows Forms toolbox (22 standard controls)",
+      "static design surface and source views",
+      "property inspector",
+      "C# and VB form source export"
+    ],
+    "connectedToCppKernel": false,
+    "legacyWindowEmbedding": false,
+    "evidence": "logs/gui-smoke-path.txt",
+    "designerEvidence": "logs/designer-smoke-path.txt"
+  }
+}
