@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 枚举文件中的行 </Title>
+            <Description> 用于枚举文件中的行的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FileName </ID>
+                    <Default> strFileName </Default>
+                    <ToolTip> 用于保存文件名的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+int nLineCnt = 0;
+try
+{
+    //Check if the file name is not null and not blank
+    if ($FileName$ != null && $FileName$.length() > 0)
+    {
+        java.io.File objFile = new java.io.File($FileName$);
+        java.io.BufferedReader inStream = new java.io.BufferedReader(new java.io.FileReader($FileName$));
+        String strLine;
+
+        //Read each line from the file and increment the count and display the string
+        while ((strLine = inStream.readLine()) != null)
+        {
+            nLineCnt++;
+            System.out.println(strLine);
+        }
+        inStream.close();                
+    }
+}
+catch (java.io.FileNotFoundException e)
+{
+    System.out.println("Error: The specified file is not found");
+}
+catch (java.io.IOException e)
+{
+    System.out.println("Error: Invalid IO operation ");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 验证日期 </Title>
+            <Description> 用于测试日期字符串有效性的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+        <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+        </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> DateString </ID>
+                    <Default> strDate </Default>
+                    <ToolTip> 用于在字符串中保存日期的变量。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> DateFormat </ID>
+                    <Default> "mm/dd/yy" </Default>
+                    <ToolTip> 要验证的日期格式。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+Boolean fValidDate = Boolean.FALSE; //variable is set to true if valid date format is given else false
+try
+{
+    //check whether the date string is not null and not blank
+    if (($DateString$ != null)  && ($DateString$.length() > 0))
+    {
+        java.text.SimpleDateFormat objDateFormat = new java.text.SimpleDateFormat($DateFormat$); //date format for validating
+        objDateFormat.setLenient(false);
+        java.util.Date d = objDateFormat.parse($DateString$);
+        fValidDate = Boolean.TRUE;
+    }
+}
+catch (java.lang.Exception e)
+{
+    fValidDate = Boolean.FALSE;
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

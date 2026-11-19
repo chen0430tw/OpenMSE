@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 从控制台读取双精度值 </Title>
+            <Description> 用于从控制台读取双精度值的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> Double </ID>
+                    <Default> dValue </Default>
+                    <ToolTip> 用于保存从控制台读取的双精度值的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[double $Double$ = 0; //variable to store the double value read from console
+try
+{
+    java.io.BufferedReader objBuffReader = new java.io.BufferedReader(
+                                            new java.io.InputStreamReader(
+                                                java.lang.System.in));
+
+    String strLine = objBuffReader.readLine();
+    $Double$ = Double.parseDouble(strLine);
+}
+catch (java.io.IOException ex)
+{
+    System.out.println("Error: Invalid IO operation.");
+}
+catch (java.lang.NumberFormatException ex)
+{           
+    System.out.print("Error: Invalid number format.");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

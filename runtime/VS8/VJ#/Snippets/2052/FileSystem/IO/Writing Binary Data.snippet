@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 写入二进制数据 </Title>
+            <Description> 将二进制数据写入文件的扩展示例。</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FileName </ID>
+                    <Default> strFileName </Default>
+                    <ToolTip> 要写入二进制数据的文件名。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> ByteData </ID>
+                    <Default> byteArray </Default>
+                    <ToolTip> 用于保存要写入的二进制数据的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+//Check if the file name is not null and not blank
+if ($FileName$ != null && $FileName$.length() > 0)
+{
+    java.io.File objFile = new java.io.File($FileName$);
+    if (objFile == null || !objFile.exists())
+    {
+        System.out.println("File doesn't exist");
+    }
+    try
+    {
+        java.io.FileOutputStream objFileOutput = new java.io.FileOutputStream(objFile);
+        java.io.DataOutputStream objDataOutput = new java.io.DataOutputStream(objFileOutput);
+
+        //Write binary contents to the file
+        objDataOutput.write($ByteData$);
+    }
+    catch (java.io.IOException e)
+    {
+        System.out.println("Error: Invalid IO operation.");
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

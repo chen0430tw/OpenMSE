@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 对数组进行循环 </Title>
+            <Description> 用于对数组进行循环的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> NumberArray </ID>
+                    <Default> nArray </Default>
+                    <ToolTip> 要循环的数组。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+int nValue = 0;
+//Check if array has any elements in it or not
+if (null != $NumberArray$ && $NumberArray$.length > 0)
+{
+    //Store the value of the first element in the array
+    nValue = $NumberArray$[0];
+    for (int i = 0; i < $NumberArray$.length - 1; i++)
+    {
+        $NumberArray$[i] = $NumberArray$[i + 1];
+    }
+    //Set the value of last element of the array with the previously stored value
+    $NumberArray$[$NumberArray$.length - 1] = nValue;
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

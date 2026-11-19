@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 搜索文件中的表达式 </Title>
+            <Description> 用于搜索文件中的表达式的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FileName </ID>
+                    <Default> strFileName </Default>
+                    <ToolTip> 用于保存文件名的变量，要在相应文件中搜索表达式。 </ToolTip>
+                </Literal>
+        <Literal>
+                    <ID> Expression </ID>
+                    <Default> strExpr </Default>
+                    <ToolTip> 用于保存表达式的变量，要在文件中搜索该表达式。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+boolean flFound = false;  //variable is set to true if search string is found in the file else false
+
+try
+{
+    //check if the file name and search string are not null and not blank
+    if (($FileName$ != null && $FileName$.length() > 0) &&
+        ($Expression$ != null && $Expression$.length() > 0))
+    {
+        java.io.File objFile = new java.io.File($FileName$);
+        if (objFile.exists())
+        {
+            java.io.BufferedReader objBuffStream = new java.io.BufferedReader(new java.io.FileReader($FileName$));
+            String strLine;
+            
+            //read each line from the file
+            while ((strLine = objBuffStream.readLine()) != null)
+            {
+                //Compare with the search string
+                if (strLine.Contains($Expression$))
+                {
+                    System.out.println("The line : " + strLine);
+                    flFound =  true;
+                }
+            }
+            objBuffStream.close();
+        }
+    }
+}
+catch (java.io.IOException e)
+{
+    System.out.println("Error: Invalid IO operation");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

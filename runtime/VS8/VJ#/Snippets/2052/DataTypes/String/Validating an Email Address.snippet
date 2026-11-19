@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 验证电子邮件地址 </Title>
+            <Description> 用于验证电子邮件地址的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> EmailID </ID>
+                    <Default> strEmailId </Default>
+                    <ToolTip> 用于保存一个字符串的变量，该字符串包含要验证的电子邮件地址。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+/** 
+* Valid characters for email are -, _, ., @, a-z, A-Z and 0-9
+* Email should not start with -, _, @, and . characters
+* Email should not end with -, _, @, . and 0-9 characters
+* There can be a maximum of one @ character in Email ID
+* The @ character should not be followed by -, _ and . characters
+* There should be atleast . character after the @ character in Email ID 
+* and it should be followed by a-z, A-Z or 0-9 characters
+*/
+
+boolean isValidEmailId = true;
+if (null != $EmailID$ && $EmailID$.length() > 0)
+{
+  int noOfAts = 0;
+  int nDotsAfterAt = 0;
+  int nLength = $EmailID$.length();
+
+  //Checking for the First and Last character of EmailID
+  if (!(($EmailID$.charAt(nLength - 1) >= 'a' && $EmailID$.charAt(nLength - 1) <= 'z') ||
+      ($EmailID$.charAt(nLength - 1) >= 'A' && $EmailID$.charAt(nLength - 1) <= 'Z')) ||
+      $EmailID$.charAt(0)=='.' || $EmailID$.charAt(0)=='-' || $EmailID$.charAt(0)=='_' ||
+      $EmailID$.charAt(0)=='@')
+  {
+      isValidEmailId = false;
+  }
+  else
+  {
+      for (int i = 0; i < $EmailID$.length() && isValidEmailId; i++)
+      {
+          //Checking for EmailID contains other than '@','_','.','0-9','[aA]-[zZ]' characters
+          if (!(($EmailID$.charAt(i) >= 'a' && $EmailID$.charAt(i) <= 'z') ||
+              ($EmailID$.charAt(i) >= 'A' && $EmailID$.charAt(i) <= 'Z') ||
+              ($EmailID$.charAt(i) >= '0' && $EmailID$.charAt(i) <= '9') ||
+              $EmailID$.charAt(i) == '_' || $EmailID$.charAt(i) == '.' ||
+              $EmailID$.charAt(i) == '-' || $EmailID$.charAt(i) == '@')
+              || noOfAts > 1)
+          {
+              isValidEmailId = false;
+              break;
+          }
+
+          //Count the  number of @
+          if ($EmailID$.charAt(i) == '@')
+          {
+              noOfAts++;
+            
+              //Check for '.','-','_' after @
+              if ($EmailID$.length() > i && (($EmailID$.charAt(i + 1) == '.') || 
+              ($EmailID$.charAt(i + 1) == '-') || ($EmailID$.charAt(i + 1) == '_')))
+              {
+                  isValidEmailId = false;
+                  break;
+              }
+          }
+
+          //Check for '.' after @ and should followed by alphanumeric {'0-9' or [aA]-[zZ]'}
+          if ((noOfAts == 1 && $EmailID$.charAt(i) == '.') &&
+              !(($EmailID$.charAt(i + 1) >= 'a' && $EmailID$.charAt(i + 1) <= 'z') ||
+              ($EmailID$.charAt(i + 1) >= 'A' && $EmailID$.charAt(i + 1) <= 'Z') ||
+              ($EmailID$.charAt(i + 1) >= '0' && $EmailID$.charAt(i + 1) <= '9')))
+          {
+              isValidEmailId = false;
+              break;
+          }
+          else if (noOfAts == 1 && $EmailID$.charAt(i) == '.')
+          {
+              nDotsAfterAt++;
+          }
+      }
+  }
+
+  //Checking for  "anonymous123.client@domain"
+  if (nDotsAfterAt == 0)
+  {
+    isValidEmailId = false;
+  }
+}
+else
+{
+  isValidEmailId = false;
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

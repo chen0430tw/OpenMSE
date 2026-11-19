@@ -1,0 +1,7 @@
+VSWIZARD 7.0
+Wizard=VsWizard.VsWizardEngine.8.0
+Param="WIZARD_NAME = CustomWizard"
+Param="RELATIVE_PATH = VCWizards\AppWiz\Generic"
+
+Param="PREPROCESS_FUNCTION = CheckProjectName"
+Param="WIZARD_ID = 53"

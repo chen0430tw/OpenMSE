@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+   <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 递归搜索文件夹中的文件 </Title>
+            <Description> 用于递归搜索文件夹中的文件的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> SourceDirName </ID>
+                    <Default> strSrcDir </Default>
+                    <ToolTip> 用于保存要搜索的目录名的变量。 </ToolTip>
+                </Literal>
+        <Literal>
+                    <ID> FileName </ID>
+                    <Default> strFileName </Default>
+                    <ToolTip> 用于保存要搜索的文件名的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+public void searchFolderForFile(String $SourceDirName$, String $FileName$ )
+{   
+    // Check if the source folder name and file names are not null and not blank.
+    if (($SourceDirName$ == null || $SourceDirName$.length() <= 0) ||
+        ($FileName$ == null || $FileName$.length() <= 0))
+    {
+        return;
+    }
+
+//Check if the source folder exists. If it does not exist then do nothing.
+    java.io.File objFileDir = new java.io.File($SourceDirName$);
+    if (!objFileDir.exists())
+    {
+        System.out.println("Source directory not found.");
+        return;
+    }
+
+    // save the file names list to string array
+    java.io.File[] objSrcFile = objFileDir.listFiles();
+    String[] strArrFileName = new String[objSrcFile.length];
+    for (int i = 0; i < objSrcFile.length; i++)
+    {
+        strArrFileName[i] = objFileDir.getPath() + '\\' + objSrcFile[i].getName();
+    }
+
+    for (int i = 0; i < objSrcFile.length; i++)
+    {
+        // For each file compare the file name
+        if ((new java.io.File(strArrFileName[i])).isFile())
+        {
+            String strName = objSrcFile[i].getName();
+            if (strName.CompareTo($FileName$) == 0)
+            {
+                System.out.println(strArrFileName[i]);
+    return;
+            }
+        }
+        //For each directory call searchFolderForFile recursively to find the file
+        else if ((new java.io.File(strArrFileName[i])).isDirectory())
+        {
+            searchFolderForFile(strArrFileName[i], $FileName$);
+        }
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 从控制台读取字 </Title>
+            <Description> 用于从控制台读取字的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> Word </ID>
+                    <Default> strWord </Default>
+                    <ToolTip> 用于保存从控制台读取的字的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[String $Word$ = "";  
+//string variable to store the word read from console
+try
+{
+        java.io.BufferedReader objBuffReader = new java.io.BufferedReader(
+                                                new java.io.InputStreamReader(
+                                                java.lang.System.in));
+        String strLine = objBuffReader.readLine();
+        java.util.StringTokenizer strToken = new java.util.StringTokenizer(strLine);
+        $Word$ = strToken.nextToken();
+    }
+catch (java.io.IOException e)
+{
+        System.out.println("Error: Invalid IO operation.");
+}
+catch (java.util.NoSuchElementException  ex)
+{
+    System.out.println("Error: Invalid word.");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

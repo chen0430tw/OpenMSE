@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 从控制台读取布尔值 </Title>
+            <Description> 用于从控制台读取布尔值的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+        <Declarations>
+            <Literal>
+            <ID> Boolean </ID>
+                <Default> fFlag </Default>
+                <ToolTip> 用于保存从控制台读取的布尔值的变量。 </ToolTip>
+            </Literal>
+        </Declarations>
+        <Code Language="vjsharp" Format="CData"><![CDATA[boolean $Boolean$ = false; //variable to store the boolean value read from console
+try
+{
+    java.io.BufferedReader reader = new java.io.BufferedReader(
+                                    new java.io.InputStreamReader(java.lang.System.in));
+    $Boolean$ = Boolean.valueOf(reader.readLine()).booleanValue();
+}
+catch (java.io.IOException e)
+{
+    System.out.println("Error: Invalid IO operation");
+}       
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

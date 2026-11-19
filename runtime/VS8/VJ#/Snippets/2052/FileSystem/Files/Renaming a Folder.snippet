@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 重命名文件夹 </Title>
+            <Description> 用于重命名文件夹的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> OldDirName </ID>
+                    <Default> strOldDirName </Default>
+                    <ToolTip> 用于保存现有文件夹名的变量。 </ToolTip>
+                </Literal>
+        <Literal>
+                    <ID> NewFolderName </ID>
+                    <Default> strNewDirName </Default>
+                    <ToolTip> 用于保存新文件夹名的变量 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> Status </ID>
+                    <Default> flStatus  </Default>
+                    <ToolTip> 文件夹重命名状态 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+boolean flStatus = false;  //variable is set to true if folder is renamed successfully else false
+
+//Check if the old folder name and new folder names are not null and not blank
+if (($OldDirName$ != null && $OldDirName$.length() > 0) &&
+    ($NewFolderName$ != null && $NewFolderName$.length() > 0))
+{
+    java.io.File objOldDir = new java.io.File( $OldDirName$ );
+    if (objOldDir.isDirectory())
+    {
+      java.io.File objNewDir = new java.io.File( $NewFolderName$ );
+      flStatus = objOldDir.renameTo(objNewDir);
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

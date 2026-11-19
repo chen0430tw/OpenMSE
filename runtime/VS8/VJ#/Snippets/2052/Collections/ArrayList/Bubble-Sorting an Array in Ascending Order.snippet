@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+   <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 按升序对数组进行气泡排序 </Title>
+            <Description> 按升序对数组列表进行气泡排序的扩展代码段。  </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ArrayList </ID>
+                    <Default> arrList </Default>
+                    <ToolTip> 要使用气泡排序法进行排序的数组列表 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+boolean fIterate = true;
+while (fIterate)
+{
+    fIterate = false;
+    for (int i = 0; i < $ArrayList$.size() - 1; i++)
+    {
+        if (((java.lang.Integer)$ArrayList$.get(i)).ToInt32(null) > 
+            ((java.lang.Integer)$ArrayList$.get(i + 1)).ToInt32(null))
+        {
+            Object objTemp = $ArrayList$.get(i);
+            $ArrayList$.set(i, $ArrayList$.get(i + 1));
+            $ArrayList$.set(i + 1, objTemp);
+            fIterate = true;
+        }
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

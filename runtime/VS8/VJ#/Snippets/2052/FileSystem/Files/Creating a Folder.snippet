@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 创建文件夹 </Title>
+            <Description> 用于创建文件夹的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> DirectoryName </ID>
+                    <Default> strDirName </Default>
+                    <ToolTip> 用于保存目录名的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+boolean flgStatus = false; //variable is set to true if folder is created else false
+
+//Check whether folder name is not null and not blank
+if ($DirectoryName$ != null && $DirectoryName$.length() > 0)
+{
+    flgStatus = (new java.io.File( $DirectoryName$ )).mkdir();
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

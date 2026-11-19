@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 计算本金和利息 </Title>
+            <Description> 用于计算本金和利息的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> LoanAmount </ID>
+                    <Default> loanAmount </Default>
+                    <ToolTip> 实际已获贷款额。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> RateOfInterest </ID>
+                    <Default> rateOfInterest </Default>
+                    <ToolTip> 年利率。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> NumberOfMonths </ID>
+                    <Default> noOFMonths </Default>
+                    <ToolTip> 已获贷款的月数。 </ToolTip>
+                </Literal>
+                
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+double annualRateofInterest;
+double annualRateInMonths;
+double dEMI;
+
+if (($RateOfInterest$ > 0) && ($LoanAmount$ > 0) && ($NumberOfMonths$ > 0))
+{
+    annualRateofInterest = $RateOfInterest$ / ( 12 * 100 ) ;
+    annualRateInMonths = annualRateofInterest + 1;
+    annualRateInMonths = java.lang.Math.pow(annualRateInMonths, $NumberOfMonths$);
+    dEMI = (($LoanAmount$ * annualRateofInterest) * annualRateInMonths) / (annualRateInMonths - 1);
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

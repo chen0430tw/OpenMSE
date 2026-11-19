@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 从控制台读取整数值 </Title>
+            <Description> 用于从控制台读取整数值的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> Number</ID>
+                    <Default> nInt </Default>
+                    <ToolTip> 用于保存从控制台读取的整数值的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[int $Number$ = 0; //variable to store the integer value read from console
+try
+{
+    java.io.BufferedReader objBuffReader = new java.io.BufferedReader(
+                                        new java.io.InputStreamReader(
+                                        java.lang.System.in));
+    String strLine = objBuffReader.readLine();
+    $Number$ = Integer.parseInt(strLine);
+}
+catch (java.io.IOException e)
+{
+System.out.println("Error: Invalid IO operation.");
+}
+catch (java.lang.NumberFormatException e)
+{
+System.out.println("Error: Invalid number format.");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

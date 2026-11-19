@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>propertyg</Title>
+            <Shortcut>propg</Shortcut>
+            <Description>生成只有 get 访问器的属性及其支持字段</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal default="true">
+                    <ID>type</ID>
+                    <ToolTip>属性类型</ToolTip>
+                    <Default>int</Default>
+                </Literal>
+                <Literal>
+                    <ID>property</ID>
+                    <ToolTip>属性名</ToolTip>
+                    <Default>MyProperty</Default>
+                </Literal>
+                <Literal>
+                    <ID>field</ID>
+                    <ToolTip>支持此属性的变量</ToolTip>
+                    <Default>myVar</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[private $type$ $field$;
+/** @property */
+public $type$ get_$property$()
+{
+    return $field$; 
+}
+$end$]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

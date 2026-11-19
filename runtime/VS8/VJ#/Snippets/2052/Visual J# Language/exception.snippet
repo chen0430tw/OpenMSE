@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>异常类型</Title>
+            <Shortcut>exception</Shortcut>
+            <Description>定义新的异常类型</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal default="true">
+                    <ID>newException</ID>
+                    <ToolTip>异常的名称</ToolTip>
+                    <Default>My</Default>
+                </Literal>
+                <Literal>
+                    <ID>baseException</ID>
+                    <ToolTip>基类型</ToolTip>
+                    <!-- Function>ShortName(System.ApplicationException)</Function -->
+                    <Default>System.ApplicationException</Default>
+                </Literal>
+                <!-- placeholders until a Function like ShortName appears in the product -->
+                <Literal Editable="false">
+                    <ID>SystemException</ID>
+                    <!-- Function>ShortName(System.Exception)</Function -->
+                    <Default>System.Exception</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>SystemRuntimeSerializationSerializationInfo</ID>
+                    <!-- Function>ShortName(System.Runtime.Serialization.SerializationInfo)</Function -->
+                    <Default>System.Runtime.Serialization.SerializationInfo</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>SystemRuntimeSerializationStreamingContext</ID>
+                    <!-- Function>ShortName(System.Runtime.Serialization.StreamingContext)</Function -->
+                    <Default>System.Runtime.Serialization.StreamingContext</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[/** @attribute System.Serializable() */
+public class $newException$Exception extends $baseException$
+{
+    //
+    // For guidelines regarding the creating of new exception types, see
+    //    http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpgenref/html/cpconerrorraisinghandlingguidelines.asp
+    //
+
+    public $newException$Exception()
+    {
+    }
+
+    public $newException$Exception(String message)
+    {
+        super(message);
+    }
+
+    public $newException$Exception(String message, $SystemException$ inner)
+    {
+        super(message, inner);
+    }
+
+    protected $newException$Exception(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+    {
+        super(info, context);
+    }
+}
+]]>
+        </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

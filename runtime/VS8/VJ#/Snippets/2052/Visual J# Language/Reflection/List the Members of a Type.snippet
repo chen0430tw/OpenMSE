@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 列出类型的成员 </Title>
+            <Description> 用于列出类型/类的成员的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ClassName </ID>
+                    <Default> strClassName </Default>
+                    <ToolTip> 要列出其成员的类名。 </ToolTip>
+                </Literal>
+        <Literal>
+                    <ID> DisplayType </ID>
+                    <Default> strType </Default>
+                    <ToolTip> 成员类型可以是方法、字段或构造函数。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+Class clsName = null;
+try
+{
+// Create a class object for the given class name
+    clsName = java.lang.Class.forName($ClassName$);
+
+    //If the methods information of the class are to be listed
+    if ($DisplayType$.compareToIgnoreCase("Method") == 0)
+    {
+        java.lang.reflect.Method objMethods[] = null;
+
+        //Get the methods of the class
+        objMethods = clsName.getDeclaredMethods();
+        if (objMethods.length != 0)
+        {
+            System.out.println("The Methods are:\n");
+            for (int i = 0; i < objMethods.length; i++)
+            {
+                //Get the modifier and return types of the method
+                System.out.print("\n\t" + java.lang.reflect.Modifier.toString                           (objMethods[i].getModifiers()));
+                Class methodRetType = objMethods[i].getReturnType();
+                String strReturn = null;
+                if (methodRetType.isArray())
+                {
+                    strReturn = methodRetType.getName();
+                    strReturn = strReturn.concat("[]");
+                }
+                else
+                {
+                    strReturn = methodRetType.getName();
+                }
+                System.out.print("  " + strReturn);
+
+                //Get the name of the method
+                System.out.print("  " + objMethods[i].getName());
+
+                // Get the parameters to the method
+                Class[] clsParamArray = objMethods[i].getParameterTypes();
+                System.out.print("(");
+                if (clsParamArray.length != 0)
+                {
+                    for (int j = 0; j < clsParamArray.length; j++)
+                    {
+                        String strParam = null;
+
+                        // Get the parameter names of the method
+                        if (clsParamArray[j].isArray())
+                        {
+                            strParam = clsParamArray[j].getName();
+                            strParam = strParam.concat("[]");
+                        }
+                        else
+                        {
+                            strParam = clsParamArray[j].getName();
+                        }
+                        System.out.print(" " + strParam);
+                    }
+                    System.out.print(" )");
+                }
+                else
+                {
+                    System.out.print(")");
+                }
+            }
+
+        }
+        else
+        {
+            System.out.println("There are No Methods in this Class\n");
+        }
+    }
+
+    //If the fields information of the class are to be listed
+    else if ($DisplayType$.compareToIgnoreCase("Field") == 0)
+    {
+        java.lang.reflect.Field fields[] = null;
+
+        //Get all the fields of the class
+        fields = clsName.getDeclaredFields();
+
+        if (fields.length != 0)
+        {
+            System.out.println("The Fields are :\n");
+            for (int i = 0; i < fields.length; i++)
+            {
+                String strfType = null;
+
+                // Get the modifier and type of the field
+                System.out.print("\n\t" + java.lang.reflect.Modifier.toString(
+                        fields[i].getModifiers()));
+                Class cfType = fields[i].getType();
+                if (cfType.isArray())
+                {
+                    strfType = cfType.getName();
+                    strfType = strfType.concat("[]");
+                }
+                else
+                {
+                    strfType = cfType.getName();
+                }
+                System.out.print("  " + strfType);
+
+                //Get the name of the field
+                System.out.print("  " + fields[i].getName());
+            }
+        }
+        else
+        {
+            System.out.println("There are No Fields for this Class");
+        }
+    }
+    //If the constructors of the class are to be listed
+    else if ($DisplayType$.compareToIgnoreCase("Constructor") == 0)
+    {
+        java.lang.reflect.Constructor constructors[] = null;
+
+        // Get all the constructors of the class
+        constructors = clsName.getDeclaredConstructors();
+        if (constructors.length != 0)
+        {
+            System.out.println("The Constructors are :\n");
+            for (int i = 0; i < constructors.length; i++)
+            {
+                //Get the Modifier of the constructor
+                System.out.print("\n\t" +
+                java.lang.reflect.Modifier.toString(constructors[i].getModifiers()));
+
+                // Get the name of the constructor
+                System.out.print(" " + constructors[i].getName());
+
+                //Get the parameters of the constructor
+                Class[] clsParamArray = constructors[i].getParameterTypes();
+                String strParam = null;
+                System.out.print("(");
+                if (clsParamArray.length != 0)
+                {
+                    for (int j = 0; j < clsParamArray.length; j++)
+                    {
+                        // Get the parameter names of the constructor
+                        if (clsParamArray[j].isArray())
+                        {
+                            strParam = clsParamArray[j].getName();
+                            strParam =strParam.concat("[]");
+                        }
+                        else
+                        {
+                            strParam = clsParamArray[j].getName();
+                        }
+                        System.out.print(" " + strParam);
+                    }
+                    System.out.print(" )");
+                }
+                else
+                {
+                    System.out.print(")");
+                }
+            }
+        }
+        else
+        {
+            System.out.print("There are No Constructors for this Class");
+        }
+    }
+    // If none of the valid information is requested given an error
+    else
+    {
+        System.out.println("Select Type as 'Method' or 'Field' or 'Constructor'");
+    }
+}
+catch (java.lang.ClassNotFoundException ex)
+{
+    System.out.print("The specified class is not found.");
+}
+
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 使用 for 对数组列表进行循环 </Title>
+            <Description> 使用 for 对数组列表进行循环的扩展代码段。  </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ArrayList </ID>
+                    <Default> arrList </Default>
+                    <ToolTip> 包含值列表的数组列表，要对值列表中的值进行循环。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"> <![CDATA[
+for (int i = 0; i < $ArrayList$.size(); i++)
+{
+    System.out.println($ArrayList$.get(i));
+}
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

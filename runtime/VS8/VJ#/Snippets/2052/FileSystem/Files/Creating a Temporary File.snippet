@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 创建临时文件 </Title>
+            <Description> 用于创建临时文件的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> TempFileName </ID>
+                    <Default> strTempFileName </Default>
+                    <ToolTip> 用于保存临时文件名的变量。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> TempFileExtension </ID>
+                    <Default> strTempFileExt </Default>
+                    <ToolTip> 用于保存临时文件扩展名的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+try
+{
+    //Check if the temporary file name and extension are not null and not blank
+    if (($TempFileName$ != null && $TempFileName$.length() > 0) &&
+        ($TempFileExtension$ != null && $TempFileExtension$.length() > 0))
+    {
+        //Create Temp File using Object of File
+        java.io.File objTempFile = java.io.File.createTempFile($TempFileName$,
+                                                        $TempFileExtension$ );
+        java.io.BufferedWriter objBuffWriter = new java.io.BufferedWriter(
+                                                new java.io.FileWriter(
+                                                        objTempFile));
+        objBuffWriter.write("Adding the text to the temporary File");
+        objBuffWriter.close();
+    }
+}
+catch (java.io.IOException e)
+{
+    System.out.println("Error: Invalid IO operation.");
+}          
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

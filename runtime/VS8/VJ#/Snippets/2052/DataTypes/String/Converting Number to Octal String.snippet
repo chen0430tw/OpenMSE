@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 将数字转换为八进制字符串 </Title>
+            <Description>用于将数值转换为八进制字符串的扩展代码段。 </Description>
+             <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> Number </ID>
+                    <Default> nNumber </Default>
+                    <ToolTip> 要转换为八进制字符串的十进制数。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+String strOctalValue = java.lang.Integer.toOctalString($Number$);
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

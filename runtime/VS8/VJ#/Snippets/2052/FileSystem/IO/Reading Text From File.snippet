@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 从文件中读取文本 </Title>
+            <Description> 用于从文件中读取文本的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FileName </ID>
+                    <Default> strFileName </Default>
+                    <ToolTip> 用于保存文件名的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+try
+{
+    //Check if the file name is not null and not blank
+    if ($FileName$ != null && $FileName$.length() > 0)
+    {
+        java.io.File objFile = new java.io.File($FileName$);
+        java.io.BufferedReader inStream = new java.io.BufferedReader(
+                                            new java.io.FileReader($FileName$));
+        String strLine;
+
+        // Read the file line after line until EOF is reached
+        while ((strLine = inStream.readLine()) != null)
+        {
+            System.out.println(strLine);
+        }
+        inStream.close();
+    }
+}
+catch (java.io.FileNotFoundException e)
+{
+    System.out.println("Error: The specified file is not found");
+}
+catch (java.io.IOException e)
+{
+    System.out.println("Error: Invalid IO operation.");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

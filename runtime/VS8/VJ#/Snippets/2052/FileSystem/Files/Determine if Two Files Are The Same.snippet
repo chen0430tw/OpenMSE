@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 确定两个文件是否相同 </Title>
+            <Description> 用于确定两个文件是否完全相同的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FileName1 </ID>
+                    <Default> strFileName1 </Default>
+                    <ToolTip> 用于保存第一个文件名的变量。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> FileName2 </ID>
+                    <Default> strFileName2 </Default>
+                    <ToolTip> 用于保存第二个文件名的变量。 </ToolTip>
+                </Literal>
+            </Declarations>        
+            <Code Language="vjsharp" Format="CData"><![CDATA[boolean fAreFileSame = false;  //variable is set to true if two files are same else false
+//Create file objects for two files
+java.io.File objFile1 = new java.io.File($FileName1$);
+java.io.File objFile2 = new java.io.File($FileName2$);
+
+//Check whether the files exist
+if (objFile1.exists() && objFile2.exists())
+{
+//Check if the size of the files are same
+    if (objFile1.length() == objFile2.length())
+    {
+        try
+        {
+            java.io.BufferedReader inStreamFile1 = new java.io.BufferedReader(
+                                                new java.io.FileReader(objFile1));
+            java.io.BufferedReader inStreamFile2 = new java.io.BufferedReader(
+                                                new java.io.FileReader(objFile2));
+            String strLine1 = inStreamFile1.readLine();
+            String strLine2 = inStreamFile2.readLine();
+
+    //Compare Contents of two files
+            while ((strLine1 != null) && (strLine2 != null))
+            {
+                if ((strLine1.CompareTo(strLine2) == 0))
+                {
+                    fAreFileSame = true;
+                }
+                else
+                {
+                    fAreFileSame = false;
+                    break;
+                }
+                strLine1 = inStreamFile1.readLine();
+                strLine2 = inStreamFile2.readLine();
+            }
+            inStreamFile1.close();
+            inStreamFile2.close();
+            if (strLine1 == null && strLine2 == null)
+                fAreFileSame = true;
+            else
+                fAreFileSame = false;
+        }
+        catch (java.io.IOException e)
+        {
+            System.out.println("Error: Invalid IO operation.");
+        }
+    }
+}
+else
+{
+    System.out.println("One of the file is not found.");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

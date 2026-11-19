@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>基本属性实现</Title>
+            <Shortcut>attribute</Shortcut>
+            <Description>根据推荐的模式实现属性</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal default="true">
+                    <ID>name</ID>
+                    <ToolTip>属性的名称</ToolTip>
+                    <Default>My</Default>
+                </Literal>
+                <Literal>
+                    <ID>target</ID>
+                    <Default>All</Default>
+                </Literal>
+                <Literal>
+                    <ID>inherited</ID>
+                    <Default>false</Default>
+                </Literal>
+                <Literal>
+                    <ID>allowmultiple</ID>
+                    <Default>true</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>SystemAttribute</ID>
+                    <!-- Function>ShortName(System.Attribute)</Function -->
+                    <Default>System.Attribute</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>SystemAttributeUsage</ID>
+                    <!-- Function>ShortName(System.AttributeUsage)</Function -->
+                    <Default>System.AttributeUsage</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>SystemAttributeTargets</ID>
+                    <!-- Function>ShortName(System.AttributeTargets)</Function -->
+                    <Default>System.AttributeTargets</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>SystemNotImplementedException</ID>
+                    <!-- Function>ShortName(System.NotImplementedException)</Function -->
+                    <Default>System.NotImplementedException</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+/** @attribute $SystemAttributeUsage$($SystemAttributeTargets$.$target$, Inherited = $inherited$, AllowMultiple = $allowmultiple$) */
+final class $name$Attribute extends $SystemAttribute$
+{
+// See the attribute guidelines at 
+//  http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpgenref/html/cpconusingattributeclasses.asp
+String _positionalString;
+int _namedInt;
+
+// This is a positional argument.
+public $name$Attribute (String positionalString) 
+{ 
+    this._positionalString = positionalString;
+    
+// TODO: Implement code here.
+$end$
+}
+
+/** @property */
+public String get_PositionalString() 
+{ 
+    return this._positionalString; 
+}
+
+// This is a named argument.
+/** @property */
+public int get_NamedInt()
+{ 
+    return this._namedInt;
+}
+
+/** @property */
+public void set_NamedInt(int value)
+{
+    this._namedInt = value;
+}
+}
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

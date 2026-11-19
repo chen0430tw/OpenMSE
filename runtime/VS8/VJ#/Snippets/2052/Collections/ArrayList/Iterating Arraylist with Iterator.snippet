@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 使用迭代器对数组列表进行循环 </Title>
+            <Description> 使用迭代器对数组列表进行循环的扩展代码段。  </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ArrayList </ID>
+                    <Default> arrList </Default>
+                    <ToolTip> 包含值列表的数组列表，要对值列表中的值进行循环。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> Iterator </ID>
+                    <Default> listIterator </Default>
+                    <ToolTip> 用于保存数组列表迭代器的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+java.util.Iterator $Iterator$ = $ArrayList$.iterator();
+while ($Iterator$.hasNext())
+{
+    System.out.println($Iterator$.next());
+}
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

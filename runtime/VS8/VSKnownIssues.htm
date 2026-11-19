@@ -1,0 +1,1353 @@
+﻿﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML dir="ltr" xmlns:o>
+	<HEAD>
+<TITLE>Visual Studio 2005 已知问题</TITLE>
+		<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<STYLE>@import url( readme.htm ); 
+	</STYLE>
+		<META content="MSHTML 6.00.2900.2668" name="GENERATOR">
+	</HEAD>
+	<BODY>
+		<H1><A name="VSALL"></A><FONT face="Arial" size="5"> Microsoft Visual Studio 2005 已知问题</FONT></H1>
+		<p><FONT face="Arial">本文列出了使用 Microsoft Visual Studio 2005 时可能遇到的问题。有关与安装产品相关的问题，请参考 readme.htm。</FONT></p><FONT face="Arial">
+		<P><FONT face="Arial">有关最新的已知问题，请参见联机 Visual Studio 2005 已知问题，网址为：<A href="http://go.microsoft.com/fwlink/?LinkId=51326">http://go.microsoft.com/fwlink/?LinkId=51326</A> </FONT>
+		</P></FONT>
+		<P><FONT face="Arial" size="5">1. Visual Studio </FONT>
+		</P>
+		<H3><FONT face="Arial">1.1&nbsp;&nbsp;&nbsp;VC++ Visual Studio 2005 测试版 2 项目文件无法打开&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--528645--><P class="MsoNormal"><FONT face="Arial">如果某台计算机上的 Visual Studio 安装位置与当前计算机上的安装位置不同，则使用当前计算机上的 Visual Studio 2005 最终版本打开上次在该计算机上加载的测试版 2 C++ 项目时，可能会收到错误；如果项目路径已更改，也有可能会收到错误。 </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">编辑项目设置文件。右击解决方案资源管理器中灰显的项目节点并选择“编辑 &lt;项目名&gt;.vcproj”，此操作将在 XML 编辑器中打开该文件。将 InheritedPropertySheets 标记的值更改为“$(VCInstallDir)VCProjectDefaults\UpgradeFromVC70.vsprops”，然后重新加载项目。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.2&nbsp;&nbsp;&nbsp;在 Windows 2000 中，使用“用应用程序验证工具启动”将生成以下消息：“在 <i>machine_name</i> 上运行的操作系统不支持应用程序验证工具。请升级到 Windows XP 或更高版本。”&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--544465--><P class="MsoNormal"><FONT face="Arial"> Windows 2000 不支持应用程序验证工具。 </FONT>
+			</P>
+			<P class="MsoNormal"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			</P>
+			<P><FONT face="Arial">升级到 Windows XP 或更高版本。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.3&nbsp;&nbsp;&nbsp;“用应用程序验证工具启动”将出现以下对话框导致：“未在计算机 <I>machine_name</I> 上检测到应用程序验证工具所需的更新后的系统文件。是否访问 Windows 下载中心以获取更新文件?”&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1">
+			<DIV class="indent" id="DIV1"><!--548808-->
+				<P class="MsoNormal"><FONT face="Arial">Visual Studio 安装程序不安装应用程序验证工具所需的系统文件。如果计算机操作系统中没有所需版本的文件，则必须更新该文件，才能使用应用程序验证工具。</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+				<P><FONT face="Arial"> 在对话框中选择“是”以打开 Internet 浏览器并显示 Microsoft 下载中心站点中的更新链接。安装所需的更新文件。也可以使用以下链接访问 Microsoft 下载中心：<BR><A href="http://go.microsoft.com/fwlink/?LinkId=49500">http://www.microsoft.com/downloads/results.aspx?displaylang=zh-cn&amp;freeText=889016</A><BR> </FONT>
+				</P>
+			</DIV>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.4&nbsp;&nbsp;&nbsp;在重置分布式系统设计器中的工具箱之前，工具箱不反映本地 Windows 语言设置</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--542442--><P class="MsoNormal"><FONT face="Arial">在“选项”对话框中，用户可以将 Visual Studio 设置为使用本地 Windows 语言。但是，在重置之前，分布式系统设计器中的工具箱并不反映该设置。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">1) 关闭所有分布式系统设计器（应用程序设计器、系统设计器、逻辑数据中心设计器和部署设计器）。<br> 2) 在工具箱内右击，然后单击“重置工具箱”。<br> 3) 重新打开您要使用的分布式系统设计器。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.5&nbsp;&nbsp;&nbsp;Windows 98 和 Windows Me 上的远程调试&nbsp;</FONT></H3> <!--543664--><P class="MsoNormal"><FONT face="Arial"><h3 class="indent">问题 1：</h3>
+				<DIV class="indent">
+					<br> 如果使用 Visual Studio 2005 通过默认传输对属于某个域（该域具有基于 Windows Server 2003 的域控制器）的 Windows 98 或 Windows ME 计算机进行远程调试，用户在启动 Windows 98/ME 计算机之后大约 10 分钟时，可能会收到以下错误信息：</DIV>
+				<DIV class="indent">
+					<br> -------------------------<br> Microsoft Visual Studio<br> -------------------------<br> 无法连接到名为“&lt;计算机名&gt;”的 Microsoft Visual Studio 远程调试监视器。访问被拒绝。<br> <br> 原因：基于 Windows Server 2003 的域控制器上必须具有服务器消息块 (SMB) 签名并必须启用它。<br> <br>
+				</DIV>
+				<h3 class="indent">问题 2：</h3>
+				<DIV class="indent">
+					<br> 如果在 Windows XP 或更高版本的计算机上使用 Visual Studio 2005 对 Windows 98 或 Windows ME 计算机进行远程调试，用户可能会收到以下错误信息。</DIV>
+				<DIV class="indent">
+					<br>-------------------------<br> Microsoft Visual Studio<br> -------------------------<br> 无法连接到名为“&lt;qualifier_name&gt;”的 Microsoft Visual Studio 远程调试监视器。远程计算机上的“Microsoft Visual Studio 远程调试监视器”无法连接到本地计算机。未能启动 DCOM 通信。请参见“帮助”以协助解决问题。<br><br>原因：运行 Visual Studio 2005 的计算机上禁用了“在 DCOM 中匿名登录以进行远程访问”。<br></DIV>
+			</FONT>
+		<P class="indent"></P>
+		<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+		<P class="indent"><FONT face="Arial"><h3 class="indent">问题 1：</h3>
+				<DIV class="indent">
+					<br> 1) 将域控制器策略设置为启用 SMB 签名但不需要该签名。<br> 有关如何执行此操作的信息，请访问 <a href="http://support.microsoft.com/?kbid=887429"> http://support.microsoft.com/?kbid= 887429</a><br> 2) 重新启动域控制器。<br> 3) 重新启动安装了 Visual Studio 2005 的计算机。<br>4) 重新启动运行 Windows 98/ME 的计算机。<br> <br>
+				</DIV>
+				<h3 class="indent">问题 2：</h3>
+				<DIV class="indent">
+					<br> 要在运行 Visual Studio 2005 的计算机上允许“在 DCOM 中匿名登录以进行远程访问”，请按照以下说明操作：<br> 1) 在命令提示符下，键入 dcomcnfg，然后按 Enter。此时将打开“组件服务”。<br> 2) 在“组件服务”中，展开“组件服务”，展开“计算机”，然后展开“我的电脑”。<br> 3) 在工具栏上，单击“配置‘我的电脑’”按钮。将打开“我的电脑”对话框。<br> 4) 在“我的电脑”对话框中，单击“COM 安全”选项卡。<br> 5) 在“访问权限”下，单击“编辑限制”。将打开“访问权限”对话框。<br> 6) 在“组”或“用户名”下，单击“匿名登录”。<br> 7) 在“匿名登录的权限”下，选中“远程访问”复选框，然后单击“确定”。<br> 8) 重新启动计算机。</FONT> 
+</DIV>
+		<P class="indent"></P>
+		<P class="indent">&nbsp;</P>
+		<H3><FONT face="Arial"> 1.6&nbsp;&nbsp;&nbsp;在 Web 服务提供程序终结点上按 F1 时收到“未找到信息”消息&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--544228--><P class="MsoNormal"><FONT face="Arial">在选中应用程序关系图中某一 Web 服务提供程序终结点的情况下按 F1 时，无法找到相关的帮助主题。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">在“帮助”中，搜索“如何：定义 ASP.NET Web 服务的操作”。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.7&nbsp;&nbsp;&nbsp;用户不应在自定义设置中或者在 SDM 文档未定义为安全设置的设置中存储敏感信息&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--545039--><P class="MsoNormal"><FONT face="Arial">自定义设置中或者 SDM 文档（例如 .sdm 和 .ad 文件）未定义为安全设置的设置中存储的敏感信息在这些文件中将以纯文本的形式显示。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">使用设置和约束编辑器时，将敏感信息仅存储于在 SDM 文档中指定为安全设置的设置中。有关更多信息，请参见帮助中的“如何：创建应用程序、服务器、终结点和区域的自定义设置”和“实现应用程序的注意事项”。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.8&nbsp;&nbsp;&nbsp;启动 Itanium (IA64) 本机工具命令提示符&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--545638--><P class="MsoNormal"><FONT face="Arial">在 Itanium (IA64) 上安装工具时，未创建用于启动 Itanium (IA64) 本机工具命令提示符的快捷方式。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">可以通过执行以下操作启动 Itanium (IA64) 本机工具命令提示符：<br> 1) 转至“开始”，单击“运行”<b></b><b></b><br> 2) 键入“cmd”<b></b><br> 3)&nbsp;在命令提示符处键入 &lt;您的 Visual Studio 2005 安装目录&gt;\VC\bin\vcvars64.bat</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.9&nbsp;&nbsp;&nbsp;不支持从网络共享分析和运行已检测的模块&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548036--><P class="MsoNormal"><FONT face="Arial">在默认 Visual Studio 设置下，从网络共享运行已检测的二进制文件会导致发生未处理的异常。</FONT></P>
+			<P class="MsoNormal"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			</P>
+			<P><FONT face="Arial">将您要分析的项目或二进制文件复制或移动到本地硬盘驱动器。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.10&nbsp;&nbsp;&nbsp;不支持使用 Windows 事件跟踪 (ETW) 来收集 IIS5.1 的事件分析数据&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548049--><P class="MsoNormal"><FONT face="Arial">在用户界面中跟踪分析以 IIS5.1 为目标的应用程序以及启用 ETW 事件的收集将自行失败，并且在命令行报告一个不正确的 VSP1432 错误。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.11&nbsp;&nbsp;&nbsp;不支持 IA64 分析&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548058--><P class="MsoNormal"><FONT face="Arial">不再支持 IA64 分析。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 1.12&nbsp;&nbsp;&nbsp;独立探查器不支持代码覆盖率&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548070--><P class="MsoNormal"><FONT face="Arial">尝试在独立安装的探查器上运行代码覆盖率时，将收到未处理的异常。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.13&nbsp;&nbsp;&nbsp;对 ASP.NET 应用程序运行代码覆盖率可能使 web.config 处于被更改状态&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548077--><P class="MsoNormal"><FONT face="Arial">对 ASP.NET 项目运行单元测试时，测试引擎需要修改 web.config 文件。有时候这些文件未被清除，并会在随后的测试运行和应用程序运行中产生异常。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">从测试运行期间创建的备份中还原原始 web.config 文件。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.14&nbsp;&nbsp;&nbsp;Windows 98 上限制了对 ReportViewer 控件的支持&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548203--><P class="MsoNormal"><FONT face="Arial">在运行于 Windows98 上的应用程序中使用时，Windows Forms ReportViewer 控件只能得到有限的支持。使用此控件，您只能查看以前在 SQL Server 2005 Reporting Services 报表服务器上发布的报表。不能使用该控件在本地处理模式下查看客户端报表定义 (.rdlc) 文件。 </FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.15&nbsp;&nbsp;&nbsp;如果 IIS 辅助进程以 SYSTEM 身份运行，则 ASP.NET 的代码覆盖率将无法工作&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548422--><P class="MsoNormal"><FONT face="Arial"> 如果 IIS 辅助进程以 SYSTEM 身份运行，则无法收集 ASP.NET 的代码覆盖率数据。在 MSDN 中查看系统上 IIS 辅助进程的名称，因为该名称因 IIS 版本而异。您可以使用任务管理器来确定运行辅助进程的用户身份。<br>注意：如果禁用了代码覆盖率，单元测试将能够正确运行。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">将 IIS 辅助进程更改为不以 SYSTEM 身份运行。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.16&nbsp;&nbsp;&nbsp;尝试在启用了 Forms 身份验证的情况下分析 ASP.NET 应用程序时出现错误</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548423--><P class="MsoNormal"><FONT face="Arial">如果尝试在启用了 Forms 身份验证的情况下分析 ASP.NET 应用程序，将收到网站配置错误，并且应用程序将无法运行。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">没有已知的解决方法。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.17&nbsp;&nbsp;&nbsp;在代码正在运行的情况下对分布式系统设计器关系图执行操作将导致 Visual Studio 停止响应&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548655--><P class="MsoNormal"><FONT face="Arial">例如，在调试器正在运行的情况下向系统设计器中的系统关系图添加应用程序将导致 Visual Studio 停止响应。 </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">不要对分布式系统设计器关系图运行代码执行操作。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.18&nbsp;&nbsp;&nbsp;跟踪分析共享 dll 将导致分析使用该 dll 的所有进程&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548063--><P class="MsoNormal"><FONT face="Arial">如果要跟踪分析某个共享 dll，最终可能会分析使用该 dll 的所有进程。</FONT></P>
+			<P class="MsoNormal"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			</P>
+			<P><FONT face="Arial">1) 对于不想分析的每个进程，使用 vsperfcmd -proccessoff:PID 关闭分析。<br> 2) 设置 HKCU/software/microsoft/visual studio/8.0/VSPERF/Monitor/Settings/ProcessProfile=Off，启动您的目标进程，然后使用 vsperfcmd -processon:PID 对您要分析的所有进程启用分析。<br> 注意：分析完成后，必须关闭使用该共享 dll 的所有进程，以便关闭监视器并将数据刷新到报表文件。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.19&nbsp;&nbsp;&nbsp;如何跟踪分析本机生成的（由 ngen 生成的）图像&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548067--><P class="MsoNormal"><FONT face="Arial">尝试检测 ngen 生成的图像将报告一个不正确的 VSP1014 错误。<br> CLR 将不会加载由 ngen 生成的已检测托管二进制文件。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">检测了托管二进制文件本身而不是由 ngen 生成的图像后，必须执行下列操作之一：</FONT></P>
+			<P><FONT face="Arial"> 1) 删除 ngen 生成的图像，以便 CLR 使用已检测的二进制文件。<br> -或-<br> 2) 使用 ngen.exe 重新生成二进制文件。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.20&nbsp;&nbsp;&nbsp;如果使用了 MarkProfile 分析 API 而探查器监视器未运行，将发生崩溃</FONT><!--548416--></H3>
+		<DIV class="indent" id="DIV1"><P class="MsoNormal"><FONT face="Arial">使用 vsperf.h 提供的 MarkProfile、CommentMarkProfile 或 CommentMarkAtProfile 时，如果探查器监视器未运行，将发生应用程序崩溃。如果您添加 API 调用然后在调试器（而不是探查器）下启动这些调用，则这种情况最为显著。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">使用“vsperfcmd -start:sample -output:foo.vsp”启动探查器监视器</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.21&nbsp;&nbsp;&nbsp;Web 项目：GAC 中的程序集中定义的类型在类关系图中不可见&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548850--><P class="MsoNormal"><FONT face="Arial"> 如果以下所有情况存在，则类关系图无法显示引用程序集中的类型：<br> 1. 类关系图驻留在 Web 项目中。<br> 2. 引用的程序集安装在全局程序集缓存 (GAC) 下。<br> 3. 引用程序集未安装在 Framework 根目录（“Microsoft.Net\Framework\&lt;版本&gt;\”）下。 </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">从非 Web 项目使引用类型可视化。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.22&nbsp;&nbsp;&nbsp;已检测的托管 dll 无法在网站项目中加载&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548042--><P class="MsoNormal"><FONT face="Arial">寄宿在网站中的已检测托管用户控件将无法使用 .NET 的默认安全设置进行加载。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">您必须为本地网站启用完全信任，以便能够加载已检测的 dll。<br> caspol.exe -ag 1.2 -url http://localhost FullTrust</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.23&nbsp;&nbsp;&nbsp;没有为混合模式的 C++ 项目启用应用程序验证工具。而是生成内容如下的对话框：<br>“所选调试模式不支持应用程序验证工具。有关更多信息，请参见支持文档。单击‘确定’不使用验证工具继续调试”&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548996--><P class="MsoNormal"><FONT face="Arial"> 没有为混合模式的应用程序启用应用程序验证工具，即使您可以从“调试”菜单中选择该工具。</FONT></P>
+			<P class="MsoNormal"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			</P>
+			<P><FONT face="Arial"> 不使用应用程序验证工具继续调试。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.24&nbsp;&nbsp;&nbsp;在 Windows 2000 中无法正确初始化探查器驱动程序</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548429--><P class="MsoNormal"><FONT face="Arial">探查器驱动程序在第一次使用时，需要自己初始化。如果此初始化行为通过远程桌面会话在 Windows 2000 Server 上发生，将不会为当前会话初始化该驱动程序，而是为以后的会话初始化该驱动程序。&nbsp;如果尝试在当前会话上启动监视器，将收到 VSP1398 错误，并且监视器将无法启动。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial"> 执行下列操作之一：</FONT></P>
+			<P><FONT face="Arial"> 1) 重新启动计算机。<br> -或-</FONT></P>
+			<P><FONT face="Arial">2) 使用远程桌面连接到同一台计算机上的另一个会话。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.25&nbsp;&nbsp;&nbsp;测试运行窗口：在“控制器用户”组中但不在“管理员用户”组中的用户无法连接到控制器&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--549711--><P class="MsoNormal"><FONT face="Arial">如果用户被添加到“控制器用户”组但未添加到“控制器管理员”组，则重新启动控制器服务之前，更改将不会生效。用户因而无法连接到控制器。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">重新启动控制器服务。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.26&nbsp;&nbsp;&nbsp;在编辑器中重新加载文件时，可能不显示编码更改&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550380--><P class="MsoNormal"><FONT face="Arial">重新加载文件时 Visual Studio 2005 不检测编码中的更改。如果您在当前编辑器的外部更改了文件的编码，或者所执行的源代码管理操作更改了编辑器中打开文件的编码，Visual Studio 将自动重新加载文件。文件的内容在编辑器中重新加载之后可能无法正确显示。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial"><ol>
+						<br>
+						<li>
+							在不保存更改的情况下关闭文件。<br>
+						<li>
+							在“文件”菜单上，选择“打开”，然后选择“文件”。<br>
+						<li>
+							在“打开文件”对话框中，单击“打开”按钮旁边的箭头并单击“打开方式”。<br>
+						<li>
+							从“打开方式”对话框的列表中，选择用来打开文件的编辑器（如二进制编辑器或资源编辑器）。要用特定的编码打开文件，请选择带编码支持的编辑器，例如“带编码的 XML 编辑器”。<br>
+						<li>
+							单击“确定”。<br>
+						<li>
+							从“编码”对话框中的“编码”下拉列表中选择正确的编码。<br>
+						<li>
+							单击“确定”。<br>
+						</li>
+					</ol>
+				</FONT>
+			<P></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.27&nbsp;&nbsp;&nbsp;安装安装项目时，发生产品修复&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550727--><P class="MsoNormal"><FONT face="Arial">如果在安装 Visual Studio 2005 之后安装 Visual Studio 2003，则从任一版本的 Visual Studio 生成安装项目时都会导致产品修复行为。产品修复只会对 Visual Studio 2003 安装用户以外的用户发生。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial"> 发生产品修复行为时，允许它完成。为使修复成功，必须使用未执行 Visual Studio 2003 安装且具有管理员权限的用户帐户来执行。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.28&nbsp;&nbsp;&nbsp;安装 Visual Studio 2005 Tools for Microsoft Office 项目后，Office 产品无法运行&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550728--><P class="MsoNormal"><FONT face="Arial">安装包含免注册 COM 组件的 Visual Studio 2005 Tools for Microsoft Office 外接程序项目后，外接程序面向的 Office 产品无法运行。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">Visual Studio 2005 Tools for Microsoft Office 外接程序项目不支持免注册 COM。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.29&nbsp;&nbsp;&nbsp;从 Visual Studio 2003 导入的安装项目和部署项目在生成时无法进行签名&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550733--><P class="MsoNormal"><FONT face="Arial"> 在 Visual Studio 2005 中生成从 Visual Studio 2003 导入的已启用签名的安装项目和部署项目时，无法对它们进行签名。生成时将在“错误列表”窗口中显示以下消息：“未对文件‘&lt;文件名&gt;’进行签名。部署项目包含已否决的签名属性。有关更多信息，请参见帮助。”</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">要启用签名，可以在安装项目和部署项目的生成后步骤中，对生成输出调用软件开发工具包工具 Signtool。有关如何执行此操作的更多信息，请查看与上述生成消息相关的帮助主题。您可以通过突出显示“错误列表”窗口中的相应消息然后按 F1 来访问帮助。</FONT></P>
+			<P><FONT face="Arial"> <br>要删除已否决的签名项目属性，请执行下列操作：<br>1. 双击“错误列表”窗口中的相应消息。<br> 2. 在随后显示的对话框中，单击“是”。这将从您的项目文件中删除已否决的签名项目属性。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 1.30&nbsp;&nbsp;&nbsp;随 Visual Studio 2005 提供的某些引导程序包只适用于 32 位平台&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550744--><P class="MsoNormal"><FONT face="Arial">随 Visual Studio 2005 提供的用于 .NET Framework 2.0、SQL Server Express 2005、Microsoft Visual J# Redistributable、Windows Installer 2.0 和 Windows Installer 3.1 的引导程序包仅适用于 32 位平台。如果这些软件包中内置的引导程序在 64 位平台上运行，安装可能会停滞。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">我们将在 Microsoft 下载中心提供用于 64 位版本 .NET Framework 2.0 和 SQL Server Express 2005 Redistributable 的引导程序包。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.31&nbsp;&nbsp;&nbsp;“用户定义的类型作为设置”可能在设置设计器中导致意外的行为&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550651--><P class="MsoNormal"><FONT face="Arial">如果在使用项目处于打开状态时更新 UDT 驻留的程序集，使用“用户定义的类型作为设置”可能导致问题。如果必须按此方案操作，可以通过让 UDT 程序集使用增量版本语义来解决此问题。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">如果要用作设置的用户定义类型驻留在类库中，则对库使用增量版本语义可减轻此问题的影响。如果用户定义的类型驻留在 EXE 中，则必须关闭并重新启动 IDE 以使 UDT 更改生效。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 1.32&nbsp;&nbsp;&nbsp;用户控件项目内不存在“My”类的 Forms 属性&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550837--><P class="MsoNormal"><FONT face="Arial">My.Forms 在用户控件项目中不可用</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">没有已知的解决方法。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.33&nbsp;&nbsp;&nbsp;如果在 Sleep 上停止，无法通过远程调试调用对象的方法&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550838--><P class="MsoNormal"><FONT face="Arial"> 如果在远程计算机上运行以下代码，然后通过远程调试连接到运行的代码，并在代码执行到 Sleep() 调用内时中断，则将无法计算变量 c 的成员。<br> <br> c = New c1&nbsp;&nbsp;&nbsp;&nbsp; '假定 c1 是有效类<br> While True<br> Threading.Thread.Sleep(1000)<br> End While</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">跳出 Sleep()，然后将能够正常计算对象。</FONT></P>
+			<P><FONT face="Arial"></FONT>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.34&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for Testers：负载测试错误表包含：“未能找到应用阈值规则所需的从属计数器”&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550907--><P class="MsoNormal"><FONT face="Arial">负载测试结果查看器的错误表包含一个错误，其消息为“未能找到应用阈值规则所需的从属计数器”。负载测试包含一个阈值规则，该规则将一个性能计数器与另一个性能计数器进行比较。如果比较性能计数器在采样间隔内未生成实例，将生成此错误。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">更改相关的阈值规则，根据某个常量而不是另一个性能计数器进行比较。除了使负载测试无法运行指定的阈值规则外，此更改不会影响负载测试的结果，可以安全地忽略。<br><br> 执行下列步骤来更改计数器：<br> 1. 编辑负载测试并选择计数器集/负载测试/计数器类别/LoadTest:Request/计数器/Avg.Connection Wait Time/阈值规则。<br>2. 删除“比较计数器规则”。<br> 3. 右击以添加一条“比较常量”规则。<br> 4. 在该规则中，将“如果超出则发出警报”设置为 true，将警告设置为 .01（10 毫秒），将临界阈值设置为 .02（20 毫秒）。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.35&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for Testers：Web 测试运行失败，错误为“未将对象设置为对象的实例”</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550911--><P class="MsoNormal"><FONT face="Arial">如果运行的编码 Web 测试中具有未使用的数据源，则运行将会失败，并显示错误“未将对象设置为对象的实例”。发生此错误的原因是虽然编码 Web 测试中定义了数据源，但它未绑定到该测试中的任何项目。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">从编码 Web 测试中移除未使用的数据源，或者通过向测试类添加 DataBinding 属性将数据源中的某个字段绑定到测试中的某个项。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.36&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for Testers：将 SoapHttpClientProtocol 实现的 Proxy 属性设置为 Null&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550913--><P class="MsoNormal"><FONT face="Arial">如果运行的负载测试中包含调用 Web 服务的单元测试，则单元测试代码应显式设置实现 System.Web.Services.Protocols.SoapHttpClientProtocol 的 Web 服务代理类的代理属性。这将避免在必须自动检测代理的情况下可能出现的性能瓶颈。<br> <br> 例如，您有一个与以下类似的 Web 服务代理类：<br> <br> [System.Diagnostics.DebuggerStepThroughAttribute()]<br> [System.ComponentModel.DesignerCategoryAttribute("code")]<br> [System.Web.Services.WebServiceBindingAttribute(Name="InstantOrderSoap", Namespace="http://tempuri.org/")]<br> public partial class InstantOrder :System.Web.Services.Protocols.SoapHttpClientProtocol {<br> …<br> }<br> <br>则在创建代理对象之后、使用该代理对象之前，应显式设置 Proxy 属性：<br><br> InstantOrder orderCheck = new InstantOrder();<br> orderCheck.Proxy = new WebProxy("myproxy", true);<br> </FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.37&nbsp;&nbsp;&nbsp;无法通过 ActiveX EXE 对象将结构传递给变量属性&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550925--><P class="MsoNormal"><FONT face="Arial">在 Windows 98 上，无法通过 ActiveX EXE 对象将结构传递给变量属性。这是由于在全新的 Windows 9X 计算机上，默认情况下未注册 System DLL rpcrt4.dll，因此操作系统缺少注册表项 [HKEY_CLASSES_ROOT\CLSID\{B5866878-BD99-11D0-B04B-00C04FD91550}]。由于缺少此注册表项，调用失败。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial"> 转到 C:\Windows\System 并手动调用 RegSvr32.exe rpcrt4.dll。 </FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.38&nbsp;&nbsp;&nbsp;具有循环约束的类型参数上的 New 导致 VB 编译器挂起而且增加了内存分配&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550935--><P class="MsoNormal"><FONT face="Arial">在控制台应用程序中粘贴以下代码将导致其挂起。<br> <br> Class C1(Of U As U)&nbsp;&nbsp;&nbsp;&nbsp;'此处的循环约束将导致后面的问题<br> End Class<br> <br> Partial Class C1(Of U)<br> Dim x As New U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'问题 - 这导致无限循环，内存使用一直增加直到内存不再可用为止<br> <br> End Class</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">移除循环约束。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.39&nbsp;&nbsp;&nbsp;如果使用 ClickOnce 启动应用程序，StartupNextInstanceEvent 处理程序的参数将不包含命令行参数&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550884--><P class="MsoNormal"><FONT face="Arial">如果使用 ClickOnce 启动应用程序，StartupNextInstanceEvent 处理程序的参数将不包含应用程序的第二个实例的命令行参数。必须使用 My.Application.Deployment.ActivationUri 属性获取命令行参数。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">使用 ASP 运行时类获取命令行参数，如下所示：<br> <br> Imports System.Web<br> <br> Dim commandLineArgs as NameValueCollection = _<br> HttpUtility.ParseQuery(My.Application.Deployment.ActivationUri)</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.40&nbsp;&nbsp;&nbsp;VB 编译器不支持 InternalsVisibleTo 属性&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550943--><P class="MsoNormal"><FONT face="Arial">&lt;Assembly:InternalsVisibleTo("Foo.Dll, PublicKeyToken=a29c01bbd4e39ac5")&gt;<br> <br>此属性（以及其他属性）向其他程序集公开友元类型。VB 编译器不支持此属性。<br><br> 一些依赖此属性测试私有类型的单元测试技术将不会按预期工作。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">没有已知的解决方法。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.41&nbsp;&nbsp;&nbsp;缺少某些 vsperfcmd.exe 文档&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548407-->
+			<P class="MsoNormal"><FONT face="Arial">缺少描述通用用户方案的 vsperfcmd 文档。</FONT></P>
+			<P class="MsoNormal"><FONT face="Arial"> <br> 以下是可能与 vsperfcmd.exe 一起使用的一些通用命令的示例：<br> vsperfcmd -start:sample -output:foo.vsp<br> vsperfcmd -start:trace -output:foo.vsp -counter:g,1,0,InstructionsRetired<br> vsperfcmd -launch:foo.exe -args:"input arguments" -gc:lifetime<br> vsperfcmd -attach:foo.exe -pf:1</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.42&nbsp;&nbsp;&nbsp;My.Log 在 VB Web 控件库项目中不可用&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550979--><P class="MsoNormal"><FONT face="Arial"> 在 VB Web 控件库项目中，My.Log 不可用。因为 My 是基于每个项目的，My.Log 对于网站项目中的 WebUserControls 可用，但是对于网站使用的 Web 控件库项目中的类不可用。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">使用 Trace.Write 代替 My.Log 方法。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.43&nbsp;&nbsp;&nbsp;如果用户不具有文件 I/O 权限，My.Application.Log.WriteEntry 可能引发异常&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550965--><P class="MsoNormal"><FONT face="Arial">1) 使用以下代码创建新的控制台应用程序：<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;My.Application.Log.DefaultFileLogWriter.CustomLocation = "D:\temp"<br> &nbsp;&nbsp;&nbsp;&nbsp;My.Application.Log.WriteEntry("Foo")<br> <br> 2) 运行应用程序<br> <br>结果：<br>在 D:\temp 中创建日志文件，但还创建目录 D:\Documents and Settings\&lt;username&gt;\Application Data\Microsoft\WindowsApplication1\1.0.0.0（如果该目录不存在）。如果用户不具有进行此操作的权限，将引发异常。这在 Web 应用程序中使用类库时很可能发生，因为 ASP.NET 进程默认情况下不具有写入任何 Application Data 目录的权限。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial">1) 通过 app.config 删除默认 FileLogTraceListener 并重新配置 My.Application.Log 以使用其他 TraceListener。<br> 2) 侦听未处理的异常事件，并在发生事件时继续。<br> 3) Try/catch 每个日志记录调用（或至少那些可能第一个执行的日志记录调用）。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.44&nbsp;&nbsp;&nbsp;32 位 COM 组件引用在运行于 64 位平台上的 VB 和 C# 应用程序中可能无效&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551235--><FONT face="Arial">
+				<P class="MsoNormal"><br>大多数现有的 COM 组件只能用于 32 位平台，它们在 64 位平台上的 64 位进程中不会运行（即使它们可以在 64 位平台上的 32 位进程中正确运行）。默认情况下，引用这些 32 位 COM 组件的 VB 和 C# 应用程序无法在 64 位平台上运行，因为应用程序默认情况下是作为 64 位进程启动的。<br><br>包含一个或多个 COM 引用的项目符合以下条件时将出现此问题：<br> 1. 迁移到 Visual Studio 2005 并在 64 位平台上执行。
+				</P>
+				<P class="MsoNormal">
+					-或- <br> 2. 是在 64 位平台上使用 Visual Studio 2005 创建的。<br><br> 在 Visual Studio 2005 中，VB 和 C# 编译器使用目标平台属性来确定 .exe 或 .dll 应该在 32 位还是 64 位 CPU 结构模式下运行。在 Visual Studio 2005 中，此属性的默认设置为“AnyCPU”，表示应用程序可以在 32 位或 64 位模式下运行，具体取决于主机平台。在这种情况下，调试或运行这些应用程序时可能显示诸如“无法实例化类...”等消息。<br> <br>
+				</P>
+			</FONT>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial"> 将包含 COM 组件引用的 VB 或 C# 项目的目标平台属性设置为“X86”。<br> <br> 对于 C# 项目：<br> 1.&nbsp;&nbsp;&nbsp;&nbsp;右击解决方案资源管理器中的项目并打开“属性”<br> 2.&nbsp;&nbsp;&nbsp;&nbsp;选择“生成”选项卡<br> 3.&nbsp;&nbsp;&nbsp;&nbsp;将目标平台属性设置为“X86”<br> <br> 对于 VB 项目：<br>1.&nbsp;&nbsp;&nbsp;&nbsp;右击解决方案资源管理器中的项目并打开“属性”<br> 2.&nbsp;&nbsp;&nbsp;&nbsp;选择“编译”选项卡<br> 3.&nbsp;&nbsp;&nbsp;&nbsp;按“高级编译选项...”按钮<br> 4.&nbsp;&nbsp;&nbsp;&nbsp;将目标 CPU 属性设置为“X86”<br> <br> 速成版：<br>VB 和 C# 速成版产品不在开发环境内部公开 Target 属性。您需要使用文本编辑器或 XML 编辑器认真修改项目文件。<br> 1.&nbsp;&nbsp;&nbsp;&nbsp;关闭项目和/或解决方案<br> 2.&nbsp;&nbsp;&nbsp;&nbsp;从“文件”菜单中选择“打开文件”<br> 3.&nbsp;&nbsp;&nbsp;&nbsp;导航到项目目录，并突出显示项目文件<br> 4.&nbsp;&nbsp;&nbsp;&nbsp;按“打开”按钮，项目文件将在 XML 编辑器中打开<br> 5.&nbsp;&nbsp;&nbsp;&nbsp;找到第一个 &lt;PropertyGroup&gt; 节并添加下面这行内容：<br>&lt;PlatformTarget&gt;x86&lt;/PlatformTarget&gt;<br> 1.&nbsp;&nbsp;&nbsp;&nbsp;保存项目文件<br> 2.&nbsp;&nbsp;&nbsp;&nbsp;使用“文件”菜单中的“打开项目/解决方案”重新打开项目和/或解决方案<br> 3.&nbsp;&nbsp;&nbsp;&nbsp;继续开发、调试和测试过程<br> <br>或者，如果应用程序面向 64 位平台，可以确保添加到应用程序的 COM 控件在开发和部署计算机上具有 64 位等效项。</FONT></P>
+			<P><FONT face="Arial"></FONT>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.45&nbsp;&nbsp;&nbsp;使用 Windows 漫游配置文件可能导致在每次启动时都显示首次启动消息&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551259--><P class="MsoNormal"><FONT face="Arial">当 Visual Studio 产品系列中的任何产品与 Windows 漫游配置文件一起使用时，每次启动会话时，可能都会出现首次启动消息，显示“Visual Studio 2005 正在为第一次使用配置环境。这可能要花几分钟的时间”。这可能导致不必要地启动性能降低。</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>解决此问题的方法</B></FONT>
+			<P><FONT face="Arial"> 单击“工具”&gt;“选项...”选择“导入和导出设置”，并将“将我的设置自动保存到此文件：”下的路径更改为不在“我的文档”目录下的路径。</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face=Arial>1.46&nbsp;&nbsp;&nbsp;在启动 Visual Studio 2005 之前安装访问 
+DTE.CommandBars 的外接程序将导致外接程序加载错误&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551280-->
+<P class=MsoNormal><FONT face=Arial>第一次安装 Visual Studio 2005 以后，如果安装了试图在 OnConnection 中获取 
+DTE.CommandBars 的外接程序，则第一次启动 Visual Studio 2005 时将显示以下消息：<br><br>&nbsp;&nbsp;&nbsp;&nbsp;外接程序 
+&lt;外接程序名称&gt; 未能加载或导致了异常。<br>&nbsp;&nbsp;&nbsp;&nbsp;是否希望移除此外接程序?</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>如果正在安装 Visual 
+Studio 2005，安装完成以后请在安装任何外接程序 *之前* 启动 Visual Studio 然后再次关闭&nbsp; <br>如果已经安装了此外接程序，并遇到上述消息，请单击“否”并关闭 Visual Studio。在命令提示符下，定位到 
+&lt;VSInstallDir&gt;\Common7\IDE 并运行以下命令：<br>&nbsp;&nbsp;&nbsp;&nbsp;devenv /resetaddin *<br></FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.47&nbsp;&nbsp;&nbsp;当最后执行类库生成时，Visual Basic 或 Visual J# 
+类库中的 Web 服务引用可能不会进行反向工程处理&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551319-->
+<P class=MsoNormal><FONT face=Arial>在这种情况中，Visual Studio 解决方案包含一个 Visual Basic 或 Visual J# 
+类库，该类库包含对某一 Web 服务的 Web 引用。该解决方案还包含一个 ASP.NET 
+网站，该网站包含对该类库的引用。将这些项添加到解决方案中以后，必须将某些配置文件项从类库的 App.config 文件复制到网站的 Web.config 
+文件。如果在复制配置文件项之后、添加应用程序关系图之前生成类库，以对这些项进行反向工程处理，则在关系图上只能对 ASP.NET 
+网站进行反向工程处理。因此，Web 服务引用可能不会像 ASP.NET 应用程序上的 Web 服务使用者终结点那样进行反向工程处理，并且可能不会对到所引用 
+Web 服务的连接进行反向工程处理。如果 Web 引用指向不在关系图上的 Web 服务，则引用的 Web 服务的外部 Web 服务可能不会进行反向工程处理。 
+</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>1. 
+添加应用程序关系图以后，右击类库中的 Web 引用并选择“更新Web 引用”。<br>2. 
+重新生成类库。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.48&nbsp;&nbsp;&nbsp;更改表位置可能导致连接失败&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551343-->
+<P class=MsoNormal><FONT face=Arial>当您在运行时将表的位置更改到其他数据库时，请确保新数据库包含与原始报表中的表同名的表。如果表名称不匹配，连接将会失败。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>请确保新的数据库包含与原始报表中的表同名的表。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.49&nbsp;&nbsp;&nbsp;不要用 Null 
+字符串设置查看器选择公式&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551345-->
+<P class=MsoNormal><FONT face=Arial>要设置查看器选择公式以显示报表中的所有记录，请使用空字符串，而不要用 Null 字符串。Null 
+字符串不能重写原始报表选择公式。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>空字符串表示为 "" 或 
+String.Empty。Null 字符串在 C# 中表示为 null，在 Visual Basic 中表示为 Nothing。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.50&nbsp;&nbsp;&nbsp;迁移用 Shift-JIS 
+编码的项目可能导致字符损坏&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551347-->
+<P class=MsoNormal><FONT face=Arial>用 
+Shift-JIS 编码的日语字符不能在从 Visual Studio 2002 或 Visual Studio 2003 迁移到 Visual Studio 
+2005 的 ASP.NET Web 应用程序中正确显示</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>迁移前，将所有 ASP 
+页的编码转换成 UTF-8</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.51&nbsp;&nbsp;&nbsp;从 Crystal Reports 9 或 Crystal Reports 
+10 导入项目时丢失命名空间引用&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551350-->
+<P class=MsoNormal><FONT face=Arial>当将一个 Windows 项目从 Crystal Reports 9 或 Crystal Reports 10 迁移到 
+Crystal Reports for Visual Studio 2005 时，对 
+CrystalDecisions.ReportSource、CrystalDecisions.Shared 和 
+CrystalDecisions.Windows.Forms 程序集的引用会丢失。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>迁移后编译应用程序之前，手动添加这些引用。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.52&nbsp;&nbsp;&nbsp;当 Windows 项目和 ASP.NET Web 
+项目引用同一个类库时，该类库中的 Web 服务引用可能无法进行反向工程处理&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551372-->
+<P class=MsoNormal><FONT face=Arial>在这种情况中，Visual Studio 解决方案包含一个应用程序关系图，其中有已实现的 Windows 和 
+ASP.NET 应用程序。该解决方案还包含一个类库，此类库包含对某一 Web 服务的 Web 引用。Windows 项目和 ASP.NET Web 
+项目都引用此类库。当生成类库并将必需的项从类库的 App.config 文件复制到两个项目的配置文件以后，Web 引用可能不会像 Windows 或 
+ASP.NET 应用程序上的 Web 服务使用者终结点那样进行反向工程处理。到引用的 Web 服务的连接也可能不会进行反向工程处理。如果 Web 
+引用指向不在关系图上的 Web 服务，则引用的 Web 服务的外部 Web 服务可能不会进行反向工程处理。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>1. 关闭应用程序关系图。<br>2. 从 Windows 项目和 ASP.NET 项目中移除对共享类库的引用。<br>3. 向 ASP.NET 项目添加类库引用。<br>4. 
+打开应用程序关系图。<br>5. 向 Windows 项目添加类库引用。 </FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.53&nbsp;&nbsp;&nbsp;展开 FTP 网站的服务器资源管理器中的数据文件可能使 IDE 
+崩溃&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551442-->
+<P class=MsoNormal><FONT face=Arial>如果打开 FTP 网站并将数据文件（MDB 或 MDF）添加到 App_Data 
+目录中，然后打开“服务器资源管理器”窗口并展开“数据连接”节点下的数据文件连接，<br>IDE 
+可能崩溃或挂起，而您可能丢失未保存的所有数据。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>使用文件系统或 IIS 
+网站从本地文件位置开发网站，然后使用“复制网站”命令将文件传输到 FTP 位置或从 FTP 位置传输文件。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.54&nbsp;&nbsp;&nbsp;从 Firefox 
+打印或导出可能引发异常&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551358-->
+<P class=MsoNormal><FONT face=Arial>当用户从 CrystalReportViewer 控件导出或打印报表时，可能引发异常。当网页包含 
+CrystalReportViewer 控件和 Microsoft Web 控件，且用户在 Firefox Web 
+浏览器中查看该网页时，会出现此问题。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在 ASP 页中将 
+EnableEventValidation 设置为 False，使用户可以在 Firefox 中打印或导出报表。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.55&nbsp;&nbsp;&nbsp;没有为混合模式 C++ 项目启用应用程序验证工具。将会产生以下消息：<br>“所选调试模式不支持应用程序验证工具。请参阅支持文档获取更多信息。单击‘确认’不使用验证工具继续调试”&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551210-->
+<P class=MsoNormal><FONT face=Arial>虽然能够从“调试”菜单选择应用程序验证工具，但不会为混合模式应用程序启用应用程序验证工具。将出现一个对话框，说明没有启用应用程序验证工具，并允许您不使用应用程序验证工具继续调试。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>不使用应用程序验证工具继续调试。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.56&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for 
+Testers：尽管配置正确，但负载测试结果没有存储到结果数据库中&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550901-->
+<P class=MsoNormal><FONT face=Arial>尽管负载测试的配置正确，但本地运行的负载测试结果没有存储到结果数据库中。出现这种情况时，将显示以下消息：<br>“无法打开负载测试结果数据库。请检查由测试控制器（或本地计算机）的连接字符串所指定的负载测试结果数据库是否包含负载测试架构以及当前是否可用”。<br>本地负载测试结果数据库是在第一次本地负载测试运行初始化期间创建的。如果启动第一次负载测试运行的用户没有足够的特权创建该数据库，则会出现此错误。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>管理员必须启动第一次负载测试运行，以强制创建负载测试结果数据库。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.57&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for 
+Testers：SQL Express 中存储的负载测试结果可能不能从远程计算机访问&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551217-->
+<P class=MsoNormal><FONT face=Arial>SQL Express 配置和 Windows 防火墙可能阻止对 SQL Express 
+中存储的负载测试结果进行远程访问。SQL Express 的默认安装禁用对数据库的远程访问。Load Controller 安装程序自动设置 SQL 
+Express 配置和 Windows 防火墙配置，以允许对 SQL Express 进行远程访问。然而，如果安装程序还安装 SQL 
+Express，则它将更改这些配置。Visual Studio 安装程序也可以安装 SQL Express，但是不会自动更改 SQL Express 和 
+Windows 防火墙配置以允许远程访问。<br><br>当负载测试结果查看器不能远程访问 SQL Express 中的负载测试结果时，将显示以下消息：<br><br>“未能读取结果储存库:未能访问负载测试结果储存库：与服务器建立连接时出错。连接到 SQL Server 2005 
+时，产生此失败的原因可能是由于在默认设置下，SQL Server 不允许远程连接”。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>手动配置 SQL Express 和 
+Windows 防火墙以允许远程访问。用以下步骤启用对 SQL Express 的远程访问：<br><br>1. 依次单击“开始”、“所有程序”、“Microsoft SQL Server 2005”、“配置工具”、“SQL 
+Server Configuration Manager”，打开 SQL Server 配置管理器。<br>2. 在 
+SQL Server 配置管理器的左窗格中，展开“SQL Server 2005 网络配置”节点，选择“SQLEXPRESS 的协议”。<br>3. 在右窗格中，右击“Named Pipes”并选择“启用”。<br>4.&nbsp;右击“TCIP/IP”并选择“启用”。<br>5. 
+在左窗格中，选择“SQL Server 2005 服务”。<br>6. 在右窗格中，右击“SQL Server 
+Browser”并选择“属性”。<br>7. 在“属性”对话框中单击“服务”选项卡。<br>8. 在“服务”页上，将“启动模式”属性设置为“自动”，然后单击“确定”。<br>9. 右击“SQL Server Browser”并选择“启动”。<br>10. 右击“SQL Server (SQLEXPRESS)”并选择“重新启动”。<br><br>用以下步骤配置 Windows 防火墙。<br><br>1. 打开“Windows 
+防火墙”对话框，单击“例外”选项卡。<br>2. 单击“添加程序”和“浏览”，找到 sqlbrowser.exe 
+并单击“确定”。<br>3. 单击“添加程序”和“浏览”，找到 sqlservr.exe。单击“确定。<br>4. 单击“添加端口”，在“名称”处输入“SQL Service”，在“端口号”处输入“1433”，选中 TCP 
+单选按钮。<br>5. 在“Windows 防火墙”对话框中单击“确定”。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.58&nbsp;&nbsp;&nbsp;只有 WinXP 支持 Long (VT_I8) 
+的互操作&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550829-->
+<P class=MsoNormal><FONT face=Arial>在 
+Win2K 或 Win9x 上传递 Long (VT_I8) 的后期绑定调用将会失败。WinXP 是通过 OLE 自动化的 VT_I8 唯一支持的平台。 
+</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>使用 integer 而不是 
+long。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.59&nbsp;&nbsp;&nbsp;EnvDTE80.WindowKinds.vsWindowKindImmediate 
+常量不正确&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551289-->
+<P class=MsoNormal><FONT face=Arial>vsWindowKindImmediate 常量不会返回正确的即时窗口 GUID</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>用以下 GUID 来取代 
+vsWindowKindImmediate 常量：{ECB7191A-597B-41F5-9843-03A4CF275DDE}<br>或者，运行以下代码将获得正确的即时窗口 GUID：<br>&nbsp;&nbsp;&nbsp;&nbsp;DTE.Windows.Item("Immediate 
+Window").ObjectKind</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.60&nbsp;&nbsp;&nbsp;共享的“外接程序向导安装”项目在只有 Microsoft Office 
+的计算机上无法运行&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551291-->
+<P class=MsoNormal><FONT face=Arial>Office 的外接程序需要 Extensibility.dll 
+才能运行，该文件没有自动包含在共享外接程序的安装项目中。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在解决方案资源管理器中，右击“外接程序安装”项目，并选择“添加 | 
+程序集”。在“.NET”选项卡中，选择“扩展性”并按“确定”。添加程序集后，在解决方案资源管理器中选择该程序集，并确保“Register”属性设置为“vsdraDoNotRegister”</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.61&nbsp;&nbsp;&nbsp;重置时未立即反映出字体和颜色选项&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551292-->
+<P class=MsoNormal><FONT face=Arial>执行环境设置的重置有两种方法：一种是单击“工具”&gt;“导入和导出设置...”然后选择“重置所有设置”；另一种是在命令窗口内发出“Tools.ImportAndExportSettings 
+/reset”命令。不论使用哪种方法，字体和颜色选项直到 Visual Studio 重新启动后才会反映出来。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>执行重置操作后，重新启动 
+Visual Studio。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.62&nbsp;&nbsp;&nbsp;UTF-8 编码文件的自动检测&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!---->
+<P class=MsoNormal><FONT face=Arial>Visual Studio 2005 开发环境文本编辑器默认的UTF-8编码的自动检测选项是关闭的。这可能会导致某些不带签名的UTF-8编码文件无法正常显示。
+</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>打开文本编辑器默认的UTF-8编码的自动检测选项。具体方法是：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1) 进入 Visual Studio 2005 开发环境；<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 选择“工具”\“选项”菜单；<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3) 在“选项”对话框中，选择“文本编辑器”；<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4) 在对话框的右侧选项中，选中“自动检测不带签名的UTF-8 编码”选项。<br>
+</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>1.63&nbsp;&nbsp;&nbsp;基于 DLL 的项目、ATL Web 服务项目和 VC 
+智能设备项目不支持应用程序验证工具&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551307-->
+<P class=MsoNormal><FONT face=Arial>在下列情况下不支持应用程序验证工具：<br>1. 在 DLL 
+项目上使用“用应用程序验证工具启动”，并将该项目加载到不属于解决方案的可执行文件中。<br>2. 在“项目属性 | 
+调试”中，将“命令”更改为当前已加载项目 ($TargetPath) 以外的其他内容。这也适用于远程调试。<br>3. 
+ATL Web 服务项目不支持应用程序验证工具，因为这些项目在其他进程下运行。<br>4. VC 
+智能设备项目不支持应用程序验证工具，因为这些项目在其他结构下运行。<br>只对在 IDE 中加载的 exe 
+项目启用应用程序验证工具。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>对于上述的情况 1 和情况 2，在 
+IDE 中加载目标可执行文件项目，然后使用应用程序验证工具。在所有上述情况中使用应用程序验证工具与正常调试会话（“调试 | 
+开始”）的运行方式相同。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H1><FONT face=Arial size=5><A 
+name=systemrequirements></A>2. .NET Framework </FONT></H1>
+<H3><FONT face=Arial>2.1&nbsp;&nbsp;&nbsp;运行时没有正确显示 
+DBCS（双字节字符集）的手动测试文件&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--543730-->
+<P class=MsoNormal><FONT face=Arial>当运行名称为 DBCS 
+的手动测试文件时，您将看到手动测试结果窗口。然而，手动测试没有在该窗口中正确显示。如果您右击该窗口的下半部分并选择“刷新”，该部分将挂起几分钟，然后变成空白。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>用 
+SBCS（单字节字符集）命名手动测试文件。如果需要，您可以在手动测试的说明中使用“DBCS”。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.2&nbsp;&nbsp;&nbsp;在运行 32 位 Visual Studio 2005 和 SQL 
+Server 2005 的 64 位计算机上启动了 msvsmon.exe 的错误版本&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--548306-->
+<P class=MsoNormal><FONT face=Arial>当 
+64 位计算机上安装了 Visual Studio 2005 (x86) 和 SQL Server 2005 (x86) 时，SQLCLR 
+调试会失败。将显示以下消息：<br><br>---------------------------<br>Microsoft Visual Studio<br>---------------------------<br>无法调试 
+.NET 代码。未能附加到“&lt;计算机名&gt;”上的 SQL Server 进程。Visual Studio 远程调试监视器 (MSVSMON.EXE) 
+的 64 位版本无法调试 32 位进程或 32 位转储。请改用 32 位版本。<br>---------------------------<br>确定 <br>---------------------------<br><br>msvsmon.exe 的 64 位版本将自动运行，因为计算机的操作系统是 64 位的。应当启动 32 
+位版本，因为两个应用程序都是 32 位的。这是一个结构问题，目前无法解决。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>当试图在本地计算机上进行 
+SQLCLR 调试时，用户可以手动启动 32 位版本的 msvsmon.exe。<br><br>建议您不要将 32 位版本的 msvsmon.exe 注册为自动启动，因为这将中断其他 64 
+位调试方案。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.3&nbsp;&nbsp;&nbsp;AuthorizationStoreRoleProvider：从授权管理器返回不正确或不明确的错误&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550128-->
+<P class=MsoNormal><FONT face=Arial>AuthorizationStoreRoleProvider 
+依赖于授权管理器。不是所有从授权管理器返回的错误信息都指出了问题的根本原因。以下列出的是已知不正确或不明确的错误信息。<br><br>“COMException 
+(0x8007052b)：无法更新密码。提供作为当前密码的值不正确。”<br>此错误实际上是拒绝访问错误。如果所有以下条件都符合，将发生此错误：ASP.NET 在 IIS 5.0、Windows 
+XP IIS 5.1 上部署或以 IIS 5.0 模式在 Windows Server 2003 上部署，应用程序被配置为使用集成 Windows 
+身份验证，并且策略文件位于当前 ASP.NET 应用程序的目录结构内。如果 ASP.NET 作为本地计算机帐户运行并尝试访问远程 AD 或 ADAM 
+实例中的策略存储，也会发生此错误。<br><br>“更多数据可用”<br>此错误实际上意味着无法找到策略存储。如果连接字符串指向 ADAM 实例，但连接字符串引用的 ADAM 
+分区不存在，可能发生此错误。例如，在下面的连接字符串“LDAP://localhost:4000/Cn=storename, 
+DC=Partition1”中，如果 ADAM 实例中不存在 Partition1，将发生此错误。<br><br>“指定的服务器无法运行请求的操作”<br>此错误实际上意味着无法找到指定的服务器。如果连接字符串指向不存在的服务器或使用 AD 或 ADAM 
+没有侦听的端口号，可能发生此错误。<br><br>“ArgumentException：此参数不正确”<br>此错误信息实际上表示授权管理器中用于确定用户是否处于某一角中的 LDAP 查询组无效。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>对于上面列出的每种错误情况，检查可能的原因。如果应用程序的配置匹配其中一种可能的原因，根据上面列出的信息更改或修复应用程序的配置。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.4&nbsp;&nbsp;&nbsp;应该在共享宿主计算机上禁用 SQL Server Express 
+用户实例</FONT></H3>
+<DIV class=indent id=DIV1><!--550139-->
+<P class=MsoNormal><FONT face=Arial>ASP.NET 2.0 集成了 SQL Server Express 2005 以自动创建 ASP.NET 2.0 
+的许多新应用程序服务所需的数据库。此功能依赖于 SQL Server Express 对生成服务器进程的支持，这些进程使用交互式用户标识或 ASP.NET 
+的宿主辅助进程标识运行。在不受信任的环境中，如共享宿主服务器上，不要启用生成 SQL Server 辅助进程的能力，因为这样可能会不小心在 ASP.NET 
+应用程序之间共享数据。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>如果使用独立的安装程序安装 SQL 
+Server Express，可以使用高级安装选项显式禁用用户实例支持。<br><br>或者，可以手动禁用现有 SQL Server Express 安装的用户实例，如下所示：<br>1. 以本地框管理员身份登录，运行 cmd.exe 以打开命令窗口。<br>2. 如果 PATH 环境变量列出的所有目录中都不存在 osql.exe，将目录更改到包含 osql.exe 的 
+SQL Server Express 目录。<br>3. 连接到 SQL Server 的父实例：osql –E –S 
+.\sqlexpress<br>4. 发出以下 Sql 命令：<br>exec sp_configure 'show advanced option', '1' <br>go<br>reconfigure with override<br>go<br>exec sp_configure 'user 
+instances enabled', 0<br>&nbsp;&nbsp;&nbsp;&nbsp; go<br>reconfigure with override<br>go</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.5&nbsp;&nbsp;&nbsp;Forms 身份验证的持久性 Cookie 现在和基于会话的 Cookie 
+使用相同的超时设置&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550144-->
+<P class=MsoNormal><FONT face=Arial>在 
+ASP.NET 的早期版本中，持久性 Forms 身份验证 Cookie 有 50 年的硬编码生存期。在 ASP.NET 2.0 中，持久性 Forms 
+身份验证 Cookie 将到期日期设置为当前日期时间加上配置中的“timeout”属性值。默认情况下，这意味着持久性 Cookie 将有 30 
+分钟的生存期。如果希望有更长的生存期，需要增加“timeout”属性的值。在 ASP.NET 2.0 中，这意味着存储在基于会话的 Cookie 和持久性 
+Cookie 中的 Forms 身份验证票证将使用新的超时值</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>如果持久性 Cookie 
+需要不同的超时值，开发人员在最初使用类似 FormsAuthentication.SetAuthCookie 的方法设置 Forms 身份验证 Cookie 
+后，可以获取对该 Cookie 的引用。开发人员可通过下面的调用获取对该 Cookie 
+的引用：Response.Cookies[FormsAuthentication.FormsCookieName]。在产生的 HttpCookie 
+中，开发人员可以将 Expires 属性设置为不同的值。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.6&nbsp;&nbsp;&nbsp;AuthorizationStoreRoleProvider 的 
+DeleteRole 方法的行为不正确&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550147-->
+<P class=MsoNormal><FONT face=Arial>如果试图删除不存在的角色，提供程序的 DeleteRole 方法将错误地引发异常“找不到元素”。相反，提供程序应返回 
+false。同样，如果试图删除包含现有用户的角色，提供程序将返回 false 而不是引发异常。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>1. 将提供程序的所有 
+DeleteRole 方法调用都包装在 try-catch 块内。这可确保如果将来的修复程序在删除填充的角色时重新引发异常，不会影响现有代码。<br>2. 在尝试删除角色之前，检查角色是否已存在。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.7&nbsp;&nbsp;&nbsp;当使用 Xml 序列化和非默认应用程序标识时，ASP.NET 
+配置文件功能可能失败&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550156-->
+<P class=MsoNormal><FONT face=Arial>ASP.NET 配置文件功能的默认属性序列化机制是 Xml 序列化。如果 ASP.NET 进程标识既不是 
+ASPNET（在 IIS 5.0 和 IIS 5.1 上）也不是 NETWORK SERVICE（对于 IIS 6），则 Xml 
+序列化进程将失败并显示异常“InvalidOperationException：无法生成临时类”。如果使用应用程序模拟，将出现同样的问题。由于 
+XmlSerializer 将临时类文件写入 %windir%\temp 目录，所以会发生这些异常。默认情况下，此目录仅将“列出文件夹/读取数据”权限授予默认的 
+ASP.NET 帐户。非默认 ASP.NET 帐户可以将临时文件写入此目录，但是没有随后查找 XmlSerializer 使用的临时类所需的权限。<br></FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>对于安全环境，开发人员应使用其他序列化机制，二进制序列化或字符串序列化。对于在应用程序间意外共享临时类文件的可能性不大的应用，可以给辅助进程或应用程序模拟标识授予 
+%windir%\temp 目录的“列出文件夹/读取数据”权限。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.8&nbsp;&nbsp;&nbsp;使用 SSE 时的 ASP.NET 
+会话状态限制&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550178-->
+<P class=MsoNormal><FONT face=Arial>由于 
+Sql Server 代理服务不会随 SSE 一起安装，因此只有在会话状态基于 ASP.NET Sql Server 的开发环境中才应使用 
+SSE。正因为如此，会话状态清除作业从不运行，会话状态数据将累积在数据库中。可以通过连接到 SSE 并运行以下命令，手动清除过期会话：“EXECUTE 
+DeleteExpiredSessions”。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在生产应用中使用一个标准的 Sql 
+Server 2005 版本。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.9&nbsp;&nbsp;&nbsp;AuthorizationStoreRoleProvider：ApplicationName 
+的默认值导致授权管理器返回错误&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550124-->
+<P class=MsoNormal><FONT face=Arial>授权管理器不允许在应用程序名中使用“/”字符。如果配置中缺少 applicationName 
+的设置，AuthorizationStoreRoleProvider 将按照其他 ASP.NET 提供程序所使用的相同逻辑来确定 applicationName 
+的默认值。当在 ASP.NET 中运行时，这将产生以“/”字符开头的值。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在 ASP.NET 应用程序中使用 
+AuthorizationStoreRoleProvider 时，始终在配置中设置 applicationName 属性。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.10&nbsp;&nbsp;&nbsp;在 Windows 98 和 Windows ME 上，调试使用 Web 
+服务的应用程序导致该应用程序挂起&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550503-->
+<P class=MsoNormal><FONT face=Arial>在 
+Visual Studio 2005 中，当在 Windows 98 或 Windows ME 上调试使用 Web 
+服务的应用程序时，应用程序将会挂起。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>禁用调试器组件 
+csm.dll，使用断点在 Web 服务中停止。<br><br>要禁用 
+csm.dll，请按照以下说明执行：<br><br>1} 在 
+Windows“开始”菜单上，选择“运行”。<br>2) 在“运行”对话框中，键入“regedit.exe”。<br>3) 转到 
+HKEY_CLASSES_ROOT\CLSID\{12A5B9F0-7A1C-4FCB-8163-160A30F519B5}。<br>4) 通过检查 InprocServer32\(default) 
+的值是否为“&lt;drive&gt;:\Program Files\Common Files\Microsoft 
+Shared\VS7Debug\csm.dll”，确认是否位于正确的注册表项上。<br>5) 删除注册表项 
+(HKEY_CLASSES_ROOT\CLSID\{12A5B9F0-7A1C-4FCB-8163-160A30F519B5})。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.11&nbsp;&nbsp;&nbsp;C# 代码段快捷方式不能包含无空格标记&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550619-->
+<P class=MsoNormal><FONT face=Arial>C# 
+代码段在 .snippet 文件中以 XML 形式定义。一种可能的架构标记是 &lt;Shortcut&gt;&lt;/Shortcut&gt; 
+标记。可以使用快捷方式快速插入代码段。为此，用户只需键入快捷方式字符串然后按 Tab。<br><br>快捷方式字符串中允许使用许多 Unicode 
+字符，但复杂脚本语言中存在的无空格标记不被识别为有效的快捷方式字符。这意味着复杂脚本语言中的某些字符串不能用作快捷方式。如果快捷方式中包含无空格标记，则在键入快捷方式字符串并按 
+Tab 时，将插入制表符而不是插入代码段代码。<br>注意：代码段快捷方式仍将出现在 IntelliSense 
+中。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>1. 选择一个不包含无空格标记的 
+Unicode 快捷方式名称。<br>2. 通过代码段选择器用户界面（而不是使用快捷方式）插入代码段。 
+</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.12&nbsp;&nbsp;&nbsp;System.Net 已删除了此逻辑：当超时值小于非托管 API 中由 
+System.Net 调用以执行解析的超时值时，使 DNS 解析超时&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550832-->
+<P class=MsoNormal><FONT face=Arial>在以前的 .NET Framework 版本中，System.Net 的 DNS 向 DNS 
+类型中添加超时逻辑以避开过长的本机超时时间。如果没有精确的 DNS 超时时间，就不可能为其他 Web 请求设置精确的超时时间。但是，为实现此超时，DNS 
+解析任务被转移到一个单独的线程上。如果线程池级别较低，DNS 解析可能会一直等待可用线程直到超时，从而导致引发异常。为避免此异常，已删除了 DNS 
+超时逻辑。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有已知的解决方法。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.13&nbsp;&nbsp;&nbsp;SqlCacheDependency 必须用 
+System.Data.SqlClient.SqlDependency.Start 调用初始化&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550835-->
+<P class=MsoNormal><FONT face=Arial>由于 
+SQL Server 2005 中的查询通知的工作方式发生了变化，开发人员在使用 SqlCacheDependency 之前，必须至少调用一次 
+SqlDependency 的 Start 方法。调用 Start 的逻辑位置在 Web 应用程序的 Application_Start 方法中（位于 
+global.asax）：<br><br>void 
+Application_Start(object sender, EventArgs e) <br>{<br>System.Data.SqlClient.SqlDependency.Start("connection 
+string");<br>}<br><br>连接字符串必须与发出与 SqlCacheDependency 
+一起使用的命令时所使用的连接字符串相同。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.14&nbsp;&nbsp;&nbsp;System.Net 在调用 
+WebClient.UploadValues() 时不再添加 CRLF 字符&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550863-->
+<P class=MsoNormal><FONT face=Arial>在以前的 .NET Framework 版本中，调用 WebClient.UploadValues() 
+时会在上载的内容中添加 CRLF 字符，从而导致服务器应用程序失败。CRLF 字符违反了 application/x-www-form-urlencoded 
+内容类型编码方案，详见 HTML 4.01 规范中的描述。不再添加 CRLF。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>使用 
+WebClient.UploadData() 添加 CRLF 字符并重新编译应用程序，或修复服务器应用程序以不再需要 CRLF 字符。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.15&nbsp;&nbsp;&nbsp;设置 Fragment 或 Query 属性后，UriBuilder 
+不再清除它们&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550878-->
+<P class=MsoNormal><FONT face=Arial>UriBuilder 是一个允许逐段生成 Uri 实例的类型。在以前的 .NET Framework 
+版本中，不能同时设置 Query 属性和 Fragment 属性。此错误已在 2.0 版中修复。现在，设置 Query 属性和 Fragment 
+属性时不会不小心清除任何字段。已解决以前行为的应用程序可能需要调整它们的逻辑以避免错误行为。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有已知的解决方法。</FONT></P>
+<P><FONT face=Arial></FONT>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.16&nbsp;&nbsp;&nbsp;应用存在于应用程序配置文件的 system.net 
+元素中的值这一操作所需的权限已更改&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550880-->
+<P class=MsoNormal><FONT face=Arial>应用存在于应用程序配置文件的 System.Net 元素中的设置所需的权限已不同于以前的 .NET Framework 
+版本。应用配置文件中的值所需的权限现在和那些在更改代码中的设置时相关属性所需的权限相同。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有已知的解决方法。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.17&nbsp;&nbsp;&nbsp;发送一个 FTP 请求后，如果又接着通过 SSL (FTP) 将另一个 
+FTP 请求发送到相同的目录，将引发“无法找到文件”异常&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550885-->
+<P class=MsoNormal><FONT face=Arial>如果应用程序向服务器发送一个 FTP 请求后，又接着将另一个启用 SSL 的 FTP 
+请求发送到相同的服务器和路径，则第二个请求将失败。将引发无法找到文件异常。但是，如果第二个请求不发送到相同的路径，则请求将成功。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.18&nbsp;&nbsp;&nbsp;只有在相关服务点是代理服务器时，WebRequest.ServicePoint.Address 
+才要求不受限制的 Web 权限&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550886-->
+<P class=MsoNormal><FONT face=Arial>此新要求将阻止以部分信任运行的应用程序发现网络代理服务器地址。如果地址指向代理服务器，使用 
+ServicePoint.Address API 的部分受信任应用程序可能收到 SecurityException。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>使用 
+HttpWebRequest.Address</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.19&nbsp;&nbsp;&nbsp;Visual Studio 和 .NET Framework 的 32 
+位和 64 位行为之间的奇偶校验异常&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551048-->
+<P class=MsoNormal><FONT face=Arial><br>1. 用于 IA64 WOW64 的 Front Page 
+服务器扩展。&nbsp;&nbsp;&nbsp;&nbsp;<br><br>当使用 .NET Framework 1.1 在运行 .NET Framework 1.1 的远程 IA64 
+计算机上创作网站时，FrontPage 机制不受支持。一些基本功能将通过文件共享机制运行。<br><br>2. J# 不支持在 64 位平台上本机运行。J# 代码只能在 64 位平台上的 WOW64 
+中运行。&nbsp;&nbsp;&nbsp;&nbsp;<br><br>3. 
+在 64 位平台上运行的 .NET Framework 2.0 不支持 SQL Server Express。<br><br>4. 在 IA64 上的 WOW64 中，运行于 .NET 
+Framework 1.1 上的高负载 ASP.NET 应用程序的性能和可伸缩性没有保证。<br><br>5. 在 WOW64 中，数据断点在运行在 IA64 上的 Visual Studio 2005 
+中无效。&nbsp;&nbsp;&nbsp;&nbsp;<br><br>6. 
+在 Visual Studio 2005 中，“编辑并继续”调试器功能在 64 位平台上无效。<br><br>7. 在 Visual Studio 2005 中，VC ATL 
+异常：&nbsp;&nbsp;&nbsp;&nbsp;<br><br>- 
+生成系统不在 wow64 上注册面向 64 位的 dll<br><br>- 
+在 64 位计算机上调试默认 ATL Server 项目时出现错误“%1 不是有效的 Win32 应用程序”<br><br>- 没有为 64 位配置的 ATL Server 
+项目预填充要调试的可执行文件和 URL<br><br>- 在调试 64 位 
+ATL Server 项目时，Internet Explorer 不提供用户指定的 .srf 文件<br><br>- ATL Server 64 位配置的调试器类型默认为本地 Windows 调试器，而不是 Web 服务调试器<br><br>- 调试属性没有传播到项目中的新配置。例如，这意味着如果以 x86 
+下的 ATLServer 项目为起点，然后为它创建一个 64 位的配置，则如果调试对象不更改为 Internet Explorer，调试将无法进行<br><br><br>8. 64 
+位平台不支持互操作调试（托管 + 非托管混合模式调试）。<br><br>9. 
+64 位平台不支持某些 MDA，例如：Re-entrancy、LoaderLock、PInvokeStackImbalance。<br><br>10. IA64 和 x64 C++ 编译器不支持 MMX 
+内部函数。<br><br>11. IA64 和 x64 C++ 
+编译器不支持内联程序集。<br><br>12. x64 MASM 
+不支持大多数高级别语言构造。<br>MASM 不支持 IA64，但我们提供了 Intel 的汇编程序 
+(ias.exe)<br><br>13. 在 Visual Studio 
+2005 中，x64 和 IA64 VC++ 编译器不支持 VC++ 编译器开关 /ARCH:SSE。<br><br>14. 如果运行在 WOW64 下的 64 
+位子进程上，System.Diagnostics.Process.MainModule 和 System.Diagnostics.Process.Modules 
+API 将失败。<br><br>15. 无法同时注册具有相同 
+GUID/CLSID 的 32 位和 64 位 COM+ 服务组件。<br><br>16. 64 位 SDK 不包括本机 DBGCLR。DBGCLR 为仅 WOW64。<br><br>17. 64 位 SDK 不包括本机 
+DEXPLORE.EXE。DEXPLORE.EXE 为仅 WOW64。<br><br>18. 没有 x64 和 IA64 的引导程序清单包。<br><br>ClickOnce 或其他应用程序没有 64 位引导程序。在任何已安装 .NET Framework 的 64 
+位计算机上尝试安装 ClickOnce 应用程序都将失败，并显示消息“64 位操作系统不支持此版本的 .NET Framework 
+2.0。请与您的应用程序供应商联系”。<br><br>对于仅编写为 32 
+位并且已在 WOW64 中运行的应用程序，也会发生这种情况。<br><br>19. Visual Studio 2005 不会在 IA64 
+平台上安装。&nbsp;&nbsp;&nbsp;&nbsp;<br><br>Visual Studio 2005 不会在 IA64 平台上安装（没有 IA64 设计时支持）。Visual C++ 
+将有一个本机 IA64 命令行工具安装程序。<br><br>20. 只有 
+Visual Studio Team System 允许生成面向 IA64 的应用程序&nbsp;&nbsp;&nbsp;&nbsp;<br><br><br>21. 
+具有可直接复制到本机结构中的类型的 P/Invoke 签名在 64 位平台上按不同的方式处理，因为 P/Invoke 在 64 
+位平台上以不同的方式实现，因此存在不正确的 P/Invoke 签名在 32 位平台上偶尔有效，但在 64 位平台上无效的情况。<br><br>22. 64 位平台不支持 Visual Studio 2005 
+Tools for Office。<br>&nbsp;&nbsp;&nbsp;&nbsp;<br></FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.20&nbsp;&nbsp;&nbsp;在 C# 
+网站中执行重构操作时，当实际上不存在任何错误时可能报告生成错误&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551093-->
+<P class=MsoNormal><FONT face=Arial>在某些情况下，在不包含生成错误的 C# 
+网站中执行重构命令时，用户可能会收到一条警告，指示当前未生成项目或其中一个依赖项，并且可能不能更新引用。<br>可以单击“继续”或“预览”按钮，放心忽略此对话框。重构将成功，并且所有引用将被更新。<br><br>以下是将会显示此警告的常见项目配置的示例：<br>- 从 Visual Studio 早期版本迁移的 Web 项目，此项目的 Web 目录中包含一个 
+global.asax 文件，App_Code 目录中包含一个 global.asax.cs 文件。<br>- Web 
+项目包含的网页引用 Web 用户控件，而 Web 用户控件又引用 App_Code 目录中声明的类型。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有已知的解决方法。不过，可以放心忽略此警告。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.21&nbsp;&nbsp;&nbsp;System.Net 现在注册了一个默认的 FtpWebRequest 
+实现，它可能导致使用自己的 FTP 组件的应用程序中断&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550872-->
+<P class=MsoNormal><FONT face=Arial>在 
+.NET Framework 2.0 版之前，应用程序可以注册组件以使用 System.Net 的可扩展、可插入协议框架来处理 FTP 请求。通过将组件与特定的 
+URI 前缀关联，可注册用于处理不同 Web 请求的组件。与此前缀匹配的任何 Web 请求都由该组件处理。在 .NET Framework 2.0 
+中，System.Net 现在支持一个 FtpWebRequest 组件，默认情况下该组件注册使用“ftp:”前缀。由于此前缀 (FTP) 
+已被使用，注册使用此前缀的所有应用程序（此版本之前）现在可能中断。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>更新应用程序配置文件，在注册您自己的 
+FTP 组件前移除默认的 FTP 协议组件：<br>&lt;system.net&gt;<br>&lt;webRequestModules&gt;<br>&lt;remove prefix = “ftp:”/&gt;<br>&lt;/webRequestModules&gt;<br>&lt;/system.net&gt;</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.22&nbsp;&nbsp;&nbsp;在 .NET Framework 2.0 中，当 
+machine.config 文件中存在空的 System.Net 标记时，GlobalProxySelection.Select 的行为与版本 1.1 
+中的不同&nbsp;&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550873-->
+<P class=MsoNormal><FONT face=Arial>在 
+.NET Framework 1.1 版中，如果在 machine.config 文件中指定空的 System.Net 元素，则 
+GlobalProxySelection.Select 将返回空的 Web 代理实例，指示没有可以使用的代理。在 2.0 
+版中，新的默认设置是，在此情况下将使用系统代理设置（与 Internet Explorer 中指定的相同）。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>如下所示修改 
+machine.config 文件以禁用默认代理。<br>&lt;system.net&gt;<br>&lt;defaultProxy enabled=”false” /&gt;<br>&lt;/system.net&gt;</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.23&nbsp;&nbsp;&nbsp;System.Uri 不包括主机的 IPv6 范围 
+ID&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550875-->
+<P class=MsoNormal><FONT face=Arial>在以前的 .NET Framework 版本中，如果使用 IPv6 地址创建 Uri 实例，主机地址中始终包括范围 
+ID。范围 ID 是指本地网络适配器的索引，对远程主机没有意义。范围 ID 还在语法中使用“%”字符，该字符与“%hh”的 Uri 
+转义格式冲突。在主机中包括范围 ID 会破坏 System.Uri 与其他 URI 分析器和解析器交互的能力。在 2.0 版中，System.Uri 不再在 
+Uri 实例中包括 IPv6 主机的范围 ID。System.Uri 还添加了一个新属性 DnsSafeHost，它返回 IPv6 主机地址的范围 
+ID。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>使用 
+Uri.DnsSafeHost，它将返回 IPv6 主机地址的范围 ID。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.24&nbsp;&nbsp;&nbsp;通过 System.Transactions 
+配置将群集指定为远程代理可能会在群集故障转移时引发 TransactionException&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551378-->
+<P class=MsoNormal><FONT face=Arial>如果通过在配置中将 DistributedTransactionManagerName 
+设置为群集来将群集指定为远程代理，则在群集故障转移时可能引发 TransactionException。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>若要将群集指定为远程代理，请使用组件服务 MMC 来配置 MSDTC，以将群集用作远程 
+MSDTC。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.25&nbsp;&nbsp;&nbsp;在 IDE 中执行各种操作时，可能会出现消息：“Microsoft C# 
+2005 IntelliSense 遇到了问题”</FONT></H3>
+<DIV class=indent id=DIV1><!--551394-->
+<P class=MsoNormal><FONT face=Arial><br>某些情况下，在编辑器中执行各种操作时，可能会出现消息：“Microsoft C# 2005 IntelliSense 
+遇到了问题。我们对由此造成的不便深表歉意”。大多数情况下，原因是检索源数据失败。<br><br>可能触发此消息的一些操作示例包括：<br>- 重命名外部别名。<br>- 在没有“runat="server"”的 Web 项目中执行“查找所有引用”操作。<br><br>这是一个非致命条件。单击“发送报告”按钮将允许用户安全地按预期继续工作，不会丢失任何数据。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>有两个可能的选项可从 C# 
+语言服务中关闭所有非致命错误信息的显示。为此，在以下注册表路径下修改注册表：<br><br>[HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\CSharp\Options\Editor] 
+<br><br>(1) 
+"Watson_ReportExceptions"=dword:00000001<br>添加以上具有指定值的注册表项可彻底禁用错误报告。<br><br>注意：使用此注册表项从 C# 语言服务中关闭所有非致命错误信息有可能防止收集与此错误无关的方案的反馈。<br><br>(2) 
+"Watson_DeferSendingUntilLater"=dword:00000000<br>添加以上具有指定值的注册表项可关闭消息的显示，但仍会向 Microsoft 发送反馈。当收集要发送的信息时，IDE 
+在短时间内将没有响应。<br></FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.26&nbsp;&nbsp;&nbsp;在事务提升期间尝试获取事务的 DistributedIdentifier 
+时引发 NullReferenceException&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551395-->
+<P class=MsoNormal><FONT face=Arial>在事务正在提升时尝试获取事务的 DistributedIdentifier 可能导致引发 
+NullReferenceException。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>有两种方法可以解决此问题。</FONT></P>
+<P><FONT face=Arial>确保对事务的访问是同步的。</FONT></P>
+<P><FONT face=Arial>-或-</FONT></P>
+<P><FONT face=Arial>确保在检查 
+DistributedIdentifier 属性前已提升事务。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.27&nbsp;&nbsp;&nbsp;使用“添加 Web 引用”生成的 ASP.NET Web 
+服务代理全都使用配置文件中的同一 URL，即使该服务有多个终结点使用不同的 URL&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551410-->
+<P class=MsoNormal><FONT face=Arial>在 
+Visual Studio 2005 中添加 Web 引用时，自动从配置文件的 AppSettings 节选出服务的 URL。如果 Web 
+服务有多个终结点使用不同的 URL，将生成多个代理类型，但它们全都使用从配置文件选出的同一 URL 值。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>有两种可能的方法：<br>1. 编辑 WSDL 文档，将每个服务拆分为一个单独的文档。</FONT></P>
+<P><FONT face=Arial>-或-<br>2. 编辑配置文件，为每个 Web 服务添加一项，然后使用 
+System.Configuration.ConfigurationSettings.AppSettings 将值读出到代码中。使用这些值设置代理实例的 URL 
+属性。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.28&nbsp;&nbsp;&nbsp;生成的 ASP.NET Web 服务代理中的默认 
+Nullable&lt;T&gt; 支持会在重新生成代理时中断现有代码&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551411-->
+<P class=MsoNormal><FONT face=Arial>当导入的 ASP.NET Web 服务架构包含 nullable="true" 属性时，生成的代理将包含 
+Nullable&lt;T&gt; 类型，而以前此属性将被忽略。此更改可能导致应用程序中发生设计时或运行时中断。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>可能的解决方法是避免重新生成代理类型，使用新的 Nullable&lt;T&gt; 
+模式重新编译代码，或更改架构以不使用 nullable="true" 属性。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.29&nbsp;&nbsp;&nbsp;将 Web 服务代理实例的 Proxy 
+属性设置为空并未导致请求直接转到服务器&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551412-->
+<P class=MsoNormal><FONT face=Arial>将 
+Web 服务代理实例的 Proxy 属性设置为空应该可以强制请求跳过所有 Web 
+代理服务器设置而直接转到服务器。但是，目前不能使用此功能。空值将被忽略，并改用任何已配置的 Web 代理服务器设置。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>可以通过从代理类型派生并重写 
+GetWebRequest 方法，直接设置基础 WebRequest 的 Proxy 属性：<br><br>protected override WebRequest GetWebRequest(Uri uri)<br>{<br>WebRequest req = 
+base.GetWebRequest(uri);<br>req.Proxy = this.proxy;<br>return req;<br>}</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.30&nbsp;&nbsp;&nbsp;在不同的 .NET Framework 版本之间使用 .NET 
+远程处理和运行时序列化&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551403-->
+<P class=MsoNormal><FONT face=Arial>如果在运行于不同的 .NET Framework 版本上的应用程序之间交换数据（使用 .NET 
+远程处理或运行时序列化），在序列化或反序列化某些 Framework 类型时，可能会遇到异常。这些异常表明这些类型在不同的 Framework 
+版本之间不兼容，即无法将它们从 Framework 的一个版本发送到另一个版本。<br><br>.NET Framework 2.0 中包括一项称为“版本容错序列化”的技术，它可以消除这个问题。但是，以前的 
+Framework 版本仍面临这个问题。因此，将提供一个修补程序，它为 .NET Framework 1.1 增加了某些版本容错序列化功能。此修补程序需要 
+Service Pack 1。安装此修补程序后，在修补过的 Framework 上运行的应用程序将可以与 .NET Framework 2.0 
+上运行的应用程序进行通信，而不会遇到此版本问题。尚未计划为 .NET Framework 1.0 提供此类修补程序。<br><br>值得注意的是，只有在使用二进制序列化（直接或通过 .NET 
+远程处理）时，版本容错序列化才能解决版本问题。在 Framework 的不同版本之间使用 SOAP 序列化（直接通过 SoapFormatter 类或通过 
+.NET 远程处理）时，可能仍会遇到上述版本问题。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>若要获得此修补程序，请参见下面的知识库文章：<a 
+href="http://support.microsoft.com/?kbid=907262">http://support.microsoft.com/?kbid=907262。</A></FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.31&nbsp;&nbsp;&nbsp;为 System.Transactions 
+跟踪指定非默认跟踪侦听器在部分信任环境中无效&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551405-->
+<P class=MsoNormal><FONT face=Arial>在部分信任环境中不支持在配置中为 System.Transactions 跟踪指定特定的跟踪侦听器，这将导致引发异常。 
+</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在部分信任环境中支持默认跟踪侦听器，因此，如果配置中未指定任何侦听器，跟踪由默认侦听器捕获并输出到 
+debug.outputstring。在部分信任环境中，可以使用 DBMon.exe 查看这些跟踪。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.32&nbsp;&nbsp;&nbsp;迁移到 .NET Framework 2.0 后，Web 服务或 XML 
+序列化方案中的日期和时间计算可能不正确&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551400-->
+<P class=MsoNormal><FONT face=Arial>NET Framework 2.0 更改了在 XML 中读写日期和时间的方式。此更改主要影响以下方案：<br>- 使用的时间未指定时区或属于 UTC 时区<br>- 
+这种互操作方案在没有指定时区或指定了 UTC 时区的情况下，由第三方软件将时间值写出到 XML 中<br><br>这些更改可能导致某些日期和时间的计算和比较出错。在这些情况下，可能需要恢复为以前的日期/时间行为。 <br></FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>若要恢复为以前的日期/时间行为，请应用以下配置更改：<br><br>&lt;system.xml.serialization&gt;<br>&lt;dateTimeSerialization mode="Local" /&gt;<br>&lt;/system.xml.serialization&gt;</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.33&nbsp;&nbsp;&nbsp;使用 SQL Server Express 和 IIS 的 ASP.NET 
+数据库自动创建过程的 Windows 用户配置文件&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550133-->
+<P class=MsoNormal><FONT face=Arial>仅当 
+IIS 作为本地 ASP.NET 计算机帐户或作为 NT AUTHORITY\NETWORK SERVICE 运行时，使用 SQL Server Express 
+(SSE) 和 IIS 自动为 SQL Server 提供程序创建 ASP.NET MDF 的过程才有效。当开发人员使用 
+Cassini（即基于文件的网站）以交互方式开发时，自动创建过程同样有效。但是，当使用其他本地计算机帐户或域用户帐户在 IIS 
+上进行开发时，自动数据库创建过程将失败，因为这些帐户在 Web 服务器上没有可用的 Windows 用户配置文件。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有解决此问题的方法。对于基于 
+IIS 的网站，使用 SSE 自动创建数据库仅对 ASPNET 和 NETWORK SERVICE 帐户有效。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.34&nbsp;&nbsp;&nbsp;使用 SQL Server 7.0 或 2000 的 ASP.NET 
+提供程序的 Unicode 代理项行为&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550135-->
+<P class=MsoNormal><FONT face=Arial>使用 
+SQLServer 的 ASP.NET 提供程序受 SQLServer 7.0 和 SQL Server 2000 提供的 Unicode 
+代理项支持级别的限制。SQL Server 7.0 和 2000 以无损方式存储和检索代理项对。但是，不会对代理项进行语义比较。使用这些 SQL Server 
+版本时，在比较操作和唯一性检查期间将忽略代理项字符。例如，这意味着 SqlMembershipProvider 
+会将两个仅包含代理项字符的用户名视为相同。如果试图创建的另一个用户的用户名只是代理项字符与现有用户的用户名不同，此行为将导致唯一性约束冲突。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有解决这些 SQL Server 
+版本问题的已知方法。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.35&nbsp;&nbsp;&nbsp;FileWebRequest.PreAuthenticate 仅返回 
+False&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550830-->
+<P class=MsoNormal><FONT face=Arial>从 
+WebRequest 继承的类型继承 PreAuthenticate 
+属性。此属性用于允许将身份验证信息同请求一起发送，而无需等待服务器质询。FileWebRequest 不支持预身份验证，因此它的 PreAuthenticate 
+属性应始终返回 False。在以前的 .NET Framework 版本中，如果 PreAuthenticate 属性被某个应用程序设置为 
+True，则稍后查询它的值时它将返回 True。现在，这已经不成问题。FileWebRequest 的 PreAuthenticate 属性将始终返回 
+false。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>用户不要使用 
+FileWebRequest 的 PreAuthenticate 属性。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>2.36&nbsp;&nbsp;&nbsp;在 .NET 远程处理和 SOAP 
+序列化中使用泛型类型&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551414-->
+<P class=MsoNormal><FONT face=Arial>.NET 远程处理技术同时支持二进制序列化和 SOAP 序列化，即远程处理消息可以 Microsoft 
+特定的二进制格式或以 SOAP XML 形式表示。但是，泛型类型（这是 .NET Framework 2.0 中的新功能）只能进行二进制序列化。不支持在 
+SOAP 序列化中使用泛型，不论是通过 .NET 远程处理还是直接使用 SoapFormatter 类。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有解决此问题的已知方法。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H1><FONT face=Arial size=5><A 
+name=systemrequirements></A>3. 智能设备可编程技术 </FONT></H1>
+<H3><FONT face=Arial>3.1&nbsp;&nbsp;&nbsp;使用 F11 进入 DLL 函数不适用于 X86 
+智能设备项目&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--543502-->
+<P class=MsoNormal><FONT face=Arial>1. 
+使用函数 DllFunc 创建一个 Win32 智能设备项目 Dll，此函数的所有代码段均由面向 x86 平台的 dll 导出。<br>2. 创建一个 Win32 智能设备项目 exe，该项目对此 dll 执行 LoadLibrary 
+并调用添加到同一解决方案中的 DllFunc。请确保将该项目设置为启动项目。<br>3. 
+编译、部署和调试该解决方案。<br>4. 尝试单步执行 (F11) DllFunc。对于这个从 
+GetProcAddress 获得的特殊的 DllFunc()，F11 将变成 F10（仅限于 x86 平台）。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在调试器窗口中查看 DllFunc 
+以获取十六进制地址，然后在反汇编中设置断点。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.2&nbsp;&nbsp;&nbsp;附加到本机进程的托管调试器未返回错误&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--543504-->
+<P class=MsoNormal><FONT face=Arial>1. 
+创建本机控制台智能设备项目。<br>2. 按 Ctrl F5。<br>3. 
+选择“工具”\“附加到进程”。<br>4. 选择“智能设备传输”，然后选择目标设备。<br>5. 在“调试引擎选择”对话框中选择“托管调试器”。<br>6. 
+选择本机进程并进行附加。<br>7. 您将注意到系统不显示任何消息。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有已知的解决方法。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.3&nbsp;&nbsp;&nbsp;在中断模式下对已经存在的断点应用筛选器导致断点被忽略&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--546838-->
+<P class=MsoNormal><FONT face=Arial><br>1) 使用以下代码创建本机应用程序。<br>void foo(void)<br>{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>int _tmain(int argc, _TCHAR* 
+argv[])<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;int i = 0;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;foo();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;return 
+0;<br>}<br>2) 在“return 0;”处设置位置断点。<br>3) 设计时在 foo() 处设置函数断点。<br>4) 按 F10 
+使应用程序进入中断模式。<br>5) 打开断点窗口，编辑函数断点的筛选器属性（通过包括筛选器 ProcessName 
+或 ThreadName）。<br>6) 继续 (F5)。<br>7) 
+此时不会遇到函数断点，但我们要在“return 0”语句处中断。<br><br>以上方案说明，如果在中断模式下通过编辑筛选器属性来修改设计时断点，将导致该断点被忽略。所有类型的断点都是这种情况。<br></FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial><br>在设计时设置断点并应用筛选器。由于在设计时 ThreadId 和 ProcessId 未知，因此，这一方法仅适用于 
+ProcessName 和 ThreadName 筛选器。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.4&nbsp;&nbsp;&nbsp;在本机调试中，如果循环构造体包含一个源行，则 F10/F11 转换为单步执行 
+while 循环和相关构造体&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--546839-->
+<P class=MsoNormal><FONT face=Arial><br>在以下示例所示的方案中，F10/F11 无法正常工作。<br><br>示例代码段<br><br>1 int i = 0; <br>2 while (i &lt; 1000) 
+{ i++; } <br>3 return 0;<br><br>步骤：<br>-在第 1 行上按 F9，然后在该行遇到断点后按 F10<br>-此时控制位于第 2 行<br>-再次按 F10<br><br>执行上述步骤后的问题是，调试器将在第 3 行而不是第 2 
+行停止/中断。即，第 2 行的断点由于重复按 F10 而被忽略。<br>请注意，对于所有包含一个源行的循环构造体，都会发生这种情况。<br></FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> </P><FONT face=Arial>
+<P><br><br>使用 F9 
+在 while 循环的源行（第 2 行）上设置断点。然后，调试器便会在单步执行 while 循环（直至 i 增加到 1000 为止）时，每次按 F10 时在第 
+2 行上中断。<br><br>-或-</P>
+<P>如果可以编辑代码，请按如下所示重新组织以上代码，这样，所有操作都将按预期方式进行。<br>&nbsp;&nbsp;&nbsp;&nbsp;1 int i = 0; <br>&nbsp;&nbsp;&nbsp;&nbsp;2 while (i &lt; 1000) <br>&nbsp;&nbsp;&nbsp;&nbsp;3 { i++; } <br>&nbsp;&nbsp;&nbsp;&nbsp;4 return 0;<br></P></FONT>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.5&nbsp;&nbsp;&nbsp;智能设备应用程序的本机断言对话框可能使按钮无法在屏幕上显示&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--548280-->
+<P class=MsoNormal><FONT face=Arial>当 
+Visual Studio 2005 C++ 智能设备应用程序在 Pocket PC 或 Smartphone 
+上引发断言对话框时，该对话框中的按钮可能无法显示在屏幕上。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>使用 Pocket PC 或 
+Smartphone 的滚动按钮/键，手动滚动到该按钮。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.6&nbsp;&nbsp;&nbsp;智能设备项目的“如果较新则复制”属性语义&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--549304-->
+<P class=MsoNormal><FONT face=Arial>在智能设备项目中，dll 文件或 exe 文件的新旧度视 Win32 版本比较而定。<br>- 如果设备端版本小于桌面版本，则复制文件。<br>- 
+如果设备端版本大于桌面版本，则不复制文件。<br>- 如果校验和不同，则复制文件。</FONT></P>
+<P class=MsoNormal><FONT face=Arial><br>dll 和 exe 以外的文件的新旧完全基于校验和而定。<br>新旧并不取决于时间戳或大小。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有已知的解决方法。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.7&nbsp;&nbsp;&nbsp;如果连接到 TCP/IP 设备时发生错误，Visual Studio 
+2005 将连接到 ActiveSync 设备&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--549309-->
+<P class=MsoNormal><FONT face=Arial>当某设备（例如&nbsp;PPC）已通过 ActiveSync 进行连接，并且您希望通过 TCP/IP 连接到 
+WinCE 设备（例如&nbsp;CEPC）时，如果由于某些原因导致与 WinCE 设备的 TCP/IP 连接失败，Visual Studio 
+2005&nbsp;将连接到通过 ActiveSync 连接的设备。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在尝试通过 TCP/IP 
+连接到其他设备前，断开通过 ActiveSync 连接的设备的连接。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.8&nbsp;&nbsp;&nbsp;注册时部署支持自动化并动态链接到 MFC 库的 MFC dll 
+将失败，并出现错误 0x8007007e&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--549316-->
+<P class=MsoNormal><FONT face=Arial>部署支持自动化并动态链接到 MFC 库的 MFC dll 项目时，Visual Studio 2005 
+将在项目文件夹下部署该 dll 以及设备所需的依赖 dll。用于注册该 dll 的 LoadLibrary() 首先会在 conman 
+组件所在的目录中查找依赖库，然后在 \Windows 目录中查找依赖库。因此，注册该 dll 将会失败。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>将项目文件夹中所需的依赖 dll 
+手动移动或复制到设备的 \Windows 目录下。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.9&nbsp;&nbsp;&nbsp;使用配置了较短租约时间的 DHCP 
+服务器的无线网络时，与设备仿真程序的连接不稳定&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--549419-->
+<P class=MsoNormal><FONT face=Arial>在无线网络上，通过虚拟交换机驱动程序与设备仿真程序的 TCP/IP 连接可能不稳定。这是由于 DHCP 
+服务器实现、虚拟交换机驱动程序和 802.11 规范的交互所致。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>要实现与设备仿真程序的稳定连接，可使用下列传输方式之一。<br>1. DMA 
+传输。</FONT></P>
+<P><FONT face=Arial>-或- <br>2. 通过环回适配器的 TCP/IP 传输。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.10&nbsp;&nbsp;&nbsp;多语言用户界面：在不匹配的系统区域设置下运行时，本地化的远程工具无法连接到设备仿真程序&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--549919-->
+<P class=MsoNormal><FONT face=Arial>如果在英文版的多语言用户界面操作系统上安装 Visual Studio 2005 
+的本地化版本（例如日文），远程工具将无法连接到设备仿真程序。这是因为远程工具始终使用该系统区域设置。基于相同的原因，当在英文版的多语言用户界面操作系统上同时安装 
+Visual Studio 2005 的两种不同区域设置（例如日文和英文）时，远程工具将始终与英文版的设备仿真程序相连。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>更改系统区域设置，使其与 
+Visual Studio 2005 区域设置匹配。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.11&nbsp;&nbsp;&nbsp;使用 SmartDevice VC++ 
+应用程序的默认项目设置时，由于设置了&nbsp;/Os 编译器选项，调试体验有时无效&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550715-->
+<P class=MsoNormal><FONT face=Arial><br>在 SmartDevice VC++ Project 
+的默认项目设置中，设置了编译器优化选项 /Os。/Os（代码大小优先）通过指示编译器大小优先于速度，将可执行文件和 DLL 
+的大小降至最低。由于为此设置生成的代码，有时可能会产生无效的调试体验。例如，在单步执行时，调试器可能会同时进入 if 语句和 else 语句。<br></FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial><br>将 /Os 选项的编译器优化设置“优选大小或速度”属性修改为“均不”。<br>步骤<br>1) 打开项目的“属性页”对话框。<br>2) 单击 C/C++ 文件夹。<br>3) 单击“优化”属性页。<br>4) 将“优选大小或速度”属性修改为“均不”。<br><br>这样将获取较好的调试体验。但是，可执行文件的大小可能会略微有所增加。 <br></FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.12&nbsp;&nbsp;&nbsp;在编译将窗体标记为本地化的 Compact Framework 1.0 
+应用程序时出现生成错误&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550738-->
+<P class=MsoNormal><FONT face=Arial>如果开发的应用程序需要本地化并面向 Compact Framework 1.0 版，将会收到关于缺少 SDK 
+的错误。<br><br>消息：<br>“本地化面向 .NET Compact Framework 1.0 的项目需要 1.1 版的 .NET 
+Framework SDK，但在此计算机上未检测到它。”<br></FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>Visual Studio 2005 
+产品中不含 1.1 版的 .NET Framework SDK。需要下载并安装该 SDK。<br><br>请通过以下链接从该页下载 SDK。<br><A 
+href="http://msdn.microsoft.com/netframework/downloads/updates/default.aspx">http://msdn.microsoft.com/netframework/downloads/updates/default.aspx</A> 
+</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.13&nbsp;&nbsp;&nbsp;拖放 SqlCEResultSet 
+数据源没有在设计器代码文件中生成控件代码&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551097-->
+<P class=MsoNormal><FONT face=Arial>在设备 Windows 窗体设计器中，从数据源窗口拖放 SqlCEResultSe 
+数据源不会在设计器代码文件中生成控件代码（例如 Form1.designer.cs）。<br>发生这种情况可能是由于以下原因：<br>1. 控件生成选项设置为 
+DataGrid：在设计器代码文件中，将不会生成用于创建和初始化 DataGrid 的代码。<br>2. 
+控件生成选项设置为“详细信息”：在设计器代码文件中，将不会生成用于在“详细信息”视图中创建和初始化控件的代码。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>以下任何一种方法都可以解决该问题：<br>1. 
+在拖放前：通过设计图面的“属性”窗口或上下文菜单编辑窗体的任何属性。<br>例如，右击设计图面并关闭“显示外观”。然后重新打开“显示外观”。</FONT></P>
+<P><FONT face=Arial>- 或 -<br>2. 在拖放前：从工具箱中将任何控件添加到窗体。</FONT></P>
+<P><FONT face=Arial>- 或者 -<br>3. 在拖放后：通过设计图面的“属性”窗口或上下文菜单编辑窗体的任何属性。</FONT></P>
+<P><FONT face=Arial>- 或者 -<br>4. 在拖放后：从工具箱中将任何控件添加到窗体。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.14&nbsp;&nbsp;&nbsp;注册时部署动态链接到 MFC 库的 MFC ActiveX 
+控件将失败，并出现错误 0x8007007e&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551111-->
+<P class=MsoNormal><FONT face=Arial>用于注册 ActiveX 控件的 LoadLibrary() API 首先会在 conman 
+组件所在的目录中查找依赖库，然后在 \Windows 目录中查找依赖库。因此，ActiveX 控件注册将会失败。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>将所需的 MFC dll 
+复制到设备的 \Windows 目录下。例如，如果 Visual Studio 2005&nbsp;安装在 C: 驱动器上，则可以在 C:\Program 
+Files\Microsoft Visual Studio 8\VC\ce\Dll\armv4 下找到 armv4 处理器的 MFC 
+dll。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.15&nbsp;&nbsp;&nbsp;设备项目中的一个或多个静态文本控件在运行时没有显示&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551170-->
+<P class=MsoNormal><FONT face=Arial>在智能设备上执行基于对话框的 MFC 
+应用程序时，其中一个静态文本控件在运行时没有在设备中显示。原因可能为以下之一：<br><br>1. 使用了向导生成的代码来为智能设备创建基于对话框的 MFC 
+应用程序，并且该对话框包含多个由开发人员添加的静态文本控件。&nbsp;<br>- 或 - <br>2. 在面向智能设备的 VC++ 应用程序的自定义开发代码中，包含对“分辨率识别”的支持。<br></FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial><br>默认情况下，使用面向智能设备、基于对话框的 MFC 
+应用程序的向导生成的代码时，向导会生成“分辨率识别”应用程序代码。分辨率识别应用程序使用 DRA（设备分辨率识别）API。所生成的代码调用 API 
+DRA::RelayoutDialog() 以支持横向和纵向模式。<br><br>API DRA::RelayoutDilog() 要求每个静态文本控件都必须具有唯一 
+ID。但在默认情况下，当开发人员通过在窗体上拖放来添加静态文本控件时，所有静态文本控件的 ID 将生成为 IDC_STATIC。<br><br>若要在运行时显示所有控件，请将这些静态文本控件的 ID 修改为 
+IDC_STATIC_1、IDC_STATIC_2、IDC_STATIC_3，依此类推，以使它们具有唯一 
+ID。这将确保“分辨率识别”应用程序的所有静态文本控件在运行时显示。<br><br>为更改静态文本控件的 ID，请执行以下操作：<br><br>1. 在窗体上选择控件。<br>2. 右击并选择属性。<br>3. 选择“ID”属性。<br>4. 将所有静态文本控件的 
+IDC_STATIC 更改为唯一标识符，例如 IDC_STATIC_2、IDC_STATIC_3，依此类推。<br><br>有关 DRA::RelayoutDialog() 
+的完整说明，请参考<br><a 
+href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnppcgen/html/screen_orientation_awareness.asp"><br>http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnppcgen/html/screen_orientation_awareness.asp</A></FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.16&nbsp;&nbsp;&nbsp;设备上运行的智能设备 Winsock 服务器收到 OnConnect 
+回调通知&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551172-->
+<P class=MsoNormal><FONT face=Arial>智能设备套接字服务器实现使用面向 WinCE 的 CSocket 或 CasyncSocket 实现 
+OnConnect() 和 OnAccept() 方法。当客户端与设备中寄宿的此服务器建立连接时，服务器将同时收到 OnAccept() 和 
+OnConnect() 通知。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>为避免在服务器中收到 
+OnConnect() 通知，请执行以下操作<br><br>在服务器套接字上调用 Accept() 之前<br><br>1. 使用订阅服务器套接字的事件调用 AsyncSelect 
+方法。即，如果“socket”是服务器套接字的对象，则调用<br>&nbsp;&nbsp;&nbsp;&nbsp;socket.AsyncSelect(FD_READ | 
+FD_WRITE | FD_OOB | FD_ACCEPT | FD_CLOSE);<br>请注意，除 
+FD_CONNECT 之外，所有事件均用于在服务器中显式屏蔽 Connect 事件。<br><br>2. 
+如果需要服务器套接字屏蔽其他事件，则请使用服务器套接字适用的特定事件列表，例如，如果服务器套接字不希望接收读取操作事件，则还应在调用 AsynchSelect 
+方法时从事件列表中移除 FD_READ，如&nbsp;</FONT> </P><FONT face=Arial>
+<P><br>&nbsp;&nbsp;&nbsp;&nbsp;socket.AsyncSelect(FD_WRITE | 
+FD_OOB | FD_ACCEPT | FD_CLOSE);<br></P>
+<P>以屏蔽 FD_CONNECT 和 FD_READ 事件。<br><br>请参考<br><a 
+href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vclib/html/_mfc_casyncsocket.3a3a.asyncselect.asp">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vclib/html/_mfc_casyncsocket.3a3a.asyncselect.asp</A> 
+获取 ASyncSelect 方法行为的完整说明。<br><br></P></FONT>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.17&nbsp;&nbsp;&nbsp;无法通过双击 .vcw 文件在 Visual Studio 2005 
+中打开 eVC4 项目&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551173-->
+<P class=MsoNormal><FONT face=Arial>开发人员使用 eVC4 创建了一个设备项目。安装 Visual Studio 2005 后，他试图通过双击 eVC4 
+工作区文件“project.vcw”在 Visual Studio 2005 中打开该 eVC4 项目。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>该标准 eVC4 项目未注册为 
+Visual Studio 2005 项目。为将这些 eVC4 项目转换为 Visual Studio 2005 兼容的解决方案文件，请执行以下操作：<br><br>1. 打开 Visual Studio 2005。<br>2. 从“文件”|“打开”中单击“项目/解决方案”。<br>3. 
+在“打开项目”对话框中，定位到 vcw 文件，选择该文件，然后单击“打开”。<br>4. 
+选择“是”进行转换并打开此项目问题。<br></FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.18&nbsp;&nbsp;&nbsp;如果设备上的封送处理结构包含引用类型，该结构将返回“NotSupportedException”&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550986-->
+<P class=MsoNormal><FONT face=Arial><br>在设备项目中，以下代码内的 SizeOf 语句将引发 
+NotSupportedException：<br><br>Imports 
+System.Runtime.InteropServices.MarShal<br>Module Module1<br>Structure S1<br>Public RefType As 
+String<br>End Structure<br>Sub 
+Main()<br>Dim sz As Integer<br>Dim 
+struct As New S1<br>struct.RefType = "strings are reference 
+types"<br>sz = SizeOf(struct)<br>End 
+Sub<br>End Module<br></FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>将某属性应用于该引用类型，以便正确封送处理。示例如下：<br>&lt;MarshalAs(UnmanagedType.ByValTStr, SizeConst:=3)&gt; 
+Public x As String<br><br>有关更多信息，请阅读有关“MarshalAsAttribute”的文档。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.19&nbsp;&nbsp;&nbsp;在 x86 或 SH4 平台上，“另存为”不显示路径选择对话框<br>&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551191-->
+<P class=MsoNormal><FONT face=Arial>在本机 MFC 
+项目的应用程序菜单（“文件”&gt;“另存为”）中单击向导生成的“另存为”选项时，不显示“另存为”对话框。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在通用对话框库中使用“GetSaveFileName”函数。<br>例如，若要为 CWinApp 派生类创建文件名，则必须：<br></FONT></P>
+<P><FONT face=Arial>创建消息映射项，并为 
+ID_FILE_SAVE_AS 命令注册处理程序。<br>可以采用以下方式执行该操作：<br>- 使用 IDE：<br>&nbsp;&nbsp;&nbsp;&nbsp;1. 右击“另存为”菜单项。选择“添加事件处理程序”选项。<br>&nbsp;&nbsp;&nbsp;&nbsp;2. 填写处理程序的名称和说明。选择处理程序所关联的类。<br>&nbsp;&nbsp;&nbsp;&nbsp;3. 
+现在选择“添加和编辑”选项以创建相应的项。下面讨论了需要在处理程序中编写的代码。<br>&nbsp;&nbsp;&nbsp;&nbsp;<br><br>- 编辑源文件。<br>&nbsp;&nbsp;&nbsp;&nbsp;1. 
+在 BEGIN_MESSAGE_MAP 和 END_MESSAGE_MAP 宏之间添加一个 ON_COMMAND (ID_FILE_SAVE_AS, 
+your_handler) 类型的项。<br>&nbsp;&nbsp;&nbsp;&nbsp;2. 
+在相应类的头文件中，将处理程序作为“afx_msg void your_handler();”进行添加。<br>&nbsp;&nbsp;&nbsp;&nbsp;3. 使用以下方法，在源文件中将此函数作为该类的成员函数来实现。<br><br>- 处理程序的代码应执行以下操作，以便：<br>&nbsp;&nbsp;&nbsp;&nbsp;1. 声明 OPENFILENAME 结构并初始化相应字段（请参见有关 
+OPENFILENAME 的文档）。<br>&nbsp;&nbsp;&nbsp;&nbsp;2. 
+使用对此结构的引用调用 GetSaveFileName 函数。<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+这样将会显示文件名选择对话框。<br>&nbsp;&nbsp;&nbsp;&nbsp;3. 
+该结构的“lpstrFile”字段包含使用路径选择对话框选择的文件名。<br><br>- 处理程序可以将该选定名称用于其他用途。<br></P></FONT>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.20&nbsp;&nbsp;&nbsp;在本机调试中，F11 对于 x86 
+上的类构造函数无效&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551159-->
+<P class=MsoNormal><FONT face=Arial><br>面向 CEPC x86 
+设备时，在本机调试中单步执行构造函数调用无效。<br><br>示例：<br>class Foo<br>{<br>private:<br>int i;<br>public:<br>Foo() <br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;i = 0; 
+<br>}&nbsp;&nbsp;&nbsp;&nbsp;<br>};<br><br>int _tmain(int argc, _TCHAR* 
+argv[]) <br>{ <br>&nbsp;&nbsp;&nbsp;&nbsp;Foo *f = new Foo(); // F11 on this 
+statment should step into the constructor but instead a "No source 
+available.Show Disassembly?" window pops up.<br>&nbsp;&nbsp;&nbsp;&nbsp;return 0; <br>}<br><br>请注意，此问题仅适用于 x86 结构。<br></FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial><br>直接在构造函数中设置断点，然后按 F5。构造函数中的代码需要在 x86 设备上调试。<br></FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.21&nbsp;&nbsp;&nbsp;将 CAB 文件部署到缺少 wceload.exe 
+的设备或仿真程序时出现错误信息&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--549422-->
+<P class=MsoNormal><FONT face=Arial>Wceload.exe 用于在 Pocket PC 和 Smartphone 上执行 .cab 文件的安装任务。<br>将 .cab 文件部署到缺少 wceload.exe 
+的设备或仿真程序时将会失败，并显示消息“系统无法找到指定文件”。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>将匹配的 wceload.exe 
+手动复制到设备的 \Windows 目录下。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.22&nbsp;&nbsp;&nbsp;通过虚拟交换机驱动程序使用 TCP 
+传输在设备仿真程序上部署或调试应用程序时，出现间歇性的连接丢失&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--549424-->
+<P class=MsoNormal><FONT face=Arial>这可能是由于虚拟交换机驱动程序出现了问题。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>要实现与设备仿真程序的稳定连接，请使用 DMA 传输。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>3.23&nbsp;&nbsp;&nbsp;智能设备 CAB 项目的生成错误&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1>
+<P class=MsoNormal><FONT face=Arial>如果您在安装 Windows 时使用了中文作为组织机构的名称，则您有可能会在使用“安装和部署”\“智能设备 CAB 项目”的过程中遇到错误，这是由于当前版本的“智能设备 CAB 项目”不完全支持Unicode。
+</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>安装 Windows 时使用英文作为组织机构的名称。如果您已经使用了中文，则请用Regedit工具把注册表中对应的项修改即可。<br>
+&nbsp;&nbsp;&nbsp;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\RegisteredOrganization
+</FONT></P>
+<P>&nbsp;</P></DIV>
+
+
+
+<H1><FONT face=Arial size=5><A 
+name=systemrequirements></A>4. 源代码管理集成 </FONT></H1>
+<H3><FONT face=Arial>4.1&nbsp;&nbsp;&nbsp;重命名 FrontPage 
+源代码管理之下的文件夹将导致该文件夹下的文件无法管理&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551443-->
+<P class=MsoNormal><FONT face=Arial>如果您要处理使用 FrontPage 
+版本控制的远程网站，并且要对含有源代码管理项的文件夹进行重命名，则该文件夹中的所有项都将无法管理，直到您关闭并重新打开该网站为止。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>重命名文件夹后，关闭并重新打开网站</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>4.2&nbsp;&nbsp;&nbsp;如果在包含多级 IIS 网站的源代码管理中打开解决方案，则可能需要为 IIS 
+添加对该网站父文件夹的读权限，以便进行调试&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--551444-->
+<P class=MsoNormal><FONT face=Arial>在包含 IIS 网站的源代码管理中打开解决方案时，VS 仅向 URL 的目标路径授予 IIS 读权限。但是，为调试 
+IIS 网站，IIS 需要对 URL 虚拟路径中的每个文件夹有读权限。因此，如果打开包含多级网站的解决方案（例如 
+http://localhost/MyWebs/Web1），可能需要为 IIS 授予读权限，使其可以读取父网站（例如 
+http://localhost/MyWebs）指向的任何文件夹，从而对该网站进行调试。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在 Windows 资源管理器中，为 
+ASP.NET 用户帐户添加对 URL 中父文件夹的“读”权限。如果您使用的是 Windows Server 2003，则 NETWORK SERVICE 
+帐户也需要对该文件夹具有读权限。例如，如果您在包含“http://localhost/MyWebs/Web1”的源代码管理中打开解决方案，则需要在 
+Windows 
+资源管理器中定位到“http://localhost/MyWebs”指向的目录，然后向此文件夹添加权限。您也可以选择在计算机上用户组具有读权限的其他位置打开解决方案（默认情况下，“我的文档”目录及其子文件夹不会向用户组授予读权限）。&nbsp;</FONT></P>
+<P>&nbsp;</P></DIV>
+<H1><FONT face=Arial size=5><A 
+name=systemrequirements></A>5. Crystal Reports</FONT></H1>
+<DIV class=indent id=DIV1>
+<p><font face=Arial>有关 Crystal Reports 
+for Visual Studio 2005 的其他信息，请访问：<a 
+href="http://www.businessobjects.com/products/reporting/crystalreports/net/vsnet.asp">http://www.businessobjects.com/products/reporting/crystalreports/net/vsnet.asp</A></FONT></P>
+<P><FONT face=Arial></FONT>&nbsp;</P></DIV>
+
+<H1><FONT face=Arial size=5>6. 
+Microsoft Visual Studio 2005 Tools for the Microsoft Office System</FONT></H1>
+<H3><FONT face=Arial>6.1&nbsp;&nbsp;&nbsp;Visual Studio Tools for Office 不支持多个部分的 XML 架构&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--545762-->
+<P class=MsoNormal><FONT face=Arial>虽然 
+Microsoft Office Excel 支持可由主架构和可选支持架构组成的 XmlMap，但 Visual Studio Tools for Office 仅支持基于单个主架构的 XmlMap。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有已知的解决方法。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.2&nbsp;&nbsp;&nbsp;WordDynamicControls 示例在重新打开以后不加载控件&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--545791-->
+<P class=MsoNormal><FONT face=Arial>使用 
+WordDynamicControls 示例时，添加控件然后关闭并重新打开文档，这一系列操作有时会导致所添加的控件未被保存。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有已知的解决方法。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.3&nbsp;&nbsp;&nbsp;在设计器中打开工作簿时，VBA 和 XLM（Excel 4.0 宏）代码都会运行&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550078-->
+<P class=MsoNormal><FONT face=Arial>如果工作簿事件处理程序中带有 Visual Basic for Applications (VBA) 或 Excel 4.0 宏 (XLM) 代码，则在设计器中打开工作簿时，将执行这些代码。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>要确保在使用 Visual 
+Studio Tools for Office 自定义工作簿时不运行 VBA 或 XLM 代码，应在创建基于工作簿的项目之前，删除与工作簿关联的所有 VBA 或 
+XLM 代码。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.4&nbsp;&nbsp;&nbsp;如果在仅安装了 Microsoft Office XP 的计算机上安装 Visual Studio Team System，则在启动 Word 或 Excel 时将显示安全对话框&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550080-->
+<P class=MsoNormal><FONT face=Arial>在仅安装了 Office XP 的计算机上安装 Visual Studio Team System 之后，只要启动 
+Word 或 Excel，就会显示以下的 Office 安全对话框：<BR><BR>VSTOWordAdaptor.dll [或 VSTOExcelAdaptor.dll]<BR>包含宏，作者是:<BR>Microsoft Corporation<BR><BR>宏可能包含病毒。禁用宏始终是安全的，但如果宏是合法的，则可能会失去某些功能。<BR><BR>安全级别应设置为“高”。因此，不能启用不信任其来源的宏。<BR>[] 总是信任此来源的宏。<BR><BR>[禁用宏] [启用宏] [更多信息]<BR><BR>显示此警告的原因是由于签署 VSTOWordAdaptor.dll 和 VSTOExcelAdaptor.dll 的 
+Microsoft 签名不在 Office XP 信任的签名列表中。Microsoft 签名在 Office 2003 信任签名的列表中。</FONT> 
+</P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>信任来自 Microsoft 
+Corporation 的宏。如果期望使用 Visual Studio 2005 Tools for Office，必须安装支持的 Office 2003 版本。安装 Office 2003 会将此 Microsoft 签名添加到信任签名的列表中。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.5&nbsp;&nbsp;&nbsp;如果从某个数据集中移除绑定到其上的表，则在调试应用程序时组件栏中的组件将被移除&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550082-->
+<P class=MsoNormal><FONT face=Arial>在以下情况下出现此问题：您从设计图面上移除了一个数据绑定的宿主控件（如一个列表对象），然后，使用编辑功能或数据源配置向导从数据源中移除该控件绑定到的表。如果在以上操作之后添加新的宿主控件并调试应用程序，就可能产生异常。停止调试时，将卸载设计图面并将数据组件从组件栏中移除。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>如果从设计图面移除宿主控件，然后从数据源中移除该控件原来所绑定到的表，则必须在生成应用程序之前手动移除表的绑定源。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.6&nbsp;&nbsp;&nbsp;如果 Windows 用户区域性设置为英语之外的语言，Windows 
+窗体控件扩展程序属性对于英文 Excel 不会显示&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550084-->
+<P class=MsoNormal><FONT face=Arial>如果 Windows 用户区域性设置更改为英语之外的语言，此问题会影响英文版的 Excel。某些属性（例如 height 和 width）将不可用于 Excel 
+设计图面上承载的 Windows 窗体控件。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在系统上安装 Office 多语言用户界面 (MUI) 包。不必更改 Excel 用户界面语言。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.7&nbsp;&nbsp;&nbsp;当通过 HTTP 打开文档并且在 Windows 资源管理器中未选择“在同一窗口中浏览”时，Word 不会加载 Visual Studio Tools for Office 
+自定义内容&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550111-->
+<P class=MsoNormal><FONT face=Arial>Internet Explorer 利用“在同一窗口中浏览”属性来确定是在浏览器中还是在一个单独的窗口中承载文档。如果在一个单独的窗口中承载文档，则不会加载和运行自定义内容。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在 Windows 
+资源管理器中选择“在同一窗口中浏览”。<BR>若要定位“在同一窗口中浏览”属性，请执行以下操作：<BR>1) 打开 Windows 资源管理器。<BR>2) 
+单击“工具”菜单。<BR>3) 单击“文件夹选项”。<BR>4) 
+单击“文件类型”选项卡。<BR>5) 在已注册的文件类型列表中选择“DOC”。<BR>6) 单击“高级”。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.8&nbsp;&nbsp;&nbsp;当 Visual Studio Tools for Office 文档签出时，源代码管理不签出所需的相关文件&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550086-->
+<P class=MsoNormal><FONT face=Arial>将 Visual Studio Tools for Office 文档从源代码管理中签出时，不是所有需要的文件都会自动签出。这是因为生成的代码与用户界面 (UI) 
+控件和文档的数据组件属性存储在不同的文件中。<BR><BR>签入文档时，对依赖文件所做的间接更改将会丢失，这是因为依赖文件从不签出，因此无法更新。<BR><BR>如果仅签出文档并且服务器上有相关文件的较新版本，您将看不到最新的属性。如果将相关文件随同文档一起签入，则服务器上相关文件的属性将会被改写。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>在修改签入的文档之前，确保签出所有的相关文件。当签入文档时，请记住签入所有的相关文件。当选择“显示所有文件”时，这些文件都会在解决方案资源管理器中显示出来，并缩进在文档的下方。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.9&nbsp;&nbsp;&nbsp;Word 模板可以在“普通”视图中打开，但不能在“打印布局”视图中打开，因此非内联控件不会显示&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550087-->
+<P class=MsoNormal><FONT face=Arial>Word 中不与文本内联的对象仅在“打印布局”视图中可见。默认情况下，添加至 Visual Studio Tools 
+for Office 文档的 UI 控件与文本内联。右击相应控件，依次单击“设置控件格式…”和“布局”，便可以更改布局类型。<BR><BR>默认情况下，Visual Studio Tools for 
+Office 在“普通”视图中打开 Word 模板，因此非内联控件不会显示。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>从“普通”视图切换至“打印布局”视图即可显示控件。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.10&nbsp;&nbsp;&nbsp;在设计时从非活动 Excel 表删除控件可能导致自动生成的代码无法保持最新&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550088-->
+<P class=MsoNormal><FONT face=Arial>每个工作表都有自己的设计图面，可以根据需要加载。更改工作表（例如，添加、删除或更改控件）时，设计图面将检测这些更改并更新生成的代码。<BR>如果在设计时从非活动表删除控件，则只能部分更新生成的代码，因为尚未实例化设计图面。至少有两种情形会导致出现此问题。第一种情形，利用“管理命名范围”对话框从非活动表删除 
+NamedRange 控件。第一种情形，在 Visual Studio 的外部打开 Excel 文档，接着移除控件，然后在 Visual Studio 
+中重新打开文档。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>激活工作表，然后使用“管理命名范围”对话框删除 NamedRange 控件。<BR>若要修复生成错误，可以编辑属性、向图面添加控件或从图面删除控件，从而更新每个受影响的工作表。然后，重新生成项目。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.11&nbsp;&nbsp;&nbsp;Visual Studio Tools for Office 不对 64 位应用程序提供固有支持&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--550089-->
+<P class=MsoNormal><FONT face=Arial>默认情况下，Visual Studio Tools for Office 和其他项目类型生成为“任意 CPU”类型。但是，Visual Studio Tools for Office 解决方案只能在 32 位环境下使用。 </FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>要在 64 位计算机上运行 Visual Studio Tools for Office 解决方案，必须在项目属性中将平台目标从“任意 CPU”更改为“x86”，即使要在 64 位 
+Windows 操作系统中部署应用程序也是如此。此外，还必须对使用 ServerDocument 类的其他类型的应用程序（例如，控制台应用程序或 Windows 
+窗体应用程序）进行此项更改。</FONT></P>
+<P>&nbsp;</P></DIV>
+<H3><FONT face=Arial>6.12&nbsp;&nbsp;&nbsp;在 Visual Studio Tools for Office 项目中不支持 Visual Studio Team System 单元测试&nbsp;</FONT></H3>
+<DIV class=indent id=DIV1><!--552063-->
+<P class=MsoNormal><FONT face=Arial>在 
+Visual Studio Tools for Office 中，不支持 Visual Studio Team System 产品的单元测试功能。</FONT></P>
+<P class=labelproc><FONT face=Arial><B>解决此问题的方法</B></FONT> 
+<P><FONT face=Arial>没有已知的解决方法。</FONT></P>
+<P><FONT face=Arial></FONT>&nbsp;</P></DIV></DIV>
+	</BODY>
+</HTML>

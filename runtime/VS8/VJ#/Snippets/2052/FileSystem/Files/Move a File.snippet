@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+   <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 移动文件 </Title>
+            <Description> 用于移动文件的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FileName </ID>
+                    <Default> strFileName </Default>
+                    <ToolTip> 用于保存文件名的变量，要对相应文件进行移动。 </ToolTip>
+                </Literal>
+        <Literal>
+                    <ID> DirName </ID>
+                    <Default> strDirName </Default>
+                    <ToolTip> 文件要移动到的文件夹名 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+boolean flStatus = false;  //variable is set to true if file is moved successfully else false
+
+//Check if the file name and directory names are not null and not blank
+if (($FileName$ != null && $FileName$.length() > 0) &&
+    ($DirName$ != null && $DirName$.length() > 0))
+{
+    java.io.File objFile = new java.io.File($FileName$);
+    java.io.File objDir = new java.io.File($DirName$);
+    flStatus = objFile.renameTo(new java.io.File(objDir, objFile.getName()));
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

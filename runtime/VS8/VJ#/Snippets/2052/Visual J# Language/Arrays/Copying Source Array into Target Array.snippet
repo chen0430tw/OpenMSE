@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 将源数组复制到目标数组 </Title>
+            <Description> 用于将源数组复制到目标数组的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> SourceArray </ID>
+                    <Default> sourceArray </Default>
+                    <ToolTip> 包含要复制到目标数组的元素的源数组。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> TargetArray </ID>
+                    <Default> targetArray </Default>
+                    <ToolTip> 要将源数组元素复制到其中的目标数组。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+if (null == $SourceArray$ || null == $TargetArray$)
+{
+	System.out.println("Either source array or target array is null.");
+}
+else if ($TargetArray$.length > 0 && $SourceArray$.length <= $TargetArray$.length)
+{
+	//copy each value from source array to target array
+	for (int i = 0; i < $SourceArray$.length; i++)
+	{
+		$TargetArray$[i] = $SourceArray$[i];
+	}
+}
+else
+{
+	System.out.println("The size of target array is either zero or smaller than the source array.");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

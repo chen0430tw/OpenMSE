@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 使用顺序搜索在数组列表中搜索元素</Title>
+            <Description> 用于通过顺序搜索在数组列表中搜索元素的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ArrayList </ID>
+                    <Default> arrList </Default>
+                    <ToolTip> 包含元素列表的数组列表。 </ToolTip>
+                </Literal>
+        <Literal>
+                    <ID> FindValue </ID>
+                    <Default> findValue </Default>
+                    <ToolTip> 要在数组列表中进行搜索的值。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+boolean flIsFound = false;  //variable is set true if the key is found else false
+for (int i = 0; i < $ArrayList$.size(); i++)
+{
+    if ($ArrayList$.Equals($ArrayList$.get(i), $FindValue$))
+    {
+        flIsFound =  true;
+        break;
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

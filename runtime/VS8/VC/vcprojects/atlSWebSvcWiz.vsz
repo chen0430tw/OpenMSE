@@ -1,0 +1,7 @@
+VSWIZARD 7.0
+Wizard=VsWizard.VsWizardEngine.8.0
+Param="WIZARD_NAME = ATLServer"
+Param="RELATIVE_PATH = VCWizards\AppWiz\ATL"
+Param="SOAP_WIZ = DoSoapWiz"
+Param="PREPROCESS_FUNCTION = CheckProjectName"
+Param="WIZARD_ID = 50"

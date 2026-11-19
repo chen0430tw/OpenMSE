@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 使用非递归二进制搜索在数组列表中搜索元素 </Title>
+            <Description> 用于通过非递归二进制搜索在数组列表中搜索元素的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ArrayList </ID>
+                    <Default> arrList </Default>
+                    <ToolTip> 包含值的列表的数组列表。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> FindObject </ID>
+                    <Default> findObj </Default>
+                    <ToolTip> 在数组列表中找到的值。 </ToolTip>
+                </Literal>
+            </Declarations>
+            
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+int firstIndx = 0;
+int lastIndx = $ArrayList$.size();
+int midIndx;
+boolean fFound = false;  //variable is set true if the key is found else false
+while (firstIndx <= lastIndx)
+{
+    midIndx = (firstIndx + lastIndx) / 2;
+    if (midIndx >= $ArrayList$.size())
+        break;
+
+    if (((java.lang.Integer)$FindObject$).ToInt32(null) == ((java.lang.Integer)$ArrayList$.get(midIndx)).ToInt32(null))
+    {
+        fFound = true;
+        break;
+    }
+    else if (((java.lang.Integer)$FindObject$).ToInt32(null) > ((java.lang.Integer)$ArrayList$.get(midIndx)).ToInt32(null))
+    {
+        firstIndx = midIndx + 1; //set the start position to upper half of the array
+    }
+    else
+    {
+        lastIndx = midIndx - 1; //set the end position to lower half of the array
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

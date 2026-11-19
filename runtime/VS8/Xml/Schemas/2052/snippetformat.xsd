@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  
+  <xs:element name="CodeSnippets" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="CodeSnippets" _locComment="" -->对 CodeSnippet 元素进行分组。CodeSnippet 元素是代码段 XML 架构的根元素。</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CodeSnippet" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CodeSnippet">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="CodeSnippet" _locComment="" -->允许您指定一个标题和多个 IntelliSense 代码段，您可以将其插入 Visual Studio 2005 代码文件中。</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Header">
+          <xs:annotation>
+            <xs:documentation><!-- _locID_text="Header" _locComment="" -->指定有关 IntelliSense 代码段的常规信息。</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+              <xs:element name="Title" type="xs:string" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Title" _locComment="" -->
+					指定代码段的标题。存储在代码段的 Title 元素中的标题分别显示在代码段插入器和代码段管理器的代码段说明中。</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Author" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Author" _locComment="" -->
+					指定代码段作者的姓名。代码段管理器显示存储在代码段的 Author 元素中的代码段名称。</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Description" _locComment="" -->
+					指定有关 IntelliSense 代码段内容的说明信息。Description 元素的文本值为代码段插入器中的代码段提供了工具提示，并为代码段管理器中的代码段提供了说明。</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="HelpUrl" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="HelpUrl" _locComment="" -->
+					指定一个 URL，它提供有关代码段的详细信息。</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="SnippetTypes" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="SnippetTypes" _locComment="" -->对单个 SnippetType 元素进行分组。如果不存在 SnippetType 元素，则可以将代码段插入代码中的任何位置。</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="SnippetType">
+                      <xs:annotation>
+                        <xs:documentation><!-- _locID_text="SnippetType" _locComment="" -->指定 Visual Studio 如何插入代码段。SurroundsWith 的值允许将代码段放置在选定代码块的周围，而 Expansion 的值允许将代码段插入光标所在位置。</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:union>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string"/>
+                          </xs:simpleType>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="Expansion"/>
+                              <xs:enumeration value="SurroundsWith"/>
+                              <xs:enumeration value="Refactoring"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:union>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Keywords" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Keywords" _locComment="" -->对单个 Keyword 元素进行分组。代码段关键字由 Visual Studio 使用，这些关键字表示联机内容提供程序添加自定义关键字的标准方法。</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="Keyword" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Shortcut" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Shortcut" _locComment="" -->指定用于插入代码段的快捷方式文本。 </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Snippet">
+          <xs:annotation>
+            <xs:documentation><!-- _locID_text="Snippet" _locComment="" -->指定代码段的引用、导入、声明和代码。</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="References" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="References" _locComment="" -->对单个 Reference 元素进行分组。</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Reference" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:choice>
+                          <xs:element name="Assembly" type="xs:string" minOccurs="1" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Assembly" _locComment="" -->指定代码段引用的程序集的名称。只有 Visual Basic 代码段支持 Assembly 元素。Assembly 元素的文本值可以是程序集的友好文本名(如 System.dll)，也可以是程序集的强名称(如 System,Version=1.0.0.1,Culture=neutral,PublicKeyToken=9b35aa323c18d4fb1)。</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Url" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Url" _locComment="" -->指定一个 URL，它提供有关所引用程序集的详细信息。</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:choice>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Imports" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Imports" _locComment="" -->对单个 Import 元素进行分组。 </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Import" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation><!-- _locID_text="Import" _locComment="" -->指定 IntelliSense 代码段使用的导入的命名空间。</xs:documentation>
+						</xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+							<xs:element name="Namespace" type="xs:string">
+								<xs:annotation>
+									<xs:documentation><!-- _locID_text="Namespace" _locComment="" -->指定代码段的命名空间。</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Declarations" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Declarations" _locComment="" -->指定作为某个代码段组成部分的文本和对象，您可以对该代码段进行编辑。</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:choice minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="Literal">
+                      <xs:annotation>
+                        <xs:documentation><!-- _locID_text="Literal" _locComment="" -->定义您可以编辑的代码段的文本。Literal 元素用于标识对以下代码块的替换，该代码块完全包含在代码段中，但有可能在插入代码之后对其进行自定义。例如，文本字符串、数值和某些变量名应声明为文本。</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                          <xs:element name="ID" type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Literal.ID" _locComment="" -->指定 Literal 元素或 Object 元素的唯一标识符。</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Type" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Literal.Type" _locComment="" -->指定对象的类型。</xs:documentation>
+                            </xs:annotation>	
+                          </xs:element>
+                          <xs:element name="ToolTip" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Literal.ToolTip" _locComment="" -->描述代码段中文本或对象的所需值和用法，Visual Studio 将代码段插入项目时将在工具提示中显示这些内容。</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Default" type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Literal.Default" _locComment="" -->指定 IntelliSense 代码段的文本或对象的默认值。</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+							<xs:element name="Function" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation><!-- _locID_text="Literal.Function" _locComment="" -->指定当 Visual Studio 中的文本或对象收到焦点时要执行的函数。</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+                        </xs:choice>
+                        <xs:attribute name="Editable" type="xs:boolean" use="optional">
+                          <xs:annotation>
+                            <xs:documentation><!-- _locID_text="Literal.Editable" _locComment="" -->指定在插入代码段之后是否可以编辑文本。此属性的默认值为 true。</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Object">
+                      <xs:annotation>
+                        <xs:documentation><!-- _locID_text="Object" _locComment="" -->定义您可以编辑的代码段的对象。</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:choice minOccurs="1" maxOccurs="unbounded">
+                          <xs:element name="ID" type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Object.ID" _locComment="" -->指定 Literal 元素或 Object 元素的唯一标识符。</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Type" type="xs:string" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Object.Type" _locComment="" -->必需。指定对象的类型。</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="ToolTip" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+								<xs:documentation><!-- _locID_text="Object.Tooltip" _locComment="" -->描述代码段中文本或对象的所需值和用法，Visual Studio 将代码段插入项目时将在工具提示中显示这些内容。</xs:documentation>
+							</xs:annotation>
+                          </xs:element>
+                          <xs:element name="Default" type="xs:string">
+                            <xs:annotation>
+                              <xs:documentation><!-- _locID_text="Object.Default" _locComment="" -->指定 IntelliSense 代码段的文本或对象的默认值。此文本指定文本或对象的默认值，该默认值用于填充您可以编辑的代码段的字段。</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+							<xs:element name="Function" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation><!-- _locID_text="Function" _locComment="" -->
+										指定当 Visual Studio 中的文本或对象收到焦点时要执行的函数。
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+                        </xs:choice>
+                        <xs:attribute name="Editable" type="xs:boolean" use="optional">
+                        <xs:annotation>
+                            <xs:documentation><!-- _locID_text="Object.Editable" _locComment="" -->指定在插入代码段之后是否可以编辑对象。此属性的默认值为 true。</xs:documentation>
+                        </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="1" maxOccurs="1" name="Code">
+                <xs:annotation>
+                  <xs:documentation><!-- _locID_text="Code" _locComment="" -->为 IntelliSense 代码段的短代码块提供一个容器。</xs:documentation>
+                </xs:annotation>
+                <xs:complexType mixed="true">
+                  <xs:attribute name="Language" use="required">
+                    <xs:annotation>
+                      <xs:documentation><!-- _locID_text="Language" _locComment="" -->指定代码段的语言。可用值为 VB、CSharp、VJSharp 或 XML。</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:union>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string"/>
+                        </xs:simpleType>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:enumeration value="VB"/>
+                            <xs:enumeration value="CSharp"/>
+                            <xs:enumeration value="VJSharp"/>
+                            <xs:enumeration value="XML"/>
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:union>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="Kind" use="optional">
+                    <xs:annotation>
+                      <xs:documentation><!-- _locID_text="Kind" _locComment="" -->指定代码段包含的代码类型。此属性基于代码中的当前位置筛选出代码段</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string"/>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="Delimiter" type="xs:string" use="optional">
+                    <xs:annotation>
+						<xs:documentation><!-- _locID_text="Delimiter" _locComment="" --> 指定用于描述代码中的文本和对象的分隔符。默认情况下，分隔符为 $。</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+		<xs:attribute name="Format" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation><!-- _locID_text="Format" _locComment="" -->指定代码段的架构版本。Format 属性必须是语法为 x.x.x 的字符串，其中每个“x”表示版本号的数字值。Visual Studio 将忽略那些具有它无法理解的 Format 属性的代码段。</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 以递归方式按升序对数组列表进行合并排序。 </Title>
+            <Description> 按升序对数组列表进行合并排序的扩展代码段。</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ArrayList </ID>
+                    <Default> arrList </Default>
+                    <ToolTip> 包含未排序元素的数组列表。 </ToolTip>
+                </Literal>            
+                <Literal>
+                    <ID> LowIndex </ID>
+                    <Default> nLowIndx </Default>
+                    <ToolTip> 数组列表的起始索引 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> HighIndex </ID>
+                    <Default> nHighIndx </Default>
+                    <ToolTip> 数组列表的最后一个索引 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> TmpArrayList </ID>
+                    <Default> arrTmpList </Default>
+                    <ToolTip> 用于对元素进行排序的临时数组列表变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+public  void mergeSort(java.util.ArrayList $ArrayList$, int $LowIndex$, int $HighIndex$, java.util.ArrayList $TmpArrayList$)
+{
+    if ($ArrayList$.size() == 0)
+        return;
+
+    if ($LowIndex$ >= $HighIndex$)
+    {
+        return;
+    }
+
+    // Divide the array segment to be sorted into two and then
+    // sort and merge these two.
+    int midIndx = ($LowIndex$ + $HighIndex$) / 2;
+    mergeSort($ArrayList$, $LowIndex$, midIndx, $TmpArrayList$);
+    mergeSort($ArrayList$, midIndx + 1, $HighIndex$, $TmpArrayList$);
+
+    int t_lowIndx = $LowIndex$;
+            int t_highIndx = midIndx + 1;
+
+// Copy the two sub-segments 
+    for (int k = $LowIndex$; k <= $HighIndex$; k++)
+    {
+        if ((t_lowIndx <= midIndx) && ((t_highIndx > $HighIndex$) ||
+            (((java.lang.Integer)$ArrayList$.get(t_lowIndx)).ToInt32(null) < 
+            ((java.lang.Integer)$ArrayList$.get(t_highIndx)).ToInt32(null))))
+        {
+            $TmpArrayList$.set(k, $ArrayList$.get(t_lowIndx++));
+        }
+        else
+        {
+            $TmpArrayList$.set(k, $ArrayList$.get(t_highIndx++));
+
+        }
+    }
+
+//merge them into the sorted whole
+    for (int j = $LowIndex$; j <= $HighIndex$; j++)
+    {
+        $ArrayList$.set(j, $TmpArrayList$.get(j));
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

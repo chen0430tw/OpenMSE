@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<VisualStudioPropertySheet 
+	ProjectType="Visual C++" 
+	Version="8.00" 
+	Name="Static Link To MFC">
+	<Tool 
+		Name="VCCLCompilerTool" 
+		ProgramDataBaseFileName="$(IntDir)/vc80.pdb"/>
+	<Tool 
+		Name="VCLinkerTool"
+		AdditionalDependencies="ole32.lib oleaut32.lib uuid.lib"
+		IgnoreDefaultLibraryNames="oldnames.lib"
+		GenerateManifest="false"/>
+</VisualStudioPropertySheet>

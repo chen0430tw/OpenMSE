@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 查找所有元素中的最小值 </Title>
+            <Description> 用于查找数组中所有元素的最小值的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> Array </ID>
+                    <Default> nArray </Default>
+                    <ToolTip> 包含元素的数组。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+int nMinValue = 0;
+//Check if array has any elements in it
+if (null != $Array$ && $Array$.length > 0)
+{
+    //Set the value of the first index of the array as the minimum value 
+    nMinValue = $Array$[0];
+    for (int i = 1; i < $Array$.length; i++)
+    {
+        // If the value is less than the minimum value we have
+        //then set it has the minimum value
+        if (nMinValue > $Array$[i])
+        {
+            nMinValue = $Array$[i];
+        }
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 查找所有元素中的最大值 </Title>
+            <Description> 用于查找数组中所有元素的最大值的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> Array </ID>
+                    <Default> nArray </Default>
+                    <ToolTip> 包含元素的数组。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+int nMaxValue = 0;
+
+//Check the array has any elements or not
+if (null != $Array$ && $Array$.length > 0)
+{
+    //Set the value of first element of the array as maximum initially
+    nMaxValue = $Array$[0];
+
+    for (int i = 1; i < $Array$.length; i++)
+    {
+        //If the array has a value greater than the maximum value we have
+        //set the value as the maximum value
+        if (nMaxValue  < $Array$[i])
+        {
+            nMaxValue  = $Array$[i];
+        }
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

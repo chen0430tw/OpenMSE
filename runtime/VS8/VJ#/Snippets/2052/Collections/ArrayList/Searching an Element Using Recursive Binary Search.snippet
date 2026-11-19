@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+   <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 使用递归二进制搜索在数组列表中搜索元素 </Title>
+            <Description> 用于通过递归二进制搜索来搜索数组列表中的元素的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ArrayList </ID>
+                    <Default> arrList </Default>
+                    <ToolTip> 包含已排序的值列表的数组列表 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> LowIndex </ID>
+                    <Default> nLowIndx </Default>
+                    <ToolTip> 数组列表的起始索引 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> HighIndex </ID>
+                    <Default> nHighIndx </Default>
+                    <ToolTip> 数组列表的最后一个索引 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> FindValue </ID>
+                    <Default> findValue </Default>
+                    <ToolTip> 要在数组列表中搜索的值 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+public boolean binarySearch(java.util.ArrayList $ArrayList$, int $LowIndex$, int $HighIndex$, Object $FindValue$)
+{
+    int firstIndx = $LowIndex$;
+    int lastIndx = $HighIndex$;
+
+    if ($ArrayList$.size() == 0)
+        return false;
+
+    if (firstIndx <= lastIndx)
+    {
+        int midIndx = (firstIndx + lastIndx) / 2;  
+
+        if (((java.lang.Integer)$FindValue$).ToInt32(null) > ((java.lang.Integer)$ArrayList$.get(midIndx)).ToInt32(null))
+        {
+            firstIndx = midIndx + 1; //set position to upper half of the array
+        }
+        else if (((java.lang.Integer)$FindValue$).ToInt32(null) < ((java.lang.Integer)$ArrayList$.get(midIndx)).ToInt32(null))
+        {
+            lastIndx = midIndx - 1; //set position to lower half of the array
+        }
+        else 
+            return true; // Search key found 
+
+    // Search the array list with new start and end index positions.
+        return binarySearch($ArrayList$, firstIndx, lastIndx, $FindValue$);
+}
+return false;    // Search key not found 
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

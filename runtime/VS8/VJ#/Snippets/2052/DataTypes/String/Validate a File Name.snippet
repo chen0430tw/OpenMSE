@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 验证文件名 </Title>
+            <Description> 用于验证给定文件名的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FilePath </ID>
+                    <Default> strPath </Default>
+                    <ToolTip> 包含要验证的文件名的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+Boolean fValid = Boolean.TRUE; //variable is set to true if valid file name is given else false
+
+//Check whether the file path is not null and not blank
+if (($FilePath$ != null) && ($FilePath$.length() > 0))
+{
+if (!( ( (($FilePath$.charAt(0) >= 'a'  && $FilePath$.charAt(0) <= 'z') ||
+    ($FilePath$.charAt(0) >= 'A'  && $FilePath$.charAt(0) <= 'Z')) &&
+    ($FilePath$.charAt(1) == ':') && ($FilePath$.charAt(2) == '\\')) ||
+    ($FilePath$.charAt(0) == '\\' && $FilePath$.charAt(1) == '\\' && $FilePath$.charAt(2)== '\\')))
+{
+    fValid = Boolean.FALSE;
+}
+else if ($FilePath$.charAt($FilePath$.length() - 1) == '\\')
+{
+    fValid = Boolean.FALSE;
+}
+else
+{
+    for (int i = 2; (i < $FilePath$.length()) && (fValid == Boolean.TRUE); i++)
+    {
+    switch ($FilePath$.charAt(i))
+        {
+            case '/':
+            case ':':
+            case '*':
+            case '?':
+            case '"':
+            case '<':
+            case '>':
+            case '|':
+                fValid = Boolean.FALSE;
+                break;
+
+            case '\\':
+                if (($FilePath$.charAt(i - 1) == '\\') ||
+                    ($FilePath$.charAt(i + 1) == '\\'))
+                {
+                    fValid = Boolean.FALSE;
+                }
+                break;
+
+            default :
+                break;
+        }
+    }
+    } 
+}
+else
+{
+    fValid = Boolean.FALSE;
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

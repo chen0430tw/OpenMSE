@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>重写 Object.equals</Title>
+            <Shortcut>equals</Shortcut>
+            <Description>根据准则实现 equals()</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal Editable="false">
+                    <ID>SystemDiagnosticsDebug</ID>
+                    <!-- Function>ShortName(System.Diagnostics.Debug)</Function -->
+                    <Default>System.Diagnostics.Debug</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>SystemNotImplementedException</ID>
+                    <!-- Function>ShortName(System.NotImplementedException)</Function -->
+                    <Default>System.NotImplementedException</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>ClassName</ID>
+                    <Function>ClassName()</Function>
+                    <Default>ClassName</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+// override Object.equals
+public boolean equals(Object obj)
+{
+  if (obj == this)
+  {
+    return true;
+  }
+
+  if (obj == null)
+  {
+    return false;
+  }
+
+  if (getClass() != obj.getClass())
+  {
+    return false;
+  }
+
+  // TODO: write your implementation of equals() here.
+$end$ 
+  return super.equals(obj);
+}
+
+// override Object.hashCode
+public int hashCode()
+{
+  // TODO: write your implementation of hashCode() here.
+  return super.hashCode();
+}
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

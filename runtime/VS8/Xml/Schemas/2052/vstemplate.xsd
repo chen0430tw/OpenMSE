@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="VSTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TemplateData">
+          <xs:annotation>
+            <xs:documentation>
+              <!-- _locID_text="TemplateData" _locComment="" -->在“新建项目”对话框中包括模板外观的内容
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="Name" type="NameDescriptionIcon">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="TemplateData.Name" _locComment="" -->以字符串形式指定将在“新建项目”/“添加新项”对话框中显示的模板的名称
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Description" type="NameDescriptionIcon">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="Description" _locComment="" -->以字符串形式指定将在“新建项目”/“添加新项”对话框中显示的模板的说明
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Icon" type="NameDescriptionIcon">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="Icon" _locComment="" -->以文件名形式指定将在“新建项目”/“添加新项”对话框中显示的模板的图标
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ProjectType" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="ProjectType" _locComment="" -->以字符串形式指定模板的项目类型。此值通常为: CSharp、VisualBasic、JSharp 或 Web
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ProjectSubType" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="ProjectSubType" _locComment="" -->以字符串形式指定模板的项目子类型(如果有)。此值指定项模板的聚合项目系统。可能的值有: SmartDevice-NETCFv1、SmartDevice-NETCFv2。对于 Web 项目，可能的 ProjectSubType 有: CSharp、VisualBasic 和 JSharp。
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="TemplateID" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="TemplateID" _locComment="" -->以字符串形式为模板指定可选的唯一标识符。如果未指定，将使用 Name 作为模板标识符。
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="TemplateGroupID" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="TemplateGroupID" _locComment="" -->以字符串形式为模板指定可选的组标识符。某些类型的项目需要此标识符，以便在“添加新项”对话框中显示项模板。
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="SortOrder" type="xs:integer" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="SortOrder" _locComment="" -->指定“新建项目”对话框中模板的显示顺序。
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CreateNewFolder" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="CreateNewFolder" _locComment="" -->指定是否应为项目新建一个文件夹。如果省略此值，则默认值为 FALSE。
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="DefaultName" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="DefaultName" _locComment="" -->指定要在“新建项目”/“添加新项”对话框的名称字段中显示的名称
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ProvideDefaultName" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="ProvideDefaultName" _locComment="" -->指定是否应在“新建项目”/“添加新项”对话框的名称字段中提供默认名称
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="PromptForSaveOnCreation" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="PromptForSaveOnCreation" _locComment="" -->指定是否应在创建项目时保存项目。不是所有项目类型都支持此值，此值可能被忽略
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="EnableLocationBrowseButton" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="EnableLocationBrowseButton" _locComment="" -->指定用户是否可以浏览其他目录以创建解决方案
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+	      <xs:element name="EnableEditOfLocationField" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="EnableEditOfLocationField" _locComment="" -->指定用户是否可以编辑位置字段
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="AppendDefaultFileExtension" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="AppendDefaultFileExtension" _locComment="" -->如果设置为 true，将创建目标新文件，并且新文件与源文件具有相同的扩展名；忽略用户可能已经在“添加新项”对话框中键入的内容
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Hidden" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="Hidden" _locComment="" -->指定模板不应显示在“新建项目”/“添加新项”对话框中。如果指定，则不需要 TemplateData 中的其他元素。如果模板格式不正确或有其他错误，将不会记录错误
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="LocationFieldMRUPrefix" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="LocationFieldMRUPrefix" _locComment="" -->在“新建项目”/“新建项”对话框中指定最近使用的路径。此标记应仅用于内部(VS 或 VSIP)生成的模板。
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="NumberOfParentCategoriesToRollUp" type="xs:integer" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="NumberOfParentCategoriesToRollUp" _locComment="" -->显示父类别中的模板(上滚显示)。此标记仅用于内部(VS 或 VSIP)生成的模板。用户模板忽略此标记
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CreateInPlace" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="CreateInPlace" _locComment="" -->在目标位置直接创建项目文件。
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="BuildOnLoad" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="BuildOnLoad" _locComment="" -->在创建后立即生成解决方案
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ShowByDefault" minOccurs="0">
+               <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="ShowByDefault" _locComment="" -->如果设置为 false，则仅显示指定 TemplateGroupID 下的模板。默认值或未指定时均为 true。
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="LocationField" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="LocationField" _locComment="" -->指定是启用、禁用还是隐藏位置字段。
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Enabled"/>
+                    <xs:enumeration value="Disabled"/>
+                    <xs:enumeration value="Hidden"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SupportsMasterPage" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="SupportsMasterPage" _locComment="" -->指定模板是否支持具有母版页(Web 选项)
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="SupportsCodeSeparation" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="SupportsCodeSeparation" _locComment="" -->指定模板是否支持代码分离(Web 选项)
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="SupportsLanguageDropDown" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="SupportsLanguageDropDown" _locComment="" -->指定多种语言的模板是否相同，以及是否应显示一个语言下拉列表(Web 选项)
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TemplateContent">
+          <xs:annotation>
+            <xs:documentation>
+              <!-- _locID_text="TemplateContent" _locComment="" -->包含模板的内容
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice>
+                <xs:element name="ProjectCollection">
+                  <xs:annotation>
+                    <xs:documentation>
+                      <!-- _locID_text="ProjectCollection" _locComment="" -->指定指向其他模板的链接的集合。用于多项目模板
+                    </xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType>
+                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                      <xs:element ref="ProjectTemplateLink" minOccurs="0" maxOccurs="unbounded"/>
+                      <xs:element ref="SolutionFolder" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:choice>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="Project">
+                  <xs:annotation>
+                    <xs:documentation>
+                      <!-- _locID_text="TemplateContent.Project" _locComment="" -->描述项目模板的内容
+                    </xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType>
+                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                      <xs:element ref="Folder" minOccurs="0" maxOccurs="unbounded"/>
+                      <xs:element ref="ProjectItem" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:choice>
+                    <xs:attribute name="File" type="xs:string" use="required">
+                      <xs:annotation>
+                        <xs:documentation>
+                          <!-- _locID_text="TemplateContent.File" _locComment="" -->指定项目文件的名称
+                        </xs:documentation>
+                      </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="TargetFileName" type="xs:string" use="optional">
+                      <xs:annotation>
+                        <xs:documentation>
+                          <!-- _locID_text="TemplateContent.TargetFileName" _locComment="" -->如果指定，将替换由文件属性定义的文件名                        
+                        </xs:documentation>
+                      </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="ReplaceParameters" type="xs:boolean" use="optional">
+                      <xs:annotation>
+                        <xs:documentation>
+                          <!-- _locID_text="TemplateContent.ReplaceParameters" _locComment="" -->如果对模板中的任何项目此值均设置为 true，模板向导将执行参数替换。参数格式为 $[parameter]$
+                        </xs:documentation>
+                      </xs:annotation>
+                    </xs:attribute>
+                  </xs:complexType>
+                </xs:element>
+                <xs:sequence>
+                  <xs:element name="References" minOccurs="0">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <!-- _locID_text="TemplateContent.References" _locComment=""-->指定在添加项时应添加到项目的任何引用
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Reference" minOccurs="0" maxOccurs="5">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <!-- _locID_text="TemplateContent.Reference" _locComment=""-->指定要添加到项目的引用
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Assembly" type="xs:string">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <!-- _locID_text="TemplateContent.Assembly" _locComment=""-->在指定引用元素的情况下是必需的。此标记支持简单文本和强名称程序集引用
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ProjectItem" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <!-- _locID_text="ProjectItem" _locComment="" -->描述项目项
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                          <xs:attribute name="SubType" type="xs:string" use="optional">
+                            <xs:annotation>
+                              <xs:documentation>
+                                <!-- _locID_text="ProjectItem.SubType" _locComment=""-->为项目文件中的项设置子类型。在以下情况下用于多文件项模板: 某个项有一个子类型用于指定应如何在编辑器中打开该项。
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                          <xs:attribute name="ReplaceParameters" type="xs:boolean" use="optional">
+                            <xs:annotation>
+                              <xs:documentation>
+                                <!-- _locID_text="ProjectItem.ReplaceParameters" _locComment="" -->如果此值设置为 true，模板向导将执行参数替换。参数格式为 $[parameter]$
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                          <xs:attribute name="TargetFileName" type="xs:string" use="optional">
+                            <xs:annotation>
+                              <xs:documentation>
+                                <!-- _locID_text="ProjectItem.TargetFileName" _locComment="" -->如果指定，将替换项目项的磁盘文件名 
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:attribute>
+                        </xs:extension>
+                      </xs:simpleContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:choice>
+              <xs:element name="CustomParameters" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!-- _locID_text="TemplateContent.CustomParameters" _locComment="" -->指定当运行模板向导以执行参数替换时应传递给模板向导的任何自定义参数。
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CustomParameter" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:documentation>
+                          <!-- _locID_text="TemplateContent.CustomParameter" _locComment="" -->指定要传递给向导的自定义参数(名称/值对)
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="Name" type="xs:string" use="required"/>
+                        <xs:attribute name="Value" type="xs:string" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WizardExtension" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              <!-- _locID_text="WizardExtension" _locComment="" -->指定要在创建项目时运行的自定义向导内容
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Assembly" maxOccurs="unbounded"/>
+              <xs:element name="FullClassName" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WizardData" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Type" type="xs:string" use="required"/>
+      <xs:attribute name="Version" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!--The following are reference elements and complex types which are referenced in the main XSD-->
+  <xs:element name="ProjectTemplateLink">
+    <xs:annotation>
+      <xs:documentation>
+        <!-- _locID_text="ProjectTemplateLink" _locComment="" -->指定一个链接，该链接指向集合中要使用的另一个项目模板(通过 .vstemplate 文件)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="ProjectName" type="xs:string" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="ProjectTemplateLink.ProjectName" _locComment="" -->指定要作为链接包括的项目的名称
+              </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolutionFolder">
+    <xs:annotation>
+      <xs:documentation>
+        <!-- _locID_text="SolutionFolder" _locComment="" -->用于指定 .vstemplate 中的解决方案文件夹结构。如果指定，项目向导将在磁盘上创建一个文件夹结构来模仿解决方案文件夹结构。
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ProjectTemplateLink" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="SolutionFolder" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+      <xs:attribute name="Name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProjectItem">
+    <xs:annotation>
+      <xs:documentation>
+        <!-- _locID_text="ProjectItem" _locComment="" -->指定项目中的某个项
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="TargetFileName" type="xs:string" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="ProjectItem.TargetFileName" _locComment="" -->为项目中的文件指定目标文件名
+              </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="ReplaceParameters" type="xs:boolean" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="ProjectItem.ReplaceParameters2" _locComment="" -->如果此值设置为 true，模板向导将执行参数替换。参数格式为 $[parameter]$
+              </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="OpenInEditor" type="xs:boolean" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="OpenInEditor" _locComment="" -->可用于在各自的 VS 编辑器中打开任何文件
+              </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="OpenOrder" type="xs:int" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="OpenOrder" _locComment="" -->指定在使用 OpenInEditor 标记时多个文件的打开顺序
+              </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="OpenInWebBrowser" type="xs:boolean" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="OpenInWebBrowser" _locComment="" -->可用于打开项目本地的 HTML 文件和文本文件。OpenInWebBrowser 不支持下列任何一项: 打开任何非 HTML 文件或非文本文件、支持 OpenOrder、打开外部(http://地址)网站。
+              </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="OpenInHelpBrowser" type="xs:boolean" use="optional">
+            <xs:annotation>
+              <xs:documentation>
+                <!-- _locID_text="OpenInHelpBrowser" _locComment="" -->可用于打开项目本地的 HTML 文件和文本文件。OpenInHelpBrowser 不支持下列任何一项: 打开任何非 HTML 文件或非文本文件、打开外部(http://地址)网站。如果指定此值，将忽略 OpenInEditor 和 OpenOrder 标记。
+              </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Folder">
+    <xs:annotation>
+      <xs:documentation>
+        <!-- _locID_text="Folder" _locComment="" -->此元素可用于指定项目文件夹
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ProjectItem" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="Folder" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+      <xs:attribute name="Name" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            <!-- _locID_text="Folder.Name" _locComment="" -->指定文件夹的名称
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="TargetFolderName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            <!-- _locID_text="Folder.TargetFolderName" _locComment="" -->指定文件夹的目标名称
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NameDescriptionIcon">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="Package" type="xs:string" use="optional"/>
+        <xs:attribute name="ID" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

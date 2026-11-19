@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 将文本写入文件 </Title>
+            <Description> 用于将文本写入文件的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FileName </ID>
+                    <Default> strFileName </Default>
+                    <ToolTip> 用于保存文件名的变量。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> Text </ID>
+                    <Default> strText </Default>
+                    <ToolTip> 用于保存要写入文本文件的文本的变量。 </ToolTip>
+                </Literal>
+
+            </Declarations>        
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+boolean flStatus = false;
+try
+{
+    //Check if the file name is not null and not blank
+    if ($FileName$ != null && $FileName$.length() > 0)
+    {
+        java.io.BufferedWriter outStream = new java.io.BufferedWriter(
+                                            new java.io.FileWriter($FileName$));
+
+        // Write text contents to the file
+        outStream.write($Text$);
+        outStream.close();
+        flStatus = true;
+    }
+}
+catch (java.io.IOException e)
+{
+    System.out.println("Error: Invalid IO operation.");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

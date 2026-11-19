@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 重命名文件 </Title>
+            <Description> 用于重命名文件的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> OldFileName </ID>
+                    <Default> strOldFileName </Default>
+                    <ToolTip> 用于保存现有文件名的变量 </ToolTip>
+                </Literal>
+        <Literal>
+                    <ID> NewFileName </ID>
+                    <Default> strNewFileName </Default>
+                    <ToolTip> 用于保存新文件夹名的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+boolean flStatus = false; //variable is set to true if renaming of file was successful else false
+
+//Check if the old file name and new file names are not null and not blank
+if (($OldFileName$ != null && $OldFileName$.length() > 0) &&
+    ($NewFileName$ != null && $NewFileName$.length() > 0))
+{
+    java.io.File objOldFile = new java.io.File($OldFileName$);
+    if (objOldFile.isFile())
+    {
+      java.io.File objNewFile = new java.io.File($NewFileName$);
+      flStatus = objOldFile.renameTo(objNewFile);
+    }
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

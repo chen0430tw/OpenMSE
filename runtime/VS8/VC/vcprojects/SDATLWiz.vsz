@@ -1,0 +1,5 @@
+VSWIZARD 7.0
+Wizard=VsWizard.VsWizardEngine.8.0
+Param="WIZARD_NAME = ATLProject"
+Param="RELATIVE_PATH = VCWizards\SmartDeviceAppWiz\ATL"
+Param="WIZARD_ID = 69"

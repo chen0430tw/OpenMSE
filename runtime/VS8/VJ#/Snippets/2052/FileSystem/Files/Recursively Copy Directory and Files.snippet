@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+   <CodeSnippet Format="1.0.0">
+		<Header>
+			<Title> 递归复制目录和文件 </Title>
+			<Description> 用于在目录中递归复制文件/目录的扩展代码段。 </Description>
+      <Author>Microsoft Corporation</Author>
+			<SnippetTypes>          
+				<SnippetType> Expansion </SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID> SourceDirectory </ID>
+					<Default> strSrcDirName </Default>
+					<ToolTip> 要从中复制的源目录名。 </ToolTip>
+				</Literal>
+				<Literal>
+					<ID> TargetDirectory </ID>
+					<Default> strTargetDirName </Default>
+					<ToolTip> 要复制的目标目录名。 </ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="vjsharp" Format="CData"><![CDATA[
+public void copyDirectory(String $SourceDirectory$, String $TargetDirectory$)
+{
+    //Check if the source folder name and target folder names are not null and not blank
+    if (($SourceDirectory$ == null || $SourceDirectory$.length() <= 0) ||
+        ($TargetDirectory$ == null && $TargetDirectory$.length() <= 0))
+    {
+        return;
+    }
+
+    //Check if the source and target folder names are same.
+    //If they are same do nothing
+    if ($SourceDirectory$ == $TargetDirectory$)
+    {
+        return;
+    }
+
+    java.io.File objSrcDir = new java.io.File($SourceDirectory$);
+    java.io.File objTargetDir = new java.io.File($TargetDirectory$);    
+
+    // If source directory does not exist then do nothing 
+    if (!objSrcDir.exists())
+    {
+        System.out.println("The specified source directory not found.");
+        return;
+    }
+
+    // If target directory does not exist then create it.
+    if (!objTargetDir.exists())
+    {
+        objTargetDir.mkdir();
+    }
+
+    // Save file names list in the folder to a string array
+    java.io.File[] objSrcFiles = objSrcDir.listFiles();
+    String[] strArrFileName = new String[objSrcFiles.length];
+
+    for (int i = 0; i < objSrcFiles.length; i++)
+    {
+        strArrFileName[i] = objSrcDir.getPath() + '\\' + objSrcFiles[i].getName();
+    }
+
+    for (int i = 0; i < objSrcFiles.length; i++)
+    {
+        //For each file in the source directory
+        if ((new java.io.File(strArrFileName[i])).isFile())
+        {
+            try
+            {
+                // Execute copy command to copy the file from source directory to target directory
+                java.lang.Runtime r = java.lang.Runtime.getRuntime();
+                String strExecCommand = "cmd /c Copy \"" + strArrFileName[i] + "\" \"" + objTargetDir.getPath() + "\"";
+                r.exec(strExecCommand);
+            }
+            catch (java.io.IOException e)
+            {
+                System.out.println("Error: Invalid IO operation ");
+            }
+        }
+
+        // For each directory in the source directory
+        if ((new java.io.File(strArrFileName[i])).isDirectory())
+        {
+            // Recursively call copyDirectory method to copy the files and directories to the target directory.
+            copyDirectory(strArrFileName[i], objTargetDir.getPath() + '\\' + objSrcFiles[i].getName());
+        }
+    }
+}   
+$selected$ $end$
+]]>
+</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

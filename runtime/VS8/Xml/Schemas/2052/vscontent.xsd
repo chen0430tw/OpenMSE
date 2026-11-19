@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This schema is used by the Visual Studio Content Installer to validate .vscontent xml files. -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/developer/vscontent/2005" xmlns="http://schemas.microsoft.com/developer/vscontent/2005" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="non-empty-string">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="VSContent">
+      <xs:annotation>
+        <xs:documentation>
+           <!-- _logID_text-"VSContent" _locComment""-->VSContent 元素是 VS 内容 XML 架构的根元素。
+        </xs:documentation>
+      </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Content" minOccurs="1">
+            <xs:annotation>
+                <xs:documentation>
+                    <!-- _logID_text-"Content" _locComment""-->Content 元素定义要安装的每个项。
+                </xs:documentation>
+            </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice maxOccurs="unbounded">
+                  <xs:element name="FileName" type="non-empty-string" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _logID_text-"FileName" _locComment""-->对应于内容的文件的名称。
+                          </xs:documentation>
+                      </xs:annotation>
+                  </xs:element>
+                  <xs:element name="DisplayName" type="non-empty-string" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _logID_text-"DisplayName" _locComment""-->安装内容时显示给用户的名称
+                          </xs:documentation>
+                      </xs:annotation>
+                  </xs:element>
+                  <xs:element name="Description" type="non-empty-string" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _logID_text-"Description" _locComment""-->安装内容时显示给用户的说明
+                          </xs:documentation>
+                      </xs:annotation>
+                  </xs:element>
+                  <xs:element name="FileContentType" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _logID_text-"FileContentType" _locComment""-->要安装的内容类型。
+                          </xs:documentation>
+                      </xs:annotation>
+                           <xs:simpleType>
+                                    <xs:union>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string"></xs:restriction>
+                                        </xs:simpleType>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string">
+                                                <xs:enumeration value="Addin"><xs:annotation><xs:documentation><!-- _logID_text-"Addin" _locComment""-->将内容表示为外接程序。</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Code Snippet"><xs:annotation><xs:documentation><!-- _logID_text-"Code Snippet" _locComment""-->将内容表示为 Intellisense 代码段</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="VSTemplate"><xs:annotation><xs:documentation><!-- _logID_text-"VSTemplate" _locComment""-->将内容表示为模板。</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Toolbox Control"><xs:annotation><xs:documentation><!-- _logID_text-"Toolbox Control" _locComment""-->将内容表示为工具箱控件。</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Macro Project"><xs:annotation><xs:documentation><!-- _logID_text-"Macro Project" _locComment""-->将内容表示为宏项目。</xs:documentation></xs:annotation></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:union>
+                                </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ContentVersion" type="xs:decimal" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                          <xs:documentation>
+                              <!-- _logID_text-"ContentVersion" _locComment""-->内容的版本。
+                          </xs:documentation>
+                      </xs:annotation>
+                  </xs:element>
+                <xs:element name="Attributes" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>
+                            <!-- _logID_text-"Attributes" _locComment""-->特定于内容类型的属性的集合。
+                        </xs:documentation>
+                    </xs:annotation>
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element maxOccurs="unbounded" name="Attribute">
+                          <xs:annotation>
+                              <xs:documentation>
+                                  <!-- _logID_text-"Attribute" _locComment""-->描述内容的名称和值对。
+                              </xs:documentation>
+                          </xs:annotation>
+                        <xs:complexType>
+                            <xs:attribute name="name" use="required">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        <!-- _logID_text-"name" _locComment""-->要设置的属性的名称。
+                                    </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:union>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string"></xs:restriction>
+                                        </xs:simpleType>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string">
+                                                <xs:enumeration value="language"><xs:annotation><xs:documentation><!-- _logID_text-"language" _locComment""-->内容的口述语言。例如 en、jp</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="lang"><xs:annotation><xs:documentation><!-- _logID_text-"lang" _locComment""-->内容的编程语言。例如 csharp、vjsharp、vb、xml</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="TemplateType"><xs:annotation><xs:documentation><!-- _logID_text-"TemplateType" _locComment""-->模板的类型。例如项目、项</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="ProjectType"><xs:annotation><xs:documentation><!-- _logID_text-"ProjectType" _locComment""-->模板的语言。例如 Visual Basic、Visual C#、Visual J#、Visual Web Developer</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="ProjectSubType"><xs:annotation><xs:documentation><!-- _logID_text-"ProjectSubType" _locComment""-->模板的子类型。例如 Windows、数据库、Office</xs:documentation></xs:annotation></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:union>
+                                </xs:simpleType>
+                            </xs:attribute>
+                            <xs:attribute name="value" use="required">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        <!-- _logID_text-"value" _locComment""-->
+                                    </xs:documentation>
+                                </xs:annotation>                                <xs:simpleType>
+                                    <xs:union>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string"></xs:restriction>
+                                        </xs:simpleType>
+                                        <xs:simpleType>
+                                            <xs:restriction base="non-empty-string">
+                                                <xs:enumeration value="csharp"><xs:annotation><xs:documentation><!-- _logID_text-"csharp" _locComment""-->对于代码段有效。指示 lang 属性为 C# 编程语言</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="vjsharp"><xs:annotation><xs:documentation><!-- _logID_text-"jsharp" _locComment""-->对于代码段有效。指示 lang 属性为 J# 编程语言</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="vb"><xs:annotation><xs:documentation><!-- _logID_text-"vb" _locComment""-->对于代码段有效。指示 lang 属性为 VB 编程语言</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="xml"><xs:annotation><xs:documentation><!-- _logID_text-"xml" _locComment""-->对于代码段有效。指示 lang 属性为 XML 编程语言</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Item"><xs:annotation><xs:documentation><!-- _logID_text-"Item" _locComment""-->对于 VSTemplate 有效。指示 TemplateType 属性为项模板</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Project"><xs:annotation><xs:documentation><!-- _logID_text-"Project" _locComment""-->对于 VSTemplate 有效。指示 TemplateType 属性的内容为项目模板</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Visual Basic"><xs:annotation><xs:documentation><!-- _logID_text-"Visual Basic" _locComment""-->对于 VSTemplate 有效。指示 ProjectType 属性为 Visual Basic</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Visual C#"><xs:annotation><xs:documentation><!-- _logID_text-"Visual C#" _locComment""-->对于 VSTemplate 有效。指示 ProjectType 属性为 Visual C#</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Visual J#"><xs:annotation><xs:documentation><!-- _logID_text-"Visual J#" _locComment""-->对于 VSTemplate 有效。指示 ProjectType 属性为 Visual J#</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Visual Web Developer"><xs:annotation><xs:documentation><!-- _logID_text-"Visual Web Developer" _locComment""-->对于 VSTemplate 有效。指示 ProjectType 属性为 Visual Web Developer</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Windows"><xs:annotation><xs:documentation><!-- _logID_text-"Windows" _locComment""-->对于 VSTemplate 有效。指示 ProjectSubType 属性为 Windows</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Office"><xs:annotation><xs:documentation><!-- _logID_text-"Office" _locComment""-->对于 VSTemplate 有效。指示 ProjectSubType 属性为 Windows</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Smart Device"><xs:annotation><xs:documentation><!-- _logID_text-"Smart Device" _locComment""-->对于 VSTemplate 有效。指示 ProjectSubType 属性为 Windows</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Database"><xs:annotation><xs:documentation><!-- _logID_text-"Database" _locComment""-->对于 VSTemplate 有效。指示 ProjectSubType 属性为 Windows</xs:documentation></xs:annotation></xs:enumeration>
+                                                <xs:enumeration value="Test"><xs:annotation><xs:documentation><!-- _logID_text-"Test" _locComment""-->对于 VSTemplate 有效。指示 ProjectSubType 属性为 Windows</xs:documentation></xs:annotation></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:union>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:complexType>
+                    </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 按升序对数组列表进行插入排序 </Title>
+            <Description> 按升序对数组列表进行插入排序的扩展代码段。</Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ArrayList </ID>
+                    <Default> arrList </Default>
+                    <ToolTip> 包含未排序元素的数组列表，要使用插入排序法对这些元素进行排序。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+// Loop through the array and put each item in the proper slot,
+// shifting other items out of the way as you go.
+    for (int i = 1; i < $ArrayList$.size(); i++)
+    {
+        Object tempObj = $ArrayList$.get(i);
+        int j = i;
+
+        // find the spot for the item in the array 
+        while ((j > 0) && (((java.lang.Integer)$ArrayList$.get(j - 1)).ToInt32(null) >
+                            ((java.lang.Integer)tempObj).ToInt32(null)))
+        {
+            // This element is bigger than the element being inserted,
+            // so move it up one slot.
+
+            $ArrayList$.set(j, $ArrayList$.get(j - 1));
+            --j;
+        }
+        // insert item
+        $ArrayList$.set(j, tempObj);
+    }
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

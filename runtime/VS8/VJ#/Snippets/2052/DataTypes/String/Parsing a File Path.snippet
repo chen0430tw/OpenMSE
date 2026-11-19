@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 分析文件路径 </Title>
+            <Description> 用于分析文件路径的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FilePath </ID>
+                    <Default> strFilepath </Default>
+                    <ToolTip> 用于保存要分析的文件路径字符串的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+String strFilename = ""; 
+String strFileDir  = "";
+
+//Check whether Filepath string is not null and not blank
+if (($FilePath$ == null) || ($FilePath$.length() == 0))
+{
+System.out.println("Error :Invalid file name");
+}
+else
+{
+java.io.File objFile = new java.io.File($FilePath$);
+strFilename = objFile.getName();
+strFileDir = objFile.getParent();
+
+//Check if the file path specified is invalid
+if (strFilename.length() == 0)
+{
+    System.out.println("Error :Invalid file name");
+}
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 复制文件 </Title>
+            <Description> 用于复制文件的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> SourceFileName </ID>
+                    <Default> strSrcFileName </Default>
+                    <ToolTip> 要复制的源文件名。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> TargetFileName </ID>
+                    <Default> strTargetFileName </Default>
+                    <ToolTip> 目标文件名。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+try
+{    
+//Check whether the source file name and target file names are not null and not blank
+    if (($SourceFileName$ != null && $SourceFileName$.length() > 0) &&
+        ($TargetFileName$ != null && $TargetFileName$.length() > 0))
+    {
+        java.io.InputStream objInStream = new java.io.FileInputStream($SourceFileName$);
+        java.io.OutputStream objOutStream = new java.io.FileOutputStream($TargetFileName$);
+        byte[] byteBuff = new byte[1024];
+        int nLength;
+
+//Read from Input Stream and Write to Output Stream 
+        while ((nLength = objInStream.read(byteBuff)) > 0)
+        {
+            objOutStream.write(byteBuff, 0, nLength);
+        }
+        objInStream.close();
+        objOutStream.close();
+    }
+}
+catch (java.io.IOException e)
+{
+    System.out.println("Error: Invalid IO operation.");
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

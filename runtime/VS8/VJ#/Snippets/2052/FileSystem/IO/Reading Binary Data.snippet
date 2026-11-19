@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 读取二进制数据 </Title>
+            <Description> 用于从文件中读取二进制数据的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> FileObject </ID>
+                    <Default> objFile </Default>
+                    <ToolTip> 用于保存文件对象的变量。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+try
+    {
+        //Check if the file name is not null and not blank
+        if ($FileObject$ != null && $FileObject$.length() > 0)
+        {
+            java.io.FileInputStream objFileInput = new java.io.FileInputStream($FileObject$);
+            java.io.DataInputStream objDataInStream = new java.io.DataInputStream(objFileInput);
+            byte[] bData = new byte[1024];
+
+            int nLength = 0;
+            // Read 1024 bytes data from the file until EOF is reached
+            while ((nLength = objDataInStream.read(bData, 0, 1024)) > 0)
+            {
+                for (int i = 0; i < nLength; i++)
+                {
+                    System.out.print(bData[i] + " ");
+                }
+            }
+        }
+    }
+    catch (java.io.EOFException eof)
+    {
+        System.out.println("Error: EOF has reached.");
+    }
+    catch (java.io.IOException ioe)
+    {
+        System.out.println("Error : Invalid IO operation.");
+    }       
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

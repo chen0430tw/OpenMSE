@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title> 按升序对数组进行快速排序  </Title>
+            <Description> 使用快速排序算法对未排序的数组列表进行排序的扩展代码段。 </Description>
+            <Author>Microsoft Corporation</Author>
+            <SnippetTypes>          
+                <SnippetType> Expansion </SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID> ArrayList </ID>
+                    <Default> arrList </Default>
+                    <ToolTip> 包含未排序元素列表的数组列表，要使用快速排序法对这些元素进行排序。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> LowIndex </ID>
+                    <Default> lowIndx </Default>
+                    <ToolTip> 要进行排序的数组列表的起始索引。 </ToolTip>
+                </Literal>
+                <Literal>
+                    <ID> HighIndex </ID>
+                    <Default> highIndx </Default>
+                    <ToolTip> 要进行排序的数组列表的最后一个索引。 </ToolTip>
+                </Literal>
+            </Declarations>
+            <Code Language="vjsharp" Format="CData"><![CDATA[
+public void quickSort(java.util.ArrayList $ArrayList$, int $LowIndex$, int $HighIndex$)
+{
+    if ($ArrayList$.size() == 0)
+        return;
+
+    int tmpLowIndx = $LowIndex$;
+    int tmpHighIndx = $HighIndex$;
+    if (tmpLowIndx >= tmpHighIndx)
+    {
+        return;
+    }
+    else if (tmpLowIndx == tmpHighIndx - 1)
+    {
+        if (((java.lang.Integer)$ArrayList$.get(tmpLowIndx)).ToInt32(null) > ((java.lang.Integer)$ArrayList$.get(tmpHighIndx)).ToInt32(null))
+        {
+            Object objTemp = $ArrayList$.get(tmpLowIndx);
+            $ArrayList$.set(tmpLowIndx, $ArrayList$.get(tmpHighIndx));
+            $ArrayList$.set(tmpHighIndx, objTemp);
+        }
+        return;
+    }
+
+    //partitioning the arrList with a pivot value
+    Object pivotObj = $ArrayList$.get((tmpLowIndx + tmpHighIndx) / 2);
+    $ArrayList$.set(((tmpLowIndx + tmpHighIndx) / 2), $ArrayList$.get(tmpHighIndx));
+
+    $ArrayList$.set(tmpHighIndx, pivotObj);
+
+    //ensure that all the items in one part (the lower part) are less 
+    //than all those in the other (upper) part
+    while (tmpLowIndx < tmpHighIndx)
+    {
+        while ((((java.lang.Integer)$ArrayList$.get(tmpLowIndx)).ToInt32(null) < ((java.lang.Integer)pivotObj).ToInt32(null)) && (tmpLowIndx < tmpHighIndx))
+        {
+            tmpLowIndx++;
+        }
+
+        while ((((java.lang.Integer)pivotObj).ToInt32(null) <= ((java.lang.Integer)$ArrayList$.get(tmpHighIndx)).ToInt32(null)) && (tmpLowIndx < tmpHighIndx))
+        {
+            tmpHighIndx--;
+        }
+
+        if (tmpLowIndx < tmpHighIndx)
+        {
+            Object objTemp = $ArrayList$.get(tmpLowIndx);
+            $ArrayList$.set(tmpLowIndx, $ArrayList$.get(tmpHighIndx));
+            $ArrayList$.set(tmpHighIndx, objTemp);
+        }
+    }
+    $ArrayList$.set($HighIndex$, $ArrayList$.get(tmpHighIndx));
+    $ArrayList$.set(tmpHighIndx, pivotObj);
+
+    // Call Quicksort recursively to sort the lower part of the array List
+    quickSort($ArrayList$, $LowIndex$, tmpLowIndx - 1);
+
+    // Call Quicksort recursively to sort the upper part of the array List
+    quickSort($ArrayList$, tmpHighIndx + 1, $HighIndex$);
+}
+$selected$ $end$
+]]>
+</Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
