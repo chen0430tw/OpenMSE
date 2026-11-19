@@ -1,0 +1,54 @@
+﻿package calculator.model;
+
+import java.util.*;
+
+/**
+ * java.util.Stack 周围的包装用于提供 Operation 对象的堆栈。
+ */
+public class OperandStack
+{
+    /**
+     * 向堆栈的顶部添加操作数。
+     */
+    public void push(double operand)
+    {
+        // 如果值无效或是正负无穷，则引发异常。
+        if (Double.isNaN(operand))
+            throw new OperationParameterException("未定义函数的结果。");
+
+        if (operand == Double.POSITIVE_INFINITY)
+            throw new OperationParameterException("无穷");
+
+        if (operand == Double.NEGATIVE_INFINITY)
+            throw new OperationParameterException("负无穷");
+
+        operandStack.push(new Double(operand));
+    }
+
+    /**
+     * 移除堆栈顶部的操作数。
+     */
+    public double pop()
+    {
+        return ((Double)operandStack.pop()).doubleValue();
+    }
+
+    /**
+     * 查看顶部的值，而不将其移除。
+     */
+    public double peek()
+    {
+        return ((Double)operandStack.peek()).doubleValue();
+    }
+
+    /**
+     * 清空堆栈
+     */
+    public void clear()
+    {
+        operandStack.clear();
+    }
+
+    // 内部堆栈对象
+    private Stack operandStack = new Stack();
+}

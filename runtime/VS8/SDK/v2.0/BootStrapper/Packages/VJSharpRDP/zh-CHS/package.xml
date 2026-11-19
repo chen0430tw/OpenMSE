@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper" Name="DisplayName" Culture="Culture" LicenseAgreement="eula.txt">
+
+    <PackageFiles>
+        <PackageFile Name="vjredist-LP.exe" HomeSite="VJRedistLPExe" PublicKey="3082010A0282010100CF38F7E1A4275EF8F0CCAACEFB3ADE3B6231460546BBF5B6051AD3B3ACC29F0F4C670828C44310F53B75797F6A91F4D633C861BFFA9190007AF0791D5D6870F690B29877B5031D2F9B9D9B75892F4A01417C9E7CCB87439BF49674999E98C1CF40575816F6C0D59216E52485718F9949ED557C65C91F380023C53EAB11D6296CC69EA0705B7DD537D4677720C306CE85F84E3480A035C41C53320157EFB128BD6C01E3AD40BC80A90949DB36E337F41D49AA2AA76BD019D3CC8E9DD686467A134AD64519A553B3E2782F2E35976B4CC6E81AB0D3D1249069ABCEFC696E3E4CFB024162DC07985D7E5CA74C27316B564CE198D8E0D11D718D3D2AC07F714DFFCF0203010001"/>
+        <PackageFile Name="eula.txt"/>
+    </PackageFiles>
+
+    <Schedules>
+        <Schedule Name="BeforeVJSRDPInstall">
+            <BeforePackage/>
+        </Schedule>
+    </Schedules>
+
+    <InstallChecks>
+        <ExternalCheck PackageFile="dotnetchk.exe" Property="DotNetInstalled" Arguments="-lcid:2052"/>
+        <ExternalCheck PackageFile="vjsrdpchk.exe" Property="VJSRDPInstalled" Arguments="-lcid:2052"/>
+    </InstallChecks>
+
+    <Commands Reboot="Defer">
+        <Command PackageFile="vjredist-LP.exe" Arguments=" /q:a /c:&quot;install /l /q&quot;">
+            <InstallConditions>
+                <BypassIf Property="VJSRDPInstalled" Compare="ValueEqualTo" Value="2"/>
+
+                <!-- Block install if user does not have admin privileges -->
+                <FailIf Property="AdminUser" Compare="ValueEqualTo" Value="false" String="AdminRequired"/>
+
+                <!-- Block install if there is no .NET Framework -->
+                <FailIf Property="DotNetInstalled" Compare="ValueEqualTo" Value="0" String="DotNetFxRequired" Schedule="BeforeVJSRDPInstall"/>
+            </InstallConditions>
+
+            <ExitCodes>
+                <ExitCode Value="0" Result="Success"/>
+                <ExitCode Value="3010" Result="SuccessReboot"/>
+                <ExitCode Value="4096" Result="Fail" String="ImproperUsage"/>
+                <ExitCode Value="4097" Result="Fail" String="WindowsInstallerImproperInstall"/>
+                <ExitCode Value="4098" Result="Fail" String="OpenDatabaseFailure"/>
+                <ExitCode Value="4099" Result="Fail" String="ReadDatabaseFailure"/>
+                <ExitCode Value="4100" Result="Fail" String="SourceDirectoryTooLong"/>
+                <ExitCode Value="4355" Result="Fail" String="TempDirectoryTooLong"/>
+                <ExitCode Value="4356" Result="Fail" String="GetTempDirectoryFailure"/>
+                <ExitCode Value="4357" Result="Fail" String="CannotWriteLogFile"/>
+                <DefaultExitCode Result="Fail" FormatMessageFromSystem="true" String="GeneralFailure"/>
+            </ExitCodes>
+        </Command>
+    </Commands>
+
+
+    <!-- Defines a localizable string table for error messages and url's  -->
+    <Strings>
+        <String Name="DisplayName">Microsoft Visual J# .NET Redistributable Package 2.0</String>
+        <String Name="Culture">zh-CHS</String>
+        <String Name="AdminRequired">安装 Microsoft Visual J# .NET Redistributable Package 2.0 需要管理员权限。请与您的管理员联系。</String>
+        <String Name="DotNetFxRequired">安装 Microsoft Visual J# .NET Redistributable Package 2.0 需要 Microsoft .NET Framework 2.0。请与您的应用程序供应商联系。</String>
+        <String Name="WindowsInstallerImproperInstall">由于 Windows Installer 有错误，无法继续安装 Microsoft Visual J# .NET Redistributable Package 2.0。</String>
+        <String Name="AnotherInstanceRunning">安装程序的另一个实例已经运行。必须完成正在运行的实例，此安装程序才能继续。</String>
+        <String Name="BetaNDPFailure">在该计算机上检测到 Microsoft Visual J# .NET Redistributable Package 2.0 的测试版。在继续之前，请卸载 Microsoft Visual J# .NET Redistributable Package 的任何早期测试版本。</String>
+        <String Name="GeneralFailure">试图安装 Microsoft Visual J# .NET Redistributable Package 2.0 时发生错误。</String>
+        <String Name="VJRedistExe">http://go.microsoft.com/fwlink/?LinkId=37281</String>
+        <String Name="VJRedistLPExe">http://go.microsoft.com/fwlink/?LinkId=37281&amp;clcid=0x804</String>
+    </Strings>
+
+</Package>

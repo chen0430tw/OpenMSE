@@ -1,0 +1,77 @@
+﻿package $safeprojectname$;
+
+import System.Collections.Generic.*;
+import System.ComponentModel.*;
+import System.Data.*;
+import System.Diagnostics.*;
+import System.ServiceProcess.*;
+
+/**
+ * Service1 的摘要说明。
+ */
+public class Service1 extends System.ServiceProcess.ServiceBase
+{
+    /**
+     * 必需的设计器变量。
+     */
+    private System.ComponentModel.IContainer components;
+
+    public Service1()
+    {
+        //
+        // 此调用是 Windows.Forms 组件设计器所必需的。
+        //
+        InitializeComponent();
+
+        //
+        // TODO: 在 InitComponent 调用之后添加任何初始化代码
+        //
+    }
+
+    #region Windows 窗体设计器生成的代码
+    /**
+     * 清理所有正在使用的资源。
+     */
+    protected void Dispose(boolean disposing)
+    {
+        if (disposing)
+        {
+            if (components != null)
+            {
+                components.Dispose();
+            }
+        }
+        super.Dispose(disposing);
+    }
+
+    /**
+     * 设计器支持所需的方法 - 不要
+     * 使用代码编辑器修改此方法的内容。
+     */
+    private void InitializeComponent()
+    {
+        components = new System.ComponentModel.Container();
+        this.set_ServiceName("Service1");
+    }
+    #endregion
+
+    /**
+     *设置具体的操作，以便服务可以执行它的工作。
+     */
+    protected void OnStart(String[] args)
+    {
+        //
+        // TODO: 在此处添加代码以启动服务。
+        //
+    }
+
+    /**
+     * 停止此服务。
+     */
+    protected void OnStop()
+    {
+        //
+        // TODO: 在此处添加代码以执行停止服务所需的关闭操作。
+        //
+    }
+}

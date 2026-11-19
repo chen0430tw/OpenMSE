@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cssmd:cssmd xmlns:cssmd="http://schemas.microsoft.com/Visual-Studio-Intellisense/css" version="VS8" description="CSS supported by IE6 validation data">
+  <cssmd:property-set>
+	<!-- http://msdn.microsoft.com/workshop/author/dhtml/reference/objects/obj_style.asp -->
+
+    <!-- Font Properties -->
+    <cssmd:property-def _locID="color" _locAttrData="description,syntax" type="color" description="元素的文本颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+
+    <cssmd:property-def _locID="font" _locAttrData="description,syntax" type="composite" description="元素的文本所用的字体" syntax="系统字体之一 | [font-style] [font-variant] [font-weight] [font-size]/[line-height] [font-family]" enum="caption icon menu message-box small-caption status-bar"/>
+    <cssmd:property-def _locID="font-family" _locAttrData="description,syntax" type="font" description="元素的文本所用字体的名称" syntax="字体名序列"/>
+    <cssmd:property-def _locID="font-style" _locAttrData="description,syntax" type="enum" description="元素的文本所用字体的样式" syntax="font-style 值之一" enum="italic normal oblique"/>
+    <cssmd:property-def _locID="font-variant" _locAttrData="description,syntax" type="enum" description="元素的文本所用字体的变量" syntax="font-variant 值之一" enum="normal small-caps"/>
+    <cssmd:property-def _locID="font-size" _locAttrData="description,syntax" type="composite" description="元素的文本所用字体的大小" syntax="长度 | 百分比 | 标准字号值" enum="large larger medium small smaller x-large x-small xx-large xx-small"/>
+    <cssmd:property-def _locID="font-weight" _locAttrData="description,syntax" type="enum" description="元素的文本所用字体的加粗程度" syntax="font-weight 值之一" enum="bold bolder lighter normal 100 200 300 400 500 600 700 800 900"/>
+    <cssmd:property-def _locID="text-decoration" _locAttrData="description,syntax" type="composite" description="应用于元素的文本所用字体的修饰" syntax="none | “underline”、“overline”、“line-through”和“blink”的组合"/>
+
+    <!-- Background Properties -->
+    <cssmd:property-def _locID="background" _locAttrData="description,syntax" type="composite" description="元素的背景" syntax="[background-color] [background-image] [background-repeat] [background-attachment] [background-position]"/>
+    <cssmd:property-def _locID="background-color" _locAttrData="description,syntax" type="color" description="元素的背景所用的颜色" syntax="#RRGGBB | Transparent | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+
+    <cssmd:property-def _locID="background-image" _locAttrData="description,syntax" type="url" description="元素的背景所用的图像" syntax="none | url ([图像的 url])"/>
+    <cssmd:property-def _locID="background-attachment" _locAttrData="description,syntax" type="enum" description="如何将背景图像附加到文档中的元素" syntax="background-attachment 值之一" enum="fixed scroll"/>
+    <cssmd:property-def _locID="background-repeat" _locAttrData="description,syntax" type="enum" description="背景图像在元素中如何平铺" syntax="background-repeat 值之一" enum="no-repeat repeat repeat-x repeat-y"/>
+    <cssmd:property-def _locID="background-position" _locAttrData="description,syntax" type="composite" description="如何在元素中定位背景" syntax="[水平位置] [垂直位置]" enum="bottom center left right top"/>
+	<!-- IE specific -->
+    <cssmd:property-def _locID="background-position-x" _locAttrData="description,syntax" type="composite" description="如何在元素中定位背景" syntax="[水平位置] [垂直位置]" enum="center left right"/>
+    <cssmd:property-def _locID="background-position-y" _locAttrData="description,syntax" type="composite" description="如何在元素中定位背景" syntax="[水平位置] [垂直位置]" enum="bottom center top"/>
+
+    <!-- Text Properties -->
+    <cssmd:property-def _locID="text-align" _locAttrData="description,syntax" type="enum" description="元素的文本的水平对齐方式" syntax="text-align 值之一" enum="center justify left right"/>
+    <cssmd:property-def _locID="vertical-align" _locAttrData="description,syntax" type="composite" description="元素的文本的垂直对齐方式" syntax="vertical-align 值之一 | 一个单元" enum="baseline bottom middle sub super text-bottom text-top top"/>
+    <cssmd:property-def _locID="letter-spacing" _locAttrData="description,syntax" type="composite" description="字符间距" syntax="normal | 一个单元" enum="normal"/>
+    <cssmd:property-def _locID="line-height" _locAttrData="description,syntax" type="composite" description="行间距" syntax="normal | 一个单元" enum="normal"/>
+    <cssmd:property-def _locID="text-indent" _locAttrData="description,syntax" type="length" description="文本缩进" syntax="一个单元"/>
+    <cssmd:property-def _locID="text-transform" _locAttrData="description,syntax" type="enum" description="文本的字母大小写" syntax="text-transform 值之一" enum="capitalize lowercase none uppercase"/>
+    <cssmd:property-def _locID="word-spacing" _locAttrData="description,syntax" type="composite" description="字间距" syntax="normal | 一个单元" enum="normal"/>
+    <cssmd:property-def _locID="white-space" _locAttrData="description,syntax" type="enum" description="指示对象内部是否自动换行的值" syntax="white-space 值之一" enum="normal nowrap pre"/>
+	<!-- IE specific -->
+    <cssmd:property-def _locID="line-break" _locAttrData="description,syntax" type="enum" description="日文文本的换行规则" syntax="line-break 值之一" enum="normal strict"/>
+    <cssmd:property-def _locID="text-align-last" _locAttrData="description,syntax" type="enum" description="定义如何对齐对象中最后一行文本或唯一一行文本" syntax="text-align-last 值之一" enum="auto center justify left right"/>
+    <cssmd:property-def _locID="text-autospace" _locAttrData="description,syntax" type="enum" description="文本的自动调整间距和缩小间距宽度调整" syntax="text-autospace 值之一" enum="none ideograph-alpha ideograph-numeric ideograph-parenthesis ideograph-space"/>
+    <cssmd:property-def _locID="text-justify" _locAttrData="description,syntax" type="enum" description="用于对齐对象中文本的对齐方式" syntax="text-justify 值之一" enum="auto distribute distribute-all-lines distribute-center-last inter-cluster inter-ideograph inter-word kashida newspaper"/>
+    <cssmd:property-def _locID="text-kashida-space" _locAttrData="description,syntax" type="length" description="对齐对象中的文本行时的Kashida 扩展与空白扩展的比率" syntax="一个单元"/>
+    <cssmd:property-def _locID="text-overflow" _locAttrData="description,syntax" type="enum" description="指示是否呈现省略号 (...) 以表示文本溢出" syntax="text-overflow 值之一" enum="ellipsis clip"/>
+    <cssmd:property-def _locID="text-underline-position" _locAttrData="description,syntax" type="enum" description="通过 textDecoration 属性设置的下划线修饰的位置" syntax="text-underline-position 值之一" enum="above below auto auto-pos"/>
+    <cssmd:property-def _locID="word-break" _locAttrData="description,syntax" type="enum" description="字中的换行行为，尤其是在对象中出现多种语言时" syntax="word-break 值之一" enum="normal break-all keep-all"/>
+    <cssmd:property-def _locID="word-wrap" _locAttrData="description,syntax" type="enum" description="定义内容超出其容器边界时是否断字" syntax="word-wrap 值之一" enum="normal break-word"/>
+    <cssmd:property-def _locID="writing-mode" _locAttrData="description,syntax" type="enum" description="对象中内容的方向和流" syntax="writing-mode 值之一" enum="lr-tb tb-rl"/>
+
+    <!-- Layout Properties -->
+    <cssmd:property-def _locID="display" _locAttrData="description,syntax" type="enum" description="元素的显示模式" syntax="display 值之一" enum="block inline inline-block list-item none table-footer-group table-header-group"/>
+    <cssmd:property-def _locID="float" _locAttrData="description,syntax" type="enum" description="文本将在其上流动的对象的边缘" syntax="float 值之一" enum="left none right"/>
+    <cssmd:property-def _locID="clear" _locAttrData="description,syntax" type="enum" description="不允许有浮动对象的边" syntax="clear 值之一" enum="both left none right"/>
+    <cssmd:property-def _locID="visibility" _locAttrData="description,syntax" type="enum" description="元素的可见性" syntax="visibility 值之一" enum="hidden visible"/>
+    <cssmd:property-def _locID="position" _locAttrData="description,syntax" type="enum" description="元素的定位模式" syntax="position 值之一" enum="absolute relative static"/>
+    <cssmd:property-def _locID="z-index" _locAttrData="description,syntax" type="composite" description="定位元素的堆栈顺序" syntax="auto | 一个整数" enum="auto"/>
+    <cssmd:property-def _locID="left" _locAttrData="description,syntax" type="composite" description="定位元素的左边缘" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="right" _locAttrData="description,syntax" type="composite" description="定位元素的右边缘" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="top" _locAttrData="description,syntax" type="composite" description="定位元素的上边缘" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="bottom" _locAttrData="description,syntax" type="composite" description="定位元素的下边缘" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="overflow" _locAttrData="description,syntax" type="enum" description="超出元素维度范围的内容的可见性" syntax="overflow 值之一" enum="auto hidden scroll visible"/>
+    <cssmd:property-def _locID="overflow-x" _locAttrData="description,syntax" type="enum" description="定义内容超出对象宽度时如何管理对象的内容" syntax="overflow-x 值之一" enum="auto hidden scroll visible"/>
+    <cssmd:property-def _locID="overflow-y" _locAttrData="description,syntax" type="enum" description="定义内容超出对象高度时如何管理对象的内容" syntax="overflow-y 值之一" enum="auto hidden scroll visible"/>
+    <cssmd:property-def _locID="clip" _locAttrData="description,syntax" type="string" description="元素的剪辑矩形" syntax="rect([上单元] [右单元] [下单元] [左单元]) | auto"/>
+    <cssmd:property-def _locID="width" _locAttrData="description,syntax" type="composite" description="定位元素的宽度" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="height" _locAttrData="description,syntax" type="composite" description="定位元素的高度" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="min-height" _locAttrData="description,syntax" type="length" description="限制框高度" syntax="一个单元"/>
+	<!-- IE specific properties -->
+    <cssmd:property-def _locID="layout-flow" _locAttrData="description,syntax" type="enum" description="对象中内容的方向和流" syntax="layout-flow 值之一" enum="horizontal vertical-ideographic"/>
+    <cssmd:property-def _locID="layout-grid" _locAttrData="description,syntax" type="enum" description="指定文本字符的布局的复合文档网格属性" syntax="layout-grid 值之一" enum="mode type line char"/>
+    <cssmd:property-def _locID="layout-grid-char" _locAttrData="description,syntax" type="composite" description="呈现元素的文本内容所用的字符网格大小" syntax="layout-grid-char 值之一 | 一个单元" enum="auto none"/>
+    <cssmd:property-def _locID="layout-grid-line" _locAttrData="description,syntax" type="composite" description="呈现元素的文本内容所用的网格线值" syntax="layout-grid-line 值之一 | 一个单元" enum="auto none"/>
+    <cssmd:property-def _locID="layout-grid-mode" _locAttrData="description,syntax" type="enum" description="指定文本布局网格是否使用两个维度" syntax="layout-grid-mode 值之一" enum="both none line char"/>
+    <cssmd:property-def _locID="layout-grid-type" _locAttrData="description,syntax" type="enum" description="呈现元素的文本内容所用的网格类型" syntax="layout-grid-type 值之一" enum="loose strict fixed"/>
+
+    <!-- Edges Properties -->
+    <cssmd:property-def _locID="padding" _locAttrData="description,syntax" type="composite" description="元素四个边缘的空白" syntax="[上单元] [右单元] [下单元] [左单元]"/>
+    <cssmd:property-def _locID="padding-left" _locAttrData="description,syntax" type="composite" description="元素左边缘的空白" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="padding-right" _locAttrData="description,syntax" type="composite" description="元素右边缘的空白" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="padding-top" _locAttrData="description,syntax" type="composite" description="元素上边缘的空白" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="padding-bottom" _locAttrData="description,syntax" type="composite" description="元素下边缘的空白" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="margin" _locAttrData="description,syntax" type="composite" description="元素四个边缘的边距" syntax="[上单元] [右单元] [下单元] [左单元]"/>
+    <cssmd:property-def _locID="margin-left" _locAttrData="description,syntax" type="composite" description="元素左边缘的边距" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="margin-right" _locAttrData="description,syntax" type="composite" description="元素右边缘的边距" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="margin-top" _locAttrData="description,syntax" type="composite" description="元素上边缘的边距" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="margin-bottom" _locAttrData="description,syntax" type="composite" description="元素下边缘的边距" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="border" _locAttrData="description,syntax" type="composite" description="元素所有四个边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-left" _locAttrData="description,syntax" type="composite" description="元素左边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-right" _locAttrData="description,syntax" type="composite" description="元素右边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-top" _locAttrData="description,syntax" type="composite" description="元素上边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-bottom" _locAttrData="description,syntax" type="composite" description="元素下边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-color" _locAttrData="description,syntax" type="color" description="元素所有四个边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-style" _locAttrData="description,syntax" type="enum" description="元素所有四个边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove hidden inset none outset ridge solid"/>
+    <cssmd:property-def _locID="border-width" _locAttrData="description,syntax" type="composite" description="元素所有四个边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-left-color" _locAttrData="description,syntax" type="color" description="元素左边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-left-width" _locAttrData="description,syntax" type="composite" description="元素左边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-left-style" _locAttrData="description,syntax" type="enum" description="元素左边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove inset none outset ridge solid window-inset"/>
+    <cssmd:property-def _locID="border-right-color" _locAttrData="description,syntax" type="color" description="元素右边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-right-width" _locAttrData="description,syntax" type="composite" description="元素右边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-right-style" _locAttrData="description,syntax" type="enum" description="元素右边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove inset none outset ridge solid window-inset"/>
+    <cssmd:property-def _locID="border-top-color" _locAttrData="description,syntax" type="color" description="元素上边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-top-width" _locAttrData="description,syntax" type="composite" description="元素上边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-top-style" _locAttrData="description,syntax" type="enum" description="元素上边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove inset none outset ridge solid window-inset"/>
+    <cssmd:property-def _locID="border-bottom-color" _locAttrData="description,syntax" type="color" description="元素下边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-bottom-width" _locAttrData="description,syntax" type="composite" description="元素下边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-bottom-style" _locAttrData="description,syntax" type="enum" description="元素下边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove inset none outset ridge solid"/>
+
+    <!-- @font-face Properties -->
+    <cssmd:property-def _locID="src" _locAttrData="description,syntax" type="url" description="字体文件的位置" syntax="url ([字体下载的 url])"/>
+		
+    <!-- Page Breaks Properties -->
+    <cssmd:property-def _locID="page-break-before" _locAttrData="description,syntax" type="enum" description="在元素之前分页" syntax="page-break-before 值之一" enum="always auto avoid left right"/>
+    <cssmd:property-def _locID="page-break-after" _locAttrData="description,syntax" type="enum" description="在元素之后分页" syntax="page-break-after 值之一" enum="always auto avoid left right"/>
+		
+    <!-- Lists Properties -->
+    <cssmd:property-def _locID="list-style" _locAttrData="description,syntax" type="composite" description="列表项的项目符号特征" syntax="[list-style-type] [list-style-image] [list-style-position]"/>
+    <cssmd:property-def _locID="list-style-type" _locAttrData="description,syntax" type="enum" description="列表项的项目符号样式" syntax="list-style-type 值之一" enum="circle decimal disc lower-alpha lower-roman none square upper-alpha upper-roman"/>
+    <cssmd:property-def _locID="list-style-image" _locAttrData="description,syntax" type="url" description="列表项的项目符号图像" syntax="none | url ([项目符号图像的 url])"/>
+    <cssmd:property-def _locID="list-style-position" _locAttrData="description,syntax" type="enum" description="列表项的项目符号位置" syntax="list-style-position 值之一" enum="inside outside"/>
+
+    <!-- BiDi Properties -->
+    <cssmd:property-def _locID="direction" _locAttrData="description,syntax" type="enum" description="文本的流向" syntax="direction 值之一" enum="ltr rtl"/>
+    <cssmd:property-def _locID="unicode-bidi" _locAttrData="description,syntax" type="enum" description="与双向算法有关的嵌入级别" syntax="unicode-bidi 值之一" enum="bidi-override embed normal"/>
+
+    <!-- Table Properties -->
+    <cssmd:property-def _locID="table-layout" _locAttrData="description,syntax" type="enum" description="表的单元格布局模式" syntax="table-layout 值之一" enum="auto fixed"/>
+    <cssmd:property-def _locID="border-collapse" _locAttrData="description,syntax" type="enum" description="表边框模型" syntax="border-collapse 值之一" enum="collapse separate"/>
+
+    <!-- Ruby Properties (CSS3) -->
+    <cssmd:property-def _locID="ruby-align" _locAttrData="description,syntax" type="enum" description="RT 对象指定的拼音文本的对齐方式" syntax="ruby-align 值之一" enum="auto center left right distribute-letter distribute-space line-edge"/>
+    <cssmd:property-def _locID="ruby-overhang" _locAttrData="description,syntax" type="enum" description="RT 对象指定的拼音文本的延伸量" syntax="ruby-align 值之一" enum="auto whitespace none"/>
+    <cssmd:property-def _locID="ruby-position" _locAttrData="description,syntax" type="enum" description="RT 对象指定的拼音文本的位置" syntax="ruby-align 值之一" enum="above inline"/>
+
+    <!-- Scrollbar Properties (IE-specific) -->
+    <cssmd:property-def _locID="scrollbar-3dlight-color" _locAttrData="description,syntax" type="color" description="滚动框的上边缘和左边缘和滚动条的滚动箭头的颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="scrollbar-arrow-color" _locAttrData="description,syntax" type="color" description="滚动箭头的箭头元素颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="scrollbar-base-color" _locAttrData="description,syntax" type="color" description="滚动条的主要元素(包括滚动框、轨道和滚动箭头)的颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="scrollbar-darkshadow-color" _locAttrData="description,syntax" type="color" description="滚动条的槽的颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="scrollbar-face-color" _locAttrData="description,syntax" type="color" description="滚动框和滚动条的滚动箭头的颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="scrollbar-highlight-color" _locAttrData="description,syntax" type="color" description="滚动框的上边缘和左边缘和滚动条的滚动箭头的颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="scrollbar-shadow-color" _locAttrData="description,syntax" type="color" description="滚动框的下边缘和右边缘的颜色和滚动条的滚动箭头" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="scrollbar-track-color" _locAttrData="description,syntax" type="color" description="滚动条的轨道元素的颜色" syntax="#RRGGBB | 已命名的颜色" enum="AliceBlue AntiqueWhite Aqua Aquamarine Azure 
+			Beige Bisque Black BlanchedAlmond Blue BlueViolet Brown Burlywood
+			CadetBlue Chartreuse Chocolate Coral CornflowerBlue	Cornsilk Crimson Cyan
+			DarkBlue DarkCyan DarkGoldenrod DarkGray DarkGreen DarkKhaki DarkMagenta DarkOliveGreen 
+			DarkOrange DarkOrchid DarkRed DarkSalmon DarkSeaGreen DarkSlateBlue	DarkSlateGray
+			DarkTurquoise DarkViolet DeepPink DeepSkyBlue DimGray DodgerBlu
+			Firebrick FloralWhite ForestGreen Fuchsia
+			Gainsboro GhostWhite Gold Goldenrod Gray Green GreenYellow
+			Honeydew HotPink
+			IndianRed Indigo Ivory
+			Khaki
+			Lavender LavenderBlush LawnGreen LemonChiffon LightBlue	LightCoral LightCyan
+			LightGoldenrodYellow LightGreen	LightGrey LightPink	LightSalmon	LightSeaGreen
+			LightSkyBlue LightSlateGray	LightSteelBlue LightYellow Lime LimeGreen Linen
+			Magenta	Maroon MediumAquamarine MediumBlue MediumOrchid MediumPurple MediumSeaGreen
+			MediumSlateBlue MediumSpringGreen MediumTurquoise MediumVioletRed MidnightBlue
+			MintCream MistyRose	Moccasin
+			NavajoWhite Navy
+			Oldlace Olive OliveDrab Orange OrangeRed Orchid
+			PaleGoldenrod PaleGreen PaleTurquoise PaleVioletRed	PapayaWhip Peachpuff
+			Peru Pink Plum PowderBlue Purple Red RosyBrown RoyalBlue
+			SaddleBrown Salmon SandyBrown SeaGreen Seashell Sienna Silver SkyBlue
+			SlateBlue SlateGray Snow SpringGreen SteelBlue 
+			Tan	Teal Thistle Tomato Turquoise
+			Violet
+			Wheat White	WhiteSmoke
+			Yellow YellowGreen
+			Transparent
+			ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+
+    <!-- Other Properties -->
+    <cssmd:property-def _locID="cursor" _locAttrData="description,syntax" type="composite" description="元素上的光标" syntax="游标值之一 | url([游标资源的 url])" enum="all-scroll auto col-resize crosshair default e-resize hand help move n-resize ne-resize no-drop not-allowed nw-resize pointer progress row-resize s-resize se-resize sw-resize text vertical-text w-resize wait"/>
+	
+	<!-- IE specific properties -->
+    <cssmd:property-def _locID="accelerator" _locAttrData="description,syntax" type="enum" description="指示对象是否包含快捷键" syntax="true | false" enum="true false"/>
+    <cssmd:property-def _locID="behavior" _locAttrData="description,syntax" type="url" description="附加到元素的 DHTML 行为" syntax="url ([行为实现的 URL])"/>
+    <cssmd:property-def _locID="filter" _locAttrData="description,syntax" type="string" description="应用于元素的可视化效果" syntax="可视化筛选和转换的序列"/>
+    <cssmd:property-def _locID="ime-mode" _locAttrData="description,syntax" type="enum" description="输入法编辑器(IME)的状态" syntax="ime-mode 值之一" enum="auto active inactive disabled"/>
+    <cssmd:property-def _locID="zoom" _locAttrData="description,syntax" type="composite" description="对象的放大倍数" syntax="normal | 一个单元" enum="normal"/>
+
+  </cssmd:property-set>
+</cssmd:cssmd>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper" Name="DisplayName" Culture="Culture" LicenseAgreement="eula.txt">
+
+    <PackageFiles>
+        <PackageFile Name="eula.txt"/>
+    </PackageFiles>
+
+    <Strings>
+        <String Name="DisplayName">Windows Installer 2.0</String>
+        <String Name="Culture">zh-CHS</String>
+        <String Name="AdminRequired">您没有安装 Windows Installer 2.0 所需的权限。请与您的管理员联系。</String>
+        <String Name="GeneralFailure">试图安装 Windows Installer 2.0 时发生错误。</String>
+        <String Name="InstMsiA">http://go.microsoft.com/fwlink/?LinkId=37285</String>
+        <String Name="InstMsiW">http://go.microsoft.com/fwlink/?LinkId=37286</String>
+    </Strings>
+</Package>

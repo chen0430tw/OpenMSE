@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cssmd:cssmd xmlns:cssmd="http://schemas.microsoft.com/Visual-Studio-Intellisense/css" version="VS8" description="CSS2 validation data">
+  <cssmd:property-set>
+	<!-- http://www.w3.org/TR/CSS2 -->
+	
+    <!-- Font Properties -->
+    <cssmd:property-def _locID="color" _locAttrData="description,syntax" type="color" description="元素的文本颜色" syntax="#RRGGBB | 已命名的颜色 | inherit" enum="inherit Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="font" _locAttrData="description,syntax" type="composite" description="元素的文本所用的字体" syntax="系统字体之一 | [font-style] [font-variant] [font-weight] [font-size]/[line-height] [font-family] | inherit"/>
+    <cssmd:property-def _locID="font-family" _locAttrData="description,syntax" type="font" description="元素的文本所用字体的名称" syntax="字体名序列 | inherit"/>
+    <cssmd:property-def _locID="font-style" _locAttrData="description,syntax" type="enum" description="元素的文本所用字体的样式" syntax="font-style 值之一 | inherit" enum="inherit italic normal oblique"/>
+    <cssmd:property-def _locID="font-variant" _locAttrData="description,syntax" type="enum" description="元素的文本所用字体的变量" syntax="font-variant 值之一" enum="normal inherit small-caps"/>
+    <cssmd:property-def _locID="font-size" _locAttrData="description,syntax" type="enum-length" description="元素的文本所用字体的大小" syntax="长度 | 百分比 | 标准字号值" enum="large larger medium small smaller x-large x-small xx-large xx-small"/>
+    <cssmd:property-def _locID="font-stretch" _locAttrData="description,syntax" type="enum" description="指示相对于同一系列中其他字体，标志符号中的压缩或扩展量" syntax="font-stretch 值之一" enum="inherit normal wider narrower ultra-condensed extra-condensed condensed semi-condensed semi-expanded expanded extra-expanded ultra-expanded"/>
+    <cssmd:property-def _locID="font-size-adjust" _locAttrData="description,syntax" type="enum-length" description="某个元素的 aspect 值，该值将会在替代字体中保留首选字体的 x 高度" syntax="none | aspect 值 | inherit" enum="none"/>
+    <cssmd:property-def _locID="font-weight" _locAttrData="description,syntax" type="enum" description="元素的文本所用字体的加粗程度" syntax="font-weight 值之一" enum="bold bolder lighter normal 100 200 300 400 500 600 700 800 900 inherit"/>
+    <cssmd:property-def _locID="text-decoration" _locAttrData="description,syntax" type="composite" description="应用于元素的文本所用字体的修饰" syntax="none | inherit |“underline”、“overline”、“line-through”和“blink”的组合"/>
+    <cssmd:property-def _locID="outline" _locAttrData="description,syntax" type="composite" description="可视对象周围的动态轮廓" syntax="[outline-color] [outline-style] [outline-width] | inherit"/>
+    <cssmd:property-def _locID="outline-width" _locAttrData="description,syntax" type="composite" description="轮廓的宽度" syntax="一个单元 | border-width 值之一 | inherit" enum="medium thick thin inherit"/>
+    <cssmd:property-def _locID="outline-style" _locAttrData="description,syntax" type="composite" description="轮廓的样式" syntax="border-style 值(hidden 除外)之一 | inherit" enum="dashed dotted double groove hidden inset none outset ridge solid inherit"/>
+    <cssmd:property-def _locID="outline-color" _locAttrData="description,syntax" type="composite" description="轮廓的颜色" syntax="#RRGGBB | 已命名的颜色 | invert | inherit" enum="invert inherit Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+
+    <!-- Background Properties -->
+    <cssmd:property-def _locID="background" _locAttrData="description,syntax" type="composite" description="元素的背景" syntax="[background-color] [background-image] [background-repeat] [background-attachment] [background-position] | inherit"/>
+    <cssmd:property-def _locID="background-color" _locAttrData="description,syntax" type="color" description="元素的背景所用的颜色" syntax="#RRGGBB | Transparent | 已命名的颜色 | inherit" enum="inherit Transparent Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="background-image" _locAttrData="description,syntax" type="url" description="用作元素背景的图像 | inherit" syntax="none | url([图像的 url]) | inherit"/>
+    <cssmd:property-def _locID="background-attachment" _locAttrData="description,syntax" type="enum" description="如何将背景图像附加到文档中的元素" syntax="background-attachment 值之一 | inherit" enum="fixed scroll inherit"/>
+    <cssmd:property-def _locID="background-repeat" _locAttrData="description,syntax" type="enum" description="背景图像在元素中如何平铺" syntax="background-repeat 值之一 | inherit" enum="no-repeat repeat repeat-x repeat-y inherit"/>
+    <cssmd:property-def _locID="background-position" _locAttrData="description,syntax" type="composite" description="如何在元素中定位背景" syntax="[水平位置] [垂直位置] | inherit" enum="bottom center left right top inherit"/>
+
+    <!-- Text Properties -->
+    <cssmd:property-def _locID="text-align" _locAttrData="description,syntax" type="composite" description="元素的文本的水平对齐方式" syntax="text-align 值之一 | 表中单元格将根据其对齐的字符串 | inherit" enum="center justify left right inherit"/>
+    <cssmd:property-def _locID="vertical-align" _locAttrData="description,syntax" type="enum-length" description="元素的文本的垂直对齐方式" syntax="vertical-align 值之一 | 一个单元 | inherit" enum="baseline bottom middle sub super text-bottom text-top top inherit"/>
+    <cssmd:property-def _locID="letter-spacing" _locAttrData="description,syntax" type="enum-length" description="字符间距" syntax="normal | 一个单元 | inherit" enum="normal inherit"/>
+    <cssmd:property-def _locID="line-height" _locAttrData="description,syntax" type="enum-length" description="行间距" syntax="normal | 一个单元 | inherit" enum="normal inherit"/>
+    <cssmd:property-def _locID="text-indent" _locAttrData="description,syntax" type="length" description="文本缩进" syntax="一个单元 | inherit"/>
+    <cssmd:property-def _locID="text-transform" _locAttrData="description,syntax" type="enum" description="文本的字母大小写" syntax="text-transform 值之一 | inherit" enum="capitalize lowercase none uppercase inherit"/>
+    <cssmd:property-def _locID="word-spacing" _locAttrData="description,syntax" type="enum-length" description="字间距" syntax="normal | 一个单元 | inherit" enum="normal inherit"/>
+    <cssmd:property-def _locID="white-space" _locAttrData="description,syntax" type="enum" description="指示对象内部是否自动换行的值" syntax="white-space 值之一 | inherit" enum="normal nowrap pre inherit"/>
+    <cssmd:property-def _locID="text-shadow" _locAttrData="description,syntax" type="string" description="定义阴影效果" syntax="none | inherit | [color || length length length?,]*[color || length length length?]"/>
+
+    <!-- Layout Properties -->
+    <cssmd:property-def _locID="display" _locAttrData="description,syntax" type="enum" description="元素的显示模式" syntax="display 值之一 | inherit" enum="block compact inline inline-table list-item marker none run-in table table-caption table-cell table-column table-column-group table-row table-row-group table-footer-group table-header-group inherit"/>
+    <cssmd:property-def _locID="float" _locAttrData="description,syntax" type="enum" description="文本将在其上流动的对象的边缘" syntax="float 值之一 | inherit" enum="left none right inherit"/>
+    <cssmd:property-def _locID="clear" _locAttrData="description,syntax" type="enum" description="不允许有浮动对象的边" syntax="clear 值之一 | inherit" enum="both left none right inherit"/>
+    <cssmd:property-def _locID="visibility" _locAttrData="description,syntax" type="enum" description="元素的可见性" syntax="visibility 值之一 | inherit" enum="collapse hidden visible inherit"/>
+    <cssmd:property-def _locID="position" _locAttrData="description,syntax" type="enum" description="元素的定位模式" syntax="position 值之一 | inherit" enum="absolute fixed relative static inherit"/>
+    <cssmd:property-def _locID="z-index" _locAttrData="description,syntax" type="enum-length" description="定位元素的堆栈顺序" syntax="auto | 一个整数 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="left" _locAttrData="description,syntax" type="enum-length" description="定位元素的左边缘" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="right" _locAttrData="description,syntax" type="enum-length" description="定位元素的右边缘" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="top" _locAttrData="description,syntax" type="enum-length" description="定位元素的上边缘" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="bottom" _locAttrData="description,syntax" type="enum-length" description="定位元素的下边缘" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="overflow" _locAttrData="description,syntax" type="enum" description="超出元素维度范围的内容的可见性" syntax="overflow 值之一 | inherit" enum="auto hidden scroll visible inherit"/>
+    <cssmd:property-def _locID="clip" _locAttrData="description,syntax" type="string" description="元素的剪辑矩形" syntax="rect([上单元] [右单元] [下单元] [左单元]) | auto | inherit"/>
+    <cssmd:property-def _locID="width" _locAttrData="description,syntax" type="enum-length" description="定位元素的宽度" syntax="auto | 一个单元 | inherit" enum="auto"/>
+    <cssmd:property-def _locID="min-width" _locAttrData="description,syntax" type="length" description="限制框宽度" syntax="一个单元 | inherit"/>
+    <cssmd:property-def _locID="max-width" _locAttrData="description,syntax" type="length" description="限制框宽度" syntax="一个单元 | inherit"/>
+    <cssmd:property-def _locID="height" _locAttrData="description,syntax" type="enum-length" description="定位元素的高度" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="min-height" _locAttrData="description,syntax" type="length" description="限制框高度" syntax="一个单元 | inherit"/>
+    <cssmd:property-def _locID="max-height" _locAttrData="description,syntax" type="length" description="限制框高度" syntax="一个单元 | inherit"/>
+    <cssmd:property-def _locID="marker-offset" _locAttrData="description,syntax" type="enum-length" description="指定标记框与关联的主体框之间的水平偏移量" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+
+    <!-- Edges Properties -->
+    <cssmd:property-def _locID="padding" _locAttrData="description,syntax" type="composite" description="元素四个边缘的空白" syntax="[上单元] [右单元] [下单元] [左单元] | inherit"/>
+    <cssmd:property-def _locID="padding-left" _locAttrData="description,syntax" type="enum-length" description="元素左边缘的空白" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="padding-right" _locAttrData="description,syntax" type="enum-length" description="元素右边缘的空白" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="padding-top" _locAttrData="description,syntax" type="enum-length" description="元素上边缘的空白" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="padding-bottom" _locAttrData="description,syntax" type="enum-length" description="元素下边缘的空白" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="margin" _locAttrData="description,syntax" type="composite" description="元素四个边缘的边距" syntax="[上单元] [右单元] [下单元] [左单元] | inherit"/>
+    <cssmd:property-def _locID="margin-left" _locAttrData="description,syntax" type="enum-length" description="元素左边缘的边距" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="margin-right" _locAttrData="description,syntax" type="enum-length" description="元素右边缘的边距" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="margin-top" _locAttrData="description,syntax" type="enum-length" description="元素上边缘的边距" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="margin-bottom" _locAttrData="description,syntax" type="enum-length" description="元素下边缘的边距" syntax="auto | 一个单元 | inherit" enum="auto inherit"/>
+    <cssmd:property-def _locID="border" _locAttrData="description,syntax" type="composite" description="元素所有四个边缘的边框" syntax="[border-style] [border-width] [border-color] | inherit"/>
+    <cssmd:property-def _locID="border-left" _locAttrData="description,syntax" type="composite" description="元素左边缘的边框" syntax="[border-style] [border-width] [border-color] | inherit"/>
+    <cssmd:property-def _locID="border-right" _locAttrData="description,syntax" type="composite" description="元素右边缘的边框" syntax="[border-style] [border-width] [border-color] | inherit"/>
+    <cssmd:property-def _locID="border-top" _locAttrData="description,syntax" type="composite" description="元素上边缘的边框" syntax="[border-style] [border-width] [border-color] | inherit"/>
+    <cssmd:property-def _locID="border-bottom" _locAttrData="description,syntax" type="composite" description="元素下边缘的边框" syntax="[border-style] [border-width] [border-color] | inherit"/>
+    <cssmd:property-def _locID="border-color" _locAttrData="description,syntax" type="color" description="元素所有四个边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色 | inherit" enum="inherit Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-style" _locAttrData="description,syntax" type="enum" description="元素所有四个边缘的边框样式" syntax="border-style 值之一 | inherit" enum="dashed dotted double groove hidden inset none outset ridge solid inherit"/>
+    <cssmd:property-def _locID="border-width" _locAttrData="description,syntax" type="enum-length" description="元素所有四个边缘的边框宽度" syntax="一个单元 | border-width 值之一 | inherit" enum="medium thick thin inherit"/>
+    <cssmd:property-def _locID="border-left-color" _locAttrData="description,syntax" type="color" description="元素左边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色 | inherit" enum="inherit Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-left-width" _locAttrData="description,syntax" type="enum-length" description="元素左边缘的边框宽度" syntax="一个单元 | border-width 值之一 | inherit" enum="medium thick thin inherit"/>
+    <cssmd:property-def _locID="border-left-style" _locAttrData="description,syntax" type="enum" description="元素左边缘的边框样式" syntax="border-style 值之一 | inherit" enum="dashed dotted double groove hidden inset none outset ridge solid inherit"/>
+    <cssmd:property-def _locID="border-right-color" _locAttrData="description,syntax" type="color" description="元素右边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色 | inherit" enum="inherit Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-right-width" _locAttrData="description,syntax" type="enum-length" description="元素右边缘的边框宽度" syntax="一个单元 | border-width 值之一 | inherit" enum="medium thick thin inherit"/>
+    <cssmd:property-def _locID="border-right-style" _locAttrData="description,syntax" type="enum" description="元素右边缘的边框样式" syntax="border-style 值之一 | inherit" enum="dashed dotted double groove hidden inset none outset ridge solid inherit"/>
+    <cssmd:property-def _locID="border-top-color" _locAttrData="description,syntax" type="color" description="元素上边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色 | inherit" enum="inherit Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-top-width" _locAttrData="description,syntax" type="enum-length" description="元素上边缘的边框宽度" syntax="一个单元 | border-width 值之一 | inherit" enum="medium thick thin inherit"/>
+    <cssmd:property-def _locID="border-top-style" _locAttrData="description,syntax" type="enum" description="元素上边缘的边框样式" syntax="border-style 值之一 | inherit" enum="dashed dotted double groove hidden inset none outset ridge solid inherit"/>
+    <cssmd:property-def _locID="border-bottom-color" _locAttrData="description,syntax" type="color" description="元素下边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色 | inherit" enum="inherit Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow ButtonText CaptionText GrayText Highlight HighlightTxt InactiveBorder InactiveCaption InactiveCaptionText InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLighShadow ThreeDShadow Window WindowFrame WindowText"/>
+    <cssmd:property-def _locID="border-bottom-width" _locAttrData="description,syntax" type="enum-length" description="元素下边缘的边框宽度" syntax="一个单元 | border-width 值之一 | inherit" enum="medium thick thin inherit"/>
+    <cssmd:property-def _locID="border-bottom-style" _locAttrData="description,syntax" type="enum" description="元素下边缘的边框样式" syntax="border-style 值之一 | inherit" enum="dashed dotted double groove hidden inset none outset ridge solid inherit"/>
+
+    <!-- @font-face Properties -->
+    <cssmd:property-def _locID="src" _locAttrData="description,syntax" type="composite" description="字体文件的位置 | inherit" syntax="url([字体下载的 url]) | inherit"/>
+		
+    <!-- Page Box Properties -->
+    <cssmd:property-def _locID="size" _locAttrData="description,syntax" type="enum-length" description="页面框的大小和方向" syntax="页面框大小值之一 | 一个单元 | inherit" enum="auto landscape portrait inherit"/>
+    <cssmd:property-def _locID="marks" _locAttrData="description,syntax" type="enum" description="呈现在页面框外部的裁切标记或十字标记" syntax="marks 值之一 | inherit" enum="crop cross none inherit"/>
+
+    <!-- Page Breaks Properties -->
+    <cssmd:property-def _locID="page-break-before" _locAttrData="description,syntax" type="enum" description="在元素之前分页" syntax="page-break-before 值之一 | inherit" enum="always auto avoid left right inherit"/>
+    <cssmd:property-def _locID="page-break-after" _locAttrData="description,syntax" type="enum" description="在元素之后分页" syntax="page-break-after 值之一 | inherit" enum="always auto avoid left right inherit"/>
+    <cssmd:property-def _locID="page-break-inside" _locAttrData="description,syntax" type="enum" description="元素内的分页符" syntax="page-break-inside 值之一 | inherit" enum="auto avoid inherit"/>
+    <cssmd:property-def _locID="orphans" _locAttrData="description,syntax" type="composite" description="要在页面底部保留的段落的最小行数" syntax="整数值 | inherit"/>
+    <cssmd:property-def _locID="widows" _locAttrData="description,syntax" type="composite" description="要在页面顶部保留的最小段落行数" syntax="整数值 | inherit"/>
+		
+    <!-- Aural Properties -->
+    <cssmd:property-def _locID="volume" _locAttrData="description,syntax" type="composite" description="波形的中间音量" syntax="volume 值之一或 0 和 100 之间的任何数字或继承值的百分比 | inherit" enum="loud medium silent soft x-loud x-soft inherit"/>
+    
+    <!-- Speaking Properties -->
+    <cssmd:property-def _locID="speak" _locAttrData="description,syntax" type="enum" description="指定是否用语音呈现文本以及如何呈现" syntax="speak 值之一 | inherit" enum="none normal spell-out inherit"/>
+    
+    <!-- Pause Properties -->
+    <cssmd:property-def _locID="pause-before" _locAttrData="description,syntax" type="composite" description="指定在叙说一个元素的内容之前有一个停顿" syntax="以毫秒或 speech-rate 属性值的百分比表示的时间 | inherit"/>
+    <cssmd:property-def _locID="pause-after" _locAttrData="description,syntax" type="composite" description="指定在叙说一个元素的内容之后有一个停顿" syntax="以毫秒或 speech-rate 属性值的百分比表示的时间 | inherit"/>
+    <cssmd:property-def _locID="pause" _locAttrData="description,syntax" type="composite" description="指定在叙说一个元素的内容之前和/或之后有一个停顿" syntax="[pause-before] [pause-after] | inherit"/>
+    <cssmd:property-def _locID="cue-before" _locAttrData="description,syntax" type="url" description="听觉图标" syntax="none | url([提示图像的 url]) | inherit"/>
+    <cssmd:property-def _locID="cue-after" _locAttrData="description,syntax" type="url" description="听觉图标" syntax="none | url([提示图像的 url]) | inherit"/>
+    <cssmd:property-def _locID="cue" _locAttrData="description,syntax" type="url" description="听觉图标" syntax="[cue-before] [cue-after]) | inherit"/>
+
+    <!-- Mixing Properties -->
+    <cssmd:property-def _locID="play-during" _locAttrData="description,syntax" type="composite" description="叙说元素的内容时作为背景播放的声音" syntax="play-during 值之一或声音文件的 url | inherit" enum="auto mix none repeat inherit"/>
+
+    <!-- Spatial Properties -->
+    <cssmd:property-def _locID="azimuth" _locAttrData="description,syntax" type="composite" description="空间信息" syntax="azimuth 值之一 | 范围为 -360 到 360 度的角 | inherit" enum="behind center center-left center-right far-left far-right left left-side leftwards right right-side rightwards inherit"/>
+    <cssmd:property-def _locID="elevation" _locAttrData="description,syntax" type="composite" description="空间信息" syntax="azimuth 值之一 | 范围为 -90 到 90 度的角 | inherit" enum="above below higher level lower inherit"/>
+
+    <!-- Voice Properties -->
+    <cssmd:property-def _locID="speech-rate" _locAttrData="description,syntax" type="composite" description="语速" syntax="speech-rate 值之一 | 每分钟字数的整数值 | inherit" enum="fast faster medium slow slower x-fast x-slow inherit"/>
+    <cssmd:property-def _locID="voice-family" _locAttrData="description,syntax" type="composite" description="声音系列" syntax="用逗号分隔的、按照优先顺序排列的声音系列名称 | inherit"/>
+    <cssmd:property-def _locID="pitch" _locAttrData="description,syntax" type="composite" description="语音的平均音调(一种频率)" syntax="pitch 值之一 | 以赫兹为单位的频率 | inherit" enum="high low medium x-high x-low inherit"/>
+    <cssmd:property-def _locID="pitch-range" _locAttrData="description,syntax" type="composite" description="平均音调变化" syntax="0 到 100 之间的值 | inherit。50 产生标准音调。"/>
+    <cssmd:property-def _locID="stress" _locAttrData="description,syntax" type="composite" description="声音的声调轮廓线峰值的高度" syntax="0 到 100 之间的值 | inherit。50 是一个标准的说英语的男性声音。"/>
+    <cssmd:property-def _locID="richness" _locAttrData="description,syntax" type="composite" description="讲话声音的圆润度或洪亮度" syntax="0 到 100 之间的值 | inherit。值越低，产生的声音越柔和。"/>
+
+    <!-- Speech Properties -->
+    <cssmd:property-def _locID="speak-punctuation" _locAttrData="description,syntax" type="enum" description="指定如何叙说标点" syntax="speak-punctuation 值之一 | inherit" enum="code none inherit"/>
+    <cssmd:property-def _locID="speak-numeral" _locAttrData="description,syntax" type="enum" description="指定如何叙说数字" syntax="speak-numeral 值之一 | inherit" enum="continuous digits inherit"/>
+
+    <!-- Lists Properties -->
+    <cssmd:property-def _locID="list-style" _locAttrData="description,syntax" type="composite" description="列表项的项目符号特征" syntax="[list-style-type] [list-style-image] [list-style-position] | inherit"/>
+    <cssmd:property-def _locID="list-style-type" _locAttrData="description,syntax" type="enum" description="列表项的项目符号样式" syntax="list-style-type 值之一 | inherit" enum="armenian circle cjk-ideographic decimal decimal-leading-zero disc georgian hebrew hiragana hiragana-iroha katakana katakana-iroha lower-alpha lower-greek lower-latin lower-roman none square upper-alpha upper-latin upper-roman inherit"/>
+    <cssmd:property-def _locID="list-style-image" _locAttrData="description,syntax" type="url" description="列表项的项目符号图像" syntax="none | url([项目符号图像的 url]) | inherit"/>
+    <cssmd:property-def _locID="list-style-position" _locAttrData="description,syntax" type="enum" description="列表项的项目符号位置" syntax="list-style-position 值之一 | inherit" enum="inside outside inherit"/>
+    <cssmd:property-def _locID="counter-increment" _locAttrData="description,syntax" type="composite" description="指示元素每出现一次计数器增加多少" syntax="none | [标识符整数?]+ | inherit" enum="none inherit"/>
+    <cssmd:property-def _locID="counter-reset" _locAttrData="description,syntax" type="composite" description="在元素每次出现时定义计数器被设置的值" syntax="none | [标识符整数?]+ | inherit" enum="none inherit"/>
+
+    <!-- Content Properties -->
+    <cssmd:property-def _locID="content" _locAttrData="description,syntax" type="composite" description="与 :before 和 :after 伪元素一起使用可生成文档内容" syntax="文本内容 | 外部资源的 url | 计数器 | quote 值 | attr(X) | inherit" enum="close-quote no-close-quote no-open-quote open-quote inherit"/>
+    <cssmd:property-def _locID="quotes" _locAttrData="description,syntax" type="composite" description="任意数目的嵌入的引用内容的引号" syntax="左引号和右引号对 | inherit"/>
+
+    <!-- BiDi Properties -->
+    <cssmd:property-def _locID="direction" _locAttrData="description,syntax" type="enum" description="文本的流向" syntax="direction 值之一 | inherit" enum="ltr rtl inherit"/>
+    <cssmd:property-def _locID="unicode-bidi" _locAttrData="description,syntax" type="enum" description="与双向算法有关的嵌入级别" syntax="unicode-bidi 值之一 | inherit" enum="bidi-override embed normal inherit"/>
+
+    <!-- Table Properties -->
+    <cssmd:property-def _locID="table-layout" _locAttrData="description,syntax" type="enum" description="表的单元格布局模式" syntax="table-layout 值之一 | inherit" enum="auto fixed inherit"/>
+    <cssmd:property-def _locID="border-collapse" _locAttrData="description,syntax" type="enum" description="表边框模型" syntax="border-collapse 值之一 | inherit" enum="collapse separate inherit"/>
+    <cssmd:property-def _locID="border-spacing" _locAttrData="description,syntax" type="composite" description="分隔相邻单元格边框的距离" syntax="Distance 值 | inherit"/>
+    <cssmd:property-def _locID="caption-side" _locAttrData="description,syntax" type="enum" description="标题框相对于表格框的位置" syntax="caption-side 值之一 | inherit" enum="bottom left right top inherit"/>
+    <cssmd:property-def _locID="empty-cells" _locAttrData="description,syntax" type="enum" description="控制空单元格周围边框的呈现方式" syntax="empty-cells 值之一 | inherit" enum="hide show inherit"/>
+    <cssmd:property-def _locID="speak-header" _locAttrData="description,syntax" type="enum" description="指定是否以及如何叙说表标题" syntax="speak-header 值之一 | inherit" enum="always once inherit"/>
+
+    <!-- Other Properties -->
+    <cssmd:property-def _locID="cursor" _locAttrData="description,syntax" type="composite" description="元素上的光标" syntax="游标值之一 | url([游标资源的 url]) | inherit" enum="auto crosshair default e-resize help move n-resize ne-resize nw-resize pointer s-resize se-resize sw-resize text w-resize wait inherit"/>
+
+  </cssmd:property-set>
+</cssmd:cssmd>

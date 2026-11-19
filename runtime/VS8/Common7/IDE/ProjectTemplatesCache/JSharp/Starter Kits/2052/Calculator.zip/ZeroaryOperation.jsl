@@ -1,0 +1,14 @@
+﻿package calculator.model.zeroaryOperations;
+
+import calculator.model.*;
+
+/**
+ * 零元操作 (如 PI) 的基类
+ */
+abstract public class ZeroaryOperation implements Operation
+{
+    public OperationType getType()
+    {
+        return OperationType.Zeroary;
+    }
+}

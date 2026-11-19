@@ -1,0 +1,42 @@
+﻿package calculator.model.binaryOperations;
+
+import calculator.model.*;
+
+public class Permutation extends BinaryOperation
+{
+    public double operateBinary(double n, double r)
+    {
+        // n 和 r 应该为整数值
+        double rfloor = Math.floor(r);
+        double nfloor = Math.floor(n);
+
+        // 检查 n 和 r 的所有无效的值。
+        if ((n < 1) || (r < 0) || (r > n) || (r != rfloor) || (n != nfloor))
+        {
+            throw new OperationParameterException("Permutation 函数的输入无效");
+        }
+
+        // 将 r 限制在 175 内，因为 r 大于或等于 175 将导致值大于 Double.MAX_VALUE
+        // 即无穷。这样做是为防止形成大的 for 循环。
+        if (r >= 175.0)
+        {
+            throw new OperationParameterException("无穷");
+        }
+
+        double result = 1;
+
+        // 对 r 而不是 n-r 循环，因为 n-r 可能很大，从而导致
+        // 在执行 ++ 运算时产生舍入误差并可能导致无穷循环。
+        for (double i = 0; i < r; i++)
+        {
+            result *= (n - i);
+        }
+
+        return result;
+    }
+
+    public Precedence getPrecedence()
+    {
+        return Precedence.Permutation;
+    }
+}

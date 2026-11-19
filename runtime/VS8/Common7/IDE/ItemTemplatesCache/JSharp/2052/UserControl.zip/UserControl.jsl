@@ -1,0 +1,57 @@
+﻿package $rootnamespace$;
+
+import System.Collections.Generic.*;
+import System.ComponentModel.*;
+import System.Data.*;
+import System.Drawing.*;
+import System.Windows.Forms.*;
+
+/**
+ * $safeitemrootname$ 的摘要说明。
+ */
+public class $safeitemrootname$ extends System.Windows.Forms.UserControl
+{
+    /**
+     * 必需的设计器变量。
+     */
+    private System.ComponentModel.IContainer components;
+
+    public $safeitemrootname$()
+    {
+        //
+        // 此调用是 Windows.Forms 窗体设计器所必需的。
+        //
+        InitializeComponent();
+
+        //
+        // TODO: 在 InitializeComponent 调用之后添加任何初始化代码
+        //
+    }
+
+    #region 组件设计器生成的代码
+    /**
+     * 清理所有正在使用的资源。
+     */
+    protected void Dispose(boolean disposing)
+    {
+        if (disposing)
+        {
+            if (components != null)
+            {
+                components.Dispose();
+            }
+        }
+        super.Dispose(disposing);
+    }
+
+    /**
+     * 设计器支持所需的方法 - 不要
+     * 使用代码编辑器修改此方法的内容。
+     */
+    private void InitializeComponent()
+    {
+        this.components = new System.ComponentModel.Container();
+        this.set_AutoScaleMode(System.Windows.Forms.AutoScaleMode.Font);
+    }
+    #endregion
+}

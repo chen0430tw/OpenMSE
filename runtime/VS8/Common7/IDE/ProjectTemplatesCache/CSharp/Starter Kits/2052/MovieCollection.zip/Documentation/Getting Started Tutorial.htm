@@ -1,0 +1,456 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Microsoft Visual C# 速成版初学者工具包</title>
+<style>
+<!--
+BODY         { background: url(images/top-vc.gif) repeat-x; font-family: Verdana; font-size: 67% }
+.maindiv     { background: url(images/side-vc.gif) repeat-y; padding-left: 55px; padding-top: 5px; position: relative; height: 50px }
+P            { margin-top: 0; margin-bottom: 6px; line-height:130% }
+H1           { margin-top: 20px; margin-bottom: 12px; font-size:190% }
+H2           { color: #585F56; left: -55px; position: relative; margin-top: 21px; margin-bottom: 9px; font-size:170% }
+H3           { margin-top: 21px; margin-bottom: 9px; font-size: 140%;  font-weight: bold}
+H4           { margin-top: 18px; margin-bottom: 9px; font-size: 140%; font-weight: bold}
+OL           { margin-top: 0; margin-bottom: 9px; line-height:130%}
+UL           { margin-top: 0; margin-bottom: 9px; line-height:130%}
+LI           { margin-top: 0; margin-bottom: 6px }
+BLOCKQUOTE   { margin-left: 20px }
+TABLE        { padding: 4px; BACKGROUND: #f8f7ef; BORDER: #DDDCD6 1px solid; BORDER-COLLAPSE: collapse; margin-bottom: 9px; }
+TR           { vertical-align: top} 
+TD           { padding: 4px; font-family: Verdana; font-size: 67%; line-height: 130%} 
+.contents    { line-height: 150% }
+DIV.CodeBlock   { font-family: "Courier New"; font-size: 100%; margin-bottom: 6px; BACKGROUND: #f8f7ef; BORDER: #eeede6 1px solid; padding: 10px; color: #0000FF }
+.CodeInline  { font-family: "Courier New" }
+.ProcedureLabel {margin-top: 12px; font-style: italic; font-weight: bold; color: #0D4CC3 } 
+.FileNameCol { padding: 6px; BACKGROUND: #eeede6; width=220px; font-weight: bold}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0" rightmargin="20" text="#000000">
+<div class="maindiv">
+
+<!-- 主要内容开始 -->
+
+<p><a name="top">Microsoft Visual C# 速成版初学者工具包</a></p>
+<h1>初学者工具包：电影收藏</h1>
+<p class="contents"><font color="#003300"><b>目录：</b><br> </font><font color="#003300"> <a href="#Introduction">介绍</a><br> <a href="#GettingStarted0">下载更新的 Web Plus 版</a><br> <a href="#GettingStarted">入门</a><br> <a href="#HowItWorks">“电影收藏”如何工作</a><br> <a href="#InDepth">深入介绍“电影收藏”初学者工具包</a> </font></p>
+
+<h2><A href="#top"><IMG src="images/topjump-vc.gif" border=0></A><a name="Introduction">介绍</a></h2>
+<p><img border="0" src="images/vbmyDVDmain.gif" width="250" height="177" alt="“我的 DVD 收藏”简介" align="right" style="margin-left: 15px; margin-bottom: 10px"
+></p>
+
+<p>“电影收藏”初学者工具包是一个示例应用程序，其设计目的是帮助您跟踪您的电影收藏。使用此工具包，您可以组织收藏的电影、给它们评级，以及查找有关它们的信息。此外，您可以按自己的要求任意更改该应用程序，还可以查看其源代码。 </p>
+
+<h2><A href="#top"><IMG src="images/topjump-vc.gif" border=0></A><a name="GettingStarted0">下载更新的 Web Plus 版本</a></h2>
+
+<p>您希望将您的电影收藏连接到网上并下载有关这些电影的信息吗？Web Plus 版的“电影收藏”初学者工具包就具有此功能：它使用联机 Web 服务跟踪您的收藏并搜索电影。该 Web Plus 版还包含 Visual C# 速成版随附的初学者工具包所没有的更新，所以即使您不想使用此 Web 功能，也应下载它。</p>
+<p>从<a href="http://go.microsoft.com/fwlink/?linkid=29243&clcid=0x409">此处</a>可以免费下载 Web Plus 版。  </p>
+
+<h2><A href="#top"><IMG src="images/topjump-vc.gif" border=0></A><a name="GettingStarted">入门</a></h2>
+
+<p>启动并运行电影收藏应用程序的第一步是加载初学者工具包项目，方法是在“新建项目”对话框中选择“初学者工具包 - 电影收藏”模板。<b></b>  </p>
+<h3>1) 启动“电影收藏”应用程序  </h3>
+
+<p>要查看运行中的应用程序，必须运行它。</p>
+
+<p class="ProcedureLabel">运行应用程序</p>
+
+<ul>
+	<li>按<span style="font-size: 100%"> </span> <b><font size="2">F5</font></b> 运行该应用程序。</li>
+</ul>
+
+<p> 该应用程序的窗体显示出来。在此窗体中，可以输入有关电影的信息并加以整理，以及在收藏中进行搜索。</p>
+
+
+<h3>2) 向收藏添加电影</h3>
+
+<p>让我们来将电影添加到收藏中。</p>
+
+<p class="ProcedureLabel">向收藏添加电影</p>
+
+<ol>
+	<li>在窗体上单击“添加片名”。<p>在“添加片名”按钮上方的列表中打开一个新项，它称为记录。<p></li>
+	<li>在右侧的“DVD 详细信息”框中，添加您喜爱的电影的片名和其他信息，例如导演或电影评级。</li>
+</ol>
+
+<p>无论何时添加、删除或修改数据，这些信息都会自动更新到作为项目组成部分的数据库文件中。</p>
+
+<p>您可以随时从网格中挑选电影并查看其详细信息。</p>
+
+<h3>3) 更新关于收藏的信息</h3>
+
+<p>更新记录跟输入记录一样简单。</p>
+
+<p class="ProcedureLabel">更新电影收藏中的记录</p>
+
+<ol>
+	<li>在列表中单击要更新的记录。</li>
+	<li>此记录中的数据显示在右侧的框中。</li>
+	<li>选择要更新的数据并进行更改。当光标离开该框后，新信息立刻保存下来。</li>
+</ol>
+
+<h3>4) 联机搜索电影信息</h3>
+
+<p>如果有 Web Plus 版的“电影收藏”初学者工具包，就可以利用 <b>Amazon.com</b> Web 服务提供的丰富的电影收藏。“电影收藏”初学者工具包应用程序已连接，您可以使用此连接下载您喜爱的电影的信息。不要忘记：若要使此功能正常工作，您需要连接到 Internet，并还需要使用 Web Plus 版本。可以从<a href="http://go.microsoft.com/fwlink/?linkid=29243&clcid=0x409">此处</a>免费下载该版本。 </p>
+
+<p class="ProcedureLabel">获取电影的联机信息</p>
+
+<ol>
+	<li>如果现在处于脱机状态，请连接到 Internet。</li>
+	<li>在窗体上单击“联机搜索”按钮。</li>
+	<li>在第一个框中，键入与该电影相关的一个或多个关键字，然后单击“搜索”按钮。关键字可以取自片名、演员姓名或任何其他与该电影有关的词。	前十部匹配的电影将显示在结果列表中；如果所查找的电影不在这前十部中，您可以输入其他关键字以缩小搜索范围。</li>
+	<li>如果找到所查找的电影，则选中它并单击“添加到收藏”。</li>
+</ol>
+
+<p>该电影即添加到您的收藏中。</p>
+
+<h3>5) 给电影评级</h3>
+
+<p>现在您可以成为一位电影评论家了。通过 Web 添加的电影没有评级或评论，但您可以添加自己的评级和评论。</p>
+
+<p class="ProcedureLabel">给电影评级</p>
+
+<ul>
+	<li>用鼠标单击若干颗星来进行评级（1 至 5 级）。选中的星变为黄色。您的评级会自动保存。</li>
+</ul>
+
+<p class="ProcedureLabel">添加电影评论</p>
+<ul>
+	<li>选择“评论”字段并输入您的评论。该评论将自动保存</li>
+</ul>
+
+<h3>6) 自定义应用程序</h3>
+
+<p>我们来看看自定义该应用程序的外观有多么简单。您可以自定义标签和窗体的文本，还可以使用自己的应用程序图像和图标。但是在此之前，您需要停止运行该应用程序。</p>
+
+<p class="ProcedureLabel">停止运行应用程序</p>
+
+<ul>
+	<li>切换到 Visual C# 速成版窗口。</li>
+	<li>在“调试”菜单上单击“停止调试”。</li>
+</ul>
+
+<p>现在处于设计模式。在此模式下可以更改代码和设计。</p>
+
+<h3>自定义</h3>
+
+<p>“电影收藏”应用程序由若干窗体组成。<b>MainForm.cs</b> 是应用程序的起始点。还有两个自定义控件:</p>
+
+<ul>	
+	<li><b>ListDetails.cs</b> – 在此控件中可以查看有关收藏的详细信息。这些信息来自“电影收藏”数据库。</li>
+	<li><b>SearchOnline.cs</b> – 此控件连接到 Amazon.com Web 服务，用于在线搜索。</li>
+</ul>
+
+<p>通过在“属性”窗口中设置属性，可以自定义窗体或任何控件的文本或图像。或者，通过编辑与窗体关联的代码来更新属性。</p>
+<p>以下示例介绍几种可用于自定义该应用程序的方法。</p>
+
+<p class="ProcedureLabel">更改显示在“标题栏”中的文本</p>
+
+<ol>
+	<li>在“解决方案资源管理器”中，右击 <b>MainForm.cs</b>，然后选择“查看设计器”。</li>
+	<li>在“属性”窗口中，确保在下拉列表中选中 MainForm，然后找到并更改 <b>Text</b> 属性的值。例如，将文本从“电影收藏”更改为“[您的姓名]电影收藏”。<i></i></li>
+</ol>
+
+<p>按 Enter 后，窗体的 <b>Text</b> 属性即被更改。注意，窗体的“标题栏”将显示出新文本。</p>
+<p>因为窗体自身所显示的文本仍为“电影收藏”，所以您可能还希望更改它以匹配标题栏。</p>
+
+<p class="ProcedureLabel">更改显示在窗体上的文本</p>
+
+<ol>
+	<li>在“解决方案资源管理器”中，右击 <b>MainForm.cs</b>，然后选择“查看设计器”。</li>
+	<li>选择含有文本“电影收藏”的 <b>Label</b> 控件。</li>
+	<li>在“属性”窗口中，找到并更改 <b>Text</b> 属性的值。例如，将文本从“电影收藏”更改为“[您的姓名]电影收藏”。<i></i></li>
+</ol>
+
+<p>按 Enter 后，标签的 <b>Text</b> 属性即被更改。 </p>
+<p>您可以更改出现在窗体上的任何自定义控件的属性。</p>
+<p>&nbsp;</p>
+<p>应用程序的图像在“项目设计器”的“资源”选项卡中进行管理。</p>
+
+<p class="ProcedureLabel">添加背景图像</p>
+
+<ol>
+	<img border="0" src="images/vbmyDVDResources.gif" width="250" height="188" alt="“项目设计器”的“资源”选项卡" align="right" style="margin-left: 15px">
+	<li>在“解决方案资源管理器”中，右击 MovieCollection 项目，然后选择“属性”。<b></b><b></b></li>
+	<li>在左侧单击“资源”选项卡。</li>
+	<li>在“类别”列表中选择“图像”。</li>
+	<li>将您喜爱的图像添加到设计器中。单击“添加”按钮，然后单击“现有文件”。定位到要添加的图像。或者将图像文件从 Windows 资源管理器（例如，从 My Pictures）拖放到设计器中。</li>
+	<li>
+	<p>在“解决方案资源管理器”中，右击 <b>ListDetails.cs</b>，然后选择“查看设计器”。</p>
+	<p>ListDetails 窗体将出现在“窗体”设计器中。</p></li>
+	<li>选择 <b>DVDDetailsPanel</b> 控件（窗体右侧的深灰色框）。</li>
+	<li><p>在“属性”窗口中，找到 <b>BackgroundImage</b> 属性并单击该属性右侧的省略号按钮。<br></p>
+	<p>“选择资源”对话框将会打开。</p></li>
+	<li>
+	<p>选择刚才添加的图像，然后单击“确定”。</p>
+	<p>新背景图像将出现在设计器中。您可以将图像更改为 Resources 文件夹中的任一图像，包括您添加的图像。</p></li>
+</ol>
+<p>&nbsp;</p>
+
+<p>您遇到过电影片名太长，标签放不下的情况吗？以下方法可以解决这个问题。</p>
+
+<p class="ProcedureLabel">更改 ListDetails 的显示行为</p>
+
+<ol>
+	<li>在“解决方案资源管理器”中，右击 <b>ListDetails.cs</b>，然后选择“查看设计器”。</li>
+	<li>单击 <b>Label2</b> 控件(“[片名]”)，在“属性”窗口中将 <b>AutoSize</b> 属性设置为 False；将 <b>AutoEllipsis</b> 属性设置为 True。</li>
+</ol>
+
+<p class="ProcedureLabel">测试应用程序</p>
+
+<ul>	<li>按 <b>F5</b> 重新生成该应用程序。现在可以看到所做的更改了。</li>
+</ul>
+
+<p>将鼠标移到收藏中的电影片名上，可以显示其工具提示和省略号。 </p>
+<p>想添加一个新字段来记录电影中的演员信息吗？方法如下。</p>
+
+<p class="ProcedureLabel">向 ListDetails 添加字段</p>
+
+<ol>
+	<li>在“解决方案资源管理器”中，右击 <b>ListDetails.cs</b>，然后选择“查看设计器”。</li>
+	<li>将 <b>TextBox</b> 控件从“工具箱”窗口拖到“说明”字段下的窗体上。根据需要调整控件的大小并重新排列。</li>
+	<li>选择该 <b>TextBox</b> 控件，然后在“属性”窗口中选择 <b>(DataBindings)</b> 属性并展开它。</li>
+	<li>选择 <b>(Advanced)</b> 属性，单击省略号按钮以打开“格式设置和高级绑定”对话框。</li>
+	<li>从“绑定”下拉列表中选择“DVDxBindingSource - 演员”，然后单击“确定”。</li>
+	<li>将 <b>Label</b> 控件从“工具箱”拖到窗体上，并将它放在新 <b>TextBox</b> 控件旁边。</li>
+	<li>在“属性”窗口中，将 <b>Text</b> 属性更改为“演员”。</li>
+</ol>
+
+<p>再次运行该应用程序时就可以看到“演员”字段，并可以输入电影演员的姓名。 </p>
+<p>&nbsp;</p>
+<p>您有多种格式的电影吗，如 DVD 和 VHS？您可以向数据库添加一个字段以记录媒体类型。</p>
+
+<p class="ProcedureLabel">向数据库添加字段</p>
+
+<ol>
+	<li>在“解决方案资源管理器”中，右击 <b>DVDCollectionDatabase.mdf</b>，然后选择“打开”。“数据库资源管理器”窗口将会打开。</li>
+	<li>在“数据库资源管理器”中，展开“表”节点，找到“DVD”，然后右击并选择“打开表定义”。</li>
+	<li>在“表”设计器中，滚动到列表底部，在“列名”列键入“媒体”。</li>
+	<li>在“数据类型”列中，从下拉列表中选择 <b>nvarchar(MAX)</b>。</li>
+	<li>在“文件”菜单上，选择“保存 DVD”，以保存更改。 </li>
+</ol>
+
+<p>现在可以向 ListDetails 视图添加“媒体”字段了，其方法与上例中添加“演员”字段的方法相同。</p>
+
+<h2><A href="#top"><IMG src="images/topjump-vc.gif" border=0></A><a name="HowItWorks">“电影收藏”如何工作 </a></h2>
+
+<p>这里已经对“电影收藏”初学者工具包做了简要介绍。您可以多使用几次该应用程序，获得自定义其外观的更多实践经验。您可以尝试重排控件的布局，也可以彻底改变应用程序的外观。如果您熟悉 Visual C# 代码，就可以通过查看源代码来深入了解应用程序的功能。最后，您还可以向应用程序添加组织图书和音乐的功能，或在此应用程序的基础上编写您自己的应用程序。</p>
+
+<h3>“电影收藏”文件和文件夹</h3>
+
+<p>“电影收藏”初学者工具包由以下文件和文件夹组成。</p>
+<p>&nbsp;</p>
+
+<table border="1" bordercolor= #DDDCD6 width="100%" style="border-collapse: collapse">
+	<tr>
+		<td class="FileNameCol">MainForm.cs</td>
+		<td>主窗体；用作控件的容器。 </td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">ListDetails.cs</td>
+		<td>自定义用户控件；用作电影收藏的查看器和编辑器。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">SearchOnline.cs</td>
+		<td>自定义用户控件；用作联机 Web 服务的搜索工具。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">DVDCollectionDatabase.mdf</td>
+		<td>用于电影收藏的数据库。<b>注意</b>：在向项目中添加数据库时，了解数据库的位置很重要。有关更多信息，请查找帮助主题“如何：在项目中管理本地数据文件”。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">DVDCollectionDataSet.xsd</td>
+		<td>数据集和数据层对象；帮助执行数据库操作，如加载、保存和验证数据。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">Resources 文件夹</td>
+		<td>包含图像（如位图）的文件夹。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">Documentation 文件夹</td>
+		<td>包含初学者工具包的文档和帮助的文件夹。右击 Getting Started Tutorial.htm，然后单击“在浏览器中查看”，可以查看该文档。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">Controls 文件夹</td>
+		<td>由收藏使用的自定义控件。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">Web References 文件夹</td>
+		<td>（<a href="#GettingStarted0">仅限于 Web Plus 版</a>），包含 Web 服务连接的文件夹。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">Project 文件夹</td>
+		<td>包含 Visual C# 项目和应用程序设置的文件夹。双击可打开“项目设计器”。</td>
+	</tr>
+</table>
+
+
+<h2><A href="#top"><IMG src="images/topjump-vc.gif" border=0></A><a name="InDepth">深入介绍“电影收藏”初学者工具包</a></h2>
+
+<p>本节介绍“电影收藏”工具包的工作方式，并推荐进行自定义的入口点。</p>
+
+<h3>联机搜索</h3>
+
+<p><img border="0" src="images/vbmyDVDSearch.gif" width="250" height="177" alt="“我的 DVD 收藏”搜索" align="right" style="margin-left: 15px">（<a href="#GettingStarted0">仅限于 Web Plus 版</a>）应用程序请求对 this 数据进行联机搜索，并且用描述结果数据的 XML 数据进行响应。这类似于访问网页并执行搜索；该应用程序以编程方式向 Web 服务发出请求，该服务用 XML 数据进行响应。</p>
+
+<p>注意，<b>SearchOnline.cs</b> 文件的 <b>PerformSearch</b> 方法中只有几行代码用于添写 DVD 对象列表并将它们绑定到屏幕上。 </p>
+<div class="CodeBlock">private void PerformSearch()<br> {<br> &nbsp;&nbsp;&nbsp; //负责包含 dvd 搜索结果的对象<br> &nbsp;&nbsp;&nbsp; BindingList&lt;DVD&gt; searchResults = new BindingList&lt;DVD&gt;();<br> <br> &nbsp;&nbsp;&nbsp; //负责处理来自 Amazon.com Web 服务的请求和响应的简单包装对象<br> &nbsp;&nbsp;&nbsp; SimpleAmazonWS amazonService = new SimpleAmazonWS();<br> <br> &nbsp;&nbsp;&nbsp; //在搜索过程中显示沙漏，以通知用户搜索正在进行<br> &nbsp;&nbsp;&nbsp; this.Cursor = Cursors.WaitCursor;<br> <br> &nbsp;&nbsp;&nbsp; try<br> &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //请求 Web 服务根据用户的搜索条件返回搜索结果<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; searchResults = amazonService.SearchDVDs(this.searchTextBox.Text);<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //将搜索结果数据绑定到窗体用户界面<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.dvdDataConnector.DataSource = searchResults;<br> &nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp; catch (Exception ex)<br> &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(String.Format(&quot;连接到 Web 服务时出现问题。请确认您已连接到 Internet。其他详细信息：{0}&quot;, ex.Message));<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Debug.WriteLine(ex);<br> &nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp; finally<br> &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //工作完成后，将光标重新设置为默认值<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Cursor = Cursors.Default;<br> &nbsp;&nbsp;&nbsp; }<br> <br> &nbsp;&nbsp;&nbsp; //告知用户查找到的结果数目。使用 String.Format 功能按照便于本地化的方式连接字符串<br> &nbsp;&nbsp;&nbsp; this.label2.Text = String.Format(&quot;找到 {0} 个结果。&quot;, searchResults.Count.ToString());<br> }</div>
+<p>此方法创建一个 <b>DVD</b> 对象的列表，然后调用经过简化的 Amazon.com Web 服务来根据搜索条件（由用户界面上的 <b>SearchTextBox</b> 控件指定）获取 DVD 搜索结果。<b></b>然后将 <b>SearchOnline</b> 控件数据绑定到 Web 服务返回的 DVD 对象结果列表。这可以通过设置控件的 <b>DataConnector.Datasource = [DVD 对象的列表]</b> 来完成。</p>
+
+<h3>数据绑定</h3>
+
+<p>Visual C# 将 this 数据视为 DVD 对象的列表，并且可以将控件与它绑定（即控件的数据基于它）。Visual C# 速成版允许将用户界面元素绑定到几种数据:</p>
+<ul>
+	<li>数据库</li>
+	<li>对象</li>
+	<li>Web 服务</li>
+</ul>
+<p>创建绑定到数据的元素非常简单，只需进行拖放即可，或者在特定控件上使用智能标记。然后可以编写其他代码，动态地将元素绑定到数据，只要它是同类型的数据即可。</p>
+
+<p>例如，在 DVD 片名的联机搜索中，单击结果列表的第一项，然后单击第二项。注意，网格中填入了来自 Web 服务的数据。</p>
+
+<p>单击某一项会在右侧的框中显示详细信息。应用程序还从图像 URL 检索图像，如果有图像，就将它们显示在“图片框”中。这是异步完成的。</p>
+
+<p>现在，选择您喜爱的电影并单击“添加到收藏”。即执行下列代码。</p>
+<div class="CodeBlock">private void AddCurrentToCollection()<br> {<br> &nbsp;&nbsp;&nbsp; //尝试将数据添加到收藏中<br> &nbsp;&nbsp;&nbsp; try<br> &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //检查边界情况：DVD 列表是否为空或者当前是否未进行选择<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((this.dvdDataConnector.Count &gt; 0) &amp;&amp; (this.dvdDataConnector.Current != null))<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //存储当前 DVD 选定内容的对象<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DVD currentDVD = (DVD)this.dvdDataConnector.Current;<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //尝试将图像缓存为 dvd 对象<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (this.pictureBox1.Image != null)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //首先尝试从图片框加载<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; currentDVD.ImageCache = (Bitmap)this.pictureBox1.Image;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (!String.IsNullOrEmpty(currentDVD.ImageUrl))<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //否则尝试从源 URL 加载<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.pictureBox1.Load(currentDVD.ImageUrl);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; currentDVD.ImageCache = (Bitmap)this.pictureBox1.Image;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //将自定义 DVD 对象转换为该应用程序所使用的数据表/数据行格式，并<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //将数据行添加到数据表<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mainForm.ListDetailsPart.dvdCollectionDataSet.DVDs.AddDVDsRow(currentDVD);<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //更新显示，以显示选中了新行的 ListDetailsPart<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mainForm.ListDetailsPart.dvdsDataConnector.Position = mainForm.ListDetailsPart.dvdsDataConnector.Count - 1;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mainForm.ShowListDetailsPart();<br> &nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp; else<br> &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(&quot;未选择 DVD。请先选择 DVD，再添加到收藏。&quot;);<br> &nbsp;&nbsp;&nbsp; }<br> <br> &nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp; catch (Exception ex)<br> &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(&quot;向收藏添加此 DVD 时出现问题。&quot;);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Debug.WriteLine(ex);<br> &nbsp;&nbsp;&nbsp; }<br> }</div>
+<p>此步骤将 <b>DVD</b> 对象列表转换为 DVD 收藏使用的格式，即 <b>DVDCollectionDataSet</b>，然后添加一个新的 <b>DVDCollectionRow</b>。此步骤类似于手工在收藏中输入一个 DVD 片名。通过查看 DVDCollectionDataSet.cs 文件可以看到执行该转换的代码。</p>
+
+<p>应用程序动态地开始再次查看该收藏。此时可以修改可编辑字段中的数据。也可以加入个性化数据，如评论和评级。</p>
+
+<h3>用户控件</h3>
+
+<p>“我的评级”字段作为用户控件来实现，该用户控件是用 Visual C# 创建的，名为 RatingPicker.cs。如果以设计模式查看窗体，您将不会看到 <b>RatingPicker</b> 控件，因为它是在窗体加载 <b>InitRatingPickerControl()</b> 方法时创建的。 </p>
+<p>您可能已经注意到，当鼠标移到 <b>RatingPicker</b> 控件上时，那些星会在鼠标移过它们时亮起来。此功能在 <b>Star_MouseHover</b> 方法中由下列代码处理：</p>
+<div class="CodeBlock">
+	<p>protected internal virtual void Star_MouseHover(object sender, System.EventArgs e)<br> {<br> &nbsp;&nbsp;&nbsp; PictureBox hoverOverStar = (PictureBox)sender;<br> <br> &nbsp;&nbsp;&nbsp; if (!this.m_Initializing)<br> &nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch (hoverOverStar.Name)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case &quot;Star1&quot;:<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.PreviewNewRating((int)RatingPickerValue.Poor);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case &quot;Star2&quot;:<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.PreviewNewRating((int)RatingPickerValue.BelowAverage);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case &quot;Star3&quot;:<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.PreviewNewRating((int)RatingPickerValue.Average);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case &quot;Star4&quot;:<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.PreviewNewRating((int)RatingPickerValue.AboveAverage);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case &quot;Star5&quot;:<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.PreviewNewRating((int)RatingPickerValue.Excellent);<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp;&nbsp; }<br> }<br> &nbsp;</div>
+<p>那些星（Star1、Star2 等）是用户控件中包含的图片框。根据鼠标在哪颗星上，使用 RatingPickerValue 调用 PreviewNewRating 方法。下列代码根据评级设置每颗星的图像:</p>
+<div class="CodeBlock">Bitmap notSetImage = Properties.Resources.star_empty;
+<p>Bitmap setImage = Properties.Resources.star_filled;            </p>
+	<p>RatingPickerValue newRatingValue = (RatingPickerValue)newRating;            </p>
+	<p>switch (newRatingValue)
+            </p>
+	<p>&nbsp;&nbsp;&nbsp; {
+                </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case RatingPickerValue.NotSet:
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star1.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star2.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star3.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star4.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star5.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
+                </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case RatingPickerValue.Poor:
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star1.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star2.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star3.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star4.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star5.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
+                </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case RatingPickerValue.BelowAverage:
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star1.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star2.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star3.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star4.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star5.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
+                </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case RatingPickerValue.Average:
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star1.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star2.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star3.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star4.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star5.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
+                </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case RatingPickerValue.AboveAverage:
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star1.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star2.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star3.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star4.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star5.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
+                </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case RatingPickerValue.Excellent:
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star1.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star2.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star3.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star4.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star5.Image = setImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
+                </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default</span>:</span>
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star1.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star2.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star3.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star4.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.Star5.Image = notSetImage;
+                    </p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;
+            </p>
+	<p>&nbsp;&nbsp;&nbsp; }</div>
+<p>您可以轻松地自定义该控件，使它使用不同的图像，或者用十颗星而不是五颗星来显示评级。</p>
+
+<h3>更多信息</h3>
+
+<ul>
+	<li>请在<a href="http://go.microsoft.com/fwlink/?linkid=29242&clcid=0x409">此处</a>提供您对此文档的反馈意见。</li>
+	<li>其他 Visual C# 初学者工具包可在<a href="http://go.microsoft.com/fwlink/?linkid=29243&clcid=0x409">此处</a>得到。</li>
+	<li>从<a href="http://www.microsoft.com/china/msdn/developercenter/VCSharp/default.mspx">此处</a>可获取更详细的 Visual C# 速成版信息。</li>
+</ul>
+
+<p>
+<a href="http://www.microsoft.com/china/mscorp/legal/">&copy; 2000 Microsoft Corporation 和/或其供应商。保留所有权利。使用条款。</a>
+</p>
+
+<!-- 不要编辑下行  -->
+<p>&nbsp;</p>
+</div>
+
+</body>
+</html>

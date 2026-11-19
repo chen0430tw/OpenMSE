@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cssmd:cssmd xmlns:cssmd="http://schemas.microsoft.com/Visual-Studio-Intellisense/css" version="VS8" description="CSS1 validation data">
+  <cssmd:property-set>
+	<!-- http://www.w3.org/TR/CSS1 -->
+	
+    <!-- Font Properties -->
+    <cssmd:property-def _locID="color" _locAttrData="description,syntax" type="color" description="元素的文本颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+    <cssmd:property-def _locID="font" _locAttrData="description,syntax" type="composite" description="元素的文本所用的字体" syntax="系统字体之一 | [font-style] [font-variant] [font-weight] [font-size]/[line-height] [font-family]"/>
+    <cssmd:property-def _locID="font-family" _locAttrData="description,syntax" type="font" description="元素的文本所用字体的名称" syntax="字体名序列"/>
+    <cssmd:property-def _locID="font-style" _locAttrData="description,syntax" type="enum" description="元素的文本所用字体的样式" syntax="font-style 值之一" enum="italic normal oblique"/>
+    <cssmd:property-def _locID="font-variant" _locAttrData="description,syntax" type="enum" description="元素的文本所用字体的变量" syntax="font-variant 值之一" enum="normal small-caps"/>
+    <cssmd:property-def _locID="font-size" _locAttrData="description,syntax" type="enum-length" description="元素的文本所用字体的大小" syntax="长度 | 百分比 | 标准字号值" enum="large larger medium small smaller x-large x-small xx-large xx-small"/>
+    <cssmd:property-def _locID="font-weight" _locAttrData="description,syntax" type="enum" description="元素的文本所用字体的加粗程度" syntax="font-weight 值之一" enum="bold bolder lighter normal 100 200 300 400 500 600 700 800 900"/>
+    <cssmd:property-def _locID="text-decoration" _locAttrData="description,syntax" type="composite" description="应用于元素的文本所用字体的修饰" syntax="none | “underline”、“overline”、“line-through”和“blink”的组合"/>
+
+    <!-- Background Properties -->
+    <cssmd:property-def _locID="background" _locAttrData="description,syntax" type="composite" description="元素的背景" syntax="[background-color] [background-image] [background-repeat] [background-attachment] [background-position]"/>
+    <cssmd:property-def _locID="background-color" _locAttrData="description,syntax" type="color" description="元素的背景所用的颜色" syntax="#RRGGBB | Transparent | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal Transparent White Yellow"/>
+    <cssmd:property-def _locID="background-image" _locAttrData="description,syntax" type="url" description="元素的背景所用的图像" syntax="none | url ([图像的 url])"/>
+    <cssmd:property-def _locID="background-attachment" _locAttrData="description,syntax" type="enum" description="如何将背景图像附加到文档中的元素" syntax="background-attachment 值之一" enum="fixed scroll"/>
+    <cssmd:property-def _locID="background-repeat" _locAttrData="description,syntax" type="enum" description="背景图像在元素中如何平铺" syntax="background-repeat 值之一" enum="no-repeat repeat repeat-x repeat-y"/>
+    <cssmd:property-def _locID="background-position" _locAttrData="description,syntax" type="composite" description="如何在元素中定位背景" syntax="[水平位置] [垂直位置]" enum="bottom center left right top"/>
+
+    <!-- Text Properties -->
+    <cssmd:property-def _locID="text-align" _locAttrData="description,syntax" type="enum" description="元素的文本的水平对齐方式" syntax="text-align 值之一" enum="center justify left right"/>
+    <cssmd:property-def _locID="vertical-align" _locAttrData="description,syntax" type="enum-length" description="元素的文本的垂直对齐方式" syntax="vertical-align 值之一 | 一个单元" enum="baseline bottom middle sub super text-bottom text-top top"/>
+    <cssmd:property-def _locID="letter-spacing" _locAttrData="description,syntax" type="enum-length" description="字符间距" syntax="normal | 一个单元" enum="normal"/>
+    <cssmd:property-def _locID="line-height" _locAttrData="description,syntax" type="enum-length" description="行间距" syntax="normal | 一个单元" enum="normal"/>
+    <cssmd:property-def _locID="text-indent" _locAttrData="description,syntax" type="length" description="文本缩进" syntax="一个单元"/>
+    <cssmd:property-def _locID="text-transform" _locAttrData="description,syntax" type="enum" description="文本的字母大小写" syntax="text-transform 值之一" enum="capitalize lowercase none uppercase"/>
+    <cssmd:property-def _locID="word-spacing" _locAttrData="description,syntax" type="enum-length" description="字间距" syntax="normal | 一个单元" enum="normal"/>
+    <cssmd:property-def _locID="white-space" _locAttrData="description,syntax" type="enum" description="指示对象内部是否自动换行的值" syntax="white-space 值之一" enum="normal nowrap pre"/>
+
+    <!-- Position Properties -->
+    <cssmd:property-def _locID="height" _locAttrData="description,syntax" type="enum-length" description="定位元素的高度" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="width" _locAttrData="description,syntax" type="enum-length" description="定位元素的宽度" syntax="auto | 一个单元" enum="auto"/>
+
+    <!-- Layout Properties -->
+    <cssmd:property-def _locID="display" _locAttrData="description,syntax" type="enum" description="元素的显示模式" syntax="display 值之一" enum="block inline list-item none"/>
+    <cssmd:property-def _locID="float" _locAttrData="description,syntax" type="enum" description="文本将在其上流动的对象的边缘" syntax="float 值之一" enum="left none right"/>
+    <cssmd:property-def _locID="clear" _locAttrData="description,syntax" type="enum" description="不允许有浮动对象的边" syntax="clear 值之一" enum="both left none right"/>
+
+    <!-- Edges Properties -->
+    <cssmd:property-def _locID="padding" _locAttrData="description,syntax" type="composite" description="元素四个边缘的空白" syntax="[上单元] [右单元] [下单元] [左单元]"/>
+    <cssmd:property-def _locID="padding-left" _locAttrData="description,syntax" type="enum-length" description="元素左边缘的空白" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="padding-right" _locAttrData="description,syntax" type="enum-length" description="元素右边缘的空白" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="padding-top" _locAttrData="description,syntax" type="enum-length" description="元素上边缘的空白" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="padding-bottom" _locAttrData="description,syntax" type="enum-length" description="元素下边缘的空白" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="margin" _locAttrData="description,syntax" type="composite" description="元素四个边缘的边距" syntax="[上单元] [右单元] [下单元] [左单元]"/>
+    <cssmd:property-def _locID="margin-left" _locAttrData="description,syntax" type="enum-length" description="元素左边缘的边距" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="margin-right" _locAttrData="description,syntax" type="enum-length" description="元素右边缘的边距" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="margin-top" _locAttrData="description,syntax" type="enum-length" description="元素上边缘的边距" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="margin-bottom" _locAttrData="description,syntax" type="enum-length" description="元素下边缘的边距" syntax="auto | 一个单元" enum="auto"/>
+    <cssmd:property-def _locID="border" _locAttrData="description,syntax" type="composite" description="元素所有四个边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-left" _locAttrData="description,syntax" type="composite" description="元素左边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-right" _locAttrData="description,syntax" type="composite" description="元素右边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-top" _locAttrData="description,syntax" type="composite" description="元素上边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-bottom" _locAttrData="description,syntax" type="composite" description="元素下边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+    <cssmd:property-def _locID="border-color" _locAttrData="description,syntax" type="color" description="元素所有四个边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+    <cssmd:property-def _locID="border-style" _locAttrData="description,syntax" type="enum" description="元素所有四个边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove inset none outset ridge solid"/>
+    <cssmd:property-def _locID="border-width" _locAttrData="description,syntax" type="enum-length" description="元素所有四个边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-left-color" _locAttrData="description,syntax" type="color" description="元素左边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+    <cssmd:property-def _locID="border-left-width" _locAttrData="description,syntax" type="enum-length" description="元素左边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-left-style" _locAttrData="description,syntax" type="enum" description="元素左边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove inset none outset ridge solid"/>
+    <cssmd:property-def _locID="border-right-color" _locAttrData="description,syntax" type="color" description="元素右边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+    <cssmd:property-def _locID="border-right-width" _locAttrData="description,syntax" type="enum-length" description="元素右边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-right-style" _locAttrData="description,syntax" type="enum" description="元素右边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove inset none outset ridge solid"/>
+    <cssmd:property-def _locID="border-top-color" _locAttrData="description,syntax" type="color" description="元素上边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+    <cssmd:property-def _locID="border-top-width" _locAttrData="description,syntax" type="enum-length" description="元素上边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-top-style" _locAttrData="description,syntax" type="enum" description="元素上边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove inset none outset ridge solid"/>
+    <cssmd:property-def _locID="border-bottom-color" _locAttrData="description,syntax" type="color" description="元素下边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+    <cssmd:property-def _locID="border-bottom-width" _locAttrData="description,syntax" type="enum-length" description="元素下边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+    <cssmd:property-def _locID="border-bottom-style" _locAttrData="description,syntax" type="enum" description="元素下边缘的边框样式" syntax="border-style 值之一" enum="dashed dotted double groove inset none outset ridge solid"/>
+
+    <!-- Lists Properties -->
+    <cssmd:property-def _locID="list-style" _locAttrData="description,syntax" type="composite" description="列表项的项目符号特征" syntax="[list-style-type] [list-style-image] [list-style-position]"/>
+    <cssmd:property-def _locID="list-style-type" _locAttrData="description,syntax" type="enum" description="列表项的项目符号样式" syntax="list-style-type 值之一" enum="circle decimal disc lower-alpha lower-roman none square upper-alpha upper-roman"/>
+    <cssmd:property-def _locID="list-style-image" _locAttrData="description,syntax" type="url" description="列表项的项目符号图像" syntax="none | url ([项目符号图像的 url])"/>
+    <cssmd:property-def _locID="list-style-position" _locAttrData="description,syntax" type="enum" description="列表项的项目符号位置" syntax="list-style-position 值之一" enum="inside outside"/>
+
+    <!-- @font-face Properties -->
+    <cssmd:property-def _locID="src" _locAttrData="description,syntax" type="url" description="字体文件的位置" syntax="url ([字体下载的 url])"/>
+  </cssmd:property-set>
+</cssmd:cssmd>

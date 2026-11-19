@@ -1,0 +1,23 @@
+﻿package calculator.model.unaryOperations;
+
+import calculator.model.*;
+
+/**
+ * 所有一元运算 (如 sine、log 等) 的基类。
+ */
+abstract public class UnaryOperation implements Operation
+{
+    public void operate(OperandStack ops)
+    {
+        double unOp = ops.pop();
+        ops.push(operateUnary(unOp));
+    }
+
+    public OperationType getType()
+    {
+        return OperationType.Unary;
+    }
+
+    // 所有一元运算的抽象方法
+    abstract public double operateUnary(double unOp);
+}

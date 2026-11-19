@@ -1,0 +1,2498 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<schema xmlns="http://www.w3.org/1999/XMLSchema" version="1.0"
+		targetNamespace='HTML 3.2'
+		xmlns:html32='http://schemas.microsoft.com/Schemas/DEFHTML32'
+		xmlns:vs='http://schemas.microsoft.com/Schemas/VisualStudio/HTML Intellisense'
+		vs:clientom="htm32dom.tlb"
+		vs:ishtmlschema="true"
+		vs:iscasesensitive="false"
+		vs:htmlflavor="3.2">
+<!--
+	 Warning:																					
+	 Warning: 
+	 Warning: This is the default HTML 3.2 namespace, do not change the targetDescription above 
+	 Warning: 
+	 Warning: 
+-->
+
+	<element name="HeadContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="base"/>
+				<element ref="isindex"/>
+				<element ref="meta"/>
+				<element ref="nextid"/>
+				<element ref="script"/>
+				<element ref="title"/>
+			</choice>
+		</complexType>
+	</element>
+
+	<element name="BlockContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="address"/>
+				<element ref="basefont"/>
+				<element ref="blockquote"/>
+				<element ref="center"/>
+				<element ref="dir"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="form"/>
+				<element ref="h1"/>
+				<element ref="h2"/>
+				<element ref="h3"/>
+				<element ref="h4"/>
+				<element ref="h5"/>
+				<element ref="h6"/>
+				<element ref="hr"/>
+				<element ref="isindex"/>
+				<element ref="listing"/>
+				<element ref="menu"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="ol"/>
+				<element ref="p"/>
+				<element ref="plaintext"/>
+				<element ref="pre"/>
+				<element ref="table"/>
+				<element ref="ul"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="BasefontContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="applet"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="br"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="em"/>
+				<element ref="embed"/>
+				<element ref="font"/>
+				<element ref="i"/>
+				<element ref="img"/>
+				<element ref="input"/>
+				<element ref="kbd"/>
+				<element ref="map"/>
+				<element ref="nobr"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="script"/>
+				<element ref="select"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="textarea"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+				<element ref="wbr"/>
+				<element ref="address"/>
+				<element ref="basefont"/>
+				<element ref="blockquote"/>
+				<element ref="dir"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="form"/>
+				<element ref="h1"/>
+				<element ref="h2"/>
+				<element ref="h3"/>
+				<element ref="h4"/>
+				<element ref="h5"/>
+				<element ref="h6"/>
+				<element ref="hr"/>
+				<element ref="isindex"/>
+				<element ref="listing"/>
+				<element ref="menu"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="ol"/>
+				<element ref="p"/>
+				<element ref="plaintext"/>
+				<element ref="pre"/>
+				<element ref="ul"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="MarqueeContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="address"/>
+				<element ref="basefont"/>
+				<element ref="blockquote"/>
+				<element ref="dir"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="form"/>
+				<element ref="h1"/>
+				<element ref="h2"/>
+				<element ref="h3"/>
+				<element ref="h4"/>
+				<element ref="h5"/>
+				<element ref="h6"/>
+				<element ref="hr"/>
+				<element ref="isindex"/>
+				<element ref="listing"/>
+				<element ref="menu"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="ol"/>
+				<element ref="p"/>
+				<element ref="plaintext"/>
+				<element ref="pre"/>
+				<element ref="table"/>
+				<element ref="ul"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="FormContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="input"/>
+				<element ref="select"/>
+				<element ref="textarea"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="ButtonContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="applet"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="br"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="em"/>
+				<element ref="embed"/>
+				<element ref="font"/>
+				<element ref="i"/>
+				<element ref="img"/>
+				<element ref="input"/>
+				<element ref="kbd"/>
+				<element ref="map"/>
+				<element ref="nobr"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="script"/>
+				<element ref="select"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="textarea"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+				<element ref="wbr"/>
+				<element ref="address"/>
+				<element ref="basefont"/>
+				<element ref="blockquote"/>
+				<element ref="dir"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="h1"/>
+				<element ref="h2"/>
+				<element ref="h3"/>
+				<element ref="h4"/>
+				<element ref="h5"/>
+				<element ref="h6"/>
+				<element ref="hr"/>
+				<element ref="listing"/>
+				<element ref="menu"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="ol"/>
+				<element ref="p"/>
+				<element ref="plaintext"/>
+				<element ref="pre"/>
+				<element ref="table"/>
+				<element ref="ul"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="BlockParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="applet"/>
+				<element ref="basefont"/>
+				<element ref="blockquote"/>
+				<element ref="body"/>
+				<element ref="center"/>
+				<element ref="dd"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="embed"/>
+				<element ref="form"/>
+				<element ref="li"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="plaintext"/>
+				<element ref="td"/>
+				<element ref="th"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="TableParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="applet"/>
+				<element ref="blockquote"/>
+				<element ref="body"/>
+				<element ref="center"/>
+				<element ref="dd"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="embed"/>
+				<element ref="form"/>
+				<element ref="li"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="plaintext"/>
+				<element ref="pre"/>
+				<element ref="td"/>
+				<element ref="th"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="FormElementParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="applet"/>
+				<element ref="basefont"/>
+				<element ref="blockquote"/>
+				<element ref="body"/>
+				<element ref="center"/>
+				<element ref="dd"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="embed"/>
+				<element ref="li"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="plaintext"/>
+				<element ref="pre"/>
+				<element ref="td"/>
+				<element ref="th"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="AParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="address"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="caption"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="dt"/>
+				<element ref="em"/>
+				<element ref="font"/>
+				<element ref="form"/>
+				<element ref="h1"/>
+				<element ref="h2"/>
+				<element ref="h3"/>
+				<element ref="h4"/>
+				<element ref="h5"/>
+				<element ref="h6"/>
+				<element ref="i"/>
+				<element ref="legend"/>
+				<element ref="li"/>
+				<element ref="nobr"/>
+				<element ref="p"/>
+				<element ref="pre"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+				<element ref="applet"/>
+				<element ref="basefont"/>
+				<element ref="blockquote"/>
+				<element ref="body"/>
+				<element ref="center"/>
+				<element ref="dd"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="embed"/>
+				<element ref="form"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="plaintext"/>
+				<element ref="td"/>
+				<element ref="th"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="MarqueeParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="applet"/>
+				<element ref="basefont"/>
+				<element ref="blockquote"/>
+				<element ref="body"/>
+				<element ref="center"/>
+				<element ref="dd"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="embed"/>
+				<element ref="form"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="plaintext"/>
+				<element ref="pre"/>
+				<element ref="td"/>
+				<element ref="th"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="InlineParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="a"/>
+				<element ref="address"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="caption"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="dt"/>
+				<element ref="em"/>
+				<element ref="font"/>
+				<element ref="h1"/>
+				<element ref="h2"/>
+				<element ref="h3"/>
+				<element ref="h4"/>
+				<element ref="h5"/>
+				<element ref="h6"/>
+				<element ref="i"/>
+				<element ref="kbd"/>
+				<element ref="nobr"/>
+				<element ref="p"/>
+				<element ref="pre"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="InlineParentNoPre" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="a"/>
+				<element ref="address"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="caption"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="dt"/>
+				<element ref="em"/>
+				<element ref="font"/>
+				<element ref="h1"/>
+				<element ref="h2"/>
+				<element ref="h3"/>
+				<element ref="h4"/>
+				<element ref="h5"/>
+				<element ref="h6"/>
+				<element ref="i"/>
+				<element ref="kbd"/>
+				<element ref="nobr"/>
+				<element ref="p"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="InlineParentNoButton" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="a"/>
+				<element ref="address"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="caption"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="dt"/>
+				<element ref="em"/>
+				<element ref="font"/>
+				<element ref="h1"/>
+				<element ref="h2"/>
+				<element ref="h3"/>
+				<element ref="h4"/>
+				<element ref="h5"/>
+				<element ref="h6"/>
+				<element ref="i"/>
+				<element ref="kbd"/>
+				<element ref="nobr"/>
+				<element ref="p"/>
+				<element ref="pre"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="InlineContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="a"/>
+				<element ref="applet"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="br"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="em"/>
+				<element ref="embed"/>
+				<element ref="font"/>
+				<element ref="i"/>
+				<element ref="img"/>
+				<element ref="input"/>
+				<element ref="kbd"/>
+				<element ref="map"/>
+				<element ref="nobr"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="script"/>
+				<element ref="select"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="textarea"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+				<element ref="wbr"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="FormElementContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="a"/>
+				<element ref="applet"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="br"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="em"/>
+				<element ref="embed"/>
+				<element ref="font"/>
+				<element ref="i"/>
+				<element ref="img"/>
+				<element ref="input"/>
+				<element ref="kbd"/>
+				<element ref="map"/>
+				<element ref="nobr"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="script"/>
+				<element ref="select"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="textarea"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+				<element ref="wbr"/>
+				<element ref="address"/>
+				<element ref="basefont"/>
+				<element ref="blockquote"/>
+				<element ref="dir"/>
+				<element ref="div"/>
+				<element ref="dl"/>
+				<element ref="h1"/>
+				<element ref="h2"/>
+				<element ref="h3"/>
+				<element ref="h4"/>
+				<element ref="h5"/>
+				<element ref="h6"/>
+				<element ref="hr"/>
+				<element ref="isindex"/>
+				<element ref="listing"/>
+				<element ref="menu"/>
+				<element ref="noembed"/>
+				<element ref="noframes"/>
+				<element ref="noscript"/>
+				<element ref="ol"/>
+				<element ref="p"/>
+				<element ref="plaintext"/>
+				<element ref="pre"/>
+				<element ref="table"/>
+				<element ref="ul"/>
+				<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="AContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="applet"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="br"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="em"/>
+				<element ref="embed"/>
+				<element ref="font"/>
+				<element ref="i"/>
+				<element ref="img"/>
+				<element ref="input"/>
+				<element ref="kbd"/>
+				<element ref="map"/>
+				<element ref="nobr"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="script"/>
+				<element ref="select"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="textarea"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+				<element ref="wbr"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="PreContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="b"/>
+				<element ref="br"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="em"/>
+				<element ref="embed"/>
+				<element ref="i"/>
+				<element ref="input"/>
+				<element ref="kbd"/>
+				<element ref="map"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="script"/>
+				<element ref="select"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="textarea"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+				<element ref="wbr"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="LabelContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="applet"/>
+				<element ref="b"/>
+				<element ref="big"/>
+				<element ref="br"/>
+				<element ref="cite"/>
+				<element ref="code"/>
+				<element ref="em"/>
+				<element ref="embed"/>
+				<element ref="font"/>
+				<element ref="i"/>
+				<element ref="img"/>
+				<element ref="input"/>
+				<element ref="kbd"/>
+				<element ref="map"/>
+				<element ref="nobr"/>
+				<element ref="s"/>
+				<element ref="samp"/>
+				<element ref="script"/>
+				<element ref="select"/>
+				<element ref="small"/>
+				<element ref="strike"/>
+				<element ref="strong"/>
+				<element ref="sub"/>
+				<element ref="sup"/>
+				<element ref="textarea"/>
+				<element ref="tt"/>
+				<element ref="u"/>
+				<element ref="var"/>
+				<element ref="wbr"/>
+			</choice>
+		</complexType>
+	</element>
+
+	<element name="a">
+		<complexType content="mixed">
+			<choice>
+				<element ref="AContent"/>
+			</choice>
+			<attribute name="href" type="uri-reference"/>
+			<attribute name="name"/>
+			<attribute name="onserverclick" vs:omtype="event" />
+			<attribute name="onserverchange" vs:omtype="event" />
+			<attribute name="target">
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="address" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="p"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="applet">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+				<element ref="param"/>
+			</choice>
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="alt"/>
+			<attribute name="code" type="uri-reference"/>
+			<attribute name="codebase" type="uri-reference"/>
+			<attribute name="height"/>
+			<attribute name="hspace" type="ui4"/>
+			<attribute name="name"/>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="width" />
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="area" vs:empty="true" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="coords"/>
+			<attribute name="href" type="uri-reference"/>
+			<attribute name="nohref"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="shape"  value="rect">
+				<simpleType base="NMTOKEN">
+					<enumeration value="rect"/>
+					<enumeration value="rectangle"/>
+					<enumeration value="circ"/>
+					<enumeration value="circle"/>
+					<enumeration value="poly"/>
+					<enumeration value="polygon"/>
+				</simpleType>
+			</attribute>
+			<attribute name="target">
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="b" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="base" vs:empty="true">
+		<complexType content="mixed">
+			<attribute name="href" type="uri-reference"/>
+			<attribute name="target" >
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="basefont" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="BasefontContent"/>
+			</choice>
+			<attribute 	 type="integer"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="big" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="blockquote" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="body">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="background" type="uri-reference"/>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="link" vs:builder="color"/>
+			<attribute name="onload" vs:omtype="event"/>
+			<attribute name="onunload" vs:omtype="event"/>
+			<attribute name="text" vs:builder="color"/>
+			<attribute name="vlink" vs:builder="color"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="br" vs:empty="true" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="clear"  value="none">
+				<simpleType base="NMTOKEN">
+					<enumeration value="none"/>
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="all"/>
+				</simpleType>
+			</attribute>
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="caption" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="top"/>
+					<enumeration value="bottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="center" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="cite" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="code" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="comment" vs:deprecated="true">
+		<complexType content="mixed">
+		</complexType>
+	</element>
+	<element name="dd" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="dir" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="li"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="div" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="dl" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="dd"/>
+				<element ref="dt"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="dt" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="em" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="embed" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+				<element ref="param"/>
+			</choice>
+			<attribute name="height" />
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="width" />
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="font" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="color"/>
+			<attribute name="face"/>
+			<attribute name="size" type="integer"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="form">
+		<complexType content="mixed">
+			<choice>
+				<element ref="FormElementContent"/>
+			</choice>
+			<attribute name="action" type="uri-reference"/>
+
+			<attribute name="enctype"/>
+			<attribute name="method"  value="get">
+				<simpleType base="NMTOKEN">
+					<enumeration value="get"/>
+					<enumeration value="post"/>
+				</simpleType>
+			</attribute>
+			<attribute name="name"/>
+			<attribute name="target" >
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onchange" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onreset" vs:omtype="event"/>
+			<attribute name="onsubmit" vs:omtype="event"/>
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="frame" vs:empty="true" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="frameborder"  value="yes">
+				<simpleType base="NMTOKEN">
+					<enumeration value="yes"/>
+					<enumeration value="no"/>
+					<enumeration value="1"/>
+					<enumeration value="0"/>
+				</simpleType>
+			</attribute>
+			<attribute name="marginheight" type="integer"/>
+			<attribute name="marginwidth" type="integer"/>
+			<attribute name="name"/>
+			<attribute name="noresize"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="scrolling"  value="auto">
+				<simpleType base="NMTOKEN">
+					<enumeration value="auto"/>
+					<enumeration value="yes"/>
+					<enumeration value="no"/>
+				</simpleType>
+			</attribute>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="target" >
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="frameset">
+		<complexType content="mixed">
+			<choice>
+				<element ref="frame"/>
+				<element ref="frameset"/>
+				<element ref="noframes"/>
+			</choice>
+			<attribute name="cols" />
+			<attribute name="frameborder"  value="yes">
+				<simpleType base="NMTOKEN">
+					<enumeration value="yes"/>
+					<enumeration value="no"/>
+					<enumeration value="1"/>
+					<enumeration value="0"/>
+				</simpleType>
+			</attribute>
+			<attribute name="onload" vs:omtype="event"/>
+			<attribute name="onunload"/>
+			<attribute name="rows"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="head">
+		<complexType content="mixed">
+			<choice>
+				<element ref="HeadContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="hr" vs:empty="true">
+		<complexType content="mixed">
+			<attribute name="align"  value="right">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+				</simpleType>
+			</attribute>
+			<attribute name="noshade" type="boolean" vs:standalone="true" />
+			<attribute name="size" />
+			<attribute name="width" />
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="html">
+		<complexType content="mixed">
+			<choice>
+				<element ref="body"/>
+				<element ref="frameset"/>
+				<element ref="head"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="htmlarea" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="cols" type="integer"/>
+			<attribute name="rows"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h1" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h2" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h3" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h4" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h5" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h6" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="i" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="image" vs:empty="true" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="alt"/>
+			<attribute name="height"/>
+			<attribute name="hspace" type="ui4"/>
+			<attribute name="ismap"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="name"/>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="usemap" type="uri-reference"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="width" />
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="img" vs:empty="true">
+		<complexType content="mixed">
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="alt"/>
+			<attribute name="border" type="integer"/>
+			<attribute name="height"/>
+			<attribute name="hspace" type="ui4"/>
+			<attribute name="ismap"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="name"/>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="usemap" type="uri-reference"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="width" />
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="isindex" vs:empty="true">
+		<complexType content="mixed">
+			<attribute name="action" type="uri-reference"/>
+			<attribute name="prompt"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="input" vs:empty="true" vs:clientom="formelement">
+		<complexType content="mixed">
+			<attribute name="align" vs:inputtype="image">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="checked" type="boolean" vs:inputtype="checkbox radio" vs:standalone="true" />
+			<attribute name="maxlength" type="ui4" vs:inputtype="text" />
+			<attribute name="name" vs:inputtype="button checkbox hidden image password radio submit text" />
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onchange" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onserverclick" vs:omtype="event" />
+			<attribute name="onserverchange" vs:omtype="event" />
+			<attribute name="src" type="uri-reference" vs:inputtype="image" />
+			<attribute name="size" type="integer"/>
+			<attribute name="type" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="button"/>
+					<enumeration value="checkbox"/>
+					<enumeration value="file"/>
+					<enumeration value="hidden"/>
+					<enumeration value="image"/>
+					<enumeration value="password"/>
+					<enumeration value="radio"/>
+					<enumeration value="submit"/>
+					<enumeration value="reset"/>
+					<enumeration value="text"/>
+				</simpleType>
+			</attribute>
+			<attribute name="value" vs:inputtype="button checkbox hidden password radio reset submit text"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="kbd" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="li" vs:clientom="coreEventSource" vs:implicitClosure="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="type" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="A"/>
+					<enumeration value="a"/>
+					<enumeration value="I"/>
+					<enumeration value="i"/>
+					<enumeration value="1"/>
+				</simpleType>
+			</attribute>
+			<attribute name="value"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="link" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="href" type="uri-reference"/>
+			<attribute name="rel">
+				<simpleType base="NMTOKEN">
+					<enumeration value="alternate"/>
+					<enumeration value="bookmark"/>
+					<enumeration value="chapter"/>
+					<enumeration value="contents"/>
+					<enumeration value="copyright"/>
+					<enumeration value="glossary"/>
+					<enumeration value="help"/>
+					<enumeration value="index"/>
+					<enumeration value="next"/>
+					<enumeration value="prev"/>
+					<enumeration value="section"/>
+					<enumeration value="start"/>
+					<enumeration value="stylesheet"/>
+					<enumeration value="subsection"/>
+				</simpleType>
+			</attribute>
+			<attribute name="type" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="text/css"/>
+					<enumeration value="text/javascript"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="listing" vs:deprecated="true" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="map" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="area"/>
+			</choice>
+			<attribute name="name"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="menu" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="li"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="meta" vs:empty="true" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="content"/>
+			<attribute name="http-equiv"/>
+			<attribute name="name"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="metadata">
+		<complexType content="mixed">
+			<attribute name="type" vs:readonly="true" />
+			<attribute name="startspan"/>
+		</complexType>
+	</element>
+	<element name="nextid" vs:empty="true" vs:deprecated="true">
+		<complexType content="mixed">
+			<attribute name="n" type="integer"/>
+		</complexType>
+	</element>
+	<element name="nobr" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="noembed">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="noframes" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+				<element ref="body"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="noscript" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="object" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+				<element ref="param"/>
+				<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="border" type="integer"/>
+			<attribute name="classid"/>
+			<attribute name="code" type="uri-reference"/>
+			<attribute name="codebase" type="uri-reference"/>
+			<attribute name="codetype"/>
+			<attribute name="data"/>
+			<attribute name="height"/>
+			<attribute name="name"/>
+			<attribute name="onafterupdate" vs:omptye="event"/>
+			<attribute name="ondataavailable" vs:omtype="event"/>
+			<attribute name="ondatasetchanged" vs:omtype="event"/>
+			<attribute name="ondatasetcomplete" vs:omtype="event"/>
+			<attribute name="onerror" vs:omtype="event"/>
+			<attribute name="onerrorupdate" vs:omtype="event"/>
+			<attribute name="onreadystatechange" vs:omtype="event"/>
+			<attribute name="progid"/>
+			<attribute name="type" vs:readonly="true" />
+			<attribute name="width" />
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="ol" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="li"/>
+			</choice>
+			<attribute name="start" type="integer"/>
+			<attribute name="type" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="A"/>
+					<enumeration value="a"/>
+					<enumeration value="I"/>
+					<enumeration value="i"/>
+					<enumeration value="1"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="option" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="selected" type="boolean" vs:standalone="true" />
+			<attribute name="value"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="p" vs:clientom="coreEventSource" vs:implicitClosure="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="table"/>
+				<element ref="hr"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="param" vs:empty="true">
+		<complexType content="mixed">
+			<attribute name="name"/>
+			<attribute name="value"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="plaintext" vs:deprecated="true" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="pre" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="PreContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="s" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="samp" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="script">
+		<complexType content="mixed">
+			<attribute name="language"  value="jscript">
+				<simpleType base="NMTOKEN">
+					<enumeration value="jscript"/>
+					<enumeration value="javascript"/>
+					<enumeration value="vbs"/>
+					<enumeration value="vbscript"/>
+					<enumeration value="xml"/>
+				</simpleType>
+			</attribute>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="select" vs:clientom="formelement">
+		<complexType content="mixed">
+			<choice>
+				<element ref="option"/>
+			</choice>
+			<attribute name="multiple" type="boolean" vs:standalone="true" />
+			<attribute name="name"/>
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onchange" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onserverclick" vs:omtype="event" />
+			<attribute name="onserverchange" vs:omtype="event" />
+			<attribute name="size" type="ui4"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="small" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="strike" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="strong" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="sub" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="sup" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="table" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="caption"/>
+				<element ref="tr"/>
+			</choice>
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+				</simpleType>
+			</attribute>
+			<attribute name="border" type="integer"/>
+			<attribute name="cellpadding" type="integer"/>
+			<attribute name="cellspacing" type="integer"/>
+			<attribute name="height"/>
+			<attribute name="width" />
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="td" vs:clientom="coreEventSource" vs:implicitClosure="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+				</simpleType>
+			</attribute>
+			<attribute name="colspan"  value="1" type="integer"/>
+			<attribute name="height"/>
+			<attribute name="nowrap"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="rowspan"  value="1" type="integer"/>
+			<attribute name="valign"  value="top">
+				<simpleType base="NMTOKEN">
+					<enumeration value="top"/>
+					<enumeration value="middle"/>
+					<enumeration value="bottom"/>
+					<enumeration value="baseline"/>
+				</simpleType>
+			</attribute>
+			<attribute name="width" />
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="textarea" vs:clientom="formelement">
+		<complexType content="mixed">
+			<attribute name="cols" type="integer"/>
+			<attribute name="name"/>
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onchange" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onserverclick" vs:omtype="event" />
+			<attribute name="onserverchange" vs:omtype="event" />
+			<attribute name="rows"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="th" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+				<element ref="BlockContent"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+				</simpleType>
+			</attribute>
+			<attribute name="colspan"  value="1" type="integer"/>
+			<attribute name="height"/>
+			<attribute name="nowrap"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="rowspan"  value="1" type="integer"/>
+			<attribute name="valign"  value="top">
+				<simpleType base="NMTOKEN">
+					<enumeration value="top"/>
+					<enumeration value="middle"/>
+					<enumeration value="bottom"/>
+					<enumeration value="baseline"/>
+				</simpleType>
+			</attribute>
+			<attribute name="width" />
+			<attribute name="background" type="uri-reference"/>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="title" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="tr" vs:clientom="coreEventSource" vs:implicitClosure="true">
+		<complexType content="mixed">
+			<choice>
+				<element ref="th"/>
+				<element ref="td"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+				</simpleType>
+			</attribute>
+			<attribute name="valign"  value="top">
+				<simpleType base="NMTOKEN">
+					<enumeration value="top"/>
+					<enumeration value="middle"/>
+					<enumeration value="bottom"/>
+					<enumeration value="baseline"/>
+				</simpleType>
+			</attribute>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="tt" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="u" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="ul" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="ul" vs:deprecated="true"/>
+				<element ref="li"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="var" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<choice>
+				<element ref="InlineContent"/>
+			</choice>
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="wbr" vs:empty="true">
+		<complexType content="mixed">
+		</complexType>
+	</element>
+	<element name="xmp" vs:deprecated="true" vs:clientom="coreEventSource">
+		<complexType content="mixed">
+			<attribute name="id"/>
+			<attribute name="viewastext" vs:nonbrowseable="true"/>
+			<attribute name="runat" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="server"/>
+				</simpleType>
+			</attribute>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<simpleType name="ui4" base="non-negative-integer">
+		<minInclusive value="0"/>
+		<maxInclusive value="4294967295"/>
+	</simpleType>
+</schema>

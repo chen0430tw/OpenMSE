@@ -1,0 +1,206 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>安装维护完成</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<link href="styles.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY vLink=purple link=blue bgColor=white>
+<BASEFONT face="宋体, Verdana" color="navy" size="2">
+
+<SCRIPT language=JavaScript>
+<!--
+    var strInput;
+    var strRemainingInput;
+    var strPath;
+    var strErrors;
+    var strRollback;
+    var strReadmePath;
+    var i;
+    var strErrorAnchor;
+    var strInstallAnchor;
+    var strWowFlag;
+    var optErrorFlag;
+    var depCheckFlag;
+
+    strInput=window.location.search.substring(1,window.location.search.length);
+    strInput = String(strInput.replace(/%2520/g,"%20"));
+
+    i=strInput.indexOf(";");
+    strErrors=strInput.substring(0,i);
+    strRemainingInput=strInput.substring(i+1,strInput.length);
+    i=strErrors.indexOf("=");
+    strErrors=strErrors.substring(i+1,i+2);
+
+    i=strRemainingInput.indexOf(";");
+    strPath=strRemainingInput.substring(0,i);
+    strRemainingInput=strRemainingInput.substring(i+1,strInput.length);
+    i=strPath.indexOf("=");
+    strPath=strPath.substring(i+1,strPath.length);
+
+    i=strRemainingInput.indexOf("=");
+    strRollback=strRemainingInput.substring(i+1,i+2);
+    strRemainingInput=strRemainingInput.substring(i+3,strInput.length);
+
+    i=strRemainingInput.indexOf(";");
+    strReadmePath=strRemainingInput.substring(0,i);
+    strRemainingInput=strRemainingInput.substring(i+1,strInput.length);
+    i=strReadmePath.indexOf("=");
+    strReadmePath=strReadmePath.substring(i+1,strReadmePath.length);
+
+    i=strRemainingInput.indexOf("=");
+    strWowFlag=strRemainingInput.substring(i+1,i+2);
+    strRemainingInput=strRemainingInput.substring(i+3,strInput.length);
+
+    // Look at remaining input and try to find OptError and Depcheck
+    var optErrorString = "opterror=";
+    var depCheckString = "depcheck=";
+
+    strRemainingInput = strRemainingInput.toLowerCase();
+
+var optError = strRemainingInput.toLowerCase().match(optErrorString);
+if (optError)
+{
+    i=strRemainingInput.indexOf(optErrorString)+(optErrorString.length)-1;
+    optErrorFlag=strRemainingInput.substring(i+1,i+2);
+}
+
+var depcheck = strRemainingInput.toLowerCase().match(depCheckString);
+if (depcheck)
+{
+    i=strRemainingInput.indexOf("depcheck=")+(depCheckString.length)-1;
+    depCheckFlag = strRemainingInput.substring(i+1,i+2);
+}
+
+
+//Get rid of space esc (%20)
+spaces = new RegExp("\%20", "g");
+strPath = strPath.replace(spaces , " ");
+strReadmePath = strReadmePath.replace(spaces , " ");
+
+// Security precaution
+forbiddenChars = new RegExp("[<>\'\"]", "g");	// Global search/replace
+strPath = strPath.replace(forbiddenChars, "");
+strReadmePath = strReadmePath.replace(forbiddenChars, "");
+
+        document.write("<table width=100%>");
+        document.write("<tr>");
+        document.write("<td width=36><img src=\"file:///"+strReadmePath+"/smallSuccess.gif\"></td>");
+        document.write("<td><font size=4 color=\"green\">安装维护<b>成功</b><br>完成。</font></td>");
+        document.write("</tr>");
+        document.write("</table>")
+
+        document.write("<img src=\"file:///"+strReadmePath+"/greenrule.gif\" width=\"100%\" height=4><br><br>");
+        if (optErrorFlag=="1")
+        {
+            document.write ("<font color=#FF0000><b>但是，在安装可选组件的过程中报告了安装错误。有关安装失败的组件列表，请查看错误日志。</font></b><br><br>");
+        }
+
+        document.write("<img src=\"file:///"+strReadmePath+"/greenrule.gif\" width=\"100%\" height=4><br><br>");
+
+	if (strErrors != "1")
+   	{
+          document.write("<table width=100%>");
+          document.write("<tr><td valign=\"top\" width=\"50%\">");
+	  document.write("<table width=100% class=black><tr><td width=\"100%\" valign=\"top\">");
+	}
+        document.write("<font size=2><p style='margin-top: 0; margin-bottom: 6pt'>");
+
+
+//***************************************************************************
+//only shows one table if there are errors that must be rolled back
+//***************************************************************************
+
+if (strErrors=="1" && strRollback=="1")
+{
+	document.write ("<b>维护安装过程中生成了警告，导致安装回滚。安装程序已将计算机恢复到维护开始前的状态。</b><br><br>");
+	document.write ("请查看<a target='_blank' href='file:///" + strPath + "/dd_vserror80.txt'>错误日志</a>和 <a target='_blank' href='file:///" + strPath + "/dd_vsinstall80.txt'>Visual Studio 维护安装日志</a>。</b><br><br></td></tr></table></td></tr></table>");
+  }
+
+else
+{
+    if (strErrors=="1")
+    {
+	document.write ("<b>安装过程中生成了警告。</b><br><br>");
+	document.write ("<a target='_blank' href='file:///" + strPath + "/dd_vserror80.txt'>查看错误日志</a>和 <a target='_blank' href='file:///" + strPath + "/dd_vsinstall80.txt'>Visual Studio 安装日志</a>");
+	document.write ("<br><br>");
+    }
+    if (strErrors=="u")
+    {
+    document.write ("<b>升级完成。</b>您已成功升级了试用版软件。");
+    }
+    else
+    {
+	    document.write("<b>Visual Studio 安装完毕。</b><br> 请阅读安全说明。");
+    }
+
+
+	document.write ("<p style='margin-top: 0; margin-bottom: 6pt;'>");
+	document.write("<font size=2><p style='margin-top: 0; margin-bottom: 0pt;'><b>后续步骤:</b></p><ol style='margin-top: 0pt; margin-bottom: 6pt;'>");
+	document.write("<li><b>MSDN Library</b><br>在安装 Visual Studio 的其他功能时，默认情况下不会安装这些功能的文档。请使用“添加/删除程序”安装或更改 MSDN Library 或从 MSDN CD 或 DVD 进行安装。</li>");
+	document.write("<li><b><a href='#SecNotes'>阅读安全说明</a></b></li>");
+	document.write("</ol></p>");
+
+        document.write("</font></td></tr></table></td>");
+
+	document.write("<td valign=top width=\"50%\"><table border=0 width=\"100%\"><tr><td valign=\"top\">");
+	document.write("<table><tr><td valign=\"top\"><img src=\"file:///"+strReadmePath+"/addInfoBand.gif\"></td>");
+	document.write ("<td><p style='margin-top: 0; margin-bottom: 6pt'><font size=2><b><a name='SecNotes'>安全说明:</a></b></font></p>");
+
+	document.write ("<img src=\"file:///"+strReadmePath+"/dividerArt.jpg\"><br>");
+
+	document.write("<p style='margin-top: 6pt; margin-bottom: 0pt'><font size=2>");
+
+    document.write ("<font color=#FF0000><b>强烈建议</b></font>您使用相应操作系统的最新安全修补程序对这台计算机进行更新。有关最近的更新，请参见 Windows Update 网站 <a href='http://v5.windowsupdate.microsoft.com/v5consumer/default.aspx?ln=zh-cn' target='_blank'>http://v5.windowsupdate.microsoft.com/v5consumer/default.aspx?ln=zh-cn</a>。您也可以获得 <a href='http://www.microsoft.com/china/windows2000/downloads/default.asp' target='_blank'>Windows 2000</a>、<a href='http://www.microsoft.com/china/windowsxp/pro/downloads/default.asp' target='_blank'>Windows XP</a> 和 <a href='http://www.microsoft.com/china/windowsserver2003/downloads/default.mspx' target='_blank'>Windows Server 2003</a> 的更新。<br>");
+	document.write ("<ul>");
+	document.write ("<li>若要分析您的计算机存在的安全漏洞，请参见 <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=48754'><b>Microsoft Baseline Security Analyzer (MBSA)</b></a>。MBSA 带有一个图形和命令行界面，可对 Windows 系统执行本地或远程扫描。MBSA 需在 Windows 2000 和 Windows XP 系统上运行。</li>");
+	document.write ("<li>如果这台计算机上安装了 Microsoft Internet 信息服务 (IIS)，安装程序就会自动注册 ASP.NET。</li>");
+	document.write ("<li>如果您的安装目录不是默认目录，或者安装目录的分区使用 FAT 文件系统，则可能无法保护您的文件不被这台计算机的其他用户访问。如果这台计算机由其他用户共享，您最好检查一下安装目录的权限，设定不允许任何用户修改文件。如果不这样做，可能会给您带来安全风险。</li>");
+	document.write ("</ul>");
+
+	document.write("</font></p>");
+	document.write("</td></tr></table>");
+    document.write("</td></tr></table>");
+    document.write("</td></tr></table>");
+	}
+	-->
+	</SCRIPT>
+	<NOSCRIPT>
+	<table width=100%>
+	<tr>
+<td width=36><img src="smallSuccess.gif"></td>
+<td><font size=4 color="green">安装维护<b>成功</b><br>完成。</font></td>
+</tr>
+</table>
+<img src="greenrule.gif" width="100%" height=4><br><br>
+	<table width="100%">
+	  <tr><td valign="top" width="50%">
+	      <table class=black width=100%>
+		<tr><td valign="top">	
+		    <p style='margin-top: 0; margin-bottom: 0pt'><font size=2>Visual Studio 安装完毕。<br> 请阅读安全说明。</font></p></td></tr>
+	    </table></td>
+	    <td valign="top" width=\"50%\">
+	      <table width=100%><tr>
+		  <td valign="top">
+		    <table>
+		      <tr><td valign="top"><img src="addInfoBand.gif"></td>
+			<td valign="top">
+			  <p style='margin-top: 0; margin-bottom: 6pt'><font size=2><b>安全说明:</b></font></p>
+			  <img src="dividerArt.jpg"><br>
+			  <font size=2>
+			    <p style='margin-top: 6pt; margin-bottom: 0pt; '><font color=#FF0000><b>强烈建议</b></font>您使用相应操作系统的最新安全修补程序对这台计算机进行更新。有关最近的更新，请参见 Windows Update 网站 <a href='http://v5.windowsupdate.microsoft.com/v5consumer/default.aspx?ln=zh-cn' target='_blank'>http://v5.windowsupdate.microsoft.com/v5consumer/default.aspx?ln=zh-cn</a>。您也可以从 <a href='http://www.microsoft.com/china/windows2000/downloads/default.asp' target='_blank'>http://www.microsoft.com/china/windows2000/downloads/default.asp</a> 获得 Windows 2000 的更新；从 <a href='http://www.microsoft.com/china/windowsxp/pro/downloads/default.asp' target='_blank'>http://www.microsoft.com/china/windowsxp/pro/downloads/default.asp</a> 获得 Windows XP 的更新；从 <a href='http://www.microsoft.com/china/windowsserver2003/downloads/updates/default.mspx' target='_blank'>http://www.microsoft.com/china/windowsserver2003/downloads/updates/default.mspx</a> 获得 Windows Server 2003 的更新。</p>
+			    <ul>
+			      <li>
+			      <p style='margin-top: 0; margin-bottom: 6pt; '>若要分析您的计算机存在的安全漏洞，请参见 <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=48754'><b>Microsoft Baseline Security Analyzer (MBSA)</b></a>。MBSA 带有一个图形和命令行界面，可对 Windows 系统执行本地或远程扫描。MBSA 需在 Windows 2000 和 Windows XP 系统上运行。</p></li>
+			      <li><p style='margin-top: 0; margin-bottom: 6pt; '>如果这台计算机上安装了 Microsoft Internet 信息服务 (IIS)，安装程序就会自动注册 ASP.NET。</p></li>
+		    <li><p style='margin-top: 0; margin-bottom: 6pt; '>如果您的安装目录不是默认目录，或者安装目录的分区使用 FAT 文件系统，则可能无法保护您的文件不被这台计算机的其他用户访问。如果这台计算机由其他用户共享，您最好检查一下安装目录的权限，设定不允许任何用户修改文件。如果不这样做，可能会给您带来安全风险。</p></li>
+		  </ul>
+		  </p>
+		</font>
+	      </td>
+	      </tr>
+	    </table>
+	  </td></tr></table>
+    </td></tr></table>
+	</NOSCRIPT>
+	</SPAN>
+	</BODY>
+	</HTML>

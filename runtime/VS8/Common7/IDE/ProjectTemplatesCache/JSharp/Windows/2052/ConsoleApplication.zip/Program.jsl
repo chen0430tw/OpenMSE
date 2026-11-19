@@ -1,0 +1,14 @@
+﻿package $safeprojectname$;
+
+/**
+ * Program 的摘要说明
+ */
+public class Program
+{
+    public static void main(String[] args)
+    {
+        //
+        // TODO: 在此处添加启动应用程序的代码
+        //
+    }
+}

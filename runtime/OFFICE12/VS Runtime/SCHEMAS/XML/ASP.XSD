@@ -1,0 +1,1436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace='Web Forms Controls'
+        xmlns='http://www.w3.org/1999/XMLSchema'
+        xmlns:asp='http://schemas.microsoft.com/Schemas/AspWebControls'
+        xmlns:vs='http://schemas.microsoft.com/Schemas/VisualStudio/HTML Intellisense'
+               vs:ishtmlschema='false'
+               vs:iscasesensitive='false'>
+
+<annotation>
+    <documentation>
+    ASP Web Forms Controls schema.
+    </documentation>
+</annotation>
+
+
+<!-- < TableCell attributes > -->
+<attributeGroup name="TableCellAttributes" vs:nonbrowseable="true">
+  <attribute name="VerticalAlign" type="VerticalAlign" />
+  <attribute name="HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="ColumnSpan" type="integer" />
+  <attribute name="Wrap" type="boolean" />
+  <attribute name="Text" type="string" />
+  <attribute name="RowSpan" type="integer" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</attributeGroup>
+
+<!-- < Label attributes > -->
+<attributeGroup name="LabelAttributes" vs:nonbrowseable="true">
+  <attribute name="Enabled" type="boolean" />
+  <attribute name="Text" type="string" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</attributeGroup>
+
+<!-- < BaseDataList attributes > -->
+<attributeGroup name="BaseDataListAttributes" vs:nonbrowseable="true">
+  <attribute name="DataMember" type="string" />
+  <attribute name="DataSource" type="Object" />
+  <attribute name="OnSelectedIndexChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</attributeGroup>
+
+<!-- < TableItemStyle attributes > -->
+<attributeGroup name="TableItemStyleAttributes" vs:nonbrowseable="true">
+  <attribute name="HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="Wrap" type="boolean" />
+  <attribute name="VerticalAlign" type="VerticalAlign" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="StyleAttributes" />
+</attributeGroup>
+
+<!-- < BaseCompareValidator attributes > -->
+<attributeGroup name="BaseCompareValidatorAttributes" vs:nonbrowseable="true">
+  <attribute name="Type" type="ValidationDataType" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="BaseValidatorAttributes" />
+</attributeGroup>
+
+<!-- < CommandEventArgs attributes > -->
+<attributeGroup name="CommandEventArgsAttributes" vs:nonbrowseable="true">
+  <attribute name="CommandName" type="string" />
+  <attribute name="CommandArgument" type="Object" />
+</attributeGroup>
+
+<!-- < WebControl attributes > -->
+<attributeGroup name="WebControlAttributes" vs:nonbrowseable="true">
+  <attribute name="Font-Size" type="ui4" />
+  <attribute name="Font-Overline" type="boolean" />
+  <attribute name="Font-Underline" type="boolean" />
+  <attribute name="Font-Names" type="string" />
+  <attribute name="Font-Italic" type="boolean" />
+  <attribute name="Font-Bold" type="boolean" />
+  <attribute name="Font-Strikeout" type="boolean" />
+  <attribute name="ToolTip" type="string" />
+  <attribute name="Height" type="ui4" />
+  <attribute name="BorderWidth" type="ui4" />
+  <attribute name="ForeColor" type="string" vs:builder="color" />
+  <attribute name="Enabled" type="boolean" />
+  <attribute name="BorderStyle" type="BorderStyle" />
+  <attribute name="BorderColor" type="string" vs:builder="color" />
+  <attribute name="Width" type="ui4" />
+  <attribute name="CssClass" type="string" />
+  <attribute name="AccessKey" type="string" />
+  <attribute name="BackColor" type="string" vs:builder="color" />
+  <attribute name="TabIndex" type="Int16" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="OnDataBinding" vs:omtype="event" />
+  <attribute name="Style" vs:builder="style" />
+  <attribute name="Runat">
+    <simpleType base="string">
+      <enumeration value="Server" />
+    </simpleType>
+  </attribute>
+  <attributeGroup ref="ControlAttributes" />
+</attributeGroup>
+
+<!-- < Control attributes > -->
+<attributeGroup name="ControlAttributes" vs:nonbrowseable="true">
+  <attribute name="ID" type="string" />
+  <attribute name="EnableViewState" type="boolean" />
+  <attribute name="Visible" type="boolean" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+</attributeGroup>
+
+<!-- < TableRow attributes > -->
+<attributeGroup name="TableRowAttributes" vs:nonbrowseable="true">
+  <attribute name="VerticalAlign" type="VerticalAlign" />
+  <element name="TableCell" type="TableCellDef" />
+  <attribute name="HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</attributeGroup>
+
+<!-- < CheckBox attributes > -->
+<attributeGroup name="CheckBoxAttributes" vs:nonbrowseable="true">
+  <attribute name="Checked" type="boolean" />
+  <attribute name="TextAlign" type="TextAlign" />
+  <attribute name="AutoPostBack" type="boolean" />
+  <attribute name="Text" type="string" />
+  <attribute name="OnCheckedChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</attributeGroup>
+
+<!-- < Style attributes > -->
+<attributeGroup name="StyleAttributes" vs:nonbrowseable="true">
+  <attribute name="Font-Size" type="ui4" />
+  <attribute name="Font-Overline" type="boolean" />
+  <attribute name="Font-Underline" type="boolean" />
+  <attribute name="Font-Names" type="string" />
+  <attribute name="Font-Italic" type="boolean" />
+  <attribute name="Font-Bold" type="boolean" />
+  <attribute name="Font-Strikeout" type="boolean" />
+  <attribute name="Width" type="ui4" />
+  <attribute name="Height" type="ui4" />
+  <attribute name="BorderWidth" type="ui4" />
+  <attribute name="ForeColor" type="string" vs:builder="color" />
+  <attribute name="BorderStyle" type="BorderStyle" />
+  <attribute name="BorderColor" type="string" vs:builder="color" />
+  <attribute name="CssClass" type="string" />
+  <attribute name="BackColor" type="string" vs:builder="color" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+</attributeGroup>
+
+<!-- < BaseValidator attributes > -->
+<attributeGroup name="BaseValidatorAttributes" vs:nonbrowseable="true">
+  <attribute name="EnableClientScript" type="boolean" />
+  <attribute name="Display" type="ValidatorDisplay" />
+  <attribute name="Enabled" type="boolean" />
+  <attribute name="ErrorMessage" type="string" />
+  <attribute name="ForeColor" type="string" vs:builder="color" />
+  <attribute name="ControlToValidate" type="string" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="LabelAttributes" />
+</attributeGroup>
+
+<!-- < Column attributes > -->
+<attributeGroup name="ColumnAttributes" vs:nonbrowseable="true">
+  <attribute name="HeaderStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="HeaderStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="HeaderStyle-Width" type="ui4" />
+  <attribute name="HeaderStyle-Height" type="ui4" />
+  <attribute name="HeaderStyle-BorderWidth" type="ui4" />
+  <attribute name="HeaderStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="HeaderStyle-Font-Size" type="ui4" />
+  <attribute name="HeaderStyle-Font-Overline" type="boolean" />
+  <attribute name="HeaderStyle-Font-Underline" type="boolean" />
+  <attribute name="HeaderStyle-Font-Names" type="string" />
+  <attribute name="HeaderStyle-Font-Italic" type="boolean" />
+  <attribute name="HeaderStyle-Font-Bold" type="boolean" />
+  <attribute name="HeaderStyle-Font-Strikeout" type="boolean" />
+  <attribute name="HeaderStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="HeaderStyle-CssClass" type="string" />
+  <attribute name="HeaderStyle-Wrap" type="boolean" />
+  <attribute name="HeaderStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="HeaderStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="Visible" type="boolean" />
+  <attribute name="HeaderImageUrl" type="uri-reference" />
+  <attribute name="FooterText" type="string" />
+  <attribute name="SortExpression" type="string" />
+  <attribute name="FooterStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="FooterStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="FooterStyle-Width" type="ui4" />
+  <attribute name="FooterStyle-Height" type="ui4" />
+  <attribute name="FooterStyle-BorderWidth" type="ui4" />
+  <attribute name="FooterStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="FooterStyle-Font-Size" type="ui4" />
+  <attribute name="FooterStyle-Font-Overline" type="boolean" />
+  <attribute name="FooterStyle-Font-Underline" type="boolean" />
+  <attribute name="FooterStyle-Font-Names" type="string" />
+  <attribute name="FooterStyle-Font-Italic" type="boolean" />
+  <attribute name="FooterStyle-Font-Bold" type="boolean" />
+  <attribute name="FooterStyle-Font-Strikeout" type="boolean" />
+  <attribute name="FooterStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="FooterStyle-CssClass" type="string" />
+  <attribute name="FooterStyle-Wrap" type="boolean" />
+  <attribute name="FooterStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="FooterStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="HeaderText" type="string" />
+  <attribute name="ItemStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="ItemStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="ItemStyle-Width" type="ui4" />
+  <attribute name="ItemStyle-Height" type="ui4" />
+  <attribute name="ItemStyle-BorderWidth" type="ui4" />
+  <attribute name="ItemStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="ItemStyle-Font-Size" type="ui4" />
+  <attribute name="ItemStyle-Font-Overline" type="boolean" />
+  <attribute name="ItemStyle-Font-Underline" type="boolean" />
+  <attribute name="ItemStyle-Font-Names" type="string" />
+  <attribute name="ItemStyle-Font-Italic" type="boolean" />
+  <attribute name="ItemStyle-Font-Bold" type="boolean" />
+  <attribute name="ItemStyle-Font-Strikeout" type="boolean" />
+  <attribute name="ItemStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="ItemStyle-CssClass" type="string" />
+  <attribute name="ItemStyle-Wrap" type="boolean" />
+  <attribute name="ItemStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="ItemStyle-BackColor" type="string" vs:builder="color" />
+  <element name="Property" vs:nonamespaceprefix="true">
+    <complexType context="mixed">
+    <attribute name="Name">
+    <simpleType base="string">
+       <enumeration value="HeaderStyle" />
+       <enumeration value="FooterStyle" />
+       <enumeration value="ItemStyle" />
+    </simpleType>
+    </attribute>
+  <element name="TableItemStyle" type="TableItemStyleDef" />
+    </complexType>
+  </element>
+</attributeGroup>
+
+<!-- < Image attributes > -->
+<attributeGroup name="ImageAttributes" vs:nonbrowseable="true">
+  <attribute name="AlternateText" type="string" />
+  <attribute name="ImageAlign" type="ImageAlign" />
+  <attribute name="Font-Size" type="ui4" />
+  <attribute name="Font-Overline" type="boolean" />
+  <attribute name="Font-Underline" type="boolean" />
+  <attribute name="Font-Names" type="string" />
+  <attribute name="Font-Italic" type="boolean" />
+  <attribute name="Font-Bold" type="boolean" />
+  <attribute name="Font-Strikeout" type="boolean" />
+  <attribute name="ImageUrl" type="uri-reference" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</attributeGroup>
+
+<!-- < ListControl attributes > -->
+<attributeGroup name="ListControlAttributes" vs:nonbrowseable="true">
+  <element name="ListItem" type="ListItemDef" />
+  <attribute name="DataMember" type="string" />
+  <attribute name="DataTextFormatString" type="string" />
+  <attribute name="DataValueField" type="string" />
+  <attribute name="AutoPostBack" type="boolean" />
+  <attribute name="SelectedIndex" type="integer" />
+  <attribute name="DataTextField" type="string" />
+  <attribute name="DataSource" type="Object" />
+  <attribute name="OnSelectedIndexChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</attributeGroup>
+
+<!-- < DataGridPagerStyle attributes > -->
+<attributeGroup name="DataGridPagerStyleAttributes" vs:nonbrowseable="true">
+  <attribute name="Mode" type="PagerMode" />
+  <attribute name="NextPageText" type="string" />
+  <attribute name="PageButtonCount" type="integer" />
+  <attribute name="Position" type="PagerPosition" />
+  <attribute name="PrevPageText" type="string" />
+  <attribute name="Visible" type="boolean" />
+  <attributeGroup ref="TableItemStyleAttributes" />
+</attributeGroup>
+
+<!-- valid top-level elements -->
+  <element name="Table" type="TableDef" />
+  <element name="Calendar" type="CalendarDef" />
+  <element name="PlaceHolder" type="PlaceHolderDef" />
+  <element name="Label" type="LabelDef" />
+  <element name="RegularExpressionValidator" type="RegularExpressionValidatorDef" />
+  <element name="RangeValidator" type="RangeValidatorDef" />
+  <element name="Panel" type="PanelDef" />
+  <element name="CustomValidator" type="CustomValidatorDef" />
+  <element name="ListBox" type="ListBoxDef" />
+  <element name="DataList" type="DataListDef" />
+  <element name="Xml" type="XmlDef" />
+  <element name="Image" type="ImageDef" />
+  <element name="DataGrid" type="DataGridDef" />
+  <element name="HyperLink" type="HyperLinkDef" />
+  <element name="TextBox" type="TextBoxDef" />
+  <element name="DropDownList" type="DropDownListDef" />
+  <element name="LinkButton" type="LinkButtonDef" />
+  <element name="CheckBoxList" type="CheckBoxListDef" />
+  <element name="ValidationSummary" type="ValidationSummaryDef" />
+  <element name="Repeater" type="RepeaterDef" />
+  <element name="AdRotator" type="AdRotatorDef" />
+  <element name="RequiredFieldValidator" type="RequiredFieldValidatorDef" />
+  <element name="CompareValidator" type="CompareValidatorDef" />
+  <element name="ImageButton" type="ImageButtonDef" />
+  <element name="CheckBox" type="CheckBoxDef" />
+  <element name="RadioButton" type="RadioButtonDef" />
+  <element name="Button" type="ButtonDef" />
+  <element name="RadioButtonList" type="RadioButtonListDef" />
+
+<!-- <asp:ListItem> -->
+<complexType name="ListItemDef">
+  <attribute name="Selected" type="boolean" />
+  <attribute name="Value" type="string" />
+  <attribute name="Text" type="string" />
+</complexType>
+
+<!-- <asp:TableItemStyle> -->
+<complexType name="TableItemStyleDef">
+  <attributeGroup ref="TableItemStyleAttributes" />
+</complexType>
+
+<!-- <asp:DataGridPagerStyle> -->
+<complexType name="DataGridPagerStyleDef">
+  <attributeGroup ref="DataGridPagerStyleAttributes" />
+</complexType>
+
+<!-- <asp:Table> -->
+<complexType name="TableDef">
+  <element name="TableRow" type="TableRowDef" />
+  <attribute name="CellSpacing" type="integer" />
+  <attribute name="BackImageUrl" type="uri-reference" />
+  <attribute name="HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="CellPadding" type="integer" />
+  <attribute name="GridLines" type="GridLines" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:Calendar> -->
+<complexType name="CalendarDef">
+  <attribute name="VisibleDate" type="timePeriod" />
+  <attribute name="SelectionMode" type="CalendarSelectionMode" />
+  <attribute name="DayNameFormat" type="DayNameFormat" />
+  <attribute name="DayStyle" type="TableItemStyle" />
+  <attribute name="DayStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="DayStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="DayStyle-Width" type="ui4" />
+  <attribute name="DayStyle-Height" type="ui4" />
+  <attribute name="DayStyle-BorderWidth" type="ui4" />
+  <attribute name="DayStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="DayStyle-Font-Size" type="ui4" />
+  <attribute name="DayStyle-Font-Overline" type="boolean" />
+  <attribute name="DayStyle-Font-Underline" type="boolean" />
+  <attribute name="DayStyle-Font-Names" type="string" />
+  <attribute name="DayStyle-Font-Italic" type="boolean" />
+  <attribute name="DayStyle-Font-Bold" type="boolean" />
+  <attribute name="DayStyle-Font-Strikeout" type="boolean" />
+  <attribute name="DayStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="DayStyle-CssClass" type="string" />
+  <attribute name="DayStyle-Wrap" type="boolean" />
+  <attribute name="DayStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="DayStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="SelectorStyle" type="TableItemStyle" />
+  <attribute name="SelectorStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="SelectorStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="SelectorStyle-Width" type="ui4" />
+  <attribute name="SelectorStyle-Height" type="ui4" />
+  <attribute name="SelectorStyle-BorderWidth" type="ui4" />
+  <attribute name="SelectorStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="SelectorStyle-Font-Size" type="ui4" />
+  <attribute name="SelectorStyle-Font-Overline" type="boolean" />
+  <attribute name="SelectorStyle-Font-Underline" type="boolean" />
+  <attribute name="SelectorStyle-Font-Names" type="string" />
+  <attribute name="SelectorStyle-Font-Italic" type="boolean" />
+  <attribute name="SelectorStyle-Font-Bold" type="boolean" />
+  <attribute name="SelectorStyle-Font-Strikeout" type="boolean" />
+  <attribute name="SelectorStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="SelectorStyle-CssClass" type="string" />
+  <attribute name="SelectorStyle-Wrap" type="boolean" />
+  <attribute name="SelectorStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="SelectorStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="FirstDayOfWeek" type="FirstDayOfWeek" />
+  <attribute name="ShowNextPrevMonth" type="boolean" />
+  <attribute name="ShowTitle" type="boolean" />
+  <attribute name="NextMonthText" type="string" />
+  <attribute name="NextPrevStyle" type="TableItemStyle" />
+  <attribute name="NextPrevStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="NextPrevStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="NextPrevStyle-Width" type="ui4" />
+  <attribute name="NextPrevStyle-Height" type="ui4" />
+  <attribute name="NextPrevStyle-BorderWidth" type="ui4" />
+  <attribute name="NextPrevStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="NextPrevStyle-Font-Size" type="ui4" />
+  <attribute name="NextPrevStyle-Font-Overline" type="boolean" />
+  <attribute name="NextPrevStyle-Font-Underline" type="boolean" />
+  <attribute name="NextPrevStyle-Font-Names" type="string" />
+  <attribute name="NextPrevStyle-Font-Italic" type="boolean" />
+  <attribute name="NextPrevStyle-Font-Bold" type="boolean" />
+  <attribute name="NextPrevStyle-Font-Strikeout" type="boolean" />
+  <attribute name="NextPrevStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="NextPrevStyle-CssClass" type="string" />
+  <attribute name="NextPrevStyle-Wrap" type="boolean" />
+  <attribute name="NextPrevStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="NextPrevStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="ShowDayHeader" type="boolean" />
+  <attribute name="TodaysDate" type="timePeriod" />
+  <attribute name="SelectMonthText" type="string" />
+  <attribute name="WeekendDayStyle" type="TableItemStyle" />
+  <attribute name="WeekendDayStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="WeekendDayStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="WeekendDayStyle-Width" type="ui4" />
+  <attribute name="WeekendDayStyle-Height" type="ui4" />
+  <attribute name="WeekendDayStyle-BorderWidth" type="ui4" />
+  <attribute name="WeekendDayStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="WeekendDayStyle-Font-Size" type="ui4" />
+  <attribute name="WeekendDayStyle-Font-Overline" type="boolean" />
+  <attribute name="WeekendDayStyle-Font-Underline" type="boolean" />
+  <attribute name="WeekendDayStyle-Font-Names" type="string" />
+  <attribute name="WeekendDayStyle-Font-Italic" type="boolean" />
+  <attribute name="WeekendDayStyle-Font-Bold" type="boolean" />
+  <attribute name="WeekendDayStyle-Font-Strikeout" type="boolean" />
+  <attribute name="WeekendDayStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="WeekendDayStyle-CssClass" type="string" />
+  <attribute name="WeekendDayStyle-Wrap" type="boolean" />
+  <attribute name="WeekendDayStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="WeekendDayStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="SelectedDate" type="timePeriod" />
+  <attribute name="TodayDayStyle" type="TableItemStyle" />
+  <attribute name="TodayDayStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="TodayDayStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="TodayDayStyle-Width" type="ui4" />
+  <attribute name="TodayDayStyle-Height" type="ui4" />
+  <attribute name="TodayDayStyle-BorderWidth" type="ui4" />
+  <attribute name="TodayDayStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="TodayDayStyle-Font-Size" type="ui4" />
+  <attribute name="TodayDayStyle-Font-Overline" type="boolean" />
+  <attribute name="TodayDayStyle-Font-Underline" type="boolean" />
+  <attribute name="TodayDayStyle-Font-Names" type="string" />
+  <attribute name="TodayDayStyle-Font-Italic" type="boolean" />
+  <attribute name="TodayDayStyle-Font-Bold" type="boolean" />
+  <attribute name="TodayDayStyle-Font-Strikeout" type="boolean" />
+  <attribute name="TodayDayStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="TodayDayStyle-CssClass" type="string" />
+  <attribute name="TodayDayStyle-Wrap" type="boolean" />
+  <attribute name="TodayDayStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="TodayDayStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="TitleFormat" type="TitleFormat" />
+  <attribute name="DayHeaderStyle" type="TableItemStyle" />
+  <attribute name="DayHeaderStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="DayHeaderStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="DayHeaderStyle-Width" type="ui4" />
+  <attribute name="DayHeaderStyle-Height" type="ui4" />
+  <attribute name="DayHeaderStyle-BorderWidth" type="ui4" />
+  <attribute name="DayHeaderStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="DayHeaderStyle-Font-Size" type="ui4" />
+  <attribute name="DayHeaderStyle-Font-Overline" type="boolean" />
+  <attribute name="DayHeaderStyle-Font-Underline" type="boolean" />
+  <attribute name="DayHeaderStyle-Font-Names" type="string" />
+  <attribute name="DayHeaderStyle-Font-Italic" type="boolean" />
+  <attribute name="DayHeaderStyle-Font-Bold" type="boolean" />
+  <attribute name="DayHeaderStyle-Font-Strikeout" type="boolean" />
+  <attribute name="DayHeaderStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="DayHeaderStyle-CssClass" type="string" />
+  <attribute name="DayHeaderStyle-Wrap" type="boolean" />
+  <attribute name="DayHeaderStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="DayHeaderStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="CellSpacing" type="integer" />
+  <attribute name="OtherMonthDayStyle" type="TableItemStyle" />
+  <attribute name="OtherMonthDayStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="OtherMonthDayStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="OtherMonthDayStyle-Width" type="ui4" />
+  <attribute name="OtherMonthDayStyle-Height" type="ui4" />
+  <attribute name="OtherMonthDayStyle-BorderWidth" type="ui4" />
+  <attribute name="OtherMonthDayStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="OtherMonthDayStyle-Font-Size" type="ui4" />
+  <attribute name="OtherMonthDayStyle-Font-Overline" type="boolean" />
+  <attribute name="OtherMonthDayStyle-Font-Underline" type="boolean" />
+  <attribute name="OtherMonthDayStyle-Font-Names" type="string" />
+  <attribute name="OtherMonthDayStyle-Font-Italic" type="boolean" />
+  <attribute name="OtherMonthDayStyle-Font-Bold" type="boolean" />
+  <attribute name="OtherMonthDayStyle-Font-Strikeout" type="boolean" />
+  <attribute name="OtherMonthDayStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="OtherMonthDayStyle-CssClass" type="string" />
+  <attribute name="OtherMonthDayStyle-Wrap" type="boolean" />
+  <attribute name="OtherMonthDayStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="OtherMonthDayStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="SelectWeekText" type="string" />
+  <attribute name="TitleStyle" type="Style" />
+  <attribute name="TitleStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="TitleStyle-Font-Size" type="ui4" />
+  <attribute name="TitleStyle-Font-Overline" type="boolean" />
+  <attribute name="TitleStyle-Font-Underline" type="boolean" />
+  <attribute name="TitleStyle-Font-Names" type="string" />
+  <attribute name="TitleStyle-Font-Italic" type="boolean" />
+  <attribute name="TitleStyle-Font-Bold" type="boolean" />
+  <attribute name="TitleStyle-Font-Strikeout" type="boolean" />
+  <attribute name="TitleStyle-Height" type="ui4" />
+  <attribute name="TitleStyle-BorderWidth" type="ui4" />
+  <attribute name="TitleStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="TitleStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="TitleStyle-Width" type="ui4" />
+  <attribute name="TitleStyle-CssClass" type="string" />
+  <attribute name="TitleStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="NextPrevFormat" type="NextPrevFormat" />
+  <attribute name="PrevMonthText" type="string" />
+  <attribute name="ShowGridLines" type="boolean" />
+  <attribute name="SelectedDayStyle" type="TableItemStyle" />
+  <attribute name="SelectedDayStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="SelectedDayStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="SelectedDayStyle-Width" type="ui4" />
+  <attribute name="SelectedDayStyle-Height" type="ui4" />
+  <attribute name="SelectedDayStyle-BorderWidth" type="ui4" />
+  <attribute name="SelectedDayStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="SelectedDayStyle-Font-Size" type="ui4" />
+  <attribute name="SelectedDayStyle-Font-Overline" type="boolean" />
+  <attribute name="SelectedDayStyle-Font-Underline" type="boolean" />
+  <attribute name="SelectedDayStyle-Font-Names" type="string" />
+  <attribute name="SelectedDayStyle-Font-Italic" type="boolean" />
+  <attribute name="SelectedDayStyle-Font-Bold" type="boolean" />
+  <attribute name="SelectedDayStyle-Font-Strikeout" type="boolean" />
+  <attribute name="SelectedDayStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="SelectedDayStyle-CssClass" type="string" />
+  <attribute name="SelectedDayStyle-Wrap" type="boolean" />
+  <attribute name="SelectedDayStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="SelectedDayStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="CellPadding" type="integer" />
+  <attribute name="OnVisibleMonthChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="OnDayRender" vs:omtype="event" />
+  <attribute name="OnSelectionChanged" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:PlaceHolder> -->
+<complexType name="PlaceHolderDef">
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="Runat">
+    <simpleType base="string">
+      <enumeration value="Server" />
+    </simpleType>
+  </attribute>
+  <attributeGroup ref="ControlAttributes" />
+</complexType>
+
+<!-- <asp:Label> -->
+<complexType name="LabelDef">
+  <attribute name="Enabled" type="boolean" />
+  <attribute name="Text" type="string" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:RegularExpressionValidator> -->
+<complexType name="RegularExpressionValidatorDef">
+  <attribute name="ValidationExpression" type="string" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="BaseValidatorAttributes" />
+</complexType>
+
+<!-- <asp:EditCommandColumn> -->
+<complexType name="EditCommandColumnDef">
+  <attribute name="ButtonType" type="ButtonColumnType" />
+  <attribute name="UpdateText" type="string" />
+  <attribute name="CancelText" type="string" />
+  <attribute name="EditText" type="string" />
+  <attributeGroup ref="ColumnAttributes" />
+</complexType>
+
+<!-- <asp:TableRow> -->
+<complexType name="TableRowDef">
+  <attribute name="VerticalAlign" type="VerticalAlign" />
+  <element name="TableCell" type="TableCellDef" />
+  <attribute name="HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:RangeValidator> -->
+<complexType name="RangeValidatorDef">
+  <attribute name="MinimumValue" type="string" />
+  <attribute name="MaximumValue" type="string" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="BaseCompareValidatorAttributes" />
+</complexType>
+
+<!-- <asp:Panel> -->
+<complexType name="PanelDef">
+  <attribute name="BackImageUrl" type="uri-reference" />
+  <attribute name="HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="Wrap" type="boolean" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:CustomValidator> -->
+<complexType name="CustomValidatorDef">
+  <attribute name="ClientValidationFunction" type="string" />
+  <attribute name="OnServerValidate" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="BaseValidatorAttributes" />
+</complexType>
+
+<!-- <asp:ListBox> -->
+<complexType name="ListBoxDef">
+  <attribute name="Rows" type="integer" />
+  <attribute name="BorderWidth" type="ui4" />
+  <attribute name="BorderColor" type="string" vs:builder="color" />
+  <attribute name="BorderStyle" type="BorderStyle" />
+  <attribute name="SelectionMode" type="ListSelectionMode" />
+  <attribute name="OnSelectedIndexChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <element name="ListItem" type="ListItemDef" /> 
+  <attributeGroup ref="ListControlAttributes" />
+</complexType>
+
+<!-- <asp:HyperLinkColumn> -->
+<complexType name="HyperLinkColumnDef">
+  <attribute name="Target" type="target" />
+  <attribute name="Text" type="string" />
+  <attribute name="DataNavigateUrlField" type="uri-reference" />
+  <attribute name="DataNavigateUrlFormatString" type="uri-reference" />
+  <attribute name="DataTextField" type="string" />
+  <attribute name="NavigateUrl" type="uri-reference" />
+  <attribute name="DataTextFormatString" type="string" />
+  <attributeGroup ref="ColumnAttributes" />
+</complexType>
+
+<!-- <asp:DataList> -->
+<complexType name="DataListDef">
+  <attribute name="DataKeyField" type="string" />
+  <attribute name="RepeatColumns" type="integer" />
+  <attribute name="EditItemStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="EditItemStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="EditItemStyle-Width" type="ui4" />
+  <attribute name="EditItemStyle-Height" type="ui4" />
+  <attribute name="EditItemStyle-BorderWidth" type="ui4" />
+  <attribute name="EditItemStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="EditItemStyle-Font-Size" type="ui4" />
+  <attribute name="EditItemStyle-Font-Overline" type="boolean" />
+  <attribute name="EditItemStyle-Font-Underline" type="boolean" />
+  <attribute name="EditItemStyle-Font-Names" type="string" />
+  <attribute name="EditItemStyle-Font-Italic" type="boolean" />
+  <attribute name="EditItemStyle-Font-Bold" type="boolean" />
+  <attribute name="EditItemStyle-Font-Strikeout" type="boolean" />
+  <attribute name="EditItemStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="EditItemStyle-CssClass" type="string" />
+  <attribute name="EditItemStyle-Wrap" type="boolean" />
+  <attribute name="EditItemStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="EditItemStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="FooterStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="FooterStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="FooterStyle-Width" type="ui4" />
+  <attribute name="FooterStyle-Height" type="ui4" />
+  <attribute name="FooterStyle-BorderWidth" type="ui4" />
+  <attribute name="FooterStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="FooterStyle-Font-Size" type="ui4" />
+  <attribute name="FooterStyle-Font-Overline" type="boolean" />
+  <attribute name="FooterStyle-Font-Underline" type="boolean" />
+  <attribute name="FooterStyle-Font-Names" type="string" />
+  <attribute name="FooterStyle-Font-Italic" type="boolean" />
+  <attribute name="FooterStyle-Font-Bold" type="boolean" />
+  <attribute name="FooterStyle-Font-Strikeout" type="boolean" />
+  <attribute name="FooterStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="FooterStyle-CssClass" type="string" />
+  <attribute name="FooterStyle-Wrap" type="boolean" />
+  <attribute name="FooterStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="FooterStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="ExtractTemplateRows" type="boolean" />
+  <attribute name="SelectedIndex" type="integer" />
+  <attribute name="SeparatorStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="SeparatorStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="SeparatorStyle-Width" type="ui4" />
+  <attribute name="SeparatorStyle-Height" type="ui4" />
+  <attribute name="SeparatorStyle-BorderWidth" type="ui4" />
+  <attribute name="SeparatorStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="SeparatorStyle-Font-Size" type="ui4" />
+  <attribute name="SeparatorStyle-Font-Overline" type="boolean" />
+  <attribute name="SeparatorStyle-Font-Underline" type="boolean" />
+  <attribute name="SeparatorStyle-Font-Names" type="string" />
+  <attribute name="SeparatorStyle-Font-Italic" type="boolean" />
+  <attribute name="SeparatorStyle-Font-Bold" type="boolean" />
+  <attribute name="SeparatorStyle-Font-Strikeout" type="boolean" />
+  <attribute name="SeparatorStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="SeparatorStyle-CssClass" type="string" />
+  <attribute name="SeparatorStyle-Wrap" type="boolean" />
+  <attribute name="SeparatorStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="SeparatorStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="GridLines" type="GridLines" />
+  <attribute name="ItemStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="ItemStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="ItemStyle-Width" type="ui4" />
+  <attribute name="ItemStyle-Height" type="ui4" />
+  <attribute name="ItemStyle-BorderWidth" type="ui4" />
+  <attribute name="ItemStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="ItemStyle-Font-Size" type="ui4" />
+  <attribute name="ItemStyle-Font-Overline" type="boolean" />
+  <attribute name="ItemStyle-Font-Underline" type="boolean" />
+  <attribute name="ItemStyle-Font-Names" type="string" />
+  <attribute name="ItemStyle-Font-Italic" type="boolean" />
+  <attribute name="ItemStyle-Font-Bold" type="boolean" />
+  <attribute name="ItemStyle-Font-Strikeout" type="boolean" />
+  <attribute name="ItemStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="ItemStyle-CssClass" type="string" />
+  <attribute name="ItemStyle-Wrap" type="boolean" />
+  <attribute name="ItemStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="ItemStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="AlternatingItemStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="AlternatingItemStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="AlternatingItemStyle-Width" type="ui4" />
+  <attribute name="AlternatingItemStyle-Height" type="ui4" />
+  <attribute name="AlternatingItemStyle-BorderWidth" type="ui4" />
+  <attribute name="AlternatingItemStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="AlternatingItemStyle-Font-Size" type="ui4" />
+  <attribute name="AlternatingItemStyle-Font-Overline" type="boolean" />
+  <attribute name="AlternatingItemStyle-Font-Underline" type="boolean" />
+  <attribute name="AlternatingItemStyle-Font-Names" type="string" />
+  <attribute name="AlternatingItemStyle-Font-Italic" type="boolean" />
+  <attribute name="AlternatingItemStyle-Font-Bold" type="boolean" />
+  <attribute name="AlternatingItemStyle-Font-Strikeout" type="boolean" />
+  <attribute name="AlternatingItemStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="AlternatingItemStyle-CssClass" type="string" />
+  <attribute name="AlternatingItemStyle-Wrap" type="boolean" />
+  <attribute name="AlternatingItemStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="AlternatingItemStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="HeaderStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="HeaderStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="HeaderStyle-Width" type="ui4" />
+  <attribute name="HeaderStyle-Height" type="ui4" />
+  <attribute name="HeaderStyle-BorderWidth" type="ui4" />
+  <attribute name="HeaderStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="HeaderStyle-Font-Size" type="ui4" />
+  <attribute name="HeaderStyle-Font-Overline" type="boolean" />
+  <attribute name="HeaderStyle-Font-Underline" type="boolean" />
+  <attribute name="HeaderStyle-Font-Names" type="string" />
+  <attribute name="HeaderStyle-Font-Italic" type="boolean" />
+  <attribute name="HeaderStyle-Font-Bold" type="boolean" />
+  <attribute name="HeaderStyle-Font-Strikeout" type="boolean" />
+  <attribute name="HeaderStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="HeaderStyle-CssClass" type="string" />
+  <attribute name="HeaderStyle-Wrap" type="boolean" />
+  <attribute name="HeaderStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="HeaderStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="RepeatLayout" type="RepeatLayout" />
+  <attribute name="EditItemIndex" type="integer" />
+  <attribute name="ShowHeader" type="boolean" />
+  <attribute name="SelectedItemStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="SelectedItemStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="SelectedItemStyle-Width" type="ui4" />
+  <attribute name="SelectedItemStyle-Height" type="ui4" />
+  <attribute name="SelectedItemStyle-BorderWidth" type="ui4" />
+  <attribute name="SelectedItemStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="SelectedItemStyle-Font-Size" type="ui4" />
+  <attribute name="SelectedItemStyle-Font-Overline" type="boolean" />
+  <attribute name="SelectedItemStyle-Font-Underline" type="boolean" />
+  <attribute name="SelectedItemStyle-Font-Names" type="string" />
+  <attribute name="SelectedItemStyle-Font-Italic" type="boolean" />
+  <attribute name="SelectedItemStyle-Font-Bold" type="boolean" />
+  <attribute name="SelectedItemStyle-Font-Strikeout" type="boolean" />
+  <attribute name="SelectedItemStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="SelectedItemStyle-CssClass" type="string" />
+  <attribute name="SelectedItemStyle-Wrap" type="boolean" />
+  <attribute name="SelectedItemStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="SelectedItemStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="RepeatDirection" type="RepeatDirection" />
+  <attribute name="CellSpacing" type="integer" />
+  <attribute name="CellPadding" type="integer" />
+  <attribute name="ShowFooter" type="boolean" />
+  <attribute name="OnUpdateCommand" vs:omtype="event" />
+  <attribute name="OnItemDataBound" vs:omtype="event" />
+  <attribute name="OnItemCommand" vs:omtype="event" />
+  <attribute name="OnEditCommand" vs:omtype="event" />
+  <attribute name="OnCancelCommand" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="OnItemCreated" vs:omtype="event" />
+  <attribute name="OnDeleteCommand" vs:omtype="event" />
+  <attribute name="OnSelectedIndexChanged" vs:omtype="event" />
+  <element name="Property" vs:nonamespaceprefix="true">
+    <complexType context="mixed">
+    <attribute name="Name">
+    <simpleType base="string">
+       <enumeration value="EditItemStyle" />
+       <enumeration value="FooterStyle" />
+       <enumeration value="SeparatorStyle" />
+       <enumeration value="ItemStyle" />
+       <enumeration value="AlternatingItemStyle" />
+       <enumeration value="HeaderStyle" />
+       <enumeration value="SelectedItemStyle" />
+    </simpleType>
+    </attribute>
+  <element name="TableItemStyle" type="TableItemStyleDef" />
+    </complexType>
+  </element>
+  <element name="template" vs:nonamespaceprefix="true">
+    <complexType context="mixed">
+  <attribute name="name">
+      <simpleType base="string">
+        <enumeration value="SeparatorTemplate" />
+        <enumeration value="ItemTemplate" />
+        <enumeration value="HeaderTemplate" />
+        <enumeration value="EditItemTemplate" />
+        <enumeration value="FooterTemplate" />
+        <enumeration value="SelectedItemTemplate" />
+        <enumeration value="AlternatingItemTemplate" />
+      </simpleType>
+  </attribute>
+    </complexType>
+  </element>
+  <attributeGroup ref="BaseDataListAttributes" />
+</complexType>
+
+<!-- <asp:TemplateColumn> -->
+<complexType name="TemplateColumnDef">
+  <element name="template" vs:nonamespaceprefix="true">
+    <complexType context="mixed">
+  <attribute name="name">
+      <simpleType base="string">
+        <enumeration value="HeaderTemplate" />
+        <enumeration value="ItemTemplate" />
+        <enumeration value="FooterTemplate" />
+        <enumeration value="EditItemTemplate" />
+      </simpleType>
+  </attribute>
+    </complexType>
+  </element>
+  <attributeGroup ref="ColumnAttributes" />
+</complexType>
+
+<!-- <asp:Xml> -->
+<complexType name="XmlDef">
+  <attribute name="Transform" type="XslTransform" />
+  <attribute name="Document" type="XmlDocument" />
+  <attribute name="TransformSource" type="string" />
+  <attribute name="DocumentSource" type="string" />
+  <attribute name="DocumentContent" type="string" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="Runat">
+    <simpleType base="string">
+      <enumeration value="Server" />
+    </simpleType>
+  </attribute>
+  <attributeGroup ref="ControlAttributes" />
+</complexType>
+
+<!-- <asp:Image> -->
+<complexType name="ImageDef">
+  <attribute name="AlternateText" type="string" />
+  <attribute name="ImageAlign" type="ImageAlign" />
+  <attribute name="Font-Size" type="ui4" />
+  <attribute name="Font-Overline" type="boolean" />
+  <attribute name="Font-Underline" type="boolean" />
+  <attribute name="Font-Names" type="string" />
+  <attribute name="Font-Italic" type="boolean" />
+  <attribute name="Font-Bold" type="boolean" />
+  <attribute name="Font-Strikeout" type="boolean" />
+  <attribute name="ImageUrl" type="uri-reference" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:BoundColumn> -->
+<complexType name="BoundColumnDef">
+  <attribute name="DataField" type="string" />
+  <attribute name="ReadOnly" type="boolean" />
+  <attribute name="DataFormatString" type="string" />
+  <attributeGroup ref="ColumnAttributes" />
+</complexType>
+
+<!-- <asp:DataGrid> -->
+<complexType name="DataGridDef">
+  <attribute name="PagerStyle-Width" type="ui4" />
+  <attribute name="PagerStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="PagerStyle-Visible" type="boolean" />
+  <attribute name="PagerStyle-NextPageText" type="string" />
+  <attribute name="PagerStyle-BorderWidth" type="ui4" />
+  <attribute name="PagerStyle-Font-Size" type="ui4" />
+  <attribute name="PagerStyle-Font-Overline" type="boolean" />
+  <attribute name="PagerStyle-Font-Underline" type="boolean" />
+  <attribute name="PagerStyle-Font-Names" type="string" />
+  <attribute name="PagerStyle-Font-Italic" type="boolean" />
+  <attribute name="PagerStyle-Font-Bold" type="boolean" />
+  <attribute name="PagerStyle-Font-Strikeout" type="boolean" />
+  <attribute name="PagerStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="PagerStyle-PrevPageText" type="string" />
+  <attribute name="PagerStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="PagerStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="PagerStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="PagerStyle-Position" type="PagerPosition" />
+  <attribute name="PagerStyle-Height" type="ui4" />
+  <attribute name="PagerStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="PagerStyle-PageButtonCount" type="integer" />
+  <attribute name="PagerStyle-CssClass" type="string" />
+  <attribute name="PagerStyle-Wrap" type="boolean" />
+  <attribute name="PagerStyle-Mode" type="PagerMode" />
+  <attribute name="DataKeyField" type="string" />
+  <attribute name="CellPadding" type="integer" />
+  <attribute name="AlternatingItemStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="AlternatingItemStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="AlternatingItemStyle-Width" type="ui4" />
+  <attribute name="AlternatingItemStyle-Height" type="ui4" />
+  <attribute name="AlternatingItemStyle-BorderWidth" type="ui4" />
+  <attribute name="AlternatingItemStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="AlternatingItemStyle-Font-Size" type="ui4" />
+  <attribute name="AlternatingItemStyle-Font-Overline" type="boolean" />
+  <attribute name="AlternatingItemStyle-Font-Underline" type="boolean" />
+  <attribute name="AlternatingItemStyle-Font-Names" type="string" />
+  <attribute name="AlternatingItemStyle-Font-Italic" type="boolean" />
+  <attribute name="AlternatingItemStyle-Font-Bold" type="boolean" />
+  <attribute name="AlternatingItemStyle-Font-Strikeout" type="boolean" />
+  <attribute name="AlternatingItemStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="AlternatingItemStyle-CssClass" type="string" />
+  <attribute name="AlternatingItemStyle-Wrap" type="boolean" />
+  <attribute name="AlternatingItemStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="AlternatingItemStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="EditItemStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="EditItemStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="EditItemStyle-Width" type="ui4" />
+  <attribute name="EditItemStyle-Height" type="ui4" />
+  <attribute name="EditItemStyle-BorderWidth" type="ui4" />
+  <attribute name="EditItemStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="EditItemStyle-Font-Size" type="ui4" />
+  <attribute name="EditItemStyle-Font-Overline" type="boolean" />
+  <attribute name="EditItemStyle-Font-Underline" type="boolean" />
+  <attribute name="EditItemStyle-Font-Names" type="string" />
+  <attribute name="EditItemStyle-Font-Italic" type="boolean" />
+  <attribute name="EditItemStyle-Font-Bold" type="boolean" />
+  <attribute name="EditItemStyle-Font-Strikeout" type="boolean" />
+  <attribute name="EditItemStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="EditItemStyle-CssClass" type="string" />
+  <attribute name="EditItemStyle-Wrap" type="boolean" />
+  <attribute name="EditItemStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="EditItemStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="FooterStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="FooterStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="FooterStyle-Width" type="ui4" />
+  <attribute name="FooterStyle-Height" type="ui4" />
+  <attribute name="FooterStyle-BorderWidth" type="ui4" />
+  <attribute name="FooterStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="FooterStyle-Font-Size" type="ui4" />
+  <attribute name="FooterStyle-Font-Overline" type="boolean" />
+  <attribute name="FooterStyle-Font-Underline" type="boolean" />
+  <attribute name="FooterStyle-Font-Names" type="string" />
+  <attribute name="FooterStyle-Font-Italic" type="boolean" />
+  <attribute name="FooterStyle-Font-Bold" type="boolean" />
+  <attribute name="FooterStyle-Font-Strikeout" type="boolean" />
+  <attribute name="FooterStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="FooterStyle-CssClass" type="string" />
+  <attribute name="FooterStyle-Wrap" type="boolean" />
+  <attribute name="FooterStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="FooterStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="PageSize" type="integer" />
+  <attribute name="CurrentPageIndex" type="integer" />
+  <attribute name="AutoGenerateColumns" type="boolean" />
+  <attribute name="SelectedIndex" type="integer" />
+  <attribute name="GridLines" type="GridLines" />
+  <attribute name="ItemStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="ItemStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="ItemStyle-Width" type="ui4" />
+  <attribute name="ItemStyle-Height" type="ui4" />
+  <attribute name="ItemStyle-BorderWidth" type="ui4" />
+  <attribute name="ItemStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="ItemStyle-Font-Size" type="ui4" />
+  <attribute name="ItemStyle-Font-Overline" type="boolean" />
+  <attribute name="ItemStyle-Font-Underline" type="boolean" />
+  <attribute name="ItemStyle-Font-Names" type="string" />
+  <attribute name="ItemStyle-Font-Italic" type="boolean" />
+  <attribute name="ItemStyle-Font-Bold" type="boolean" />
+  <attribute name="ItemStyle-Font-Strikeout" type="boolean" />
+  <attribute name="ItemStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="ItemStyle-CssClass" type="string" />
+  <attribute name="ItemStyle-Wrap" type="boolean" />
+  <attribute name="ItemStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="ItemStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="AllowPaging" type="boolean" />
+  <attribute name="HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="HeaderStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="HeaderStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="HeaderStyle-Width" type="ui4" />
+  <attribute name="HeaderStyle-Height" type="ui4" />
+  <attribute name="HeaderStyle-BorderWidth" type="ui4" />
+  <attribute name="HeaderStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="HeaderStyle-Font-Size" type="ui4" />
+  <attribute name="HeaderStyle-Font-Overline" type="boolean" />
+  <attribute name="HeaderStyle-Font-Underline" type="boolean" />
+  <attribute name="HeaderStyle-Font-Names" type="string" />
+  <attribute name="HeaderStyle-Font-Italic" type="boolean" />
+  <attribute name="HeaderStyle-Font-Bold" type="boolean" />
+  <attribute name="HeaderStyle-Font-Strikeout" type="boolean" />
+  <attribute name="HeaderStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="HeaderStyle-CssClass" type="string" />
+  <attribute name="HeaderStyle-Wrap" type="boolean" />
+  <attribute name="HeaderStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="HeaderStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="AllowSorting" type="boolean" />
+  <attribute name="EditItemIndex" type="integer" />
+  <attribute name="ShowHeader" type="boolean" />
+  <attribute name="AllowCustomPaging" type="boolean" />
+  <attribute name="SelectedItemStyle-BorderStyle" type="BorderStyle" />
+  <attribute name="SelectedItemStyle-HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="SelectedItemStyle-Width" type="ui4" />
+  <attribute name="SelectedItemStyle-Height" type="ui4" />
+  <attribute name="SelectedItemStyle-BorderWidth" type="ui4" />
+  <attribute name="SelectedItemStyle-ForeColor" type="string" vs:builder="color" />
+  <attribute name="SelectedItemStyle-Font-Size" type="ui4" />
+  <attribute name="SelectedItemStyle-Font-Overline" type="boolean" />
+  <attribute name="SelectedItemStyle-Font-Underline" type="boolean" />
+  <attribute name="SelectedItemStyle-Font-Names" type="string" />
+  <attribute name="SelectedItemStyle-Font-Italic" type="boolean" />
+  <attribute name="SelectedItemStyle-Font-Bold" type="boolean" />
+  <attribute name="SelectedItemStyle-Font-Strikeout" type="boolean" />
+  <attribute name="SelectedItemStyle-BorderColor" type="string" vs:builder="color" />
+  <attribute name="SelectedItemStyle-CssClass" type="string" />
+  <attribute name="SelectedItemStyle-Wrap" type="boolean" />
+  <attribute name="SelectedItemStyle-VerticalAlign" type="VerticalAlign" />
+  <attribute name="SelectedItemStyle-BackColor" type="string" vs:builder="color" />
+  <attribute name="CellSpacing" type="integer" />
+  <attribute name="BackImageUrl" type="uri-reference" />
+  <attribute name="ShowFooter" type="boolean" />
+  <attribute name="OnUpdateCommand" vs:omtype="event" />
+  <attribute name="OnItemCommand" vs:omtype="event" />
+  <attribute name="OnEditCommand" vs:omtype="event" />
+  <attribute name="OnPageIndexChanged" vs:omtype="event" />
+  <attribute name="OnCancelCommand" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="OnSortCommand" vs:omtype="event" />
+  <attribute name="OnItemCreated" vs:omtype="event" />
+  <attribute name="OnDeleteCommand" vs:omtype="event" />
+  <attribute name="OnItemDataBound" vs:omtype="event" />
+  <attribute name="OnSelectedIndexChanged" vs:omtype="event" />
+  <element name="Property" vs:nonamespaceprefix="true">
+    <complexType context="mixed">
+    <attribute name="Name">
+    <simpleType base="string">
+      <enumeration value="Columns" />
+       <enumeration value="PagerStyle" />
+       <enumeration value="AlternatingItemStyle" />
+       <enumeration value="EditItemStyle" />
+       <enumeration value="FooterStyle" />
+       <enumeration value="ItemStyle" />
+       <enumeration value="HeaderStyle" />
+       <enumeration value="SelectedItemStyle" />
+    </simpleType>
+    </attribute>
+  <element name="BoundColumn" type="BoundColumnDef" />
+  <element name="ButtonColumn" type="ButtonColumnDef" />
+  <element name="HyperLinkColumn" type="HyperLinkColumnDef" />
+  <element name="EditCommandColumn" type="EditCommandColumnDef" />
+  <element name="TemplateColumn" type="TemplateColumnDef" />
+  <element name="TableItemStyle" type="TableItemStyleDef" />
+  <element name="DataGridPagerStyle" type="DataGridPagerStyleDef" />
+    </complexType>
+  </element>
+  <attributeGroup ref="BaseDataListAttributes" />
+</complexType>
+
+<!-- <asp:HyperLink> -->
+<complexType name="HyperLinkDef">
+  <attribute name="NavigateUrl" type="uri-reference" />
+  <attribute name="Text" type="string" />
+  <attribute name="ImageUrl" type="uri-reference" />
+  <attribute name="Target" type="target" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:TextBox> -->
+<complexType name="TextBoxDef">
+  <attribute name="AutoPostBack" type="boolean" />
+  <attribute name="Rows" type="integer" />
+  <attribute name="MaxLength" type="integer" />
+  <attribute name="TextMode" type="TextBoxMode" />
+  <attribute name="Columns" type="integer" />
+  <attribute name="Wrap" type="boolean" />
+  <attribute name="Text" type="string" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="OnTextChanged" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:DropDownList> -->
+<complexType name="DropDownListDef">
+  <attribute name="BorderWidth" type="ui4" />
+  <attribute name="BorderColor" type="string" vs:builder="color" />
+  <attribute name="BorderStyle" type="BorderStyle" />
+  <attribute name="SelectedIndex" type="integer" />
+  <attribute name="OnSelectedIndexChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <element name="ListItem" type="ListItemDef" /> 
+  <attributeGroup ref="ListControlAttributes" />
+</complexType>
+
+<!-- <asp:LinkButton> -->
+<complexType name="LinkButtonDef">
+  <attribute name="Text" type="string" />
+  <attribute name="CommandName" type="string" />
+  <attribute name="CommandArgument" type="string" />
+  <attribute name="OnCommand" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="OnClick" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:CheckBoxList> -->
+<complexType name="CheckBoxListDef">
+  <attribute name="CellSpacing" type="integer" />
+  <attribute name="CellPadding" type="integer" />
+  <attribute name="TextAlign" type="TextAlign" />
+  <attribute name="RepeatDirection" type="RepeatDirection" />
+  <attribute name="RepeatColumns" type="integer" />
+  <attribute name="RepeatLayout" type="RepeatLayout" />
+  <attribute name="OnSelectedIndexChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <element name="ListItem" type="ListItemDef" /> 
+  <attributeGroup ref="ListControlAttributes" />
+</complexType>
+
+<!-- <asp:ButtonColumn> -->
+<complexType name="ButtonColumnDef">
+  <attribute name="CommandName" type="string" />
+  <attribute name="Text" type="string" />
+  <attribute name="ButtonType" type="ButtonColumnType" />
+  <attribute name="DataTextField" type="string" />
+  <attribute name="DataTextFormatString" type="string" />
+  <attributeGroup ref="ColumnAttributes" />
+</complexType>
+
+<!-- <asp:ValidationSummary> -->
+<complexType name="ValidationSummaryDef">
+  <attribute name="EnableClientScript" type="boolean" />
+  <attribute name="ShowMessageBox" type="boolean" />
+  <attribute name="ForeColor" type="string" vs:builder="color" />
+  <attribute name="DisplayMode" type="ValidationSummaryDisplayMode" />
+  <attribute name="HeaderText" type="string" />
+  <attribute name="ShowSummary" type="boolean" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:Repeater> -->
+<complexType name="RepeaterDef">
+  <attribute name="DataMember" type="string" />
+  <attribute name="DataSource" type="Object" />
+  <attribute name="OnItemDataBound" vs:omtype="event" />
+  <attribute name="OnItemCommand" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="OnItemCreated" vs:omtype="event" />
+  <element name="template" vs:nonamespaceprefix="true">
+    <complexType context="mixed">
+  <attribute name="name">
+      <simpleType base="string">
+        <enumeration value="FooterTemplate" />
+        <enumeration value="AlternatingItemTemplate" />
+        <enumeration value="HeaderTemplate" />
+        <enumeration value="SeparatorTemplate" />
+        <enumeration value="ItemTemplate" />
+      </simpleType>
+  </attribute>
+    </complexType>
+  </element>
+  <attribute name="Runat">
+    <simpleType base="string">
+      <enumeration value="Server" />
+    </simpleType>
+  </attribute>
+  <attributeGroup ref="ControlAttributes" />
+</complexType>
+
+<!-- <asp:AdRotator> -->
+<complexType name="AdRotatorDef">
+  <attribute name="KeywordFilter" type="string" />
+  <attribute name="AdvertisementFile" type="string" />
+  <attribute name="Target" type="target" />
+  <attribute name="OnAdCreated" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:RequiredFieldValidator> -->
+<complexType name="RequiredFieldValidatorDef">
+  <attribute name="InitialValue" type="string" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="BaseValidatorAttributes" />
+</complexType>
+
+<!-- <asp:CompareValidator> -->
+<complexType name="CompareValidatorDef">
+  <attribute name="Operator" type="ValidationCompareOperator" />
+  <attribute name="ValueToCompare" type="string" />
+  <attribute name="ControlToCompare" type="string" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="BaseCompareValidatorAttributes" />
+</complexType>
+
+<!-- <asp:ImageButton> -->
+<complexType name="ImageButtonDef">
+  <attribute name="CommandName" type="string" />
+  <attribute name="CommandArgument" type="string" />
+  <attribute name="OnCommand" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="OnClick" vs:omtype="event" />
+  <attributeGroup ref="ImageAttributes" />
+</complexType>
+
+<!-- <asp:CheckBox> -->
+<complexType name="CheckBoxDef">
+  <attribute name="Checked" type="boolean" />
+  <attribute name="TextAlign" type="TextAlign" />
+  <attribute name="AutoPostBack" type="boolean" />
+  <attribute name="Text" type="string" />
+  <attribute name="OnCheckedChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:RadioButton> -->
+<complexType name="RadioButtonDef">
+  <attribute name="GroupName" type="string" />
+  <attribute name="OnCheckedChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="CheckBoxAttributes" />
+</complexType>
+
+<!-- <asp:TableCell> -->
+<complexType name="TableCellDef">
+  <attribute name="VerticalAlign" type="VerticalAlign" />
+  <attribute name="HorizontalAlign" type="HorizontalAlign" />
+  <attribute name="ColumnSpan" type="integer" />
+  <attribute name="Wrap" type="boolean" />
+  <attribute name="Text" type="string" />
+  <attribute name="RowSpan" type="integer" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:Button> -->
+<complexType name="ButtonDef">
+  <attribute name="Text" type="string" />
+  <attribute name="CommandName" type="string" />
+  <attribute name="CommandArgument" type="string" />
+  <attribute name="OnCommand" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <attribute name="OnClick" vs:omtype="event" />
+  <attributeGroup ref="WebControlAttributes" />
+</complexType>
+
+<!-- <asp:RadioButtonList> -->
+<complexType name="RadioButtonListDef">
+  <attribute name="CellSpacing" type="integer" />
+  <attribute name="CellPadding" type="integer" />
+  <attribute name="TextAlign" type="TextAlign" />
+  <attribute name="RepeatDirection" type="RepeatDirection" />
+  <attribute name="RepeatColumns" type="integer" />
+  <attribute name="RepeatLayout" type="RepeatLayout" />
+  <attribute name="OnSelectedIndexChanged" vs:omtype="event" />
+  <attribute name="OnDisposed" vs:omtype="event" />
+  <element name="ListItem" type="ListItemDef" /> 
+  <attributeGroup ref="ListControlAttributes" />
+</complexType>
+
+<!-- DataTypes -->
+<simpleType name="HorizontalAlign" base="string">
+    <enumeration value="NotSet" />
+    <enumeration value="Left" />
+    <enumeration value="Center" />
+    <enumeration value="Right" />
+    <enumeration value="Justify" />
+</simpleType>
+
+<simpleType name="GridLines" base="string">
+    <enumeration value="None" />
+    <enumeration value="Horizontal" />
+    <enumeration value="Vertical" />
+    <enumeration value="Both" />
+</simpleType>
+
+<simpleType name="CalendarSelectionMode" base="string">
+    <enumeration value="None" />
+    <enumeration value="Day" />
+    <enumeration value="DayWeek" />
+    <enumeration value="DayWeekMonth" />
+</simpleType>
+
+<simpleType name="DayNameFormat" base="string">
+    <enumeration value="Full" />
+    <enumeration value="Short" />
+    <enumeration value="FirstLetter" />
+    <enumeration value="FirstTwoLetters" />
+</simpleType>
+
+<simpleType name="FirstDayOfWeek" base="string">
+    <enumeration value="Sunday" />
+    <enumeration value="Monday" />
+    <enumeration value="Tuesday" />
+    <enumeration value="Wednesday" />
+    <enumeration value="Thursday" />
+    <enumeration value="Friday" />
+    <enumeration value="Saturday" />
+    <enumeration value="Default" />
+</simpleType>
+
+<simpleType name="TitleFormat" base="string">
+    <enumeration value="Month" />
+    <enumeration value="MonthYear" />
+</simpleType>
+
+<simpleType name="NextPrevFormat" base="string">
+    <enumeration value="CustomText" />
+    <enumeration value="ShortMonth" />
+    <enumeration value="FullMonth" />
+</simpleType>
+
+<simpleType name="ButtonColumnType" base="string">
+    <enumeration value="LinkButton" />
+    <enumeration value="PushButton" />
+</simpleType>
+
+<simpleType name="VerticalAlign" base="string">
+    <enumeration value="NotSet" />
+    <enumeration value="Top" />
+    <enumeration value="Middle" />
+    <enumeration value="Bottom" />
+</simpleType>
+
+<simpleType name="BorderStyle" base="string">
+    <enumeration value="NotSet" />
+    <enumeration value="None" />
+    <enumeration value="Dotted" />
+    <enumeration value="Dashed" />
+    <enumeration value="Solid" />
+    <enumeration value="Double" />
+    <enumeration value="Groove" />
+    <enumeration value="Ridge" />
+    <enumeration value="Inset" />
+    <enumeration value="Outset" />
+</simpleType>
+
+<simpleType name="ListSelectionMode" base="string">
+    <enumeration value="Single" />
+    <enumeration value="Multiple" />
+</simpleType>
+
+<simpleType name="RepeatLayout" base="string">
+    <enumeration value="Table" />
+    <enumeration value="Flow" />
+</simpleType>
+
+<simpleType name="RepeatDirection" base="string">
+    <enumeration value="Horizontal" />
+    <enumeration value="Vertical" />
+</simpleType>
+
+<simpleType name="ImageAlign" base="string">
+    <enumeration value="NotSet" />
+    <enumeration value="Left" />
+    <enumeration value="Right" />
+    <enumeration value="Baseline" />
+    <enumeration value="Top" />
+    <enumeration value="Middle" />
+    <enumeration value="Bottom" />
+    <enumeration value="AbsBottom" />
+    <enumeration value="AbsMiddle" />
+    <enumeration value="TextTop" />
+</simpleType>
+
+<simpleType name="TextBoxMode" base="string">
+    <enumeration value="NotSet" />
+    <enumeration value="SingleLine" />
+    <enumeration value="MultiLine" />
+    <enumeration value="Password" />
+</simpleType>
+
+<simpleType name="TextAlign" base="string">
+    <enumeration value="Left" />
+    <enumeration value="Right" />
+</simpleType>
+
+<simpleType name="ValidationSummaryDisplayMode" base="string">
+    <enumeration value="List" />
+    <enumeration value="BulletList" />
+    <enumeration value="SingleParagraph" />
+</simpleType>
+
+<simpleType name="ValidationCompareOperator" base="string">
+    <enumeration value="Equal" />
+    <enumeration value="NotEqual" />
+    <enumeration value="GreaterThan" />
+    <enumeration value="GreaterThanEqual" />
+    <enumeration value="LessThan" />
+    <enumeration value="LessThanEqual" />
+    <enumeration value="DataTypeCheck" />
+</simpleType>
+
+<simpleType name="PagerMode" base="string">
+    <enumeration value="NextPrev" />
+    <enumeration value="NumericPages" />
+</simpleType>
+
+<simpleType name="PagerPosition" base="string">
+    <enumeration value="Bottom" />
+    <enumeration value="Top" />
+    <enumeration value="TopAndBottom" />
+</simpleType>
+
+<simpleType name="BorderStyle" base="string">
+    <enumeration value="NotSet" />
+    <enumeration value="None" />
+    <enumeration value="Dotted" />
+    <enumeration value="Dashed" />
+    <enumeration value="Solid" />
+    <enumeration value="Double" />
+    <enumeration value="Groove" />
+    <enumeration value="Ridge" />
+    <enumeration value="Inset" />
+    <enumeration value="Outset" />
+</simpleType>
+
+<simpleType name="target" base="string">
+    <enumeration value="_Blank" />
+    <enumeration value="_Parent" />
+    <enumeration value="_Search" />
+    <enumeration value="_Self" />
+    <enumeration value="_Top" />
+</simpleType>
+
+<simpleType name="i2" base="integer">
+    <minInclusive value="-32768" />
+    <maxInclusive value="32767" />
+</simpleType>
+
+<simpleType name="ui4" base="non-negative-integer">
+    <minInclusive value="0" />
+    <maxInclusive value="4294967295" />
+</simpleType>
+
+<simpleType name="boolean" base="string">
+    <enumeration value="True" />
+    <enumeration value="False" />
+</simpleType>
+
+</schema>

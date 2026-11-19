@@ -1,0 +1,148 @@
+﻿package calculator.model;
+
+import calculator.model.mode.*;
+import java.util.Observable;
+
+/**
+ * Display 类与 CalculatorForm 中要显示的 textBox
+ * 保持同步。这通过将 Display 设置为 Observable 类以及
+ * 将 CalculatorForm 设置为 Observer 类来管理。调用方每次更改
+ * 缓冲区时,都应该在更改完毕后调用 doNotify()。
+*/
+public class Display extends Observable
+{
+    /**
+     * 清除显示
+*/
+    public void clear()
+    {
+        canChange = true;
+        buffer.setLength(0);
+        buffer.append(Base.ZERO_DIGIT);
+        doNotify();
+    }
+
+    /**
+     * 将字符串设置为显示
+*/
+    public void setDisplay(String s)
+    {
+        canChange = false;
+        buffer.setLength(0);
+        buffer.append(s);
+        doNotify();
+    }
+
+    /**
+     * 追加一个字符。
+*/
+    public boolean appendChar(char ch)
+    {
+        if (!canChange)
+        {
+            return false;
+        }
+
+        if (ch != Base.DECIMAL_SEPARATOR && isZero())
+        {
+            // 清除 0 以避免缓冲区成为 00 或 01。
+            // 对于小数，它仍然应该为“0.”。
+            buffer.setLength(0);
+        }
+
+        buffer.append(ch);
+        doNotify();
+        return true;
+    }
+
+    /**
+     * 移除缓冲区中的最后一个字符
+*/
+    public boolean removeChar()
+    {
+        if (!canChange)
+        {
+            return false;
+        }
+
+        buffer.setLength(buffer.length() - 1);
+
+        if (buffer.length() == 0)
+        {
+            // 如果它是唯一的字符，请还原为 0
+            buffer.append(Base.ZERO_DIGIT);
+        }
+        else if (buffer.length() == 1 && buffer.charAt(0) == Base.MINUS_SIGN)
+        {
+            // 如果仅有 -，将缓冲区设置为 0。
+            buffer.setCharAt(0, Base.ZERO_DIGIT);
+        }
+
+        doNotify();
+        return true;
+    }
+
+    /**
+     * 切换一元减号
+*/
+    public boolean toggleMinus()
+    {
+        if (buffer.charAt(0) == Base.MINUS_SIGN)
+        {
+            // 存在 -。请移除它
+            buffer.deleteCharAt(0);
+        }
+        else if (!isZero())
+        {
+            // 如果数字不是 0，请在开头添加 -。
+            buffer.insert(0, Base.MINUS_SIGN);
+        }
+
+        doNotify();
+        return true;
+    }
+
+    /**
+     * 返回显示字符串。
+*/
+    public String toString()
+    {
+        return buffer.toString();
+    }
+
+    /**
+     * 是否可以更改显示?
+*/
+    public boolean canChange()
+    {
+        return canChange;
+    }
+
+    /**
+     * 向所有观察者发出有关更改的通知。
+ */
+    private void doNotify()
+    {
+        setChanged();
+        notifyObservers(buffer.toString());
+    }
+
+    /**
+     * 显示是否为 0?
+     */
+    private boolean isZero()
+    {
+        // 如果仅有一个字符，且该字符为 0，则显示为 0
+        return (buffer.length() == 1 && buffer.charAt(0) == Base.ZERO_DIGIT);
+    }
+
+    /**
+     * 将当前显示存储在计算器中
+     */
+    private StringBuffer buffer = new StringBuffer();
+
+    /**
+     * 是否可以更改当前的显示
+     */
+    private boolean canChange;
+}

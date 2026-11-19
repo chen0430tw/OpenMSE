@@ -1,0 +1,11 @@
+﻿package calculator.model.mode;
+
+/**
+ * 可能的角度单位
+ */
+public enum AngleMode
+{
+    Degrees,
+    Radians,    // 未实现弧度
+    Gradients   // 未实现梯度
+}

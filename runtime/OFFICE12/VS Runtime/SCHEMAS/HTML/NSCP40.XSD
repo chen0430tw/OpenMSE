@@ -1,0 +1,3080 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<schema xmlns="http://www.w3.org/1999/XMLSchema" version="1.0"
+		targetNamespace='Navigator 4.0'
+		xmlns:html40='http://schemas.microsoft.com/Schemas/NAV40'
+		xmlns:vs='http://schemas.microsoft.com/Schemas/VisualStudio/HTML Intellisense'
+		vs:clientom="nsc40dom.tlb"
+		vs:ishtmlschema="true"
+		vs:iscasesensitive="false"
+		vs:htmlflavor="4.0">
+
+	<element name="HeadContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="base"/>
+			<element ref="isindex"/>
+			<element ref="link"/>
+			<element ref="meta"/>
+			<element ref="script"/>
+			<element ref="style"/>
+			<element ref="title"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="BlockContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="address"/>
+			<element ref="basefont"/>
+			<element ref="blockquote"/>
+			<element ref="center"/>
+			<element ref="dir"/>
+			<element ref="div"/>
+			<element ref="dl"/>
+			<element ref="form"/>
+			<element ref="h1"/>
+			<element ref="h2"/>
+			<element ref="h3"/>
+			<element ref="h4"/>
+			<element ref="h5"/>
+			<element ref="h6"/>
+			<element ref="hr"/>
+			<element ref="isindex"/>
+			<element ref="layer"/>
+			<element ref="listing"/>
+			<element ref="menu"/>
+			<element ref="multicol"/>
+			<element ref="noembed"/>
+			<element ref="noframes"/>
+			<element ref="nolayer"/>
+			<element ref="noscript"/>
+			<element ref="ol"/>
+			<element ref="p"/>
+			<element ref="plaintext"/>
+			<element ref="pre"/>
+			<element ref="spacer"/>
+			<element ref="table"/>
+			<element ref="ul"/>
+			<element ref="xml"/>
+			<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="BasefontContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="applet"/>
+			<element ref="b"/>
+			<element ref="blink"/>
+			<element ref="bdo"/>
+			<element ref="big"/>
+			<element ref="br"/>
+			<element ref="cite"/>
+			<element ref="code"/>
+			<element ref="em"/>
+			<element ref="embed"/>
+			<element ref="font"/>
+			<element ref="i"/>
+			<element ref="img"/>
+			<element ref="kbd"/>
+			<element ref="map"/>
+			<element ref="nobr"/>
+			<element ref="object"/>
+			<element ref="s"/>
+			<element ref="samp"/>
+			<element ref="script"/>
+			<element ref="small"/>
+			<element ref="span"/>
+			<element ref="strike"/>
+			<element ref="strong"/>
+			<element ref="sub"/>
+			<element ref="sup"/>
+			<element ref="tt"/>
+			<element ref="u"/>
+			<element ref="var"/>
+			<element ref="wbr"/>
+			<element ref="address"/>
+			<element ref="basefont"/>
+			<element ref="blockquote"/>
+			<element ref="dir"/>
+			<element ref="div"/>
+			<element ref="dl"/>
+			<element ref="form"/>
+			<element ref="h1"/>
+			<element ref="h2"/>
+			<element ref="h3"/>
+			<element ref="h4"/>
+			<element ref="h5"/>
+			<element ref="h6"/>
+			<element ref="hr"/>
+			<element ref="isindex"/>
+			<element ref="listing"/>
+			<element ref="menu"/>
+			<element ref="noembed"/>
+			<element ref="noframes"/>
+			<element ref="noscript"/>
+			<element ref="ol"/>
+			<element ref="p"/>
+			<element ref="plaintext"/>
+			<element ref="pre"/>
+			<element ref="ul"/>
+			<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+
+	<element name="BlockParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="applet"/>
+			<element ref="basefont"/>
+			<element ref="blockquote"/>
+			<element ref="body"/>
+			<element ref="center"/>
+			<element ref="dd"/>
+			<element ref="div"/>
+			<element ref="dl"/>
+			<element ref="embed"/>
+			<element ref="form"/>
+			<element ref="layer"/>
+			<element ref="li"/>
+			<element ref="noembed"/>
+			<element ref="noframes"/>
+			<element ref="nolayer"/>
+			<element ref="noscript"/>
+			<element ref="object"/>
+			<element ref="plaintext"/>
+			<element ref="td"/>
+			<element ref="th"/>
+			<element ref="xml"/>
+			<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="TableParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="applet"/>
+			<element ref="blockquote"/>
+			<element ref="body"/>
+			<element ref="center"/>
+			<element ref="dd"/>
+			<element ref="div"/>
+			<element ref="dl"/>
+			<element ref="embed"/>
+			<element ref="form"/>
+			<element ref="li"/>
+			<element ref="noembed"/>
+			<element ref="noframes"/>
+			<element ref="noscript"/>
+			<element ref="object"/>
+			<element ref="plaintext"/>
+			<element ref="pre"/>
+			<element ref="td"/>
+			<element ref="th"/>
+			<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="FormElementParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="applet"/>
+			<element ref="basefont"/>
+			<element ref="blockquote"/>
+			<element ref="body"/>
+			<element ref="center"/>
+			<element ref="dd"/>
+			<element ref="div"/>
+			<element ref="dl"/>
+			<element ref="embed"/>
+			<element ref="li"/>
+			<element ref="noembed"/>
+			<element ref="noframes"/>
+			<element ref="noscript"/>
+			<element ref="object"/>
+			<element ref="plaintext"/>
+			<element ref="pre"/>
+			<element ref="td"/>
+			<element ref="th"/>
+			<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="AParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="address"/>
+			<element ref="b"/>
+			<element ref="blink"/>
+			<element ref="bdo"/>
+			<element ref="big"/>
+			<element ref="caption"/>
+			<element ref="cite"/>
+			<element ref="code"/>
+			<element ref="dt"/>
+			<element ref="em"/>
+			<element ref="font"/>
+			<element ref="form"/>
+			<element ref="h1"/>
+			<element ref="h2"/>
+			<element ref="h3"/>
+			<element ref="h4"/>
+			<element ref="h5"/>
+			<element ref="h6"/>
+			<element ref="i"/>
+			<element ref="kbd"/>
+			<element ref="li"/>
+			<element ref="nobr"/>
+			<element ref="p"/>
+			<element ref="pre"/>
+			<element ref="s"/>
+			<element ref="samp"/>
+			<element ref="small"/>
+			<element ref="span"/>
+			<element ref="strike"/>
+			<element ref="strong"/>
+			<element ref="sub"/>
+			<element ref="sup"/>
+			<element ref="tt"/>
+			<element ref="u"/>
+			<element ref="var"/>
+			<element ref="applet"/>
+			<element ref="basefont"/>
+			<element ref="blockquote"/>
+			<element ref="body"/>
+			<element ref="center"/>
+			<element ref="dd"/>
+			<element ref="div"/>
+			<element ref="dl"/>
+			<element ref="embed"/>
+			<element ref="form"/>
+			<element ref="noembed"/>
+			<element ref="noframes"/>
+			<element ref="noscript"/>
+			<element ref="object"/>
+			<element ref="plaintext"/>
+			<element ref="td"/>
+			<element ref="th"/>
+			<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="InlineParent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="a"/>
+			<element ref="address"/>
+			<element ref="b"/>
+			<element ref="blink"/>
+			<element ref="bdo"/>
+			<element ref="big"/>
+			<element ref="caption"/>
+			<element ref="cite"/>
+			<element ref="code"/>
+			<element ref="dt"/>
+			<element ref="em"/>
+			<element ref="font"/>
+			<element ref="h1"/>
+			<element ref="h2"/>
+			<element ref="h3"/>
+			<element ref="h4"/>
+			<element ref="h5"/>
+			<element ref="h6"/>
+			<element ref="i"/>
+			<element ref="ilayer"/>
+			<element ref="kbd"/>
+			<element ref="nobr"/>
+			<element ref="p"/>
+			<element ref="pre"/>
+			<element ref="s"/>
+			<element ref="samp"/>
+			<element ref="small"/>
+			<element ref="spacer"/>
+			<element ref="span"/>
+			<element ref="strike"/>
+			<element ref="strong"/>
+			<element ref="sub"/>
+			<element ref="sup"/>
+			<element ref="tt"/>
+			<element ref="u"/>
+			<element ref="var"/>
+			<element ref="xml"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="InlineParentNoPre" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="a"/>
+			<element ref="address"/>
+			<element ref="b"/>
+			<element ref="blink"/>
+			<element ref="bdo"/>
+			<element ref="big"/>
+			<element ref="caption"/>
+			<element ref="cite"/>
+			<element ref="code"/>
+			<element ref="dt"/>
+			<element ref="em"/>
+			<element ref="font"/>
+			<element ref="h1"/>
+			<element ref="h2"/>
+			<element ref="h3"/>
+			<element ref="h4"/>
+			<element ref="h5"/>
+			<element ref="h6"/>
+			<element ref="i"/>
+			<element ref="kbd"/>
+			<element ref="nobr"/>
+			<element ref="p"/>
+			<element ref="s"/>
+			<element ref="samp"/>
+			<element ref="small"/>
+			<element ref="span"/>
+			<element ref="strike"/>
+			<element ref="strong"/>
+			<element ref="sub"/>
+			<element ref="sup"/>
+			<element ref="tt"/>
+			<element ref="u"/>
+			<element ref="var"/>
+			<element ref="xml"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="InlineParentNoButton" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="a"/>
+			<element ref="address"/>
+			<element ref="b"/>
+			<element ref="blink"/>
+			<element ref="bdo"/>
+			<element ref="big"/>
+			<element ref="caption"/>
+			<element ref="cite"/>
+			<element ref="code"/>
+			<element ref="dt"/>
+			<element ref="em"/>
+			<element ref="font"/>
+			<element ref="h1"/>
+			<element ref="h2"/>
+			<element ref="h3"/>
+			<element ref="h4"/>
+			<element ref="h5"/>
+			<element ref="h6"/>
+			<element ref="i"/>
+			<element ref="kbd"/>
+			<element ref="nobr"/>
+			<element ref="p"/>
+			<element ref="pre"/>
+			<element ref="s"/>
+			<element ref="samp"/>
+			<element ref="small"/>
+			<element ref="span"/>
+			<element ref="strike"/>
+			<element ref="strong"/>
+			<element ref="sub"/>
+			<element ref="sup"/>
+			<element ref="tt"/>
+			<element ref="u"/>
+			<element ref="var"/>
+			<element ref="xml"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="InlineContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="a"/>
+			<element ref="applet"/>
+			<element ref="b"/>
+			<element ref="blink"/>
+			<element ref="bdo"/>
+			<element ref="big"/>
+			<element ref="br"/>
+			<element ref="cite"/>
+			<element ref="code"/>
+			<element ref="em"/>
+			<element ref="embed"/>
+			<element ref="font"/>
+			<element ref="i"/>
+			<element ref="ilayer"/>
+			<element ref="img"/>
+			<element ref="kbd"/>
+			<element ref="map"/>
+			<element ref="nobr"/>
+			<element ref="object"/>
+			<element ref="s"/>
+			<element ref="samp"/>
+			<element ref="script"/>
+			<element ref="small"/>
+			<element ref="span"/>
+			<element ref="strike"/>
+			<element ref="strong"/>
+			<element ref="sub"/>
+			<element ref="sup"/>
+			<element ref="tt"/>
+			<element ref="u"/>
+			<element ref="var"/>
+			<element ref="wbr"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="FormElementContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="a"/>
+			<element ref="applet"/>
+			<element ref="b"/>
+			<element ref="blink"/>
+			<element ref="bdo"/>
+			<element ref="big"/>
+			<element ref="br"/>
+			<element ref="cite"/>
+			<element ref="code"/>
+			<element ref="em"/>
+			<element ref="embed"/>
+			<element ref="font"/>
+			<element ref="i"/>
+			<element ref="img"/>
+			<element ref="input"/>
+			<element ref="kbd"/>
+			<element ref="map"/>
+			<element ref="nobr"/>
+			<element ref="object"/>
+			<element ref="s"/>
+			<element ref="samp"/>
+			<element ref="script"/>
+			<element ref="select"/>
+			<element ref="small"/>
+			<element ref="span"/>
+			<element ref="strike"/>
+			<element ref="strong"/>
+			<element ref="sub"/>
+			<element ref="sup"/>
+			<element ref="textarea"/>
+			<element ref="tt"/>
+			<element ref="u"/>
+			<element ref="var"/>
+			<element ref="wbr"/>
+			<element ref="address"/>
+			<element ref="basefont"/>
+			<element ref="blockquote"/>
+			<element ref="dir"/>
+			<element ref="div"/>
+			<element ref="dl"/>
+			<element ref="h1"/>
+			<element ref="h2"/>
+			<element ref="h3"/>
+			<element ref="h4"/>
+			<element ref="h5"/>
+			<element ref="h6"/>
+			<element ref="hr"/>
+			<element ref="isindex"/>
+			<element ref="listing"/>
+			<element ref="menu"/>
+			<element ref="noembed"/>
+			<element ref="noframes"/>
+			<element ref="noscript"/>
+			<element ref="ol"/>
+			<element ref="p"/>
+			<element ref="plaintext"/>
+			<element ref="pre"/>
+			<element ref="table"/>
+			<element ref="ul"/>
+			<element ref="xmp"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="AContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="applet"/>
+			<element ref="b"/>
+			<element ref="bdo"/>
+			<element ref="big"/>
+			<element ref="br"/>
+			<element ref="cite"/>
+			<element ref="code"/>
+			<element ref="em"/>
+			<element ref="embed"/>
+			<element ref="font"/>
+			<element ref="i"/>
+			<element ref="img"/>
+			<element ref="kbd"/>
+			<element ref="map"/>
+			<element ref="nobr"/>
+			<element ref="object"/>
+			<element ref="s"/>
+			<element ref="samp"/>
+			<element ref="script"/>
+			<element ref="small"/>
+			<element ref="span"/>
+			<element ref="strike"/>
+			<element ref="strong"/>
+			<element ref="sub"/>
+			<element ref="sup"/>
+			<element ref="tt"/>
+			<element ref="u"/>
+			<element ref="var"/>
+			<element ref="wbr"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="PreContent" vs:nonbrowseable="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="b"/>
+			<element ref="bdo"/>
+			<element ref="br"/>
+			<element ref="cite"/>
+			<element ref="code"/>
+			<element ref="em"/>
+			<element ref="embed"/>
+			<element ref="i"/>
+			<element ref="kbd"/>
+			<element ref="map"/>
+			<element ref="s"/>
+			<element ref="samp"/>
+			<element ref="script"/>
+			<element ref="span"/>
+			<element ref="strike"/>
+			<element ref="strong"/>
+			<element ref="tt"/>
+			<element ref="u"/>
+			<element ref="var"/>
+			<element ref="xml"/>
+			<element ref="wbr"/>
+			</choice>
+		</complexType>
+	</element>
+
+	<attributeGroup name="coreLanguage" vs:nonbrowseable="true">
+		<attribute name="dir"  value="ltr">
+			<simpleType base="NMTOKEN">
+				<enumeration value="ltr"/>
+				<enumeration value="rtl"/>
+			</simpleType>
+		</attribute>
+		<attribute name="lang"/>
+	</attributeGroup>
+
+	<element name="a">
+		<complexType content="mixed">
+			<choice>
+			<element ref="AContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="href" type="uri-reference"/>
+			<attribute name="name"/>
+			<attribute name="target">
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="onserverclick" vs:omtype="event" />
+			<attribute name="onserverchange" vs:omtype="event" />
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="address">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="p"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="applet" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="param"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="alt"/>
+			<attribute name="archive"/>
+			<attribute name="code" type="uri-reference"/>
+			<attribute name="codebase" type="uri-reference"/>
+			<attribute name="height"/>
+			<attribute name="hspace" type="ui4"/>
+			<attribute name="mayscript"/>
+			<attribute name="name"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="width"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="area" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="alt"/>
+			<attribute name="coords"/>
+			<attribute name="href" type="uri-reference"/>
+			<attribute name="name"/>
+			<attribute name="nohref"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="shape"  value="rect">
+				<simpleType base="NMTOKEN">
+					<enumeration value="rect"/>
+					<enumeration value="circle"/>
+					<enumeration value="default"/>
+					<enumeration value="poly"/>
+					<enumeration value="polygon"/>
+				</simpleType>
+			</attribute>
+			<attribute name="target" >
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="b">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="base" vs:empty="true">
+		<complexType content="mixed">
+			<attribute name="href" type="uri-reference"/>
+			<attribute name="target" >
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="basefont" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="BasefontContent"/>
+			</choice>
+			<attribute name="size" type="integer"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="big">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="blink">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="blockquote">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="body">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="del"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="alink" vs:builder="color"/>
+			<attribute name="background" type="uri-reference"/>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="link"  vs:builder="color"/>
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="ondragdrop" vs:omtype="event"/>
+			<attribute name="onerror" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onload" vs:omtype="event"/>
+			<attribute name="onmove"/>
+			<attribute name="onresize" vs:omtype="event"/>
+			<attribute name="onunload"/>
+			<attribute name="text" vs:builder="color"/>
+			<attribute name="vlink" vs:builder="color"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="br" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="clear"  value="none">
+				<simpleType base="NMTOKEN">
+					<enumeration value="none"/>
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="all"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="caption">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="top"/>
+					<enumeration value="bottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="center" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="cite">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="code">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="dd">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="dir" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="li"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="div">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="dl">
+		<complexType content="mixed">
+			<choice>
+			<element ref="dd"/>
+			<element ref="dt"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="compact"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="dt">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="em">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="embed">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="param"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="height"/>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="width"/>
+			<attribute name="border" type="integer"/>
+			<attribute name="frameborder"  value="yes">
+				<simpleType base="NMTOKEN">
+					<enumeration value="yes"/>
+					<enumeration value="no"/>
+					<enumeration value="1"/>
+					<enumeration value="0"/>
+				</simpleType>
+			</attribute>
+			<attribute name="hidden"  value="false">
+				<simpleType base="NMTOKEN">
+					<enumeration value="true"/>
+					<enumeration value="false"/>
+				</simpleType>
+			</attribute>
+			<attribute name="palette">
+				<simpleType base="NMTOKEN">
+					<enumeration value="background"/>
+					<enumeration value="foreground"/>
+				</simpleType>
+			</attribute>
+			<attribute name="pluginspace"/>
+			<attribute name="pluginurl"/>
+			<attribute name="type" />>
+			<attribute name="units">
+				<simpleType base="NMTOKEN">
+					<enumeration value="en"/>
+					<enumeration value="pixels"/>
+				</simpleType>
+			</attribute>
+			<attribute name="hspace" type="ui4"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="name"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="font">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="color"  vs:builder="color"/>
+			<attribute name="face"/>
+			<attribute name="size" type="integer"/>
+			<attribute name="point-size"/>
+			<attribute name="weight">
+				<simpleType base="NMTOKEN">
+					<enumeration value="100"/>
+					<enumeration value="200"/>
+					<enumeration value="300"/>
+					<enumeration value="400"/>
+					<enumeration value="500"/>
+					<enumeration value="600"/>
+					<enumeration value="700"/>
+					<enumeration value="800"/>
+					<enumeration value="900"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="form">
+		<complexType content="mixed">
+			<choice>
+			<element ref="FormElementContent"/>
+			<element ref="coreLanguage"/>
+			<element name="keygen" vs:empty="true">
+				<complexType>
+					<attribute name="challenge" />
+					<attribute name="name" />
+				</complexType>
+			</element>
+			</choice>
+			<attribute name="action" type="uri-reference"/>
+			<attribute name="enctype"/>
+			<attribute name="method"  value="get">
+				<simpleType base="NMTOKEN">
+					<enumeration value="get"/>
+					<enumeration value="post"/>
+				</simpleType>
+			</attribute>
+			<attribute name="name"/>
+			<attribute name="ondragdrop" vs:omtype="event"/>
+			<attribute name="onreset" vs:omtype="event"/>
+			<attribute name="onsubmit"/>
+			<attribute name="target" >
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="frame" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="bordercolor" vs:builder="color"/>
+			<attribute name="frameborder"  value="yes">
+				<simpleType base="NMTOKEN">
+					<enumeration value="yes"/>
+					<enumeration value="no"/>
+					<enumeration value="1"/>
+					<enumeration value="0"/>
+				</simpleType>
+			</attribute>
+			<attribute name="marginheight" type="integer"/>
+			<attribute name="marginwidth" type="integer"/>
+			<attribute name="name"/>
+			<attribute name="noresize"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="scrolling"  value="auto">
+				<simpleType base="NMTOKEN">
+					<enumeration value="auto"/>
+					<enumeration value="yes"/>
+					<enumeration value="no"/>
+				</simpleType>
+			</attribute>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="target">
+				<simpleType base="NMTOKEN">
+					<enumeration value="_blank"/>
+					<enumeration value="_parent"/>
+					<enumeration value="_search"/>
+					<enumeration value="_self"/>
+					<enumeration value="_top"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="frameset">
+		<complexType content="mixed">
+			<choice>
+			<element ref="frame"/>
+			<element ref="frameset"/>
+			<element ref="noframes"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="border" type="integer"/>
+			<attribute name="bordercolor" vs:builder="color"/>
+			<attribute name="cols"/>
+			<attribute name="frameborder"  value="yes">
+				<simpleType base="NMTOKEN">
+					<enumeration value="yes"/>
+					<enumeration value="no"/>
+					<enumeration value="1"/>
+					<enumeration value="0"/>
+				</simpleType>
+			</attribute>
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onerror" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onload" vs:omtype="event"/>
+			<attribute name="onmove"/>
+			<attribute name="onresize" vs:omtype="event"/>
+			<attribute name="onunload"/>
+			<attribute name="rows"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="head">
+		<complexType content="mixed">
+			<choice>
+			<element ref="HeadContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="hr" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align"  value="right">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+				</simpleType>
+			</attribute>
+			<attribute name="noshade" type="boolean" vs:standalone="true" />
+			<attribute name="size" />
+			<attribute name="width"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="html" vs:defaultelement="1">
+		<complexType content="mixed">
+			<choice>
+			<element ref="body"/>
+			<element ref="frameset"/>
+			<element ref="head"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h1">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h2">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h3">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h4">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h5">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="h6">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align"  value="left">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="center"/>
+					<enumeration value="right"/>
+					<enumeration value="justify"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="i">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="ilayer">
+		<complexType content="mixed">
+			<choice>
+			<element ref="BlockContent"/>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="above"/>
+			<attribute name="background" type="uri-reference"/>
+			<attribute name="below"/>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="clip"/>
+			<attribute name="height"/>
+			<attribute name="id"/>
+			<attribute name="left"/>
+			<attribute name="name"/>
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onload" vs:omtype="event"/>
+			<attribute name="pagex"/>
+			<attribute name="pagey"/>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="top"/>
+			<attribute name="visibility"/>
+			<attribute name="width"/>
+			<attribute name="z-index"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="image" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="alt"/>
+			<attribute name="border" type="integer"/>
+			<attribute name="controls"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="dynsrc" type="uri-reference"/>
+			<attribute name="height"/>
+			<attribute name="hspace" type="ui4"/>
+			<attribute name="ismap"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="loop"/>
+			<attribute name="lowsrc" type="uri-reference"/>
+			<attribute name="name"/>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="usemap" type="uri-reference"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="width"/>
+			<attribute name="vrml" type="uri-reference"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="img" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="alt"/>
+			<attribute name="border" type="integer"/>
+			<attribute name="height"/>
+			<attribute name="hspace" type="ui4"/>
+			<attribute name="ismap"  value="false" type="boolean" vs:standalone="true" />
+			<attribute name="lowsrc" type="uri-reference"/>
+			<attribute name="name"/>
+			<attribute name="onabort" vs:omtype="event"/>
+			<attribute name="onerror" vs:omtype="event"/>
+			<attribute name="onload" vs:omtype="event"/>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="suppress">
+				<simpleType base="NMTOKEN">
+					<enumeration value="true"/>
+					<enumeration value="false"/>
+				</simpleType>
+			</attribute>
+			<attribute name="usemap" type="uri-reference"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="width"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="isindex" vs:empty="true" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="prompt"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="input" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align" value="top" vs:inputtype="image">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="border" type="ui4" />
+			<attribute name="checked" type="boolean" vs:inputtype="checkbox radio"  vs:standalone="true" />
+			<attribute name="height" vs:inputtype="button image reset submit" />
+			<attribute name="maxlength" type="ui4" vs:inputtype="text" />
+			<attribute name="name" vs:inputtype="button checkbox file hidden image password radio submit text" />
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onchange" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onserverclick" vs:omtype="event" />
+			<attribute name="onserverchange" vs:omtype="event" />
+			<attribute name="size" type="integer" vs:inputtype="text" />
+			<attribute name="src" type="uri-reference" vs:inputtype="image"/>
+			<attribute name="type" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="button"/>
+					<enumeration value="checkbox"/>
+					<enumeration value="file"/>
+					<enumeration value="hidden"/>
+					<enumeration value="image"/>
+					<enumeration value="password"/>
+					<enumeration value="radio"/>
+					<enumeration value="reset"/>
+					<enumeration value="submit"/>
+					<enumeration value="text"/>
+				</simpleType>
+			</attribute>
+			<attribute name="usemap" type="uri-reference" vs:inputtype="image" />
+			<attribute name="value" vs:inputtype="button checkbox hidden password radio reset submit text"/>
+			<attribute name="width" vs:inputtype="button image reset submit" />
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="kbd">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="layer">
+		<complexType content="mixed">
+			<choice>
+			<element ref="BlockContent"/>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="above"/>
+			<attribute name="background" type="uri-reference"/>
+			<attribute name="below"/>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="clip"/>
+			<attribute name="height"/>
+			<attribute name="id"/>
+			<attribute name="left"/>
+			<attribute name="name"/>
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onload" vs:omtype="event"/>
+			<attribute name="pagex"/>
+			<attribute name="pagey"/>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="title"/>
+			<attribute name="top"/>
+			<attribute name="visibility"/>
+			<attribute name="width"/>
+			<attribute name="z-index"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="li" vs:implicitClosure="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="value"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="link" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="href" type="uri-reference"/>
+			<attribute name="rel">
+				<simpleType base="NMTOKEN">
+					<enumeration value="alternate"/>
+					<enumeration value="bookmark"/>
+					<enumeration value="chapter"/>
+					<enumeration value="contents"/>
+					<enumeration value="copyright"/>
+					<enumeration value="glossary"/>
+					<enumeration value="help"/>
+					<enumeration value="index"/>
+					<enumeration value="next"/>
+					<enumeration value="prev"/>
+					<enumeration value="section"/>
+					<enumeration value="start"/>
+					<enumeration value="stylesheet"/>
+					<enumeration value="subsection"/>
+				</simpleType>
+			</attribute>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="type" vs:readonly="true">
+				<simpleType base="NMTOKEN">
+					<enumeration value="text/css"/>
+					<enumeration value="text/javascript"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="listing" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="map">
+		<complexType content="mixed">
+			<choice>
+			<element ref="area"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="name"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="menu"  vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="li"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="meta" vs:empty="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="content"/>
+			<attribute name="http-equiv"/>
+			<attribute name="name"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="multicol">
+		<complexType content="mixed">
+			<choice>
+			<element ref="BlockContent"/>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="cols" type="integer"/>
+			<attribute name="gutter"/>
+			<attribute name="width"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="nobr">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="noembed">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="noframes">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="body"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="nolayer">
+		<complexType content="mixed">
+			<choice>
+			<element ref="BlockContent"/>
+			<element ref="InlineContent"/>
+			</choice>
+		</complexType>
+	</element>
+	<element name="noscript">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="object">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="param"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="classid" type="uri-reference"/>
+			<attribute name="codebase" type="uri-reference"/>
+			<attribute name="data" type="uri-reference"/>
+			<attribute name="height"/>
+			<attribute name="id"/>
+			<attribute name="type" vs:readonly="true" />
+			<attribute name="width"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="ol">
+		<complexType content="mixed">
+			<choice>
+			<element ref="li"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="start" type="integer"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="option">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="selected" type="boolean" vs:standalone="true" />
+			<attribute name="value"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="p" vs:implicitClosure="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="table"/>
+			<element ref="hr"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="param" vs:empty="true">
+		<complexType content="mixed">
+			<attribute name="name"/>
+			<attribute name="value"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="plaintext" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="pre">
+		<complexType content="mixed">
+			<choice>
+			<element ref="PreContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="cols" type="integer"/>
+			<attribute name="wrap"  value="soft">
+				<simpleType base="NMTOKEN">
+					<enumeration value="soft"/>
+					<enumeration value="hard"/>
+					<enumeration value="off"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="s" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="samp">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="script">
+		<complexType content="mixed">
+			<attribute name="language"/>
+			<attribute name="src" type="uri-reference"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+		</complexType>
+	</element>
+	<element name="select">
+		<complexType content="mixed">
+			<choice>
+			<element ref="option"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="multiple" type="boolean" vs:standalone="true" />
+			<attribute name="name"/>
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onchange" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onserverclick" vs:omtype="event" />
+			<attribute name="onserverchange" vs:omtype="event" />
+			<attribute name="size" type="integer"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="small">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="spacer" vs:empty="true">
+		<complexType content="mixed">
+			<attribute name="align">
+				<simpleType base="NMTOKEN">
+					<enumeration value="left"/>
+					<enumeration value="right"/>
+					<enumeration value="top"/>
+					<enumeration value="texttop"/>
+					<enumeration value="middle"/>
+					<enumeration value="absmiddle"/>
+					<enumeration value="baseline"/>
+					<enumeration value="bottom"/>
+					<enumeration value="absbottom"/>
+				</simpleType>
+			</attribute>
+			<attribute name="height"/>
+			<attribute name="size"/>
+			<attribute name="type">
+				<simpleType base="NMTOKEN">
+					<enumeration value="block"/>
+					<enumeration value="horizontal"/>
+					<enumeration value="vertical"/>
+				</simpleType>
+			</attribute>
+			<attribute name="width"/>
+		</complexType>
+	</element>
+	<element name="span">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="strike" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="strong">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="style" vs:builder="style">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="type">
+				<simpleType base="NMTOKEN">
+					<enumeration value="text/css"/>
+					<enumeration value="text/javascript"/>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="sub">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="sup">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="table">
+		<complexType content="mixed">
+			<choice>
+			<element ref="caption"/>
+			<element ref="tr"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="border" type="integer"/>
+			<attribute name="cellpadding" type="integer"/>
+			<attribute name="cellspacing" type="integer"/>
+			<attribute name="height"/>
+			<attribute name="width"/>
+			<attribute name="hspace" type="ui4"/>
+			<attribute name="vspace" type="ui4"/>
+			<attribute name="cols" type="integer"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="td" vs:implicitClosure="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="colspan"  value="1" type="integer"/>
+			<attribute name="height"/>
+			<attribute name="rowspan"  value="1" type="integer"/>
+			<attribute name="width"/>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="textarea">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="cols" type="integer"/>
+			<attribute name="name"/>
+			<attribute name="onblur" vs:omtype="event"/>
+			<attribute name="onchange" vs:omtype="event"/>
+			<attribute name="onfocus" vs:omtype="event"/>
+			<attribute name="onserverclick" vs:omtype="event" />
+			<attribute name="onserverchange" vs:omtype="event" />
+			<attribute name="rows"/>
+			<attribute name="wrap"  value="soft">
+				<simpleType base="NMTOKEN">
+					<enumeration value="soft"/>
+					<enumeration value="hard"/>
+					<enumeration value="off"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="th">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="BlockContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="colspan"  value="1" type="integer"/>
+			<attribute name="height"/>
+			<attribute name="rowspan"  value="1" type="integer"/>
+			<attribute name="width"/>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="title">
+		<complexType content="mixed">
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="tr" vs:implicitClosure="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="th"/>
+			<element ref="td"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="bgcolor" vs:builder="color"/>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="tt">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="u" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="ul">
+		<complexType content="mixed">
+			<choice>
+			<element ref="ul" vs:deprecated="true"/>
+			<element ref="li"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="type"  value="1" default="disc">
+				<simpleType base="NMTOKEN">
+					<enumeration value="circle"/>
+					<enumeration value="disk"/>
+					<enumeration value="square"/>
+				</simpleType>
+			</attribute>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="var">
+		<complexType content="mixed">
+			<choice>
+			<element ref="InlineContent"/>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<element name="wbr" vs:empty="true">
+		<complexType content="mixed">
+		</complexType>
+	</element>
+	<element name="xmp" vs:deprecated="true">
+		<complexType content="mixed">
+			<choice>
+			<element ref="coreLanguage"/>
+			</choice>
+			<attribute name="accesskey"/>
+			<attribute name="class" vs:mapstoname="className"/>
+			<attribute name="id"/>
+			<attribute name="style" vs:builder="style"/>
+			<attribute name="tabindex" />
+			<attribute name="title"/>
+			<attribute name="xmlns" />
+			<attribute name="onclick" vs:omtype="event"/>
+			<attribute name="ondblclick" vs:omtype="event"/>
+			<attribute name="onkeydown" vs:omtype="event"/>
+			<attribute name="onkeypress" vs:omtype="event"/>
+			<attribute name="onkeyup" vs:omtype="event"/>
+			<attribute name="onmousemove" vs:omtype="event"/>
+			<attribute name="onmouseout" vs:omtype="event"/>
+			<attribute name="onmouseover" vs:omtype="event"/>
+			<attribute name="onmouseup" vs:omtype="event"/>
+		</complexType>
+	</element>
+	<!-- XDR datatype derivations -->
+	<simpleType name="i2" base="integer">
+		<minInclusive value="-32768"/>
+		<maxInclusive value="32767"/>
+	</simpleType>
+	<simpleType name="ui4" base="non-negative-integer">
+		<minInclusive value="0"/>
+		<maxInclusive value="4294967295"/>
+	</simpleType>
+</schema>

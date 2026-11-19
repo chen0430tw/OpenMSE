@@ -1,0 +1,137 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<title>Visual Studio 安装失败: 更正步骤</title>
+</head>
+<body vLink=purple link=blue bgColor=white><BASEFONT face="宋体, Verdana" color="navy" size="2">
+
+
+<script language="JScript">
+	var strInput;
+	var strRemainingInput;
+	var strPath;
+	var strErrors;
+	var strRollback;
+	var strReadmePath;
+	var i;
+	var strErrorAnchor;
+	var strInstallAnchor;
+	var strWowFlag;
+        var strOptError;
+	var strDepCheck;
+
+
+	strInput=window.location.search.substring(1,window.location.search.length);
+
+	i=strInput.indexOf(";");
+	strErrors=strInput.substring(0,i);
+	strRemainingInput=strInput.substring(i+1,strInput.length);
+	i=strErrors.indexOf("=");
+	strErrors=strErrors.substring(i+1,i+2);
+
+	i=strRemainingInput.indexOf(";");
+	strPath=strRemainingInput.substring(0,i);
+	strRemainingInput=strRemainingInput.substring(i+1,strInput.length);
+	i=strPath.indexOf("=");
+	strPath=strPath.substring(i+1,strPath.length);
+
+	i=strRemainingInput.indexOf("=");
+	strRollback=strRemainingInput.substring(i+1,i+2);
+	strRemainingInput=strRemainingInput.substring(i+3,strInput.length);
+
+	i=strRemainingInput.indexOf(";");
+	strReadmePath=strRemainingInput.substring(0,i);
+	strRemainingInput=strRemainingInput.substring(i+1,strInput.length);
+	i=strReadmePath.indexOf("=");
+	strReadmePath=strReadmePath.substring(i+1,strReadmePath.length);
+
+	i=strRemainingInput.indexOf("=");
+	strWowFlag=strRemainingInput.substring(i+1,i+2);
+
+	// Look at remaining input and try to find OptError and Depcheck
+	var optErrorString = "opterror=";
+	var depCheckString = "depcheck=";
+
+	strRemainingInput = strRemainingInput.toLowerCase();
+
+	var optError = strRemainingInput.toLowerCase().match(optErrorString);
+	if (optError)
+	{
+	    i=strRemainingInput.indexOf(optErrorString)+(optErrorString.length)-1;
+	    optErrorFlag=strRemainingInput.substring(i+1,i+2);
+	}
+
+	var depcheck = strRemainingInput.toLowerCase().match(depCheckString);
+	if (depcheck)
+	{
+	    i=strRemainingInput.indexOf("depcheck=")+(depCheckString.length)-1;
+	    strDepCheckFlag = strRemainingInput.substring(i+1,i+2);
+	}	
+
+	// Security precaution
+	forbiddenChars = new RegExp("[<>\'\"]", "g");	// Global search/replace
+	strPath = strPath.replace(forbiddenChars, "");
+	strReadmePath = strReadmePath.replace(forbiddenChars, "");
+
+	document.write("<table width=\"100%\">");
+	//document.write("<tr><td width=36><img src=\"smallFail.gif\"></td>");
+	document.write("<tr><td width=36><img src=\"file:///"+strReadmePath+"/smallFail.gif\"></td>");
+	document.write("<td><font size=4 color=\"red\"><b>安装失败。</b><br>请通过以下链接调查失败原因:</font></td>");
+	document.write("</tr>");
+	document.write("</table>");
+	document.write("<img src=\"file:///"+strReadmePath+"/redrule.gif\" width=\"100%\" height=4><br><br>");
+	
+	if (strErrors=="1")
+	{
+		document.write ("<br>安装过程中有错误");
+		if (strRollback=="1")
+			document.write ("，导致安装回滚。安装程序已将计算机恢复到安装开始前的状态。所有 Visual Studio 文件都已被移除。<br><br>");
+		else
+		{
+			if (strDepCheckFlag=="1")
+				document.write("。<br>组件已安装成功，但检测到一些安装错误。<br><br>");
+			else
+				document.write (".<br><br>");
+		}
+
+
+		document.write ("<a target='_blank' href='file:///" + strPath + 				"/dd_vserror80.txt'>查看错误日志</a><br>");
+	}
+
+	document.write ("<ol>");
+	document.write ("<li>有关已知安装问题的信息，请参见 Microsoft Visual Studio 自述文件 <a target='_blank' href='file:///"+strReadmePath + "/readme.htm'>readme.htm</a>，该文件位于安装源的根目录下。");
+	document.write ("<li>有关 Visual Studio 安装问题及解决方案的知识库文章，请参见 KB 文章 319714“HOW TO: 排查 Visual Studio .NET 安装问题”，该文章位于 ");
+	document.write ("<a target='_blank' href='http://support.microsoft.com/default.aspx?scid=kb;zh-cn;319714'>http://support.microsoft.com/default.aspx?scid=kb;zh-cn;319714</a>。");
+	document.write ("<li>要寻求其他 Visual Studio 用户的帮助，请尝试以下新闻组:");
+	document.write ("<ul>");
+	document.write ("<li><a target='_blank' href='http://msdn.microsoft.com/newsgroups/default.asp?url=/newsgroups/loadframes.asp?icp=msdn&slcid=us&newsgroup=microsoft.public.vsnet.setup'>Visual Studio 安装</a>");
+	document.write ("<li><a target='_blank' href='http://support.microsoft.com'>Microsoft 产品支持</a>");
+	document.write ("</ul>");
+	document.write ("<li>有关此次安装失败的详细信息，请参见安装<a target='_blank' href='file:///" + strPath + "/dd_vsinstall80.txt'>日志文件</a>。");
+	document.write ("</ol>");
+
+</script>
+
+<noscript>
+<table width="100%">
+<tr><td width=36><img src="smallFail.gif"></td>
+	<td><font size=4 color="red"><b>安装失败。</b></font></td>
+</tr>
+</table>
+<img src="redrule.gif" width="100%" height=4><br><br>
+   <ol>
+   <li>有关已知安装问题的信息，请参见 Microsoft Visual Studio 自述文件 Readme.htm，该文件位于 Visual Studio 2005 CD 1 或 DVD 的根目录下。
+   <li>有关 Visual Studio 安装问题及解决方案的知识库文章，请参见 KB 文章 Q319714，该文章位于 
+ <a target='_blank' href='http://support.microsoft.com/default.aspx?scid=kb;zh-cn;319714'>http://support.microsoft.com/default.aspx?scid=kb;zh-cn;319714</a>。
+   <li>要寻求其他 Visual Studio 用户的帮助，请参见以下新闻组:
+   <ul>
+   <li><a target='_blank' href='http://msdn.microsoft.com/newsgroups/default.asp?url=/newsgroups/loadframes.asp?icp=msdn&slcid=us&newsgroup=microsoft.public.vsnet.setup'>Visual Studio 安装</a>
+   <li><a target='_blank' href='http://support.microsoft.com'>Microsoft 产品支持</a>
+   </ul>
+   <li>有关此次安装失败的信息，请参见 %TEMP% 文件夹中的安装日志文件 <b>dd_vsinstall80.txt</b>。
+   </ol>
+</noscript>
+</body>
+</html>
+
+

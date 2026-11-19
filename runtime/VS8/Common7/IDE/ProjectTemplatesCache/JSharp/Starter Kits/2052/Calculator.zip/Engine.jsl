@@ -1,0 +1,311 @@
+﻿package calculator.model;
+
+import java.util.*;
+import calculator.ui.*;
+import calculator.model.mode.*;
+import calculator.model.zeroaryOperations.*;
+import calculator.model.unaryOperations.*;
+import calculator.model.binaryOperations.*;
+import calculator.model.memoryOperations.*;
+import System.Console;
+import System.Windows.Forms.Keys;
+
+/**
+ * 计算器的 controller 类。
+ */
+public final class Engine
+{
+	private static Operation equals = new Equals();
+	/**
+	 * 获取引擎的错误状态
+	 */
+	public static boolean getErrorState()
+	{
+		return errorState;
+	}
+
+	/**
+	 * 获取此计算器的模式
+	 */
+	public static Mode getMode()
+	{
+		return mode;
+	}
+
+	/**
+	 * 获取此计算器的显示
+	 */
+	public static Display getDisplay()
+	{
+		return display;
+	}
+
+	/**
+	 * 设置显示的进制 - 默认值为 10
+	 */
+	public static void setBase(Base base)
+	{
+		// 如果不同则进行
+		if (base != mode.getBase())
+		{
+			double num = mode.getBase().toDouble(display.toString());
+			mode.setBase(base);
+			String strDisplay = mode.getBase().fromDouble(num, mode.getFEMode());
+			display.setDisplay(strDisplay);
+		}
+	}
+
+	/**
+	 * 对输入的数字/小数执行适当的操作。
+	 */
+	public static void enterDigitOrDecimal(char digit)
+	{
+		boolean success = false;
+
+		// 处理错误状态。
+		if (!errorState)
+		{
+			// 其他字符 - 检查其是否有效?
+			if (display.canChange())
+			{
+				// 需要将输入字符添加到显示中
+				if (mode.getBase().isValidChar(digit, display.toString()))
+				{
+					lastInputIsBinaryOperation = false;
+					success = display.appendChar(digit);
+				}
+			}
+			else
+			{
+				// 输入是新的数字 - 即显示为 0
+				if (mode.getBase().isValidChar(digit, String.valueOf(Base.ZERO_DIGIT)))
+				{
+					if (!lastInputIsBinaryOperation)
+					{
+						// 显示无法更改，正在等待另一个
+						// 操作数。清除这两个堆栈。
+						operandStack.clear();
+						operationStack.clear();
+					}
+
+					display.clear();
+					lastInputIsBinaryOperation = false;
+					success = display.appendChar(digit);
+				}
+			}
+		}
+
+		if (!success)
+		{
+			Console.Beep();
+		}
+	}
+
+	/**
+	 * 执行输入的运算。
+	 */
+	public static void enterOperation(Operation op)
+	{
+		// 处理错误状态。
+		if (errorState)
+		{
+			Console.Beep();
+			return;
+		}
+
+		try
+		{
+			String strDisplay;
+
+			if (op.getType() == OperationType.Zeroary)
+			{
+				// 不需要对堆栈设置操作数
+				op.operate(operandStack);
+				lastInputIsBinaryOperation = false;
+				strDisplay = mode.getBase().fromDouble(operandStack.pop(),
+					mode.getFEMode());
+			}
+			else if (op.getType() == OperationType.Unary)
+			{
+				// 对堆栈设置操作数并运算
+				operandStack.push(mode.getBase().toDouble(display.toString()));
+				op.operate(operandStack);
+				lastInputIsBinaryOperation = false;
+				strDisplay = mode.getBase().fromDouble(operandStack.pop(),
+					mode.getFEMode());
+			}
+			else // OperationType.Binary
+			{
+				// 对堆栈设置操作数以进行运算
+				operandStack.push(mode.getBase().toDouble(display.toString()));
+
+				if (lastInputIsBinaryOperation)
+				{
+					// 堆栈上有一个二元运算处于挂起状态。请移除它。
+					operationStack.pop();
+				}
+
+				// 如果此优先级低于最低的优先级，请计算
+				BinaryOperation binOp = (BinaryOperation)op;
+				if ((int)binOp.getPrecedence() <= (int)lowestPrecedence)
+				{
+					evaluate();
+				}
+
+				// 更新最低的优先级
+				if (lowestPrecedence == Precedence.Lowest)
+				{
+					// 设置最低的优先级。
+					lowestPrecedence = binOp.getPrecedence();
+				}
+
+				// 即使现在已计算出结果，也将此运算压入堆栈，
+				// 并且更新显示
+				operationStack.push(op);
+				lastInputIsBinaryOperation = true;
+				strDisplay = mode.getBase().fromDouble(operandStack.peek(),
+					mode.getFEMode());
+			}
+
+			display.setDisplay(strDisplay);
+		}
+		catch (OperationParameterException ex)
+		{
+			errorState = true;
+			display.setDisplay(ex.get_Message());
+		}
+	}
+
+	/**
+	 * 作用于已按下的特殊键
+	 */
+	public static void enterSpecialKeys(Keys keys)
+	{
+		boolean success = false;
+
+		switch (keys)
+		{
+			case Keys.Escape: // “取消”按钮
+				reset();
+				success = true;
+				break;
+
+			case Keys.Delete: // “清除” 按钮
+				if (errorState)
+				{
+					reset();
+				}
+				else
+				{
+					display.clear();
+				}
+
+				success = true;
+				break;
+
+			case Keys.Back:
+				if (!errorState)
+				{
+					success = display.removeChar();
+				}
+				break;
+
+			case Keys.OemMinus:
+				if (!errorState)
+				{
+					success = display.toggleMinus();
+				}
+				break;
+			case Keys.Enter:
+				if (!errorState)
+				{
+					enterOperation(equals);
+					success = true;
+				}
+                                break;
+			default:
+				break;
+		}
+
+		if (!success)
+		{
+			Console.Beep();
+		}
+	}
+
+	/**
+	 * 计算操作数/运算堆栈
+	 */
+	public static void evaluate()
+	{
+		// 计算堆栈中的表达式。
+		// 执行运算，直到运算堆栈变为空为止。
+		while (!operationStack.empty())
+		{
+			// 弹出一个运算并对其进行运算。
+			operationStack.pop().operate(operandStack);
+		}
+
+		lowestPrecedence = Precedence.Lowest;
+	}
+
+	/**
+	 * 重置引擎 - 用于“取消”操作
+	 */
+	public static void reset()
+	{
+		lastInputIsBinaryOperation = false;
+		lowestPrecedence = Precedence.Lowest;
+		errorState = false;
+
+		operandStack.clear();
+		operationStack.clear();
+		display.clear();
+
+		// 重置模式
+		mode.reset();
+	}
+
+	/**
+	 * 不允许创建此类的实例
+	 */
+	private Engine()
+	{
+	}
+
+	/**
+	 * 存储最后一次输入是否为二元运算。
+	 */
+	private static boolean lastInputIsBinaryOperation;
+
+	/**
+	 * 正输入的表达式中最低的运算符优先级。
+	 */
+	private static Precedence lowestPrecedence = Precedence.Lowest;
+
+	/**
+	 * 存储错误状态，在错误状态下，除非按 CE 或 C，
+	 * 否则引擎不会执行任何操作。
+	 */
+	private static boolean errorState;
+
+	/**
+	 * 当前表达式的操作的堆栈。
+	 */
+	private static OperationStack operationStack = new OperationStack();
+
+	/**
+	 * 当前表达式的操作数的堆栈。
+	 */
+	private static OperandStack operandStack = new OperandStack();
+
+	/**
+	 * 当前的计算器模式 - “角度”模式、“反向”模式和进制。
+	 */
+	private static Mode mode = new Mode();
+
+	/**
+	 * 处理每个输入 (数字/操作) 后的显示。
+	 */
+	private static Display display = new Display();
+}

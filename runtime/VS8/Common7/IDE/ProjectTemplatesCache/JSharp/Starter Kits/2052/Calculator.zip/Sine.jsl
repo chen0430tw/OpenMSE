@@ -1,0 +1,52 @@
+﻿package calculator.model.unaryOperations;
+
+import calculator.model.*;
+import calculator.model.mode.*;
+
+public class Sine extends UnaryOperation
+{
+    public double operateUnary(double operand)
+    {
+        AngleMode angle = Engine.getMode().getAngle();
+        if (Engine.getMode().getInverse())
+        {
+            // 求 sine 的反函数时，值的范围应该是 -1 到 1。
+            if ((operand < -1) || (operand > 1))
+            {
+                throw new OperationParameterException("Sine 函数的输入无效");
+            }
+
+            double sineInverse = Math.asin(operand);
+            if (angle == AngleMode.Degrees)
+            {
+                sineInverse = Math.toDegrees(sineInverse);
+            }
+
+            Engine.getMode().setInverse(false);
+            return sineInverse;
+        }
+        else
+        {
+            // 求 sine 的情况
+            if (angle == AngleMode.Degrees)
+            {
+                // sine 函数是周期函数。因此若要避免因舍入
+                // 引起的计算误差，请将角度转换为
+                // 小于 180 度的等效值。
+                if (Math.abs((operand % 360) / 180) > 1)
+                {
+                    operand = operand % 180 * -1;
+                }
+                else
+                {
+                    operand = operand % 180;
+                }
+
+                operand = Math.toRadians(operand);
+            }
+
+            return Math.sin(operand);
+        }
+    }
+}
+

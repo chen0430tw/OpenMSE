@@ -1,0 +1,182 @@
+﻿<html>
+  <head>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <title>正在进行卸载</title>
+  </head>
+
+  <BODY vLink=purple link=blue bgColor=white>
+  <BASEFONT face="宋体, Verdana" color="navy" size="2">
+
+   <script language=javascript>
+   <!--
+
+    var strInput;
+    var strRemainingInput;
+    var strPath;
+    var strErrors;
+    var strRollback;
+    var strReadmePath;
+    var i;
+    var strErrorAnchor;
+    var strInstallAnchor;
+    var strWowFlag;
+    var optErrorFlag;
+    var depCheckFlag;
+
+    strInput=window.location.search.substring(1,window.location.search.length);
+
+    i=strInput.indexOf(";");
+    strErrors=strInput.substring(0,i);
+    strRemainingInput=strInput.substring(i+1,strInput.length);
+    i=strErrors.indexOf("=");
+    strErrors=strErrors.substring(i+1,i+2);
+
+    i=strRemainingInput.indexOf(";");
+    strPath=strRemainingInput.substring(0,i);
+    strRemainingInput=strRemainingInput.substring(i+1,strInput.length);
+    i=strPath.indexOf("=");
+    strPath=strPath.substring(i+1,strPath.length);
+
+    i=strRemainingInput.indexOf("=");
+    strRollback=strRemainingInput.substring(i+1,i+2);
+    strRemainingInput=strRemainingInput.substring(i+3,strInput.length);
+
+    i=strRemainingInput.indexOf(";");
+    strReadmePath=strRemainingInput.substring(0,i);
+    strRemainingInput=strRemainingInput.substring(i+1,strInput.length);
+    i=strReadmePath.indexOf("=");
+    strReadmePath=strReadmePath.substring(i+1,strReadmePath.length);
+
+    i=strRemainingInput.indexOf("=");
+    strWowFlag=strRemainingInput.substring(i+1,i+2);
+    strRemainingInput=strRemainingInput.substring(i+3,strInput.length);
+
+    // Look at remaining input and try to find OptError and Depcheck
+    var optErrorString = "opterror=";
+    var depCheckString = "depcheck=";
+
+    strRemainingInput = strRemainingInput.toLowerCase();
+
+    var optError = strRemainingInput.toLowerCase().match(optErrorString);
+    if (optError)
+    {
+        i=strRemainingInput.indexOf(optErrorString)+(optErrorString.length)-1;
+        optErrorFlag=strRemainingInput.substring(i+1,i+2);
+    }
+
+    var depcheck = strRemainingInput.toLowerCase().match(depCheckString);
+    if (depcheck)
+    {
+        i=strRemainingInput.indexOf("depcheck=")+(depCheckString.length)-1;
+        depCheckFlag = strRemainingInput.substring(i+1,i+2);
+    }
+
+
+    //Get rid of space esc (%20)
+    spaces = new RegExp("\%20", "g");
+    strPath = strPath.replace(spaces , " ");
+    strReadmePath = strReadmePath.replace(spaces , " ");
+
+    // Security precaution
+    forbiddenChars = new RegExp("[<>\'\"]", "g");	// Global search/replace
+    strPath = strPath.replace(forbiddenChars, "");
+    strReadmePath = strReadmePath.replace(forbiddenChars, "");
+
+
+     document.write("<table width=100%>");
+     document.write("<tr>");
+     document.write("   <td width=36><img src=\"file:///"+strReadmePath+"//smallSuccess.gif\">");
+     document.write("   </td>");
+     document.write("   <td valign=\"top\"><font size=4 color=\"green\"><b>卸载完成。</b></font>");
+     document.write("</td></tr>");
+     document.write("</table>");
+     document.write("<img src=\"file:///"+strReadmePath+"/greenrule.gif\" width=\"100%\" height=4><br><br>");
+  
+     document.write("<p ><b>后续步骤: 卸载附加组件</b></p>");
+     document.write("<p>Visual Studio 在安装过程中可能已在您的<span class=GramE>计算机</span>上安装了附加组件。必须使用“添加或删除程序”按照下面所列顺序手动卸载这些组件。</p><p>");
+     document.write("<span style='font-size: 10.5pt'><font color=red><b>注意:</b> </font>卸载这些组件可能会影响其他已安装的依赖于这些组件的应用程序。</span>");
+     document.write("</p><p>");
+     document.write("以下组件可能已与 Visual Studio 一起安装到计算机上:</p>");
+     document.write("<ol>");
+     document.write("<li >Microsoft MSDN 2005 速成版</li>");
+     document.write("<li >Microsoft Visual Studio 2005 Tools for Office Runtime 语言包</li>");
+     document.write("<li >Microsoft Visual Studio 2005 Tools for Office Runtime</li>");
+     document.write("<li >Microsoft Device Emulator 1.0 版</li>");
+     document.write("<li >Microsoft .NET Compact Framework 1.0</li>");
+     document.write("<li >Microsoft .NET Compact Framework 2.0</li>");
+     document.write("<li >Microsoft SQL Mobile 2005 开发工具</li>");
+     document.write("<li >Microsoft Visual J# 2.0 Redistributable</li>");
+     document.write("<li >Microsoft Visual J# 2.0 Redistributable 语言包</li>");
+     document.write("<li >Microsoft Document Explorer 2005</li>");
+     document.write("<li >Microsoft Document Explorer 2005 语言包</li>");
+
+     document.write("<li >Microsoft Data Access Components 2.8 SP1 (仅限 Windows 2000)</li>");
+
+     if(strWowFlag == 1) {
+  	document.write("<li >Microsoft Visual Studio 2005 64 位系统必备</li>");
+	document.write("<li >Microsoft .NET Framework 2.0 SDK (x64)</li>");
+    	document.write("<li >Microsoft Visual Studio 2005 Remote Debugger (x64)</li>");
+    	document.write("<li >Microsoft Visual Studio 2005 Remote Debugger 精简版(x64)</li>");
+     }
+	//document.write("<li>"+ strWin2k + " " + strWowFlag + "</li>");
+    -->
+   </script>
+   <noscript>
+  <table width="100%">
+    <tr>
+      <td width=36><img src="smallSuccess.gif">
+      </td>
+      <td valign="top"><font size=4 color="green"><b>卸载完成。</b></font>
+      </td>
+    </tr>
+  </table>
+  <img src="greenrule.gif" width="100%" height=4><br><br>
+
+  <p ><b>后续步骤: 卸载附加组件</b></p>
+
+  <p>Visual Studio 在安装过程中可能已在
+您的 <span class=GramE>计算机上 </span>安装了附加组件。必须使用“添加或删除程序”按照下面所列顺序手动卸载这些组件。</p>
+  <p>
+  <span style="font-size: 10.5pt"><font color=red><b>注意:</b></font> 卸载这些组件可能会影响
+其他已安装的依赖于这些组件的应用程序。 </span> 
+  </p>
+  <p>
+  以下组件可能已与 Visual Studio 一起安装到计算机上:</p>
+  <ol>
+    <li >Microsoft MSDN 2005 Express Edition</li>
+    <li >Microsoft Visual Studio 2005 Tools for Office Runtime 语言包</li>
+    <li >Microsoft Visual Studio 2005 Tools for Office Runtime</li>
+    <li >Microsoft Device Emulator 1.0 版</li>
+    <li >Microsoft .NET Compact Framework 1.0</li>
+    <li >Microsoft .NET Compact Framework 2.0</li>
+    <li >Microsoft SQL Mobile 2005 开发工具</li>
+    <li >Microsoft Visual J# 2.0 Redistributable</li>
+    <li >Microsoft Visual J# 2.0 Redistributable 语言包</li>
+    <li >Microsoft Document Explorer 2005</li>
+    <li >Microsoft Document Explorer 2005 语言包</li>
+    <li >Microsoft Data Access Components 2.8 SP1 (Only on Windows 2000)</li>
+    <li >Microsoft Visual Studio 2005 64 位系统必备(仅限 64 位) </li>
+    <li >Microsoft .NET Framework 2.0 SDK (x64) (仅限 64 位)</li>
+    <li >Microsoft Visual Studio 2005 Remote Debugger (x64) (仅限 64 位)</li>
+    <li >Microsoft Visual Studio 2005 Remote Debugger 精简版(x64) (仅限 64 位)</li>
+   </noscript>
+  </ol>
+
+  下列组件可能已经和 SQL Server Express 一同安装，需要按下列顺序将其移除:<br>
+  <b>注意:</b> 卸载 SQL Express 实例时将保留用户创建的数据库，以后可以将这些数据库重新附加到新的实例。<br>
+  <ol>
+    <li >Microsoft SQL Server 2005 Express CTP</li>
+    <li >Microsoft SQL Server 2005 Express Tools CTP</li>
+    <li >Microsoft SQL Server 安装支持文件</li>
+    <li >Microsoft SQL Native Client</li></ol>
+  以下组件必须最后卸载:<br><br>
+  <ol>
+    <li >MSXML 6.0 分析器和 SDK (仅限 32 位)</li>
+    <li >MSXML 6.0 分析器和 SDK x64 (仅限 64 位)</li>
+    <li >Microsoft .NET Framework 2.0 语言包</li>
+    <li >Microsoft .NET Framework 2.0</li>
+  </ol>
+
+</body>
+
+</html>

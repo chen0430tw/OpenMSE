@@ -1,0 +1,2 @@
+# Preserve imported runtime files byte-for-byte.
+runtime/** -text -diff

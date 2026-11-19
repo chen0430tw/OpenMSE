@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+
+
+<!--要阅读本帮助文件，请在“解决方案资源管理器”中右击文件名，然后选择“在浏览器中查看”-->
+    
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>屏幕保护程序初学者工具包</title>
+<style>
+<!--
+BODY         { background: url('Images/top-vb.gif') repeat-x; font-family: Verdana; font-size: 67% }
+.maindiv     { background: url('Images/side-vb.gif') repeat-y; padding-left: 55px; padding-top: 5px; position: relative; height: 50px }
+P            { margin-top: 0; margin-bottom: 6px; line-height:130% }
+H1           { margin-top: 20px; margin-bottom: 12px; font-size:190% }
+H2           { color: #585F56; left: -55px; position: relative; margin-top: 21px; margin-bottom: 9px; font-size:170% }
+H3           { margin-top: 21px; margin-bottom: 9px; font-size: 140%;  font-weight: bold}
+H4           { margin-top: 18px; margin-bottom: 9px; font-size: 140%; font-weight: bold}
+OL           { margin-top: 0; margin-bottom: 9px; line-height:130%}
+UL           { margin-top: 0; margin-bottom: 9px; line-height:130%}
+LI           { margin-top: 0; margin-bottom: 6px }
+BLOCKQUOTE   { margin-left: 20px }
+TABLE        { padding: 4px; BACKGROUND: #f8f7ef; BORDER: #DDDCD6 1px solid; BORDER-COLLAPSE: collapse; margin-bottom: 9px; }
+TR           { vertical-align: top} 
+TD           { padding: 4px; font-family: Verdana; font-size: 67%; line-height: 130%} 
+.contents    { line-height: 150% }
+DIV.CodeBlock   { font-family: "Courier New"; font-size: 100%; margin-bottom: 6px; BACKGROUND: #f8f7ef; BORDER: #eeede6 1px solid; padding: 10px; }
+.CodeInline  { font-family: "Courier New" }
+.ProcedureLabel {margin-top: 12px; font-style: italic; font-weight: bold; color: #0D4CC3 } 
+.FileNameCol { padding: 6px; BACKGROUND: #eeede6; width=220px; font-weight: bold}
+-->
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0" rightmargin="20">
+<div class="maindiv">
+
+<a name="top">
+
+<!-- 主要内容开始 -->
+
+</a>
+
+<p><a name="top">Microsoft Visual Basic 初学者工具包 </a> </p>
+<h1><a name="top">初学者工具包：屏幕保护程序</a></h1>
+<p class="contents"><font color="#003300"><b><a name="top">目录：</a></b></font></p>
+<p class="contents"><font color="#003300"> <a href="#Introduction">介绍</a><br> <a href="#Goals">目标</a><br> <a href="#GettingStarted">入门</a><br> <a href="#HowItWorks">屏幕保护程序的工作方式</a><br> <a href="#Concepts">概念</a><br> <a href="#Extending">扩展屏幕保护程序</a><br> <a href="#ForMoreInformation">有关更多信息</a><br> </font></p>
+
+<h2><A href="#top"><IMG src="Images\topjump-vb.gif" border=0></A><a name="Introduction">介绍</a></h2>
+<p><img border="0" src="Images\screensaver_thumbnail.png" width="250" height="177" alt="屏幕保护程序" align="right" style="margin-left: 15px; margin-bottom: 10px"
+>
+<p>此 Visual Basic 初学者工具包是一个可以直接运行的 Windows 屏幕保护应用程序。此屏幕保护程序显示一系列图像（这些图像可以是默认图像，也可以是来自您指定目录的图像），这些图像上重叠了来自活动 Internet <a href="http://go.microsoft.com/fwlink/?linkid=47765">RSS</a>（Really Simple Syndication，真正简单的聚合）的文本。该项目可以直接编译并运行，但您也可以通过少量的额外编程对它进行自定义。在<a href="#Extending">扩展屏幕保护程序</a>一节中，我们提供了一组建议。您还可以免费使用此源代码作为自己项目的基础，并可与其他人共享您的工作或将该工作上载到 Internet。</p>
+
+<p><b>注意：</b> 此文档假定您对编程概念和 Visual Basic 环境有基本了解。可以通过单击主菜单上的“帮助”，然后选择“目录”、“索引”或“搜索”来了解有关产品文档中这些主题的更多信息。<b></b><b></b><b></b><b></b>也可以通过如下方法访问帮助：将鼠标光标定位在语言关键字或用户界面元素（例如窗口或对话框）上，然后按 <b>F1</b>。</p>
+
+<h2><A href="#top"><IMG src="Images\topjump-vb.gif" border=0></A><a name="Goals">目标</a></h2>
+	<p class="MsoNormal">
+
+		通读此初学者工具包文档后，您将了解如何安装和配置屏幕保护应用程序，源代码是如何组织的，应用程序是如何工作的，以及如何使用 Visual Basic 对应用程序进行自定义。此初学者工具包演示了下面一些技术：</p>
+	<ul>
+		<li>GDI+ &mdash; 设置图形和文本的格式并进行显示</li>
+		<li>System.XML &mdash; 使用 XmlTextReader 和 XmlNode 读取包含 RSS 源信息的 XML 文件</li>
+		<li>WebClient 类 &mdash; 从网页下载数据</li>
+		<li>RSS &mdash; 包含 RSS 源、频道和项</li>
+		<li>Visual Basic 语言 &mdash; 包括泛型</li>
+	</ul>
+				
+			
+
+
+<h2><A href="#top"><IMG src="Images\topjump-vb.gif" border=0></A><a name="GettingStarted">入门</a></h2>
+
+<h3>生成并运行屏幕保护程序</h3>
+
+<p>将项目加载到 Visual Basic 环境后，只需一个步骤即可编译和运行程序。 </p>
+
+<p class="ProcedureLabel">生成并运行屏幕保护应用程序</p>
+
+<ul>
+	<li>按 F5 以在“调试器”下生成并启动屏幕保护程序。<b></b><b></b></li>
+</ul>
+
+<p>屏幕保护程序启动并开始显示来自 RSS 源的最新文章。按任意键或移动鼠标都将导致退出屏幕保护程序。</p>
+
+<h3>快速更改源代码</h3>
+
+<p>通过编辑源代码来更改该程序的工作方式非常简单。下面是一个示例，该示例将您自己的文本字符串添加到屏幕保护程序的显示内容中。</p>
+
+<p class="ProcedureLabel">显示额外的文本行：</p>
+
+<ol>
+	<li>找到“解决方案资源管理器”窗口；其默认位置位于 Visual Basic 环境的右上角。<b></b>在“解决方案资源管理器”窗口中右击“ScreenSaverForm.vb”，然后选择“查看代码”，在代码视图中打开“ScreenSaverForm.vb”。<b></b><b></b><b></b><b></b></li>
+	<li>滚动源代码直到看见 <b>OnPaint</b> 方法，或从代码视图右上方的下拉列表中选择此方法。</li>
+	<li><p>在此方法的结尾处键入以下代码：</p>
+	<div class="CodeBlock">e.Graphics.DrawString(&quot;<font color="#800000">&lt;您的姓名&gt;Visual Basic Screen Saver</font>&quot;, rssView.TitleFont, Brushes.Orange, <font color="#0000FF">New</font> PointF(0, 0))</div></li>
+	<li><p>按 <b>F5</b> 再次运行该应用程序。</p>
+	</li>
+</ol>
+
+<p>现在该屏幕保护程序上显示了标题。</p>
+
+<h3>访问“选项”对话框</h3>
+
+<p>屏幕保护程序初学者工具包也包含一个“选项”对话框，用户可以在此对话框中更改屏幕保护程序的设置。可以尝试此“选项”对话框，方法是转到“控制面板”中的“显示”文件夹，选择“屏幕保护程序”选项卡，然后单击“新闻”屏幕保护程序的“设置”按钮。<b></b></p>
+	<p>打开“选项”对话框的另一种方法是：当从 Visual Studio 内打开可执行文件时，直接将命令行参数发送给该文件。如果使用的是 Windows 98，请注意该计算机的其他用户也可看见在“选项”对话框中输入的数据。
+	</p>
+<p class="ProcedureLabel">强制显示“选项”对话框：</p>
+
+<ol>
+	<li>打开“解决方案资源管理器”，双击“屏幕保护程序”项目下的“我的项目”节点。<br>这将会显示用于配置项目的选项。 </li>
+	<li>单击“调试”选项卡，然后找到“命令行参数”文本框。 </li>
+	<li>在文本框中键入 <b>/c</b>。<br>这样便可通知 Visual Basic 使用 <b>/c</b> 命令行参数运行屏幕保护程序。 </li>
+	<li>按 <b>F5</b> 启动该应用程序。<br>出现“选项”对话框。</li>
+	<li>通过选择其他背景图像目录或输入新的 RSS 源来测试这些选项。 </li>
+	<li>单击“确定”关闭对话框。</li>
+</ol>
+
+<p>在选项模式中更改设置后，可通过输入 <b>/s</b>（而不是 <b>/c</b>）作为命令行参数来再次运行该屏幕保护程序。</p>
+
+
+
+
+<h3>在计算机上安装屏幕保护程序</h3>
+
+<p>下面的步骤描述了如何在计算机上安装屏幕保护程序。</p>
+
+<p class="ProcedureLabel">安装屏幕保护程序：</p>
+
+<ol>
+	<li>
+	<p>如果还未安装初学者工具包，请将它加载到 Visual Basic 中。</p></li>
+	<li>
+	<p>在“文件”菜单中，单击“全部保存”。</p></li>
+	<li>
+	<p>如果提示您输入此项目的保存位置，请选择一个目录，或接受默认位置。请记住保存项目的位置，默认情况下它位于 <b>\My Documents\Visual Studio 2005\Projects</b> 下的目录中。</p></li>
+	<li>
+	<p>在“生成”菜单上，单击“生成解决方案”。<br>这可生成屏幕保护程序的可执行文件。</p></li>
+	<li>
+	<p>打开在步骤 3 中指定的包含已保存项目的目录。</p></li>
+	<li>
+		<p>
+			打开 <b>bin\Debug</b> 子目录。可执行文件的调试版本就放置在这里。它的默认名为 <b>ScreenSaver1.exe</b>，但是您也许在第一次创建该项目时已经为它指定了其他名称。将此文件的扩展名“.exe”更改为“.scr”。
+			<P>
+				<b>注意：</b>如果您在 Windows 资源管理器中看不到文件扩展名，请在“工具”菜单下单击“文件夹选项”，然后单击“查看”选项卡，取消选中标记为“隐藏已知文件类型的扩展名”的复选框。 </P>
+		</p>
+	</li>
+	<li>
+		<p>右击 .scr 文件并选择“安装”。<br>这将打开“Windows 屏幕保护程序”对话框。
+	</p></li>
+	
+	<li>
+	<p>在“Windows 屏幕保护程序”对话框中单击“预览”按钮。<br>屏幕保护程序启动。按任意键可停止它。</p>
+</li>
+<li>
+	<p>
+		在“Windows 屏幕保护程序”对话框中单击“设置”按钮以查看屏幕保护程序选项。<b></b>尝试更改背景图像或 RSS 源。</p></li>
+	<li>
+	<p>单击“确定”。 <br> &nbsp;</p></li>
+</ol>
+<p>您现在已安装了自己的 Windows 屏幕保护程序。</p>
+
+
+<h3>与朋友共享您自己的屏幕保护程序</h3>
+
+<p>现在您拥有了自定义版本的屏幕保护程序，便可与朋友和家人共享此程序。请注意，该屏幕保护应用程序使用 2.0 版的 .NET Framework，因此运行该程序的任何计算机都需要安装此版本的 Framework。.NET Framework 作为 Visual Studio 的一部分进行安装，但它也可以从 <a href="http://go.microsoft.com/fwlink/?linkid=47766">Microsoft .NET Framework Developer Center</a> 直接安装。如果您计划与朋友共享屏幕保护程序，您还应告诉他们需要安装新版的 .NET Framework。</p>
+
+<h2><A href="#top"><IMG src="Images\topjump-vb.gif" border=0></A><a name="HowItWorks">屏幕保护程序如何工作 </a></h2>
+
+<p>当 Windows 由于不活动状态持续了一段时间而激活屏幕保护程序时，它将启动一个名为“ScreenSaver1.scr”的可执行文件，除非您已为该文件指定了其他名称。<br> <br>如果没有请求屏幕保护程序打开“选项”对话框，则该程序会创建全屏的 Windows 窗体，插入默认背景图像，并访问 Internet 以下载和显示来自 RSS 源的数据。两个计时器会更新当前所选主题并更改背景图像。<br><br>如果移动鼠标或单击任意一点，或者按任何键，该程序都会立即退出。</p>
+
+<h3>屏幕保护程序项目文件</h3>
+
+<p>此项目包含八个不同的 Visual Basic 源代码文件。</p>
+
+<table border="1" bordercolor= #DDDCD6 width="100%" style="border-collapse: collapse">
+	<tr>
+		<td class="FileNameCol">MyEvents.vb</td>
+		<td>包含用于处理命令行开关的代码。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">OptionsForm.vb</td>
+		<td>包含显示设置选项的 Windows 窗体。通过此对话框，可选择屏幕保护程序运行时要使用的背景图像和 RSS 源。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">ScreenSaverForm.vb</td>
+		<td>包含主屏幕保护程序 Windows 窗体。在此全屏窗体上读取并显示用户选择的背景图像和 RSS 源。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">RSSFeed.vb</td>
+		<td>包含表示 RSS 2.0 源的类。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">RssChannel.vb</td>
+		<td>包含表示 RSS 频道的类。所有 RSS 源中都有一个频道。它表示文章的集合。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">RSSItem.vb</td>
+		<td>包含表示 RSS 项的类。RSS 频道可拥有任意数量的 RSS 项。一个 RSS 项表示一篇文章、一个博客贴子或一段新闻报道。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">Item.vb</td>
+		<td>包含表示项的类，即具有标题和说明的对象。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">ItemDescriptionView.vb</td>
+		<td>包含用来显示 RSS 源项的说明的代码。它以慢慢淡入淡出的效果显示项的文本。</td>
+	</tr>
+	<tr>
+		<td class="FileNameCol">ItemListView.vb</td>
+		<td>包含用来显示 RSS 源项的标题的代码。它跟踪当前所选文章，并可向前或向后滚动该文章。</td>
+	</tr>
+	</table>
+
+
+<h2><A href="#top"><IMG src="Images\topjump-vb.gif" border=0></A><a name="Concepts">概念</a></h2>
+
+<h3>Windows 与屏幕保护程序的交互方式</h3>
+
+<p>Windows 屏幕保护程序是一个可执行文件，用于打开显示不断变化的图形显示（例如“飞越星空”或选定的一组照片）的全屏窗口。任何可执行文件都可用作 Windows 屏幕保护程序。要使可执行文件出现在屏幕保护程序选择对话框中，只需将该文件放在 Windows 目录中（如果使用的是 Windows 98 或 Windows XP，则该目录为系统驱动器中的 \Windows\System32；如果使用的是 Windows NT 或 Windows 2000，则该目录为 \WinNT\System32）。<br><br>当 Windows 运行屏幕保护程序时，它使用以下三个命令行选项之一启动该程序：</p>
+<ul>
+	<li><b>/s</b> – 通知屏幕保护程序开始显示。 </li>
+	<li><b>/c</b> – 通知屏幕保护程序打开其“设置”对话框。</li>
+	<li><b>/p</b> – 通知屏幕保护程序显示较小的预览。</li>
+</ul>
+<p>此初学者工具包在 <b>MyEvents.vb</b> 源文件中处理这些参数。您可以查看 MyEvents.vb 文件的内容，方法是在“项目”菜单中选择“显示所有文件”，然后在“解决方案资源管理器”中展开“我的项目”节点。MyEvents.vb 在此文件夹中。当您查看该文件中的代码时，将发现此初学者工具包没有实现 <b>/p</b> 参数。</p>
+<h3>使用设置和资源设计器存储选项</h3>
+<p>初学者工具包可在两种不同模式中运行，因此它需要用一种方法来在这两种会话之间存储它的设置，这就需要使用设置设计器。通过在“解决方案资源管理器”中双击“我的项目”节点，然后单击“设置”选项卡，便可看到此设计器。使用此设计器，您可以列出程序希望设置并能够以下面的格式从代码访问的所有设置：<br> <br> <font size="2"><span style="font-family: Courier">My.Settings.&lt;SettingName&gt;</span></font></p>
+<p><br>类似地，资源设计器用于存储默认的背景图像和 RSS 源。通过在“解决方案资源管理器”中右击 <b>ScreenSaver</b> 解决方案节点，选择“属性”，然后单击“资源”选项卡，便可看到此设计器。</p>
+
+<h3>XML 和 RSS</h3>
+
+<p>RSS 源的格式为 XML，用于汇总 Web 上内容。站点经常使用它们来发布自己的当前新闻文章或博客贴子的列表。RSS 源具有包含一个 <b>&lt;channel&gt;</b> 节点的 <b>&lt;rss&gt;</b> 节点。<b>&lt;channel&gt;</b> 节点有一个或多个 &lt;item&gt; 节点，每个 item 节点表示源中的一篇文章或一个博客贴子。它还包含一个 <b>&lt;title&gt;</b> 元素，该元素含有频道的标题。每个 <b>&lt;item&gt;</b> 都可包含标题、链接和说明。下面是一个非常简单的示例。</p>
+<p>&nbsp;</p>
+
+<div class="CodeBlock">
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New; color: blue">&lt;</span><span style="font-size: 10.0pt; font-family: Courier New; color: maroon">rss</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue"> </span> <span style="font-size: 10.0pt; font-family: Courier New; color: red"> version</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue">=</span><span style="font-size: 10.0pt; font-family: Courier New">&quot;<span style="color:blue">2.0</span>&quot;<span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">channel</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">title</span><span style="color:blue">&gt;</span>我的 RSS 源<span style="color:blue">&lt;/</span><span style="color:maroon">title</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">description</span><span style="color:blue">&gt;</span>一些文章。<span style="color:blue">&lt;/</span><span style="color:maroon">description</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">link</span><span style="color:blue">&gt;</span>http://msdn.microsoft.com/<span style="color:blue">&lt;/</span><span style="color:maroon">link</span><span style="color:blue">&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">item</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">title</span><span style="color:blue">&gt;</span>文章 1<span style="color:blue">&lt;/</span><span style="color:maroon">title</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">description</span><span style="color:blue">&gt;</span>文章摘要。<span style="color:blue">&lt;/</span><span style="color:maroon">description</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">&lt;</span><span style="color:maroon">link</span><span style="color:blue">&gt;</span>http://msdn.microsoft.com/netframework<span style="color:blue">&lt;/</span><span style="color:maroon">link</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;/</span><span style="color:maroon">item</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">item</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">title</span><span style="color:blue">&gt;</span>文章 2<span style="color:blue">&lt;/</span><span style="color:maroon">title</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">description</span><span style="color:blue">&gt;</span>一些其他文章摘要。<span style="color:blue">&lt;/</span><span style="color:maroon">description</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;</span><span style="color:maroon">link</span><span style="color:blue">&gt;</span>http://msdn.microsoft.com/vbasic/<span style="color:blue">&lt;/</span><span style="color:maroon">link</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; <span style="color:blue">&lt;/</span><span style="color:maroon">item</span><span style="color:blue">&gt;</span></span></p>
+		<p class="MsoNormal">
+		<span style="font-size: 10.0pt; font-family: Courier New">&nbsp; <span style="color:blue">&lt;/</span><span style="color:maroon">channel</span><span style="color:blue">&gt;</span></span></p>
+		<span style="font-size: 10.0pt; font-family: Courier New; color: blue"> &lt;/</span><span style="font-size: 10.0pt; font-family: Courier New; color: maroon">rss</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue">&gt;</span>
+</div>
+
+<h2><A href="#top"><IMG src="Images\topjump-vb.gif" border=0></A><a name="Extending">扩展屏幕保护程序</a></h2>
+
+<h3>添加键盘支持</h3>
+
+<p>增强屏幕保护程序的一种简单方法是添加键盘支持。例如，可允许用户使用光标键来选择当前的 RSS 项。以下步骤说明如何进行操作。</p>
+
+<p class="ProcedureLabel">添加键盘支持：</p>
+
+<ol>
+	<li>在“解决方案资源管理器”中，右击“ScreenSaverForm.vb”，然后选择“查看设计器”。<b></b><b></b>
+	</li>
+	<li>如果未显示“属性”窗口，则通过单击“视图”菜单然后选择“属性窗口”来打开它。<b></b><b></b><b></b></li>
+	<li>在“属性”窗口的下拉列表中，选择“ScreenSaverForm”。<b></b><b></b></li>
+	<li>单击“事件”按钮（闪电形按钮）来查看窗体可引发的事件。</li>
+	<li>找到 <b>KeyDown</b> 事件。它列出一个方法 <font face="Courier">ScreenSaverForm_KeyDown</font> 作为该事件的处理程序。</li>
+	<li>双击 <b>KeyDown</b> 事件。<br>这可打开代码视图，并显示 <font face="Courier">ScreenSaverForm_KeyDown</font> 方法。</li>
+	<li><p>使用以下内容替换行 <font face="Courier">Close()</font>：</p>
+	<div class="CodeBlock">
+		<font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">Select Case</font> e.KeyCode<br>
+	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">Case</font> Keys.Down<br> &nbsp;</font> <span style="color:gray; font-size:10.0pt; font-family:Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '向下滚动文章。 </span><font size="2"><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rssView.NextArticle()<br>
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">Case</font> Keys.Up<br>
+		
+		</font><font size="2" color="#808080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '</font><span style="color:gray; font-size:10.0pt; font-family:Courier New"> 向上滚动文章。</span><font size="2"><br>
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rssView.PreviousArticle()<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		<font color="#0000FF">Case Else</font><br>
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Close()<br>
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">End Select</font></font>
+
+</div>
+	<li>保存文件，然后按 <b>F5</b> 运行此项目。</li>
+	<li>此屏幕保护程序运行时，您可以按“向上键”和“向下键”来更改当前所选文章。</li>
+</ol>
+<h3>更多建议</h3>
+
+<p>该屏幕保护应用程序设计为易于扩展和自定义。下面是如何扩展它的一些建议:</p>
+
+<ul>
+	<li><i></i><b>选择自己的内置默认图像</b>：<br>将默认的屏幕保护程序图像更改为您所选择的图片。</li>
+	<li><i></i><b>在右上角显示气象信息</b>：<br>使用 Web 服务（如<a href="http://go.microsoft.com/fwlink/?LinkId=47764">此服务</a>）来检索气象信息，然后在屏幕的右上角显示一些当前的气象详细信息。</li>
+	<li><i></i><b>生成自己的屏幕保护程序</b>：<br>使用另一个显示完全不同的屏幕保护程序的 Windows 窗体替换 <b>ScreenSaverForm</b>。看看能否从现有的 Windows 屏幕保护程序中得到些启发，想出一些新的创意吗？（“飞越星空”和“三维管道”就是这样完成的。）<b>MyEvents.vb</b> 文件处理所有支持屏幕保护程序的命令行选项。</li>
+	<li><i></i><b>多个 RSS 源</b>：<br>扩展“选项”对话框以使用户能够选择一组用来从中收集新闻文章的 RSS 源。<b></b>这可通过几种方法来实现： <br>1.“选项”对话框使用户能够选择包含 RSS 源列表的 OPML 文件，<br>- 或 -<br>2.“选项”对话框使用户能够填写 RSS 源列表。<br>加载屏幕保护程序时可选择随机的新闻源，之后，当屏幕保护程序每次显示完一个新闻源的内容时，都可选择一个新的源。</li>
+	<li><i></i><b>完成 RSS 类的实现</b>：<br> 随此初学者工具包提供的 RSS 类不支持整个 <a href="http://go.microsoft.com/fwlink/?linkid=47765">RSS 2.0 规范</a>。可将规范的其余部分添加到这些类中。然后可将这些类打包为 dll，并在其他应用程序中重新使用。</li>
+	<li><i></i><b>重用 RSS 类</b>：<br>RSS 类可以在另一个应用程序中重用。一些可能的用途包括：编写自己的 RSS 聚合程序，或创建每小时弹出新文章的系统栏应用程序。&nbsp; 
+	</li>
+</ul>
+
+
+<h2><A href="#top"><IMG src="Images\topjump-vb.gif" border=0></A><a name="ForMoreInformation">更多信息</a></h2>
+
+<h3>联机资源</h3>
+
+<ul>
+	<li><a href="http://go.microsoft.com/fwlink/?linkid=30034">提供对此文档的反馈意见</a></li>
+	<li><a href="http://www.microsoft.com/china/msdn/developercenter/VB/default.mspx">MSDN 上的 Visual Basic</a></li>
+	<li><a href="http://go.microsoft.com/fwlink/?linkid=47765">RSS 2.0 规范</a></li>
+	<li><a href="http://www.microsoft.com/china/technet/abouttn/rss/default.mspx">MSDN RSS 源</a></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>
+<a href="http://www.microsoft.com/china/mscorp/legal/">&copy; Microsoft Corporation 和/或其供应商。保留所有权利。使用条款。</a>
+</p>
+
+<!-- 不要编辑下行  -->
+<p>&nbsp;</p>
+</div>
+</body>
+</html>

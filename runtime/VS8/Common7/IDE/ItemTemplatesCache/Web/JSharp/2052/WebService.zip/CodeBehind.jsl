@@ -1,0 +1,20 @@
+﻿import System.Web.*;
+import System.Web.Services.*;
+import System.Web.Services.Protocols.*;
+
+/** @attribute WebService(Namespace = "http://tempuri.org/") */
+/** @attribute WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)*/
+public class $codebehindclassname$ extends System.Web.Services.WebService {
+
+        public $codebehindclassname$ () {
+
+            //如果使用设计的组件，请取消注释以下行 
+            //InitializeComponent(); 
+        }
+
+	/** @attribute WebMethod() */
+	public String HelloWorld() {
+		return "Hello World";
+	}
+
+}

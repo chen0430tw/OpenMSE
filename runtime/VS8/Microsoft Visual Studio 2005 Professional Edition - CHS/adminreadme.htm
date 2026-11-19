@@ -1,0 +1,743 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:o>
+	<HEAD>
+		<META content="True" name="vs_showGrid">
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<STYLE>BODY { PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 10pt; BACKGROUND: #ffffff; PADDING-BOTTOM: 12pt; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif }
+	.banner { PADDING-RIGHT: 0px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10pt; PADDING-BOTTOM: 6pt; WIDTH: 100%; PADDING-TOP: 6pt; BACKGROUND-COLOR: #ff9933; TEXT-ALIGN: left }
+	.tblpara { MARGIN-LEFT: 5px }
+	H1 { FONT-WEIGHT: bold; FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px }
+	H2 { FONT-WEIGHT: bold; FONT-SIZE: 11pt; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px }
+	H3 { FONT-WEIGHT: bold; FONT-SIZE: 10pt; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 20px }
+	H4 { FONT-WEIGHT: bold; FONT-SIZE: 10pt; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 35px }
+	TABLE { BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 100%; MARGIN-BOTTOM: 12pt; MARGIN-LEFT: 30px; BORDER-LEFT: #cccccc 1px solid; MARGIN-RIGHT: 30px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff }
+	TH { PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10pt; BACKGROUND: #cccccc; PADDING-BOTTOM: 6pt; VERTICAL-ALIGN: top; PADDING-TOP: 6pt; TEXT-ALIGN: left }
+	TD { BACKGROUND: #ffffff; VERTICAL-ALIGN: top }
+	P { MARGIN-LEFT: 40px }
+	BLOCKQUOTE.dtBlock { MARGIN: 0.5em 1.5em 0.5em 2em }
+	A:link { COLOR: #0000ff }
+	A:visited { COLOR: #666699 }
+	A:hover { COLOR: #3366ff }
+	OL { MARGIN: 0.5em 0em 0em 2em }
+	UL { MARGIN: 0.5em 0em 0em 2em }
+	LI { MARGIN-BOTTOM: 0.5em; MARGIN-LEFT: "40px"}
+	UL P { MARGIN-LEFT: 0em }
+	OL P { MARGIN-LEFT: 0em }
+	DL P { MARGIN-LEFT: 0em }
+	UL P.label { MARGIN-TOP: 0.5em }
+	OL P.label { MARGIN-TOP: 0.5em }
+	DL { MARGIN-TOP: 0em; PADDING-LEFT: 1px }
+	DD { MARGIN-BOTTOM: 0em; MARGIN-LEFT: 1.5em }
+	DT { MARGIN-TOP: 0.5em }
+	PRE { MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 0.5em }
+	PRE { FONT: 100% Courier New, Courier, mono; COLOR: #000066 }
+	CODE { FONT: 100% Courier New, Courier, mono; COLOR: #000066 }
+	.code { FONT: 100% Courier New, Courier, mono; COLOR: #000066 }
+	PRE B { LETTER-SPACING: 0.1em }
+	CODE B { LETTER-SPACING: 0.1em }
+	PRE.syntax { BORDER-RIGHT: #999999 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #999999 1px solid; MARGIN-TOP: 1em; PADDING-LEFT: 8px; BACKGROUND: #cccccc; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 4px; BORDER-LEFT: #999999 1px solid; CURSOR: text; COLOR: #000000; PADDING-TOP: 4px; BORDER-BOTTOM: #999999 1px solid }
+	OL DIV.tablediv { MARGIN-TOP: 0em }
+	UL DIV.tablediv { MARGIN-TOP: 0em }
+	</STYLE>
+		<META content="MSHTML 6.00.2900.2180" name="GENERATOR">
+	</HEAD>
+<body>
+		<DIV class="banner" id="DIV1"><a name="top">Microsoft Visual Studio 2005</a></DIV>
+		<H1>企业网络部署自述文件</H1>
+		<br /> <a href="#1" style="margin-left: 30px">1.&nbsp;  简介</a><br /> <a href="#2" style="margin-left: 30px">2.&nbsp;通过管理员安装模式部署 Visual Studio 2005</a><br /> <a href="#2.1" style="margin-left: 45px">2.1 &nbsp; 运行管理员安装模式</a><br /> <a href="#2.2" style="margin-left: 45px">2.2&nbsp;  分别部署各个 Visual Studio 组件</a><br /> <a href="#2.3" style="margin-left: 45px">2.3 &nbsp; 安装维护</a><br /> <a href="#3" style="margin-left: 30px">3.&nbsp;使用 Active Directory 部署 Visual Studio 2005</a><br /> <a href="#3.1" style="margin-left: 45px">3.1 &nbsp; 部署 Visual Studio 2005 时的系统必备</a><br /> <a href="#3.2" style="margin-left: 45px">3.2 &nbsp; 使用 Active Directory 部署组件</a><br /> <a href="#3.3" style="margin-left: 45px">3.3 &nbsp; 为 Visual Studio 安装创建转换</a><br /> <a href="#3.4" style="margin-left: 45px">3.4 &nbsp; 使用组策略对象创建部署</a><br /> <a href="#4" style="margin-left: 30px">4.&nbsp;指定 Watson 设置</a><br /> <a href="#5" style="margin-left: 30px">5.&nbsp;已知的安装问题</a><br /> <a href="#5.1" style="margin-left: 45px">5.1.&nbsp;无法创建数据文件</a><br /> <a href="#5.2" style="margin-left: 45px">5.2.&nbsp;用户特定数据的可见性</a><br /> <a href="#6" style="margin-left: 30px">6.&nbsp;疑难解答</a><br /> <a href="#6.1" style="margin-left: 45px">6.1.&nbsp;Visual Studio 日志文件位置</a><br /> <a href="#6.2" style="margin-left: 45px">6.2.&nbsp;Windows Installer 错误代码</a><br /> <a href="#7" style="margin-left: 30px">7.&nbsp;部署 Visual Studio Service Release</a><br />     
+		<H2><a name="1">1. 简介</a></H2>
+		<p>Microsoft Visual Studio 2005 提供了以下两种便于部署到现场客户端的方法：</p>
+		    <ul>
+		        <li>管理员安装模式<br /> 使用此方法，用户可以通过 Microsoft Systems Management Server (SMS) 或其他软件分发工具进行部署。最初由网络管理员运行安装程序以选择要部署的功能。系统根据管理员的选择创建一个 .ini 文件，然后，通过在无人参与模式下运行安装程序并指向生成的 .ini 文件来进行部署。在无人参与模式下运行时，安装程序将安装指定的选项，而不进行提示。如果发生错误，安装程序将因失败而自行退出。<br /> <br /> 有关使用 SMS 部署 Visual Studio 的更多信息，请参见 KB 文章 327792“HOW TO: Deploy Visual Studio .NET 2005 by Using Systems Management Server”（如何：使用 Systems Management Server 部署 Visual Studio .NET 2005）（位于 <a href=http://go.microsoft.com/fwlink/?LinkId=51517>http://go.microsoft.com/fwlink/?LinkId=51517</a>）。 
+		        </li>
+		        <li>Active Directory 部署<br /> 此方法使网络管理员可以借助 Active Directory 来部署 Visual Studio。网络管理员首先将所需的包解压缩到不同的文件夹中，然后按指定的顺序来部署所需的 Visual Studio 组件。接着，将 .msi 文件添加到为 Visual Studio 部署创建的 Active Directory 组策略中。所有后续组件都应该按照它们的部署顺序添加到该组策略中。启用此组策略后，属于该组策略的所有客户端都将在启动时自动安装这些组件。如果发生错误，安装程序将因失败而自行退出。
+		        </li>
+		    </ul>
+		    <p><b>说明：</b></p>
+		        <ol>
+		        <li> 本文档所提到的软件（包括但不限于 Microsoft Visual Studio 2005、Active Directory 和 Visual SourceSafe）均受许可条款和条件的制约。这些说明假定软件的相应被许可方已查看并接受此类许可条款和条件。这些说明不免除此类许可协议中的任何条款和条件。
+</li>
+		        <li>不能在装有 Intel Itanium 处理器的计算机上安装 Visual Studio 2005。将 Visual Studio 2005 MSI 部署到装有 Itanium 处理器的计算机的尝试将会失败。</li>
+		        <li>Visual Studio 2005 安装中不包括 Visual SourceSafe。但是，您可以将 Visual SourceSafe 的内容复制到服务器上的一个单独的文件夹中，以便于通过网络来单独安装这些产品。</li>    
+		        <li>对于 Windows XP、Windows 2000 和 Windows 2003，必须在计算机上安装 Windows Installer 3.1。要下载 Windows Installer 3.1，请转到 <a href=http://go.microsoft.com/fwlink/?LinkId=51558>http://go.microsoft.com/fwlink/?LinkId=51558</a>。</li> 
+		        </ol>
+		<h6 style="margin-left: 40px"><a href="#top">返回页首</a></h6>
+		<H2><a name="2">2. 通过管理员安装模式部署 Visual Studio 2005</a></H2>
+		<H3><a name="2.1">2.1 运行管理员安装模式</a></H3>
+	    <h4>步骤 1：检查系统必备组件</h4>	
+		<p>在进行管理员安装过程这一阶段之前，必须在目标客户端上安装 Visual Studio 的系统必备组件。要安装任何系统必备组件或可选组件，目标计算机上都必须要有 Windows Installer 3.1。下面列出了 Visual Studio 2005 必需的组件。如果不符合系统必备要求，则 Visual Studio 无人参与安装将失败。</p>
+	        <ul>
+	        <li>在 Windows 2003 上，要求安装 Service Pack 1。 </li>
+	        <li>在 Windows 2000 上，要求安装 Service Pack 4。  </li>
+	        <li>在 Windows XP 上，要求安装 Service Pack 2。  </li>
+	        <li>所有平台都要求安装 Microsoft Internet Explorer 6 Service Pack 1。  </li>
+	        </ul>	
+	        <h4>步骤 2：创建 .ini 文件</h4>
+		        <ol>
+		        <li>插入 Visual Studio 2005 CD 或 DVD 并忽略自动运行消息。 </li>
+		        <li>从“开始”菜单中选择“运行”。 </li>
+		        <li>键入以下命令： 
+		        <BLOCKQUOTE class="dtBlock">
+									<P class="code"><I>n</I>:\setup\Setup.exe /createunattend &lt;<I>.ini 文件的路径</I>&gt;</P>
+									<P>例如：</P>
+									<P class="code">D:\setup\setup.exe /createunattend c:\vs2005_deployment.ini</P>
+								</BLOCKQUOTE></li>
+				<li>按照安装程序“起始页”上的说明进行操作，然后单击“继续”。</li>
+		        <li>在“选项页”上，选择要部署的功能，然后单击“完成”。</li>
+		        </ol>
+		    <h4>步骤 3：创建网络映像</h4>
+		        <OL>
+				<LI>在服务器上创建一个文件夹。例如 &lt;驱动器&gt;:\VS2005。</LI>
+				<LI>
+					在顶层文件夹中，分别创建两个名为 <B>VS</B> 和 <B>MSDN</B> 的子文件夹。例如：&lt;驱动器&gt;:\VS2005\VS 和 &lt;驱动器&gt;:\VS2005\MSDN</LI>
+				<LI>
+					将标有 <B>Visual Studio 2005</B> 的所有 CD 的内容复制到名为 <B>VS</B> 的子文件夹中。如果提示您覆盖现有文件，请照做。</LI>
+				<LI>
+					将所有带有 <B>MSDN Library for Visual Studio 2005</B> 标签的 CD 的内容复制到名为 <B>MSDN</B> 的子文件夹中。如果提示您覆盖现有文件，请照做。</LI>
+				<LI>
+					使用文本编辑器（如“记事本”）打开 <B>VS</B> 子文件夹中的 <B>setup.ini</B>。</LI>
+				<LI>
+					在 [Documentation] 节中，将以“DIR=”开头的行更改为“DIR=..\MSDN”。例如： <BLOCKQUOTE class="dtBlock">
+						<DIV class="code">[Documentation]<BR> DIR=..\MSDN</DIV>
+					</BLOCKQUOTE></LI>
+				<LI>
+					保存更改并关闭文件。<br /><B>注意：</B>完成此步骤可防止安装过程中要求更换磁盘，并可将 MSDN Library CD 的正确路径通知安装程序。</LI>
+				<LI>
+					在 <B>VS</B> 子文件夹中，打开 <B>Setup</B> 文件夹。</LI>
+				<LI>
+					使用文本编辑器（如“记事本”）打开 <B>setup.sdb</B>，并在文件末尾添加下面几行内容： <BLOCKQUOTE class="dtBlock">
+						<DIV class="code">[Product Key]<BR> <I>XXXXXXXXXXXXXXXXXXXXXXXXX</I>
+						</DIV>
+					</BLOCKQUOTE><B>注意：</B> <I>XXXXXXXXXXXXXXXXXXXXXXXXX</I> 是 25 个字符的产品密钥，在 CD 包装上可以找到该产品密钥。输入产品密钥时不要带短划线。</LI>
+				<LI>
+					保存更改并关闭文件。<br /><B>注意：</B>完成此步骤可启用为用户预先填写产品密钥。</LI>
+				<LI>
+					在网络上共享 <B>VS2005</B> 文件夹并设置适当的安全设置。网络上的 Visual Studio 2005 安装程序的路径的形式如下：<SPAN class="code">\\&lt;<I>服务器名&gt;</I>\VS2005\VS\setup.exe</SPAN>。<BR> <B>注意：</B>
+					<ul type=disc>
+					<li>在安装时，如果任何路径和文件名的组合超过 260 个字符，安装将会失败。Visual Studio 中路径的最大长度为 221 个字符，因此应将文件复制到一个少于 70 个字符的路径中。如果为网络映像创建网络共享，根安装位置的 UNC 路径应该不超过 39 个字符。</li>
+					<li>如果此路径中的文件夹名称包括嵌入的空格，例如“\\&lt;<I>服务器名&gt;</I>\VS 2005\MSDN\”或“\\&lt;<I>服务器名&gt;</I>\VS2005\Visual Studio\”，则安装可能会失败。<BR></li>
+					</ul>
+				</LI>
+				</OL>
+		    <h4>步骤 4：在客户端上用 .ini 文件运行安装程序</h4>
+		        <OL>
+				<LI>确认网络上有 Visual Studio 2005。</LI>
+				<LI>从“开始”菜单中选择“运行”。</LI>
+				<LI>
+					键入以下命令： <BLOCKQUOTE class="dtBlock">
+						<P class="code">\\<I>&lt;计算机&gt;</I>\<I>&lt;共享位置&gt;</I>\...\setup\Setup.exe /unattendfile &lt;<I>.ini 文件的路径</I>&gt;</P>
+						<P>例如：</P>
+						<P class="code">\\server\VisualStudio\setup\setup.exe /unattendfile \\server\share\vs2005_deployment.ini</P>
+					</BLOCKQUOTE>
+				</LI>
+			    </OL>
+			 <h4>步骤 5：运行 MSDN Library 安装程序（可选）</h4>
+			    <OL>
+				<LI>
+				确认网络上有 MSDN Library。
+				<LI>
+					从“开始”菜单中选择“运行”。
+				<LI>
+					键入以下命令： <BLOCKQUOTE class="dtBlock">
+						非安静安装：<P class="code">msiexec /i &lt;<I>msdn.msi 的路径（位于安装源的根目录下）</I>&gt;</P>
+						无人参与安装： 
+						<P class="code">msiexec /qb /i &lt;<I>msdn.msi 的路径（位于安装源的根目录下）</I>&gt;</P>
+						<P>例如：</P>
+						<P class="code">msiexec.exe /qb /i \\products\VisualStudio\MSDN</P>
+					</BLOCKQUOTE>
+				</LI>
+				</OL>
+			<p><b>注意：</b>有关 MSDN 安装选项的更多详细信息，请参考顶层 MSDN 文件夹中的自述文件。</p>
+		    <h3><a name="2.2">2.2 分别部署各个 Visual Studio 组件</a></h3> 
+<p>网络管理员还可以分别部署各个 Visual Studio 2005 组件。下表显示了可以在无人参与的情况下安装的所有 Visual Studio 组件及其在 Visual Studio CD 或 DVD 上的位置，另外还显示了它们的静默安装命令。有关组件说明的列表，请转到 <a href=http://go.microsoft.com/fwlink/?LinkId=52035.>http://go.microsoft.com/fwlink/?LinkId=52035</a> 查看详细信息。</p>
+                <TABLE border=1>
+                <tbody>
+                    <tr>
+<th>组件</th>
+<th>目录</th>
+<th>无人参与安装命令</th>
+                    </tr>
+                    <tr>
+<td>Microsoft Windows Installer 3.1</td>
+<td >wcu\msi31</td>
+<td>WindowsInstaller-KB893803-v2-x86.exe /quiet</td>
+                    </tr>
+                    <tr>
+<td>Microsoft .NET Framework 2.0</td>
+<td >wcu\dotnetFramework</td>
+<td>dotnetfx.exe /q:a /c:"install /q"</td>
+                </tr>
+                    <tr>
+                        <td style="height: 18px">
+Microsoft .NET Framework 2.0 语言包</td>
+                        <td style="height: 18px">
+wcu\dotnetFramework</td>
+                        <td style="height: 18px">
+langpack.exe /q:a /c:"install /q"</td>
+                    </tr>
+                <tr>
+<td style="height: 18px">Microsoft 64 位 .NET Framework</td>
+<td style="height: 18px">wcu\dotnetFramework\x64 </td>
+<td style="height: 18px">NetFx64.exe /q:a /c:"install /q"</td>
+                    </tr>
+                    <tr>
+                        <td>
+Microsoft 64 位 .NET Framework 语言包</td>
+                        <td>
+wcu\dotnetFramework\x64</td>
+                        <td>
+langpack.exe /q:a /c:"install /q"</td>
+                    </tr>
+                    <tr>
+<td>Microsoft J# Redistributable</td>
+<td >wcu\JSharpRedistCore </td>
+<td>vjredist.exe /q:a /c:"install /q"</td>
+                    </tr>
+                    <tr>
+                        <td>
+Microsoft J# Redistributable 语言包</td>
+                        <td>
+wcu\JSharpRedistCore
+                        </td>
+                        <td>
+vjredist-LP.exe /q:a /c:"install /q"</td>
+                    </tr>
+                    <tr>
+<td>Microsoft Visual Studio Tools for Office Runtime</td>
+<td >wcu\VS Tools for Office</td>
+<td>vstor.exe /q:a /c:"install /q"</td>
+                    </tr>
+                    <tr>
+                        <td>
+Microsoft Visual Studio Tools for Office Runtime 语言包</td>
+                        <td>
+wcu\VS Tools for Office</td>
+                        <td>
+vstolp20.exe /q:a /c:"install /q"</td>
+                    </tr>
+                    <tr>
+<td>Microsoft SQL Server Express</td>
+<td>wcu\SSE</td>
+                        <td>
+SQLExpr.exe -q /norebootchk /qn reboot=ReallySuppress addlocal=all instancename=SQLEXPRESS SCCCHECKLEVEL=IncompatibleComponents:1;MDAC25Version:0 SQLAUTOSTART=1 ERRORREPORTING=2 /watsongenman=SQL???.mft ComponentType=3</td>
+                    </tr>
+                    <tr>
+<td>Microsoft Data Access Components</td>
+<td>wcu\mdac28</td>
+<td>mdac_typ.exe /Q /C:"dasetup /Q /N"</td>
+                    </tr>
+                    <tr>
+<td>Microsoft .NET Compact Framework</td>
+<td>wcu\netCF</td>
+<td>NetCFSetupv2.msi /qb</td>
+                    </tr>
+                    <tr>
+<td>Microsoft SQL Server 2005 Mobile Edition</td>
+<td>wcu\SQLCE</td>
+<td>sqlmobile30devtoolsjpn.msi /qb</td>
+                    </tr>
+                    <tr>
+<td>Microsoft Device Emulator</td>
+<td>wcu\ARM</td>
+<td>vs_emulator.exe /q:a /c:"install /q"</td>
+                    </tr>
+                    <tr>
+<td>Microsoft MSXML6</td>
+<td>wcu\msxml</td>
+<td>msxml6.msi /qb</td>
+                    </tr>
+                    <tr>
+<td>Microsoft 64 位 Visual Studio 系统必备</td>
+<td>wcu\64bitPrereq\x64 </td>
+<td>vs_bsln.exe /Q</td>
+                    </tr>
+                    <tr>
+<td>Microsoft Document Explorer 2005</td>
+                    <td>
+wcu\DExplore</td>
+<td>DExplore.exe /q:a /c:"install /q" </td>
+                    </tr>
+                    <tr>
+                        <td>
+Microsoft Document Explorer 2005 语言包</td>
+                        <td>
+wcu\DExplore</td>
+                        <td>
+dexplorelp.exe /q:a /c:"install /q"</td>
+                    </tr>
+                    <tr>
+<td>Microsoft Visual Studio 2005 Code Profiler</td>
+<td>wcu\Profiler  </td>
+<td>vs_profiler.exe /q:a /c:"install /q" </td>
+                    </tr>
+                    <tr>
+<td>Microsoft .NET Framework 2.0 64 位 Software Development Kits</td>
+<td>wcu\SDK\x64 </td>
+<td>setup.exe /q:a /c:"install /q" </td>
+                    </tr>
+                </tbody>
+<caption align=left valign=bottom><b>表 1.</b> 可以分别部署的 Visual Studio 组件的列表。</caption>
+                </TABLE>
+<h4>以无人参与方式安装组件</h4>
+                <OL>
+				<LI>
+					从“开始”菜单中选择“运行”。
+				<LI>
+					键入“cmd”，然后单击“确定”。
+				<LI>
+					定位到 Visual Studio CD 上的 [组件目录]（见表 1），键入组件的无人参与安装命令。例如，如果要安装 .NET Framework，可以定位到 wcu\dotnetFramework 文件夹，键入以下命令：
+	                			<BLOCKQUOTE class="code">dotnetfx.exe /q:a /c:"install /q"</BLOCKQUOTE>
+					<BLOCKQUOTE class="code">langpack.exe /q:a /c:"install /q"</BLOCKQUOTE>
+				</LI>
+	</OL>
+		     <h3><a name="2.3">2.3 安装维护</a></h3>
+		        <P>可以在已完成安装的计算机上再次运行安装程序，以使用安装维护功能。用户或管理员应从“控制面板”的“添加/删除程序”中运行安装程序。若要使用安装程序的维护模式，用户需要使用本地计算机的管理权限进行登录。</P>
+			 <h6 style="margin-left: 40px"><a href="#top">返回页首</a></h6>
+	    <h2><a name="3">3. 使用 Active Directory 部署 Visual Studio 2005</a></h2>
+	        <h3><a name="3.1">3.1 部署 Visual Studio 2005 所需的系统必备组件</a></h3>
+	            <p>安装 Visual Studio 2005 之前，客户端计算机上必须装有 Visual Studio 2005 所需的所有系统组件。网络管理员必须确认所有客户端计算机上都装有所需的系统组件。如果未满足系统必备条件，则 Visual Studio 安装将失败。</p>
+	            <p><b>注意：</b>必须严格按组件列出的顺序部署所需组件。如果按其他顺序来部署，则组件安装程序将失败。例如，Microsoft .NET Framework 2.0 要求先安装 Microsoft Windows Installer 3.1，因此 Windows Installer 列于 .NET Framework 之前。不带星号 (*) 的所有组件都位于 Visual Studio CD 或 DVD-ROM 的 WCU 文件夹中。 </p>   
+	            <P><I>在 Windows 2003 Server 上部署所需的系统必备组件</I></P>
+		        <UL type="disc">
+		            <LI>
+			        Microsoft Windows 2003 Service Pack 1 *
+			        <LI>
+			        Microsoft .NET Framework 2.0
+<li>Microsoft .NET Framework 2.0 语言包</li>
+                                                  <LI>
+			        Microsoft MSXML 6.0
+			        <LI>
+			        Microsoft Document Explorer 2005
+<li>Microsoft Document Explorer 2005 语言包</li>
+			        </LI>
+		        </UL>
+		        <P><I>在 Windows 2000 上部署的系统必备组件</I></P>
+		        <UL type="disc">
+			        <LI>
+			        Microsoft Windows 2000 Service Pack 4 *
+			        <LI>
+			        Microsoft Internet Explorer 6.0 Service Pack 1 *
+			        <LI>
+			        Microsoft Windows Installer 3.1
+			        <LI>
+			        Microsoft Data Access Components 2.8 Service Pack 1
+			        <LI>
+			        Microsoft .NET Framework 2.0
+<li>Microsoft .NET Framework 2.0 语言包</li>
+                                                  <LI>
+			        Microsoft MSXML 6.0
+			        <LI>
+			        Microsoft Document Explorer 2005
+<li>Microsoft Document Explorer 2005 语言包</li>			        
+                                                  </LI>
+		        </UL>
+		        <P><I>在 Windows XP 上部署的系统必备组件</I></P>
+		        <UL type="disc">
+			        <LI>
+			        Microsoft Windows XP Service Pack 2 *
+			        <LI>
+			        Microsoft Internet Explorer 6.0 Service Pack 1 *
+			        <LI>
+			        Microsoft Windows Installer 3.1
+			        <LI>
+			        Microsoft .NET Framework 2.0
+<li>Microsoft .NET Framework 2.0 语言包</li>
+                                                  <LI>
+			        Microsoft MSXML 6.0
+			        <LI>
+			        Microsoft Document Explorer 2005
+			        <li>Microsoft Document Explorer 2005 语言包</li>
+                                                  </LI>
+		        </UL>     
+		        <P><I>在所有 Windows 平台上部署的系统必备组件 </I></P>
+		        <p>在安装平台及 Visual Studio 的必需组件之后，可以随时安装这些组件。</p>
+		        <UL type="disc">
+			        <LI>
+			        Microsoft Visual Studio .NET Compact Framework - 针对设备进行 .NET 应用程序开发所必需的组件
+			        <LI>
+			        Microsoft Visual Studio Tools for Office Redistributable Package 和语言包 - Microsoft Visual Studio Tools for Office 产品所必需的组件
+			        <LI>
+			        Microsoft Visual Studio 2005 64 位系统必备组件 - 仅对 64 位计算机是必需的
+			        <LI>
+			        Microsoft Visual J# Redistributable Package 2.0 和语言包 - Microsoft J# 开发所必需的组件
+			        <LI>
+			        Microsoft Visual Studio 64 位 Software Development Kits - 调试 64 位应用程序所必需的组件
+		
+			        </LI>
+		        </UL> 
+		        <p>* 这些组件受它们自身许可协议的制约。</p>
+		    <h3><a name="3.2">3.2 使用 Active Directory 部署组件</a></h3>   
+		        <p>本节描述使用 Active Directory 通过网络部署特定组件的 Windows Installer 安装程序包的具体过程。要部署需要使用管理员特权来解压缩文件的组件，必须从 .exe 文件解压缩 Windows Installer 文件。例如，要部署 .NET Framework Redistributable Package，必须从 .exe 文件解压缩要用于部署的 Netfx.msi 文件。</p>
+		        <p>可以在 Active Directory 客户端计算机上安装 Windows Installer 安装程序包之前，客户端计算机上必须已安装 Windows Installer 安装服务。本节描述的过程假定在部署任意组件之前，已在所有客户端计算机上安装了 Windows Installer 3.1。</p>
+		        <p>对于 .NET Framework 部署，有一些安装之前必须满足的最低配置要求。有关特定的软硬件要求及推荐配置，请参见位于 <a href=http://go.microsoft.com/fwlink/?LinkId=52324>http://go.microsoft.com/fwlink/?LinkId=52324</a> 上的“Deploying & Configuring Applications”（部署和配置应用程序）。</p>    
+		        <p>下表显示了可以使用 Active Directory 部署的组件列表。请注意，SQL Server Express 无法通过 Active Directory 进行部署。有关组件说明的列表，请转到 <a href=http://go.microsoft.com/fwlink/?LinkId=52035.>http://go.microsoft.com/fwlink/?LinkId=52035</a> 查看详细信息。</p>        
+		        <TABLE border=1>
+		        <caption align=left valign=bottom><b>表 2.</b> 可以使用 Active Directory 部署的 Visual Studio 组件列表。</caption>
+                    <tbody>
+                        <tr>
+<th>组件</th>
+<th>.exe 文件或 .msi 文件的位置</th>
+<th>目录名</th>
+<th>组件命令</th>
+<th>要求解压缩文件</th>
+                        </tr>
+                        <tr>
+<td>.NET Framework 2.0</td>
+<td align=center>wcu\dotnetFramework\dotnetfx.exe</td>
+<td align=center>dotnetfx</td>
+<td>dotnetfx.exe /q /c:"msiexec /qb /a netfx.msi TARGETDIR=c:\dotnetfx"</td>
+                            <td align=center>&radic;</td>
+                        </tr>
+                        <tr>
+                            <td>
+.NET Framework 2.0 语言包</td>
+                            <td align=center>
+wcu\dotnetFramework\langpack.exe</td>
+                            <td align="center">
+dotnetfx</td>
+                            <td>
+langpack.exe /q /c:"msiexec /qb /a langpack.msi TARGETDIR=c:\dotnetfx"</td>
+                            <td align="center">
+                                √</td>
+                        </tr>
+                        <tr>
+<td>J# Redistributable</td>
+<td align=center>wcu\JSharpRedistCore\vjredist.exe</td>
+<td align=center>jsredist</td>
+<td>vjredist.exe /q /c:"msiexec /qb /a jsredist.msi TARGETDIR=c:\jsredist"</td>
+                            <td align=center>&radic;</td>
+                        </tr>
+                        <tr>
+                            <td>
+J# Redistributable 语言包</td>
+                            <td align="center">
+wcu\JSharpRedistCore\vjredist-lp.exe</td>
+                            <td align="center">
+jsredist</td>
+                            <td>
+vjredist-lp.exe /q /c:"msiexec /qb /a langpack.msi TARGETDIR=c:\jsredist"</td>
+                            <td align="center">
+                                √</td>
+                        </tr>
+                        <tr>
+<td>Visual Studio Tools for Office Runtime</td>
+<td align=center>wcu\VS Tools for Office\vstor.exe</td>
+<td align=center>vstor</td>
+<td>vstor.exe /q /c:"msiexec /qb /a vsto.msi TARGETDIR=c:\vstor"</td>
+                            <td align=center>&radic;</td>
+                        </tr>
+                        <tr>
+                            <td>
+Visual Studio Tools for Office Runtime 语言包</td>
+                            <td align="center">
+wcu\VS Tools for Office\vstolp20.exe</td>
+                            <td align="center">
+vstor</td>
+                            <td>
+vstolp20.exe /q /c:"msiexec /qb /a vstolp20.msi TARGETDIR=c:\vstor"</td>
+                            <td align="center">
+                                √</td>
+                        </tr>
+                        <tr>
+<td>Device Emulator</td>
+<td align=center>wcu\ARM\vs_emulator.exe</td>
+<td align=center>vs_emulator</td>
+<td>vs_emulator.exe /q /c:"msiexec /qb /a vs_emulator.msi TARGETDIR=c:\vs_emulator"</td>
+                            <td align=center>&radic;</td>
+                        </tr>
+                        <tr>
+<td>Microsoft Document Explorer 2005</td>
+<td align=center>wcu\DExplore\DExplore.exe</td>
+<td align=center>DExplore</td>
+<td>DExplore.exe /q /c:"msiexec /qb /a dexplore.msi TARGETDIR=c:\DExplore" </td>
+                            <td align=center>&radic;</td>
+                        </tr>
+                        <tr>
+                            <td>
+Microsoft Document Explorer 2005 语言包</td>
+                            <td align="center">
+wcu\DExplore\DExplorelp.exe</td>
+                            <td align="center">
+DExplore</td>
+                            <td>
+DExplorelp.exe /q /c:"msiexec /qb /a dexplorelp.msi TARGETDIR=c:\DExplore"
+                            </td>
+                            <td align="center">
+                                √</td>
+                        </tr>
+                        <tr>
+<td>Microsoft Visual Studio 2005 Code Profiler</td>
+<td align=center>wcu\Profiler\vs_profiler.exe</td>
+<td align=center>vs_profiler</td>
+<td>vs_profiler.exe /q /c:"msiexec /qb /a vs_profiler.msi TARGETDIR=c:\vs_profiler" </td>
+                            <td align=center>&radic;</td>
+                        </tr>
+                        <tr>
+<td>Microsoft .NET Framework 2.0 64 位 Software Development Kits</td>
+<td align=center>wcu\SDK\x64\setup.exe</td>
+<td align=center>netfxsdk</td>
+<td>setup.exe /q /c:"msiexec /qb /a netfxsdk.msi TARGETDIR=c:\netfxsdk" </td>
+                            <td align=center>&radic;</td>
+                        </tr>
+                        <tr>
+<td>.NET Compact Framework</td>
+<td align=center>wcu\NetCF\NetCFSetupv2.msi</td>
+<td align=center>NetCFSetupv2</td>
+<td>msiexec /qb /a NetCFSetupv2.msi TARGETDIR=c:\NetCFSetupv2</td>
+                            <td align=center>&nbsp; </td>
+                        </tr>
+                        <tr>
+<td>SQL Server 2005 Mobile Edition</td>
+<td align=center>wcu\SQLCE\sqlmobile30devtoolsjpn.msi</td>
+<td align=center>sqlmobile30devtoolsjpn</td>
+<td>msiexec /qb /a sqlmobile30devtoolsjpn.msi TARGETDIR=c:\sqlmobile30devtoolsjpn</td>
+                            <td align=center>&nbsp; </td>
+                        </tr>
+                        <tr>
+<td>MSXML6</td>
+<td align=center>wcu\MSXML\msxml6.msi</td>
+<td align=center>msxml6</td>
+<td>msiexec /qb /a msxml6.msi TARGETDIR=c:\msxml6</td>
+                            <td align=center>&nbsp; </td>
+                        </tr>
+                    </tbody>
+               </TABLE>    
+<h4>步骤 1：创建管理员安装点</h4>                
+            <OL>
+<LI>将组件的 .exe 文件或 .msi 文件（具体位置请见表 2）下载到本地计算机上的 C:\ 驱动器的根目录下。
+<LI>从“开始”菜单中选择“运行”。 
+<LI>将目录更改为 C:\ 驱动器的根目录。 
+<LI>在命令提示符处键入以下命令，以创建要将 .exe 文件复制到其中的目录： 
+                     <BLOCKQUOTE class=dtBlock>
+<DIV class=code>mkdir [目录名]</DIV></BLOCKQUOTE>
+<LI>键入相应的组件命令（见表 2），以便在该目录中创建安装点。
+<LI>关闭命令提示符窗口。 
+<LI>打开 Windows 资源管理器然后定位到 c:\[目录名]，以确认文件已解压缩。 
+<LI>将该文件夹及其所有内容移到要用于部署的网络共享。 </LI>
+             </OL>  
+<h4><a name="3.2 S2">步骤 2：向 Active Directory 组策略添加安装程序包</a></h4> 
+             <OL>
+<LI>从“开始”菜单中选择“程序”，然后选择“管理工具”。 
+<LI>选择“组件服务”，然后展开“Active Directory 用户和计算机”。显示“Active Directory 用户和计算机”树。 
+<LI>右击“域”节点，然后选择“属性”。 
+<LI>在“属性”对话框中选择“组策略”选项卡，然后单击“编辑”。 
+<LI>如果要设置应用于计算机的策略，而不管登录到计算机的是哪些用户，请展开“计算机配置\软件设置”。<br /><B>注意</B>：确保映射到 Active Directory 服务器上的共享位置；否则将无法创建用于安装的包。
+<LI>右击“软件安装”，选择“新建”，然后选择“程序包”。 
+<LI>在“打开”对话框中，浏览到已将部署文件夹复制到的位置，然后选择 .msi 文件。 
+<LI>在“部署软件”对话框中选择“已指派”，然后单击“确定”。 
+<LI>选择“自动安装”以在域中的每台计算机上自动安装软件。 
+<LI>单击“确定”，然后退出“Active Directory 用户和计算机”控制台。 </LI>
+             </OL>
+<h4><a name="3.2 S3">步骤 3：通过组策略设置升高的特权</a></h4>
+<p>由于多数程序包只允许由计算机的本地管理员进行安装，因此，您应使用升高的特权在组策略中向每台计算机播发程序包。网络管理员可以为一个用户、一台计算机或一组用户创建策略。有关创建特殊策略配置文件的更多信息，请参见“系统策略编辑器帮助”是；有关配置策略的更多信息，请参见“组策略管理单元帮助”。 </p>
+             <OL>
+<LI>从“开始”菜单中选择“程序”，然后选择“管理工具”。 
+<LI>选择“组件服务”，然后展开“Active Directory 用户和计算机”。显示“Active Directory 用户和计算机”树。 
+<LI>右击“域”节点，然后选择“属性”。 
+<LI>选择“组策略”选项卡 
+<LI>在“组策略对象链接”框中选择组策略对象，然后单击“编辑”。 
+<LI>打开“本地计算机策略\管理模板\Windows 组件\Windows Installer”文件夹。 
+<LI>在细节窗格中双击“永远以高特权进行安装”策略。 
+<LI>在“组策略属性”对话框中启用该策略，选中复选框以打开该设置，然后单击“确定”。 
+<LI>打开“用户配置\管理模板\Windows 组件\Windows Installer”文件夹，并重复步骤 8 和 9。 </LI>
+             </OL>
+<p><b>注意：</b>可以使用系统策略编辑器和 Windows Installer 策略来设置“永远以高特权进行安装”策略。必须为计算机和每个用户设置策略。如果选择不使用组策略编辑器或系统策略编辑器，可以通过更改 Windows 注册表项的值，在每台计算机上指定相同的设置。</p>
+<h4>步骤 4：确认可以将包分配给计算机</h4>
+             <OL>
+<LI>在“[组件名称] - 英语属性”对话框中，选择“部署”选项卡。 
+<LI>在“部署类型”下选择“已指派”。 
+<LI>在“部署选项”下，选择有关何时以及如何部署组件的正确选项。 
+<LI>浏览其他可用的选项卡，并根据需要进行选择。有关详细信息，请参见对话框中的“组策略帮助”。</LI>
+             </OL>
+<h4>步骤 5：部署其他必需的组件 </h4>
+<p>要部署其他 Visual Studio 组件，只需重复步骤 1，将 .msi 文件添加到指定的 Active Directory 组策略中。</p>
+<h3><a name="3.3">3.3 为 Visual Studio 安装创建转换</a></h3>
+<p>在 Windows Installer 术语中，关系数据库包含有关组件、功能和安装属性的信息。转换以特定的包为基础，并包含在安装过程中应用于该特定包的修改。这一转换在 Visual Studio 2005 的默认安装位置提供了完全安装。</p>
+<h4>步骤 1：创建转换</h4>
+            <OL>
+				<LI>
+					从“开始”菜单中选择“运行”。
+				<LI>
+					键入以下命令： <BLOCKQUOTE class="dtBlock">
+						<DIV class="code"><I>&lt;Visual Studio 2005 的路径&gt;</I> setup.exe /CreateTransform <I>&lt;文件路径名&gt;</I></DIV>
+					</BLOCKQUOTE>
+					<P>例如：</P>
+					<BLOCKQUOTE class="dtBlock">
+						<DIV class="code">D:\setup\setup.exe /CreateTransform c:\mydeploymentfolder\myVSTransform.mst</DIV>
+					</BLOCKQUOTE>
+				<LI>
+					按照安装程序“起始页”上的说明进行操作，然后单击“继续”。
+				<LI>
+					在“选项页”上选择要部署的功能，然后单击“创建转换”。
+				</LI>
+			</OL>
+			<h4>步骤 2：创建管理安装点</h4>
+			<p>有关详细信息，请参考 <a href="#3.4">3.4 节</a>。</p>
+			<h4>步骤 3：将 Visual Studio 2005 安装程序包添加到组策略中</h4>
+			<p>vs_setup.msi 文件位于 Visual Studio CD 或 DVD 的根目录中。有关详细信息，请参考 <a href="#3.2 S2">3.2 节中的步骤 2</a>。 </p>
+			<p>如果要将一种语言的 Visual Studio 部署到采用其他默认操作系统语言的计算机，请执行下列操作：</p>
+		    <OL>
+				<li style="margin-left: 60px">
+					打开域策略的“组策略对象编辑器”。
+				<LI style="margin-left: 60px">
+					打开“Visual Studio 2005&nbsp;&lt;语言&gt;”包的属性。
+				<LI style="margin-left: 60px">
+					单击“部署”选项卡。
+				<LI style="margin-left: 60px">
+					单击“高级...”按钮。
+				<LI style="margin-left: 60px">
+					选中“部署这个程序包时忽略语言”复选框。
+				<LI style="margin-left: 60px">
+					单击“确定”。
+				<LI style="margin-left: 60px">
+					单击“确定”。</LI>
+		    </OL>
+			<P style="margin-left: 60px"><b>注意：</b>您还需要为 .NET Framework 语言包和 J# 语言包设置“部署这个程序包时忽略语言”选项。&nbsp;&nbsp;&nbsp;</P>
+		    <h4>步骤 4：确认程序包可以部署</h4>
+		    <OL>
+				<LI>
+					在“Visual Studio 2005 - 英语属性”对话框中，选择“部署”选项卡。
+				<LI>
+					在“部署类型”下选择“已指派”。
+				<LI>
+					在“部署选项”下，选择有关何时以及如何部署 Visual Studio 的正确选项。
+				<LI>
+					选择“修改”选项卡，然后单击“添加”。
+				<LI>
+					选择在前面创建的转换文件（如 myVSTransform.mst），然后单击“打开”以添加该文件。
+				<LI>
+					浏览其他可用的选项卡，并根据需要进行选择。
+				</LI>
+			</OL>
+			<h4>步骤 5：通过组策略设置升高的特权</h4>
+			<p>有关详细信息，请参考 <a href="#3.2 S3">3.2 节中的步骤 3</a>。</p>
+			<h4>步骤 6：确认最新创建的 Active Directory 包可以安装 </h4>
+			<OL>
+				<LI>
+				重新启动其中一台已部署了 Visual Studio 2005 的客户端计算机。
+				<LI>
+					登录到这台重新启动的计算机，确认 Visual Studio 2005 已经安装。<br /><B>注意</B>：不要在产品启动时显示的 Windows Installer 对话框上选择“取消”。
+				</LI>
+			</OL>
+	    <h3><a name="3.4">3.4 使用组策略对象创建部署</a></h3>  
+	        <P>必须为 Active Directory 部署创建 Visual Studio 2005 及所有相关文件的管理安装点。您必须具有服务器上的管理安装点的写入权限，以及使用 Active Directory 部署 Visual Studio 的相应权限。Visual Studio 安装程序接受多个不同的命令行选项。可以使用 <B>/a</B> 命令行选项创建管理安装点。下表列出了用于安装的所有命令行选项：</p>
+	        <TABLE border="1">
+	        <caption align=left valign=bottom><b>表 3.</b> Visual Studio 安装程序命令行选项列表。</caption>
+				<TBODY>
+					<TR>
+						<TH>
+							命令行选项</TH>
+						<TH>
+							说明</TH></TR>
+					<TR>
+						<TD>
+						[start]
+						<TD>仅对 Msiexec 未直接包括在路径中的 Windows 98 系统是必需的。</TD>
+					<TR>
+						<TD>
+						Msiexec
+						<TD>Windows Installer 的可执行文件名称。</TD>
+					<TR>
+						<TD>
+						/p
+						<TD>允许 Windows Installer 对现有安装应用更新。</TD>
+					<TR>
+						<TD><I>[MSP 更新文件的路径\名称]</I>
+						<TD>用于更新的 MSP 文件的路径和文件名。</TD>
+					<TR>
+						<TD>
+						/a
+						<TD>允许 Windows Installer 在网络共享上执行产品的管理安装。</TD>
+					<TR>
+						<TD><I>[MSI 文件的路径\名称]</I>
+						<TD>原始管理映像的 Windows Installer 包的路径和文件名。</TD>
+					<TR>
+						<TD>
+						/qb
+						<TD>将用户界面设置为基本级别（简单的进度和错误处理）。</TD>
+					<TR>
+						<TD>
+						/L*v
+						<TD>打开日志记录并设置日志文件的路径。*v 标志将使此开关记录所有信息。</TD>
+					<TR>
+						<TD><I>[日志文件的路径\名称]</I>
+						<TD>Windows Installer 日志文件的路径和文件名。如果没有给定，则在运行命令的计算机上的 temp 文件夹中查找 MSI*.log 文件。</TD>
+					<TR>
+						<TD><I>[目标文件夹的路径\名称]</I>
+						<TD>管理映像所在的目标文件夹的路径和名称。</TD>
+					</TR>
+				</TBODY>
+		    </TABLE>	
+		    <P>对所有安装命令使用以下语法：</P>
+		        <P class="code"><B>[start] msiexec /p</B> <I>[MSP 更新文件的路径\名称]</I> <B>/a</B> <I>[MSI 文件的路径\名称]</I> <B>/qb /L*v</B> <I>[日志文件的路径\名称]</I> <B>TRANSFORMS = VS2005Tran.mst PIDKEY</B> = <I>&lt;25 个字符的产品密钥（不带空格或短划线）&gt;</I> <B>TARGETDIR=</B> <I>[目标文件夹的路径\名称]</I> </P>
+		    <h4>创建管理安装点</h4>
+		    <OL>
+				<LI>
+					从“开始”菜单中选择“运行”。
+				<LI>
+					键入以下命令： <BLOCKQUOTE class="dtBlock">
+						<DIV class="code"><B>[start] msiexec /a</B> <I>[MSI 文件的路径\名称]</I> <B>TRANSFORMS</B>= <I>&lt;在第 3.3 节的步骤 1 中创建的转换文件的名称&gt;</I> <B>PIDKEY=</B><I> &lt;25 个字符的产品密钥（不带空格或短划线）&gt;</I></DIV>
+					</BLOCKQUOTE>
+					<P><B>注意：</B>如果要部署的 Visual Studio 版本使用安装程序预先填写的产品密钥，那么，您需要找到该产品密钥 (PID)，然后按正确的顺序输入 <B>PIDKEY</B> 的值。
+					<P><B>查找产品密钥</B>
+						<OL>
+							<LI>
+							在 Visual Studio 2005 CD 或 DVD-ROM 的根目录下，使用文本编辑器（如“记事本”）打开 setup.sdb 文件。
+							<LI>
+								产品密钥位于 [Product Key] 下。
+							</LI>
+						</OL>
+				</LI>
+			</OL>
+		    <h6 style="margin-left: 40px"><a href="#top">返回页首</a></h6> 
+	<h2><a name="4">4. 指定 Watson 设置</a></h2>
+	    <p><b>注册表</b></p>
+	    <p>可以使用以下注册表子项来配置 Visual Studio Watson 在单个计算机上的操作方式：</p>
+	    <p>在 HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PCHealth\ErrorReporting\ DW\VSSetup\Product Name Value\Product Version Number</p> 下
+	    <p>将 Name Value\Product Version Number 替换为文件 setup.sdb（位于安装 CD 或 DVD-ROM 上的 n:\setup\）中指定的 VSSWProdName 和 VSSWProdVer 标志的值。 </p>
+	    <p>例如： </p>   
+	    <p>[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PCHealth\ErrorReporting\DW\VSSetup\Visual C# 2005 Express Edition Beta\8.0.xxxx] </p>
+	    <p>"VSSWSectionEnabled"=dword:00000001 </p>
+	    <p>"VSSWUXEnabled"=dword:00000001 </p>
+	    <h6 style="margin-left: 40px"><a href="#top">返回页首</a></h6>
+	 <h2><a name="5">5. 已知的安装问题</a></h2>
+	    <H3><a name="5.1">5.1. 无法创建数据文件</a></H3>
+		<P>如果您使用现有的文件在 createunattend 模式下运行安装，将显示下面的错误信息：“无法创建数据文件 &lt;<I>文件名</I> &gt;。安装程序无法继续。”</P>
+		<P>您可以删除现有文件或提供唯一的文件名以更正此错误。</P>
+		<H3><a name="5.2">5.2. 用户特定数据的可见性</a></H3>
+		<P>当创建无人参与的安装文件时，文件中可能会出现某些用户特定的数据。具体说来，创建文件的用户的名称及其单位名称会显示为两行文字：</P>
+		<UL>
+			<LI>gfn_pid core user name=您的用户名
+			<LI>gfn_pid core organization=您的公司
+			</LI>
+		</UL>
+		<P>在使用 .ini 文件之前，您可以更改这些变量的值，但不要完全删除这些行。</P>
+	    <h6 style="margin-left: 40px"><a href="#top">返回页首</a></h6>
+	  <H2><a name="6">6. 疑难解答</a></H2>
+		<h3><a name="6.1">6.1. Visual Studio 日志文件位置</a></h3>	
+		<p>在 Visual Studio 2005 安装过程中生成下列日志文件：</p>
+            <ul>
+<li>dd_vserror80.txt</li>
+<li>dd_vsinstall80.txt</li>
+<li>VSMsiLog****.txt（其中 * 是随机生成的后缀）</li>
+            </ul>
+		<p>在 Visual Studio 安装过程中，这些日志文件位于 %temp% 目录中。例如：
+		</p>
+		<BLOCKQUOTE class=dtBlock >
+<p class=code>C:\Documents and Settings\[用户名]\Local Settings\Temp</p></BLOCKQUOTE>
+<p>Visual Studio 安装完毕后，这些日志文件位于 Visual Studio 安装路径下的 Logs 目录中。例如：
+		</p>
+		<BLOCKQUOTE class=dtBlock >
+<p class=code>C:\Program Files\Microsoft Visual Studio 8\[产品名称]\Logs</p></BLOCKQUOTE>
+        <p>
+		如果 Visual Studio 安装和卸载失败，则这些日志文件仍在 %temp% 目录中。<br /><br /><b>注意：</b>Microsoft SQL Server Express、Visual Studio .NET Framework 和 Visual Studio J# Redistributable Package 等其他 Visual Studio 组件也将生成日志文件。这些日志文件在 %temp% 目录或 [驱动器]:\Program Files\Microsoft SQL Server\90\Setup Bootstrap\LOG 目录下。
+		</p>
+		<h3><a name="6.2">6.2. Windows Installer 错误代码</a></h3>
+	    <p>要查看错误代码的列表，请转到 <a href= http://go.microsoft.com/fwlink/?LinkId=51677> http://go.microsoft.com/fwlink/?LinkId=51677</a></p>
+		<h6 style="margin-left: 40px"><a href="#top">返回页首</a></h6>
+	   <h2><a name="7">7. 部署 Visual Studio Service Release</a></h2>  
+	    <p>有关下载和部署 Visual Studio Service Release 的信息，请参见 <a href=http://go.microsoft.com/fwlink/?LinkId=10605>http://go.microsoft.com/fwlink/?LinkId=10605</a>。</p>
+	    <h6 style="margin-left: 40px"><a href="#top">返回页首</a></h6>   
+</body>
+</html>
+

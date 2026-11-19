@@ -1,0 +1,11 @@
+﻿package calculator.model;
+
+/**
+ * 运算类型。
+ */
+public enum OperationType
+{
+    Zeroary,    // 不需任何参数即可运行，如 Pi
+    Unary,      // 需要一个参数，如平方
+    Binary      // 需要两个参数，如加法。
+}

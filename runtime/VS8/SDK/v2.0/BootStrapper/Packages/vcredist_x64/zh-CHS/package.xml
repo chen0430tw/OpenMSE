@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper" Name="DisplayName" Culture="Culture">
+
+    <!-- Defines a localizable string table for error messages-->
+    <Strings>
+        <String Name="DisplayName">Visual C++ 运行库 (x64)</String>
+        <String Name="Culture">zh-CHS</String>
+        <String Name="AdminRequired">您没有安装 Visual C++ 运行库 (x64)所需的权限。请与管理员联系。</String>
+        <String Name="InvalidOS">只有在 x64 计算机上才支持安装 Visual C++ 运行库 (x64)。</String>
+        <String Name="GeneralFailure">试图安装 Visual C++ 运行库 (x64)时出现错误。</String>
+    </Strings>
+
+</Package>

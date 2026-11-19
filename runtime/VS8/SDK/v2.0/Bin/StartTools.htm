@@ -1,0 +1,223 @@
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=gb2312">
+	<title>Microsoft .NET Framework 工具</title>
+    <style>
+        a:hover { color:#ff0000; }
+    </style>
+</head>
+<body topmargin="0" leftmargin="0">
+<!-- Start Toolbar-->
+<DIV ID="TBDownLevelDiv">
+<TABLE WIDTH="100%" CELLPADDING=0 CELLSPACING=0 BORDER=0 BGCOLOR='#ffffff'>
+<TR>
+	<TD VALIGN=top HEIGHT=60 WIDTH=250 ROWSPAN=2><IMG height=59 alt=".NET Framework SDK" src="../docs/complus.gif" width=230 border=0></TD>
+	<TD VALIGN=top HEIGHT=20 ALIGN=right><IMG height=20 src="../docs/curve.gif" alt="curve.gif" width=18 border=0></TD>
+	<TD BGCOLOR=#000000 HEIGHT=20 VALIGN=center ALIGN=right NOWRAP COLSPAN=2>
+		<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1> <B> &nbsp;&nbsp;<A style="COLOR: #ffffff; TEXT-DECORATION: none" target  =_top href="http://support.microsoft.com/"><FONT COLOR='#ffffff'>网站的链接：&nbsp; &nbsp; 支持</FONT></A>&nbsp;&nbsp;<FONT COLOR='#ffffff'>|</FONT> &nbsp;&nbsp;<A style="COLOR: #ffffff; TEXT-DECORATION: none" target  =_top href="http://search.microsoft.com/search/search.aspx?st=b&View=zh-cn"><FONT COLOR='#ffffff'>搜索</FONT></A>&nbsp;&nbsp;<FONT COLOR='#ffffff'>|</FONT> &nbsp;&nbsp;<A style="COLOR: #ffffff; TEXT-DECORATION: none" target  =_top href="http://www.microsoft.com/china/"><FONT COLOR='#ffffff'>Microsoft.com 指南</FONT></A>&nbsp;&nbsp; </B> </FONT>
+	</TD>
+</TR>
+<TR>
+	<TD VALIGN=top HEIGHT=40 WIDTH=19>&nbsp;</TD>
+	<TD VALIGN=top HEIGHT=40 ALIGN=right NOWRAP COLSPAN=2>
+	<A HREF="http://www.microsoft.com/china" TARGET="_top"><IMG height=40 src="../docs/mslogo.gif" width=112 border=0 alt="www.microsoft.com"></A></TD>
+</TR>
+<TR><!-- Start: Local menus -->
+	<TD BGCOLOR="#336699" HEIGHT=20 VALIGN=center NOWRAP COLSPAN=4>
+
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0>
+<TR>
+<TD BGCOLOR="#336699" nowrap>
+	<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1> <B>&nbsp;&nbsp; <FONT COLOR='#ffffff'> 相关链接：&nbsp; &nbsp; <A style="FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none" target=_top href="http://www.microsoft.com/china/msdn/default.aspx"> MSDN Online </FONT> </A> &nbsp;&nbsp;</B> </FONT>
+</TD>
+<TD>
+	<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1> <B>|</B> </FONT>
+</TD>
+
+<TD BGCOLOR="#336699" nowrap>
+	<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1> <B>&nbsp;&nbsp; <FONT COLOR='#ffffff'> <A style="FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none" target=_top href="http://www.microsoft.com/china/net">MSDN Online .NET 页</FONT> </A> &nbsp;&nbsp;</B> </FONT>
+</TD>
+
+<TD>
+	<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1> <B>|</B> </FONT>
+</TD>
+<TD BGCOLOR="#336699" nowrap>
+	<FONT COLOR='#fffff' FACE="Verdana, Arial" SIZE=1> <B>&nbsp;&nbsp; <A style="FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none" target=_top href="http://www.microsoft.com/china/msdn/vstudio/default.mspx"> <FONT COLOR='#ffffff'>Visual Studio</FONT> </A> &nbsp;&nbsp;</B> </FONT>
+</TD>
+<TD>
+	<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1> <B>|</B> </FONT>
+</TD>
+</TR>
+</TABLE>
+
+</TD><!-- End: Local menus -->
+</TR>
+</TABLE>
+</DIV><!-- End Toolbar-->
+<div style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px; FONT: normal x-small; FONT-FAMILY: Verdana, Arial, Helvetica;">
+<p>
+<span style="FONT: bold medium; FONT-FAMILY: Verdana, Arial, Helvetica;" align="left">Microsoft .NET Framework 工具</span>
+<p>
+Microsoft .NET Framework SDK 工具旨在使您更轻松地创建、部署和管理面向公共语言运行库的应用程序和组件。可以从命令行运行除程序集缓存查看器(Shfusion.dll)和 Microsoft CLR 调试器(DbgCLR.exe)之外的所有工具。程序集缓存查看器(Shfusion.dll)必须通过 Windows 资源管理器才能访问。有关每个工具的信息，请参阅 .NET Framework SDK 文档中的“.NET Framework 工具”一节。
+<p>
+如没有其他说明，这些工具都位于 SDK 的 \bin 目录中。
+<p>
+注意：要使 .Net Framework 工具正常工作，必须正确设置 Path、Include 和 Lib 环境变量。您可通过运行 SDKVars.bat 来设置 Path、Include 和 Lib 环境变量，该文件位于 <i>&lt;SDK&gt;\v2.0\Bin</i> 目录中。必须在每个命令外壳程序中执行 SDKVars.bat。
+<p>
+
+	<li><A href="#ConfigDeploy">配置和部署工具</A>
+	<li><A href="#Debug">调试工具</A>
+	<li><A href="#Security">安全性工具</A>
+	<li><A href="#General">常规工具</A>
+<p>
+
+<span style="FONT: bold small; FONT-FAMILY: Verdana, Arial, Helvetica;" align="left"><a name="ConfigDeploy">配置和部署工具</A></span> 
+<p>
+<ul>
+	<li><b>ASP.NET IIS 注册工具(Aspnet_regiis.exe)</b><br>它使管理员或安装程序能够更新 ASP.NET 应用程序的脚本映射，以指向与该工具关联的	 ASP.NET ISAPI 版本。还可以使用该工具执行其他 ASP.NET 配置操作。
+
+	<p>
+	注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Aspnet_regiis.exe，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+<p>
+	<li><b>程序集缓存查看器(Shfusion.dll)</b><br>使您能够使用 Windows 资源管理器来查看和操作全局程序集缓存的内容。
+<p>
+注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Shfusion.dll，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+
+	<p>
+	
+	<li><b>程序集链接器(Al.exe)</b><br>从一个或多个资源文件或 Microsoft 中间语言(MSIL)文件生成一个包含程序集清单的文件。   
+	<p>
+	注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Al.exe，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+<p>
+	<li><b>程序集注册工具(Regasm.exe)</b><br>读取程序集中的元数据，并将所需的项添加到注册表中，以便使 COM 客户端能够以透明方式创建 .NET Framework 类。
+<p>
+注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Regasm.exe，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+
+	<p>
+	<li><b>程序集绑定日志查看器(Fuslogvw.exe)</b><br>显示失败的程序集绑定的详细信息。此信息有助于您诊断 .NET Framework 无法在运行时找到程序集的原因。 
+	<p>
+	
+	<li><b>全局程序集缓存工具(Gacutil.exe)</b><br>使您能够查看和操作全局程序集缓存和下载缓存的内容。虽然 Shfusion.dll 提供了类似的功能，但可以从构造脚本、生成文件和批处理文件使用 Gacutil.exe。  
+	<p>
+	
+	<li><b>安装程序工具(Installutil.exe)</b><br>使您能够通过执行指定程序集的安装程序组件来安装和卸载服务器资源。
+<p>
+注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Installutil.exe，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+
+	<p>
+	
+	<li><b>清单工具(Mt.exe)</b><br>使您能够生成和合并非托管 winSxS 组件清单以及托管程序集清单。
+	<p>
+	<li><b>独立存储工具(Storeadm.exe)</b><br>为当前登录的用户列出或删除所有的现有存储区。 
+	<p>
+	
+	<li><b>本机映像生成器工具(Ngen.exe)</b><br>从托管程序集创建本机映像，并将其安装到本地计算机上的本机映像缓存中。
+<p>
+注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Ngen.exe，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+<p>
+
+<li><b>.NET Framework 配置工具(Mscorcfg.msc)</b><br>提供一个图形化界面，用于管理 .NET Framework 安全策略和使用远程处理服务的应用程序。此工具还允许管理和配置全局程序集缓存中的程序集。
+	<p>
+	注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Mscorcfg.msc，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+	<p>
+
+	<li><b>.NET 服务安装工具(Regsvcs.exe)</b><br>通过加载、注册程序集，生成类型库，并将其注册和安装到现有的 COM+ 1.0 应用程序中，来向 Windows 2000 组件服务添加托管类。
+<p>
+注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Regsvcs.exe，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+
+	<p>
+	
+	<li><b>Soapsuds 工具(Soapsuds.exe)</b><br></li>
+	帮助您编译通过使用称为“远程处理”的技术与 XML Web services 进行通信的客户端应用程序。   
+	<p>
+	
+	<li><b>类型库导出程序(Tlbexp.exe)</b><br>从公共语言运行库程序集生成类型库。 
+	<p>
+	
+	<li><b>类型库导入程序(Tlbimp.exe)</b><br>将在 COM 类型库中找到的类型定义转换为托管元数据格式的等效定义。
+	<p>
+	
+	<li><b>Web 服务描述语言工具(Wsdl.exe)</b><br>从 Web 服务描述语言(WSDL)协定文件、XML 架构定义(XSD)架构文件和 .discomap 发现文档生成 XML Web services 和 XML Web services 客户端的代码。
+	<p>
+	
+	<li><b>Web 服务发现工具(Disco.exe)</b><br>用于发现位于 Web 服务器上的 XML Web services 的 URL，并在本地磁盘上保存与每个 XML Web service 相关的文档。
+	<p>
+	
+	<li><b>XML 架构定义工具(Xsd.exe)</b><br>生成遵从 WWW 联合会(W3C)提出的 XML 架构定义(XSD)语言的 XML 架构。此工具从 XSD 架构文件生成公共语言运行库类和数据集类。
+	<p>
+
+	<li><b>XML 序列化预生成工具(Sgen.exe)</b><br>生成与 XmlSerializer 一起使用的序列化程序集。该实用工具使开发人员能够预生成用于序列化和与应用程序一起部署的程序集。
+	<p>
+</ul>
+<span style="FONT: bold small; FONT-FAMILY: Verdana, Arial, Helvetica;" align="left"><a name="Debug">调试器工具</A></span> 
+<p>
+<ul>
+<li><b>Microsoft CLR 调试器(DbgCLR.exe)</b><br>提供有图形化界面的调试服务，帮助应用程序开发人员查找和修复面向运行库的程序中的错误。有关详细信息，请参阅 .NET Framework SDK 文档中的“CLR 调试器”主题。
+<p>
+	<b>注意</b>：Microsoft CLR 调试器(DbgCLR.exe)位于&nbsp;SDK\v2.0\GuiDebug 文件夹中。
+	<p>
+<li><b>托管代码调试器(Mdbg.exe)</b><br>提供命令行调试服务，以帮助应用程序开发人员查找和修复使用 .NET Framework 编写的程序中的错误。使用此工具可查找和修复面向运行库的程序中的错误。
+	<p>
+
+<li><b>运行库调试器(Cordbg.exe)</b><br>提供使用公共语言运行库调试 API 的命令行调试服务。使用此工具可查找和修复面向运行库的程序中的错误。
+	<p>
+</ul> 
+
+<span style="FONT: bold small; FONT-FAMILY: Verdana, Arial, Helvetica;" align="left"><a name="Security">安全性工具</a></span> 
+<p>
+<ul>
+	<li><b>证书创建工具(Makecert.exe)</b><br>生成仅用于测试目的的 X.509 证书。
+	<p>
+	
+	<li><b>证书管理器工具(Certmgr.exe)</b><br>管理证书、证书信任列表(CTL)和证书吊销列表(CRL)。
+	<p>
+	
+	<li><b>代码访问安全策略工具(Caspol.exe)</b><br>使您能够检查和修改计算机级、用户级和企业级的代码访问安全策略。    
+	<p>
+	注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Caspol.exe，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+	<p>
+	<li><b>PEVerify 工具(PEverify.exe)</b><br>在指定的程序集上执行 MSIL 类型安全验证检查和元数据验证检查。
+	<p>
+	
+	<li><b>Secutil 工具(Secutil.exe)</b><br>使用可以合并到代码中的格式，从程序集中提取强名称公钥信息或 Authenticode 发行者证书。</span>    
+	<p>
+	
+	<li><b>发行者证书测试工具(Cert2spc.exe)</b><br>通过一个或多个 X.509 证书创建仅用于测试目的的发行者的证书(SPC)。
+	<p>
+	
+	<li><b>强名称工具(Sn.exe)</b><br>帮助创建具有强名称的程序集。Sn.exe 提供用于密钥管理、签名生成和签名验证的选项。
+	<p>
+</ul>
+<span style="FONT: bold small; FONT-FAMILY: Verdana, Arial, Helvetica;" align="left"><a name= "General">常规工具</a></span> 
+<p>
+<ul>
+	<li><b>许可证编译器(Lc.exe)</b><br>读取包含授权信息的文本文件，并生成一个可嵌入公共语言运行库可执行文件中的 .licenses 文件。
+	<p>
+	<li><b>管理强类型类生成器(Mgmtclassgen.exe)</b><br>使您能够用 C#、Visual Basic 或 JScript 为指定的 Windows Management Instrumentation (WMI)类快速生成早期绑定类。
+	<p>
+	
+	<li><b>MSIL 汇编程序(Ilasm.exe)</b><br>从 Microsoft 中间语言(MSIL)生成 PE 文件。您可以运行得到的可执行文件(该文件包含 MSIL 代码和所需的元数据)以确定 MSIL 代码是否按预期执行。  
+	<p>
+	注意：在“%windir%\Microsoft.NET\Framework\v2.0.xxxx”中可以找到 Ilasm.exe，其中 xxxx 是您使用的 .NET Framework 的内部版本号。
+<p>
+	
+	<li><b>MSIL 反汇编程序(Ildasm.exe)</b><br>采用包含 MSIL 代码的 PE 文件，并创建适合作为 MSIL 汇编程序(Ilasm.exe)输入的文本文件。
+	<p>
+	<li><b>资源文件生成器工具(Resgen.exe)</b><br>将文本文件和 .resx (基于 XML 的资源格式)文件转换为 .NET 公共语言运行库二进制 .resources 文件，这些 .resources 文件可嵌入到运行库二进制可执行文件中，或编译到附属程序集中。   
+	<p>
+	<li><b>Visual J# 二进制转换工具(JbImp.exe)</b><br>将某些 Java 语言的字节码(.class)文件转换为 Microsoft&#174; 中间语言(MSIL)。此工具使开发人员可以将大多数 JDK 1.1.4 级别的可用库和应用程序仅作为字节码文件转换为 MSIL 程序集，并在含有 Visual J# 可再发行组件包的 .NET Framework 上运行它们。仅当应用程序或库的 Java 语言源程序不可用时，才使用该工具。如果 Java 语言源程序可用，建议改用 Visual J# 编译器(vjc.exe)。
+	<p>
+注意：要使用此工具，必须安装 Visual J# Redistributable Package 2.0。<a href=..\redist.htm>安装 Visual J# Redistributable Package 2.0。</a> 
+	<p>
+
+	<li><b>Windows 窗体 ActiveX 控件导入程序(Aximp.exe)</b><br>将 ActiveX 控件的 COM 类型库中的类型定义转换为 Windows 窗体控件。
+	<p>
+	<li><b>Windows 资源本地化编辑器(Winres.exe)</b><br>使您能够轻松快捷地对“Windows 窗体”窗体进行本地化。
+	<p>
+<p>
+<HR>
+<span style="FONT: normal 8pt; FONT-FAMILY: Verdana, Arial, Helvetica">版权所有 &#169; 2005 Microsoft Corporation。保留所有权利。 </span> <br><P>
+</div>
+</body>
+</html>

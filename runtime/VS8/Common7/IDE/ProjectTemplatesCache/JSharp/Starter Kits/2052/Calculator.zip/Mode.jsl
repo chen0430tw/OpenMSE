@@ -1,0 +1,82 @@
+﻿package calculator.model.mode;
+
+/**
+ * 要存储当前计算器模式的类。
+ */
+public class Mode
+{
+	/**
+	 * 默认值分别为: AngleMode 为度，hyp 和 inv 为 false，
+	 * 固定模式为 true 且进制为十。
+	 */
+	public Mode()
+	{
+		base = Base.TEN;
+		angle = AngleMode.Degrees;
+	}
+
+	// 访问器方法
+	public Base getBase()
+	{
+		return base;
+	}
+
+	public void setBase(Base value)
+	{
+		base = value;
+	}
+
+	public void setAngle(AngleMode value)
+	{
+		angle = value;
+	}
+
+	public AngleMode getAngle()
+	{
+		return angle;
+	}
+
+	public void setInverse(boolean value)
+	{
+		inv = value;
+	}
+
+	public boolean getInverse()
+	{
+		return inv;
+	}
+
+	public void setHyperbolic(boolean value)
+	{
+		hyp = value;
+	}
+
+	public boolean getHyperbolic()
+	{
+		return hyp;
+	}
+
+	public void setFEMode(boolean value)
+	{
+		fixedMode = value;
+	}
+
+	public boolean getFEMode()
+	{
+		return fixedMode;
+	}
+
+	public void reset()
+	{
+		inv = false;
+		hyp = false;
+		fixedMode = true;
+	}
+
+	// 私有变量
+	private Base base;
+	private AngleMode angle;
+	private boolean hyp;
+	private boolean inv;
+	private boolean fixedMode;
+}

@@ -1,0 +1,19 @@
+﻿package calculator.model;
+
+/**
+ * 按递增顺序排序的运算符优先级。
+ */
+public enum Precedence
+{
+    Lowest,                     // 假设的最低优先级
+
+    Subtraction,
+    Addition(Subtraction),      // 与减法相同
+    Multiplication,
+    Division(Multiplication),   // 与乘法相同
+    Combination,
+    Permutation,
+    Power,
+    Mod
+}
+

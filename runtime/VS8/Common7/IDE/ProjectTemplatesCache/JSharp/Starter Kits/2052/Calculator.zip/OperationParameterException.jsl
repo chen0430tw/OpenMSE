@@ -1,0 +1,29 @@
+﻿package calculator.model;
+
+import System.Runtime.Serialization.*;
+
+/**
+ * 用于指示给定 Operation 的输入无效的异常
+ */
+/** @attribute System.Serializable() */
+public class OperationParameterException extends IllegalArgumentException
+{
+	public OperationParameterException()
+	{
+	}
+
+	public OperationParameterException(String message)
+	{
+		super(message);
+	}
+
+	public OperationParameterException(String message, System.Exception inner)
+	{
+		super(message, inner);
+	}
+
+	protected OperationParameterException(SerializationInfo info, StreamingContext context)
+	{
+		super(info, context);
+	}
+}

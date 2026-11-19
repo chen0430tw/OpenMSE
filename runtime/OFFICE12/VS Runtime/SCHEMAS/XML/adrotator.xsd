@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace='Ad Rotator Schedule File'
+        xmlns='http://www.w3.org/1999/XMLSchema'
+        xmlns:adr='http://schemas.microsoft.com/Schemas/AdRotatorScheduleFile'
+        xmlns:vs='http://schemas.microsoft.com/Schemas/VisualStudio/HTML Intellisense'
+        vs:ishtmlschema='false'>
+
+<annotation>
+    <documentation>
+    Ad Rotator Schedule File schema.
+    </documentation>
+</annotation>
+
+
+<!-- <Advertisements>: exactly one per file -->
+<element name='Advertisements' minOccurs='1' maxOccurs='1'>
+    <complexType>
+        <!-- <Ad>: at least one per file -->
+        <choice minOccurs='1' maxOccurs='*'>
+            <element name='Ad' type='adr:adType' />
+        </choice>
+    </complexType>
+</element>
+
+<!-- an <Ad> must contain at least one element, but no element may appear more than once per <Ad> -->
+<complexType name='adType'>
+    <choice minOccurs='1' maxOccurs='*'>
+        <element name='ImageUrl' type='uriReference' vs:builder='url' minOccurs='0' maxOccurs='1' />
+        <element name='NavigateUrl' type='uriReference' vs:builder='url' minOccurs='0' maxOccurs='1' />
+        <element name='Keyword' type='string' minOccurs='0' maxOccurs='1' />
+        <element name='Impressions' type='positiveInteger' minOccurs='0' maxOccurs='1' />
+        <element name='AlternateText' type='string' minOccurs='0' maxOccurs='1' />
+    </choice>
+</complexType>
+
+</schema>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<schema targetNamespace='Windows Scripting Host'
+		xmlns='http://www.w3.org/1999/XMLSchema'
+		xmlns:wsh='http://schemas.microsoft.com/Schemas/WindowsScriptingHost'
+		xmlns:vs='http://schemas.microsoft.com/Schemas/VisualStudio/HTML Intellisense'
+		vs:ishtmlschema="false"
+		vs:iscasesensitive="true"
+		>
+
+<annotation>
+	<documentation>
+	Windows Scripting Host schema.
+	Version 1.0
+	</documentation>
+</annotation>
+
+<!-- <package> -->
+<element name='package'>
+	<complexType>
+		<choice>
+			<element ref='wsh:comment' />
+			<element name='job' type='wsh:jobType' />
+		</choice>
+		<attribute name='id' type='string' />
+	</complexType>
+</element>
+
+<!-- <comment> -->
+<!-- 
+	simple types (e.g. 'string') can't have attributes in XSD so we must
+	derive a complexType to give <comment> it's id attribute.
+  -->
+<element name='comment' >
+	<complexType base='string' derivedBy='extension'>
+		<attribute name='id' type='string' />
+	</complexType>
+</element>
+
+
+<!-- <job> -->
+<complexType name='jobType'>
+	<choice>
+		<element ref='wsh:comment' />
+		<element name='object' type='wsh:objectType'  vs:htmlequivalent="object"/>
+		<element name='reference' type='wsh:referenceType' />
+		<element name='resource' type='wsh:resourceType' />
+		<element name='script' type='wsh:scriptType'  vs:htmlequivalent="script"/>
+	</choice>
+	<attribute name='id' type='string' />
+</complexType>
+
+<!-- <object> -->
+<complexType name='objectType' content='empty'>
+	<attribute name='events' type='string' />
+	<attribute name='id' type='string' />
+	<attribute name='classid' type='string' />
+	<attribute name='progid' type='string' />
+</complexType>
+
+<!-- <reference> -->
+<complexType name='referenceType' content='empty' >
+	<attribute name='id' type='string' />
+	<attribute name='guid' type='string' />
+	<attribute name='object' type='string' />
+	<attribute name='version' type='string' />
+</complexType>
+
+<!-- <resource> -->
+<complexType name='resourceType' base='string' derivedBy='extension'>
+	<attribute name='id' type='string' />
+</complexType>
+
+<!-- <script> -->
+<complexType name='scriptType' content='textOnly' >
+	<attribute name='id' type='string' />
+	<attribute name='language'>
+		<simpleType base='string'>
+			<enumeration value='javascript' />
+			<enumeration value='vbscript' />
+		</simpleType>
+	</attribute>
+	<attribute name='src' type='uri-reference' />
+</complexType>
+
+</schema>

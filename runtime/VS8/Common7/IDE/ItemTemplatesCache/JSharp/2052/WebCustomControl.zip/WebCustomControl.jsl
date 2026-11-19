@@ -1,0 +1,42 @@
+﻿package $rootnamespace$;
+
+import System.ComponentModel.*;
+import System.Web.UI.*;
+import System.Web.UI.WebControls.*;
+
+/**
+ * $safeitemrootname$ 的摘要说明。
+ */
+/** 
+ * @attribute DefaultProperty("Text")
+ * @attribute ToolboxData("<{0}:$safeitemrootname$ runat=server></{0}:$safeitemrootname$>") 
+ */
+public class $safeitemrootname$ extends System.Web.UI.WebControls.WebControl
+{
+    private String text = "";
+
+    /** 
+     * @attribute Bindable(true) 
+     * @attribute Category("Appearance") 
+     * @attribute DefaultValue("") 
+     * @property
+     */
+    public String get_Text() 
+    {
+        return text;
+    }
+
+    /** @property */
+    public void set_Text(String t) 
+    {
+        text = t;
+    }
+
+    /**
+     * 将此控件呈现给指定的输出参数。
+     */
+    protected void Render(HtmlTextWriter output)
+    {
+        output.Write(text);
+    }
+}

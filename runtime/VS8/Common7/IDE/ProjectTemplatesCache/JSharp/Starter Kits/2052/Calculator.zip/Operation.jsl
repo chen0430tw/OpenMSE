@@ -1,0 +1,17 @@
+﻿package calculator.model;
+
+/**
+ * 所有运算都需要实现的接口。
+ */
+public interface Operation
+{
+    /**
+     * 获取 Operation 的类型 - 一元、二元或零元
+     */
+    public OperationType getType();
+
+    /**
+     * 定义相应运算符的运算
+     */
+    public void operate(OperandStack ops);
+}

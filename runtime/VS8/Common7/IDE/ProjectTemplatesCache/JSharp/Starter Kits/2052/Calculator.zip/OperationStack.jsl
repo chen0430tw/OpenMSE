@@ -1,0 +1,45 @@
+﻿package calculator.model;
+
+import java.util.*;
+
+/**
+ * java.util.Stack 周围的包装用于提供 Operation 对象的堆栈。
+ */
+public class OperationStack
+{
+    /**
+     * 向堆栈的顶部添加 Operation 对象。
+     */
+    public void push(Operation operation)
+    {
+        operationStack.push(operation);
+    }
+
+    /**
+     * 从堆栈顶部移除 Operation 对象。
+     */
+    public Operation pop()
+    {
+        return (Operation)operationStack.pop();
+    }
+
+    /**
+     * 如果为空，则返回 true。
+     */
+    public boolean empty()
+    {
+        return operationStack.empty();
+    }
+
+    /**
+     * 清空堆栈
+     */
+    public void clear()
+    {
+        operationStack.clear();
+    }
+
+    // 内部堆栈
+    private Stack operationStack = new Stack();
+}
+

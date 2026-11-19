@@ -1,0 +1,14 @@
+﻿package calculator.model.memoryOperations;
+
+import calculator.model.*;
+
+/**
+ * 所有内存操作 (M+、M- 等) 的基类。
+ */
+abstract public class MemoryOperation implements Operation
+{
+    /**
+     * 用于内存存储 (M+ 等操作)。
+     */
+    protected static double memory;
+}

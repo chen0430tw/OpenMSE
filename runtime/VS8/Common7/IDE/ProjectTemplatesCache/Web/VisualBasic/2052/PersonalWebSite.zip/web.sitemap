@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<siteMap>
+	<siteMapNode title="主页" url="Default.aspx">
+		<siteMapNode title="简历" url="Resume.aspx"/>
+		<siteMapNode title="链接" url="Links.aspx"/>
+		<siteMapNode title="相册" url="Albums.aspx">
+			<siteMapNode title="照片" url="Photos.aspx">
+				<siteMapNode title="详细信息" url="Details.aspx"/>
+			</siteMapNode>
+		</siteMapNode>
+		<siteMapNode title="注册" url="Register.aspx"/>
+		<siteMapNode title="管理" url="Admin/Albums.aspx">
+			<siteMapNode title="照片" url="Admin/Photos.aspx">
+				<siteMapNode title="详细信息" url="Admin/Details.aspx"/>
+			</siteMapNode>
+		</siteMapNode>
+	</siteMapNode>
+</siteMap>

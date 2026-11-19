@@ -1,0 +1,29 @@
+﻿package calculator;
+
+import calculator.ui.CalculatorForm;
+import calculator.model.Engine;
+import System.Windows.Forms.Application;
+
+/**
+ * 主类
+*/
+public class Calculator
+{
+    /**
+     * 主入口点
+*/
+    /** @attribute System.STAThread() */
+    public static void main(String[] args)
+    {
+        // 创建主窗体类
+        CalculatorForm view = new CalculatorForm();
+
+        // 将视图设置为观察者
+        Engine.getDisplay().addObserver(view);
+        Engine.reset();
+
+        // 运行窗体
+        Application.EnableVisualStyles();
+        Application.Run(view);
+    }
+}

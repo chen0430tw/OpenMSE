@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<schema xmlns="http://www.w3.org/1999/XMLSchema" targetNamespace="http://www.w3.org/1999/XMLSchema">
+    <element name="schema" minOccurs="1" maxOccurs="1">
+        <complexType content="elementOnly">
+			<sequence>
+				<choice minOccurs="0" maxOccurs="unbounded">
+				    <element name="include" type="includeDef" />
+					<element name="import" type="importDef" />
+					<element name="annotation" type="annotationDef" />
+				</choice>
+				<choice minOccurs="0" maxOccurs="unbounded">
+					<element name="element" type="elementDef" />
+				    <element name="complexType" type="namedComplexTypeDef" />
+					<element name="group" type="groupDef" />
+					<element name="attribute" type="attributeDef" />
+					<element name="attributeGroup" type="namedAttributeGroupDef" />
+					<element name="notation" type="notationDef" />
+					<element name="simpleType" type="namedSimpleTypeDef" />
+					<element name="annotation" type="annotationDef" />
+				</choice>
+			</sequence>
+			<attribute name="attributeFormDefault" type="formEnum" use="default" value="unqualified"/>
+			<attribute name="blockDefault" type="blockDefaultEnum" />
+			<attribute name="elementFormDefault" type="formEnum" use="default" value="unqualified"/>
+			<attribute name="finalDefault" type="blockEnum" />
+			<attribute name="id" type="ID" />
+			<attribute name="targetNamespace" type="uriReference" />
+			<attribute name="version" type="string" />
+		</complexType>
+    </element>
+
+    <complexType name="attributeDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+			<element name="simpleType" type="unnamedSimpleTypeDef" />
+		</choice>
+        <attribute name="form" type="formEnum" />
+        <attribute name="id" type="ID" />
+        <attributeGroup ref="nameAttributes" />
+        <attribute name="type" type="QName" />
+        <attribute name="use" type="useEnum" use="default" value="optional"/>
+        <attribute name="value" type="string" />
+    </complexType>
+
+    <complexType name="elementDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+			<element name="simpleType" type="unnamedSimpleTypeDef" />
+			<element name="complexType" type="unnamedComplexTypeDef" />
+			<element name="keyref" type="keyrefDef" />
+			<element name="unique" type="constraintDef" />
+			<element name="key" type="constraintDef" />
+		</choice>
+        <attribute name="abstract" type="boolean" />
+        <attribute name="block" type="blockEnum" />
+        <attribute name="default" type="string" />
+        <attribute name="equivClass" type="QName" />
+        <attribute name="final" type="blockEnum" />
+        <attribute name="fixed" type="string" />
+        <attribute name="form" type="formEnum" />
+        <attribute name="id" type="ID" />
+        <attributeGroup ref="occursAttributes" />
+        <attributeGroup ref="nameAttributes" />
+        <attribute name="nullable" type="boolean" />
+        <attribute name="type" type="QName" />
+    </complexType>
+
+    <complexType name="namedComplexTypeDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+	        <element name="length" type="facetDef" />
+			<element name="enumeration" type="facetDef" />
+			<element name="pattern" type="facetDef" />
+	        <element name="scale" type="facetDef" />
+	        <element name="period" type="facetDef" />
+	        <element name="duration" type="facetDef" />
+	        <element name="maxLength" type="facetDef" />
+	        <element name="precision" type="facetDef" />
+		    <element name="minInclusive" type="facetDef" />
+	        <element name="minExclusive" type="facetDef" />
+	        <element name="maxInclusive" type="facetDef" />
+		    <element name="maxExclusive" type="facetDef" />
+	        <element name="minLength" type="facetDef" />
+			<element name="encoding" type="facetDef" />
+			<element name="group" type="groupDef" />
+			<element name="all" type="groupDef" />
+			<element name="choice" type="groupDef" />
+			<element name="sequence" type="groupDef" />
+			<element name="attribute" type="attributeDef" />
+			<element name="attributeGroup" type="unnamedAttributeGroupDef"/>
+			<element name="anyAttribute" type="anyAttributeDef"/>
+		</choice>
+        <attribute name="abstract" type="boolean" />
+        <attribute name="base" type="QName" />
+        <attribute name="block" type="blockEnum" />
+        <attribute name="content" type="contentEnum" />
+        <attribute name="derivedBy" type="derivedByEnum" />
+        <attribute name="final" type="blockEnum" />
+        <attribute name="id" type="ID" />
+        <attribute name="name" type="NCName" use="required" />
+    </complexType>
+    
+    <complexType name="unnamedComplexTypeDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+	        <element name="length" type="facetDef" />
+			<element name="enumeration" type="facetDef" />
+			<element name="pattern" type="facetDef" />
+	        <element name="scale" type="facetDef" />
+	        <element name="period" type="facetDef" />
+	        <element name="duration" type="facetDef" />
+	        <element name="maxLength" type="facetDef" />
+	        <element name="precision" type="facetDef" />
+		    <element name="minInclusive" type="facetDef" />
+	        <element name="minExclusive" type="facetDef" />
+	        <element name="maxInclusive" type="facetDef" />
+		    <element name="maxExclusive" type="facetDef" />
+	        <element name="minLength" type="facetDef" />
+			<element name="encoding" type="facetDef" />
+			<element name="group" type="groupDef" />
+			<element name="all" type="groupDef" />
+			<element name="choice" type="groupDef" />
+			<element name="sequence" type="groupDef" />
+			<element name="attribute" type="attributeDef" />
+			<element name="attributeGroup" type="unnamedAttributeGroupDef"/>
+			<element name="anyAttribute" type="anyAttributeDef"/>
+		</choice>
+        <attribute name="abstract" type="boolean" />
+        <attribute name="base" type="QName" />
+        <attribute name="block" type="blockEnum" />
+        <attribute name="content" type="contentEnum" />
+        <attribute name="derivedBy" type="derivedByEnum" />
+        <attribute name="final" type="blockEnum" />
+        <attribute name="id" type="ID" />
+    </complexType>
+
+    <complexType name="anyAttributeDef">
+   		<choice minOccurs="0" maxOccurs="1">
+	        <element name="annotation" type="annotationDef" />
+	    </choice>
+        <attribute name="id" type="ID" />
+        <attribute name="namespace" type="string" />
+    </complexType>
+
+
+    <complexType name="namedAttributeGroupDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+			<element name="attribute" type="attributeDef" />
+			<element name="attributeGroup" type="unnamedAttributeGroupDef" />
+			<element name="anyAttribute" type="anyAttributeDef" />
+		</choice>
+        <attribute name="id" type="ID" />
+        <attributeGroup ref="nameAttributes" />
+    </complexType>
+
+    <complexType name="unnamedAttributeGroupDef">
+		<choice minOccurs="0" maxOccurs="1">
+			<element name="annotation" type="annotationDef" />
+		</choice>
+        <attribute name="id" type="ID" />
+        <attribute name="ref" type="QName" />
+    </complexType>
+
+    <complexType name="groupDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+			<element name="element" type="elementDef" />
+			<element name="group" type="groupDef" />
+			<element name="all" type="groupComponentsDef" />
+			<element name="choice" type="groupComponentsDef" />
+			<element name="sequence" type="groupComponentsDef" />
+			<element name="any" type="anyDef" />
+		</choice>
+        <attribute name="id" type="ID" />
+        <attributeGroup ref="occursAttributes" />
+        <attributeGroup ref="nameAttributes" />
+    </complexType>
+
+    <complexType name="groupComponentsDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+			<element name="element" type="elementDef" />
+			<element name="group" type="groupDef" />
+			<element name="choice" type="choiceDef" />
+			<element name="sequence" type="sequenceDef" />
+			<element name="any" type="anyDef" />
+		</choice>
+        <attribute name="id" type="ID" />
+        <attributeGroup ref="occursAttributes" />
+    </complexType>
+
+
+    <complexType name="anyDef">
+		<choice minOccurs="0" maxOccurs="1">
+	        <element name="annotation" type="annotationDef" />
+	    </choice>
+        <attribute name="id" type="ID" />
+        <attribute name="namespace" type="uriReference" />
+        <attribute name="processContents" type="processContentsEnum" />
+        <attributeGroup ref="occursAttributes" />
+    </complexType>
+
+    <complexType name="constraintDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+			<element name="selector" type="string" />
+			<element name="field" type="string" />
+		</choice>
+        <attribute name="id" type="ID" />
+        <attribute name="name" type="NCName" />
+    </complexType>
+
+    <complexType name="keyrefDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+	        <element name="annotation" type="annotationDef" />
+		    <element name="selector" type="string" />
+			<element name="field" type="string" />
+		</choice>
+        <attribute name="id" type="ID" />
+        <attribute name="refer" type="QName" />
+        <attribute name="name" type="NCName" />
+    </complexType>
+
+    <complexType name="notationDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+	        <element name="annotation" type="annotationDef" />
+	    </choice>
+        <attribute name="id" type="ID" />
+        <attribute name="public" type="string" />
+        <attribute name="system" type="string" />
+        <attribute name="name" type="NCName" />
+    </complexType>
+
+    <complexType name="annotationDef">
+		<choice minOccurs="0" maxOccurs="unbounded">
+	        <element name="appinfo">
+		        <complexType content="textOnly">
+			        <attribute name="source" type="string" />
+				</complexType>
+			</element>
+			<element name="documentation">
+				<complexType content="textOnly">
+	                <attribute name="source" type="string" />
+		        </complexType>
+			</element>
+		</choice>
+    </complexType>
+
+    <complexType name="includeDef">
+		<choice minOccurs="0" maxOccurs="1">
+	        <element name="annotation" type="annotationDef" />
+		</choice>
+        <attribute name="id" type="ID" />
+        <attribute name="schemaLocation" type="string" />
+    </complexType>
+
+    <complexType name="importDef">
+   		<choice minOccurs="0" maxOccurs="1">
+		    <element name="annotation" type="annotationDef" />
+		</choice>
+        <attribute name="id" type="ID" />
+        <attribute name="namespace" type="string" />
+        <attribute name="schemaLocation" type="string" />
+    </complexType>
+
+    <complexType name="namedSimpleTypeDef">
+   		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+			<element name="minExclusive" type="facetDef" />
+			<element name="minInclusive" type="facetDef" />
+			<element name="maxExclusive" type="facetDef" />
+			<element name="maxInclusive" type="facetDef" />
+			<element name="precision" type="facetDef" />
+			<element name="scale" type="facetDef" />
+			<element name="length" type="facetDef" />
+			<element name="minLength" type="facetDef" />
+			<element name="maxLength" type="facetDef" />
+			<element name="encoding" type="facetDef" />
+			<element name="period" type="facetDef" />
+			<element name="duration" type="facetDef" />
+			<element name="enumeration" type="facetDef" />
+			<element name="pattern" type="facetDef" />
+		</choice>
+        <attribute name="abstract" type="boolean" />
+        <attribute name="base" type="QName" />
+        <attribute name="derivedBy" type="simpleTypeDerivedByEnum" use="default" value="restriction" />
+        <attribute name="id" type="ID" />
+        <attribute name="name" type="NCName" />
+    </complexType>
+
+    <complexType name="unnamedSimpleTypeDef">
+   		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="annotation" type="annotationDef" />
+			<element name="minExclusive" type="facetDef" />
+			<element name="minInclusive" type="facetDef" />
+			<element name="maxExclusive" type="facetDef" />
+			<element name="maxInclusive" type="facetDef" />
+			<element name="precision" type="facetDef" />
+			<element name="scale" type="facetDef" />
+			<element name="length" type="facetDef" />
+			<element name="minLength" type="facetDef" />
+			<element name="maxLength" type="facetDef" />
+			<element name="encoding" type="facetDef" />
+			<element name="period" type="facetDef" />
+			<element name="duration" type="facetDef" />
+			<element name="enumeration" type="facetDef" />
+			<element name="pattern" type="facetDef" />
+		</choice>
+        <attribute name="abstract" type="boolean" />
+        <attribute name="base" type="QName" />
+        <attribute name="derivedBy" type="simpleTypeDerivedByEnum" />
+        <attribute name="id" type="ID" />
+    </complexType>
+
+    <complexType name="facetDef">
+   		<choice minOccurs="0" maxOccurs="unbounded">
+	        <element name="annotation" type="annotationDef" />
+	    </choice>
+        <attribute name="value" type="string" />
+        <attribute name="id" type="ID" />
+    </complexType>
+
+
+    <simpleType name="useEnum" base="string" >
+        <enumeration value="prohibited" />
+        <enumeration value="optional" />
+        <enumeration value="required" />
+        <enumeration value="default" />
+        <enumeration value="fixed" />
+    </simpleType>
+
+    <simpleType name="processContentsEnum" base="string" >
+        <enumeration value="lax" />
+        <enumeration value="skip" />
+        <enumeration value="strict" />
+    </simpleType>
+
+    <simpleType name="formEnum" base="string">
+        <enumeration value="qualified" />
+        <enumeration value="unqualified" />
+    </simpleType>
+
+    <simpleType name="blockEnum" base="string">
+        <enumeration value="#all" />
+        <enumeration value="extension" />
+        <enumeration value="restriction" />
+    </simpleType>
+
+    <simpleType name="blockDefaultEnum" base="string">
+        <enumeration value="#all" />
+        <enumeration value="equivClass" />
+        <enumeration value="extension" />
+        <enumeration value="restriction" />
+    </simpleType>
+
+    <simpleType name="simpleTypeDerivedByEnum" base="string">
+        <enumeration value="list" />
+        <enumeration value="extension" />
+        <enumeration value="restriction" />
+    </simpleType>
+
+    <simpleType name="derivedByEnum" base="string">
+        <enumeration value="extension" />
+        <enumeration value="restriction" />
+    </simpleType>
+
+    <simpleType name="contentEnum" base="string" >
+        <enumeration value="elementOnly" />
+        <enumeration value="empty" />
+        <enumeration value="mixed" />
+        <enumeration value="textOnly" />
+    </simpleType>
+
+    <attributeGroup name="nameAttributes">
+        <attribute name="name" type="QName" />
+        <attribute name="ref" type="QName" />
+    </attributeGroup>
+
+    <attributeGroup name="occursAttributes">
+        <attribute name="minOccurs" type="nonNegativeInteger" />
+        <attribute name="maxOccurs" type="string" />
+    </attributeGroup>
+</schema>

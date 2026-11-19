@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dotfuscatorMap SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscatorMap_v1.1.dtd">
+<dotfuscatorMap version="1.1">
+    <header>
+        <timestamp>2003-05-30T11:22:32</timestamp>
+        <product version="2.1.1433.26576" user="Unregistered " serial="000-00-000-391">Dotfuscator(tm) Community Edition</product>
+    </header>
+    <mapping>
+        <module>
+            <name>HelloWorld.exe</name>
+            <type>
+                <name>HelloWorld.Friendly</name>
+                <newname>b</newname>
+                <methodlist>
+                    <method>
+                        <signature>void(string)</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>string()</signature>
+                        <name>get_Name</name>
+                        <newname>b</newname>
+                    </method>
+                    <method>
+                        <signature>void(string)</signature>
+                        <name>SayGoodbye</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>SayHello</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(string)</signature>
+                        <name>set_Name</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>string</signature>
+                        <name>myName</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+            </type>
+            <type>
+                <name>HelloWorld.Hello</name>
+                <newname>a</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>void(string, string)</signature>
+                        <name>Converse</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(string[])</signature>
+                        <name>Main</name>
+                        <newname>a</newname>
+                    </method>
+                </methodlist>
+                <fieldlist />
+            </type>
+        </module>
+    </mapping>
+    <statistics>
+        <statisticline>
+            <description>Memory Used (Kb)</description>
+            <statistic>156</statistic>
+        </statisticline>
+        <statisticline>
+            <description>Total Classes</description>
+            <statistic>2</statistic>
+        </statisticline>
+        <statisticline>
+            <description>Total Methods</description>
+            <statistic>8</statistic>
+        </statisticline>
+        <statisticline>
+            <description>Total Fields</description>
+            <statistic>1</statistic>
+        </statisticline>
+        <statisticline>
+            <description>Total Classes Renamed</description>
+            <statistic>2</statistic>
+            <statistic>100.00 %</statistic>
+        </statisticline>
+        <statisticline>
+            <description>Total Methods Renamed</description>
+            <statistic>6</statistic>
+            <statistic>75.00 %</statistic>
+        </statisticline>
+        <statisticline>
+            <description>Total Fields Renamed</description>
+            <statistic>1</statistic>
+            <statistic>100.00 %</statistic>
+        </statisticline>
+        <statisticline>
+            <description>Methods Renamed to 'a'</description>
+            <statistic>4</statistic>
+            <statistic>50.00 %</statistic>
+        </statisticline>
+        <statisticline>
+            <description>Methods Renamed to 'b'</description>
+            <statistic>2</statistic>
+            <statistic>25.00 %</statistic>
+        </statisticline>
+    </statistics>
+</dotfuscatorMap>

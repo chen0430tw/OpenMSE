@@ -1,0 +1,62 @@
+﻿package $rootnamespace$;
+
+import System.Collections.Generic.*;
+import System.ComponentModel.*;
+import System.Data.*;
+import System.Drawing.*;
+import System.Windows.Forms.*;
+
+/**
+ * $safeitemrootname$ 的摘要说明。
+ */
+public class $safeitemrootname$ extends System.Windows.Forms.Control
+{
+    /**
+     * 必需的设计器变量。
+     */
+    private System.ComponentModel.IContainer components;
+
+    public $safeitemrootname$()
+    {
+        // Windows.Forms 类撰写设计器支持所必需的
+        InitializeComponent();
+
+        //
+        // TODO: 在 InitializeComponent 调用之后添加任何构造函数代码
+        //
+    }
+
+    #region 组件设计器生成的代码
+    /**
+     * 清理所有正在使用的资源。
+     */
+    protected void Dispose(boolean disposing)
+    {
+        if (disposing)
+        {
+            if (components != null)
+            {
+                components.Dispose();
+            }
+        }
+        super.Dispose(disposing);
+    }
+
+    /**
+     * 设计器支持所需的方法 - 不要
+     * 使用代码编辑器修改此方法的内容。
+     */
+    private void InitializeComponent()
+    {
+        this.components = new System.ComponentModel.Container();
+    }
+    #endregion
+
+    protected void OnPaint(PaintEventArgs pe)
+    {
+        // TODO: 在此处添加自定义绘制代码
+
+        // 调用基类 OnPaint
+        super.OnPaint(pe);
+    }
+}

@@ -1,0 +1,390 @@
+下面的列表列出了可根据 Visual Studio 2005 许可证进行再分发的 Microsoft Visual Studio 2005 文件。  如果您被许可使用的 Microsoft 软件不是 Visual Studio 2005，则只能根据此类许可证对该 Microsoft 软件所安装的文件进行再分发。
+
+_____________________________________________________________
+
+Visual C++ 运行库文件
+
+在遵守软件许可协议条款的前提下，您可以对下面列出的 .EXE 文件（不做任何修改）进行再分发。 
+在安装期间，这些文件可以作为系统必备文件运行。
+
+vcredist_x86.exe
+
+vcredist_x64.exe	
+
+vcredist_IA64.exe
+
+	
+在遵守软件许可协议条款的前提下，您可以将下面列出的 MSM 文件（不做任何修改）作为安装包的一部分进行再分发：
+	
+Microsoft_VC80_ATL_x86.msm
+
+policy_8_0_Microsoft_VC80_ATL_x86.msm
+
+Microsoft_VC80_ATL_x86_ia64.msm
+
+policy_8_0_Microsoft_VC80_ATL_x86_ia64.msm
+
+Microsoft_VC80_ATL_x86_x64.msm
+
+policy_8_0_Microsoft_VC80_ATL_x86_x64.msm
+
+Microsoft_VC80_CRT_x86.msm
+
+policy_8_0_Microsoft_VC80_CRT_x86.msm
+
+Microsoft_VC80_CRT_x86_ia64.msm
+   	
+policy_8_0_Microsoft_VC80_CRT_x86_ia64.msm
+   
+Microsoft_VC80_CRT_x86_x64.msm
+  	 
+policy_8_0_Microsoft_VC80_CRT_x86_x64.msm
+  	
+Microsoft_VC80_MFC_x86.msm
+   	
+policy_8_0_Microsoft_VC80_MFC_x86.msm
+  	 
+Microsoft_VC80_MFC_x86_ia64.msm
+  	
+policy_8_0_Microsoft_VC80_MFC_x86_ia64.msm
+
+Microsoft_VC80_MFC_x86_x64.msm
+  	
+policy_8_0_Microsoft_VC80_MFC_x86_x64.msm
+ 	
+Microsoft_VC80_MFCLOC_x86.msm
+	 
+policy_8_0_Microsoft_VC80_MFCLOC_x86.msm
+  	
+Microsoft_VC80_MFCLOC_x86_ia64.msm
+	
+policy_8_0_Microsoft_VC80_MFCLOC_x86_ia64.msm
+	
+Microsoft_VC80_MFCLOC_x86_x64.msm
+	
+policy_8_0_Microsoft_VC80_MFCLOC_x86_x64.msm
+
+Microsoft_VC80_OpenMP_x86.msm
+	
+policy_8_0_Microsoft_VC80_OpenMP_x86.msm
+     	
+Microsoft_VC80_OpenMP_x86_ia64.msm
+   	   	
+policy_8_0_Microsoft_VC80_OpenMP_x86_ia64.msm
+   	
+Microsoft_VC80_OpenMP_x86_x64.msm
+  	 
+policy_8_0_Microsoft_VC80_OpenMP_x86_x64.msm
+   	
+
+为方便您的使用，我们提供了下列文件夹以供您在再发行 VC++ 运行库文件时使用。 在遵守软件许可协议条款的前提下，您可以将应用程序本地文件夹中的文件夹（不做任何修改）作为子文件夹（文件夹名不做任何更改）再分发。 此外，还可以再分发单个文件夹中的所有文件（*.dll 和 *.manifest），为方便您使用，下面将这些文件夹作为一个完整的集合列出。 
+
+\VC\redist\x86\Microsoft.VC80.ATL\
+	atl80.dll
+	Microsoft.VC80.ATL.manifest
+
+\VC\redist\ia64\Microsoft.VC80.ATL\
+	atl80.dll
+	Microsoft.VC80.ATL.manifest
+
+\VC\redist\amd64\Microsoft.VC80.ATL\
+	atl80.dll
+	Microsoft.VC80.ATL.manifest
+
+\VC\redist\x86\Microsoft.VC80.CRT\
+	msvcm80.dll
+	msvcp80.dll
+	msvcr80.dll
+	Microsoft.VC80.CRT.manifest
+
+\VC\redist\ia64\Microsoft.VC80.CRT\
+	msvcm80.dll
+	msvcp80.dll
+	msvcr80.dll
+	Microsoft.VC80.CRT.manifest
+
+\VC\redist\amd64\Microsoft.VC80.CRT\
+	msvcm80.dll
+	msvcp80.dll
+	msvcr80.dll
+	Microsoft.VC80.CRT.manifest
+
+\VC\redist\x86\Microsoft.VC80.MFC\
+	mfc80.dll
+	mfc80u.dll
+	mfcm80.dll
+	mfcm80u.dll
+	Microsoft.VC80.MFC.manifest
+
+\VC\redist\ia64\Microsoft.VC80.MFC\
+	mfc80.dll
+	mfc80u.dll
+	mfcm80.dll
+	mfcm80u.dll
+	Microsoft.VC80.MFC.manifest
+
+\VC\redist\amd64\Microsoft.VC80.MFC\
+	mfc80.dll
+	mfc80u.dll
+	mfcm80.dll
+	mfcm80u.dll
+	Microsoft.VC80.MFC.manifest
+
+\VC\redist\x86\Microsoft.VC80.MFCLOC\
+	mfc80chs.dll
+	mfc80cht.dll
+	mfc80enu.dll
+	mfc80esp.dll
+	mfc80deu.dll
+	mfc80fra.dll
+	mfc80ita.dll
+	mfc80jpn.dll
+	mfc80kor.dll
+	Microsoft.VC80.MFCLOC.manifest
+
+\VC\redist\ia64\Microsoft.VC80.MFCLOC\
+	mfc80chs.dll
+	mfc80cht.dll
+	mfc80enu.dll
+	mfc80esp.dll
+	mfc80deu.dll
+	mfc80fra.dll
+	mfc80ita.dll
+	mfc80jpn.dll
+	mfc80kor.dll
+	Microsoft.VC80.MFCLOC.manifest
+
+\VC\redist\amd64\Microsoft.VC80.MFCLOC\
+	mfc80chs.dll
+	mfc80cht.dll
+	mfc80enu.dll
+	mfc80esp.dll
+	mfc80deu.dll
+	mfc80fra.dll
+	mfc80ita.dll
+	mfc80jpn.dll
+	mfc80kor.dll
+	Microsoft.VC80.MFCLOC.manifest
+
+\VC\redist\x86\Microsoft.VC80.OpenMP\
+	vcomp.dll
+	Microsoft.VC80.OpenMP.manifest
+
+\VC\redist\amd64\Microsoft.VC80.OpenMP\
+	vcomp.dll
+	Microsoft.VC80.OpenMP.manifest
+
+\VC\redist\ia64\Microsoft.VC80.OpenMP\
+	vcomp.dll
+	Microsoft.VC80.OpenMP.manifest
+
+在遵守软件许可协议条款的前提下，您可以通过应用程序本地文件夹中的应用程序或通过部署到全局程序集缓存 (GAC) 再分发以下文件：
+
+mfcmifc80.dll
+
+在遵守软件许可协议条款的前提下，您可以只出于调试应用程序的目的再分发下面列出的一个或多个 *.*.pdb 文件。 
+
+atl80.i386.pdb						
+atl80.AMD64.pdb						
+atl80.IA64.pdb						
+						
+msvcm80.i386.pdb						
+msvcm80.AMD64.pdb						
+msvcm80.IA64.pdb						
+						
+msvcp80.i386.pdb						
+msvcp80.AMD64.pdb						
+msvcp80.IA64.pdb						
+						
+msvcr80.i386.pdb						
+msvcr80.AMD64.pdb						
+msvcr80.IA64.pdb						
+						
+mfc80.i386.pdb						
+mfc80.AMD64.pdb						
+mfc80.IA64.pdb						
+						
+mfc80u.i386.pdb						
+mfc80u.AMD64.pdb						
+mfc80u.IA64.pdb						
+						
+mfcm80.i386.pdb						
+mfcm80.AMD64.pdb						
+mfcm80.IA64.pdb						
+						
+mfcm80u.i386.pdb						
+mfcm80u.AMD64.pdb						
+mfcm80u.IA64.pdb
+
+vcomp.i386.pdb
+vcomp.AMD64.pdb
+vcomp.IA64.pdb
+						
+_____________________________________________________________
+
+智能设备扩展文件
+
+在遵守软件许可协议条款的前提下，可以再分发下列文件，但这些文件只用于基于 Windows Mobile 和 Windows CE 的设备，并且只能与智能设备应用程序一起再发行：  
+
+msvcr80.dll
+atl80.dll
+MFC80CHS.DLL
+MFC80CHT.DLL
+MFC80DEU.DLL
+MFC80ENU.DLL
+MFC80ESP.DLL
+MFC80FRA.DLL
+MFC80ITA.DLL
+MFC80JPN.DLL
+MFC80KOR.DLL
+MFC80U.DLL
+
+_____________________________________________________________
+
+.NET Framework
+
+在遵守软件许可协议条款的前提下，可以分发以下 .EXE 文件（不做任何修改）：
+
+dotnetfx.exe (X86)
+Netfx64.exe (X64)
+Netfx64.exe (IA64)
+
+langpack.exe（多个语言版本）
+_____________________________________________________________
+在遵守软件许可协议条款的前提下，可以分发以下 MSI 文件（不做任何修改）：
+
+Wmirdist.msi       
+
+_____________________________________________________________
+
+.NET Compact Framework 文件
+
+为方便您使用，我们提供了以下安装包 (*.MSI)，供您在再分发 .NET Compact Framework dll 时使用。在遵守软件许可协议条款的前提下，您可以再分发 MSI（不做任何修改）或下面列出的一个或多个单独的文件：
+
+.NET Compact Framework V1：
+
+NETCFSetupv1.msi
+	NETCFv1.WCE.ARMV4.CAB
+	NETCFv1.WM.ARMV4I.CAB
+	System_SR_ENU.cab
+	System_SR_JA.cab
+	System_SR_FR.cab
+	System_SR_DE.cab
+	System_SR_ES.cab
+	System_SR_IT.cab
+	System_SR_CHS.cab
+	System_SR_CHT.cab
+	System_SR_KO.cab
+	System_SR_ENU_wm.cab
+	System_SR_JA_wm.cab
+	System_SR_FR_wm.cab
+	System_SR_DE_wm.cab
+	System_SR_ES_wm.cab
+	System_SR_IT_wm.cab
+	System_SR_CHS_wm.cab
+	System_SR_CHT_wm.cab
+	System_SR_KO_wm.cab
+
+为方便您使用，我们提供了以下安装包 (*.MSI)，供您在再分发 .NET Compact Framework dll 时使用。在遵守软件许可协议条款的前提下，您可以再分发 MSI（不做任何修改）或下面列出的一个或多个单独的文件：
+
+.NET Compact Framework V2：
+
+NETCFSetupv2.msi
+	NETCFv2.ppc.armv4.cab
+	NETCFv2.wm.armv4i.cab
+	NETCFv2.wce5.sh4.cab
+	NETCFv2.wce5.mipsii.cab
+	NETCFv2.wce5.mipsiv.cab
+	NETCFv2.wce5.armv4i.cab
+	NETCFv2.wce5.x86.cab
+	System_SR_CHS.CAB
+	System_SR_CHS_wm.cab
+	System_SR_CHT.CAB
+	System_SR_CHT_wm.cab
+	System_SR_DE.CAB
+	System_SR_DE_wm.cab
+	System_SR_ENU.CAB
+	System_SR_ENU_wm.cab
+	System_SR_ES.CAB
+	System_SR_ES_wm.cab
+	System_SR_FR.CAB
+	System_SR_FR_wm.cab
+	System_SR_IT.CAB
+	System_SR_IT_wm.cab
+	System_SR_JA.CAB
+	System_SR_JA_wm.cab
+	System_SR_KO.CAB
+	System_SR_KO_wm.cab
+	System_SR_pt-BR.CAB
+	System_SR_pt-BR_wm.cab
+_____________________________________________________________
+
+SQL Server Express 文件
+
+在遵守软件许可协议条款的前提下，可以分发以下 .EXE 文件（不做任何修改）：
+
+SQLExpr.exe
+SQLExpr32.exe
+
+_____________________________________________________
+
+运行库组件
+
+在遵守软件许可协议条款的前提下，可以分发以下文件（不做任何修改）：
+
+MDAC 2.8 SP1 (MDAC_typ.exe)
+Windows Installer 2.0 (InstMSIA.exe/InstMSIW.exe)   
+Windows Installer 3.1 (WindowsInstaller-KB893803-v2-x86.exe)
+msstdfmt.dll
+vs_piaredist.exe
+
+_____________________________________________________
+
+图像文件
+
+在遵守软件许可协议条款及以下 .zip 文件中所描述的其他使用条款的前提下，可以分发位于该 .zip 文件中的一个或多个文件。 
+
+VisualStudio2005ImageLibrary.zip
+
+_____________________________________________________
+
+Visual Studio Tools for Office 文件
+
+在遵守软件许可协议条款的前提下，可以分发以下 .EXE 文件（不做任何修改）：
+
+vstor.exe
+vstolp20.exe
+
+
+_____________________________________________________
+
+.NET Framework SDK 文件
+
+在遵守软件许可协议条款的前提下，可以分发以下 .EXE 文件（不做任何修改）：
+
+MageUI.exe
+Mage.exe
+Makecert.exe
+
+_____________________________________________________________
+
+Report Viewer 文件
+
+在遵守软件许可协议条款的前提下，可以分发以下 .EXE 文件（不做任何修改）：
+
+ReportViewer.exe
+ReportViewer-lp.exe
+_____________________________________________________
+
+Microsoft Visual J# .NET 文件
+
+在遵守软件许可协议条款的前提下，可以分发以下 .EXE 文件（不做任何修改）：
+
+vjredist.exe
+vjredist-lp.exe
+
+
+Microsoft Visual J# .NET 是一款开发工具，熟悉 Java 语言语法的开发人员可以使用它在 .NET Framework 上构建应用程序和服务。此开发工具将 Java 语言语法集成到了 Visual Studio .NET 的外壳程序中。Microsoft Visual J# .NET 还支持 VJ++ 6.0 中的功能（包括 Microsoft 扩展）。Microsoft Visual J# .NET 不是用于开发在 Java 虚拟机上运行的应用程序的工具。 用 Visual J# 构建的应用程序和服务只在 .NET Framework 上运行。 Visual J# 由 Microsoft 独立开发， 未经 Sun Microsystems, Inc. 的认可或批准。
+
+
+

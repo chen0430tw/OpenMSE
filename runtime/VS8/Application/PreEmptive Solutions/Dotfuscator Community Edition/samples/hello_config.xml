@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE dotfuscator SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscator_v2.0.dtd">
+	<dotfuscator version="2.0">
+		
+  	<!-- NOTE:  the "configdir" property is a built-in external property that always reflects the directory containing the current configuration file (i.e. this file)-->
+   
+      <!-- trigger list (files only). Modules containing assembly manifests -->
+      <!-- at least one is required -->   
+		<input>
+			<filelist>
+				<file dir="${configdir}" name="HelloWorld.exe"/>
+			</filelist>
+		</input>
+		
+		<!-- destination directory -->
+		<output> 
+			<file dir="${configdir}\output"/>			
+		</output>		
+				
+		<!-- renaming options -->
+		<renaming>
+			
+			<mapping>
+				<mapoutput overwrite="true">
+					<file dir="${configdir}\reports" name="HelloWorld_Map.xml"/>
+				</mapoutput>
+
+			</mapping>			
+			
+		</renaming>		
+	</dotfuscator>

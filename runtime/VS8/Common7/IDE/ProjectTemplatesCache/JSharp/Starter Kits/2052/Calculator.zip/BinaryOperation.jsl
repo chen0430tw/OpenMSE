@@ -1,0 +1,25 @@
+﻿package calculator.model.binaryOperations;
+
+import calculator.model.*;
+
+/**
+ * 所有二元运算 (如加、减等) 的基类。
+ */
+abstract public class BinaryOperation implements Operation
+{
+    public void operate(OperandStack ops)
+    {
+        double op2 = ops.pop();
+        double op1 = ops.pop();
+        ops.push(operateBinary(op1, op2));
+    }
+
+    public OperationType getType()
+    {
+        return OperationType.Binary;
+    }
+
+    // 所有二元运算的抽象方法
+    abstract public double operateBinary(double op1, double op2);
+    abstract public Precedence getPrecedence();
+}

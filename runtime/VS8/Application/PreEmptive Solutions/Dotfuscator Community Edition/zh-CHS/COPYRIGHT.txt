@@ -1,0 +1,9 @@
+﻿版权所有 2002-2005 PreEmptive Solutions, LLC, 26250 Euclid Ave. Suite 503, Cleveland, OH 44132, U.S.A. 保留所有权利。
+
+PreEmptive Solutions, LLC 拥有与本产品所用技术相关的知识产权。这些知识产权包括但不限于一项或多项美国专利或者正在美国和/其他国家（地区）进行申请的专利。
+
+本产品发行所依照的许可协议限制其使用、复制分发和反编译。未经 preEmptive 事先书面授权，不得以任何形式或借助任何手段复制本产品的任何部分。
+
+PreEmptive Solutions、DashO 和 DotFuscator 是 PreEmptive Solutions, LLC 的商标。
+
+

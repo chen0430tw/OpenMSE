@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cssmd:cssmd xmlns:cssmd="x-schema:..\CSSMetaDataSchema.xml" version="VS7">
+	<cssmd:property-set>
+		<!-- Font Properties -->
+		<cssmd:property-def id="color" type="color" description="元素文本的颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+		<cssmd:property-def id="font" type="composite" description="元素文本所用字体" syntax="系统字体之一 | [font-style] [font-variant] [font-weight] [font-size]/[line-height] [font-family]" enum="caption icon menu messagebox smallcaption statusbar"/>
+		<cssmd:property-def id="font-family" type="font" description="元素文本所用字体的名称" syntax="一个字体名序列"/>
+		<cssmd:property-def id="font-style" type="enum" description="元素文本所用字体的样式" syntax="font-style 值之一" enum="italic normal"/>
+		<cssmd:property-def id="font-variant" type="enum" description="元素文本所用字体的变量" syntax="font-variant 值之一" enum="normal small-caps"/>
+		<cssmd:property-def id="font-size" type="enum-length" description="元素文本所用字体的大小" syntax="长度 | 百分比 | 标准字体大小值" enum="large larger medium small smaller x-large x-small xx-large xx-small"/>
+		<cssmd:property-def id="font-weight" type="enum" description="元素文本所用字体的加粗程度" syntax="font-weight 值之一" enum="bold bolder lighter normal 100 200 300 400 500 600 700 800 900"/>
+		<cssmd:property-def id="text-decoration" type="composite" description="应用于元素文本所用字体的修饰" syntax="none | “underline”、“overline”和“line-through”的组合"/>
+		<!-- Background Properties -->
+		<cssmd:property-def id="background" type="composite" description="元素的背景" syntax="[background-color] [background-image] [background-repeat] [background-attachment] [background-position]"/>
+		<cssmd:property-def id="background-color" type="color" description="元素背景所用的颜色" syntax="#RRGGBB | Transparent | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal Transparent White Yellow"/>
+		<cssmd:property-def id="background-image" type="url" description="元素背景所用的图像" syntax="none | url（[图像的 URL]）"/>
+		<cssmd:property-def id="background-attachment" type="enum" description="背景图像如何附加到文档中的元素" syntax="background-attachment 值之一" enum="fixed scroll"/>
+		<cssmd:property-def id="background-repeat" type="enum" description="背景图像在元素里如何平铺" syntax="background-repeat 值之一" enum="no-repeat repeat repeat-x repeat-y"/>
+		<cssmd:property-def id="background-position" type="composite" description="背景在元素里如何定位" syntax="[水平位置] [垂直位置]"/>
+		<!-- Text Properties -->
+		<cssmd:property-def id="text-align" type="enum" description="元素文本水平对齐" syntax="text-align 值之一" enum="center justify left right"/>
+		<cssmd:property-def id="vertical-align" type="enum" description="元素文本垂直对齐" syntax="vertical-align 值之一" enum="baseline sub super"/>
+		<cssmd:property-def id="text-justify" type="enum" description="调整的文本的调整样式" syntax="text-justify 值之一" enum="auto distribute distribute-all-lines inter-word newspaper"/>
+		<cssmd:property-def id="letter-spacing" type="enum-length" description="字符间隔" syntax="normal | 一个单元" enum="normal"/>
+		<cssmd:property-def id="line-height" type="enum-length" description="行间隔" syntax="normal | 一个单元" enum="normal"/>
+		<cssmd:property-def id="text-indent" type="length" description="文本缩进" syntax="一个单元"/>
+		<cssmd:property-def id="direction" type="enum" description="文本的流向" syntax="direction 值之一" enum="ltr rtl"/>
+		<cssmd:property-def id="text-transform" type="enum" description="文本字母大小写" syntax="text-transform 值之一" enum="capitalize lowercase none uppercase"/>
+		<cssmd:property-def id="word-spacing" type="enum-length" description="字间隔" syntax="normal | 一个单元" enum="normal"/>
+		<!-- Position Properties -->
+		<cssmd:property-def id="position" type="enum" description="元素的定位模式" syntax="position 值之一" enum="absolute relative static"/>
+		<cssmd:property-def id="left" type="length" description="定位的元素的左边缘" syntax="一个单元"/>
+		<cssmd:property-def id="top" type="length" description="定位的元素的上边缘" syntax="一个单元"/>
+		<cssmd:property-def id="height" type="length" description="定位的元素的高度" syntax="一个单元"/>
+		<cssmd:property-def id="width" type="length" description="定位的元素的宽度" syntax="一个单元"/>
+		<cssmd:property-def id="z-index" type="number" description="定位的元素的堆栈顺序" syntax="一个整数"/>
+		<!-- Layout Properties -->
+		<cssmd:property-def id="display" type="enum" description="元素的显示模式" syntax="display 值之一" enum="block inline none"/>
+		<cssmd:property-def id="visibility" type="enum" description="元素的可见性" syntax="visibility 值之一" enum="hidden visible"/>
+		<cssmd:property-def id="float" type="enum" description="文本将在其上流动的对象的边缘" syntax="float 值之一" enum="left none right"/>
+		<cssmd:property-def id="clear" type="enum" description="不允许有浮动对象的边" syntax="clear 值之一" enum="both left none right"/>
+		<cssmd:property-def id="clip" type="string" description="元素的剪辑矩形" syntax="矩形（[上单元] [右单元] [下单元] [左单元]）"/>
+		<cssmd:property-def id="overflow" type="enum" description="超出元素维度范围的内容的可见性" syntax="overflow 值之一" enum="auto hidden scroll visible"/>
+		<cssmd:property-def id="page-break-before" type="enum" description="元素之前的分页" syntax="page-break-before 值之一" enum="always auto"/>
+		<cssmd:property-def id="page-break-after" type="enum" description="元素之后的分页" syntax="page-break-after 值之一" enum="always auto"/>
+		<!-- Edges Properties -->
+		<cssmd:property-def id="padding" type="composite" description="元素四个边缘的空白" syntax="[上单元] [右单元] [下单元] [左单元]"/>
+		<cssmd:property-def id="padding-left" type="length" description="元素左边缘的空白" syntax="一个单元"/>
+		<cssmd:property-def id="padding-right" type="length" description="元素右边缘的空白" syntax="一个单元"/>
+		<cssmd:property-def id="padding-top" type="length" description="元素上边缘的空白" syntax="一个单元"/>
+		<cssmd:property-def id="padding-bottom" type="length" description="元素下边缘的空白" syntax="一个单元"/>
+		<cssmd:property-def id="margin" type="composite" description="元素四个边缘的空白" syntax="[上单元] [右单元] [下单元] [左单元]"/>
+		<cssmd:property-def id="margin-left" type="length" description="元素左边缘的空白" syntax="一个单元"/>
+		<cssmd:property-def id="margin-right" type="length" description="元素右边缘的空白" syntax="一个单元"/>
+		<cssmd:property-def id="margin-top" type="length" description="元素上边缘的空白" syntax="一个单元"/>
+		<cssmd:property-def id="margin-bottom" type="length" description="元素下边缘的空白" syntax="一个单元"/>
+		<cssmd:property-def id="border" type="composite" description="元素所有四个边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+		<cssmd:property-def id="border-left" type="composite" description="元素左边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+		<cssmd:property-def id="border-right" type="composite" description="元素右边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+		<cssmd:property-def id="border-top" type="composite" description="元素上边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+		<cssmd:property-def id="border-bottom" type="composite" description="元素下边缘的边框" syntax="[border-style] [border-width] [border-color]"/>
+		<cssmd:property-def id="border-color" type="color" description="元素所有四个边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+		<cssmd:property-def id="border-style" type="enum" description="元素所有四个边缘的边框样式" syntax="border-style 值之一" enum="double groove inset none outset ridge solid"/>
+		<cssmd:property-def id="border-width" type="enum-length" description="元素所有四个边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+		<cssmd:property-def id="border-left-color" type="color" description="元素左边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+		<cssmd:property-def id="border-left-width" type="enum-length" description="元素左边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+		<cssmd:property-def id="border-left-style" type="enum" description="元素左边缘的边框样式" syntax="border-style 值之一" enum="double groove inset none outset ridge solid"/>
+		<cssmd:property-def id="border-right-color" type="color" description="元素右边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+		<cssmd:property-def id="border-right-width" type="enum-length" description="元素右边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+		<cssmd:property-def id="border-right-style" type="enum" description="元素右边缘的边框样式" syntax="border-style 值之一" enum="double groove inset none outset ridge solid"/>
+		<cssmd:property-def id="border-top-color" type="color" description="元素上边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+		<cssmd:property-def id="border-top-width" type="enum-length" description="元素上边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+		<cssmd:property-def id="border-top-style" type="enum" description="元素上边缘的边框样式" syntax="border-style 值之一" enum="double groove inset none outset ridge solid"/>
+		<cssmd:property-def id="border-bottom-color" type="color" description="元素下边缘的边框颜色" syntax="#RRGGBB | 已命名的颜色" enum="Aqua Black Blue Fuchsia Gray Green Lime Maroon Navy Olive Purple Red Silver Teal White Yellow"/>
+		<cssmd:property-def id="border-bottom-width" type="enum-length" description="元素下边缘的边框宽度" syntax="一个单元 | border-width 值之一" enum="medium thick thin"/>
+		<cssmd:property-def id="border-bottom-style" type="enum" description="元素下边缘的边框样式" syntax="border-style 值之一" enum="double groove inset none outset ridge solid"/>
+		<!-- Lists Properties -->
+		<cssmd:property-def id="list-style" type="composite" description="list 项的项目符号特征" syntax="[list-style-type] [list-style-image] [list-style-position]"/>
+		<cssmd:property-def id="list-style-type" type="enum" description="list 项的项目符号样式" syntax="list-style-type 值之一" enum="circle decimal disc lower-alpha lower-roman none square upper-alpha upper-roman"/>
+		<cssmd:property-def id="list-style-image" type="url" description="list 项的项目符号图像" syntax="none | url（[项目符号图像的 URL]）"/>
+		<cssmd:property-def id="list-style-position" type="enum" description="list 项的项目符号位置" syntax="list-style-position 值之一" enum="inside outside"/>
+		<!-- Other Properties -->
+		<cssmd:property-def id="cursor" type="enum" description="元素上的光标" syntax="cursor 值之一" enum="auto crosshair default e-resize hand help move n-resize ne-resize nw-resize s-resize se-resize sw-resize text w-resize wait"/>
+		<cssmd:property-def id="table-layout" type="enum" description="表的单元格布局模式" syntax="table-layout 值之一" enum="auto fixed"/>
+		<cssmd:property-def id="border-collapse" type="enum" description="表中单元格边框类型" syntax="border-collapse 值之一" enum="collapse separate"/>
+		<cssmd:property-def id="behavior" type="url" description="附加到元素的脚本" syntax="url（[行为实现的 URL]）"/>
+		<cssmd:property-def id="filter" type="string" description="应用于元素的可视化效果" syntax="可视化筛选和转换的序列"/>
+		<!-- @font-face Properties -->
+		<cssmd:property-def id="src" type="url" description="字体文件的位置" syntax="url（[字体下载的 URL]）"/>
+	</cssmd:property-set>
+</cssmd:cssmd>

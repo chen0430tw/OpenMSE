@@ -1,0 +1,299 @@
+﻿package calculator.model.mode;
+
+import calculator.model.OperationParameterException;
+import java.text.DecimalFormatSymbols;
+
+/**
+ * 不同数字进制的基类。
+ */
+public class Base
+{
+	public static final Base TWO = new BaseTwo();
+	public static final Base EIGHT = new BaseEight();
+	public static final Base TEN = new BaseTen();
+	public static final Base SIXTEEN = new BaseSixteen();
+
+	// 区域性依赖常数
+	public static final char DECIMAL_SEPARATOR;
+	public static final char MINUS_SIGN;
+	public static final char PLUS_SIGN;
+	public static final char ZERO_DIGIT;
+
+	static
+	{
+		DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+		DECIMAL_SEPARATOR = dfs.getDecimalSeparator();
+		MINUS_SIGN = dfs.getMinusSign();
+		PLUS_SIGN = '+';
+		ZERO_DIGIT = dfs.getZeroDigit();
+	}
+
+	/**
+	 * 返回所有十六进制数字的数组。
+	 */
+	public static final Character[] getHexDigits()
+	{
+		Character[] digits = new Character[HEX];
+		for (int i = 0; i < HEX; i++)
+		{
+			digits[i] = new Character(Character.forDigit(i, HEX));
+		}
+
+		return digits;
+	}
+
+	/**
+	 * 如果字符是一个十六进制的数字，则返回 true。
+	 */
+	public static final boolean isHexDigit(char ch)
+	{
+		return (Character.digit(ch, HEX) != -1);
+	}
+
+	/**
+	 * 获取此进制的基数
+	 */
+	public int getRadix()
+	{
+		return radix;
+	}
+
+	/**
+	 * 将 string 转换为 double
+	 */
+	public double toDouble(String display)
+	{
+		throw new OperationParameterException(NOT_IMPLEMENTED);
+	}
+
+	/**
+	 * 基于 FE 模式将 double 转换为 string
+	 */
+	public String fromDouble(double op, boolean feMode)
+	{
+		throw new OperationParameterException(NOT_IMPLEMENTED);
+	}
+
+	/**
+	 * 字符是否有效?
+	 */
+	public boolean isValidChar(char ch, String display)
+	{
+		throw new OperationParameterException(NOT_IMPLEMENTED);
+	}
+
+	/**
+	 * 如果在此进制中字符是数字，则返回 true。
+	 */
+	protected boolean isDigitInThisBase(char ch)
+	{
+		return (Character.digit(ch, radix) != -1);
+	}
+
+	protected Base(int radix, int max_len)
+	{
+		this.radix = radix;
+		this.max_len = max_len;
+	}
+
+	protected int radix;
+	protected int max_len;
+
+	private static final int HEX = 16;
+	private static final String NOT_IMPLEMENTED = "未实现进制。";
+}
+
+class BaseTwo extends Base
+{
+	public double toDouble(String display)
+	{
+		long value;
+		int length = display.length();
+		if ((length < max_len) ||
+			(length == max_len && display.charAt(0) == MINUS_SIGN))
+		{
+			// +ve 数字或带减号的 -ve 数字。正常分析它
+			value = Long.parseLong(display, radix);
+		}
+		else if (Character.digit(display.charAt(0), radix) == 1)
+		{
+			// 符号位设置为 length == max_len 并且最高
+			// 有效位为 1。移除符号位，进行分析并减去 MIN_VALUE
+			// 以获得产生的 double 值。
+			String unsignedStr = display.substring(1);
+			value = Long.parseLong(unsignedStr, radix) - Long.MIN_VALUE;
+		}
+		else
+		{
+			// 减号和符号位都已设置。
+			// 移除符号位，进行分析并将其从 MIN_VALUE 中减去
+			// 以获得产生的 double 值。
+			String unsignedStr = display.substring(2);
+			value = Long.MIN_VALUE - Long.parseLong(unsignedStr, radix);
+		}
+
+		return value;
+	}
+
+	public String fromDouble(double op, boolean feMode)
+	{
+		return Long.toBinaryString((long)op);
+	}
+
+	public boolean isValidChar(char ch, String display)
+	{
+		// 是数字并且长度小于 max_len
+		return (isDigitInThisBase(ch) && (display.length() < max_len));
+	}
+
+	BaseTwo()
+	{
+        super(2, 64);
+	}
+}
+
+// 未实现类
+class BaseEight extends Base
+{
+	BaseEight()
+	{
+        super(8, 22);
+	}
+}
+
+class BaseTen extends Base
+{
+	public double toDouble(String display)
+	{
+		double d = 0.0;
+		try
+		{
+			d = java.text.NumberFormat.getInstance().parse(display).doubleValue();
+		}
+		catch (java.text.ParseException jtp) { }
+		return d;
+	}
+
+	public String fromDouble(double op, boolean feMode)
+	{
+		// 使用修饰符以获取格式正确的字符串。
+		String strNum = ((System.Double)op).ToString("g");
+
+		// 如果不是固定模式且字符串不包含指数，
+		// 将此字符串转换为指数字符串。
+		if (!feMode && strNum.indexOf(E_SYMBOL) == -1)
+		{
+			// 将缓冲区转换为指数模式
+			strNum = convertToExponentialString(op);
+		}
+
+		return strNum;
+	}
+
+	public boolean isValidChar(char ch, String display)
+	{
+		boolean valid = false;
+		if (display.length() < max_len)
+		{
+			if (isDigitInThisBase(ch))
+			{
+				valid = true;
+			}
+			else if (ch == DECIMAL_SEPARATOR)
+			{
+				if (display.indexOf(DECIMAL_SEPARATOR) == -1)
+				{
+					// 这不是一个十进制数。
+					valid = true;
+				}
+			}
+		}
+
+		return valid;
+	}
+
+	/**
+	 * 转换为指数模式
+	 */
+	private static String convertToExponentialString(double op)
+	{
+		if (op == 0)
+		{
+			// 返回 0 的指数格式。
+			final String format = "" + ZERO_DIGIT + E_SYMBOL + PLUS_SIGN + ZERO_DIGIT;
+			return format;
+		}
+
+		boolean minus = false;
+		boolean exponentMinus = false;
+		int exponent = 0;
+
+		if (op < 0)
+		{
+			// -ve 数字 - 标注它并将它转换为 +ve
+			op *= -1;
+			minus = true;
+		}
+
+		// 获取数字的指数。
+		if (op < 1)
+		{
+			exponentMinus = true;
+
+			// 执行 log10 运算以获得 exponent 并向高位取整。
+			// 取 10 的 exponent 次方以获得正确的数字。
+			exponent = -(int)System.Math.Log10(op) + 1;
+			op *= Math.pow(10, exponent);
+		}
+		else
+		{
+			// 执行 log10 运算以获得 exponent 并将小数位舍去。
+			// 开 10 的 exponent 次方以获得正确的数字。
+			exponent = (int)System.Math.Log10(op);
+			op /= Math.pow(10, exponent);
+		}
+
+		// 使用缓冲区
+		StringBuffer buf = new StringBuffer();
+
+		// 数字符号
+		if (minus)
+		{
+			buf.append(MINUS_SIGN);
+		}
+
+		// 立即将 op 作为固定的点添加
+		buf.append(((System.Double)op).ToString());
+		buf.append(E_SYMBOL);
+
+		// 添加指数符号
+		if (exponentMinus)
+		{
+			buf.append(MINUS_SIGN);
+		}
+		else
+		{
+			buf.append(PLUS_SIGN);
+		}
+
+		buf.append(exponent);
+
+		return buf.toString();
+	}
+
+	BaseTen()
+	{
+        super(10, 32);
+	}
+
+	private static final char E_SYMBOL = 'e';
+}
+
+// 未实现类
+class BaseSixteen extends Base
+{
+	BaseSixteen()
+	{
+        super(16, 16);
+	}
+}
