@@ -22,7 +22,7 @@ D:\OpenMSE\OpenMSE.exe D:\OpenMSE\samples\hello.htm
 - 双击 `Visual Studio 2005.lnk`：Visual Studio 2005。
 - 命令行：`OpenMSE.exe --vs8`，也可以在后面传入解决方案或文档路径。
 
-VS8 的私有文件在 `runtime/VS8`。已经验证 VS8 起始页、C# 项目加载和 Debug 构建；`samples/VS8Smoke` 的构建结果为 0 错误、0 警告，输出程序执行成功。VS8 的 `MSENV.DLL` 为 8.0.50727.867，MSE 的 VS7 核心保持 7.00.9064.9606。
+VS8 的私有文件在 `runtime`。已经验证 VS8 起始页、C# 项目加载和 Debug 构建；`samples/VS8Smoke` 的构建结果为 0 错误、0 警告，输出程序执行成功。VS8 的 `MSENV.DLL` 为 8.0.50727.867，MSE 的 VS7 核心保持 7.00.9064.9606。
 
 VS8 配置使用同一项目实例键下的 `MachineVS8` / `UserVS8`，与 MSE 的配置分开。原安装的授权信息仍由本机提供，不导出授权键；最近项目列表不复制。用户项目默认目录在 `workspace/VS8`。
 
@@ -47,8 +47,7 @@ VS8 核验：`powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/ve
 |---|---|
 | `OpenMSE.exe` | x86 启动器 |
 | `src/` | 启动器和重定向 DLL 源码 |
-| `runtime/OFFICE12/` | 私有 MSE、Office 组件、VS7 核心及语言资源 |
-| `runtime/VS7Debug/` | 私有共享调试组件 |
+| `runtime/` | 统一的 MSE、VS2005、共享调试组件、SDK 和语言资源 |
 | `config/registry-template.json` | 从本机 MSE 配置导出的模板 |
 | `config/files.json` | 复制文件来源、大小和 SHA-256 |
 | `scripts/setup.ps1` | 导入当前项目路径对应的用户配置 |
@@ -102,7 +101,7 @@ VS2005 的中文文档读写、项目打开与构建通过。MSE 自动化接入
 
 ## 从源码仓库构建
 
-仓库包含源码、示例、配置模板、文件来源清单，以及 `runtime/OFFICE12`、`runtime/VS7Debug` 和 `runtime/VS8` 中的微软运行组件；不包含本机安装日志、个人配置、编译结果或测试工作区。旧引擎兼容模式需要本机已有的对应安装与运行依赖，详见上述说明。
+仓库包含源码、示例、配置模板、文件来源清单，以及 统一 `runtime` 目录 中的微软运行组件；不包含本机安装日志、个人配置、编译结果或测试工作区。旧引擎兼容模式需要本机已有的对应安装与运行依赖，详见上述说明。
 
 只编译统一 GUI：运行 `scripts/build-shell.ps1`。编译启动器和兼容层前，需准备 MSVC x86 工具链、Windows SDK 和固定版本的 Detours：
 
@@ -115,3 +114,9 @@ cmd.exe /c build.cmd
 `scripts/prepare.py` 是最初本机迁移时使用的记录脚本，依赖原始暂存目录，不是干净机器的一键安装器。配置模板已排除帮助组件的本机注册姓名和产品标识，重新导出也会过滤这些值。
 
 运行组件以普通 Git 文件保存，不依赖 Git LFS。`runtime/**` 禁用文本换行转换，以保持二进制与配置文件的原始字节。微软组件的权利归原权利人所有，不适用本项目自行实现代码的许可；仓库中保留其随附许可文件。
+
+## 统一运行目录
+
+原 `OFFICE12`、`VS7Debug`、`VS8` 的文件已合并到同一个 `runtime/`，内部所需的语言资源、VS Runtime、Common7、VC 等子目录保留。MSE 入口是 `runtime/MSE7.EXE`，VS2005 入口是 `runtime/Common7/IDE/devenv.exe`，共享调试组件直接位于 `runtime/` 及语言资源子目录中。
+
+启动器、路径重定向、环境变量、注册表模板、文件清单、桥接与验证脚本使用统一布局。已有本项目 HKCU 配置中的旧 runtime 路径会在设置阶段迁移，原安装目录不修改。此次合并调整文件布局，两代引擎仍保持独立进程。

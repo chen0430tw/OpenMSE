@@ -2,11 +2,11 @@
   "Mappings": [
     {
       "Source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\OFFICE12",
-      "Target": "runtime\\OFFICE12"
+      "Target": "runtime"
     },
     {
       "Source": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\VS7Debug",
-      "Target": "runtime\\VS7Debug"
+      "Target": "runtime"
     }
   ],
   "Nodes": [

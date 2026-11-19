@@ -14,12 +14,12 @@ $unified.WorkingDirectory = $root
 $unified.IconLocation = "$root\OpenMSE.exe,0"
 $unified.Description = 'OpenMSE unified workspace'
 $unified.Save()
-if (Test-Path -LiteralPath "$root\runtime\VS8\Common7\IDE\devenv.exe") {
+if (Test-Path -LiteralPath "$root\runtime\Common7\IDE\devenv.exe") {
     $vs8 = $shell.CreateShortcut("$root\Visual Studio 2005.lnk")
     $vs8.TargetPath = "$root\OpenMSE.exe"
     $vs8.Arguments = '--vs8'
     $vs8.WorkingDirectory = $root
-    $vs8.IconLocation = "$root\runtime\VS8\Common7\IDE\devenv.exe,0"
+    $vs8.IconLocation = "$root\runtime\Common7\IDE\devenv.exe,0"
     $vs8.Description = 'OpenMSE integrated Visual Studio 2005 environment'
     $vs8.Save()
 }

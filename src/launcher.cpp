@@ -55,12 +55,12 @@ static int runOpenMSE(int argc, wchar_t** argv) {
     std::ifstream input((root + L"\\config\\registry-root.txt").c_str()); std::string reg; std::getline(input, reg);
     if (reg.empty()) return fail(root, L"Missing OpenMSE registry configuration.");
     SetEnvironmentVariableW(L"OPENMSE_ROOT", root.c_str()); SetEnvironmentVariableA("OPENMSE_REGISTRY_ROOT", reg.c_str());
-    std::wstring dir = root + (vs8 ? L"\\runtime\\VS8\\Common7\\IDE" : L"\\runtime\\OFFICE12");
+    std::wstring dir = root + (vs8 ? L"\\runtime\\Common7\\IDE" : L"\\runtime");
     std::wstring exe = dir + (vs8 ? L"\\devenv.exe" : L"\\MSE7.EXE");
     if (GetFileAttributesW(exe.c_str()) == INVALID_FILE_ATTRIBUTES)
         return fail(root, L"The selected IDE has not been imported: " + exe);
     if (vs8) {
-        std::wstring install = root + L"\\runtime\\VS8\\";
+        std::wstring install = root + L"\\runtime\\";
         SetEnvironmentVariableW(L"VSINSTALLDIR", install.c_str());
         SetEnvironmentVariableW(L"VCINSTALLDIR", (install + L"VC\\").c_str());
         SetEnvironmentVariableW(L"VS80COMNTOOLS", (install + L"Common7\\Tools\\").c_str());

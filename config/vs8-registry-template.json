@@ -2,7 +2,7 @@
   "Mappings": [
     {
       "Source": "C:\\Program Files (x86)\\Microsoft Visual Studio 8",
-      "Target": "runtime\\VS8"
+      "Target": "runtime"
     },
     {
       "Source": "@OPENMSE@",
@@ -69691,7 +69691,7 @@
         {
           "Name": "VisualStudioLocation",
           "Type": 2,
-          "Data": "@OPENMSE@\\runtime\\VS8"
+          "Data": "@OPENMSE@\\runtime"
         },
         {
           "Name": "DefaultNewProjectLocation",

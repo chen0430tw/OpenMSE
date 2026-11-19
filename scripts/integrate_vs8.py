@@ -8,10 +8,10 @@ import winreg as w
 
 ROOT = Path(r'D:\OpenMSE')
 SOURCE = Path(r'C:\Program Files (x86)\Microsoft Visual Studio 8')
-DEST = ROOT / 'runtime/VS8'
-assert ROOT.is_dir() and not DEST.exists(), 'VS8 import target must be new'
+DEST = ROOT / 'runtime'
+assert ROOT.is_dir() and not (DEST / 'Common7/IDE/devenv.exe').exists(), 'VS8 engine must not already be imported'
 assert (SOURCE / 'Common7/IDE/devenv.exe').is_file()
-DEST.mkdir(parents=True)
+DEST.mkdir(parents=True, exist_ok=True)
 manifest = []
 for name in [folder.name for folder in SOURCE.iterdir() if folder.is_dir()]:
     folder = SOURCE / name
@@ -21,7 +21,9 @@ for name in [folder.name for folder in SOURCE.iterdir() if folder.is_dir()]:
         relative = src.relative_to(SOURCE)
         target = DEST / relative
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src, target)
+        if target.exists() and hashlib.sha256(target.read_bytes()).digest() != hashlib.sha256(src.read_bytes()).digest():
+            raise RuntimeError("Conflicting runtime file: " + str(target))
+        if not target.exists(): shutil.copy2(src, target)
         digest = hashlib.sha256(src.read_bytes()).hexdigest()
         assert hashlib.sha256(target.read_bytes()).hexdigest() == digest
         manifest.append({'source': str(src), 'destination': str(target.relative_to(ROOT)),
@@ -31,7 +33,9 @@ for name in [folder.name for folder in SOURCE.iterdir() if folder.is_dir()]:
 for src in SOURCE.iterdir():
     if src.is_file():
         target = DEST / src.name
-        shutil.copy2(src, target)
+        if target.exists() and hashlib.sha256(target.read_bytes()).digest() != hashlib.sha256(src.read_bytes()).digest():
+            raise RuntimeError("Conflicting runtime file: " + str(target))
+        if not target.exists(): shutil.copy2(src, target)
         digest = hashlib.sha256(src.read_bytes()).hexdigest()
         assert hashlib.sha256(target.read_bytes()).hexdigest() == digest
         manifest.append({'source': str(src), 'destination': str(target.relative_to(ROOT)),
@@ -76,13 +80,13 @@ for node in nodes:
         for v in node['Values']:
             if any(part in v['Name'] for part in ['Location', 'DefaultFile', 'DefaultOpen', 'DefaultNew']):
                 if v['Name'] == 'VisualStudioLocation':
-                    v['Data'] = '@OPENMSE@\\runtime\\VS8'
+                    v['Data'] = '@OPENMSE@\\runtime'
                 elif v['Name'] != 'MyDocumentsLocation':
                     v['Data'] = '@OPENMSE@\\workspace\\VS8'
         node['Values'].append({'Name': 'LastLoadedSolution', 'Type': 2, 'Data': ''})
 (ROOT / 'workspace/VS8').mkdir(parents=True, exist_ok=True)
 (ROOT / 'config/vs8-registry-template.json').write_text(json.dumps({
-    'Mappings': [{'Source': str(SOURCE), 'Target': r'runtime\VS8'},
+    'Mappings': [{'Source': str(SOURCE), 'Target': r'runtime'},
                  {'Source': '@OPENMSE@', 'Target': '.'}],
     'Nodes': nodes}, ensure_ascii=False, indent=2), encoding='utf-8')
 (ROOT / 'config/vs8-files.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')

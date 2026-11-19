@@ -89,7 +89,7 @@ namespace OpenMSE.Bridge
             process = Process.GetProcessById(pid);
             IntPtr heldHandle = process.Handle; // Bind lifetime to this process, even if the PID is later reused.
             identity = process.StartTime.ToUniversalTime().ToFileTimeUtc().ToString(CultureInfo.InvariantCulture);
-            string expected = Path.Combine(root, engine == "vs8" ? @"runtime\VS8\Common7\IDE\devenv.exe" : @"runtime\OFFICE12\MSE7.EXE");
+            string expected = Path.Combine(root, engine == "vs8" ? @"runtime\Common7\IDE\devenv.exe" : @"runtime\MSE7.EXE");
             if (!String.Equals(Path.GetFullPath(process.MainModule.FileName), Path.GetFullPath(expected), StringComparison.OrdinalIgnoreCase))
                 throw new BridgeFailure("wrong_host", "PID does not identify the selected OpenMSE engine.");
             if (!String.IsNullOrEmpty(ownedManifest))

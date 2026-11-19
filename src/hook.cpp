@@ -42,9 +42,9 @@ static void replacePath(std::wstring& s, const std::wstring& from, const std::ws
     }
 }
 static std::wstring relocate(std::wstring s) {
-    replacePath(s, office, root + L"\\runtime\\OFFICE12");
-    replacePath(s, debugRoot, root + L"\\runtime\\VS7Debug");
-    if (vs8) replacePath(s, L"C:\\Program Files (x86)\\Microsoft Visual Studio 8", root + L"\\runtime\\VS8");
+    replacePath(s, office, root + L"\\runtime");
+    replacePath(s, debugRoot, root + L"\\runtime");
+    if (vs8) replacePath(s, L"C:\\Program Files (x86)\\Microsoft Visual Studio 8", root + L"\\runtime");
     return s;
 }
 static void logPath(const wchar_t* event, const std::wstring& before, const std::wstring& after, LONG status) {
@@ -117,7 +117,7 @@ BOOL WINAPI DllMain(HINSTANCE, DWORD reason, LPVOID) {
         if (!GetEnvironmentVariableW(L"OPENMSE_ROOT", text, 32768)) return FALSE; root = text;
         if (!GetEnvironmentVariableW(L"OPENMSE_REGISTRY_ROOT", text, 32768)) return FALSE; registryRoot = text;
         vs8 = GetEnvironmentVariableW(L"OPENMSE_ENGINE", text, 32768) && wcscmp(text, L"vs8") == 0;
-        SetDllDirectoryW((root + (vs8 ? L"\\runtime\\VS8\\Common7\\IDE" : L"\\runtime\\OFFICE12\\VS Runtime")).c_str());
+        SetDllDirectoryW((root + (vs8 ? L"\\runtime\\Common7\\IDE" : L"\\runtime\\VS Runtime")).c_str());
         realLdrLoad = (LdrLoad)GetProcAddress(GetModuleHandleW(L"ntdll.dll"), "LdrLoadDll");
         if (!realLdrLoad) return FALSE;
         DetourTransactionBegin(); DetourUpdateThread(GetCurrentThread());

@@ -17,5 +17,6 @@ __pycache__/
 *.pyc
 /bin/
 
-/runtime/VS8/Microsoft Visual Studio 2005 Professional Edition - CHS/Logs/
+/runtime/Microsoft Visual Studio 2005 Professional Edition - CHS/Logs/
 /runtime/**/*.log
+/runtime/Settings/CurrentSettings.vssettings

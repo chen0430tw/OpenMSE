@@ -10,7 +10,7 @@ $stateName = if ($Engine -eq 'vs8') { 'last-process-vs8.txt' } else { 'last-proc
 if ($ProcessId -le 0) { $ProcessId = [int](Get-Content -LiteralPath "$root\logs\$stateName") }
 if ($ProcessId -le 0) { throw 'No valid project process ID.' }
 $process = Get-Process -Id $ProcessId
-$expected = if ($Engine -eq 'vs8') { "$root\runtime\VS8\Common7\IDE\devenv.exe" } else { "$root\runtime\OFFICE12\MSE7.EXE" }
+$expected = if ($Engine -eq 'vs8') { "$root\runtime\Common7\IDE\devenv.exe" } else { "$root\runtime\MSE7.EXE" }
 if ($process.Path -ne $expected) { throw 'Process does not belong to this project.' }
 Add-Type -TypeDefinition @'
 using System;

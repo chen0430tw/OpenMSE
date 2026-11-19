@@ -13,6 +13,30 @@ function Relocate([string] $value) {
     }
     return $value
 }
+function MigrateRuntimeValue([string] $value) {
+    foreach ($oldName in @('OFFICE12','VS7Debug','VS8')) {
+        $oldRoot = "$root\runtime\$oldName"
+        $value = [regex]::Replace($value, ([regex]::Escape($oldRoot) + '(?=\\|$)'), [System.Text.RegularExpressions.MatchEvaluator]{ param($m) "$root\runtime" }, [Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    }
+    return $value
+}
+function MigratePrivateRuntimePaths([Microsoft.Win32.RegistryKey] $key) {
+    foreach ($name in $key.GetValueNames()) {
+        $kind = $key.GetValueKind($name)
+        $value = $key.GetValue($name, $null, [Microsoft.Win32.RegistryValueOptions]::DoNotExpandEnvironmentNames)
+        if ($kind -in @([Microsoft.Win32.RegistryValueKind]::String,[Microsoft.Win32.RegistryValueKind]::ExpandString)) {
+            $updated = MigrateRuntimeValue ([string]$value)
+            if ($updated -ne $value) { $key.SetValue($name,$updated,$kind) }
+        } elseif ($kind -eq [Microsoft.Win32.RegistryValueKind]::MultiString) {
+            $updated = [string[]]@($value | ForEach-Object { MigrateRuntimeValue ([string]$_) })
+            if (($updated -join [char]0) -ne ($value -join [char]0)) { $key.SetValue($name,$updated,$kind) }
+        }
+    }
+    foreach ($child in $key.GetSubKeyNames()) {
+        $subkey = $key.OpenSubKey($child,$true)
+        if ($subkey) { try { MigratePrivateRuntimePaths $subkey } finally { $subkey.Dispose() } }
+    }
+}
 $base = [Microsoft.Win32.RegistryKey]::OpenBaseKey([Microsoft.Win32.RegistryHive]::CurrentUser, [Microsoft.Win32.RegistryView]::Registry32)
 try {
     $userStore = if ($Engine -eq 'vs8') { 'UserVS8' } else { 'UserMSE' }
@@ -42,6 +66,8 @@ try {
             }
         } finally { $key.Dispose() }
     }
+    $privateRoot = $base.OpenSubKey($registryRoot,$true)
+    if ($privateRoot) { try { MigratePrivateRuntimePaths $privateRoot } finally { $privateRoot.Dispose() } }
     $key = $base.CreateSubKey("$registryRoot\$userStore")
     $key.SetValue('OpenMSEInitialized', 1, [Microsoft.Win32.RegistryValueKind]::DWord); $key.Dispose()
 } finally { $base.Dispose() }
