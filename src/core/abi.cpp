@@ -9,6 +9,7 @@
 #include "tasks.hpp"
 #include "workspace.hpp"
 
+#include <algorithm>
 #include <cstring>
 #include <deque>
 #include <exception>
@@ -124,12 +125,21 @@ std::string change_json(const Document& d, const AppliedChange& c)
     return j.take();
 }
 
+void write_handlers(Json& j, const std::vector<std::pair<std::string, std::string>>& handlers)
+{
+    j.raw("{");
+    for (const auto& h : handlers) j.key(h.first).str(h.second);
+    j.raw("}");
+}
+
 void write_design(Json& j, const Document& d)
 {
     DesignSnapshot s = design_snapshot(d);
     j.raw("{").key("document").num(d.id).key("revision").num(d.revision).key("kind").str(design_kind_name(s.kind)).key("error");
     if (s.error.empty()) j.raw("null"); else j.str(s.error);
-    j.key("title").str(s.title).key("width").num(static_cast<std::uint64_t>(s.width)).key("height").num(static_cast<std::uint64_t>(s.height))
+    j.key("title").str(s.title).key("handler").str(s.handler).key("handlers");
+    write_handlers(j, s.handlers);
+    j.key("width").num(static_cast<std::uint64_t>(s.width)).key("height").num(static_cast<std::uint64_t>(s.height))
         .key("canvas_width").num(static_cast<std::uint64_t>(s.canvas_width)).key("canvas_height").num(static_cast<std::uint64_t>(s.canvas_height))
         .key("truncated").boolean(s.truncated).key("nodes").raw("[");
     bool first = true;
@@ -140,7 +150,9 @@ void write_design(Json& j, const Document& d)
             .key("x").num(static_cast<std::uint64_t>(n.x)).key("y").num(static_cast<std::uint64_t>(n.y))
             .key("width").num(static_cast<std::uint64_t>(n.width)).key("height").num(static_cast<std::uint64_t>(n.height))
             .key("back_color").str(n.back_color).key("fore_color").str(n.fore_color).key("enabled").boolean(n.enabled)
-            .key("text_editable").boolean(n.text_editable).key("password").boolean(n.password).raw("}");
+            .key("event").str(n.event).key("event_args").str(n.event_args).key("handler").str(n.handler).key("handlers");
+        write_handlers(j, n.handlers);
+        j            .key("text_editable").boolean(n.text_editable).key("password").boolean(n.password).raw("}");
     }
     j.raw("]}");
 }
@@ -508,6 +520,11 @@ OMK_API omk_status OMK_CALL omk_design_apply(omk_kernel* k, uint64_t document, u
         if (change) write_edit(j, *change); else j.key("edit").raw("null");
         j.key("node");
         if (result.node) j.str(*result.node); else j.raw("null");
+        j.key("caret");
+        if (result.caret) {
+            Position at = position_of(d, std::min(*result.caret, d.text.size()));
+            j.raw("{").key("line").num(at.line).key("column").num(at.utf16_column).raw("}");
+        } else j.raw("null");
         j.key("design");
         write_design(j, d);
         j.raw("}");
@@ -604,6 +621,15 @@ OMK_API omk_status OMK_CALL omk_task_wait(omk_kernel* k, uint64_t task, uint32_t
         TaskInfo info = k->tasks->wait(task, timeout_ms, finished);
         return std::string("{\"finished\":") + (finished ? "true" : "false") + ",\"task\":" + TaskManager::json(info) + "}";
     }, false);
+}
+
+OMK_API omk_status OMK_CALL omk_design_generate(omk_kernel* k, uint64_t document, const char* language, size_t language_size, const char* class_name, size_t class_size, omk_buffer* out)
+{
+    return guarded(k, out, [&] {
+        Json j;
+        j.raw("{").key("source").str(design_generate(k->documents.get(document), bytes(language, language_size), bytes(class_name, class_size))).raw("}");
+        return j.take();
+    });
 }
 
 // ---- Legacy hosts (ABI 4). Host calls never hold the service lock while waiting.

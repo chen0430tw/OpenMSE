@@ -28,8 +28,8 @@
 extern "C" {
 #endif
 
-/* 2: toolbox and design services. 3: tools, workspaces and tasks. 4: legacy host manager. 5: debugging and capabilities. */
-#define OMK_ABI_VERSION 5u
+/* 2: toolbox and design services. 3: tools, workspaces and tasks. 4: legacy host manager. 5: debugging and capabilities. 6: design events, form code generation. */
+#define OMK_ABI_VERSION 6u
 
 typedef struct omk_kernel omk_kernel;
 typedef struct omk_buffer { char* data; size_t size; } omk_buffer;
@@ -96,6 +96,8 @@ OMK_API omk_status OMK_CALL omk_toolbox_list(omk_kernel*, omk_buffer* out);
  *   {"op":"add","toolbox_id":"html.button","x":60,"y":100}
  *   {"op":"set","node":"n3","properties":{"name":..,"text":..,"x":..,"y":..,"width":..,"height":..,"back_color":..,"fore_color":..}}
  *   {"op":"delete","node":"n3"}
+ *   {"op":"set_event","node":"n3"}                           HTML: wires the default event and its script function
+ *   {"op":"set_event","node":"n3"|"form","handler":"x_Click","event":"MouseMove"}  .omform: binds an event (default event when omitted; form: Load)
  *   {"op":"set_form","properties":{"title":..,"width":..,"height":..}}
  * The kernel computes the source patch and commits it as one edit and one undo step. The result carries the
  * document state, the applied edit in pre-change coordinates ("edit", or null if nothing changed), the node to
@@ -103,6 +105,8 @@ OMK_API omk_status OMK_CALL omk_toolbox_list(omk_kernel*, omk_buffer* out);
  */
 OMK_API omk_status OMK_CALL omk_design_snapshot(omk_kernel*, uint64_t document, omk_buffer* out);
 OMK_API omk_status OMK_CALL omk_design_apply(omk_kernel*, uint64_t document, uint64_t expected_revision, const char* op_json, size_t op_size, omk_buffer* out);
+/* Generated half of a partial form class: fields, InitializeComponent and event wiring. Result: {"source":"..."}. */
+OMK_API omk_status OMK_CALL omk_design_generate(omk_kernel*, uint64_t document, const char* language, size_t language_size, const char* class_name, size_t class_size, omk_buffer* out);
 /* language: "csharp" or "vb". Result: {"source":"..."} for .omform documents. */
 OMK_API omk_status OMK_CALL omk_design_export(omk_kernel*, uint64_t document, const char* language, size_t language_size, omk_buffer* out);
 

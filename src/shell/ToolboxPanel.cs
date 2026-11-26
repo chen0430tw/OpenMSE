@@ -27,7 +27,7 @@ namespace OpenMSE.Shell
             entries=catalog;
             category.Items.AddRange(new object[]{"HTML · MSE","Windows 窗体 · VS2005"});
             var shortcuts=new FlowLayoutPanel { Dock=DockStyle.Bottom,Height=42,Padding=new Padding(4),WrapContents=false };
-            var html=new Button { Text="新建 HTML",Width=91,Height=29 }; var form=new Button { Text="新建窗体",Width=91,Height=29 };
+            var html=new Button { Text="新建 HTML",AutoSize=true,Height=29 }; var form=new Button { Text="新建窗体",AutoSize=true,Height=29 };
             html.Click+=delegate { if(NewHtml!=null) NewHtml(); }; form.Click+=delegate { if(NewForm!=null) NewForm(); }; shortcuts.Controls.Add(html); shortcuts.Controls.Add(form);
             Controls.Add(list); Controls.Add(hint); Controls.Add(shortcuts); Controls.Add(search); Controls.Add(category);
             category.SelectedIndexChanged+=delegate { Filter(); }; search.TextChanged+=delegate { Filter(); };

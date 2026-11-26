@@ -38,13 +38,15 @@ namespace OpenMSE.Shell
         [Category("外观")] public string BackColor { get; set; }
         [Category("外观")] public string ForeColor { get; set; }
         [Browsable(false)] public bool Enabled { get; set; }
-        internal string NodeId;
+        internal string NodeId, Event, EventArgs, Handler;
+        internal Dictionary<string,string> Handlers=new Dictionary<string,string>();
         internal bool TextEditable, Password;
         DesignItem original;
 
         internal static DesignItem From(Dictionary<string,object> n)
         {
-            var item=new DesignItem { NodeId=(string)n["id"], Kind=(string)n["kind"], Name=(string)n["name"], Text=(string)n["text"], X=Convert.ToInt32(n["x"]), Y=Convert.ToInt32(n["y"]), Width=Convert.ToInt32(n["width"]), Height=Convert.ToInt32(n["height"]), BackColor=(string)n["back_color"], ForeColor=(string)n["fore_color"], Enabled=(bool)n["enabled"], TextEditable=(bool)n["text_editable"], Password=(bool)n["password"] };
+            var item=new DesignItem { NodeId=(string)n["id"], Event=(string)n["event"], EventArgs=(string)n["event_args"], Handler=(string)n["handler"], Kind=(string)n["kind"], Name=(string)n["name"], Text=(string)n["text"], X=Convert.ToInt32(n["x"]), Y=Convert.ToInt32(n["y"]), Width=Convert.ToInt32(n["width"]), Height=Convert.ToInt32(n["height"]), BackColor=(string)n["back_color"], ForeColor=(string)n["fore_color"], Enabled=(bool)n["enabled"], TextEditable=(bool)n["text_editable"], Password=(bool)n["password"] };
+            foreach(var h in (Dictionary<string,object>)n["handlers"]) item.Handlers[h.Key]=(string)h.Value;
             item.original=(DesignItem)item.MemberwiseClone();
             return item;
         }
@@ -91,13 +93,15 @@ namespace OpenMSE.Shell
     internal sealed class KernelDesign
     {
         internal ulong Document, Revision;
-        internal string Kind, Error, Title;
+        internal string Kind, Error, Title, Handler;
+        internal Dictionary<string,string> FormHandlers=new Dictionary<string,string>();
         internal int Width, Height, CanvasWidth, CanvasHeight;
         internal bool Truncated;
         internal List<DesignItem> Nodes=new List<DesignItem>();
         internal static KernelDesign From(Dictionary<string,object> r)
         {
-            var d=new KernelDesign { Document=KernelClient.U64(r["document"]), Revision=KernelClient.U64(r["revision"]), Kind=(string)r["kind"], Error=r["error"] as string, Title=(string)r["title"], Width=Convert.ToInt32(r["width"]), Height=Convert.ToInt32(r["height"]), CanvasWidth=Convert.ToInt32(r["canvas_width"]), CanvasHeight=Convert.ToInt32(r["canvas_height"]), Truncated=(bool)r["truncated"] };
+            var d=new KernelDesign { Document=KernelClient.U64(r["document"]), Revision=KernelClient.U64(r["revision"]), Kind=(string)r["kind"], Error=r["error"] as string, Title=(string)r["title"], Handler=(string)r["handler"], Width=Convert.ToInt32(r["width"]), Height=Convert.ToInt32(r["height"]), CanvasWidth=Convert.ToInt32(r["canvas_width"]), CanvasHeight=Convert.ToInt32(r["canvas_height"]), Truncated=(bool)r["truncated"] };
+            foreach(var h in (Dictionary<string,object>)r["handlers"]) d.FormHandlers[h.Key]=(string)h.Value;
             foreach(object node in (System.Collections.IEnumerable)r["nodes"]) d.Nodes.Add(DesignItem.From((Dictionary<string,object>)node));
             return d;
         }
@@ -108,6 +112,7 @@ namespace OpenMSE.Shell
         internal KernelState State;
         internal string Node;
         internal KernelDesign Design;
+        internal Point? Caret;   // HTML set_event: X=column, Y=line of the handler body
     }
 
     // What a designer view needs from its document; implemented by EditorPage over the kernel.

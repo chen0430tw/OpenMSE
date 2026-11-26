@@ -23,6 +23,34 @@ const std::set<std::string>& allowed_controls()
     return s;
 }
 
+// Default event per control kind: what double-clicking the control in the designer opens.
+struct EventSpec { const char* name; const char* args; const char* delegate; };
+EventSpec default_event(const std::string& kind)
+{
+    static const char* eh = "System.EventHandler";
+    static const char* ea = "System.EventArgs";
+    if (kind == "Form") return { "Load", ea, eh };
+    if (kind == "CheckBox" || kind == "RadioButton") return { "CheckedChanged", ea, eh };
+    if (kind == "TextBox" || kind == "RichTextBox") return { "TextChanged", ea, eh };
+    if (kind == "ComboBox" || kind == "ListBox" || kind == "CheckedListBox" || kind == "ListView" || kind == "TabControl") return { "SelectedIndexChanged", ea, eh };
+    if (kind == "NumericUpDown" || kind == "DateTimePicker") return { "ValueChanged", ea, eh };
+    if (kind == "TrackBar") return { "Scroll", ea, eh };
+    if (kind == "GroupBox") return { "Enter", ea, eh };
+    if (kind == "Panel") return { "Paint", "System.Windows.Forms.PaintEventArgs", "System.Windows.Forms.PaintEventHandler" };
+    if (kind == "MonthCalendar") return { "DateChanged", "System.Windows.Forms.DateRangeEventArgs", "System.Windows.Forms.DateRangeEventHandler" };
+    if (kind == "TreeView") return { "AfterSelect", "System.Windows.Forms.TreeViewEventArgs", "System.Windows.Forms.TreeViewEventHandler" };
+    if (kind == "LinkLabel") return { "LinkClicked", "System.Windows.Forms.LinkLabelLinkClickedEventArgs", "System.Windows.Forms.LinkLabelLinkClickedEventHandler" };
+    if (kind == "DataGridView") return { "CellContentClick", "System.Windows.Forms.DataGridViewCellEventArgs", "System.Windows.Forms.DataGridViewCellEventHandler" };
+    return { "Click", ea, eh };
+}
+// These controls parse Text as a value and throw (or ignore it) for a caption.
+bool has_caption(const std::string& kind) { return kind != "DateTimePicker" && kind != "NumericUpDown" && kind != "MonthCalendar"; }
+// HTML attribute used for an element's default event.
+const char* html_event(const std::string& kind)
+{
+    return kind == "TextBox" || kind == "RichTextBox" || kind == "ComboBox" || kind == "ListBox" ? "onchange" : "onclick";
+}
+
 constexpr std::size_t max_nodes = 200;
 
 [[noreturn]] void invalid(const std::string& message) { throw KernelError(ErrorCode::invalid_argument, message); }
@@ -344,6 +372,8 @@ struct HtmlScan {
     std::vector<std::size_t> item_tokens; // token index per design node
     std::vector<DesignNode> nodes;
     std::size_t insert_at = 0;
+    struct Script { std::string open; std::size_t begin, end; };
+    std::vector<Script> scripts;
 
     explicit HtmlScan(const std::string& source)
     {
@@ -389,6 +419,7 @@ struct HtmlScan {
             }
             if (tag == "script" || tag == "style") {
                 auto close = find_close(source, i, tag);
+                if (tag == "script" && close.first != std::string::npos) scripts.push_back({ open, i, close.first });
                 i = close.first == std::string::npos ? source.size() : close.first + close.second;
                 continue;
             }
@@ -439,6 +470,8 @@ struct HtmlScan {
                 if (key == "background-color") n.back_color = value;
                 if (key == "color") n.fore_color = value;
             }
+            n.event = html_event(kind);
+            n.handler = get_attribute(t.open, n.event);
             n.id = node_id(nodes.size());
             nodes.push_back(n);
             item_tokens.push_back(k);
@@ -483,7 +516,7 @@ DesignResult html_apply(const std::string& source, const JsonValue& op, const st
         std::string text = source;
         text.insert(at, "\n" + snippet + "\n");
         HtmlScan after(text);
-        DesignResult r{ text, std::nullopt };
+        DesignResult r{ text, std::nullopt, std::nullopt };
         for (std::size_t k = 0; k < after.nodes.size(); ++k)
             if (after.tokens[after.item_tokens[k]].start == at + 1) r.node = after.nodes[k].id;
         return r;
@@ -509,14 +542,72 @@ DesignResult html_apply(const std::string& source, const JsonValue& op, const st
         }
         std::string text = source;
         text.replace(t.start, t.end - t.start, open + tail);
-        return { text, node_id(index) };
+        return { text, node_id(index), std::nullopt };
+    }
+    if (name == "set_event") {
+        std::size_t index = node_index(op, scan.nodes.size());
+        const DesignNode& n = scan.nodes[index];
+        const HtmlToken& t = scan.tokens[scan.item_tokens[index]];
+        std::string handler;
+        if (!n.handler.empty()) {
+            // Already wired: a plain call leads to its function, anything else to the element itself.
+            std::string call = trim(n.handler);
+            if (call.rfind("return ", 0) == 0) call = trim(call.substr(7));
+            std::size_t paren = call.find('(');
+            handler = paren == std::string::npos ? std::string() : trim(call.substr(0, paren));
+            if (!identifier(handler)) return { source, n.id, t.start };
+        } else {
+            for (unsigned char c : n.name) handler.push_back(std::isalnum(c) ? static_cast<char>(c) : '_');
+            if (handler.empty() || std::isdigit(static_cast<unsigned char>(handler[0]))) handler = "_" + handler;
+            handler += "_" + n.event;
+        }
+        // Offset of the first line inside "function <handler>(...) {", or npos.
+        auto body = [&](const std::string& text) -> std::size_t {
+            HtmlScan again(text);
+            for (const auto& s : again.scripts) {
+                for (std::size_t p = text.find("function", s.begin); p != std::string::npos && p < s.end; p = text.find("function", p + 8)) {
+                    std::size_t q = p + 8;
+                    if (q >= s.end || !is_space(text[q])) continue;
+                    while (q < s.end && is_space(text[q])) ++q;
+                    if (text.compare(q, handler.size(), handler) != 0) continue;
+                    q += handler.size();
+                    while (q < s.end && is_space(text[q])) ++q;
+                    if (q >= s.end || text[q] != '(') continue;
+                    std::size_t brace = text.find('{', q);
+                    if (brace == std::string::npos || brace >= s.end) return p;
+                    std::size_t line = text.find('\n', brace);
+                    if (line == std::string::npos || line >= s.end) return brace + 1;
+                    std::size_t at = line + 1;
+                    while (at < s.end && (text[at] == ' ' || text[at] == '\t')) ++at;
+                    return at;
+                }
+            }
+            return std::string::npos;
+        };
+        std::vector<Patch> patches;
+        if (n.handler.empty()) patches.push_back({ t.start, t.open_end, set_attribute(t.open, n.event, handler + "()") });
+        if (body(source) == std::string::npos) {
+            std::string function = "\nfunction " + handler + "() {\n    \n}\n";
+            const HtmlScan::Script* target = nullptr;
+            for (const auto& s : scan.scripts) {
+                std::string type = lower(get_attribute(s.open, "type") + get_attribute(s.open, "language"));
+                if (get_attribute(s.open, "src").empty() && (type.empty() || type.find("javascript") != std::string::npos || type.find("jscript") != std::string::npos)) target = &s;
+            }
+            if (target) {
+                if (target->end > target->begin && source[target->end - 1] == '\n') function.erase(0, 1);
+                patches.push_back({ target->end, target->end, function });
+            } else patches.push_back({ scan.insert_at, scan.insert_at, "<script>" + function + "</script>\n" });
+        }
+        std::string text = apply_patches(source, patches);
+        std::size_t at = body(text);
+        return { text, n.id, at == std::string::npos ? t.start : at };
     }
     if (name == "delete") {
         std::size_t index = node_index(op, scan.nodes.size());
         const HtmlToken& t = scan.tokens[scan.item_tokens[index]];
         std::string text = source;
         text.erase(t.start, t.end - t.start);
-        return { text, std::nullopt };
+        return { text, std::nullopt, std::nullopt };
     }
     if (name == "set_form") throw KernelError(ErrorCode::invalid_state, "HTML 页面没有窗体属性。");
     invalid("未知的设计操作：" + name);
@@ -528,7 +619,8 @@ DesignResult html_apply(const std::string& source, const JsonValue& op, const st
 struct FormDoc {
     JsonValue root;
     long long format = 1, width = 720, height = 480;
-    std::string title = "Form1";
+    std::string title = "Form1", handler;
+    std::vector<std::pair<std::string, std::string>> handlers;
     const JsonValue* controls = nullptr;
     std::vector<DesignNode> nodes;
 };
@@ -552,6 +644,33 @@ std::string member_string(const JsonValue& obj, const char* key, const std::stri
     return v->text;
 }
 
+// "Events": {"Click": "button1_Click", "MouseMove": "button1_MouseMove"}: every bound event of a control or the form.
+std::vector<std::pair<std::string, std::string>> event_handlers(const JsonValue& obj)
+{
+    std::vector<std::pair<std::string, std::string>> out;
+    const JsonValue* events = obj.find("Events");
+    if (!events || events->type == JsonValue::Type::null) return out;
+    if (events->type != JsonValue::Type::object) bad_layout();
+    for (const auto& m : events->members) {
+        if (m.value.type == JsonValue::Type::null) continue;
+        if (m.value.type != JsonValue::Type::string || !identifier(m.key) || !identifier(m.value.text)) invalid("事件绑定无效：" + m.key);
+        out.emplace_back(m.key, m.value.text);
+    }
+    return out;
+}
+std::string handler_for(const std::vector<std::pair<std::string, std::string>>& handlers, const std::string& event)
+{
+    for (const auto& h : handlers) if (h.first == event) return h.second;
+    return {};
+}
+// Class names come from file names, so letters outside ASCII (for example Chinese) are allowed, as C# and VB allow them.
+bool class_identifier(const std::string& s)
+{
+    if (s.empty() || std::isdigit(static_cast<unsigned char>(s[0]))) return false;
+    for (unsigned char c : s) if (!(std::isalnum(c) || c == '_' || c >= 0x80)) return false;
+    return valid_utf8(s);
+}
+
 void parse_form(const std::string& text, FormDoc& f)
 {
     try { f.root = parse_json(text); }
@@ -562,6 +681,8 @@ void parse_form(const std::string& text, FormDoc& f)
     f.title = member_string(f.root, "Title", "Form1");
     f.width = member_int(f.root, "Width", 720);
     f.height = member_int(f.root, "Height", 480);
+    f.handlers = event_handlers(f.root);
+    f.handler = handler_for(f.handlers, "Load");
     f.controls = f.root.find("Controls");
     if (f.format != 1 || f.width < 120 || f.height < 100 || f.width > 4096 || f.height > 4096) bad_layout();
     if (f.controls && f.controls->type != JsonValue::Type::array) bad_layout();
@@ -583,6 +704,10 @@ void parse_form(const std::string& text, FormDoc& f)
         n.enabled = enabled ? enabled->boolean : true;
         validate_node(n);
         if (!allowed_controls().count(n.kind) || !names.insert(lower(n.name)).second) invalid("控件类型不受支持或 Name 重复。");
+        n.event = default_event(n.kind).name;
+        n.event_args = default_event(n.kind).args;
+        n.handlers = event_handlers(c);
+        n.handler = handler_for(n.handlers, n.event);
         n.id = node_id(f.nodes.size());
         f.nodes.push_back(n);
     }
@@ -600,6 +725,8 @@ bool spans_lines(const std::string& s, std::size_t b, std::size_t e) { return s.
 
 std::string literal(const std::string& value) { return json_quote(value, true); }
 std::string literal(long long value) { return std::to_string(value); }
+struct RawJson { std::string text; };
+std::string literal(const RawJson& value) { return value.text; }
 
 template<class T> void set_member(const std::string& src, const JsonValue& obj, const char* key, const T& value, std::vector<Patch>& patches)
 {
@@ -693,6 +820,23 @@ DesignResult form_apply(const std::string& source, const JsonValue& op, const st
         if (items.size() == 1) patches.push_back({ f.controls->begin + 1, f.controls->close, std::string() });
         else if (index + 1 < items.size()) patches.push_back({ items[index].begin, items[index + 1].begin, std::string() });
         else patches.push_back({ items[index - 1].end, items[index].end, std::string() });
+    } else if (name == "set_event") {
+        // node "form" binds the form's Load event.
+        const JsonValue* target = op.find("node");
+        bool form = target && target->type == JsonValue::Type::string && target->text == "form";
+        std::size_t index = form ? 0 : node_index(op, f.nodes.size());
+        const JsonValue& obj = form ? f.root : f.controls->items[index];
+        const std::string kind = form ? std::string("Form") : f.nodes[index].kind;
+        const JsonValue* h = op.find("handler");
+        std::string handler = h ? string_prop(*h, "handler") : std::string();
+        if (!identifier(handler)) invalid("事件处理函数名无效。");
+        const JsonValue* ev = op.find("event");
+        std::string event_name = ev ? string_prop(*ev, "event") : std::string(default_event(kind).name);
+        if (!identifier(event_name)) invalid("事件名无效。");
+        const JsonValue* events = obj.find("Events");
+        if (events && events->type == JsonValue::Type::object) set_member(source, *events, event_name.c_str(), handler, patches);
+        else set_member(source, obj, "Events", RawJson{ "{" + json_quote(event_name) + ":" + literal(handler) + "}" }, patches);
+        if (!form) node = node_id(index);
     } else if (name == "set_form") {
         const JsonValue& props = properties_of(op);
         for (const auto& m : props.members) {
@@ -706,7 +850,7 @@ DesignResult form_apply(const std::string& source, const JsonValue& op, const st
     std::string text = apply_patches(source, patches);
     FormDoc check;
     parse_form(text, check); // the whole result must still be a valid layout, or nothing is committed
-    return { text, node };
+    return { text, node, std::nullopt };
 }
 
 std::string extension(const Document& d)
@@ -768,6 +912,8 @@ DesignSnapshot design_snapshot(const Document& d)
         FormDoc f;
         try {
             parse_form(d.text, f);
+            s.handler = f.handler;
+            s.handlers = f.handlers;
             s.title = f.title; s.width = s.canvas_width = f.width; s.height = s.canvas_height = f.height;
             s.nodes = f.nodes;
         } catch (const KernelError& e) { s.error = e.what(); }
@@ -810,7 +956,7 @@ std::string design_export(const Document& d, const std::string& language)
         if (vb) {
             line("        Dim " + v + " As New " + n.kind + "()");
             line("        " + v + ".Name = " + vb_string(n.name));
-            line("        " + v + ".Text = " + vb_string(n.text));
+            if (has_caption(n.kind)) line("        " + v + ".Text = " + vb_string(n.text));
             line("        " + v + ".SetBounds(" + bounds + ")");
             line("        " + v + ".Enabled = " + (n.enabled ? "True" : "False"));
             line("        " + v + ".BackColor = ColorTranslator.FromHtml(" + vb_string(n.back_color) + ")");
@@ -819,7 +965,7 @@ std::string design_export(const Document& d, const std::string& language)
         } else {
             line("        " + n.kind + " " + v + " = new " + n.kind + "();");
             line("        " + v + ".Name = " + cs_string(n.name) + ";");
-            line("        " + v + ".Text = " + cs_string(n.text) + ";");
+            if (has_caption(n.kind)) line("        " + v + ".Text = " + cs_string(n.text) + ";");
             line("        " + v + ".SetBounds(" + bounds + ");");
             line("        " + v + ".Enabled = " + (n.enabled ? "true" : "false") + ";");
             line("        " + v + ".BackColor = ColorTranslator.FromHtml(" + cs_string(n.back_color) + ");");
@@ -830,6 +976,50 @@ std::string design_export(const Document& d, const std::string& language)
     if (vb) line("    End Sub\r\n    <STAThread()> Public Shared Sub Main()\r\n        Application.EnableVisualStyles()\r\n        Application.Run(New DesignedForm())\r\n    End Sub\r\nEnd Class");
     else line("    }\r\n    [STAThread]\r\n    public static void Main() { Application.EnableVisualStyles(); Application.Run(new DesignedForm()); }\r\n}");
     return code;
+}
+
+std::string design_generate(const Document& d, const std::string& language, const std::string& class_name)
+{
+    if (design_kind(d) != DesignKind::form) throw KernelError(ErrorCode::invalid_state, "只有 .omform 布局可以生成窗体代码。");
+    bool vb = language == "vb";
+    if (!vb && language != "csharp") invalid("语言必须是 csharp 或 vb。");
+    if (!class_identifier(class_name)) invalid("窗体类名无效：" + class_name);
+    FormDoc f;
+    parse_form(d.text, f);
+    // Escaped identifiers keep names such as "this" or "Select" valid.
+    auto id = [&](const std::string& n) { return vb ? "[" + n + "]" : "@" + n; };
+    auto text = [&](const std::string& s) { return vb ? vb_string(s) : cs_string(s); };
+    const std::string self = vb ? "Me." : "this.", base = vb ? "MyBase." : "base.", end = vb ? "\r\n" : ";\r\n";
+    const std::string forms = "System.Windows.Forms.", drawing = "System.Drawing.", make = vb ? "New " : "new ";
+    std::string code;
+    // Method-group conversion (C# 2.0) and AddressOf need no delegate type, so any event can be wired.
+    auto wire = [&](const std::string& owner, const std::vector<std::pair<std::string, std::string>>& handlers) {
+        for (const auto& h : handlers) {
+            if (vb) code += "        AddHandler " + owner + "." + h.first + ", AddressOf Me." + id(h.second) + "\r\n";
+            else code += "        " + owner + "." + h.first + " += this." + id(h.second) + ";\r\n";
+        }
+    };
+    if (vb) code = "' <auto-generated>OpenMSE designer: changes to this file are overwritten.</auto-generated>\r\nPartial Public Class " + id(class_name) + "\r\n    Inherits " + forms + "Form\r\n\r\n";
+    else code = "// <auto-generated>OpenMSE designer: changes to this file are overwritten.</auto-generated>\r\npublic partial class " + id(class_name) + " : " + forms + "Form\r\n{\r\n";
+    for (const auto& n : f.nodes)
+        code += vb ? "    Private " + id(n.name) + " As " + forms + n.kind + "\r\n" : "    private " + forms + n.kind + " " + id(n.name) + ";\r\n";
+    code += vb ? "\r\n    Private Sub InitializeComponent()\r\n" : "\r\n    private void InitializeComponent()\r\n    {\r\n";
+    code += "        " + base + "Text = " + text(f.title) + end;
+    code += "        " + base + "ClientSize = " + make + drawing + "Size(" + std::to_string(f.width) + ", " + std::to_string(f.height) + ")" + end;
+    for (const auto& n : f.nodes) {
+        std::string v = self + id(n.name);
+        code += "        " + v + " = " + make + forms + n.kind + "()" + end;
+        code += "        " + v + ".Name = " + text(n.name) + end;
+        if (has_caption(n.kind)) code += "        " + v + ".Text = " + text(n.text) + end;
+        code += "        " + v + ".SetBounds(" + std::to_string(n.x) + ", " + std::to_string(n.y) + ", " + std::to_string(n.width) + ", " + std::to_string(n.height) + ")" + end;
+        code += "        " + v + ".Enabled = " + (vb ? (n.enabled ? "True" : "False") : (n.enabled ? "true" : "false")) + end;
+        code += "        " + v + ".BackColor = " + drawing + "ColorTranslator.FromHtml(" + text(n.back_color) + ")" + end;
+        code += "        " + v + ".ForeColor = " + drawing + "ColorTranslator.FromHtml(" + text(n.fore_color) + ")" + end;
+        wire(v, n.handlers);
+        code += "        " + base + "Controls.Add(" + v + ")" + end;
+    }
+    wire(vb ? "MyBase" : "base", f.handlers);
+    return code + (vb ? "    End Sub\r\nEnd Class\r\n" : "    }\r\n}\r\n");
 }
 
 // ---------------------------------------------------------------- toolbox

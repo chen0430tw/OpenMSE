@@ -53,6 +53,7 @@ namespace OpenMSE.Shell
         internal Action<Exception> SyncFailed;
         bool applying;
         internal DesignerView Designer;
+        internal MainForm.CodeBarState CodeBar;   // object/event lists when this is a form's code file
         internal TabControl Views;
         internal void SetupDesigner()
         {
@@ -130,7 +131,7 @@ namespace OpenMSE.Shell
         readonly ToolboxPanel toolbox;
         readonly ListView errors=new ListView { Dock=DockStyle.Fill, View=View.Details, FullRowSelect=true, BorderStyle=BorderStyle.None, HideSelection=false };
         readonly TabControl outputTabs=new TabControl { Dock=DockStyle.Fill, Alignment=TabAlignment.Bottom };
-        readonly ToolStripComboBox configurationBox=new ToolStripComboBox { DropDownStyle=ComboBoxStyle.DropDownList, Width=180, ToolTipText="解决方案配置" };
+        readonly ToolStripComboBox configurationBox=new ToolStripComboBox { DropDownStyle=ComboBoxStyle.DropDownList, AutoSize=false, Width=160, ToolTipText="解决方案配置" };
         readonly Timer eventPump=new Timer { Interval=100 };
         readonly string root;
         string workspace;
@@ -146,7 +147,7 @@ namespace OpenMSE.Shell
         internal IList<KernelDiagnostic> Diagnostics { get { return errors.Items.Cast<ListViewItem>().Select(i=>(KernelDiagnostic)i.Tag).ToList(); } }
         internal string OutputText { get { return output.Text; } }
         ToolStripMenuItem buildItem, runItem, cancelItem, undoItem, redoItem;
-        ToolStripButton buildButton, runButton, cancelButton;
+        ToolStripButton buildButton, runButton, cancelButton, undoButton, redoButton;
         internal readonly KernelClient Kernel;
         internal readonly IList<ToolboxEntry> ToolboxEntries;
         internal MainForm(string projectRoot)
@@ -165,7 +166,7 @@ namespace OpenMSE.Shell
             var file=AddMenu(menu,"文件(&F)"); Item(file,"新建文件或项目…",Keys.Control|Keys.N,NewItem); Item(file,"打开文件…",Keys.Control|Keys.O,OpenDialog); Item(file,"打开项目或解决方案…",Keys.Control|Keys.Shift|Keys.O,OpenProjectDialog);
             file.DropDownItems.Add(new ToolStripSeparator()); Item(file,"保存",Keys.Control|Keys.S,delegate { Save(Active,false); }); Item(file,"另存为…",Keys.Control|Keys.Shift|Keys.S,delegate { Save(Active,true); }); Item(file,"全部保存",Keys.Control|Keys.Alt|Keys.S,delegate { SaveAll(); });
             Item(file,"关闭当前文档",Keys.Control|Keys.W,CloseActive); file.DropDownItems.Add(new ToolStripSeparator()); Item(file,"退出",Keys.Alt|Keys.F4,Close);
-            var edit=AddMenu(menu,"编辑(&E)"); undoItem=Item(edit,"撤销",Keys.Control|Keys.Z,delegate { if(Active!=null) { Active.Undo(); UpdateState(); } }); redoItem=Item(edit,"重做",Keys.Control|Keys.Y,delegate { if(Active!=null) { Active.Redo(); UpdateState(); } }); edit.DropDownItems.Add(new ToolStripSeparator());
+            var edit=AddMenu(menu,"编辑(&E)"); undoItem=Item(edit,"撤销",Keys.Control|Keys.Z,Undo); redoItem=Item(edit,"重做",Keys.Control|Keys.Y,Redo); redoItem.ShortcutKeyDisplayString="Ctrl+Y / Ctrl+Shift+Z"; edit.DropDownItems.Add(new ToolStripSeparator());
             Item(edit,"剪切",Keys.Control|Keys.X,delegate { if(Active!=null) Active.Editor.Cut(); }); Item(edit,"复制",Keys.Control|Keys.C,delegate { if(Active!=null) Active.Editor.Copy(); }); Item(edit,"粘贴",Keys.Control|Keys.V,delegate { if(Active!=null) Active.Editor.Paste(DataFormats.GetFormat(DataFormats.UnicodeText)); }); Item(edit,"全选",Keys.Control|Keys.A,delegate { if(Active!=null) Active.Editor.SelectAll(); });
             var view=AddMenu(menu,"视图(&V)"); Item(view,"项目资源管理器",Keys.None,delegate { right.Panel2Collapsed=!right.Panel2Collapsed; }); Item(view,"输出",Keys.Control|Keys.Alt|Keys.O,delegate { horizontal.Panel2Collapsed=!horizontal.Panel2Collapsed; }); Item(view,"自动换行",Keys.None,delegate { if(Active!=null) Active.Editor.WordWrap=!Active.Editor.WordWrap; });
             Item(view,"工具箱",Keys.Control|Keys.Alt|Keys.X,delegate { vertical.Panel1Collapsed=!vertical.Panel1Collapsed; });
@@ -176,6 +177,7 @@ namespace OpenMSE.Shell
             MainMenuStrip=menu;
             var toolbar=new ToolStrip { GripStyle=ToolStripGripStyle.Hidden, BackColor=Color.FromArgb(243,246,251), Padding=new Padding(12,5,6,5), ImageScalingSize=new Size(18,18) };
             Button(toolbar,"新建",SystemIcons.Application,NewItem); Button(toolbar,"打开",SystemIcons.WinLogo,OpenDialog); Button(toolbar,"保存",SystemIcons.Information,delegate { Save(Active,false); }); toolbar.Items.Add(new ToolStripSeparator());
+            undoButton=Button(toolbar,"撤销",SystemIcons.Information,Undo); undoButton.ToolTipText="撤销 (Ctrl+Z)"; redoButton=Button(toolbar,"重做",SystemIcons.Information,Redo); redoButton.ToolTipText="重做 (Ctrl+Y 或 Ctrl+Shift+Z)"; toolbar.Items.Add(new ToolStripSeparator());
             toolbar.Items.Add(configurationBox); buildButton=Button(toolbar,"生成",SystemIcons.Shield,StartBuild); runButton=Button(toolbar,"运行",SystemIcons.Shield,BuildAndRun); cancelButton=Button(toolbar,"取消",SystemIcons.Shield,CancelTask);
             toolbar.Items.Add(new ToolStripSeparator()); toolbar.Items.Add(new ToolStripLabel("统一工作区") { ForeColor=Color.FromArgb(85,100,120) });
             var brand=new Panel { Dock=DockStyle.Top, Height=48, BackColor=Color.FromArgb(27,45,74), Padding=new Padding(16,0,0,0) };
@@ -196,7 +198,7 @@ namespace OpenMSE.Shell
             errors.DoubleClick+=delegate { if(errors.SelectedIndices.Count>0) Guard(delegate { GoToDiagnostic(errors.SelectedIndices[0]); }); };
             var outputTab=new TabPage("输出"); outputTab.Controls.Add(output); var errorTab=new TabPage("错误列表"); errorTab.Controls.Add(errors); outputTabs.TabPages.Add(outputTab); outputTabs.TabPages.Add(errorTab);
             horizontal.Panel1.Controls.Add(Tabs); horizontal.Panel2.Controls.Add(outputTabs); horizontal.Panel2.Controls.Add(PanelTitle("输出 · 生成 · 调试"));
-            BuildDebugUi(menu,tools,bar);
+            BuildDebugUi(menu,tools,bar); SetupTabs();
             // Task output and state arrive as kernel events from worker threads; they are drained here on the UI thread.
             eventPump.Tick+=delegate { try { Kernel.DrainEvents(); } catch(Exception ex) { eventPump.Stop(); MessageBox.Show(this,ex.Message,"OpenMSE"); } }; eventPump.Start();
             Controls.Add(vertical); Controls.Add(toolbar); Controls.Add(menu); Controls.Add(brand); Controls.Add(bar);
@@ -209,6 +211,16 @@ namespace OpenMSE.Shell
         static ToolStripMenuItem AddMenu(MenuStrip parent,string text) { var item=new ToolStripMenuItem(text); parent.Items.Add(item); return item; }
         ToolStripMenuItem Item(ToolStripMenuItem parent,string text,Keys keys,Action action) { var item=new ToolStripMenuItem(text) { ShortcutKeys=keys }; item.Click+=delegate { Guard(action); }; parent.DropDownItems.Add(item); return item; }
         ToolStripButton Button(ToolStrip parent,string text,Icon icon,Action action) { var item=new ToolStripButton(text,ToolIcon(text)) { DisplayStyle=ToolStripItemDisplayStyle.ImageAndText }; item.Click+=delegate { Guard(action); }; parent.Items.Add(item); return item; }
+        // Undo and redo go through the kernel's history for the active document (text and design edits alike).
+        internal void Undo() { if(Active!=null) { Active.Undo(); UpdateState(); } }
+        internal void Redo() { if(Active!=null) { Active.Redo(); UpdateState(); } }
+        // Ctrl+Shift+Z is the second redo shortcut; a menu item holds only one.
+        internal bool HandleShortcut(Keys keys)
+        {
+            if(keys==(Keys.Control|Keys.Shift|Keys.Z) && redoItem.Enabled) { Guard(Redo); return true; }
+            return false;
+        }
+        protected override bool ProcessCmdKey(ref Message msg,Keys keyData) { return HandleShortcut(keyData) || base.ProcessCmdKey(ref msg,keyData); }
         static Image ToolIcon(string text)
         {
             var image=new Bitmap(20,20);
@@ -216,6 +228,13 @@ namespace OpenMSE.Shell
                 graphics.SmoothingMode=System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 if(text=="新建") { graphics.DrawRectangle(pen,4,2,11,15); graphics.DrawLine(pen,8,7,17,7); graphics.DrawLine(pen,13,3,13,12); }
                 else if(text=="打开") { graphics.DrawLines(pen,new[]{new Point(2,16),new Point(2,5),new Point(8,5),new Point(10,7),new Point(17,7)}); graphics.DrawPolygon(pen,new[]{new Point(2,16),new Point(5,9),new Point(18,9),new Point(15,16)}); }
+                else if(text=="撤销" || text=="重做") {
+                    // A curved arrow: left-pointing for undo, mirrored for redo.
+                    bool redo=text=="重做";
+                    if(redo) { graphics.TranslateTransform(20,0); graphics.ScaleTransform(-1,1); }
+                    graphics.DrawArc(pen,5,5,12,10,180,-200);
+                    graphics.DrawLines(pen,new[]{ new Point(3,6), new Point(5,11), new Point(10,9) });
+                }
                 else if(text=="保存") { graphics.DrawRectangle(pen,3,2,14,15); graphics.DrawRectangle(pen,6,2,8,5); graphics.DrawRectangle(pen,6,11,8,6); }
                 else { using(var brush=new SolidBrush(Color.FromArgb(38,135,92))) graphics.FillPolygon(brush,new[]{new Point(5,3),new Point(17,10),new Point(5,17)}); }
             }
@@ -261,7 +280,7 @@ namespace OpenMSE.Shell
         {
             var page=new EditorPage(KernelDocument.Create(Kernel,"未命名"+(++untitled)+template.Extension,template.Content)); AddEditor(page); page.SetupDesigner(); page.UpdateTitle(); RefreshTree(); UpdateState(); return page;
         }
-        void AddEditor(EditorPage page) { Tabs.TabPages.Add(page); Tabs.SelectedTab=page; page.SyncFailed=delegate(Exception ex) { MessageBox.Show(this,"编辑未能提交到内核，已恢复为内核中的文本：\r\n"+ex.Message,"OpenMSE",MessageBoxButtons.OK,MessageBoxIcon.Warning); }; page.Editor.TextChanged+=delegate { UpdateState(); }; page.Editor.SelectionChanged+=delegate { UpdatePosition(); }; page.SetupDesigner(); if(page.Designer!=null) { page.Designer.SelectionChanged=delegate(object selected) { if(Active==page) properties.SelectedObject=selected; }; page.Designer.Failure=toolbox.Failure; } page.Editor.Focus(); RefreshTree(); }
+        void AddEditor(EditorPage page) { Tabs.TabPages.Add(page); Tabs.SelectedTab=page; page.SyncFailed=delegate(Exception ex) { MessageBox.Show(this,"编辑未能提交到内核，已恢复为内核中的文本：\r\n"+ex.Message,"OpenMSE",MessageBoxButtons.OK,MessageBoxIcon.Warning); }; page.Editor.TextChanged+=delegate { UpdateState(); }; page.Editor.SelectionChanged+=delegate { UpdatePosition(); }; page.SetupDesigner(); if(page.Designer!=null) { page.Designer.SelectionChanged=delegate(object selected) { if(Active==page) properties.SelectedObject=selected; }; page.Designer.Failure=toolbox.Failure; page.Designer.Activated=delegate(DesignItem item) { ActivateDesign(page,item); }; } AttachCodeBar(page); page.Editor.Focus(); RefreshTree(); }
         internal void OpenFile(string path)
         {
             if(String.Equals(Path.GetExtension(path),".sln",StringComparison.OrdinalIgnoreCase) || String.Equals(Path.GetExtension(path),".csproj",StringComparison.OrdinalIgnoreCase) || String.Equals(Path.GetExtension(path),".vbproj",StringComparison.OrdinalIgnoreCase)) { OpenProject(path); return; }
@@ -312,6 +331,8 @@ namespace OpenMSE.Shell
         internal bool Save(EditorPage page,bool saveAs)
         {
             if(page==null) return true; string path=page.Document.PathName;
+            // Code written for an unsaved form is saved with that form, next to it.
+            if(path==null && page.CodeBar!=null && page.CodeBar.LayoutPage!=null && !page.CodeBar.LayoutPage.IsDisposed && page.CodeBar.LayoutPage.Document.PathName==null) return Save(page.CodeBar.LayoutPage,false);
             if(saveAs || path==null) using(var dialog=new SaveFileDialog { FileName=path==null ? page.UntitledName : Path.GetFileName(path), InitialDirectory=path==null ? workspace : Path.GetDirectoryName(path), Filter="所有文件|*.*", OverwritePrompt=true }) { if(dialog.ShowDialog(this)!=DialogResult.OK) return false; return SaveTo(page,dialog.FileName); }
             return SaveTo(page,null);
         }
@@ -319,7 +340,7 @@ namespace OpenMSE.Shell
         // The kernel refuses targets open in another tab and files changed on disk since they were read.
         internal bool SaveTo(EditorPage page,string path)
         {
-            page.Document.Save(path); page.SetupDesigner(); page.UpdateTitle(); status.Text="已保存 "+Path.GetFileName(page.Document.PathName); RefreshTree(); UpdateState(); return true;
+            page.Document.Save(path); page.SetupDesigner(); RegenerateAfterSave(page); page.UpdateTitle(); status.Text="已保存 "+Path.GetFileName(page.Document.PathName); RefreshTree(); UpdateState(); return true;
         }
         bool SaveAll() { foreach(var page in Pages.ToList()) if((page.Dirty || page.Document.PathName==null) && !Save(page,false)) return false; return true; }
         // Returns the close policy the user chose, or null to cancel.
@@ -332,13 +353,13 @@ namespace OpenMSE.Shell
             return null;
         }
         internal void ClosePage(EditorPage page,ClosePolicy policy) { page.Document.Close(policy); Tabs.TabPages.Remove(page); page.Dispose(); RefreshTree(); UpdateState(); }
-        void CloseActive() { var page=Active; if(page==null) return; var policy=ConfirmClose(page); if(policy!=null) ClosePage(page,policy.Value); }
+        void CloseActive() { if(Active!=null) CloseDocument(Active); }
         void OnClosing(object sender,FormClosingEventArgs e) { if(BuildRunning) { MessageBox.Show(this,"生成正在进行，请等待完成后关闭。","OpenMSE"); e.Cancel=true; return; } try { foreach(var page in Pages.ToList()) if(ConfirmClose(page)==null) { e.Cancel=true; return; } } catch(Exception ex) { e.Cancel=true; MessageBox.Show(this,ex.Message,"OpenMSE"); } }
         void UpdatePosition() { if(Active==null) { position.Text=""; return; } int index=Active.Editor.SelectionStart, line=Active.Editor.GetLineFromCharIndex(index); position.Text="行 "+(line+1)+", 列 "+(index-Active.Editor.GetFirstCharIndexFromLine(line)+1)+"    |    "+(Active.Document.EncodingName ?? "").ToUpperInvariant()+"    |    版本 "+Active.Document.Revision; }
         void UpdateState() { Text=(Active==null ? "" : Active.Text+" — ")+"OpenMSE"+(Workspace==null ? "" : " · "+Path.GetFileNameWithoutExtension(Workspace.Path));
             if(buildItem!=null) { buildItem.Enabled=buildButton.Enabled=runItem.Enabled=runButton.Enabled=Workspace!=null && !BuildRunning; cancelItem.Enabled=cancelButton.Enabled=BuildRunning; configurationBox.Enabled=Workspace!=null && !BuildRunning; }
             UpdateDebugState();
-            if(undoItem!=null) { undoItem.Enabled=Active!=null && Kernel.Query("edit.undo",Active.Document.Id).Enabled; redoItem.Enabled=Active!=null && Kernel.Query("edit.redo",Active.Document.Id).Enabled; } toolbox.SetContext(Active==null ? null : Active.Designer); properties.SelectedObject=Active==null || Active.Designer==null ? null : Active.Designer.SelectionObject; UpdatePosition(); }
+            if(undoItem!=null) { undoItem.Enabled=undoButton.Enabled=Active!=null && Kernel.Query("edit.undo",Active.Document.Id).Enabled; redoItem.Enabled=redoButton.Enabled=Active!=null && Kernel.Query("edit.redo",Active.Document.Id).Enabled; } toolbox.SetContext(Active==null ? null : Active.Designer); properties.SelectedObject=Active==null || Active.Designer==null ? null : Active.Designer.SelectionObject; UpdatePosition(); }
         internal static string Quote(string value) { var result=new StringBuilder("\""); int slashes=0; foreach(char c in value) { if(c=='\\') { slashes++; continue; } result.Append('\\',slashes*(c=='"' ? 2 : 1)); slashes=0; if(c=='"') result.Append('\\'); result.Append(c); } result.Append('\\',slashes*2); return result.Append('"').ToString(); }
         // Builds run as kernel tasks: the call returns at once, output and the final state arrive as events.
         internal void StartBuild()

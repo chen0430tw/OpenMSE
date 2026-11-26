@@ -85,6 +85,7 @@ Call dbg(unsigned long long s, const std::string& action) { omk_buffer b{}; retu
 Call dbg_vars(unsigned long long s, uint32_t frame) { omk_buffer b{}; return take(omk_debug_variables(k, s, frame, &b), b); }
 Call dbg_eval(unsigned long long s, uint32_t frame, const std::string& e) { omk_buffer b{}; return take(omk_debug_evaluate(k, s, frame, e.data(), e.size(), &b), b); }
 Call dbg_bp(unsigned long long s, const std::string& file, uint32_t line) { omk_buffer b{}; return take(omk_debug_breakpoint_add(k, s, file.data(), file.size(), line, &b), b); }
+Call generate(unsigned long long id, const std::string& language, const std::string& cls) { omk_buffer b{}; return take(omk_design_generate(k, id, language.data(), language.size(), cls.data(), cls.size(), &b), b); }
 Call capabilities() { omk_buffer b{}; return take(omk_capabilities(k, &b), b); }
 std::string json_path(const std::string& p) { std::string o; for (char c : p) { if (c == '\\') o += "\\\\"; else o.push_back(c); } return o; }
 std::string project_xml(const std::string& guid, const std::string& assembly, const std::string& type, bool vb, const std::string& compile, const std::string& reference)
@@ -398,6 +399,35 @@ int main(int argc, char** argv)
     d = create("t.txt", "x");
     check(design(d.num("id")).has("\"kind\":\"none\"") && apply(d.num("id"), d.num("revision"), "{\"op\":\"delete\",\"node\":\"n0\"}").status == OMK_E_INVALID_STATE, "plain text has no design view");
     close(d.num("id"), OMK_CLOSE_DISCARD);
+
+    // ---- Design events: double-click targets.
+    d = create("events.html", "<html><body>\n<button id=\"go\">Go</button>\n<input type=\"text\" id=\"who\">\n</body></html>\n");
+    id = d.num("id");
+    Call ev = apply(id, d.num("revision"), "{\"op\":\"set_event\",\"node\":\"n0\"}");
+    check(ev.ok() && text_of(snapshot(id)).find("<button id=\"go\" onclick=\"go_onclick()\">Go</button>") != std::string::npos
+        && text_of(snapshot(id)).find("<script>\nfunction go_onclick() {\n    \n}\n</script>\n</body>") != std::string::npos && ev.has("\"caret\":{\"line\":5,\"column\":4}"), "HTML event wires element and function", ev.json);
+    std::string once = text_of(snapshot(id));
+    Call ev2 = apply(id, ev.num("revision"), "{\"op\":\"set_event\",\"node\":\"n0\"}");
+    check(ev2.ok() && ev2.has("\"edit\":null") && ev2.has("\"caret\":{\"line\":5,\"column\":4}") && text_of(snapshot(id)) == once, "second double-click only navigates", ev2.json);
+    ev2 = apply(id, ev2.num("revision"), "{\"op\":\"set_event\",\"node\":\"n1\"}");
+    check(ev2.ok() && count(text_of(snapshot(id)), "<script>") == 1 && text_of(snapshot(id)).find("onchange=\"who_onchange()\"") != std::string::npos, "second handler joins the existing script", ev2.json);
+    u = undo(id, ev2.num("revision"));
+    check(text_of(snapshot(id)) == once, "event wiring is one undo step");
+    close(id, OMK_CLOSE_DISCARD);
+    d = create("ev.omform", "{\"FormatVersion\":1,\"Title\":\"T\",\"Width\":720,\"Height\":480,\"Controls\":[]}");
+    id = d.num("id");
+    ev = apply(id, d.num("revision"), "{\"op\":\"add\",\"toolbox_id\":\"winforms.button\",\"x\":1,\"y\":2}");
+    check(ev.has("\"event\":\"Click\"") && ev.has("\"handler\":\"\""), "form node reports its default event", ev.json);
+    ev = apply(id, ev.num("revision"), "{\"op\":\"set_event\",\"node\":\"n0\",\"handler\":\"button1_Click\"}");
+    ev = apply(id, ev.num("revision"), "{\"op\":\"set_event\",\"node\":\"form\",\"handler\":\"Form_Load\"}");
+    check(ev.ok() && text_of(snapshot(id)).find("\"Events\":{\"Click\":\"button1_Click\"}}") != std::string::npos && ev.has("\"handler\":\"Form_Load\""), "form events stored", ev.json);
+    Call gc = generate(id, "csharp", "Form1"), gv = generate(id, "vb", "Form1");
+    ev = apply(id, ev.num("revision"), "{\"op\":\"set_event\",\"node\":\"n0\",\"handler\":\"button1_MouseMove\",\"event\":\"MouseMove\"}");
+    gc = generate(id, "csharp", "Form1");
+    check(ev.has("\"handlers\":{\"Click\":\"button1_Click\",\"MouseMove\":\"button1_MouseMove\"}") && gc.has("this.@button1.MouseMove += this.@button1_MouseMove;") && generate(id, "csharp", u8"窗体1").ok(), "any event binds; Chinese class names", ev.json);
+    check(gc.has("this.@button1.Click += this.@button1_Click;") && gc.has("base.Load += ") && gv.has("AddHandler Me.[button1].Click, AddressOf Me.[button1_Click]"), "designer code wires events", gc.json + gv.json);
+    check(apply(id, ev.num("revision"), "{\"op\":\"set_event\",\"node\":\"n0\",\"handler\":\"1 x\"}").status == OMK_E_INVALID_ARGUMENT && generate(id, "vb", "a b").status == OMK_E_INVALID_ARGUMENT, "invalid handler and class names refused");
+    close(id, OMK_CLOSE_DISCARD);
 
     // ---- Phase 3: tools, project graph, asynchronous build/run tasks, failure and cancellation.
     Call tl = tools();

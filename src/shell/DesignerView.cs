@@ -12,7 +12,7 @@ namespace OpenMSE.Shell
     {
         readonly IDesignSource source;
         readonly Panel scroll=new Panel { Dock=DockStyle.Fill,AutoScroll=true,BackColor=Color.FromArgb(235,239,245) };
-        internal readonly Panel Canvas=new Panel { Location=new Point(20,20),Size=new Size(720,480),BackColor=Color.White,AllowDrop=true };
+        internal readonly Panel Canvas=new CanvasPanel { Location=new Point(20,20),Size=new Size(720,480),BackColor=Color.White,AllowDrop=true };
         readonly Label message=new Label { Dock=DockStyle.Top,Height=30,Padding=new Padding(8,6,0,0),BackColor=Color.FromArgb(246,248,252),ForeColor=Color.FromArgb(88,104,126) };
         readonly List<DesignSlot> slots=new List<DesignSlot>();
         internal readonly bool Html;
@@ -25,11 +25,12 @@ namespace OpenMSE.Shell
         internal ulong Revision { get { return design==null ? 0 : design.Revision; } }
         internal Action<object> SelectionChanged;
         internal Action<string> Failure;
+        internal Action<DesignItem> Activated;   // double-click; null means the form itself
         internal DesignerView(bool isHtml,IDesignSource designSource)
         {
             Html=isHtml; source=designSource; Dock=DockStyle.Fill; TabStop=true;
             scroll.Controls.Add(Canvas); Controls.Add(scroll); Controls.Add(message);
-            Canvas.Paint+=delegate(object sender,PaintEventArgs e) { using(var pen=new Pen(Color.FromArgb(232,235,240))) for(int x=10;x<Canvas.Width;x+=10) for(int y=10;y<Canvas.Height;y+=10) e.Graphics.DrawRectangle(pen,x,y,1,1); };
+            Canvas.DoubleClick+=delegate { OpenCode(null); };
             Canvas.MouseDown+=delegate { Select(null); Focus(); };
             Canvas.DragEnter+=delegate(object sender,DragEventArgs e) { var entry=e.Data.GetData(typeof(ToolboxEntry)) as ToolboxEntry; e.Effect=entry!=null && (entry.Family=="HTML")==Html ? DragDropEffects.Copy : DragDropEffects.None; };
             Canvas.DragDrop+=delegate(object sender,DragEventArgs e) { Try(delegate { Insert((ToolboxEntry)e.Data.GetData(typeof(ToolboxEntry)),Canvas.PointToClient(new Point(e.X,e.Y))); }); };
@@ -66,7 +67,7 @@ namespace OpenMSE.Shell
 
         // Sends one operation against the revision this view shows. A newer source revision is a conflict:
         // the view reloads and the operation is not applied.
-        void Commit(Dictionary<string,object> operation)
+        KernelDesignResult Commit(Dictionary<string,object> operation)
         {
             if(ErrorMessage!=null) throw new InvalidOperationException(ErrorMessage);
             KernelDesignResult result;
@@ -77,7 +78,15 @@ namespace OpenMSE.Shell
                 throw;
             }
             Show(result.Design,result.Node);
+            return result;
         }
+        internal KernelDesignResult SetEvent(string node,string handler,string eventName)
+        {
+            var op=new Dictionary<string,object> { {"op","set_event"}, {"node",node} }; if(handler!=null) op["handler"]=handler; if(eventName!=null) op["event"]=eventName;
+            return Commit(op);
+        }
+        // Deferred: opening code rebuilds the canvas, which must not happen inside a slot's own mouse message.
+        void OpenCode(DesignItem item) { if(Activated!=null && ErrorMessage==null && IsHandleCreated) BeginInvoke((Action)delegate { Try(delegate { Activated(item); }); }); }
         internal void Insert(ToolboxEntry entry,Point point)
         {
             point=new Point(Math.Max(0,point.X/10*10),Math.Max(0,point.Y/10*10));
@@ -103,6 +112,18 @@ namespace OpenMSE.Shell
         }
         internal string Export(bool vb) { if(Html) throw new InvalidOperationException("HTML 页面直接保存为 .html；窗体源码导出适用于 .omform 布局。"); return source.ExportDesign(vb); }
 
+        // The dot grid is a tiled, double-buffered background: no per-dot painting on every repaint.
+        sealed class CanvasPanel : Panel
+        {
+            internal CanvasPanel()
+            {
+                DoubleBuffered=true; ResizeRedraw=true;
+                var tile=new Bitmap(10,10); using(var g=Graphics.FromImage(tile)) { g.Clear(Color.White); using(var dot=new SolidBrush(Color.FromArgb(225,229,236))) g.FillRectangle(dot,0,0,2,2); }
+                BackgroundImage=tile; BackgroundImageLayout=ImageLayout.Tile;
+            }
+            protected override void Dispose(bool disposing) { var tile=BackgroundImage; base.Dispose(disposing); if(disposing && tile!=null) tile.Dispose(); }
+        }
+
         sealed class DesignSlot : Control
         {
             readonly DesignerView owner;
@@ -110,7 +131,7 @@ namespace OpenMSE.Shell
             Bitmap preview;
             Point mouseStart,origin;
             Size originalSize;
-            bool dragging,resizing;
+            bool dragging,resizing,moved;
             internal DesignSlot(DesignerView parent,DesignItem model)
             {
                 owner=parent; item=model; Bounds=new Rectangle(item.X,item.Y,item.Width,item.Height); TabStop=true;
@@ -128,10 +149,11 @@ namespace OpenMSE.Shell
                         else { sample.CreateControl(); preview=new Bitmap(Math.Max(1,Width),Math.Max(1,Height)); sample.DrawToBitmap(preview,new Rectangle(Point.Empty,Size)); }
                     }
                 } catch { if(preview!=null) preview.Dispose(); preview=null; }
-                MouseDown+=delegate(object sender,MouseEventArgs e) { owner.Select(item); Focus(); if(e.Button!=MouseButtons.Left) return; mouseStart=MousePosition; origin=Location; originalSize=Size; resizing=e.X>=Width-12 && e.Y>=Height-12; dragging=true; Capture=true; };
-                MouseMove+=delegate(object sender,MouseEventArgs e) { if(!dragging) { Cursor=e.X>=Width-12 && e.Y>=Height-12 ? Cursors.SizeNWSE : Cursors.SizeAll; return; } Point delta=new Point(MousePosition.X-mouseStart.X,MousePosition.Y-mouseStart.Y); if(resizing) Size=new Size(Math.Max(12,Math.Min(4096,(originalSize.Width+delta.X)/10*10)),Math.Max(12,Math.Min(4096,(originalSize.Height+delta.Y)/10*10))); else Location=new Point(Math.Max(0,Math.Min(10000,(origin.X+delta.X)/10*10)),Math.Max(0,Math.Min(10000,(origin.Y+delta.Y)/10*10))); Invalidate(); };
+                MouseDown+=delegate(object sender,MouseEventArgs e) { owner.Select(item); Focus(); if(e.Button!=MouseButtons.Left) return; mouseStart=PointToScreen(e.Location); origin=Location; originalSize=Size; resizing=e.X>=Width-12 && e.Y>=Height-12; dragging=true; moved=false; Capture=true; };
+                MouseMove+=delegate(object sender,MouseEventArgs e) { if(!dragging) { Cursor=e.X>=Width-12 && e.Y>=Height-12 ? Cursors.SizeNWSE : Cursors.SizeAll; return; } Point now=PointToScreen(e.Location), delta=new Point(now.X-mouseStart.X,now.Y-mouseStart.Y); if(!moved && Math.Abs(delta.X)<SystemInformation.DragSize.Width && Math.Abs(delta.Y)<SystemInformation.DragSize.Height) return; moved=true; if(resizing) Size=new Size(Math.Max(12,Math.Min(4096,(originalSize.Width+delta.X)/10*10)),Math.Max(12,Math.Min(4096,(originalSize.Height+delta.Y)/10*10))); else Location=new Point(Math.Max(0,Math.Min(10000,(origin.X+delta.X)/10*10)),Math.Max(0,Math.Min(10000,(origin.Y+delta.Y)/10*10))); Invalidate(); };
                 // The drag preview is local; releasing the mouse commits one move/resize transaction.
                 MouseUp+=delegate { if(!dragging) return; dragging=false; Capture=false; if(Location==origin && Size==originalSize) return; item.X=Left; item.Y=Top; item.Width=Width; item.Height=Height; owner.Try(owner.CommitSelected); };
+                DoubleClick+=delegate { dragging=false; Capture=false; owner.OpenCode(item); };
                 KeyDown+=delegate(object sender,KeyEventArgs e) { if(e.KeyCode==Keys.Delete) { owner.Try(owner.RemoveSelected); e.Handled=true; } };
             }
             protected override void OnPaint(PaintEventArgs e)
