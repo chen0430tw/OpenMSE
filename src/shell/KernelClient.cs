@@ -68,7 +68,7 @@ namespace OpenMSE.Shell
     internal sealed class KernelClient : IDisposable
     {
         const string Dll="OpenMSE.Core.dll";
-        internal const uint AbiVersion=5, EditCoalesce=1;
+        internal const uint AbiVersion=6, EditCoalesce=1;
         [StructLayout(LayoutKind.Sequential)] struct Buffer { internal IntPtr Data; internal UIntPtr Size; }
         [DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] static extern uint omk_abi_version();
         [DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] static extern int omk_create(uint version,out IntPtr kernel);
@@ -104,6 +104,7 @@ namespace OpenMSE.Shell
         [DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] static extern int omk_toolbox_load(IntPtr k,byte[] path,UIntPtr pathSize,out Buffer result);
         [DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] static extern int omk_design_snapshot(IntPtr k,ulong document,out Buffer result);
         [DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] static extern int omk_design_apply(IntPtr k,ulong document,ulong expected,byte[] op,UIntPtr opSize,out Buffer result);
+        [DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] static extern int omk_design_generate(IntPtr k,ulong document,byte[] language,UIntPtr languageSize,byte[] className,UIntPtr classSize,out Buffer result);
         [DllImport(Dll,CallingConvention=CallingConvention.Cdecl)] static extern int omk_design_export(IntPtr k,ulong document,byte[] language,UIntPtr languageSize,out Buffer result);
 
         // Strict: a lone surrogate must fail instead of silently becoming U+FFFD and diverging from the editor.
@@ -132,6 +133,8 @@ namespace OpenMSE.Shell
         IntPtr Handle { get { if(handle==IntPtr.Zero) throw new ObjectDisposedException("KernelClient"); return handle; } }
 
         delegate int NativeCall(out Buffer buffer);
+        // drain=false: calls whose result the caller stores as current state. Draining first would deliver newer
+        // events (exited, finished) before that older result overwrites them; the event pump delivers them after.
         Dictionary<string,object> Invoke(NativeCall call,bool drain=true)
         {
             Buffer buffer; int status=call(out buffer); string text;
@@ -183,24 +186,24 @@ namespace OpenMSE.Shell
         internal KernelTask StartBuild(ulong workspace,string configuration,string project)
         {
             byte[] c=Bytes(configuration),p=Bytes(project ?? "");
-            return KernelTask.From(Invoke(delegate(out Buffer b) { return omk_build_start(Handle,workspace,c,Size(c),p,Size(p),out b); }));
+            return KernelTask.From(Invoke(delegate(out Buffer b) { return omk_build_start(Handle,workspace,c,Size(c),p,Size(p),out b); },false));
         }
         internal KernelTask StartRun(ulong workspace,string configuration,string project)
         {
             byte[] c=Bytes(configuration),p=Bytes(project ?? "");
-            return KernelTask.From(Invoke(delegate(out Buffer b) { return omk_run_start(Handle,workspace,c,Size(c),p,Size(p),out b); }));
+            return KernelTask.From(Invoke(delegate(out Buffer b) { return omk_run_start(Handle,workspace,c,Size(c),p,Size(p),out b); },false));
         }
-        internal KernelTask CancelTask(ulong task) { return KernelTask.From(Invoke(delegate(out Buffer b) { return omk_task_cancel(Handle,task,out b); })); }
+        internal KernelTask CancelTask(ulong task) { return KernelTask.From(Invoke(delegate(out Buffer b) { return omk_task_cancel(Handle,task,out b); },false)); }
         internal KernelTask Task(ulong task) { return KernelTask.From(Invoke(delegate(out Buffer b) { return omk_task_snapshot(Handle,task,out b); })); }
 
         // ---- debugging (DebugService) and capabilities
         internal KernelDebugSession StartDebugging(ulong workspace,string configuration,string breakpointsJson)
         {
             byte[] c=Bytes(configuration),p=new byte[0],b=Bytes(breakpointsJson);
-            return KernelDebugSession.From(Invoke(delegate(out Buffer r) { return omk_debug_start(Handle,workspace,c,Size(c),p,Size(p),b,Size(b),out r); }));
+            return KernelDebugSession.From(Invoke(delegate(out Buffer r) { return omk_debug_start(Handle,workspace,c,Size(c),p,Size(p),b,Size(b),out r); },false));
         }
         internal KernelDebugSession DebugSnapshot(ulong session) { return KernelDebugSession.From(Invoke(delegate(out Buffer r) { return omk_debug_snapshot(Handle,session,out r); })); }
-        internal KernelDebugSession DebugControl(ulong session,string action) { byte[] a=Bytes(action); return KernelDebugSession.From(Invoke(delegate(out Buffer r) { return omk_debug_control(Handle,session,a,Size(a),out r); })); }
+        internal KernelDebugSession DebugControl(ulong session,string action) { byte[] a=Bytes(action); return KernelDebugSession.From(Invoke(delegate(out Buffer r) { return omk_debug_control(Handle,session,a,Size(a),out r); },false)); }
         internal Dictionary<string,object> AddBreakpoint(ulong session,string file,int line) { byte[] f=Bytes(file); return Invoke(delegate(out Buffer r) { return omk_debug_breakpoint_add(Handle,session,f,Size(f),(uint)line,out r); }); }
         internal List<Dictionary<string,object>> Variables(ulong session,int frame)
         {
@@ -220,7 +223,7 @@ namespace OpenMSE.Shell
             var result=Invoke(delegate(out Buffer b) { return omk_hosts_load(Handle,m,Size(m),r,Size(r),out b); });
             return ((System.Collections.IEnumerable)result["hosts"]).Cast<object>().Select(h=>(Dictionary<string,object>)h).ToList();
         }
-        internal Dictionary<string,object> StartHost(string engine,string workspace) { byte[] e=Bytes(engine),w=Bytes(workspace); return Invoke(delegate(out Buffer b) { return omk_host_start(Handle,e,Size(e),w,Size(w),out b); }); }
+        internal Dictionary<string,object> StartHost(string engine,string workspace) { byte[] e=Bytes(engine),w=Bytes(workspace); return Invoke(delegate(out Buffer b) { return omk_host_start(Handle,e,Size(e),w,Size(w),out b); },false); }
         internal Dictionary<string,object> SyncToHost(ulong host,ulong document) { return Invoke(delegate(out Buffer b) { return omk_host_sync_document(Handle,host,document,30000,out b); }); }
         internal Dictionary<string,object> VerifyHost(ulong host) { return Invoke(delegate(out Buffer b) { return omk_host_verify(Handle,host,15000,out b); }); }
         internal Dictionary<string,object> StopHost(ulong host,string mode) { byte[] m=Bytes(mode); return Invoke(delegate(out Buffer b) { return omk_host_stop(Handle,host,m,Size(m),out b); }); }
@@ -240,7 +243,13 @@ namespace OpenMSE.Shell
         {
             byte[] op=Bytes(json.Serialize(operation));
             var r=Invoke(delegate(out Buffer b) { return omk_design_apply(Handle,document,expected,op,Size(op),out b); });
-            return new KernelDesignResult { State=KernelState.From(r), Node=r["node"] as string, Design=KernelDesign.From((Dictionary<string,object>)r["design"]) };
+            var caret=r["caret"] as Dictionary<string,object>;
+            return new KernelDesignResult { State=KernelState.From(r), Node=r["node"] as string, Design=KernelDesign.From((Dictionary<string,object>)r["design"]),
+                Caret=caret==null ? (System.Drawing.Point?)null : new System.Drawing.Point(Convert.ToInt32(caret["column"]),Convert.ToInt32(caret["line"])) };
+        }
+        internal string GenerateDesign(ulong document,bool vb,string className)
+        {
+            byte[] l=Bytes(vb ? "vb" : "csharp"),c=Bytes(className); return (string)Invoke(delegate(out Buffer b) { return omk_design_generate(Handle,document,l,Size(l),c,Size(c),out b); })["source"];
         }
         internal string ExportDesign(ulong document,bool vb)
         {
@@ -331,6 +340,7 @@ namespace OpenMSE.Shell
             return result;
         }
         internal string ExportDesign(bool vb) { return kernel.ExportDesign(Id,vb); }
+        internal string GenerateDesign(bool vb,string className) { return kernel.GenerateDesign(Id,vb,className); }
 
         internal void Save(string path)
         {

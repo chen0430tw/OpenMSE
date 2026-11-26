@@ -14,14 +14,14 @@
 
 | 部分 | 位置 | 说明 |
 |---|---|---|
-| 稳定 C ABI | `include/openmse/kernel/abi.h` | 不透明句柄；参数为带长度 UTF-8；结果为内核分配的 JSON 缓冲区；ABI 版本握手（当前为 5） |
+| 稳定 C ABI | `include/openmse/kernel/abi.h` | 不透明句柄；参数为带长度 UTF-8；结果为内核分配的 JSON 缓冲区；ABI 版本握手（当前为 6） |
 | 内核 | `src/core/` | `text` 编码；`documents` 文档；`json`/`xml` 读取器；`design` 设计与工具箱；`workspace` 项目图与工具发现；`process` 子进程与作业对象；`tasks` 构建/运行任务；`hosts` 旧宿主；`debug` 调试服务；`abi.cpp` 边界、事件、命令、能力 |
 | 调试适配器 | `src/debug/DebugHost.cpp` | `OpenMSE.DebugHost.x86.exe` / `.x64.exe`，基于 ICorDebug v2 和 PDB 符号读取 |
 | 桥接 | `src/bridge/HostBridge.cs` | x86，EnvDTE 8.0，协议 v2（见 [protocol.md](protocol.md)） |
 | 宿主清单 | `config/hosts.json` | VS2005 / MSE 的入口、版本、SHA-256、启动器、桥接与能力 |
 | 托管客户端 | `src/shell/KernelClient.cs`、`KernelWorkspace.cs` | P/Invoke 封装与结果模型；事件在 UI 线程上分发 |
 | 界面 | `src/shell/MainForm*.cs`、`DesignerView.cs` | 只呈现内核状态、转发命令 |
-| 测试 | `tests/kernel/core_tests.cpp`（125 项）、`tests/kernel/host_tests.cpp`（30 项）、`tests/gui/*.cs` | 内核测试只经过公开 ABI |
+| 测试 | `tests/kernel/core_tests.cpp`（134 项）、`tests/kernel/host_tests.cpp`（30 项）、`tests/gui/*.cs` | 内核测试只经过公开 ABI |
 
 `OpenMSE.Core.dll` 为 x64，静态链接 C/C++ 运行库，不加载 MSENV、Office、COM 组件或 CLR。旧引擎、MSBuild 和被调试程序都在独立进程中运行。
 
@@ -40,11 +40,12 @@
 
 **ToolboxService** 读取 `config/toolbox.json`，校验分类、控件类型和 HTML 片段，分配稳定 ID（例如 `html.button`、`winforms.datagridview`）并标明后端。界面只负责图标和拖放。
 
-**DesignService** 按扩展名选择适配器：`.html`/`.htm` 使用源码片段扫描器，`.omform` 使用 JSON 布局。节点 ID（`n0`、`n1`…）只在快照报告的版本内有效。设计操作有四种：`add`、`set`、`delete`、`set_form`，每个都携带期望版本。内核核对版本，生成并完整校验新源码，再通过 DocumentService 以一次最小区间编辑原子提交，即一个版本、一步撤销。结果携带已应用的编辑、应选中的节点和新快照。
+**DesignService** 按扩展名选择适配器：`.html`/`.htm` 使用源码片段扫描器，`.omform` 使用 JSON 布局。节点 ID（`n0`、`n1`…）只在快照报告的版本内有效。设计操作有五种：`add`、`set`、`delete`、`set_form`、`set_event`，每个都携带期望版本。内核核对版本，生成并完整校验新源码，再通过 DocumentService 以一次最小区间编辑原子提交，即一个版本、一步撤销。结果携带已应用的编辑、应选中的节点和新快照。
 
 - **HTML**：只替换所选元素的开始标签或文本，或在 `</body>` 前插入片段；注释、脚本、未知标签按字节保留。
 - **`.omform`**：在原位置替换 JSON 值，缺少的成员按所在对象的缩进补入，未知成员和原有格式保留；修改后整个布局必须仍然有效，否则不提交。
-- **导出**：`omk_design_export` 生成独立的 C# / VB 窗体源码。
+- **事件**：`set_event` 绑定任意事件（不指定时为默认事件）；生成代码用方法组和 `AddressOf`，不需要委托类型；`omk_design_generate` 生成分部类的 Designer 部分。用户代码文件由界面维护，见 [designer.md](../designer.md)。
+- **导出**：`omk_design_export` 生成独立的 C# / VB 窗体源码，不含事件。
 
 ## 工作区与任务（阶段 3）
 
@@ -114,7 +115,7 @@ D:\OpenMSE\bin\OpenMSE.Shell.exe --smoke-test <独立测试目录>
 
 已验证（2026-11-20，本机）：
 
-- 内核测试 125/125，覆盖以下内容：
+- 内核测试 134/134（阶段 6 完成时为 125 项），覆盖以下内容：
   - 文档与设计。
   - 由 VB 库和 C# 程序组成的双项目解决方案：Debug/Release 构建、运行与中文输出，失败构建定位到 `Program.cs` 第 6 行第 17 列 CS1525，取消时整棵进程树被结束。
   - 调试：Program.cs 第 8 行命中断点，单步后变量从 41 变为 42，单步进入 VB 库并得到两帧调用堆栈，单步跳出，运行中添加断点，退出码 42，运行或退出状态下拒绝单步与求值。
@@ -140,5 +141,5 @@ D:\OpenMSE\bin\OpenMSE.Shell.exe --smoke-test <独立测试目录>
 - VS2005 的调试能力仍然阻塞，具体原因（调试引擎注册还是路径重定向）未定位。MSE 的自动化接口仍然阻塞。
 - 补全、跳转到定义没有实现；语言诊断只来自构建。
 - 项目求值只覆盖 VS2005 的常见条件形式，不执行 MSBuild 导入，也不处理通配符和自定义属性；构建本身仍由真正的 MSBuild 完成。
-- 拖放、拖动和调整大小的鼠标手势尚未经过自动或手动验证；冒烟测试直接调用这些手势最终提交的操作。
+- 双击、拖动、调整大小和标签关闭由冒烟测试以窗口消息验证；从工具箱拖放到画布仍未验证。
 - 内核缓冲区上限 64 MB，编辑器限制 8 MB；每次编辑会重建行索引。

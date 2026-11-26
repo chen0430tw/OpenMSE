@@ -13,7 +13,7 @@
 - 调试（F5/F9/F10/F11/Shift+F11/Shift+F5）由 OpenMSE.DebugHost 提供，有调用堆栈和局部变量页；“工具”菜单可启动、同步和关闭 VS2005 后端。
 - 文档由 x64 [OpenMSE.Core](kernel/core.md) 持有：编辑以区间修改提交，撤销/重做、脏状态、版本号、编码和换行由内核管理。保存前检查外部变更，写同目录临时文件后替换目标。文本编辑限制 8 MB。
 
-`Ctrl+N` 新建，`Ctrl+O` 打开文件，`Ctrl+Shift+O` 打开项目，`Ctrl+S` 保存，`Ctrl+W` 关闭当前文档，`Ctrl+Shift+B` 生成。
+`Ctrl+N` 新建，`Ctrl+O` 打开文件，`Ctrl+Shift+O` 打开项目，`Ctrl+S` 保存，`Ctrl+W`、标签上的叉或鼠标中键关闭文档，`Ctrl+Shift+B` 生成。
 
 ## 兼容入口
 
